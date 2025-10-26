@@ -1,0 +1,73 @@
+QWidget {
+    background-color: #F7F9FC;
+    color: #111827;
+    font-family: "Inter", "SF Pro", "Segoe UI", sans-serif;
+}
+
+QGroupBox {
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    border-radius: 14px;
+    margin-top: 8px;
+    padding: 12px;
+    background-color: #FFFFFF;
+}
+
+QLineEdit, QComboBox, QDateEdit {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(15, 23, 42, 0.16);
+    border-radius: 10px;
+    padding: 6px 10px;
+    color: #111827;
+}
+
+QPushButton {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(15, 23, 42, 0.16);
+    border-radius: 12px;
+    padding: 6px 16px;
+    color: #111827;
+}
+
+QPushButton:hover {
+    background-color: rgba(15, 23, 42, 0.08);
+}
+
+QListView, QListWidget {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    border-radius: 14px;
+    padding: 6px;
+}
+
+QCalendarWidget QWidget {
+    background-color: #FFFFFF;
+    color: #111827;
+}
+
+QToolButton.view-switch {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 18px;
+    padding: 6px 14px;
+    color: #6B7280;
+}
+
+QToolButton.view-switch:checked {
+    background-color: rgba(10, 132, 255, 0.16);
+    border-color: rgba(10, 132, 255, 0.35);
+    color: #111827;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    border: 2px solid rgba(15, 23, 42, 0.35);
+    background: transparent;
+}
+
+QCheckBox::indicator:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+

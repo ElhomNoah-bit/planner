@@ -1,0 +1,20 @@
+#pragma once
+
+#include <QColor>
+#include <QDate>
+#include <QString>
+#include <QStringList>
+
+struct Task {
+    QString id;
+    QString subjectId;
+    QString title;
+    QString goal;
+    int durationMinutes = 0;
+    QDate date;
+    bool done = false;
+    bool isExam = false;
+    QColor color;
+    QString seriesId;
+    int planIndex = -1;
+};

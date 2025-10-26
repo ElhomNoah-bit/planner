@@ -1,0 +1,37 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/noah_planner.dir/link.d"
+  "CMakeFiles/noah_planner_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/noah_planner_autogen.dir/ParseCache.txt"
+  "noah_planner_autogen"
+  "CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/src/ExamDialog.cpp.o"
+  "CMakeFiles/noah_planner.dir/src/ExamDialog.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/src/MainWindow.cpp.o"
+  "CMakeFiles/noah_planner.dir/src/MainWindow.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/src/core/PlannerService.cpp.o"
+  "CMakeFiles/noah_planner.dir/src/core/PlannerService.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/src/main.cpp.o"
+  "CMakeFiles/noah_planner.dir/src/main.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.o"
+  "CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.o"
+  "CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o"
+  "CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o"
+  "CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/src/ui/TaskDelegate.cpp.o"
+  "CMakeFiles/noah_planner.dir/src/ui/TaskDelegate.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/src/ui/ToastManager.cpp.o"
+  "CMakeFiles/noah_planner.dir/src/ui/ToastManager.cpp.o.d"
+  "noah_planner"
+  "noah_planner.pdb"
+  "noah_planner_autogen/mocs_compilation.cpp"
+  "noah_planner_autogen/timestamp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/noah_planner.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

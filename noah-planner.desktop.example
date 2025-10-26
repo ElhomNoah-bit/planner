@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Noah Planner
+Exec=/ABSOLUTE/PATH/TO/noah_planner_v2/run.sh
+Icon=/ABSOLUTE/PATH/TO/noah_planner_v2/assets/icon.png
+Terminal=false
+Categories=Education;Utility;
+StartupNotify=true
