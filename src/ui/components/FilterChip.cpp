@@ -1,6 +1,7 @@
 #include "FilterChip.h"
 
 #include <QPainter>
+#include <QStyle>
 
 FilterChip::FilterChip(const QString& label, QWidget* parent)
     : QToolButton(parent) {

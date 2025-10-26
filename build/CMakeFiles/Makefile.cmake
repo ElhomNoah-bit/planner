@@ -10,6 +10,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/CMakeLists.txt"
   "CMakeFiles/3.31.6/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.31.6/CMakeSystem.cmake"
+  "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/ui.qrc"
   "/usr/lib64/cmake/Qt6/FindWrapAtomic.cmake"
   "/usr/lib64/cmake/Qt6/FindWrapOpenGL.cmake"
   "/usr/lib64/cmake/Qt6/FindWrapVulkanHeaders.cmake"
@@ -282,6 +283,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "src/ui/ui.qrc.depends"
   "CMakeFiles/noah_planner_autogen.dir/AutogenInfo.json"
   ".qt/QtDeploySupport.cmake"
   ".qt/QtDeployTargets.cmake"

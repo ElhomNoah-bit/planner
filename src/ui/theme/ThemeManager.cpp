@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QFile>
 #include <QPalette>
+#include <QStyle>
 #include <QStyleFactory>
 
 namespace {
@@ -46,7 +47,7 @@ void ThemeManager::applyPalette(Theme theme) {
         palette.setColor(QPalette::Highlight, QColor("#0A84FF"));
         palette.setColor(QPalette::HighlightedText, QColor("#FFFFFF"));
     } else {
-        palette = QApplication::style()->standardPalette();
+    palette = QApplication::style()->standardPalette();
         palette.setColor(QPalette::Highlight, QColor("#0A84FF"));
         palette.setColor(QPalette::HighlightedText, QColor("#FFFFFF"));
     }
@@ -59,10 +60,10 @@ void ThemeManager::applyStylesheet(Theme theme) {
     QFile file(path);
 
     if (!file.open(QIODevice::ReadOnly)) {
-        QApplication::setStyleSheet(QString());
+        if (qApp) qApp->setStyleSheet(QString());
         return;
     }
 
     const QString stylesheet = QString::fromUtf8(file.readAll());
-    QApplication::setStyleSheet(stylesheet);
+    if (qApp) qApp->setStyleSheet(stylesheet);
 }

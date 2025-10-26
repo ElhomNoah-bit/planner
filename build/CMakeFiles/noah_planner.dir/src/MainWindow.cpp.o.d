@@ -352,6 +352,7 @@ CMakeFiles/noah_planner.dir/src/MainWindow.cpp.o: \
  /usr/include/qt6/QtCore/qset.h /usr/include/qt6/QtCore/QVector \
  /usr/include/qt6/QtCore/qvector.h \
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/AppState.h \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/theme/ThemeManager.h \
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ExamDialog.h \
  /usr/include/qt6/QtWidgets/QDialog /usr/include/qt6/QtWidgets/qdialog.h \
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/TaskFilterProxy.h \
@@ -376,26 +377,12 @@ CMakeFiles/noah_planner.dir/src/MainWindow.cpp.o: \
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/ToastManager.h \
  /usr/include/qt6/QtCore/QQueue /usr/include/qt6/QtCore/qqueue.h \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
- /usr/include/qt6/QtWidgets/QApplication \
- /usr/include/qt6/QtWidgets/qapplication.h \
- /usr/include/qt6/QtCore/qcoreapplication.h \
- /usr/include/qt6/QtCore/qcoreevent.h \
- /usr/include/qt6/QtCore/qbasictimer.h \
- /usr/include/qt6/QtCore/qabstracteventdispatcher.h \
- /usr/include/qt6/QtCore/qeventloop.h \
- /usr/include/qt6/QtCore/qdeadlinetimer.h \
- /usr/include/qt6/QtCore/qelapsedtimer.h \
- /usr/include/qt6/QtCore/qnativeinterface.h \
- /usr/include/qt6/QtCore/qcoreapplication_platform.h \
- /usr/include/qt6/QtGui/qguiapplication.h \
- /usr/include/qt6/QtGui/qinputmethod.h \
- /usr/include/qt6/QtGui/qguiapplication_platform.h \
- /usr/include/qt6/QtWidgets/QCalendarWidget \
- /usr/include/qt6/QtWidgets/qcalendarwidget.h \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/views/MonthView.h \
  /usr/include/qt6/QtWidgets/QAbstractItemView \
  /usr/include/qt6/QtWidgets/qabstractitemview.h \
  /usr/include/qt6/QtWidgets/qabstractscrollarea.h \
  /usr/include/qt6/QtCore/qitemselectionmodel.h \
+ /usr/include/qt6/QtGui/QAction /usr/include/qt6/QtGui/qaction.h \
  /usr/include/qt6/QtWidgets/QCheckBox \
  /usr/include/qt6/QtWidgets/qcheckbox.h \
  /usr/include/qt6/QtWidgets/qabstractbutton.h \
@@ -430,6 +417,12 @@ CMakeFiles/noah_planner.dir/src/MainWindow.cpp.o: \
  /usr/include/qt6/QtWidgets/QPushButton \
  /usr/include/qt6/QtWidgets/qpushbutton.h \
  /usr/include/qt6/QtGui/QResizeEvent /usr/include/qt6/QtGui/qevent.h \
+ /usr/include/qt6/QtCore/qcoreevent.h \
+ /usr/include/qt6/QtCore/qbasictimer.h \
+ /usr/include/qt6/QtCore/qabstracteventdispatcher.h \
+ /usr/include/qt6/QtCore/qeventloop.h \
+ /usr/include/qt6/QtCore/qdeadlinetimer.h \
+ /usr/include/qt6/QtCore/qelapsedtimer.h \
  /usr/include/qt6/QtGui/qeventpoint.h /usr/include/qt6/QtGui/qvector2d.h \
  /usr/include/qt6/QtGui/qvectornd.h \
  /usr/include/qt6/QtGui/qpointingdevice.h \
@@ -439,7 +432,13 @@ CMakeFiles/noah_planner.dir/src/MainWindow.cpp.o: \
  /usr/include/qt6/QtCore/QSize /usr/include/qt6/QtCore/qsize.h \
  /usr/include/qt6/QtCore/QSizeF /usr/include/qt6/QtGui/QTransform \
  /usr/include/qt6/QtGui/qtransform.h \
+ /usr/include/qt6/QtCore/qnativeinterface.h \
  /usr/include/qt6/QtGui/qscreen_platform.h \
+ /usr/include/qt6/QtGui/qguiapplication.h \
+ /usr/include/qt6/QtCore/qcoreapplication.h \
+ /usr/include/qt6/QtCore/qcoreapplication_platform.h \
+ /usr/include/qt6/QtGui/qinputmethod.h \
+ /usr/include/qt6/QtGui/qguiapplication_platform.h \
  /usr/include/qt6/QtCore/QSignalBlocker \
  /usr/include/qt6/QtWidgets/QSplitter \
  /usr/include/qt6/QtWidgets/qsplitter.h \

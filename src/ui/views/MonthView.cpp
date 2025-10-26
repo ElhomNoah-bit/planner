@@ -26,6 +26,19 @@ void MonthView::setMonth(const QDate& month) {
     refresh();
 }
 
+void MonthView::setSelectedDate(const QDate& date) {
+    if (m_selectedDate == date) return;
+    m_selectedDate = date;
+    if (!date.isValid()) {
+        refresh();
+        return;
+    }
+
+    if (m_month.isValid() && m_month.year() == date.year() && m_month.month() == date.month()) {
+        refresh();
+    }
+}
+
 void MonthView::setFilters(const QSet<QString>& subjects, const QString& query, bool onlyOpen) {
     m_subjects = subjects;
     m_query = query;
@@ -63,7 +76,9 @@ void MonthView::rebuildGrid() {
         card->setDate(date);
         const QVector<Task> tasks = filteredTasksFor(date);
         card->setTasks(tasks);
-        connect(card, &DayCardWidget::daySelected, this, &MonthView::daySelected);
+        card->setToday(date == QDate::currentDate());
+        card->setSelected(m_selectedDate.isValid() && m_selectedDate == date);
+        connect(card, &DayCardWidget::daySelected, this, &MonthView::handleDayClicked);
 
         m_grid->addWidget(card, row, column);
         m_cards.append(card);
@@ -103,4 +118,9 @@ QVector<Task> MonthView::filteredTasksFor(const QDate& date) const {
     }
 
     return tasks;
+}
+
+void MonthView::handleDayClicked(const QDate& date) {
+    setSelectedDate(date);
+    emit daySelected(date);
 }

@@ -35,6 +35,12 @@ add_executable(noah_planner
     src/ui/AppState.h
     src/ui/theme/ThemeManager.cpp
     src/ui/theme/ThemeManager.h
+    src/ui/views/MonthView.cpp
+    src/ui/views/MonthView.h
+    src/ui/components/DayCardWidget.cpp
+    src/ui/components/DayCardWidget.h
+    src/ui/components/FilterChip.cpp
+    src/ui/components/FilterChip.h
 )
 
 target_include_directories(noah_planner PRIVATE src)

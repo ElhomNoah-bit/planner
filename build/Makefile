@@ -224,6 +224,30 @@ noah_planner_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.s
 .PHONY : noah_planner_autogen/mocs_compilation.cpp.s
 
+qrc_ui.o: qrc_ui.cpp.o
+.PHONY : qrc_ui.o
+
+# target to build an object file
+qrc_ui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/qrc_ui.cpp.o
+.PHONY : qrc_ui.cpp.o
+
+qrc_ui.i: qrc_ui.cpp.i
+.PHONY : qrc_ui.i
+
+# target to preprocess a source file
+qrc_ui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/qrc_ui.cpp.i
+.PHONY : qrc_ui.cpp.i
+
+qrc_ui.s: qrc_ui.cpp.s
+.PHONY : qrc_ui.s
+
+# target to generate assembly for a file
+qrc_ui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/qrc_ui.cpp.s
+.PHONY : qrc_ui.cpp.s
+
 src/ExamDialog.o: src/ExamDialog.cpp.o
 .PHONY : src/ExamDialog.o
 
@@ -464,6 +488,102 @@ src/ui/ToastManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/ui/ToastManager.cpp.s
 .PHONY : src/ui/ToastManager.cpp.s
 
+src/ui/components/DayCardWidget.o: src/ui/components/DayCardWidget.cpp.o
+.PHONY : src/ui/components/DayCardWidget.o
+
+# target to build an object file
+src/ui/components/DayCardWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/ui/components/DayCardWidget.cpp.o
+.PHONY : src/ui/components/DayCardWidget.cpp.o
+
+src/ui/components/DayCardWidget.i: src/ui/components/DayCardWidget.cpp.i
+.PHONY : src/ui/components/DayCardWidget.i
+
+# target to preprocess a source file
+src/ui/components/DayCardWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/ui/components/DayCardWidget.cpp.i
+.PHONY : src/ui/components/DayCardWidget.cpp.i
+
+src/ui/components/DayCardWidget.s: src/ui/components/DayCardWidget.cpp.s
+.PHONY : src/ui/components/DayCardWidget.s
+
+# target to generate assembly for a file
+src/ui/components/DayCardWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/ui/components/DayCardWidget.cpp.s
+.PHONY : src/ui/components/DayCardWidget.cpp.s
+
+src/ui/components/FilterChip.o: src/ui/components/FilterChip.cpp.o
+.PHONY : src/ui/components/FilterChip.o
+
+# target to build an object file
+src/ui/components/FilterChip.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/ui/components/FilterChip.cpp.o
+.PHONY : src/ui/components/FilterChip.cpp.o
+
+src/ui/components/FilterChip.i: src/ui/components/FilterChip.cpp.i
+.PHONY : src/ui/components/FilterChip.i
+
+# target to preprocess a source file
+src/ui/components/FilterChip.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/ui/components/FilterChip.cpp.i
+.PHONY : src/ui/components/FilterChip.cpp.i
+
+src/ui/components/FilterChip.s: src/ui/components/FilterChip.cpp.s
+.PHONY : src/ui/components/FilterChip.s
+
+# target to generate assembly for a file
+src/ui/components/FilterChip.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/ui/components/FilterChip.cpp.s
+.PHONY : src/ui/components/FilterChip.cpp.s
+
+src/ui/theme/ThemeManager.o: src/ui/theme/ThemeManager.cpp.o
+.PHONY : src/ui/theme/ThemeManager.o
+
+# target to build an object file
+src/ui/theme/ThemeManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/ui/theme/ThemeManager.cpp.o
+.PHONY : src/ui/theme/ThemeManager.cpp.o
+
+src/ui/theme/ThemeManager.i: src/ui/theme/ThemeManager.cpp.i
+.PHONY : src/ui/theme/ThemeManager.i
+
+# target to preprocess a source file
+src/ui/theme/ThemeManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/ui/theme/ThemeManager.cpp.i
+.PHONY : src/ui/theme/ThemeManager.cpp.i
+
+src/ui/theme/ThemeManager.s: src/ui/theme/ThemeManager.cpp.s
+.PHONY : src/ui/theme/ThemeManager.s
+
+# target to generate assembly for a file
+src/ui/theme/ThemeManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/ui/theme/ThemeManager.cpp.s
+.PHONY : src/ui/theme/ThemeManager.cpp.s
+
+src/ui/views/MonthView.o: src/ui/views/MonthView.cpp.o
+.PHONY : src/ui/views/MonthView.o
+
+# target to build an object file
+src/ui/views/MonthView.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/ui/views/MonthView.cpp.o
+.PHONY : src/ui/views/MonthView.cpp.o
+
+src/ui/views/MonthView.i: src/ui/views/MonthView.cpp.i
+.PHONY : src/ui/views/MonthView.i
+
+# target to preprocess a source file
+src/ui/views/MonthView.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/ui/views/MonthView.cpp.i
+.PHONY : src/ui/views/MonthView.cpp.i
+
+src/ui/views/MonthView.s: src/ui/views/MonthView.cpp.s
+.PHONY : src/ui/views/MonthView.s
+
+# target to generate assembly for a file
+src/ui/views/MonthView.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/ui/views/MonthView.cpp.s
+.PHONY : src/ui/views/MonthView.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -482,6 +602,9 @@ help:
 	@echo "... noah_planner_autogen/mocs_compilation.o"
 	@echo "... noah_planner_autogen/mocs_compilation.i"
 	@echo "... noah_planner_autogen/mocs_compilation.s"
+	@echo "... qrc_ui.o"
+	@echo "... qrc_ui.i"
+	@echo "... qrc_ui.s"
 	@echo "... src/ExamDialog.o"
 	@echo "... src/ExamDialog.i"
 	@echo "... src/ExamDialog.s"
@@ -512,6 +635,18 @@ help:
 	@echo "... src/ui/ToastManager.o"
 	@echo "... src/ui/ToastManager.i"
 	@echo "... src/ui/ToastManager.s"
+	@echo "... src/ui/components/DayCardWidget.o"
+	@echo "... src/ui/components/DayCardWidget.i"
+	@echo "... src/ui/components/DayCardWidget.s"
+	@echo "... src/ui/components/FilterChip.o"
+	@echo "... src/ui/components/FilterChip.i"
+	@echo "... src/ui/components/FilterChip.s"
+	@echo "... src/ui/theme/ThemeManager.o"
+	@echo "... src/ui/theme/ThemeManager.i"
+	@echo "... src/ui/theme/ThemeManager.s"
+	@echo "... src/ui/views/MonthView.o"
+	@echo "... src/ui/views/MonthView.i"
+	@echo "... src/ui/views/MonthView.s"
 .PHONY : help
 
 

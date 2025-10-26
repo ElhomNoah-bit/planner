@@ -13,6 +13,11 @@ noah_planner: \
   CMakeFiles/noah_planner.dir/src/ui/TaskDelegate.cpp.o \
   CMakeFiles/noah_planner.dir/src/ui/ToastManager.cpp.o \
   CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o \
+  CMakeFiles/noah_planner.dir/src/ui/theme/ThemeManager.cpp.o \
+  CMakeFiles/noah_planner.dir/src/ui/views/MonthView.cpp.o \
+  CMakeFiles/noah_planner.dir/src/ui/components/DayCardWidget.cpp.o \
+  CMakeFiles/noah_planner.dir/src/ui/components/FilterChip.cpp.o \
+  CMakeFiles/noah_planner.dir/qrc_ui.cpp.o \
   /usr/lib64/libQt6Widgets.so.6.9.2 \
   /usr/lib64/libQt6Gui.so.6.9.2 \
   /usr/lib64/libGLX.so \
@@ -106,6 +111,16 @@ CMakeFiles/noah_planner.dir/src/ui/TaskDelegate.cpp.o:
 CMakeFiles/noah_planner.dir/src/ui/ToastManager.cpp.o:
 
 CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o:
+
+CMakeFiles/noah_planner.dir/src/ui/theme/ThemeManager.cpp.o:
+
+CMakeFiles/noah_planner.dir/src/ui/views/MonthView.cpp.o:
+
+CMakeFiles/noah_planner.dir/src/ui/components/DayCardWidget.cpp.o:
+
+CMakeFiles/noah_planner.dir/src/ui/components/FilterChip.cpp.o:
+
+CMakeFiles/noah_planner.dir/qrc_ui.cpp.o:
 
 /usr/lib64/libQt6Widgets.so.6.9.2:
 

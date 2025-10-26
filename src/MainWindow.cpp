@@ -5,6 +5,7 @@
 #include "models/TaskModel.h"
 #include "ui/TaskDelegate.h"
 #include "ui/ToastManager.h"
+#include "ui/components/FilterChip.h"
 #include "ui/views/MonthView.h"
 
 #include <QAbstractItemView>
@@ -23,8 +24,10 @@
 #include <QPushButton>
 #include <QResizeEvent>
 #include <QSignalBlocker>
+#include <QSizePolicy>
 #include <QSplitter>
 #include <QToolBar>
+#include <QWidget>
 #include <QVBoxLayout>
 #include <algorithm>
 
@@ -69,18 +72,22 @@ void MainWindow::buildUi() {
 	m_onlyOpen = new QCheckBox("Nur offene", this);
 	toolbar->addWidget(m_onlyOpen);
 
-	auto* subjectBox = new QGroupBox("Fächerfilter", this);
-	auto* subjectLayout = new QHBoxLayout(subjectBox);
-	subjectLayout->setSpacing(8);
-	for (const auto& subject : m_planner.subjects()) {
-		auto* cb = new QCheckBox(subject.name, this);
-		cb->setChecked(false);
-		subjectLayout->addWidget(cb);
-		m_subjectFilter.insert(subject.id, cb);
-		connect(cb, &QCheckBox::toggled, this, &MainWindow::onSubjectFilterChanged);
-	}
 	toolbar->addSeparator();
-	toolbar->addWidget(subjectBox);
+	toolbar->addWidget(new QLabel("Fächer:"));
+	auto* subjectContainer = new QWidget(this);
+	auto* subjectLayout = new QHBoxLayout(subjectContainer);
+	subjectLayout->setContentsMargins(0, 0, 0, 0);
+	subjectLayout->setSpacing(6);
+	for (const auto& subject : m_planner.subjects()) {
+		auto* chip = new FilterChip(subject.name, subjectContainer);
+		chip->setActive(false);
+		subjectLayout->addWidget(chip);
+		m_subjectChips.insert(subject.id, chip);
+		connect(chip, &FilterChip::activeChanged, this, &MainWindow::onSubjectFilterChanged);
+	}
+	subjectLayout->addStretch(1);
+	subjectContainer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+	toolbar->addWidget(subjectContainer);
 
 	auto* central = new QWidget(this);
 	setCentralWidget(central);
@@ -178,9 +185,9 @@ void MainWindow::applyStateToUi() {
 	m_onlyOpen->setChecked(m_state.onlyOpen());
 
 	const auto subjects = m_state.subjectFilter();
-	for (auto it = m_subjectFilter.begin(); it != m_subjectFilter.end(); ++it) {
+	for (auto it = m_subjectChips.begin(); it != m_subjectChips.end(); ++it) {
 		const QSignalBlocker blocker(it.value());
-		it.value()->setChecked(subjects.contains(it.key()));
+		it.value()->setActive(subjects.contains(it.key()));
 	}
 }
 
@@ -196,16 +203,26 @@ void MainWindow::updateFilters() {
 }
 
 void MainWindow::refreshToday() {
-	renderDayTasks(QDate::currentDate());
+	const QDate today = QDate::currentDate();
+	if (m_monthView) {
+		m_monthView->setMonth(today);
+		m_monthView->setSelectedDate(today);
+	}
+	renderDayTasks(today);
 }
 
 void MainWindow::refreshDay(const QDate& date) {
+	if (m_monthView) {
+		m_monthView->setMonth(date);
+		m_monthView->setSelectedDate(date);
+	}
 	renderDayTasks(date);
 	renderExams();
 }
 
 void MainWindow::renderDayTasks(const QDate& date) {
 	m_currentDay = date;
+	if (m_monthView) m_monthView->setSelectedDate(date);
 	const QVector<Task> tasks = m_planner.generateDay(date);
 	const int total = tasks.size();
 	const int doneCount = std::count_if(tasks.begin(), tasks.end(), [](const Task& task) { return task.done; });
@@ -213,6 +230,9 @@ void MainWindow::renderDayTasks(const QDate& date) {
 	m_progress->setText(QString("%1/%2 erledigt").arg(doneCount).arg(total));
 	m_taskModel->replaceAll(tasks);
 	m_taskProxy->invalidate();
+	if (m_monthView) {
+		m_monthView->refresh();
+	}
 }
 
 void MainWindow::renderExams() {
@@ -284,8 +304,8 @@ void MainWindow::onOnlyOpenToggled(bool checked) {
 
 void MainWindow::onSubjectFilterChanged() {
 	QSet<QString> selected;
-	for (auto it = m_subjectFilter.constBegin(); it != m_subjectFilter.constEnd(); ++it) {
-		if (it.value()->isChecked()) selected.insert(it.key());
+	for (auto it = m_subjectChips.constBegin(); it != m_subjectChips.constEnd(); ++it) {
+		if (it.value()->isActive()) selected.insert(it.key());
 	}
 	if (m_state.setSubjectFilter(selected)) {
 		updateFilters();

@@ -20,6 +20,7 @@ class TaskFilterProxy;
 class TaskDelegate;
 class ToastManager;
 class MonthView;
+class FilterChip;
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -60,7 +61,7 @@ private:
     QListWidget* m_examList = nullptr;
     QLineEdit* m_search = nullptr;
     QCheckBox* m_onlyOpen = nullptr;
-    QMap<QString, QCheckBox*> m_subjectFilter;
+    QMap<QString, FilterChip*> m_subjectChips;
     QLabel* m_progress = nullptr;
     QAction* m_darkModeAction = nullptr;
 

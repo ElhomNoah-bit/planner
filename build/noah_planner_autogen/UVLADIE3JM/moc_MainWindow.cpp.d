@@ -5,6 +5,7 @@
   /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Subject.h \
   /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Task.h \
   /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/AppState.h \
+  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/theme/ThemeManager.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \

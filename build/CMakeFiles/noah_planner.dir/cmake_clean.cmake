@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "noah_planner_autogen"
   "CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/qrc_ui.cpp.o"
+  "CMakeFiles/noah_planner.dir/qrc_ui.cpp.o.d"
   "CMakeFiles/noah_planner.dir/src/ExamDialog.cpp.o"
   "CMakeFiles/noah_planner.dir/src/ExamDialog.cpp.o.d"
   "CMakeFiles/noah_planner.dir/src/MainWindow.cpp.o"
@@ -25,10 +27,19 @@ file(REMOVE_RECURSE
   "CMakeFiles/noah_planner.dir/src/ui/TaskDelegate.cpp.o.d"
   "CMakeFiles/noah_planner.dir/src/ui/ToastManager.cpp.o"
   "CMakeFiles/noah_planner.dir/src/ui/ToastManager.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/src/ui/components/DayCardWidget.cpp.o"
+  "CMakeFiles/noah_planner.dir/src/ui/components/DayCardWidget.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/src/ui/components/FilterChip.cpp.o"
+  "CMakeFiles/noah_planner.dir/src/ui/components/FilterChip.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/src/ui/theme/ThemeManager.cpp.o"
+  "CMakeFiles/noah_planner.dir/src/ui/theme/ThemeManager.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/src/ui/views/MonthView.cpp.o"
+  "CMakeFiles/noah_planner.dir/src/ui/views/MonthView.cpp.o.d"
   "noah_planner"
   "noah_planner.pdb"
   "noah_planner_autogen/mocs_compilation.cpp"
   "noah_planner_autogen/timestamp"
+  "qrc_ui.cpp"
 )
 
 # Per-language clean rules from dependency scanning.

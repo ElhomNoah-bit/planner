@@ -7,3 +7,7 @@
 #include "M4YTXQ7V2H/moc_TaskModel.cpp"
 #include "YPKJ5OE7LN/moc_TaskDelegate.cpp"
 #include "YPKJ5OE7LN/moc_ToastManager.cpp"
+#include "DFYB2GAN4A/moc_DayCardWidget.cpp"
+#include "DFYB2GAN4A/moc_FilterChip.cpp"
+#include "54RVG76HEP/moc_ThemeManager.cpp"
+#include "J3CC273FWE/moc_MonthView.cpp"

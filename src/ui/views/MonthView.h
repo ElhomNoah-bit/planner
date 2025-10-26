@@ -18,6 +18,7 @@ public:
 
     void setPlanner(PlannerService* planner);
     void setMonth(const QDate& month);
+    void setSelectedDate(const QDate& date);
     void setFilters(const QSet<QString>& subjects, const QString& query, bool onlyOpen);
     void refresh();
 
@@ -27,9 +28,11 @@ signals:
 private:
     void rebuildGrid();
     QVector<Task> filteredTasksFor(const QDate& date) const;
+    void handleDayClicked(const QDate& date);
 
     PlannerService* m_planner = nullptr;
     QDate m_month;
+    QDate m_selectedDate;
     QSet<QString> m_subjects;
     QString m_query;
     bool m_onlyOpen = false;

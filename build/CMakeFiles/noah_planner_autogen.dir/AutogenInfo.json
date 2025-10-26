@@ -362,7 +362,8 @@
 		"/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake",
 		"/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake",
 		"/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake",
-		"/usr/share/cmake/Modules/GNUInstallDirs.cmake"
+		"/usr/share/cmake/Modules/GNUInstallDirs.cmake",
+		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/ui.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6",
 	"CROSS_CONFIG" : false,
@@ -441,6 +442,30 @@
 			"MU",
 			"YPKJ5OE7LN/moc_ToastManager.cpp",
 			null
+		],
+		[
+			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/components/DayCardWidget.h",
+			"MU",
+			"DFYB2GAN4A/moc_DayCardWidget.cpp",
+			null
+		],
+		[
+			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/components/FilterChip.h",
+			"MU",
+			"DFYB2GAN4A/moc_FilterChip.cpp",
+			null
+		],
+		[
+			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/theme/ThemeManager.h",
+			"MU",
+			"54RVG76HEP/moc_ThemeManager.cpp",
+			null
+		],
+		[
+			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/views/MonthView.h",
+			"MU",
+			"J3CC273FWE/moc_MonthView.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -491,7 +516,10 @@
 	],
 	"MOC_PREDEFS_FILE" : "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
-	"MOC_SKIP" : [],
+	"MOC_SKIP" : 
+	[
+		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/qrc_ui.cpp"
+	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 4,
 	"PARSE_CACHE_FILE" : "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner_autogen.dir/ParseCache.txt",
@@ -551,11 +579,34 @@
 			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/ToastManager.cpp",
 			"MU",
 			null
+		],
+		[
+			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/components/DayCardWidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/components/FilterChip.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/theme/ThemeManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/views/MonthView.cpp",
+			"MU",
+			null
 		]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
-	"UIC_SKIP" : [],
+	"UIC_SKIP" : 
+	[
+		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/qrc_ui.cpp"
+	],
 	"UIC_UI_FILES" : [],
 	"USE_BETTER_GRAPH" : true,
 	"VERBOSITY" : 0

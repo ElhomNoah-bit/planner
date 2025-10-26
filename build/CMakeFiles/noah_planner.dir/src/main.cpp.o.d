@@ -365,4 +365,5 @@ CMakeFiles/noah_planner.dir/src/main.cpp.o: \
  /usr/include/qt6/QtCore/qobject.h /usr/include/qt6/QtCore/QSet \
  /usr/include/qt6/QtCore/qset.h /usr/include/qt6/QtCore/QVector \
  /usr/include/qt6/QtCore/qvector.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/AppState.h
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/AppState.h \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/theme/ThemeManager.h

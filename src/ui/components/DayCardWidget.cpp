@@ -22,7 +22,6 @@ DayCardWidget::DayCardWidget(QWidget* parent)
     headerLayout->setSpacing(4);
     headerLayout->addStretch(1);
     m_dateLabel->setObjectName("dayCardDateLabel");
-    m_dateLabel->setStyleSheet("font-size: 13px; color: #9CA3AF;");
     headerLayout->addWidget(m_dateLabel);
     layout->addLayout(headerLayout);
 
@@ -38,17 +37,30 @@ DayCardWidget::DayCardWidget(QWidget* parent)
 
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
     setMinimumSize(140, 120);
-    setStyleSheet("background-color: #141C2C; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px;");
+    updateCardStyle();
 }
 
 void DayCardWidget::setDate(const QDate& date) {
     m_date = date;
     m_dateLabel->setText(QString::number(date.day()));
+    updateDateLabelStyle();
 }
 
 void DayCardWidget::setTasks(const QVector<Task>& tasks) {
     m_tasks = tasks;
     rebuildTaskList();
+}
+
+void DayCardWidget::setSelected(bool selected) {
+    if (m_selected == selected) return;
+    m_selected = selected;
+    updateCardStyle();
+}
+
+void DayCardWidget::setToday(bool today) {
+    if (m_isToday == today) return;
+    m_isToday = today;
+    updateCardStyle();
 }
 
 void DayCardWidget::rebuildTaskList() {
@@ -69,7 +81,7 @@ void DayCardWidget::rebuildTaskList() {
                             .arg("#E6EDF7")
                             .arg(QString("%1 • %2 min").arg(task.title).arg(task.durationMinutes));
         label->setText(text);
-    label->setStyleSheet("font-size: 13px; color: #E6EDF7;");
+        label->setStyleSheet("font-size: 13px; color: #E6EDF7;");
         m_taskLayout->addWidget(label);
     }
 
@@ -81,13 +93,15 @@ void DayCardWidget::rebuildTaskList() {
 }
 
 void DayCardWidget::enterEvent(QEnterEvent* event) {
-    Q_UNUSED(event);
-    setStyleSheet("background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.18); border-radius: 14px;");
+    m_hovered = true;
+    updateCardStyle();
+    QFrame::enterEvent(event);
 }
 
 void DayCardWidget::leaveEvent(QEvent* event) {
-    Q_UNUSED(event);
-    setStyleSheet("background-color: #141C2C; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px;");
+    m_hovered = false;
+    updateCardStyle();
+    QFrame::leaveEvent(event);
 }
 
 void DayCardWidget::mouseReleaseEvent(QMouseEvent* event) {
@@ -95,4 +109,49 @@ void DayCardWidget::mouseReleaseEvent(QMouseEvent* event) {
         emit daySelected(m_date);
     }
     QFrame::mouseReleaseEvent(event);
+}
+
+void DayCardWidget::updateCardStyle() {
+    QString background = "#141C2C";
+    QString border = "rgba(255,255,255,0.08)";
+
+    if (m_hovered) {
+        background = "rgba(255,255,255,0.05)";
+        border = "rgba(255,255,255,0.18)";
+    }
+
+    if (m_isToday) {
+        border = "rgba(10,132,255,0.45)";
+    }
+
+    if (m_selected) {
+        background = "rgba(10,132,255,0.18)";
+        border = "rgba(10,132,255,0.9)";
+    }
+
+    if (m_selected && m_hovered) {
+        background = "rgba(10,132,255,0.24)";
+    }
+
+    setStyleSheet(QString("background-color: %1; border: 1px solid %2; border-radius: 14px;")
+                      .arg(background, border));
+    updateDateLabelStyle();
+}
+
+void DayCardWidget::updateDateLabelStyle() {
+    QString color = "#9CA3AF";
+    QString weight = "400";
+
+    if (m_isToday) {
+        color = "#0A84FF";
+        weight = "600";
+    }
+
+    if (m_selected) {
+        color = "#FFFFFF";
+        weight = "700";
+    }
+
+    m_dateLabel->setStyleSheet(QString("font-size: 13px; color: %1; font-weight: %2;")
+                                   .arg(color, weight));
 }

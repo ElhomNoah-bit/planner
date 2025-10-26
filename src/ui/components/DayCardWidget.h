@@ -15,6 +15,9 @@ public:
 
     void setDate(const QDate& date);
     void setTasks(const QVector<Task>& tasks);
+    void setSelected(bool selected);
+    void setToday(bool today);
+    bool isSelected() const { return m_selected; }
 
     QDate date() const { return m_date; }
 
@@ -28,6 +31,8 @@ protected:
 
 private:
     void rebuildTaskList();
+    void updateCardStyle();
+    void updateDateLabelStyle();
 
     QDate m_date;
     QVector<Task> m_tasks;
@@ -35,4 +40,7 @@ private:
     QLabel* m_dateLabel = nullptr;
     QLabel* m_overflowLabel = nullptr;
     QVBoxLayout* m_taskLayout = nullptr;
+    bool m_selected = false;
+    bool m_isToday = false;
+    bool m_hovered = false;
 };

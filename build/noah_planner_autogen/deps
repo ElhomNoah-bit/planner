@@ -25,6 +25,15 @@ noah_planner_autogen/timestamp: \
 	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/TaskDelegate.h \
 	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/ToastManager.cpp \
 	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/ToastManager.h \
+	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/components/DayCardWidget.cpp \
+	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/components/DayCardWidget.h \
+	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/components/FilterChip.cpp \
+	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/components/FilterChip.h \
+	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/theme/ThemeManager.cpp \
+	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/theme/ThemeManager.h \
+	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/ui.qrc \
+	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/views/MonthView.cpp \
+	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/views/MonthView.h \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/bitsperlong.h \
 	/usr/include/asm-generic/errno-base.h \
@@ -477,9 +486,12 @@ noah_planner_autogen/timestamp: \
 	/usr/include/qt6/QtGui/qvalidator.h \
 	/usr/include/qt6/QtGui/qwindowdefs.h \
 	/usr/include/qt6/QtWidgets/QDialog \
+	/usr/include/qt6/QtWidgets/QFrame \
 	/usr/include/qt6/QtWidgets/QMainWindow \
 	/usr/include/qt6/QtWidgets/QStyledItemDelegate \
+	/usr/include/qt6/QtWidgets/QToolButton \
 	/usr/include/qt6/QtWidgets/QWidget \
+	/usr/include/qt6/QtWidgets/qabstractbutton.h \
 	/usr/include/qt6/QtWidgets/qabstractitemdelegate.h \
 	/usr/include/qt6/QtWidgets/qabstractslider.h \
 	/usr/include/qt6/QtWidgets/qabstractspinbox.h \
@@ -494,6 +506,7 @@ noah_planner_autogen/timestamp: \
 	/usr/include/qt6/QtWidgets/qstyleoption.h \
 	/usr/include/qt6/QtWidgets/qtabbar.h \
 	/usr/include/qt6/QtWidgets/qtabwidget.h \
+	/usr/include/qt6/QtWidgets/qtoolbutton.h \
 	/usr/include/qt6/QtWidgets/qtwidgets-config.h \
 	/usr/include/qt6/QtWidgets/qtwidgetsexports.h \
 	/usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
