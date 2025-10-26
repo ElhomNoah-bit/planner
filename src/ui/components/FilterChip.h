@@ -15,6 +15,7 @@ signals:
 
 protected:
     void paintEvent(QPaintEvent* event) override;
+    void nextCheckState() override;
 
 private:
     bool m_active = false;

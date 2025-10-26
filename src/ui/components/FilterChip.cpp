@@ -49,3 +49,7 @@ void FilterChip::paintEvent(QPaintEvent* event) {
     painter.setFont(font());
     painter.drawText(r, Qt::AlignCenter, text());
 }
+
+void FilterChip::nextCheckState() {
+    setActive(!m_active);
+}

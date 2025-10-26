@@ -377,6 +377,10 @@ CMakeFiles/noah_planner.dir/src/MainWindow.cpp.o: \
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/ToastManager.h \
  /usr/include/qt6/QtCore/QQueue /usr/include/qt6/QtCore/qqueue.h \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/components/FilterChip.h \
+ /usr/include/qt6/QtWidgets/QToolButton \
+ /usr/include/qt6/QtWidgets/qtoolbutton.h \
+ /usr/include/qt6/QtWidgets/qabstractbutton.h \
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/views/MonthView.h \
  /usr/include/qt6/QtWidgets/QAbstractItemView \
  /usr/include/qt6/QtWidgets/qabstractitemview.h \
@@ -385,7 +389,6 @@ CMakeFiles/noah_planner.dir/src/MainWindow.cpp.o: \
  /usr/include/qt6/QtGui/QAction /usr/include/qt6/QtGui/qaction.h \
  /usr/include/qt6/QtWidgets/QCheckBox \
  /usr/include/qt6/QtWidgets/qcheckbox.h \
- /usr/include/qt6/QtWidgets/qabstractbutton.h \
  /usr/include/qt6/QtWidgets/QGroupBox \
  /usr/include/qt6/QtWidgets/qgroupbox.h \
  /usr/include/qt6/QtWidgets/QHBoxLayout \
@@ -440,6 +443,8 @@ CMakeFiles/noah_planner.dir/src/MainWindow.cpp.o: \
  /usr/include/qt6/QtGui/qinputmethod.h \
  /usr/include/qt6/QtGui/qguiapplication_platform.h \
  /usr/include/qt6/QtCore/QSignalBlocker \
+ /usr/include/qt6/QtWidgets/QSizePolicy \
+ /usr/include/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/qt6/QtWidgets/QSplitter \
  /usr/include/qt6/QtWidgets/qsplitter.h \
  /usr/include/qt6/QtWidgets/QToolBar \
