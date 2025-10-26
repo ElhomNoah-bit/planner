@@ -1861,6 +1861,7 @@ CMakeFiles/noah_planner.dir/src/MainWindow.cpp.o: /home/noah/Dokumente/dev/proje
   /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/AppState.h \
   /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/TaskDelegate.h \
   /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/ToastManager.h \
+  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/components/FilterChip.h \
   /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/theme/ThemeManager.h \
   /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/views/MonthView.h \
   /usr/include/alloca.h \
@@ -2377,9 +2378,11 @@ CMakeFiles/noah_planner.dir/src/MainWindow.cpp.o: /home/noah/Dokumente/dev/proje
   /usr/include/qt6/QtWidgets/QMainWindow \
   /usr/include/qt6/QtWidgets/QMessageBox \
   /usr/include/qt6/QtWidgets/QPushButton \
+  /usr/include/qt6/QtWidgets/QSizePolicy \
   /usr/include/qt6/QtWidgets/QSplitter \
   /usr/include/qt6/QtWidgets/QStyledItemDelegate \
   /usr/include/qt6/QtWidgets/QToolBar \
+  /usr/include/qt6/QtWidgets/QToolButton \
   /usr/include/qt6/QtWidgets/QVBoxLayout \
   /usr/include/qt6/QtWidgets/QWidget \
   /usr/include/qt6/QtWidgets/qabstractbutton.h \
@@ -2414,6 +2417,7 @@ CMakeFiles/noah_planner.dir/src/MainWindow.cpp.o: /home/noah/Dokumente/dev/proje
   /usr/include/qt6/QtWidgets/qtabbar.h \
   /usr/include/qt6/QtWidgets/qtabwidget.h \
   /usr/include/qt6/QtWidgets/qtoolbar.h \
+  /usr/include/qt6/QtWidgets/qtoolbutton.h \
   /usr/include/qt6/QtWidgets/qtwidgets-config.h \
   /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
   /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
