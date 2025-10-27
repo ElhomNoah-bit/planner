@@ -13,7 +13,6 @@ ApplicationWindow {
     visible: true
     title: qsTr("Noah Planner")
     color: Styles.ThemeStore.colors.appBg
-    focus: true
 
     property string viewMode: "month"
     property bool onlyOpen: false
@@ -205,7 +204,11 @@ ApplicationWindow {
         }
     }
 
-    Component.onCompleted: syncState()
+    Component.onCompleted: {
+        if (app.contentItem)
+            app.contentItem.forceActiveFocus()
+        syncState()
+    }
 
     Keys.onPressed: function(event) {
         if (event.modifiers & (Qt.ControlModifier | Qt.MetaModifier)) {
