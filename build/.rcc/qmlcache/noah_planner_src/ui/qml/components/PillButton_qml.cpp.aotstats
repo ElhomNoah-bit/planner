@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 1624,
+                        "durationMicroseconds": 1579,
                         "errorMessage": "Cannot retrieve a non-object type by ID: control",
                         "functionName": "backgroundColor",
                         "line": 48
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 119,
+                        "durationMicroseconds": 118,
                         "errorMessage": "Cannot retrieve a non-object type by ID: control",
                         "functionName": "borderColor",
                         "line": 68
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 22
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 190,
+                        "durationMicroseconds": 219,
                         "errorMessage": "method backgroundColor cannot be resolved.",
                         "functionName": "color",
                         "line": 23
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 175,
+                        "durationMicroseconds": 164,
                         "errorMessage": "method borderColor cannot be resolved.",
                         "functionName": "color",
                         "line": 24
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 14,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 17,
                         "errorMessage": "Cannot access value for name control",
                         "functionName": "spacing",
                         "line": 30
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name control",
                         "functionName": "muted",
                         "line": 36
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 11,
                         "errorMessage": "Cannot access value for name text",
                         "functionName": "visible",
                         "line": 41
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 87,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot access value for name control",
                         "functionName": "color",
                         "line": 43
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 238,
+                        "durationMicroseconds": 163,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "verticalAlignment",
                         "line": 44
