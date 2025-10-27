@@ -6,17 +6,13 @@ Item {
     property alias text: glyph.text
     property string name: ""
     property real size: 14
-    property color color: Styles.ThemeStore.colors.text
-    property string family: fontLoader.status === FontLoader.Ready ? fontLoader.name
-                                                                  : Styles.ThemeStore.fonts.uiFallback
+    property color color: Styles.ThemeStore.text
+    property string family: Styles.ThemeStore.fontFamily.length
+                                  ? Styles.ThemeStore.fontFamily
+                                  : Styles.ThemeStore.fontFallback
 
     implicitHeight: glyph.implicitHeight
     implicitWidth: glyph.implicitWidth
-
-    FontLoader {
-        id: fontLoader
-        source: Styles.ThemeStore.fonts.interUrl
-    }
 
     readonly property var glyphMap: ({
         "chevron.backward": "\u2039",

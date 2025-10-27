@@ -5,11 +5,75 @@
                 "entries": [
                     {
                         "codegenSuccessful": true,
-                        "column": 43,
-                        "durationMicroseconds": 119,
+                        "column": 31,
+                        "durationMicroseconds": 154,
                         "errorMessage": "",
-                        "functionName": "focus",
-                        "line": 17
+                        "functionName": "sm",
+                        "line": 22
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "md",
+                        "line": 23
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 90,
+                        "errorMessage": "",
+                        "functionName": "lg",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 86,
+                        "errorMessage": "",
+                        "functionName": "xl",
+                        "line": 25
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 85,
+                        "errorMessage": "",
+                        "functionName": "xs",
+                        "line": 26
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 131,
+                        "errorMessage": "",
+                        "functionName": "xl",
+                        "line": 78
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 98,
+                        "errorMessage": "",
+                        "functionName": "xxl",
+                        "line": 79
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 40,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "gridGap",
+                        "line": 94
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 50,
+                        "errorMessage": "",
+                        "functionName": "margin",
+                        "line": 95
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml"

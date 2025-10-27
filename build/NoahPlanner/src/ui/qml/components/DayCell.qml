@@ -9,120 +9,110 @@ FocusScope {
     property bool isToday: false
     property var events: []
     property int maxVisible: 2
+    readonly property var dateObject: isoDate.length > 0 ? new Date(isoDate) : new Date()
+    readonly property int dayNumber: dateObject.getDate()
+    readonly property bool hovered: hoverHandler.hovered
+    property var visibleEvents: (events || []).slice(0, maxVisible)
+    property int extraCount: Math.max(0, (events || []).length - maxVisible)
+
     signal activated(string isoDate)
 
     implicitWidth: 152
     implicitHeight: 120
 
-    readonly property QtObject colors: Styles.ThemeStore.colors
-    readonly property QtObject typeScale: Styles.ThemeStore.type
-    readonly property QtObject radii: Styles.ThemeStore.radii
-    readonly property QtObject gaps: Styles.ThemeStore.gap
-    readonly property QtObject fonts: Styles.ThemeStore.fonts
-
-    readonly property var dateObject: isoDate.length > 0 ? new Date(isoDate) : new Date()
-    readonly property int dayNumber: dateObject.getDate()
-
     Rectangle {
         id: backdrop
         anchors.fill: parent
-        radius: radii.lg
-        color: root.selected ? colors.accentBg : colors.cardBg
+        radius: Styles.ThemeStore.r12
         border.width: 1
-        border.color: root.selected ? colors.accent : colors.divider
+        border.color: root.selected ? Styles.ThemeStore.accent : Styles.ThemeStore.divider
+        color: root.selected
+               ? Styles.ThemeStore.accentBg
+               : (root.hovered ? Styles.ThemeStore.hover : Styles.ThemeStore.cardBg)
     }
 
     Rectangle {
         anchors.fill: parent
         anchors.margins: -1
-        radius: radii.lg + 2
+        radius: Styles.ThemeStore.r12 + 2
         color: "transparent"
         border.width: 1
-        border.color: colors.focus
+        border.color: Styles.ThemeStore.focus
         visible: root.activeFocus
+        opacity: 0.9
     }
 
     Rectangle {
-        anchors.fill: parent
-        radius: radii.lg
-        color: colors.hover
-        visible: hoverArea.containsMouse && !root.selected
+        width: 12
+        height: 12
+        radius: 6
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.margins: Styles.ThemeStore.g12
+        color: "transparent"
+        border.width: 2
+        border.color: Styles.ThemeStore.focus
+        visible: root.isToday
     }
 
-    Item {
-        anchors.top: parent.top
+    Text {
+        id: dayLabel
+        text: root.dayNumber
         anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.margins: gaps.g12
-        height: 24
-
-        Rectangle {
-            width: 12
-            height: 12
-            radius: 6
-            anchors.top: parent.top
-            anchors.right: parent.right
-            color: colors.accentBg
-            border.width: 1
-            border.color: colors.accent
-            visible: root.isToday
-        }
-
-        Text {
-            anchors.left: parent.left
-            anchors.verticalCenter: parent.verticalCenter
-            text: root.dayNumber
-            font.pixelSize: typeScale.dateSize
-            font.weight: typeScale.weightMedium
-            font.family: fonts.uiFallback
-            color: root.inMonth ? colors.text : colors.text2
-            opacity: root.inMonth ? 1 : 0.6
-            renderType: Text.NativeRendering
-        }
+        anchors.top: parent.top
+        anchors.margins: Styles.ThemeStore.g12
+        font.pixelSize: Styles.ThemeStore.sm
+        font.family: Styles.ThemeStore.fontFamily
+        color: root.inMonth ? Styles.ThemeStore.text : Styles.ThemeStore.text2
+        opacity: root.inMonth ? 1 : 0.6
+        renderType: Text.NativeRendering
     }
 
     Column {
         id: list
-        anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        anchors.margins: gaps.g12
-        anchors.topMargin: gaps.g24
-        spacing: gaps.g8
+        anchors.top: dayLabel.bottom
+        anchors.topMargin: Styles.ThemeStore.g12
+        anchors.leftMargin: Styles.ThemeStore.g12
+        anchors.rightMargin: Styles.ThemeStore.g12
+        anchors.bottomMargin: Styles.ThemeStore.g12
+        spacing: Styles.ThemeStore.g8
 
         Repeater {
-            model: visibleEvents
+            model: root.visibleEvents
             delegate: EventChip {
+                width: list.width
                 label: modelData.title
                 subjectColor: modelData.color
-                width: list.width
             }
         }
 
         EventChip {
-            visible: extraCount > 0
-            label: "+" + extraCount
-            muted: true
-            subjectColor: colors.accent
             width: list.width
+            visible: root.extraCount > 0
+            label: "+" + root.extraCount
+            muted: true
+            subjectColor: Styles.ThemeStore.accent
         }
     }
 
-    MouseArea {
-        id: hoverArea
-        anchors.fill: parent
-        hoverEnabled: true
+    TapHandler {
         acceptedButtons: Qt.LeftButton
-        cursorShape: Qt.PointingHandCursor
-        onClicked: root.activated(root.isoDate)
-        onPressed: root.forceActiveFocus()
+        gesturePolicy: TapHandler.WithinBounds
+        onTapped: root.activated(root.isoDate)
+        onPressedChanged: if (pressed) root.forceActiveFocus()
     }
 
-    property var visibleEvents: (events || []).slice(0, maxVisible)
-    property int extraCount: Math.max(0, (events || []).length - maxVisible)
+    HoverHandler {
+        id: hoverHandler
+    }
 
-    Keys.onReturnPressed: root.activated(root.isoDate)
-    Keys.onEnterPressed: root.activated(root.isoDate)
-    Keys.onSpacePressed: root.activated(root.isoDate)
+    Keys.onPressed: function(event) {
+        if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter || event.key === Qt.Key_Space) {
+            event.accepted = true
+            root.activated(root.isoDate)
+        }
+    }
 }

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 1629,
+                        "durationMicroseconds": 1502,
                         "errorMessage": "",
                         "functionName": "radii",
                         "line": 12
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 64,
                         "errorMessage": "",
                         "functionName": "gaps",
                         "line": 13
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 102,
                         "errorMessage": "",
                         "functionName": "typeScale",
                         "line": 14
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "colors",
                         "line": 15
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 13,
-                        "durationMicroseconds": 58,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot load property md from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/Toast.qml)::radii with type QObject.",
                         "functionName": "radius",
                         "line": 17
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 14,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot load property g16 from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/Toast.qml)::gaps with type QObject.",
                         "functionName": "padding",
                         "line": 18
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 14,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 104,
                         "errorMessage": "",
                         "functionName": "opacity",
                         "line": 19
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 159,
+                        "durationMicroseconds": 156,
                         "errorMessage": "",
                         "functionName": "onVisibleChanged",
                         "line": 41
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 64,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 22
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 30
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 28
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot load property uiFallback from ThemeStore::fonts with type QObject.",
                         "functionName": "family",
                         "line": 29
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 57,
                         "errorMessage": "",
                         "functionName": "interval",
                         "line": 36
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 118,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "onTriggered",
                         "line": 38

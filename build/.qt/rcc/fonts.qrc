@@ -1,6 +1,7 @@
 <RCC>
   <qresource prefix="/fonts">
     <file alias="assets/fonts/Inter-Regular.ttf">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/assets/fonts/Inter-Regular.ttf</file>
+    <file alias="assets/fonts/Inter-Bold.ttf">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/assets/fonts/Inter-Bold.ttf</file>
   </qresource>
 </RCC>
 

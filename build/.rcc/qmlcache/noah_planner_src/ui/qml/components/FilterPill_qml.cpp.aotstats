@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 1260,
+                        "durationMicroseconds": 1483,
                         "errorMessage": "Cannot load property accent from ThemeStore::colors with type QObject.",
                         "functionName": "chipColor",
                         "line": 9
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 99,
+                        "durationMicroseconds": 100,
                         "errorMessage": "",
                         "functionName": "colors",
                         "line": 14
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 87,
+                        "durationMicroseconds": 96,
                         "errorMessage": "",
                         "functionName": "radii",
                         "line": 16
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 59,
                         "errorMessage": "",
                         "functionName": "typeScale",
                         "line": 17
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 44,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "color",
                         "line": 24
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 45,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "weight",
                         "line": 42
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot load property uiFallback from ThemeStore::fonts with type QObject.",
                         "functionName": "family",
                         "line": 43
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 96,
+                        "durationMicroseconds": 90,
                         "errorMessage": "",
                         "functionName": "acceptedButtons",
                         "line": 63
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 49,
                         "errorMessage": "Cannot retrieve a non-object type by ID: pill",
                         "functionName": "onTapped",
                         "line": 64

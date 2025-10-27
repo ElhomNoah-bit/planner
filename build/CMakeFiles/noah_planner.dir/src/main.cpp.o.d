@@ -290,14 +290,7 @@ CMakeFiles/noah_planner.dir/src/main.cpp.o: \
  /usr/include/qt6/QtCore/qnativeinterface.h \
  /usr/include/qt6/QtCore/qcoreapplication_platform.h \
  /usr/include/qt6/QtCore/qcoreapplication.h \
- /usr/include/qt6/QtGui/QGuiApplication \
- /usr/include/qt6/QtGui/qguiapplication.h \
- /usr/include/qt6/QtGui/qtguiglobal.h \
- /usr/include/qt6/QtGui/qtgui-config.h \
- /usr/include/qt6/QtGui/qtguiexports.h \
- /usr/include/qt6/QtGui/qwindowdefs.h \
- /usr/include/qt6/QtGui/qinputmethod.h /usr/include/qt6/QtCore/qlocale.h \
- /usr/include/qt6/QtCore/qvariant.h /usr/include/qt6/QtCore/qdebug.h \
+ /usr/include/qt6/QtCore/QDebug /usr/include/qt6/QtCore/qdebug.h \
  /usr/include/qt6/QtCore/qtextstream.h \
  /usr/include/qt6/QtCore/qcontiguouscache.h /usr/include/c++/15/climits \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/limits.h \
@@ -314,7 +307,18 @@ CMakeFiles/noah_planner.dir/src/main.cpp.o: \
  /usr/include/c++/15/bits/unordered_set.h /usr/include/qt6/QtCore/qmap.h \
  /usr/include/qt6/QtCore/qshareddata_impl.h \
  /usr/include/qt6/QtCore/qset.h /usr/include/qt6/QtCore/qhash.h \
- /usr/include/qt6/QtCore/qvarlengtharray.h \
+ /usr/include/qt6/QtCore/qvarlengtharray.h /usr/include/qt6/QtGui/QFont \
+ /usr/include/qt6/QtGui/qfont.h /usr/include/qt6/QtCore/qendian.h \
+ /usr/include/qt6/QtGui/qtguiglobal.h \
+ /usr/include/qt6/QtGui/qtgui-config.h \
+ /usr/include/qt6/QtGui/qtguiexports.h \
+ /usr/include/qt6/QtGui/qwindowdefs.h \
+ /usr/include/qt6/QtGui/QFontDatabase \
+ /usr/include/qt6/QtGui/qfontdatabase.h /usr/include/qt6/QtGui/qfont.h \
+ /usr/include/qt6/QtGui/QGuiApplication \
+ /usr/include/qt6/QtGui/qguiapplication.h \
+ /usr/include/qt6/QtGui/qinputmethod.h /usr/include/qt6/QtCore/qlocale.h \
+ /usr/include/qt6/QtCore/qvariant.h /usr/include/qt6/QtCore/qdebug.h \
  /usr/include/qt6/QtCore/q23utility.h \
  /usr/include/qt6/QtCore/q20utility.h /usr/include/qt6/QtCore/qpoint.h \
  /usr/include/qt6/QtCore/qsize.h /usr/include/qt6/QtCore/qmargins.h \
@@ -351,6 +355,9 @@ CMakeFiles/noah_planner.dir/src/main.cpp.o: \
  /usr/include/qt6/QtQuickControls2/qquickstyle.h \
  /usr/include/qt6/QtQuickControls2/qtquickcontrols2global.h \
  /usr/include/qt6/QtQuickControls2/qtquickcontrols2exports.h \
+ /usr/include/qt6/QtCore/QResource /usr/include/qt6/QtCore/qresource.h \
+ /usr/include/qt6/QtCore/QStringList \
+ /usr/include/qt6/QtCore/qstringlist.h \
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/PlannerBackend.h \
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/AppState.h \
  /usr/include/qt6/QtCore/QSet /usr/include/qt6/QtCore/qset.h \
@@ -360,8 +367,6 @@ CMakeFiles/noah_planner.dir/src/main.cpp.o: \
  /usr/include/qt6/QtGui/QColor /usr/include/qt6/QtGui/qcolor.h \
  /usr/include/qt6/QtGui/qrgb.h /usr/include/qt6/QtGui/qrgba64.h \
  /usr/include/qt6/QtCore/QDate /usr/include/qt6/QtCore/qdatetime.h \
- /usr/include/qt6/QtCore/QStringList \
- /usr/include/qt6/QtCore/qstringlist.h \
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Subject.h \
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Exam.h \
  /usr/include/qt6/QtCore/QHash /usr/include/qt6/QtCore/qhash.h \
@@ -371,8 +376,7 @@ CMakeFiles/noah_planner.dir/src/main.cpp.o: \
  /usr/include/qt6/QtCore/qcborvalue.h \
  /usr/include/qt6/QtCore/qcborcommon.h \
  /usr/include/qt6/QtCore/qregularexpression.h \
- /usr/include/qt6/QtCore/quuid.h /usr/include/qt6/QtCore/qendian.h \
- /usr/include/qt6/QtCore/qjsondocument.h \
+ /usr/include/qt6/QtCore/quuid.h /usr/include/qt6/QtCore/qjsondocument.h \
  /usr/include/qt6/QtCore/qjsonparseerror.h /usr/include/qt6/QtCore/QList \
  /usr/include/qt6/QtCore/qlist.h /usr/include/qt6/QtCore/QObject \
  /usr/include/qt6/QtCore/qobject.h /usr/include/qt6/QtCore/QVector \

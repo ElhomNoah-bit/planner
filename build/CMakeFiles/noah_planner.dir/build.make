@@ -416,6 +416,7 @@ NoahPlanner/noah_planner.qmltypes: noah_planner_qmltyperegistrations.cpp
 	/usr/lib64/qt6/libexec/rcc --output /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp --name noah_planner_raw_qml_0_extra_qmldirs /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/noah_planner_raw_qml_0_extra_qmldirs.qrc
 
 .qt/rcc/qrc_fonts.cpp: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/assets/fonts/Inter-Regular.ttf
+.qt/rcc/qrc_fonts.cpp: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/assets/fonts/Inter-Bold.ttf
 .qt/rcc/qrc_fonts.cpp: .qt/rcc/fonts.qrc
 .qt/rcc/qrc_fonts.cpp: /usr/lib64/qt6/libexec/rcc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Running rcc for resource fonts"
