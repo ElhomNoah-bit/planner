@@ -16,11 +16,13 @@ Item {
     readonly property var colors: theme ? theme.colors : null
     readonly property var space: theme ? theme.space : null
     readonly property var radii: theme ? theme.radii : null
+    readonly property var surface: theme ? theme.surface : null
+    readonly property var state: theme ? theme.state : null
 
     readonly property real baseRadius: radii ? radii.lg : 18
     readonly property real basePadding: space ? space.gap16 : 16
-    readonly property color baseTint: colors ? colors.cardGlass : Qt.rgba(0, 0, 0, 0.1)
-    readonly property color baseStroke: Qt.rgba(1, 1, 1, theme ? theme.glassBorder : 0.2)
+    readonly property color baseTint: surface ? surface.level1Glass : Qt.rgba(0, 0, 0, 0.1)
+    readonly property color baseStroke: colors ? colors.divider : Qt.rgba(1, 1, 1, theme ? theme.glassBorder : 0.2)
     readonly property real baseBlur: 16
 
     Rectangle {

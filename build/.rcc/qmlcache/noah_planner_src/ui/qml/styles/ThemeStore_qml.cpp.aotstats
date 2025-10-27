@@ -6,18 +6,18 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 166,
+                        "durationMicroseconds": 140,
                         "errorMessage": "",
                         "functionName": "weightRegular",
-                        "line": 31
+                        "line": 53
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 82,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
                         "functionName": "weightMedium",
-                        "line": 32
+                        "line": 54
                     },
                     {
                         "codegenSuccessful": true,
@@ -25,39 +25,127 @@
                         "durationMicroseconds": 79,
                         "errorMessage": "",
                         "functionName": "weightBold",
-                        "line": 33
+                        "line": 55
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 87,
+                        "durationMicroseconds": 80,
                         "errorMessage": "",
                         "functionName": "monthTitleWeight",
-                        "line": 36
+                        "line": 58
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "dateWeight",
-                        "line": 38
+                        "line": 60
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 78,
+                        "durationMicroseconds": 77,
                         "errorMessage": "",
                         "functionName": "eventChipWeight",
-                        "line": 40
+                        "line": 62
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 77,
                         "errorMessage": "",
                         "functionName": "metaWeight",
-                        "line": 42
+                        "line": 64
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 45,
+                        "errorMessage": "Cannot access value for name surface",
+                        "functionName": "bg",
+                        "line": 89
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 30,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "Cannot access value for name surface",
+                        "functionName": "card",
+                        "line": 90
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 35,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "Cannot access value for name surface",
+                        "functionName": "cardGlass",
+                        "line": 91
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 30,
+                        "durationMicroseconds": 47,
+                        "errorMessage": "Cannot load property primary from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::text with type QColor.",
+                        "functionName": "text",
+                        "line": 92
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 35,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "Cannot load property secondary from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::text with type QColor.",
+                        "functionName": "textMuted",
+                        "line": 93
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 30,
+                        "durationMicroseconds": 24,
+                        "errorMessage": "Cannot access value for name accent",
+                        "functionName": "tint",
+                        "line": 94
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 254,
+                        "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant",
+                        "functionName": "pillBg",
+                        "line": 95
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 237,
+                        "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant",
+                        "functionName": "pillBorder",
+                        "line": 96
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
+                        "durationMicroseconds": 67,
+                        "errorMessage": "Cannot load property subtle from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::text with type QColor.",
+                        "functionName": "divider",
+                        "line": 97
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 231,
+                        "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant",
+                        "functionName": "chipBg",
+                        "line": 98
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 40,
+                        "errorMessage": "Cannot load property primary from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::text with type QColor.",
+                        "functionName": "chipFg",
+                        "line": 99
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml"

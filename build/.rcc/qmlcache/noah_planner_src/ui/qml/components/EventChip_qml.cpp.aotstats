@@ -6,15 +6,23 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 150,
+                        "durationMicroseconds": 195,
                         "errorMessage": "",
                         "functionName": "subjectColor",
-                        "line": 8
+                        "line": 7
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 225,
+                        "errorMessage": "",
+                        "functionName": "implicitWidth",
+                        "line": 12
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 528,
+                        "durationMicroseconds": 587,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: conversion to QVariant -> QColor stored as QVariant",
                         "functionName": "baseColor",
                         "line": 13
@@ -22,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 454,
+                        "durationMicroseconds": 552,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: conversion to QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 14
@@ -30,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 3452,
                         "errorMessage": "",
                         "functionName": "theme",
                         "line": 19
@@ -38,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot load property colors from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/EventChip.qml)::theme with type QVariant.",
                         "functionName": "colors",
                         "line": 20
@@ -46,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot load property type from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/EventChip.qml)::theme with type QVariant.",
                         "functionName": "typeScale",
                         "line": 21
@@ -62,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 45,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 96,
                         "errorMessage": "Cannot load property chipBg from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/EventChip.qml)::colors with type QVariant.",
                         "functionName": "chipBackground",
                         "line": 24
@@ -78,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 42,
-                        "durationMicroseconds": 140,
+                        "durationMicroseconds": 136,
                         "errorMessage": "Cannot load property font from QtObject::application with type QQmlApplication.",
                         "functionName": "fontFamily",
                         "line": 26
@@ -94,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 52,
                         "errorMessage": "Cannot load property eventChipWeight from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/EventChip.qml)::typeScale with type QVariant.",
                         "functionName": "fontWeight",
                         "line": 28
@@ -102,66 +110,98 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 269,
-                        "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant",
+                        "durationMicroseconds": 467,
+                        "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: conversion to QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 15
                     },
                     {
                         "codegenSuccessful": true,
+                        "column": 19,
+                        "durationMicroseconds": 152,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 16
+                    },
+                    {
+                        "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 32
                     },
                     {
                         "codegenSuccessful": true,
+                        "column": 33,
+                        "durationMicroseconds": 117,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 35
+                    },
+                    {
+                        "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 122,
+                        "durationMicroseconds": 132,
                         "errorMessage": "",
                         "functionName": "color",
-                        "line": 39
+                        "line": 41
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 37,
+                        "durationMicroseconds": 119,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 42
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "text",
-                        "line": 42
+                        "line": 46
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot access value for name textColor",
                         "functionName": "color",
-                        "line": 43
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 20,
-                        "durationMicroseconds": 94,
-                        "errorMessage": "",
-                        "functionName": "elide",
                         "line": 47
                     },
                     {
                         "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 91,
+                        "errorMessage": "",
+                        "functionName": "elide",
+                        "line": 51
+                    },
+                    {
+                        "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 85,
+                        "durationMicroseconds": 82,
                         "errorMessage": "",
                         "functionName": "verticalAlignment",
-                        "line": 48
+                        "line": 52
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 80,
+                        "errorMessage": "",
+                        "functionName": "renderType",
+                        "line": 53
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot access value for name fontSize",
                         "functionName": "pixelSize",
-                        "line": 44
+                        "line": 48
                     },
                     {
                         "codegenSuccessful": false,
@@ -169,7 +209,7 @@
                         "durationMicroseconds": 29,
                         "errorMessage": "Cannot access value for name fontWeight",
                         "functionName": "weight",
-                        "line": 45
+                        "line": 49
                     },
                     {
                         "codegenSuccessful": false,
@@ -177,15 +217,15 @@
                         "durationMicroseconds": 27,
                         "errorMessage": "Cannot access value for name fontFamily",
                         "functionName": "family",
-                        "line": 46
+                        "line": 50
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "type",
-                        "line": 57
+                        "line": 62
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/EventChip.qml"

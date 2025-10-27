@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 89,
                         "errorMessage": "Cannot retrieve a non-object type by ID: input",
                         "functionName": "focusInput",
                         "line": 11
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 131,
+                        "durationMicroseconds": 139,
                         "errorMessage": "",
                         "functionName": "theme",
                         "line": 15
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot load property colors from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/QuickAddPill.qml)::theme with type QVariant.",
                         "functionName": "colors",
                         "line": 16
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot load property radii from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/QuickAddPill.qml)::theme with type QVariant.",
                         "functionName": "radii",
                         "line": 17
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot load property space from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/QuickAddPill.qml)::theme with type QVariant.",
                         "functionName": "space",
                         "line": 18
@@ -46,34 +46,42 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot load property type from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/QuickAddPill.qml)::theme with type QVariant.",
                         "functionName": "typeScale",
                         "line": 19
                     },
                     {
                         "codegenSuccessful": false,
+                        "column": 35,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "Cannot load property layout from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/QuickAddPill.qml)::theme with type QVariant.",
+                        "functionName": "layout",
+                        "line": 20
+                    },
+                    {
+                        "codegenSuccessful": false,
                         "column": 13,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot load property xl from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/QuickAddPill.qml)::radii with type QVariant.",
                         "functionName": "radius",
-                        "line": 21
+                        "line": 22
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 67,
                         "errorMessage": "Cannot access value for name space",
                         "functionName": "spacing",
-                        "line": 30
+                        "line": 31
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 79,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 25
+                        "line": 26
                     },
                     {
                         "codegenSuccessful": false,
@@ -81,15 +89,15 @@
                         "durationMicroseconds": 64,
                         "errorMessage": "Cannot access value for name space",
                         "functionName": "leftMargin",
-                        "line": 26
+                        "line": 27
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 60,
                         "errorMessage": "Cannot access value for name space",
                         "functionName": "rightMargin",
-                        "line": 27
+                        "line": 28
                     },
                     {
                         "codegenSuccessful": false,
@@ -97,15 +105,15 @@
                         "durationMicroseconds": 59,
                         "errorMessage": "Cannot access value for name space",
                         "functionName": "topMargin",
-                        "line": 28
+                        "line": 29
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 58,
                         "errorMessage": "Cannot access value for name space",
                         "functionName": "bottomMargin",
-                        "line": 29
+                        "line": 30
                     },
                     {
                         "codegenSuccessful": false,
@@ -113,7 +121,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"placeholderText\".",
                         "functionName": "placeholderText",
-                        "line": 34
+                        "line": 35
                     },
                     {
                         "codegenSuccessful": false,
@@ -121,7 +129,15 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"color\".",
                         "functionName": "color",
-                        "line": 37
+                        "line": 38
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 21,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"height\".",
+                        "functionName": "height",
+                        "line": 39
                     },
                     {
                         "codegenSuccessful": false,
@@ -129,7 +145,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"selectionColor\".",
                         "functionName": "selectionColor",
-                        "line": 39
+                        "line": 41
                     },
                     {
                         "codegenSuccessful": false,
@@ -137,7 +153,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"accepted\".",
                         "functionName": "onAccepted",
-                        "line": 42
+                        "line": 44
                     },
                     {
                         "codegenSuccessful": false,
@@ -145,7 +161,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"pixelSize\".",
                         "functionName": "pixelSize",
-                        "line": 35
+                        "line": 36
                     },
                     {
                         "codegenSuccessful": false,
@@ -153,15 +169,15 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"family\".",
                         "functionName": "family",
-                        "line": 36
+                        "line": 37
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 58,
-                        "durationMicroseconds": 50,
-                        "errorMessage": "Cannot access value for name colors",
+                        "durationMicroseconds": 90,
+                        "errorMessage": "Cannot access value for name theme",
                         "functionName": "color",
-                        "line": 40
+                        "line": 42
                     },
                     {
                         "codegenSuccessful": false,
@@ -169,7 +185,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"verticalCenter\".",
                         "functionName": "verticalCenter",
-                        "line": 41
+                        "line": 43
                     },
                     {
                         "codegenSuccessful": false,
@@ -177,7 +193,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 53
+                        "line": 55
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/QuickAddPill.qml"

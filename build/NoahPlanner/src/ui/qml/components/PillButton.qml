@@ -1,44 +1,44 @@
 import QtQuick
 import QtQuick.Controls
-import NoahPlanner 1.0
 import "../styles" as Styles
 
 Button {
     id: btn
-    property bool accent: false
-    property bool active: false
-    property bool subtle: false
+    property string kind: "neutral" // "primary", "neutral", "ghost"
+    property bool checked: false
 
     flat: true
     hoverEnabled: true
     padding: 0
-    implicitHeight: 36
-    implicitWidth: Math.max(36, contentItem.implicitWidth + 24)
+    implicitHeight: (Styles.ThemeStore && Styles.ThemeStore.layout) ? Styles.ThemeStore.layout.pillH : 30
+    implicitWidth: Math.max(implicitHeight, contentItem.implicitWidth + 24)
 
     readonly property var theme: Styles.ThemeStore
     readonly property var colors: theme ? theme.colors : null
-    readonly property var space: theme ? theme.space : null
+    readonly property var accent: theme ? theme.accent : null
+    readonly property var state: theme ? theme.state : null
     readonly property var typeScale: theme ? theme.type : null
     readonly property var radii: theme ? theme.radii : null
 
     font.pixelSize: typeScale ? typeScale.sm : 14
-    font.weight: active ? (typeScale ? typeScale.weightBold : Font.DemiBold) : (typeScale ? typeScale.weightMedium : Font.Medium)
-    font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : (colors ? "Inter" : "Sans")
-
-    readonly property real baseRadiusXl: radii ? radii.xl : 28
-    readonly property color basePanel: colors ? colors.pillBg : Qt.rgba(0, 0, 0, 0.08)
-    readonly property color baseBorder: colors ? colors.pillBorder : Qt.rgba(0, 0, 0, 0.12)
-    readonly property color baseAccent: colors ? colors.tint : "#0A84FF"
-    readonly property color baseMuted: colors ? colors.textMuted : "#A0A0A0"
-    readonly property color baseText: colors ? colors.text : "#FFFFFF"
-    readonly property bool baseDark: true
+    font.weight: kind === "primary" ? (typeScale ? typeScale.weightBold : Font.DemiBold) : (typeScale ? typeScale.weightMedium : Font.Medium)
+    font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
 
     background: Rectangle {
-        radius: baseRadiusXl
+        radius: radii ? radii.xl : 22
         color: btn.backgroundColor()
         border.color: btn.borderColor()
-        border.width: 1
-        Behavior on color { NumberAnimation { duration: 150 } }
+        border.width: btn.borderWidth()
+        Behavior on color { NumberAnimation { duration: 120; easing.type: Easing.InOutQuad } }
+        Behavior on border.color { ColorAnimation { duration: 120; easing.type: Easing.InOutQuad } }
+        Rectangle {
+            anchors.fill: parent
+            anchors.margins: -2
+            radius: (radii ? radii.xl : 22) + 2
+            border.width: btn.activeFocus ? 1 : 0
+            border.color: btn.activeFocus && accent ? accent.base : "transparent"
+            color: "transparent"
+        }
     }
 
     contentItem: Row {
@@ -51,7 +51,7 @@ Button {
             size: 16
             name: btn.icon && btn.icon.name ? btn.icon.name : ""
             visible: name.length > 0
-            color: btn.active || btn.accent ? baseText : baseMuted
+            color: btn.foregroundColor()
         }
 
         Text {
@@ -59,36 +59,57 @@ Button {
             text: btn.text
             visible: text.length > 0
             font: btn.font
-            color: baseText
+            color: btn.foregroundColor()
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight
+            renderType: Text.NativeRendering
         }
     }
 
     function backgroundColor() {
-        if (btn.accent) {
-            if (btn.down || btn.active) {
-                return baseAccent
-            }
-            if (btn.hovered) {
-                return Qt.rgba(0.04, 0.35, 0.84, 0.28)
-            }
-            return Qt.rgba(0.04, 0.35, 0.84, 0.18)
+        if (kind === "primary") {
+            return down ? Qt.darker(accent ? accent.base : "#0A84FF", 1.2) : (accent ? accent.base : "#0A84FF")
         }
-    const base = btn.subtle ? Qt.rgba(0, 0, 0, baseDark ? 0.2 : 0.06) : basePanel
-        if (btn.down) {
-            return Qt.rgba(base.r, base.g, base.b, Math.min(1.0, base.a + 0.1))
+        if (kind === "ghost") {
+            if (checked) return accent ? accent.bg : Qt.rgba(0.04, 0.35, 0.84, 0.18)
+            if (down) return state ? state.press : Qt.rgba(1, 1, 1, 0.18)
+            if (hovered) return state ? state.hover : Qt.rgba(1, 1, 1, 0.1)
+            return "transparent"
         }
-        if (btn.hovered) {
-            return Qt.rgba(base.r, base.g, base.b, Math.min(1.0, base.a + 0.05))
-        }
+        const base = colors ? colors.pillBg : Qt.rgba(0.12, 0.13, 0.18, 0.9)
+        if (checked) return accent ? accent.bg : Qt.rgba(0.04, 0.35, 0.84, 0.18)
+        if (down) return Qt.darker(base, 1.3)
+        if (hovered) return Qt.darker(base, 1.15)
         return base
     }
 
     function borderColor() {
-        if (btn.accent && (btn.down || btn.active)) {
-            return Qt.rgba(1, 1, 1, 0.0)
+        if (kind === "primary") {
+            return "transparent"
         }
-        return baseBorder
+        if (kind === "ghost") {
+            if (checked) return accent ? accent.base : "#0A84FF"
+            return "transparent"
+        }
+        if (checked) return accent ? accent.base : "#0A84FF"
+        return colors ? colors.pillBorder : Qt.rgba(0.28, 0.3, 0.36, 1)
+    }
+
+    function borderWidth() {
+        return (kind === "primary" || kind === "ghost") ? 0 : 1
+    }
+
+    function foregroundColor() {
+        if (kind === "primary") {
+            return "#0B0C0F"
+        }
+        if (kind === "ghost") {
+            if (checked) return accent ? accent.base : "#0A84FF"
+            return colors ? colors.text : "#FFFFFF"
+        }
+        if (checked) return accent ? accent.base : "#0A84FF"
+        return colors ? colors.text : "#FFFFFF"
+    }
+
     }
 }
