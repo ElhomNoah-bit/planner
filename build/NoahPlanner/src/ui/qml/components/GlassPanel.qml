@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Effects
 import NoahPlanner 1.0
+import "../styles" as Styles
 
 Item {
     id: root
@@ -11,11 +12,16 @@ Item {
     property color stroke: baseStroke
     default property alias contentData: content.data
 
-    readonly property real baseRadius: theme(["radii", "lg"], 18)
-    readonly property real basePadding: theme(["spacing", "gap16"], 16)
-    readonly property color baseTint: theme(["panel"], Qt.rgba(0, 0, 0, 0.06))
-    readonly property color baseStroke: theme(["border"], Qt.rgba(0, 0, 0, 0.08))
-    readonly property real baseBlur: theme(["blur", "medium"], 16)
+    readonly property var theme: Styles.ThemeStore
+    readonly property var colors: theme ? theme.colors : null
+    readonly property var space: theme ? theme.space : null
+    readonly property var radii: theme ? theme.radii : null
+
+    readonly property real baseRadius: radii ? radii.lg : 18
+    readonly property real basePadding: space ? space.gap16 : 16
+    readonly property color baseTint: colors ? colors.cardGlass : Qt.rgba(0, 0, 0, 0.1)
+    readonly property color baseStroke: Qt.rgba(1, 1, 1, theme ? theme.glassBorder : 0.2)
+    readonly property real baseBlur: 16
 
     Rectangle {
         id: backdrop
@@ -36,19 +42,5 @@ Item {
         id: content
         anchors.fill: parent
         anchors.margins: root.padding
-    }
-
-    function theme(path, fallback) {
-        if (typeof ThemeStore === "undefined" || !ThemeStore) {
-            return fallback
-        }
-        var value = ThemeStore
-        for (var i = 0; i < path.length; ++i) {
-            if (value === undefined || value === null) {
-                return fallback
-            }
-            value = value[path[i]]
-        }
-        return value === undefined ? fallback : value
     }
 }

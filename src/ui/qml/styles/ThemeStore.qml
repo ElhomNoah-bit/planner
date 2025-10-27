@@ -2,89 +2,62 @@ pragma Singleton
 import QtQuick
 
 QtObject {
-    property bool dark: true
+    // Colors tuned for a dark, glassy UI baseline
+    property QtObject colors: QtObject {
+        property color bg: "#0B0B0D"
+        property color card: "#121216"
+        property color cardGlass: "#121216CC"
+        property color text: "#FFFFFF"
+        property color textMuted: "#9AA3AF"
+        property color tint: "#0A84FF"
+        property color pillBg: "#1F1F24"
+        property color pillBorder: "#2A2A30"
+        property color divider: "#26262B"
+        property color chipBg: "#1A1A1F"
+        property color chipFg: "#E5E7EB"
+        property color success: "#34C759"
+        property color warning: "#FFD60A"
+        property color danger: "#FF453A"
+    }
 
-    readonly property var darkPalette: ({
-        "bg": "#000000",
-        "panel": Qt.rgba(1, 1, 1, 0.06),
-        "border": Qt.rgba(1, 1, 1, 0.14),
-        "text": "#F5F7FA",
-        "muted": "#AEB6C2",
-        "accent": "#0A84FF",
-        "chipBg": "#2C2C2E",
-        "danger": "#FF453A",
-        "warning": "#FFD60A",
-        "success": "#32D74B"
-    })
+    property QtObject type: QtObject {
+        property int xs: 11
+        property int sm: 13
+        property int md: 15
+        property int lg: 17
+        property int xl: 22
+        property int display: 28
 
-    readonly property var lightPalette: ({
-        "bg": "#FFFFFF",
-        "panel": Qt.rgba(0, 0, 0, 0.06),
-        "border": Qt.rgba(0, 0, 0, 0.08),
-        "text": "#0A0A0A",
-        "muted": "#667085",
-        "accent": "#0A84FF",
-        "chipBg": Qt.rgba(0, 0, 0, 0.06),
-        "danger": "#FF453A",
-        "warning": "#FFD60A",
-        "success": "#32D74B"
-    })
+        property int weightRegular: Font.Normal
+        property int weightMedium: Font.DemiBold
+        property int weightBold: Font.Bold
 
-    readonly property var radii: ({
-        "sm": 10,
-        "md": 14,
-        "lg": 18,
-        "xl": 28
-    })
+        property int monthTitleSize: 28
+        property int monthTitleWeight: Font.DemiBold
+        property int dateSize: 13
+        property int dateWeight: Font.Medium
+        property int eventChipSize: 12
+        property int eventChipWeight: Font.Medium
+        property int metaSize: 12
+        property int metaWeight: Font.Normal
+    }
 
-    readonly property var spacing: ({
-        "gap8": 8,
-        "gap12": 12,
-        "gap16": 16,
-        "gap24": 24
-    })
+    property QtObject space: QtObject {
+        property int gap4: 4
+        property int gap8: 8
+        property int gap12: 12
+        property int gap16: 16
+        property int gap24: 24
+        property int gap32: 32
+    }
 
-    readonly property var blur: ({
-        "strong": 24,
-        "medium": 16
-    })
+    property QtObject radii: QtObject {
+        property int sm: 8
+        property int md: 12
+        property int lg: 16
+        property int xl: 22
+    }
 
-    readonly property var fonts: ({
-        "stack": [
-            "SF Pro Display",
-            "SF Pro Text",
-            "Inter",
-            "Helvetica Neue",
-            "Segoe UI",
-            "Source Sans Pro",
-            "Sans Serif"
-        ]
-    })
-
-    readonly property string defaultFontFamily: (Qt.application.font && Qt.application.font.family && Qt.application.font.family.length)
-        ? Qt.application.font.family
-        : (fonts.stack.length > 0 ? fonts.stack[0] : "Sans")
-
-    readonly property var typography: ({
-        "monthTitleSize": 42,
-        "monthTitleWeight": Font.ExtraBold,
-        "dateSize": 14,
-        "dateWeight": Font.DemiBold,
-        "eventChipSize": 12,
-        "eventChipWeight": Font.DemiBold,
-        "metaSize": 12,
-        "metaWeight": Font.Normal
-    })
-
-    readonly property var palette: dark ? darkPalette : lightPalette
-    readonly property color bg: palette.bg
-    readonly property color panel: palette.panel
-    readonly property color border: palette.border
-    readonly property color text: palette.text
-    readonly property color muted: palette.muted
-    readonly property color accent: palette.accent
-    readonly property color chipBg: palette.chipBg
-    readonly property color danger: palette.danger
-    readonly property color warning: palette.warning
-    readonly property color success: palette.success
+    property real glassBack: 0.12
+    property real glassBorder: 0.25
 }

@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import NoahPlanner 1.0
+import "../styles" as Styles
 
 Item {
     id: overlay
@@ -16,6 +17,11 @@ Item {
     opacity: open ? 1 : 0
     z: 100
 
+    readonly property var theme: Styles.ThemeStore
+    readonly property var colors: theme ? theme.colors : null
+    readonly property var space: theme ? theme.space : null
+    readonly property var typeScale: theme ? theme.type : null
+
     Behavior on opacity {
         NumberAnimation { duration: 200; easing.type: Easing.OutCubic }
     }
@@ -30,17 +36,17 @@ Item {
         width: 320
         height: 380
         anchors.centerIn: parent
-        radius: ThemeStore.radii.lg
+        radius: (theme && theme.radii) ? theme.radii.lg : 16
         Column {
             anchors.fill: parent
-            anchors.margins: 24
-            spacing: 18
+            anchors.margins: space ? space.gap24 : 24
+            spacing: space ? space.gap16 : 16
             Text {
                 text: qsTr("Fokus-Timer")
-                font.pixelSize: 20
-                font.weight: Font.DemiBold
-                font.family: ThemeStore.defaultFontFamily
-                color: ThemeStore.text
+                font.pixelSize: typeScale ? typeScale.lg : 20
+                font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
+                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                color: colors ? colors.text : "#FFFFFF"
             }
             Canvas {
                 id: ring
@@ -60,7 +66,7 @@ Item {
                     ctx.stroke()
                     var total = Math.max(1, minutes * 60)
                     var progress = Math.max(0, remainingSeconds) / total
-                    ctx.strokeStyle = ThemeStore.accent
+                    ctx.strokeStyle = colors ? colors.tint : "#0A84FF"
                     ctx.beginPath()
                     ctx.arc(0, 0, radius, 0, Math.PI * 2 * progress)
                     ctx.stroke()
@@ -73,15 +79,15 @@ Item {
             }
             Text {
                 text: Math.floor(remainingSeconds / 60) + ":" + ("0" + Math.floor(remainingSeconds % 60)).slice(-2)
-                font.pixelSize: 40
-                font.weight: Font.DemiBold
-                font.family: ThemeStore.defaultFontFamily
-                color: ThemeStore.text
+                font.pixelSize: typeScale ? typeScale.display : 40
+                font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
+                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                color: colors ? colors.text : "#FFFFFF"
                 horizontalAlignment: Text.AlignHCenter
                 anchors.horizontalCenter: parent.horizontalCenter
             }
             Row {
-                spacing: ThemeStore.spacing.gap12
+                spacing: space ? space.gap12 : 12
                 anchors.horizontalCenter: parent.horizontalCenter
                 PillButton {
                     text: overlay.running ? qsTr("Pause") : qsTr("Start")

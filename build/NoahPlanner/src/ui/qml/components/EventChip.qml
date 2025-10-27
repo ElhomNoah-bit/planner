@@ -1,5 +1,6 @@
 import QtQuick
 import NoahPlanner 1.0
+import "../styles" as Styles
 
 Rectangle {
     id: chip
@@ -15,12 +16,16 @@ Rectangle {
     border.width: 1
     antialiasing: true
 
-    readonly property color accentColor: theme(["accent"], "#0A84FF")
-    readonly property color chipBackground: theme(["chipBg"], Qt.rgba(0, 0, 0, 0.1))
-    readonly property color textColor: theme(["text"], "#1A1A1A")
-    readonly property string fontFamily: theme(["defaultFontFamily"], "Sans")
-    readonly property int fontSize: theme(["typography", "eventChipSize"], 12)
-    readonly property int fontWeight: theme(["typography", "eventChipWeight"], Font.DemiBold)
+    readonly property var theme: Styles.ThemeStore
+    readonly property var colors: theme ? theme.colors : null
+    readonly property var typeScale: theme ? theme.type : null
+
+    readonly property color accentColor: colors ? colors.tint : "#0A84FF"
+    readonly property color chipBackground: colors ? colors.chipBg : Qt.rgba(0, 0, 0, 0.1)
+    readonly property color textColor: colors ? colors.chipFg : "#FFFFFF"
+    readonly property string fontFamily: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+    readonly property int fontSize: typeScale ? typeScale.eventChipSize : 12
+    readonly property int fontWeight: typeScale ? typeScale.eventChipWeight : Font.DemiBold
 
     Row {
         id: row
@@ -52,17 +57,4 @@ Rectangle {
         NumberAnimation { duration: 180; easing.type: Easing.InOutCubic }
     }
 
-    function theme(path, fallback) {
-        if (typeof ThemeStore === "undefined" || !ThemeStore) {
-            return fallback
-        }
-        var value = ThemeStore
-        for (var i = 0; i < path.length; ++i) {
-            if (value === undefined || value === null) {
-                return fallback
-            }
-            value = value[path[i]]
-        }
-        return value === undefined ? fallback : value
-    }
 }

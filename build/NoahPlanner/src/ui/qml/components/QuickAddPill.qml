@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import NoahPlanner 1.0
-import NoahPlanner 1.0 as NP
+import "../styles" as Styles
 
 GlassPanel {
     id: root
@@ -12,26 +12,32 @@ GlassPanel {
         input.forceActiveFocus()
     }
 
-    radius: NP.ThemeStore.radii.xl
+    readonly property var theme: Styles.ThemeStore
+    readonly property var colors: theme ? theme.colors : null
+    readonly property var radii: theme ? theme.radii : null
+    readonly property var space: theme ? theme.space : null
+    readonly property var typeScale: theme ? theme.type : null
+
+    radius: radii ? radii.xl : 28
     padding: 0
 
     Row {
         anchors.fill: parent
-        anchors.leftMargin: 18
-        anchors.rightMargin: 6
-        anchors.topMargin: 6
-        anchors.bottomMargin: 6
-        spacing: NP.ThemeStore.spacing.gap12
+        anchors.leftMargin: space ? space.gap16 : 16
+        anchors.rightMargin: space ? space.gap8 : 8
+        anchors.topMargin: space ? space.gap8 : 8
+        anchors.bottomMargin: space ? space.gap8 : 8
+        spacing: space ? space.gap12 : 12
 
         TextField {
             id: input
             placeholderText: root.placeholder
-            font.pixelSize: 14
-            font.family: NP.ThemeStore.defaultFontFamily
-            color: NP.ThemeStore.text
+            font.pixelSize: typeScale ? typeScale.md : 15
+            font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+            color: colors ? colors.text : "#FFFFFF"
             background: Rectangle { color: "transparent" }
-            selectionColor: NP.ThemeStore.accent
-            cursorDelegate: Rectangle { width: 2; color: NP.ThemeStore.accent }
+            selectionColor: colors ? colors.tint : "#0A84FF"
+            cursorDelegate: Rectangle { width: 2; color: colors ? colors.tint : "#0A84FF" }
             anchors.verticalCenter: parent.verticalCenter
             onAccepted: {
                 root.submitted(text)

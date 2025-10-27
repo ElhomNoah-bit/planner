@@ -1,5 +1,5 @@
 import QtQuick
-import NoahPlanner 1.0 as NP
+import "../styles" as Styles
 
 Item {
     id: root
@@ -13,11 +13,16 @@ Item {
     implicitHeight: 40
     implicitWidth: 240
 
+    readonly property var theme: Styles.ThemeStore
+    readonly property var colors: theme ? theme.colors : null
+    readonly property var radii: theme ? theme.radii : null
+    readonly property var typeScale: theme ? theme.type : null
+
     Rectangle {
         anchors.fill: parent
-        radius: NP.ThemeStore.radii.xl
-        color: Qt.rgba(1, 1, 1, NP.ThemeStore.dark ? 0.08 : 0.12)
-        border.color: NP.ThemeStore.border
+        radius: radii ? radii.xl : 22
+        color: Qt.rgba(1, 1, 1, theme ? theme.glassBack : 0.12)
+        border.color: colors ? colors.divider : Qt.rgba(1, 1, 1, 0.16)
         border.width: 1
     }
 
@@ -26,10 +31,10 @@ Item {
         anchors.verticalCenter: parent.verticalCenter
         width: root.options.length > 0 ? (parent.width - 8) / root.options.length : 0
         height: parent.height - 8
-        radius: NP.ThemeStore.radii.xl
-        color: Qt.rgba(0.04, 0.35, 0.84, 0.22)
-        border.color: NP.ThemeStore.accent
-    visible: root.options.length > 0
+        radius: radii ? radii.xl : 22
+    color: colors ? Qt.rgba(colors.tint.r, colors.tint.g, colors.tint.b, 0.22) : Qt.rgba(0.04, 0.35, 0.84, 0.22)
+        border.color: colors ? colors.tint : "#0A84FF"
+        visible: root.options.length > 0
         x: 4 + currentIndex() * width
         Behavior on x {
             NumberAnimation { duration: 180; easing.type: Easing.OutCubic }
@@ -59,10 +64,14 @@ Item {
                 Text {
                     anchors.centerIn: parent
                     text: option.label
-                    font.pixelSize: 14
-                    font.weight: root.value === option.value ? Font.DemiBold : Font.Medium
-                    font.family: NP.ThemeStore.defaultFontFamily
-                    color: root.value === option.value ? NP.ThemeStore.accent : NP.ThemeStore.text
+                    font.pixelSize: typeScale ? typeScale.sm : 14
+                    font.weight: root.value === option.value
+                        ? (typeScale ? typeScale.weightBold : Font.DemiBold)
+                        : (typeScale ? typeScale.weightMedium : Font.Medium)
+                    font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                    color: root.value === option.value
+                        ? (colors ? colors.tint : "#0A84FF")
+                        : (colors ? colors.text : "#FFFFFF")
                 }
             }
         }

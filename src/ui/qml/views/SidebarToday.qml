@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
+import "../styles" as Styles
 
 GlassPanel {
     id: root
@@ -9,28 +10,34 @@ GlassPanel {
     property var summary: PlannerBackend.daySummary(selectedIso)
     signal startTimerRequested(int minutes)
 
+    readonly property var theme: Styles.ThemeStore
+    readonly property var colors: theme ? theme.colors : null
+    readonly property var space: theme ? theme.space : null
+    readonly property var typeScale: theme ? theme.type : null
+    readonly property var radii: theme ? theme.radii : null
+
     width: 320
-    padding: 20
+    padding: space ? space.gap16 : 20
 
     Column {
         anchors.fill: parent
-        spacing: ThemeStore.spacing.gap16
+        spacing: space ? space.gap16 : 16
 
         Column {
-            spacing: 4
+            spacing: space ? space.gap4 : 4
             Text {
                 text: qsTr("Heute")
-                font.pixelSize: 22
-                font.weight: Font.DemiBold
-                font.family: ThemeStore.defaultFontFamily
-                color: ThemeStore.text
+                font.pixelSize: typeScale ? typeScale.xl : 22
+                font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
+                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                color: colors ? colors.text : "#FFFFFF"
             }
             Text {
                 text: summary.total > 0 ? summary.done + "/" + summary.total + qsTr(" erledigt") : qsTr("Keine Aufgaben")
-                font.pixelSize: ThemeStore.typography.metaSize
-                font.weight: ThemeStore.typography.metaWeight
-                font.family: ThemeStore.defaultFontFamily
-                color: ThemeStore.muted
+                font.pixelSize: typeScale ? typeScale.metaSize : 12
+                font.weight: typeScale ? typeScale.metaWeight : Font.Normal
+                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                color: colors ? colors.textMuted : "#9AA3AF"
             }
         }
 
@@ -39,7 +46,7 @@ GlassPanel {
             width: parent.width
             model: PlannerBackend.todayTasks
             clip: true
-            spacing: ThemeStore.spacing.gap12
+            spacing: space ? space.gap12 : 12
             interactive: true
             boundsBehavior: Flickable.StopAtBounds
             flickDeceleration: 3500
@@ -60,13 +67,13 @@ GlassPanel {
         }
 
         Column {
-            spacing: 8
+            spacing: space ? space.gap8 : 8
             Text {
                 text: qsTr("Klassenarbeiten")
-                font.pixelSize: 18
-                font.weight: Font.DemiBold
-                font.family: ThemeStore.defaultFontFamily
-                color: ThemeStore.text
+                font.pixelSize: typeScale ? typeScale.lg : 18
+                font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
+                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                color: colors ? colors.text : "#FFFFFF"
             }
             ListView {
                 id: examsView
@@ -77,13 +84,13 @@ GlassPanel {
                 spacing: 8
                 delegate: GlassPanel {
                     width: examsView.width
-                    radius: ThemeStore.radii.md
-                    padding: 14
+                    radius: radii ? radii.md : 14
+                    padding: space ? space.gap12 : 14
                     Column {
-                        spacing: 6
+                        spacing: space ? space.gap8 : 6
                         property var subject: PlannerBackend.subjectById(model.subjectId)
                         Row {
-                            spacing: 8
+                            spacing: space ? space.gap8 : 8
                             Rectangle {
                                 width: 10
                                 height: 10
@@ -92,25 +99,25 @@ GlassPanel {
                             }
                             Text {
                                 text: subject.name
-                                font.pixelSize: 14
-                                font.weight: Font.DemiBold
-                                font.family: ThemeStore.defaultFontFamily
-                                color: ThemeStore.text
+                                font.pixelSize: typeScale ? typeScale.md : 14
+                                font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
+                                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                                color: colors ? colors.text : "#FFFFFF"
                             }
                             Text {
                                 text: Qt.formatDate(model.date, "dd.MM.yyyy")
-                                font.pixelSize: ThemeStore.typography.metaSize
-                                font.weight: ThemeStore.typography.metaWeight
-                                font.family: ThemeStore.defaultFontFamily
-                                color: ThemeStore.muted
+                                font.pixelSize: typeScale ? typeScale.metaSize : 12
+                                font.weight: typeScale ? typeScale.metaWeight : Font.Normal
+                                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                                color: colors ? colors.textMuted : "#9AA3AF"
                             }
                         }
                         Text {
                             text: model.topics.join(", ")
-                            font.pixelSize: ThemeStore.typography.metaSize
-                            font.weight: ThemeStore.typography.metaWeight
-                            font.family: ThemeStore.defaultFontFamily
-                            color: ThemeStore.muted
+                            font.pixelSize: typeScale ? typeScale.metaSize : 12
+                            font.weight: typeScale ? typeScale.metaWeight : Font.Normal
+                            font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                            color: colors ? colors.textMuted : "#9AA3AF"
                             wrapMode: Text.WrapAnywhere
                         }
                         PillButton {

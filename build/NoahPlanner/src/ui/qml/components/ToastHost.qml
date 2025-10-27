@@ -1,10 +1,17 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import "../styles" as Styles
 
 Item {
     id: host
     anchors.fill: parent
-    property int margin: 16
+    readonly property var theme: Styles.ThemeStore
+    readonly property var colors: theme ? theme.colors : null
+    readonly property var space: theme ? theme.space : null
+    readonly property var radii: theme ? theme.radii : null
+    readonly property var typeScale: theme ? theme.type : null
+
+    property int margin: space ? space.gap16 : 16
 
     function show(msg, ms) {
         textItem.text = msg
@@ -17,14 +24,14 @@ Item {
         id: wrapper
         visible: false
         opacity: 0
-        radius: 12
-        color: "#111827CC"
-        border.color: "#FFFFFF22"
+    radius: radii ? radii.lg : 16
+    color: colors ? colors.cardGlass : "#111827CC"
+    border.color: Qt.rgba(1, 1, 1, theme ? theme.glassBorder : 0.22)
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         anchors.bottomMargin: host.margin
-        width: textItem.implicitWidth + 24
-        height: textItem.implicitHeight + 24
+    width: textItem.implicitWidth + (space ? space.gap24 : 24)
+    height: textItem.implicitHeight + (space ? space.gap24 : 24)
 
         Behavior on opacity {
             NumberAnimation {
@@ -54,8 +61,9 @@ Item {
         Text {
             id: textItem
             anchors.centerIn: parent
-            color: "white"
-            font.pixelSize: 13
+            color: colors ? colors.text : "white"
+            font.pixelSize: typeScale ? typeScale.sm : 13
+            font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
             wrapMode: Text.Wrap
         }
     }

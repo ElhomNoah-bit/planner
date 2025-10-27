@@ -1,5 +1,6 @@
 import QtQuick
 import NoahPlanner 1.0
+import "../styles" as Styles
 
 Item {
     id: root
@@ -12,9 +13,13 @@ Item {
     implicitWidth: glyph.implicitWidth
 
     // Embedded fonts served via Qt resource system.
-    FontLoader { id: inter; source: "qrc:/fonts/assets/fonts/Inter-Regular.ttf" }
+    FontLoader {
+        id: inter
+        source: "qrc:/fonts/assets/fonts/Inter-Regular.ttf"
+        onStatusChanged: if (status === FontLoader.Error) console.warn("Inter font failed to load:", errorString)
+    }
 
-    readonly property color glyphColor: theme(["text"], "#F5F7FA")
+    readonly property color glyphColor: Styles.ThemeStore && Styles.ThemeStore.colors ? Styles.ThemeStore.colors.text : "#F5F7FA"
 
     readonly property var glyphMap: ({
         "chevron.backward": "\u2039",
@@ -72,19 +77,5 @@ Item {
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         text: root.name.length ? resolveSymbol(root.name) : root.text
-    }
-
-    function theme(path, fallback) {
-        if (typeof ThemeStore === "undefined" || !ThemeStore) {
-            return fallback
-        }
-        var value = ThemeStore
-        for (var i = 0; i < path.length; ++i) {
-            if (value === undefined || value === null) {
-                return fallback
-            }
-            value = value[path[i]]
-        }
-        return value === undefined ? fallback : value
     }
 }

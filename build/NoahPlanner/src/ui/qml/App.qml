@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
+import "styles" as Styles
 
 ApplicationWindow {
     id: app
@@ -11,18 +12,18 @@ ApplicationWindow {
     minimumHeight: 720
     visible: true
     title: qsTr("Noah Planner")
-    color: ThemeStore.bg
+    color: Styles.ThemeStore && Styles.ThemeStore.colors ? Styles.ThemeStore.colors.bg : "#0B0B0D"
 
     Component.onCompleted: {
-        ThemeStore.dark = PlannerBackend.darkTheme
         toasts.show("Hello, Noah!", 1200)
     }
 
     Connections {
         target: PlannerBackend
         function onDarkThemeChanged() {
-            ThemeStore.dark = PlannerBackend.darkTheme
-            app.color = ThemeStore.bg
+            if (Styles.ThemeStore && Styles.ThemeStore.colors) {
+                app.color = Styles.ThemeStore.colors.bg
+            }
         }
     }
 

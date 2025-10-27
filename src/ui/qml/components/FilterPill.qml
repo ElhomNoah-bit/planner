@@ -1,23 +1,33 @@
 import QtQuick
 import QtQuick.Controls
-import NoahPlanner 1.0 as NP
+import "../styles" as Styles
 
 Control {
     id: pill
     property string label: ""
     property string subjectId: ""
-    property color chipColor: NP.ThemeStore.accent
+    property color chipColor: (Styles.ThemeStore && Styles.ThemeStore.colors) ? Styles.ThemeStore.colors.tint : "#0A84FF"
     property bool active: false
     signal toggled()
 
     implicitHeight: 32
-    padding: 12
+    readonly property var theme: Styles.ThemeStore
+    readonly property var colors: theme ? theme.colors : null
+    readonly property var space: theme ? theme.space : null
+    readonly property var radii: theme ? theme.radii : null
+    readonly property var typeScale: theme ? theme.type : null
+
+    padding: space ? space.gap12 : 12
 
     background: Rectangle {
         id: backdrop
-        radius: NP.ThemeStore.radii.xl
-        color: pill.active ? Qt.rgba(0.04, 0.35, 0.84, 0.2) : Qt.rgba(1, 1, 1, NP.ThemeStore.dark ? 0.08 : 0.12)
-        border.color: pill.active ? NP.ThemeStore.accent : NP.ThemeStore.border
+        radius: radii ? radii.xl : 22
+        color: pill.active
+            ? Qt.rgba(pill.chipColor.r, pill.chipColor.g, pill.chipColor.b, 0.22)
+            : Qt.rgba(1, 1, 1, theme ? theme.glassBack : 0.12)
+        border.color: pill.active
+            ? pill.chipColor
+            : (colors ? colors.divider : Qt.rgba(1, 1, 1, 0.18))
         border.width: 1
     }
 
@@ -33,10 +43,14 @@ Control {
         Text {
             id: labelText
             text: pill.label
-            font.pixelSize: 13
-            font.weight: pill.active ? Font.DemiBold : Font.Medium
-            font.family: NP.ThemeStore.defaultFontFamily
-            color: pill.active ? NP.ThemeStore.accent : NP.ThemeStore.text
+            font.pixelSize: typeScale ? typeScale.sm : 13
+            font.weight: pill.active
+                ? (typeScale ? typeScale.weightBold : Font.DemiBold)
+                : (typeScale ? typeScale.weightMedium : Font.Medium)
+            font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+            color: pill.active
+                ? pill.chipColor
+                : (colors ? colors.text : "#FFFFFF")
         }
     }
 
@@ -49,7 +63,7 @@ Control {
         when: hover.hovered && !pill.active
         PropertyChanges {
             target: backdrop
-            color: Qt.rgba(1, 1, 1, NP.ThemeStore.dark ? 0.12 : 0.18)
+            color: Qt.rgba(1, 1, 1, Math.min(1.0, (theme ? theme.glassBack : 0.12) + 0.04))
         }
     }
 

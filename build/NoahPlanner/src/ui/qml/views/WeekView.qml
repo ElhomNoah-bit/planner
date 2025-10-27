@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import NoahPlanner 1.0 as NP
+import "../styles" as Styles
 
 Item {
     id: root
@@ -17,11 +17,17 @@ Item {
     readonly property real timelineHeight: (endHour - startHour) * 60 * minuteHeight
     readonly property var weekdayNames: [qsTr("Mo"), qsTr("Di"), qsTr("Mi"), qsTr("Do"), qsTr("Fr"), qsTr("Sa"), qsTr("So")]
 
+    readonly property var theme: Styles.ThemeStore
+    readonly property var colors: theme ? theme.colors : null
+    readonly property var space: theme ? theme.space : null
+    readonly property var typeScale: theme ? theme.type : null
+    readonly property var radii: theme ? theme.radii : null
+
     Rectangle {
         anchors.fill: parent
-        radius: NP.ThemeStore.radii.lg
-        color: Qt.rgba(1, 1, 1, NP.ThemeStore.dark ? 0.03 : 0.05)
-        border.color: Qt.rgba(1, 1, 1, 0.06)
+        radius: radii ? radii.lg : 16
+        color: colors ? colors.card : Qt.rgba(1, 1, 1, 0.05)
+        border.color: colors ? colors.divider : Qt.rgba(1, 1, 1, 0.1)
         border.width: 1
     }
 
@@ -39,8 +45,8 @@ Item {
             Row {
                 id: row
                 anchors.fill: parent
-                anchors.margins: 16
-                spacing: NP.ThemeStore.spacing.gap12
+                anchors.margins: space ? space.gap16 : 16
+                spacing: space ? space.gap12 : 12
 
                 Column {
                     id: timeAxis
@@ -56,10 +62,10 @@ Item {
                                 anchors.rightMargin: 4
                                 anchors.verticalCenter: parent.verticalCenter
                                 text: (startHour + index) + ":00"
-                                font.pixelSize: 11
-                                font.weight: Font.Medium
-                                font.family: NP.ThemeStore.defaultFontFamily
-                                color: NP.ThemeStore.muted
+                                font.pixelSize: typeScale ? typeScale.xs : 11
+                                font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                                color: colors ? colors.textMuted : "#9AA3AF"
                             }
                         }
                     }
@@ -79,17 +85,17 @@ Item {
                             spacing: 4
                             Text {
                                 text: root.weekdayNames[index]
-                                font.pixelSize: 12
-                                font.weight: Font.Medium
-                                font.family: NP.ThemeStore.defaultFontFamily
-                                color: NP.ThemeStore.muted
+                                    font.pixelSize: typeScale ? typeScale.sm : 12
+                                    font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                                    font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                                    color: colors ? colors.textMuted : "#9AA3AF"
                             }
                             Text {
                                 text: dayIso ? dayIso.split("-")[2] : ""
-                                font.pixelSize: 16
-                                font.weight: Font.DemiBold
-                                font.family: NP.ThemeStore.defaultFontFamily
-                                color: NP.ThemeStore.text
+                                    font.pixelSize: typeScale ? typeScale.md : 16
+                                    font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
+                                    font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                                    color: colors ? colors.text : "#FFFFFF"
                             }
                         }
 
@@ -104,8 +110,8 @@ Item {
                             Rectangle {
                                 anchors.fill: parent
                                 radius: 12
-                                color: Qt.rgba(1, 1, 1, 0.02)
-                                border.color: Qt.rgba(1, 1, 1, 0.05)
+                                color: colors ? colors.cardGlass : Qt.rgba(1, 1, 1, 0.06)
+                                border.color: colors ? colors.divider : Qt.rgba(1, 1, 1, 0.08)
                                 border.width: 1
                             }
 
@@ -117,7 +123,7 @@ Item {
                                     y: Math.max(0, (modelData.startMinutes - root.startHour * 60) * root.minuteHeight)
                                     height: Math.max(36, modelData.duration * root.minuteHeight)
                                     radius: 16
-                                    readonly property color eventColor: modelData.color || NP.ThemeStore.accent
+                                    readonly property color eventColor: modelData.color || (colors ? colors.tint : "#0A84FF")
                                     color: Qt.rgba(eventColor.r, eventColor.g, eventColor.b, 0.22)
                                     border.color: eventColor
                                     border.width: 1
@@ -128,10 +134,10 @@ Item {
                                         anchors.right: parent.right
                                         anchors.rightMargin: 12
                                         text: modelData.title
-                                        font.pixelSize: 13
-                                        font.weight: Font.Medium
-                                        font.family: NP.ThemeStore.defaultFontFamily
-                                        color: NP.ThemeStore.text
+                                        font.pixelSize: typeScale ? typeScale.sm : 13
+                                        font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                                        font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                                        color: colors ? colors.text : "#FFFFFF"
                                         elide: Text.ElideRight
                                     }
                                 }

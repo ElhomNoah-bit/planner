@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
+import "styles" as Styles
 
 Item {
     id: root
@@ -17,23 +18,29 @@ Item {
     readonly property string headlineMonth: Qt.formatDate(selectedDateObj, "MMMM")
     readonly property string headlineYear: Qt.formatDate(selectedDateObj, "yyyy")
 
+    readonly property var theme: Styles.ThemeStore
+    readonly property var colors: theme ? theme.colors : null
+    readonly property var space: theme ? theme.space : null
+    readonly property var typeScale: theme ? theme.type : null
+    readonly property var radii: theme ? theme.radii : null
+
     Rectangle {
         anchors.fill: parent
-        color: ThemeStore.bg
+        color: colors ? colors.bg : "#0B0B0D"
     }
 
-    Column {
+    ColumnLayout {
         anchors.fill: parent
-        anchors.margins: 32
-        spacing: ThemeStore.spacing.gap24
+        anchors.margins: space ? space.gap24 : 24
+        spacing: space ? space.gap16 : 16
 
         GlassPanel {
             id: navBar
-            radius: ThemeStore.radii.xl
-            padding: 12
+            Layout.fillWidth: true
+            padding: space ? space.gap12 : 12
             RowLayout {
                 anchors.fill: parent
-                spacing: ThemeStore.spacing.gap16
+                spacing: space ? space.gap16 : 16
 
                 PillButton {
                     icon.name: "chevron.backward"
@@ -66,7 +73,7 @@ Item {
 
                 GlassPanel {
                     id: searchPill
-                    radius: ThemeStore.radii.xl
+                    radius: radii ? radii.xl : 22
                     padding: 0
                     width: 220
                     TextField {
@@ -75,13 +82,13 @@ Item {
                         placeholderText: qsTr("Suche…")
                         text: PlannerBackend.searchQuery
                         onTextChanged: PlannerBackend.searchQuery = text
-                        font.pixelSize: 14
-                        font.family: ThemeStore.defaultFontFamily
-                        color: ThemeStore.text
+                        font.pixelSize: typeScale ? typeScale.md : 15
+                        font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                        color: colors ? colors.text : "#FFFFFF"
                         background: Rectangle { color: "transparent" }
                         leftPadding: 0
                         rightPadding: 0
-                        cursorDelegate: Rectangle { width: 2; color: ThemeStore.accent }
+                        cursorDelegate: Rectangle { width: 2; color: colors ? colors.tint : "#0A84FF" }
                     }
                 }
 
@@ -96,21 +103,23 @@ Item {
 
         Text {
             text: headlineMonth
-            font.pixelSize: ThemeStore.typography.monthTitleSize
-            font.weight: ThemeStore.typography.monthTitleWeight
-            font.family: ThemeStore.defaultFontFamily
-            color: ThemeStore.text
+            Layout.fillWidth: true
+            font.pixelSize: typeScale ? typeScale.monthTitleSize : 28
+            font.weight: typeScale ? typeScale.monthTitleWeight : Font.DemiBold
+            font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+            color: colors ? colors.text : "#FFFFFF"
             opacity: 0.98
         }
 
         QuickAddPill {
             id: quickAdd
+            Layout.fillWidth: true
             onSubmitted: PlannerBackend.quickAdd(text)
         }
 
         Flow {
-            width: parent.width
-            spacing: ThemeStore.spacing.gap8
+            Layout.fillWidth: true
+            spacing: space ? space.gap8 : 8
             Repeater {
                 model: subjectsModel
                 delegate: FilterPill {
@@ -128,10 +137,11 @@ Item {
             subtle: true
             active: PlannerBackend.onlyOpen
             onClicked: PlannerBackend.onlyOpen = !PlannerBackend.onlyOpen
+            Layout.alignment: Qt.AlignLeft
         }
 
         RowLayout {
-            spacing: ThemeStore.spacing.gap24
+            spacing: space ? space.gap24 : 24
             Layout.fillWidth: true
             Layout.fillHeight: true
 
@@ -172,6 +182,7 @@ Item {
                 id: sidebar
                 Layout.preferredWidth: 340
                 Layout.minimumWidth: 320
+                Layout.fillHeight: true
                 onStartTimerRequested: minutes => timerOverlay.openTimer(minutes)
             }
         }

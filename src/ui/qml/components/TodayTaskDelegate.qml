@@ -1,13 +1,13 @@
 import QtQuick
 import QtQuick.Controls
-import NoahPlanner 1.0 as NP
+import "../styles" as Styles
 
 Item {
     id: root
     property string title: ""
     property string goal: ""
     property int duration: 25
-    property color subjectColor: NP.ThemeStore.accent
+    property color subjectColor: (Styles.ThemeStore && Styles.ThemeStore.colors) ? Styles.ThemeStore.colors.tint : "#0A84FF"
     property bool done: false
     signal toggled(bool done)
     signal startTimer(int minutes)
@@ -15,19 +15,29 @@ Item {
     implicitHeight: 68
     width: parent ? parent.width : 320
 
+    readonly property var theme: Styles.ThemeStore
+    readonly property var colors: theme ? theme.colors : null
+    readonly property var space: theme ? theme.space : null
+    readonly property var radii: theme ? theme.radii : null
+    readonly property var typeScale: theme ? theme.type : null
+
     Rectangle {
         id: container
         anchors.fill: parent
-        radius: NP.ThemeStore.radii.md
-        color: root.done ? Qt.rgba(0.04, 0.35, 0.84, 0.12) : Qt.rgba(1, 1, 1, NP.ThemeStore.dark ? 0.08 : 0.12)
-        border.color: root.done ? NP.ThemeStore.accent : NP.ThemeStore.border
+        radius: radii ? radii.md : 14
+        color: root.done
+            ? Qt.rgba(0.04, 0.35, 0.84, 0.18)
+            : Qt.rgba(1, 1, 1, theme ? theme.glassBack : 0.12)
+        border.color: root.done
+            ? (colors ? colors.tint : "#0A84FF")
+            : (colors ? colors.divider : Qt.rgba(1, 1, 1, 0.18))
         border.width: 1
     }
 
     Row {
         anchors.fill: parent
-        anchors.margins: 16
-        spacing: 16
+        anchors.margins: space ? space.gap16 : 16
+        spacing: space ? space.gap16 : 16
 
         Rectangle {
             id: checkbox
@@ -35,8 +45,8 @@ Item {
             height: 20
             radius: 10
             border.width: 2
-            border.color: root.done ? NP.ThemeStore.accent : NP.ThemeStore.border
-            color: root.done ? NP.ThemeStore.accent : Qt.rgba(0, 0, 0, 0)
+            border.color: root.done ? (colors ? colors.tint : "#0A84FF") : (colors ? colors.divider : Qt.rgba(1, 1, 1, 0.2))
+            color: root.done ? (colors ? colors.tint : "#0A84FF") : Qt.rgba(0, 0, 0, 0)
             anchors.verticalCenter: parent.verticalCenter
             Behavior on color { NumberAnimation { duration: 140; easing.type: Easing.OutCubic } }
             Behavior on border.color { ColorAnimation { duration: 140; easing.type: Easing.OutCubic } }
@@ -51,21 +61,21 @@ Item {
 
         Column {
             width: Math.max(0, parent.width - timerPill.width - checkbox.width - 48)
-            spacing: 6
+            spacing: space ? space.gap8 : 6
             Text {
                 text: root.title
-                font.pixelSize: 15
-                font.weight: Font.DemiBold
-                font.family: NP.ThemeStore.defaultFontFamily
-                color: NP.ThemeStore.text
+                font.pixelSize: typeScale ? typeScale.md : 15
+                font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
+                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                color: colors ? colors.text : "#FFFFFF"
                 elide: Text.ElideRight
             }
             Text {
                 text: root.goal
-                font.pixelSize: NP.ThemeStore.typography.metaSize
-                font.weight: NP.ThemeStore.typography.metaWeight
-                font.family: NP.ThemeStore.defaultFontFamily
-                color: NP.ThemeStore.muted
+                font.pixelSize: typeScale ? typeScale.metaSize : 12
+                font.weight: typeScale ? typeScale.metaWeight : Font.Normal
+                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                color: colors ? colors.textMuted : "#A0A0A0"
                 elide: Text.ElideRight
             }
         }
@@ -75,8 +85,8 @@ Item {
             height: 30
             width: 60
             radius: 18
-            color: Qt.rgba(1, 1, 1, NP.ThemeStore.dark ? 0.12 : 0.16)
-            border.color: NP.ThemeStore.border
+            color: Qt.rgba(1, 1, 1, theme ? theme.glassBack + 0.04 : 0.16)
+            border.color: colors ? colors.divider : Qt.rgba(1, 1, 1, 0.18)
             border.width: 1
             anchors.verticalCenter: parent.verticalCenter
             Text {
@@ -84,8 +94,8 @@ Item {
                 text: root.duration + qsTr("m")
                 font.pixelSize: 13
                 font.weight: Font.DemiBold
-                font.family: NP.ThemeStore.defaultFontFamily
-                color: NP.ThemeStore.text
+                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                color: colors ? colors.text : "#FFFFFF"
             }
             MouseArea {
                 anchors.fill: parent

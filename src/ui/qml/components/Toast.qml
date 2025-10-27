@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import NoahPlanner 1.0
-import NoahPlanner 1.0 as NP
+import "../styles" as Styles
 
 GlassPanel {
     id: toast
@@ -9,8 +9,14 @@ GlassPanel {
     property int durationMs: 2000
     property alias running: timer.running
 
-    radius: NP.ThemeStore.radii.md
-    padding: 16
+    readonly property var theme: Styles.ThemeStore
+    readonly property var radii: theme ? theme.radii : null
+    readonly property var space: theme ? theme.space : null
+    readonly property var typeScale: theme ? theme.type : null
+    readonly property var colors: theme ? theme.colors : null
+
+    radius: radii ? radii.md : 12
+    padding: space ? space.gap16 : 16
     opacity: visible ? 1 : 0
 
     Behavior on opacity {
@@ -20,9 +26,9 @@ GlassPanel {
     Text {
         anchors.centerIn: parent
         text: toast.message
-        font.pixelSize: 14
-        font.family: NP.ThemeStore.defaultFontFamily
-        color: NP.ThemeStore.text
+    font.pixelSize: typeScale ? typeScale.md : 14
+    font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+    color: colors ? colors.text : "#FFFFFF"
     }
 
     Timer {

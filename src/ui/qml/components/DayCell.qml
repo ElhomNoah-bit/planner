@@ -1,5 +1,6 @@
 import QtQuick
 import NoahPlanner 1.0
+import "../styles" as Styles
 
 Item {
     id: root
@@ -17,13 +18,19 @@ Item {
     property var dateObject: isoDate.length > 0 ? new Date(isoDate) : new Date()
     readonly property int dayNumber: dateObject.getDate()
 
-    readonly property real baseRadiusMd: theme(["radii", "md"], 14)
-    readonly property color baseAccent: theme(["accent"], "#0A84FF")
-    readonly property string baseFont: theme(["defaultFontFamily"], "Sans")
-    readonly property int baseDateSize: theme(["typography", "dateSize"], 14)
-    readonly property int baseDateWeight: theme(["typography", "dateWeight"], Font.DemiBold)
-    readonly property color baseText: theme(["text"], "#1A1A1A")
-    readonly property color baseMuted: theme(["muted"], "#808080")
+    readonly property var theme: Styles.ThemeStore
+    readonly property var colors: theme ? theme.colors : null
+    readonly property var typeScale: theme ? theme.type : null
+    readonly property var radii: theme ? theme.radii : null
+    readonly property var space: theme ? theme.space : null
+
+    readonly property real baseRadiusMd: radii ? radii.md : 14
+    readonly property color baseAccent: colors ? colors.tint : "#0A84FF"
+    readonly property string baseFont: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+    readonly property int baseDateSize: typeScale ? typeScale.dateSize : 14
+    readonly property int baseDateWeight: typeScale ? typeScale.dateWeight : Font.DemiBold
+    readonly property color baseText: colors ? colors.text : "#FFFFFF"
+    readonly property color baseMuted: colors ? colors.textMuted : "#808080"
 
     Rectangle {
         anchors.fill: parent
@@ -75,9 +82,9 @@ Item {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        anchors.margins: 8
-        anchors.topMargin: 38
-        spacing: 6
+    anchors.margins: space ? space.gap8 : 8
+    anchors.topMargin: space ? space.gap24 : 24
+        spacing: space ? space.gap8 : 6
         Repeater {
             model: visibleEvents
             delegate: EventChip {
@@ -103,18 +110,4 @@ Item {
 
     property var visibleEvents: (events || []).slice(0, maxVisible)
     property int extraCount: Math.max(0, (events || []).length - maxVisible)
-
-    function theme(path, fallback) {
-        if (typeof ThemeStore === "undefined" || !ThemeStore) {
-            return fallback
-        }
-        var value = ThemeStore
-        for (var i = 0; i < path.length; ++i) {
-            if (value === undefined || value === null) {
-                return fallback
-            }
-            value = value[path[i]]
-        }
-        return value === undefined ? fallback : value
-    }
 }

@@ -1,57 +1,73 @@
 import QtQuick
 import QtQuick.Layouts
 import NoahPlanner 1.0
+import "../styles" as Styles
 
-Column {
-    id: root
+Item {
+    id: month
+    anchors.fill: parent
+
     property string selectedIso: PlannerBackend.selectedDate
     property var days: []
     property string locale: Qt.locale().name
     signal daySelected(string iso)
 
-    spacing: ThemeStore.spacing.gap16
+    readonly property var theme: Styles.ThemeStore
+    readonly property var colors: theme ? theme.colors : null
+    readonly property var space: theme ? theme.space : null
+    readonly property var typeScale: theme ? theme.type : null
+    readonly property var radii: theme ? theme.radii : null
 
     readonly property var weekdayNames: [qsTr("Mo"), qsTr("Di"), qsTr("Mi"), qsTr("Do"), qsTr("Fr"), qsTr("Sa"), qsTr("So")]
     readonly property var anchorDate: selectedIso.length > 0 ? new Date(selectedIso) : new Date()
-    readonly property string monthTitle: Qt.formatDate(anchorDate, "MMMM")
 
-    RowLayout {
-        width: parent ? parent.width : implicitWidth
-        spacing: ThemeStore.spacing.gap16
-        Repeater {
-            model: weekdayNames
-            delegate: Text {
-                Layout.fillWidth: true
-                horizontalAlignment: Text.AlignRight
-                text: modelData
-                font.pixelSize: 12
-                font.weight: Font.Medium
-                font.letterSpacing: 1
-                font.family: ThemeStore.defaultFontFamily
-                color: ThemeStore.muted
+    ColumnLayout {
+        anchors.fill: parent
+        anchors.margins: space ? space.gap24 : 24
+        spacing: space ? space.gap16 : 16
+
+        RowLayout {
+            Layout.fillWidth: true
+            spacing: space ? space.gap16 : 16
+            Repeater {
+                model: weekdayNames
+                delegate: Text {
+                    Layout.fillWidth: true
+                    horizontalAlignment: Text.AlignRight
+                    text: modelData
+                    font.pixelSize: typeScale ? typeScale.sm : 12
+                    font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                    font.letterSpacing: 1
+                    font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                    color: colors ? colors.textMuted : "#9AA3AF"
+                }
             }
         }
-    }
 
-    GridLayout {
-        id: grid
-        columns: 7
-        columnSpacing: ThemeStore.spacing.gap12
-        rowSpacing: ThemeStore.spacing.gap16
-        width: parent ? parent.width : implicitWidth
+        GridLayout {
+            id: grid
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            columns: 7
+            columnSpacing: space ? space.gap12 : 12
+            rowSpacing: space ? space.gap16 : 16
+            property real cellWidth: columns > 0 ? (width - columnSpacing * (columns - 1)) / columns : width
+            property real cellHeight: (height - rowSpacing * 5) / 6
 
-        Repeater {
-            model: days
-            delegate: DayCell {
-                isoDate: modelData.iso
-                inMonth: modelData.inMonth
-                isToday: modelData.isToday
-                selected: modelData.iso === root.selectedIso
-                events: modelData.events
-                Layout.fillWidth: true
-                Layout.preferredWidth: grid.width / 7 - grid.columnSpacing
-                Layout.preferredHeight: 124
-                onActivated: iso => root.daySelected(iso)
+            Repeater {
+                model: days
+                delegate: DayCell {
+                    isoDate: modelData.iso
+                    inMonth: modelData.inMonth
+                    isToday: modelData.isToday
+                    selected: modelData.iso === month.selectedIso
+                    events: modelData.events
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: Math.max(120, grid.cellWidth)
+                    Layout.preferredHeight: Math.max(100, grid.cellHeight)
+                    onActivated: iso => month.daySelected(iso)
+                }
             }
         }
     }
@@ -59,8 +75,8 @@ Column {
     function rebuild() {
         var anchor = anchorDate
         var year = anchor.getFullYear()
-        var month = anchor.getMonth()
-        var first = new Date(year, month, 1)
+        var monthIndex = anchor.getMonth()
+        var first = new Date(year, monthIndex, 1)
         var offset = (first.getDay() + 6) % 7
         var start = new Date(first)
         start.setDate(first.getDate() - offset)
@@ -71,7 +87,7 @@ Column {
             var iso = Qt.formatDate(current, "yyyy-MM-dd")
             collection.push({
                 iso: iso,
-                inMonth: current.getMonth() === month,
+                inMonth: current.getMonth() === monthIndex,
                 isToday: Qt.formatDate(current, "yyyy-MM-dd") === Qt.formatDate(new Date(), "yyyy-MM-dd"),
                 events: PlannerBackend.dayEvents(iso)
             })
@@ -86,13 +102,13 @@ Column {
     Connections {
         target: PlannerBackend
         function onSelectedDateChanged() {
-            root.selectedIso = PlannerBackend.selectedDate
+            month.selectedIso = PlannerBackend.selectedDate
         }
         function onFiltersChanged() {
-            root.rebuild()
+            month.rebuild()
         }
         function onTasksChanged() {
-            root.rebuild()
+            month.rebuild()
         }
     }
 }
