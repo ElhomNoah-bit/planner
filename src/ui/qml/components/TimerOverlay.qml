@@ -91,11 +91,12 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 PillButton {
                     text: overlay.running ? qsTr("Pause") : qsTr("Start")
-                    accent: true
+                    kind: "primary"
                     onClicked: overlay.running = !overlay.running
                 }
                 PillButton {
                     text: qsTr("Schließen")
+                    kind: "ghost"
                     onClicked: {
                         overlay.open = false
                         overlay.closed()
