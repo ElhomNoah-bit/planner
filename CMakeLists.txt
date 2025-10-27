@@ -63,7 +63,7 @@ qt_add_qml_module(noah_planner
 
 qt_add_resources(noah_planner font_assets
     PREFIX "/fonts"
-    BASE_DIR assets/fonts
+    BASE assets/fonts
     FILES
         Inter-Regular.ttf
 )
