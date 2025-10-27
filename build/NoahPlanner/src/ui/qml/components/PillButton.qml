@@ -5,7 +5,6 @@ import "../styles" as Styles
 Button {
     id: btn
     property string kind: "neutral" // "primary", "neutral", "ghost"
-    property bool checked: false
 
     flat: true
     hoverEnabled: true
