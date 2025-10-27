@@ -1,5 +1,4 @@
 import QtQuick
-import NoahPlanner 1.0
 import "../styles" as Styles
 
 Item {
@@ -9,7 +8,7 @@ Item {
     property bool selected: false
     property bool isToday: false
     property var events: []
-    property int maxVisible: 3
+    property int maxVisible: 2
     signal activated(string isoDate)
 
     implicitWidth: 152
@@ -23,6 +22,8 @@ Item {
     readonly property var typeScale: theme ? theme.type : null
     readonly property var radii: theme ? theme.radii : null
     readonly property var space: theme ? theme.space : null
+    readonly property var accent: theme ? theme.accent : null
+    readonly property var state: theme ? theme.state : null
 
     readonly property real baseRadiusMd: radii ? radii.md : 14
     readonly property color baseAccent: colors ? colors.tint : "#0A84FF"
@@ -33,47 +34,50 @@ Item {
     readonly property color baseMuted: colors ? colors.textMuted : "#808080"
 
     Rectangle {
+        id: backdrop
         anchors.fill: parent
         radius: baseRadiusMd
-        color: Qt.rgba(1, 1, 1, selected ? 0.04 : 0)
-        border.color: selected ? baseAccent : Qt.rgba(1, 1, 1, 0.02)
-        border.width: selected ? 1 : 0
+        color: root.selected
+            ? (state ? state.select : Qt.rgba(0.04, 0.35, 0.84, 0.3))
+            : (hoverArea.containsMouse ? (state ? state.hover : Qt.rgba(1, 1, 1, 0.12)) : Qt.rgba(1, 1, 1, 0.04))
+        border.color: root.selected ? (accent ? accent.base : baseAccent) : (colors ? colors.divider : Qt.rgba(1, 1, 1, 0.08))
+        border.width: root.selected ? 1 : 0
+        opacity: root.inMonth ? 1 : 0.35
+        Behavior on color { ColorAnimation { duration: 120; easing.type: Easing.InOutQuad } }
+        Behavior on border.color { ColorAnimation { duration: 120; easing.type: Easing.InOutQuad } }
+        Behavior on opacity { NumberAnimation { duration: 120; easing.type: Easing.InOutQuad } }
     }
 
-    Rectangle {
-        id: dayBadge
-        visible: selected
-        radius: baseRadiusMd
-        height: 26
+    Item {
+        id: dayHeader
         anchors.top: parent.top
+        anchors.left: parent.left
         anchors.right: parent.right
-        anchors.margins: 8
-        color: Qt.rgba(0.04, 0.35, 0.84, 0.18)
-        border.color: baseAccent
-        border.width: 1
-        width: label.implicitWidth + 16
+        anchors.margins: space ? space.gap8 : 8
+        height: 28
+
+        Rectangle {
+            id: dayHalo
+            width: 24
+            height: 24
+            radius: 12
+            anchors.top: parent.top
+            anchors.right: parent.right
+            color: root.isToday ? (state ? state.today : Qt.rgba(0.04, 0.35, 0.84, 0.3)) : "transparent"
+            border.color: root.selected ? (accent ? accent.base : baseAccent) : "transparent"
+            border.width: root.selected ? 1 : 0
+        }
+
         Text {
-            id: label
-            anchors.centerIn: parent
+            anchors.right: dayHalo.right
+            anchors.verticalCenter: dayHalo.verticalCenter
             text: root.dayNumber
             font.pixelSize: baseDateSize
             font.weight: baseDateWeight
             font.family: baseFont
-            color: baseAccent
+            color: root.isToday ? (accent ? accent.base : baseAccent) : (root.inMonth ? baseText : baseMuted)
+            renderType: Text.NativeRendering
         }
-    }
-
-    Text {
-        id: dayText
-        anchors.top: parent.top
-        anchors.right: parent.right
-        anchors.margins: 8
-        visible: !selected
-        text: root.dayNumber
-        font.pixelSize: baseDateSize
-        font.weight: baseDateWeight
-        font.family: baseFont
-        color: root.isToday ? baseAccent : (root.inMonth ? baseText : baseMuted)
     }
 
     Column {
@@ -103,7 +107,9 @@ Item {
     }
 
     MouseArea {
+        id: hoverArea
         anchors.fill: parent
+        hoverEnabled: true
         cursorShape: Qt.PointingHandCursor
         onClicked: root.activated(root.isoDate)
     }

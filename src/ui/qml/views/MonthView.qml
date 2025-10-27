@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Layouts
-import NoahPlanner 1.0
 import "../styles" as Styles
 
 Item {
@@ -17,29 +16,31 @@ Item {
     readonly property var space: theme ? theme.space : null
     readonly property var typeScale: theme ? theme.type : null
     readonly property var radii: theme ? theme.radii : null
+    readonly property var layout: theme ? theme.layout : null
 
     readonly property var weekdayNames: [qsTr("Mo"), qsTr("Di"), qsTr("Mi"), qsTr("Do"), qsTr("Fr"), qsTr("Sa"), qsTr("So")]
     readonly property var anchorDate: selectedIso.length > 0 ? new Date(selectedIso) : new Date()
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: space ? space.gap24 : 24
+        anchors.margins: layout ? layout.margin : (space ? space.gap24 : 24)
         spacing: space ? space.gap16 : 16
 
         RowLayout {
             Layout.fillWidth: true
-            spacing: space ? space.gap16 : 16
+            spacing: layout ? layout.gridGap : (space ? space.gap12 : 12)
             Repeater {
                 model: weekdayNames
                 delegate: Text {
                     Layout.fillWidth: true
-                    horizontalAlignment: Text.AlignRight
                     text: modelData
-                    font.pixelSize: typeScale ? typeScale.sm : 12
+                    horizontalAlignment: Text.AlignRight
+                    font.pixelSize: typeScale ? typeScale.sm : 13
                     font.weight: typeScale ? typeScale.weightMedium : Font.Medium
-                    font.letterSpacing: 1
                     font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                    color: colors ? colors.textMuted : "#9AA3AF"
+                    color: theme && theme.text ? theme.text.secondary : "#A3ACB8"
+                    opacity: 0.92
+                    renderType: Text.NativeRendering
                 }
             }
         }
@@ -49,8 +50,8 @@ Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
             columns: 7
-            columnSpacing: space ? space.gap12 : 12
-            rowSpacing: space ? space.gap16 : 16
+            columnSpacing: layout ? layout.gridGap : (space ? space.gap12 : 12)
+            rowSpacing: layout ? layout.gridGap : (space ? space.gap12 : 12)
             property real cellWidth: columns > 0 ? (width - columnSpacing * (columns - 1)) / columns : width
             property real cellHeight: (height - rowSpacing * 5) / 6
 
@@ -91,6 +92,16 @@ Item {
                 isToday: Qt.formatDate(current, "yyyy-MM-dd") === Qt.formatDate(new Date(), "yyyy-MM-dd"),
                 events: PlannerBackend.dayEvents(iso)
             })
+        }
+        if (Qt.application.arguments && Qt.application.arguments.indexOf("--debug-events") !== -1) {
+            for (var j = 0; j < collection.length; ++j) {
+                if (j % 10 === 0) {
+                    collection[j].events.push({ title: qsTr("Projekt Status"), color: theme ? theme.accent.base : "#0A84FF" })
+                }
+                if (j % 15 === 0) {
+                    collection[j].events.push({ title: qsTr("Mathe lernen"), color: "#FF9F0A" })
+                }
+            }
         }
         days = collection
     }

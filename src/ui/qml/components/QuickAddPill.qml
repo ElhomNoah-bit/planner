@@ -17,6 +17,7 @@ GlassPanel {
     readonly property var radii: theme ? theme.radii : null
     readonly property var space: theme ? theme.space : null
     readonly property var typeScale: theme ? theme.type : null
+    readonly property var layout: theme ? theme.layout : null
 
     radius: radii ? radii.xl : 28
     padding: 0
@@ -35,9 +36,10 @@ GlassPanel {
             font.pixelSize: typeScale ? typeScale.md : 15
             font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
             color: colors ? colors.text : "#FFFFFF"
+            height: layout ? layout.pillH : 30
             background: Rectangle { color: "transparent" }
-            selectionColor: colors ? colors.tint : "#0A84FF"
-            cursorDelegate: Rectangle { width: 2; color: colors ? colors.tint : "#0A84FF" }
+            selectionColor: theme ? theme.accent.base : "#0A84FF"
+            cursorDelegate: Rectangle { width: 2; color: theme ? theme.accent.base : "#0A84FF" }
             anchors.verticalCenter: parent.verticalCenter
             onAccepted: {
                 root.submitted(text)
@@ -47,7 +49,7 @@ GlassPanel {
 
         PillButton {
             id: addBtn
-            accent: true
+            kind: "primary"
             icon.name: "plus"
             text: qsTr("Add")
             onClicked: {

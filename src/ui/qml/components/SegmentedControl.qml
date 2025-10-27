@@ -15,14 +15,16 @@ Item {
 
     readonly property var theme: Styles.ThemeStore
     readonly property var colors: theme ? theme.colors : null
+    readonly property var accent: theme ? theme.accent : null
+    readonly property var state: theme ? theme.state : null
     readonly property var radii: theme ? theme.radii : null
     readonly property var typeScale: theme ? theme.type : null
 
     Rectangle {
         anchors.fill: parent
         radius: radii ? radii.xl : 22
-        color: Qt.rgba(1, 1, 1, theme ? theme.glassBack : 0.12)
-        border.color: colors ? colors.divider : Qt.rgba(1, 1, 1, 0.16)
+        color: colors ? colors.pillBg : Qt.rgba(0.12, 0.13, 0.18, 0.9)
+        border.color: colors ? colors.pillBorder : Qt.rgba(0.28, 0.3, 0.36, 1)
         border.width: 1
     }
 
@@ -32,12 +34,14 @@ Item {
         width: root.options.length > 0 ? (parent.width - 8) / root.options.length : 0
         height: parent.height - 8
         radius: radii ? radii.xl : 22
-    color: colors ? Qt.rgba(colors.tint.r, colors.tint.g, colors.tint.b, 0.22) : Qt.rgba(0.04, 0.35, 0.84, 0.22)
-        border.color: colors ? colors.tint : "#0A84FF"
+        color: accent ? accent.base : "#0A84FF"
         visible: root.options.length > 0
         x: 4 + currentIndex() * width
         Behavior on x {
-            NumberAnimation { duration: 180; easing.type: Easing.OutCubic }
+            NumberAnimation { duration: 140; easing.type: Easing.InOutQuad }
+        }
+        Behavior on width {
+            NumberAnimation { duration: 140; easing.type: Easing.InOutQuad }
         }
     }
 
@@ -52,15 +56,28 @@ Item {
                 width: row.width / Math.max(1, root.options.length)
                 height: row.height
                 property var option: modelData
+                property bool hovered: false
+
                 MouseArea {
                     anchors.fill: parent
                     hoverEnabled: true
+                    onEntered: parent.hovered = true
+                    onExited: parent.hovered = false
                     onClicked: {
-                        if (root.value === option.value)
-                            return
-                        root.value = option.value
+                        if (root.value !== option.value) {
+                            root.value = option.value
+                        }
                     }
                 }
+
+                Rectangle {
+                    anchors.fill: parent
+                    radius: radii ? radii.xl : 22
+                    color: parent.hovered && root.value !== option.value
+                        ? (state ? state.hover : Qt.rgba(1, 1, 1, 0.12))
+                        : "transparent"
+                }
+
                 Text {
                     anchors.centerIn: parent
                     text: option.label
@@ -69,9 +86,8 @@ Item {
                         ? (typeScale ? typeScale.weightBold : Font.DemiBold)
                         : (typeScale ? typeScale.weightMedium : Font.Medium)
                     font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                    color: root.value === option.value
-                        ? (colors ? colors.tint : "#0A84FF")
-                        : (colors ? colors.text : "#FFFFFF")
+                    color: root.value === option.value ? "#0B0C0F" : (colors ? colors.textMuted : "#9AA3AF")
+                    renderType: Text.NativeRendering
                 }
             }
         }
