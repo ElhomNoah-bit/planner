@@ -42,7 +42,7 @@ GlassPanel {
         PillButton {
             id: addBtn
             accent: true
-            icon: "plus"
+            icon.name: "plus"
             text: qsTr("Add")
             onClicked: {
                 if (input.text.length === 0)

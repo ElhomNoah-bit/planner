@@ -37,7 +37,7 @@ Item {
                 spacing: NP.ThemeStore.spacing.gap16
 
                 PillButton {
-                    icon: "chevron.backward"
+                    icon.name: "chevron.backward"
                     text: headlineYear
                     accent: false
                     active: false
@@ -45,7 +45,7 @@ Item {
                 }
 
                 PillButton {
-                    icon: "chevron.forward"
+                    icon.name: "chevron.forward"
                     text: qsTr("Heute")
                     subtle: true
                     onClicked: PlannerBackend.refreshToday()
@@ -54,7 +54,7 @@ Item {
                 Item { Layout.fillWidth: true }
 
                 PillButton {
-                    icon: darkTheme ? "sun.max" : "moon"
+                    icon.name: darkTheme ? "sun.max" : "moon"
                     subtle: true
                     onClicked: PlannerBackend.darkTheme = !PlannerBackend.darkTheme
                 }
@@ -87,7 +87,7 @@ Item {
                 }
 
                 PillButton {
-                    icon: "plus"
+                    icon.name: "plus"
                     text: qsTr("Neu")
                     accent: true
                     onClicked: quickAdd.focusInput()
