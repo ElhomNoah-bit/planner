@@ -60,14 +60,14 @@ qt_add_qml_module(noah_planner
         src/ui/qml/views/WeekView.qml
 )
 
-qt_add_resources(noah_planner font_assets
+qt_add_resources(noah_planner fonts
     PREFIX "/fonts"
     FILES
         assets/fonts/Inter-Regular.ttf
 )
 
 qt_add_qml_module(styles_module
-    URI styles
+    URI NoahPlanner.Styles
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
     STATIC
