@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import NoahPlanner 1.0 as NP
+import NoahPlanner 1.0
 
 Button {
     id: btn
@@ -16,10 +16,19 @@ Button {
 
     font.pixelSize: 14
     font.weight: active ? Font.DemiBold : Font.Medium
-    font.family: NP.ThemeStore.defaultFontFamily
+    font.family: baseFontFamily
+
+    readonly property string baseFontFamily: theme(["defaultFontFamily"], "Sans")
+    readonly property real baseRadiusXl: theme(["radii", "xl"], 28)
+    readonly property color basePanel: theme(["panel"], Qt.rgba(0, 0, 0, 0.08))
+    readonly property color baseBorder: theme(["border"], Qt.rgba(0, 0, 0, 0.12))
+    readonly property color baseAccent: theme(["accent"], "#0A84FF")
+    readonly property color baseMuted: theme(["muted"], "#A0A0A0")
+    readonly property color baseText: theme(["text"], "#1A1A1A")
+    readonly property bool baseDark: theme(["dark"], false)
 
     background: Rectangle {
-        radius: NP.ThemeStore.radii.xl
+        radius: baseRadiusXl
         color: btn.backgroundColor()
         border.color: btn.borderColor()
         border.width: 1
@@ -36,7 +45,7 @@ Button {
             size: 16
             name: btn.icon && btn.icon.name ? btn.icon.name : ""
             visible: name.length > 0
-            color: btn.active || btn.accent ? "#FFFFFF" : NP.ThemeStore.muted
+            color: btn.active || btn.accent ? "#FFFFFF" : baseMuted
         }
 
         Text {
@@ -44,7 +53,7 @@ Button {
             text: btn.text
             visible: text.length > 0
             font: btn.font
-            color: btn.active || btn.accent ? "#FFFFFF" : NP.ThemeStore.text
+            color: btn.active || btn.accent ? "#FFFFFF" : baseText
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight
         }
@@ -53,14 +62,14 @@ Button {
     function backgroundColor() {
         if (btn.accent) {
             if (btn.down || btn.active) {
-                return NP.ThemeStore.accent
+                return baseAccent
             }
             if (btn.hovered) {
                 return Qt.rgba(0.04, 0.35, 0.84, 0.28)
             }
             return Qt.rgba(0.04, 0.35, 0.84, 0.18)
         }
-        const base = btn.subtle ? Qt.rgba(0, 0, 0, NP.ThemeStore.dark ? 0.2 : 0.06) : NP.ThemeStore.panel
+        const base = btn.subtle ? Qt.rgba(0, 0, 0, baseDark ? 0.2 : 0.06) : basePanel
         if (btn.down) {
             return Qt.rgba(base.r, base.g, base.b, Math.min(1.0, base.a + 0.1))
         }
@@ -74,6 +83,20 @@ Button {
         if (btn.accent && (btn.down || btn.active)) {
             return Qt.rgba(1, 1, 1, 0.0)
         }
-        return NP.ThemeStore.border
+        return baseBorder
+    }
+
+    function theme(path, fallback) {
+        if (typeof ThemeStore === "undefined" || !ThemeStore) {
+            return fallback
+        }
+        var value = ThemeStore
+        for (var i = 0; i < path.length; ++i) {
+            if (value === undefined || value === null) {
+                return fallback
+            }
+            value = value[path[i]]
+        }
+        return value === undefined ? fallback : value
     }
 }

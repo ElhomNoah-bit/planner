@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import NoahPlanner 1.0 as NP
 
 Column {
     id: root
@@ -10,7 +9,7 @@ Column {
     property string locale: Qt.locale().name
     signal daySelected(string iso)
 
-    spacing: NP.ThemeStore.spacing.gap16
+    spacing: ThemeStore.spacing.gap16
 
     readonly property var weekdayNames: [qsTr("Mo"), qsTr("Di"), qsTr("Mi"), qsTr("Do"), qsTr("Fr"), qsTr("Sa"), qsTr("So")]
     readonly property var anchorDate: selectedIso.length > 0 ? new Date(selectedIso) : new Date()
@@ -18,7 +17,7 @@ Column {
 
     RowLayout {
         width: parent ? parent.width : implicitWidth
-        spacing: NP.ThemeStore.spacing.gap16
+        spacing: ThemeStore.spacing.gap16
         Repeater {
             model: weekdayNames
             delegate: Text {
@@ -28,8 +27,8 @@ Column {
                 font.pixelSize: 12
                 font.weight: Font.Medium
                 font.letterSpacing: 1
-                font.family: NP.ThemeStore.defaultFontFamily
-                color: NP.ThemeStore.muted
+                font.family: ThemeStore.defaultFontFamily
+                color: ThemeStore.muted
             }
         }
     }
@@ -37,8 +36,8 @@ Column {
     GridLayout {
         id: grid
         columns: 7
-        columnSpacing: NP.ThemeStore.spacing.gap12
-        rowSpacing: NP.ThemeStore.spacing.gap16
+        columnSpacing: ThemeStore.spacing.gap12
+        rowSpacing: ThemeStore.spacing.gap16
         width: parent ? parent.width : implicitWidth
 
         Repeater {

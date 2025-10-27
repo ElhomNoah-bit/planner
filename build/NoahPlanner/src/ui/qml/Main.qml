@@ -2,7 +2,6 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import NoahPlanner 1.0 as NP
 
 Item {
     id: root
@@ -20,21 +19,21 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        color: NP.ThemeStore.bg
+        color: ThemeStore.bg
     }
 
     Column {
         anchors.fill: parent
         anchors.margins: 32
-        spacing: NP.ThemeStore.spacing.gap24
+        spacing: ThemeStore.spacing.gap24
 
         GlassPanel {
             id: navBar
-            radius: NP.ThemeStore.radii.xl
+            radius: ThemeStore.radii.xl
             padding: 12
             RowLayout {
                 anchors.fill: parent
-                spacing: NP.ThemeStore.spacing.gap16
+                spacing: ThemeStore.spacing.gap16
 
                 PillButton {
                     icon.name: "chevron.backward"
@@ -67,7 +66,7 @@ Item {
 
                 GlassPanel {
                     id: searchPill
-                    radius: NP.ThemeStore.radii.xl
+                    radius: ThemeStore.radii.xl
                     padding: 0
                     width: 220
                     TextField {
@@ -77,12 +76,12 @@ Item {
                         text: PlannerBackend.searchQuery
                         onTextChanged: PlannerBackend.searchQuery = text
                         font.pixelSize: 14
-                        font.family: NP.ThemeStore.defaultFontFamily
-                        color: NP.ThemeStore.text
+                        font.family: ThemeStore.defaultFontFamily
+                        color: ThemeStore.text
                         background: Rectangle { color: "transparent" }
                         leftPadding: 0
                         rightPadding: 0
-                        cursorDelegate: Rectangle { width: 2; color: NP.ThemeStore.accent }
+                        cursorDelegate: Rectangle { width: 2; color: ThemeStore.accent }
                     }
                 }
 
@@ -97,10 +96,10 @@ Item {
 
         Text {
             text: headlineMonth
-            font.pixelSize: NP.ThemeStore.typography.monthTitleSize
-            font.weight: NP.ThemeStore.typography.monthTitleWeight
-            font.family: NP.ThemeStore.defaultFontFamily
-            color: NP.ThemeStore.text
+            font.pixelSize: ThemeStore.typography.monthTitleSize
+            font.weight: ThemeStore.typography.monthTitleWeight
+            font.family: ThemeStore.defaultFontFamily
+            color: ThemeStore.text
             opacity: 0.98
         }
 
@@ -111,7 +110,7 @@ Item {
 
         Flow {
             width: parent.width
-            spacing: NP.ThemeStore.spacing.gap8
+            spacing: ThemeStore.spacing.gap8
             Repeater {
                 model: subjectsModel
                 delegate: FilterPill {
@@ -132,7 +131,7 @@ Item {
         }
 
         RowLayout {
-            spacing: NP.ThemeStore.spacing.gap24
+            spacing: ThemeStore.spacing.gap24
             Layout.fillWidth: true
             Layout.fillHeight: true
 

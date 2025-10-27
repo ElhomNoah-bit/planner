@@ -2,7 +2,6 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import NoahPlanner 1.0 as NP
 
 GlassPanel {
     id: root
@@ -15,7 +14,7 @@ GlassPanel {
 
     Column {
         anchors.fill: parent
-        spacing: NP.ThemeStore.spacing.gap16
+        spacing: ThemeStore.spacing.gap16
 
         Column {
             spacing: 4
@@ -23,15 +22,15 @@ GlassPanel {
                 text: qsTr("Heute")
                 font.pixelSize: 22
                 font.weight: Font.DemiBold
-                font.family: NP.ThemeStore.defaultFontFamily
-                color: NP.ThemeStore.text
+                font.family: ThemeStore.defaultFontFamily
+                color: ThemeStore.text
             }
             Text {
                 text: summary.total > 0 ? summary.done + "/" + summary.total + qsTr(" erledigt") : qsTr("Keine Aufgaben")
-                font.pixelSize: NP.ThemeStore.typography.metaSize
-                font.weight: NP.ThemeStore.typography.metaWeight
-                font.family: NP.ThemeStore.defaultFontFamily
-                color: NP.ThemeStore.muted
+                font.pixelSize: ThemeStore.typography.metaSize
+                font.weight: ThemeStore.typography.metaWeight
+                font.family: ThemeStore.defaultFontFamily
+                color: ThemeStore.muted
             }
         }
 
@@ -40,11 +39,13 @@ GlassPanel {
             width: parent.width
             model: PlannerBackend.todayTasks
             clip: true
-            spacing: NP.ThemeStore.spacing.gap12
+            spacing: ThemeStore.spacing.gap12
             interactive: true
             boundsBehavior: Flickable.StopAtBounds
             flickDeceleration: 3500
-            verticalScrollBarPolicy: Qt.ScrollBarAlwaysOff
+            ScrollBar.vertical: ScrollBar {
+                policy: ScrollBar.AlwaysOff
+            }
             implicitHeight: 240
             delegate: TodayTaskDelegate {
                 width: tasksView.width
@@ -64,8 +65,8 @@ GlassPanel {
                 text: qsTr("Klassenarbeiten")
                 font.pixelSize: 18
                 font.weight: Font.DemiBold
-                font.family: NP.ThemeStore.defaultFontFamily
-                color: NP.ThemeStore.text
+                font.family: ThemeStore.defaultFontFamily
+                color: ThemeStore.text
             }
             ListView {
                 id: examsView
@@ -76,7 +77,7 @@ GlassPanel {
                 spacing: 8
                 delegate: GlassPanel {
                     width: examsView.width
-                    radius: NP.ThemeStore.radii.md
+                    radius: ThemeStore.radii.md
                     padding: 14
                     Column {
                         spacing: 6
@@ -93,23 +94,23 @@ GlassPanel {
                                 text: subject.name
                                 font.pixelSize: 14
                                 font.weight: Font.DemiBold
-                                font.family: NP.ThemeStore.defaultFontFamily
-                                color: NP.ThemeStore.text
+                                font.family: ThemeStore.defaultFontFamily
+                                color: ThemeStore.text
                             }
                             Text {
                                 text: Qt.formatDate(model.date, "dd.MM.yyyy")
-                                font.pixelSize: NP.ThemeStore.typography.metaSize
-                                font.weight: NP.ThemeStore.typography.metaWeight
-                                font.family: NP.ThemeStore.defaultFontFamily
-                                color: NP.ThemeStore.muted
+                                font.pixelSize: ThemeStore.typography.metaSize
+                                font.weight: ThemeStore.typography.metaWeight
+                                font.family: ThemeStore.defaultFontFamily
+                                color: ThemeStore.muted
                             }
                         }
                         Text {
                             text: model.topics.join(", ")
-                            font.pixelSize: NP.ThemeStore.typography.metaSize
-                            font.weight: NP.ThemeStore.typography.metaWeight
-                            font.family: NP.ThemeStore.defaultFontFamily
-                            color: NP.ThemeStore.muted
+                            font.pixelSize: ThemeStore.typography.metaSize
+                            font.weight: ThemeStore.typography.metaWeight
+                            font.family: ThemeStore.defaultFontFamily
+                            color: ThemeStore.muted
                             wrapMode: Text.WrapAnywhere
                         }
                         PillButton {

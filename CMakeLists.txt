@@ -30,6 +30,11 @@ qt_add_executable(noah_planner
     src/ui/PlannerBackend.h
 )
 
+set_source_files_properties(src/ui/qml/styles/ThemeStore.qml
+    PROPERTIES
+        QT_QML_SINGLETON_TYPE TRUE
+)
+
 qt_add_qml_module(noah_planner
     URI NoahPlanner
     VERSION 1.0
@@ -58,8 +63,9 @@ qt_add_qml_module(noah_planner
 
 qt_add_resources(noah_planner font_assets
     PREFIX "/fonts"
+    BASE_DIR assets/fonts
     FILES
-        assets/fonts/Inter-Regular.ttf
+        Inter-Regular.ttf
 )
 
 target_include_directories(noah_planner PRIVATE src)
