@@ -76,6 +76,7 @@ meta_types/qt6styles_moduleplugin_init_release_metatypes.json.gen: meta_types/st
 	/usr/bin/cmake -E copy_if_different /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/qt6styles_moduleplugin_init_release_metatypes.json.gen /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/qt6styles_moduleplugin_init_release_metatypes.json
 
 styles_moduleplugin_init_autogen/timestamp: /usr/lib64/qt6/libexec/moc
+styles_moduleplugin_init_autogen/timestamp: /usr/lib64/qt6/libexec/uic
 styles_moduleplugin_init_autogen/timestamp: CMakeFiles/styles_moduleplugin_init.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic MOC and UIC for target styles_moduleplugin_init"
 	/usr/bin/cmake -E cmake_autogen /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_moduleplugin_init_autogen.dir/AutogenInfo.json Release

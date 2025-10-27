@@ -4,8 +4,10 @@ import QtQuick.Layouts
 import NoahPlanner 1.0
 import NoahPlanner.Styles as Styles
 
-Rectangle {
+Item {
     id: root
+    width: Styles.ThemeStore.layout.sidebarW
+    anchors.fill: parent
     property string selectedIso: PlannerBackend.selectedDate
     property var summary: PlannerBackend.daySummary(selectedIso)
     signal startTimerRequested(int minutes)
@@ -14,203 +16,189 @@ Rectangle {
     readonly property QtObject gaps: Styles.ThemeStore.gap
     readonly property QtObject typeScale: Styles.ThemeStore.type
     readonly property QtObject radii: Styles.ThemeStore.radii
-    readonly property QtObject metrics: Styles.ThemeStore.layout
 
-    implicitWidth: metrics.sidebarW
-    radius: radii.xl
-    color: colors.cardGlass
-    border.width: 1
-    border.color: colors.divider
-
-    ColumnLayout {
+    Flickable {
+        id: flick
         anchors.fill: parent
-        anchors.margins: metrics.margin
-        spacing: gaps.g16
+        contentWidth: width
+        contentHeight: contentColumn.implicitHeight
+        clip: true
 
         Column {
-            Layout.fillWidth: true
-            spacing: gaps.g4
-            Text {
-                text: qsTr("Heute")
-                font.pixelSize: typeScale.lg
-                font.weight: typeScale.weightMedium
-                font.family: Styles.ThemeStore.fonts.uiFallback
-                color: colors.text
-                renderType: Text.NativeRendering
+            id: contentColumn
+            width: flick.width
+            spacing: gaps.g16
+
+            GlassPanel {
+                padding: gaps.g16
+                Column {
+                    spacing: gaps.g8
+                    Text {
+                        text: qsTr("Heute")
+                        font.pixelSize: typeScale.lg
+                        font.weight: typeScale.weightBold
+                        font.family: Styles.ThemeStore.fonts.heading
+                        color: colors.text
+                        renderType: Text.NativeRendering
+                    }
+                    Text {
+                        text: summary.total > 0
+                              ? qsTr("%1 von %2 Aufgaben erledigt").arg(summary.done).arg(summary.total)
+                              : qsTr("Keine Aufgaben für diesen Tag")
+                        font.pixelSize: typeScale.sm
+                        font.weight: typeScale.weightRegular
+                        font.family: Styles.ThemeStore.fonts.body
+                        color: colors.text2
+                        renderType: Text.NativeRendering
+                    }
+                }
             }
-            Text {
-                text: summary.total > 0 ? summary.done + "/" + summary.total + qsTr(" erledigt") : qsTr("Keine Aufgaben")
-                font.pixelSize: typeScale.xs
-                font.weight: typeScale.weightRegular
-                font.family: Styles.ThemeStore.fonts.uiFallback
-                color: colors.text2
-                renderType: Text.NativeRendering
+
+            GlassPanel {
+                padding: gaps.g16
+                Column {
+                    spacing: gaps.g12
+                    Text {
+                        text: qsTr("Nächste Aufgaben")
+                        font.pixelSize: typeScale.sm
+                        font.weight: typeScale.weightBold
+                        font.family: Styles.ThemeStore.fonts.heading
+                        color: colors.text
+                        renderType: Text.NativeRendering
+                    }
+                    Loader {
+                        id: tasksLoader
+                        active: PlannerBackend.todayTasks && PlannerBackend.todayTasks.count > 0
+                        sourceComponent: tasksList
+                        onActiveChanged: emptyTasks.visible = !active
+                    }
+                    Text {
+                        id: emptyTasks
+                        visible: false
+                        text: qsTr("Keine Einträge")
+                        font.pixelSize: typeScale.sm
+                        font.weight: typeScale.weightRegular
+                        font.family: Styles.ThemeStore.fonts.body
+                        color: colors.text2
+                        horizontalAlignment: Text.AlignHCenter
+                        renderType: Text.NativeRendering
+                    }
+                }
+            }
+
+            GlassPanel {
+                padding: gaps.g16
+                Column {
+                    spacing: gaps.g12
+                    Text {
+                        text: qsTr("Klassenarbeiten")
+                        font.pixelSize: typeScale.sm
+                        font.weight: typeScale.weightBold
+                        font.family: Styles.ThemeStore.fonts.heading
+                        color: colors.text
+                        renderType: Text.NativeRendering
+                    }
+                    Loader {
+                        id: examsLoader
+                        active: PlannerBackend.exams && PlannerBackend.exams.count > 0
+                        sourceComponent: examsList
+                        onActiveChanged: emptyExams.visible = !active
+                    }
+                    Text {
+                        id: emptyExams
+                        visible: false
+                        text: qsTr("Keine Einträge")
+                        font.pixelSize: typeScale.sm
+                        font.weight: typeScale.weightRegular
+                        font.family: Styles.ThemeStore.fonts.body
+                        color: colors.text2
+                        horizontalAlignment: Text.AlignHCenter
+                        renderType: Text.NativeRendering
+                    }
+                }
             }
         }
 
-        Item {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+        ScrollIndicator.vertical: ScrollIndicator {}
+    }
 
-            Flickable {
-                id: contentFlick
-                anchors.fill: parent
-                contentWidth: width
-                contentHeight: contentColumn.implicitHeight
-                clip: true
-                interactive: contentHeight > height
+    Component {
+        id: tasksList
+        Column {
+            width: flick.width - gaps.g16 * 2
+            spacing: gaps.g12
+            Repeater {
+                model: PlannerBackend.todayTasks
+                delegate: TodayTaskDelegate {
+                    width: parent ? parent.width : 320
+                    title: model.title
+                    goal: model.goal
+                    duration: model.duration
+                    subjectColor: model.color
+                    done: model.done
+                    onToggled: function(next) { PlannerBackend.toggleTaskDone(index, next) }
+                    onStartTimer: root.startTimerRequested(minutes)
+                }
+            }
+        }
+    }
 
-                Column {
-                    id: contentColumn
-                    width: parent.width
-                    spacing: gaps.g16
-
+    Component {
+        id: examsList
+        Column {
+            width: flick.width - gaps.g16 * 2
+            spacing: gaps.g12
+            Repeater {
+                model: PlannerBackend.exams
+                delegate: GlassPanel {
+                    padding: gaps.g12
+                    radius: radii.md
                     Column {
                         spacing: gaps.g8
-                        Text {
-                            text: qsTr("Nächste Aufgaben")
-                            font.pixelSize: typeScale.sm
-                            font.weight: typeScale.weightMedium
-                            font.family: Styles.ThemeStore.fonts.uiFallback
-                            color: colors.text2
-                            renderType: Text.NativeRendering
-                        }
-
-                        Column {
-                            id: tasksColumn
-                            width: parent.width
-                            spacing: gaps.g12
-                            visible: tasksRepeater.count > 0
-                            height: visible ? implicitHeight : 0
-                            Repeater {
-                                id: tasksRepeater
-                                model: PlannerBackend.todayTasks
-                                delegate: TodayTaskDelegate {
-                                    width: tasksColumn.width
-                                    title: model.title
-                                    goal: model.goal
-                                    duration: model.duration
-                                    subjectColor: model.color
-                                    done: model.done
-                                    onToggled: function(next) { PlannerBackend.toggleTaskDone(index, next) }
-                                    onStartTimer: root.startTimerRequested(minutes)
-                                }
+                        property var subject: PlannerBackend.subjectById(model.subjectId)
+                        Row {
+                            spacing: gaps.g8
+                            Rectangle {
+                                width: 10
+                                height: 10
+                                radius: 5
+                                color: subject.color
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
+                            Text {
+                                text: subject.name
+                                font.pixelSize: typeScale.md
+                                font.weight: typeScale.weightMedium
+                                font.family: Styles.ThemeStore.fonts.heading
+                                color: colors.text
+                                renderType: Text.NativeRendering
+                            }
+                            Text {
+                                text: Qt.formatDate(model.date, "dd.MM.yyyy")
+                                font.pixelSize: typeScale.xs
+                                font.weight: typeScale.weightRegular
+                                font.family: Styles.ThemeStore.fonts.body
+                                color: colors.text2
+                                renderType: Text.NativeRendering
                             }
                         }
-
-                        Item {
-                            visible: tasksRepeater.count === 0
-                            width: parent.width
-                            height: 80
-                            Column {
-                                anchors.centerIn: parent
-                                spacing: gaps.g4
-                                Text {
-                                    text: qsTr("Alles erledigt - super!")
-                                    font.pixelSize: typeScale.sm
-                                    font.weight: typeScale.weightMedium
-                                    font.family: Styles.ThemeStore.fonts.uiFallback
-                                    color: colors.text2
-                                    horizontalAlignment: Text.AlignHCenter
-                                    width: parent.width
-                                    renderType: Text.NativeRendering
-                                }
-                            }
-                        }
-                    }
-
-                    Rectangle {
-                        height: 1
-                        color: colors.divider
-                        width: parent.width
-                    }
-
-                    Column {
-                        spacing: gaps.g8
                         Text {
-                            text: qsTr("Klassenarbeiten")
-                            font.pixelSize: typeScale.sm
-                            font.weight: typeScale.weightMedium
-                            font.family: Styles.ThemeStore.fonts.uiFallback
+                            text: model.topics.join(", ")
+                            font.pixelSize: typeScale.xs
+                            font.weight: typeScale.weightRegular
+                            font.family: Styles.ThemeStore.fonts.body
                             color: colors.text2
+                            opacity: 0.8
+                            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                             renderType: Text.NativeRendering
                         }
-
-                        Column {
-                            id: examsColumn
-                            width: parent.width
-                            spacing: gaps.g12
-                            visible: examsRepeater.count > 0
-                            height: visible ? implicitHeight : 0
-                            Repeater {
-                                id: examsRepeater
-                                model: PlannerBackend.exams
-                                delegate: GlassPanel {
-                                    width: examsColumn.width
-                                    radius: radii.md
-                                    padding: gaps.g12
-                                    Column {
-                                        spacing: gaps.g8
-                                        property var subject: PlannerBackend.subjectById(model.subjectId)
-                                        Row {
-                                            spacing: gaps.g8
-                                            Rectangle {
-                                                width: 10
-                                                height: 10
-                                                radius: 5
-                                                color: subject.color
-                                                anchors.verticalCenter: parent.verticalCenter
-                                            }
-                                            Text {
-                                                text: subject.name
-                                                font.pixelSize: typeScale.md
-                                                font.weight: typeScale.weightMedium
-                                                font.family: Styles.ThemeStore.fonts.uiFallback
-                                                color: colors.text
-                                                renderType: Text.NativeRendering
-                                            }
-                                            Text {
-                                                text: Qt.formatDate(model.date, "dd.MM.yyyy")
-                                                font.pixelSize: typeScale.xs
-                                                font.weight: typeScale.weightRegular
-                                                font.family: Styles.ThemeStore.fonts.uiFallback
-                                                color: colors.text2
-                                                renderType: Text.NativeRendering
-                                            }
-                                        }
-                                        Text {
-                                            text: model.topics.join(", ")
-                                            font.pixelSize: typeScale.xs
-                                            font.weight: typeScale.weightRegular
-                                            font.family: Styles.ThemeStore.fonts.uiFallback
-                                            color: colors.text2
-                                            opacity: 0.7
-                                            wrapMode: Text.WrapAnywhere
-                                            renderType: Text.NativeRendering
-                                        }
-                                        PillButton {
-                                            text: qsTr("Zum Tag")
-                                            kind: "ghost"
-                                            onClicked: PlannerBackend.selectDateIso(Qt.formatDate(model.date, "yyyy-MM-dd"))
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        Text {
-                            visible: examsRepeater.count === 0
-                            text: qsTr("Keine Prüfungen in Sicht")
-                            font.pixelSize: typeScale.sm
-                            font.weight: typeScale.weightMedium
-                            font.family: Styles.ThemeStore.fonts.uiFallback
-                            color: colors.text2
-                            renderType: Text.NativeRendering
+                        PillButton {
+                            text: qsTr("Zum Tag")
+                            kind: "ghost"
+                            onClicked: PlannerBackend.selectDateIso(Qt.formatDate(model.date, "yyyy-MM-dd"))
                         }
                     }
                 }
-
-                ScrollIndicator.vertical: ScrollIndicator {}
             }
         }
     }

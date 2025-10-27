@@ -28,6 +28,9 @@ void AppState::load() {
     m_searchQuery = m_settings->value("searchQuery", QString()).toString();
     const QStringList subjects = m_settings->value("subjectFilter").toStringList();
     m_subjectFilter = QSet<QString>(subjects.begin(), subjects.end());
+    m_language = m_settings->value("language", QStringLiteral("de")).toString();
+    m_weekStart = m_settings->value("weekStart", QStringLiteral("monday")).toString();
+    m_weekNumbers = m_settings->value("weekNumbers", false).toBool();
     m_settings->endGroup();
 }
 
@@ -37,6 +40,9 @@ void AppState::save() const {
     m_settings->setValue("onlyOpen", m_onlyOpen);
     m_settings->setValue("searchQuery", m_searchQuery);
     m_settings->setValue("subjectFilter", toStringList(m_subjectFilter));
+    m_settings->setValue("language", m_language);
+    m_settings->setValue("weekStart", m_weekStart);
+    m_settings->setValue("weekNumbers", m_weekNumbers);
     m_settings->endGroup();
     m_settings->sync();
 }
@@ -62,5 +68,27 @@ bool AppState::setSearchQuery(const QString& query) {
 bool AppState::setSubjectFilter(const QSet<QString>& subjects) {
     if (m_subjectFilter == subjects) return false;
     m_subjectFilter = subjects;
+    return true;
+}
+
+bool AppState::setLanguage(const QString& language) {
+    const QString normalized = language.trimmed().toLower();
+    if (normalized.isEmpty()) return false;
+    if (m_language == normalized) return false;
+    m_language = normalized;
+    return true;
+}
+
+bool AppState::setWeekStart(const QString& weekStart) {
+    const QString normalized = weekStart.trimmed().toLower();
+    if (normalized != QStringLiteral("monday") && normalized != QStringLiteral("sunday")) return false;
+    if (m_weekStart == normalized) return false;
+    m_weekStart = normalized;
+    return true;
+}
+
+bool AppState::setWeekNumbers(bool enabled) {
+    if (m_weekNumbers == enabled) return false;
+    m_weekNumbers = enabled;
     return true;
 }

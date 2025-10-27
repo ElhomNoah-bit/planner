@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 1575,
+                        "durationMicroseconds": 1496,
                         "errorMessage": "",
                         "functionName": "colors",
                         "line": 15
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "gaps",
                         "line": 16
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 60,
                         "errorMessage": "",
                         "functionName": "typeScale",
                         "line": 18
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 273,
+                        "durationMicroseconds": 327,
                         "errorMessage": "Cannot access value for name down",
                         "functionName": "backgroundColor",
                         "line": 70
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 103,
+                        "durationMicroseconds": 102,
                         "errorMessage": "function without return type annotation returns QString. This may prevent proper compilation to Cpp.",
                         "functionName": "borderColor",
                         "line": 85
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 44,
                         "errorMessage": "function without return type annotation returns int. This may prevent proper compilation to Cpp.",
                         "functionName": "borderWidth",
                         "line": 95
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 82,
                         "errorMessage": "Cannot load property appBg from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/PillButton.qml)::colors with type QObject.",
                         "functionName": "foregroundColor",
                         "line": 105
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "color",
                         "line": 28
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 13,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "width",
                         "line": 29
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 75,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 59,
                         "errorMessage": "Cannot access value for name Easing",
                         "functionName": "type",
                         "line": 41
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 81,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 54,
                         "errorMessage": "Cannot access value for name Easing",
                         "functionName": "type",
                         "line": 42
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 46
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "centerIn",
                         "line": 47
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 15,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "color",
                         "line": 63
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 164,
+                        "durationMicroseconds": 166,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "verticalAlignment",
                         "line": 64
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 194,
+                        "durationMicroseconds": 154,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "elide",
                         "line": 65

@@ -14,8 +14,10 @@ Item {
     property real minuteHeight: 1.1
     signal daySelected(string iso)
 
+    property string weekStartSetting: PlannerBackend.weekStart
+    property var weekdayLabels: []
+
     readonly property real timelineHeight: (endHour - startHour) * 60 * minuteHeight
-    readonly property var weekdayNames: [qsTr("Mo"), qsTr("Di"), qsTr("Mi"), qsTr("Do"), qsTr("Fr"), qsTr("Sa"), qsTr("So")]
 
     readonly property QtObject colors: Styles.ThemeStore.colors
     readonly property QtObject gaps: Styles.ThemeStore.gap
@@ -84,10 +86,10 @@ Item {
                             anchors.right: parent.right
                             spacing: gaps.g4
                             Text {
-                                text: root.weekdayNames[index]
+                                text: root.weekdayLabels[index]
                                 font.pixelSize: typeScale.sm
                                 font.weight: typeScale.weightMedium
-                                font.family: Styles.ThemeStore.fonts.uiFallback
+                                font.family: Styles.ThemeStore.fonts.heading
                                 color: colors.text2
                                 opacity: 0.7
                                 renderType: Text.NativeRendering
@@ -177,7 +179,7 @@ Item {
 
     function weekStart(iso) {
         var date = iso.length > 0 ? new Date(iso) : new Date()
-        var diff = (date.getDay() + 6) % 7
+        var diff = weekStartSetting === "sunday" ? date.getDay() : (date.getDay() + 6) % 7
         date.setDate(date.getDate() - diff)
         return Qt.formatDate(date, "yyyy-MM-dd")
     }
@@ -190,9 +192,16 @@ Item {
         return Qt.formatDate(startDate, "yyyy-MM-dd")
     }
 
-    Component.onCompleted: rebuild()
+    Component.onCompleted: {
+        updateWeekdayLabels()
+        rebuild()
+    }
 
     onAnchorIsoChanged: rebuild()
+    onWeekStartSettingChanged: {
+        updateWeekdayLabels()
+        rebuild()
+    }
 
     Connections {
         target: PlannerBackend
@@ -206,5 +215,22 @@ Item {
         function onTasksChanged() {
             root.rebuild()
         }
+        function onSettingsChanged() {
+            root.updateWeekdayLabels()
+            root.rebuild()
+        }
     }
+
+    function updateWeekdayLabels() {
+        var base = [qsTr("Mo"), qsTr("Di"), qsTr("Mi"), qsTr("Do"), qsTr("Fr"), qsTr("Sa"), qsTr("So")]
+        if (weekStartSetting === "sunday") {
+            var reordered = []
+            reordered.push(base[6])
+            for (var i = 0; i < 6; ++i) reordered.push(base[i])
+            weekdayLabels = reordered
+        } else {
+            weekdayLabels = base
+        }
+    }
+
 }

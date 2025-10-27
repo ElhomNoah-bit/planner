@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 1635,
+                        "durationMicroseconds": 1622,
                         "errorMessage": "",
                         "functionName": "subjectColor",
                         "line": 7
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 213,
+                        "durationMicroseconds": 262,
                         "errorMessage": "",
                         "functionName": "implicitWidth",
                         "line": 12
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 13,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 13
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 12,
-                        "durationMicroseconds": 181,
+                        "durationMicroseconds": 186,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 14
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 95,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 15
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 241,
+                        "durationMicroseconds": 193,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 16
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 73,
                         "errorMessage": "",
                         "functionName": "spacing",
                         "line": 22
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 43,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 19
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 69,
                         "errorMessage": "",
                         "functionName": "leftMargin",
                         "line": 20
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "rightMargin",
                         "line": 21
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 23
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 73,
                         "errorMessage": "Cannot access value for name muted",
                         "functionName": "color",
                         "line": 29
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 30
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 58,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 35
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 78,
+                        "durationMicroseconds": 80,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 36
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 54,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 39
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 49,
                         "errorMessage": "",
                         "functionName": "verticalAlignment",
                         "line": 40
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 47,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 41
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 55,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 47
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 120,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 48
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 70,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 49
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 46

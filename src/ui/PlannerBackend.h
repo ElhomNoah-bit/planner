@@ -24,6 +24,9 @@ class PlannerBackend : public QObject {
     Q_PROPERTY(QString viewMode READ viewMode WRITE setViewMode NOTIFY viewModeChanged)
     Q_PROPERTY(bool onlyOpen READ onlyOpen WRITE setOnlyOpen NOTIFY filtersChanged)
     Q_PROPERTY(QString searchQuery READ searchQuery WRITE setSearchQuery NOTIFY filtersChanged)
+    Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY settingsChanged)
+    Q_PROPERTY(QString weekStart READ weekStart WRITE setWeekStart NOTIFY settingsChanged)
+    Q_PROPERTY(bool showWeekNumbers READ showWeekNumbers WRITE setShowWeekNumbers NOTIFY settingsChanged)
 
 public:
     explicit PlannerBackend(QObject* parent = nullptr);
@@ -47,6 +50,15 @@ public:
 
     QString searchQuery() const { return m_state.searchQuery(); }
     void setSearchQuery(const QString& query);
+
+    QString language() const { return m_state.language(); }
+    void setLanguage(const QString& language);
+
+    QString weekStart() const { return m_state.weekStart(); }
+    void setWeekStart(const QString& weekStart);
+
+    bool showWeekNumbers() const { return m_state.weekNumbers(); }
+    void setShowWeekNumbers(bool enabled);
 
     Q_INVOKABLE void selectDateIso(const QString& isoDate);
     Q_INVOKABLE void refreshToday();
@@ -72,6 +84,7 @@ signals:
     void viewModeChanged();
     void filtersChanged();
     void toastRequested(const QString& message);
+    void settingsChanged();
 
 private:
     PlannerService m_planner;

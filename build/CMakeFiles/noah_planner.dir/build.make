@@ -90,6 +90,7 @@ noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6qmlworkerscri
 noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6opengl_relwithdebinfo_metatypes.json
 noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6quickcontrols2_relwithdebinfo_metatypes.json
 noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6quicklayouts_relwithdebinfo_metatypes.json
+noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6widgets_relwithdebinfo_metatypes.json
 noah_planner_qmltyperegistrations.cpp: meta_types/qt6styles_moduleplugin_init_release_metatypes.json
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic QML type registration for target noah_planner"
 	/usr/lib64/qt6/libexec/qmltyperegistrar --generate-qmltypes=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/NoahPlanner/noah_planner.qmltypes --import-name=NoahPlanner --major-version=1 --minor-version=0 @/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/qmltypes/noah_planner_foreign_types.txt -o /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_qmltyperegistrations.cpp /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/qt6noah_planner_release_metatypes.json
@@ -423,6 +424,7 @@ NoahPlanner/noah_planner.qmltypes: noah_planner_qmltyperegistrations.cpp
 	/usr/lib64/qt6/libexec/rcc --output /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_fonts.cpp --name fonts /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/fonts.qrc
 
 noah_planner_autogen/timestamp: /usr/lib64/qt6/libexec/moc
+noah_planner_autogen/timestamp: /usr/lib64/qt6/libexec/uic
 noah_planner_autogen/timestamp: CMakeFiles/noah_planner.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Automatic MOC and UIC for target noah_planner"
 	/usr/bin/cmake -E cmake_autogen /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner_autogen.dir/AutogenInfo.json Release
@@ -972,16 +974,17 @@ noah_planner: CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init.c
 noah_planner: libstyles_module.a
 noah_planner: /usr/lib64/libQt6QuickControls2.so.6.9.2
 noah_planner: /usr/lib64/libQt6QuickLayouts.so.6.9.2
+noah_planner: /usr/lib64/libQt6Widgets.so.6.9.2
 noah_planner: NoahPlanner/Styles/libstyles_moduleplugin.a
 noah_planner: /usr/lib64/libQt6Quick.so.6.9.2
 noah_planner: /usr/lib64/libQt6OpenGL.so.6.9.2
-noah_planner: /usr/lib64/libQt6Gui.so.6.9.2
-noah_planner: /usr/lib64/libGLX.so
-noah_planner: /usr/lib64/libOpenGL.so
 noah_planner: /usr/lib64/libxkbcommon.so
 noah_planner: /usr/lib64/libQt6QmlMeta.so.6.9.2
 noah_planner: /usr/lib64/libQt6QmlModels.so.6.9.2
 noah_planner: /usr/lib64/libQt6QmlWorkerScript.so.6.9.2
+noah_planner: /usr/lib64/libQt6Gui.so.6.9.2
+noah_planner: /usr/lib64/libGLX.so
+noah_planner: /usr/lib64/libOpenGL.so
 noah_planner: libstyles_module.a
 noah_planner: /usr/lib64/libQt6Qml.so.6.9.2
 noah_planner: /usr/lib64/libQt6Network.so.6.9.2

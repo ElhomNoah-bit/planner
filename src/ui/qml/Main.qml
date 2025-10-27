@@ -8,51 +8,32 @@ Item {
     id: root
     anchors.fill: parent
 
-    property string selectedIso: PlannerBackend.selectedDate
-    property string currentView: PlannerBackend.viewMode
-    property bool darkTheme: PlannerBackend.darkTheme
-    property var subjectsModel: PlannerBackend.subjects
+    property string viewMode: "month"
+    property bool onlyOpen: false
+
+    signal quickAddRequested(string isoDate, string kind)
+    signal jumpToTodayRequested()
 
     readonly property QtObject colors: Styles.ThemeStore.colors
     readonly property QtObject gaps: Styles.ThemeStore.gap
-    readonly property QtObject typeScale: Styles.ThemeStore.type
     readonly property QtObject metrics: Styles.ThemeStore.layout
 
-    readonly property var selectedDateObj: selectedIso.length > 0 ? new Date(selectedIso) : new Date()
-    readonly property var summaryToday: PlannerBackend.daySummary(selectedIso)
-    readonly property string headerSubtitle: summaryToday.total > 0
-        ? qsTr("%1 von %2 Aufgaben erledigt").arg(summaryToday.done).arg(summaryToday.total)
-        : qsTr("Keine Aufgaben für diesen Tag")
-
-    Rectangle {
-        anchors.fill: parent
-        z: -1
-        color: colors ? colors.appBg : "transparent"
-    }
-
-    ColumnLayout {
+    RowLayout {
         anchors.fill: parent
         spacing: gaps.g24
 
-        RowLayout {
+        Loader {
+            id: viewLoader
             Layout.fillWidth: true
             Layout.fillHeight: true
-            spacing: gaps.g24
+            sourceComponent: root.componentForMode(root.viewMode)
+        }
 
-            Item {
-                id: gridContainer
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-
-                MonthView {
-                    anchors.fill: parent
-                }
-            }
-
-            SidebarToday {
-                Layout.preferredWidth: metrics.sidebarW
-                Layout.fillHeight: true
-            }
+        SidebarToday {
+            id: sidebar
+            Layout.preferredWidth: metrics.sidebarW
+            Layout.fillHeight: true
+            onStartTimerRequested: timerOverlay.openTimer(minutes)
         }
     }
 
@@ -65,33 +46,49 @@ Item {
         onFinished: PlannerBackend.showToast(qsTr("Timer abgeschlossen"))
     }
 
-    Connections {
-        target: PlannerBackend
-        function onSelectedDateChanged() {
-            root.selectedIso = PlannerBackend.selectedDate
-        }
-        function onViewModeChanged() {
-            root.currentView = PlannerBackend.viewMode
-        }
-        function onSubjectsChanged() {
-            root.subjectsModel = PlannerBackend.subjects
-        }
-        function onFiltersChanged() {
-            root.subjectsModel = PlannerBackend.subjects
-        }
-        function onDarkThemeChanged() {
-            root.darkTheme = PlannerBackend.darkTheme
+    function componentForMode(mode) {
+        switch (mode) {
+        case "week":
+            return weekViewComponent
+        case "list":
+            return listViewComponent
+        default:
+            return monthViewComponent
         }
     }
 
-    Component.onCompleted: {
-        root.subjectsModel = PlannerBackend.subjects
+    function goToday() {
+        if (viewLoader.item && viewLoader.item.goToday) {
+            viewLoader.item.goToday()
+        } else {
+            PlannerBackend.refreshToday()
+        }
     }
 
-    function shiftMonth(offset) {
-        var d = new Date(selectedIso)
-        d.setMonth(d.getMonth() + offset)
-        var iso = Qt.formatDate(d, "yyyy-MM-dd")
-        PlannerBackend.selectDateIso(iso)
+    Component {
+        id: monthViewComponent
+        MonthView {
+            anchors.fill: parent
+            onDaySelected: iso => PlannerBackend.selectDateIso(iso)
+            function goToday() { PlannerBackend.refreshToday() }
+            onQuickAddRequested: (iso, kind) => root.quickAddRequested(iso, kind)
+            onJumpToTodayRequested: root.jumpToTodayRequested()
+        }
+    }
+
+    Component {
+        id: weekViewComponent
+        WeekView {
+            anchors.fill: parent
+            onDaySelected: iso => PlannerBackend.selectDateIso(iso)
+            function goToday() { PlannerBackend.refreshToday() }
+        }
+    }
+
+    Component {
+        id: listViewComponent
+        AgendaView {
+            anchors.fill: parent
+        }
     }
 }

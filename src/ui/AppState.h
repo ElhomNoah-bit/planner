@@ -30,10 +30,22 @@ public:
     QSet<QString> subjectFilter() const { return m_subjectFilter; }
     bool setSubjectFilter(const QSet<QString>& subjects);
 
+    QString language() const { return m_language; }
+    bool setLanguage(const QString& language);
+
+    QString weekStart() const { return m_weekStart; }
+    bool setWeekStart(const QString& weekStart);
+
+    bool weekNumbers() const { return m_weekNumbers; }
+    bool setWeekNumbers(bool enabled);
+
 private:
     mutable QSettings* m_settings;
     bool m_darkTheme = true;
     bool m_onlyOpen = false;
     QString m_searchQuery;
     QSet<QString> m_subjectFilter;
+    QString m_language = QStringLiteral("de");
+    QString m_weekStart = QStringLiteral("monday");
+    bool m_weekNumbers = false;
 };

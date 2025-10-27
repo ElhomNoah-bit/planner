@@ -130,6 +130,7 @@ NoahPlanner/Styles/styles_module.qmltypes: styles_module_qmltyperegistrations.cp
 	/usr/lib64/qt6/libexec/rcc --output /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp --name styles_module_raw_qml_0_extra_qmldirs /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/styles_module_raw_qml_0_extra_qmldirs.qrc
 
 styles_module_autogen/timestamp: /usr/lib64/qt6/libexec/moc
+styles_module_autogen/timestamp: /usr/lib64/qt6/libexec/uic
 styles_module_autogen/timestamp: CMakeFiles/styles_module.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Automatic MOC and UIC for target styles_module"
 	/usr/bin/cmake -E cmake_autogen /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_module_autogen.dir/AutogenInfo.json Release

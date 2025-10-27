@@ -652,6 +652,31 @@
  /usr/lib64/cmake/Qt6QuickTools/Qt6QuickToolsTargets-relwithdebinfo.cmake
  /usr/lib64/cmake/Qt6QuickTools/Qt6QuickToolsTargets.cmake
  /usr/lib64/cmake/Qt6QuickTools/Qt6QuickToolsVersionlessTargets.cmake
+ /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake
+ /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake
+ /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake
+ /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake
+ /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake
+ /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake
+ /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake
+ /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake
+ /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake
+ /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake
+ /usr/lib64/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateAdditionalTargetInfo.cmake
+ /usr/lib64/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateConfig.cmake
+ /usr/lib64/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateConfigVersion.cmake
+ /usr/lib64/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateConfigVersionImpl.cmake
+ /usr/lib64/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateDependencies.cmake
+ /usr/lib64/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateTargets.cmake
+ /usr/lib64/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateVersionlessAliasTargets.cmake
+ /usr/lib64/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake
+ /usr/lib64/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake
+ /usr/lib64/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake
+ /usr/lib64/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake
+ /usr/lib64/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake
+ /usr/lib64/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake
+ /usr/lib64/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake
+ /usr/lib64/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake
  /usr/share/cmake/Modules/CMakeCXXInformation.cmake
  /usr/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
  /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake

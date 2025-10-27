@@ -1,38 +1,57 @@
+#include <QApplication>
 #include <QCoreApplication>
 #include <QDebug>
 #include <QFont>
 #include <QFontDatabase>
-#include <QGuiApplication>
+#include <QFontInfo>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQuickStyle>
-#include <QResource>
 #include <QStringList>
 
 #include "ui/PlannerBackend.h"
 
+static void registerFonts() {
+    const auto addFont = [](const QString& filename) {
+        const QString resourcePath = QStringLiteral(":/fonts/%1").arg(filename);
+        const int fontId = QFontDatabase::addApplicationFont(resourcePath);
+        if (fontId == -1) {
+            qWarning() << "Failed to load font" << filename;
+        } else {
+            qInfo() << "Loaded font" << filename << QFontDatabase::applicationFontFamilies(fontId);
+        }
+        return fontId;
+    };
+
+    addFont(QStringLiteral("Inter-Regular.ttf"));
+    addFont(QStringLiteral("Inter-Bold.ttf"));
+
+    if (QFontDatabase::families().contains(QStringLiteral("Inter"))) {
+        qInfo() << "Inter font available after registration";
+    }
+
+    QFont appFont(QStringLiteral("Inter"));
+    if (!QFontInfo(appFont).exactMatch()) {
+        qWarning() << "Inter not available, falling back to Noto Sans / DejaVu Sans";
+        appFont = QFont(QStringLiteral("Noto Sans"));
+        if (!QFontInfo(appFont).exactMatch()) {
+            appFont = QFont(QStringLiteral("DejaVu Sans"));
+        }
+    }
+
+    appFont.setStyleName(QStringLiteral("Regular"));
+    QApplication::setFont(appFont);
+}
+
 int main(int argc, char* argv[]) {
-    QGuiApplication app(argc, argv);
-    QGuiApplication::setOrganizationName("noah");
-    QGuiApplication::setOrganizationDomain("planner");
-    QGuiApplication::setApplicationName("Noah Planner");
+    QApplication app(argc, argv);
+    QApplication::setOrganizationName("noah");
+    QApplication::setOrganizationDomain("planner");
+    QApplication::setApplicationName("Noah Planner");
 
     QQuickStyle::setStyle("Basic");
 
-    const QResource regularResource(QStringLiteral(":/fonts/Inter-Regular.ttf"));
-    qDebug() << "Font exists?" << regularResource.isValid();
-    const int regularId = QFontDatabase::addApplicationFont(":/fonts/Inter-Regular.ttf");
-    const int boldId = QFontDatabase::addApplicationFont(":/fonts/Inter-Bold.ttf");
-    if (regularId < 0 || boldId < 0) {
-        qWarning() << "Inter font registration failed";
-    }
-
-    const QStringList families = QFontDatabase::applicationFontFamilies(regularId);
-    const QString fallbackFamily = families.isEmpty() ? QStringLiteral("Inter") : families.first();
-    QFont baseFont(fallbackFamily);
-    if (!baseFont.family().isEmpty()) {
-        QGuiApplication::setFont(baseFont);
-    }
+    registerFonts();
 
     PlannerBackend backend;
 

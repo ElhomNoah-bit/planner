@@ -99,6 +99,7 @@ meta_types/styles_module_json_file_list.txt: styles_module_autogen/timestamp
 	/usr/lib64/qt6/libexec/cmake_automoc_parser --cmake-autogen-cache-file /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_module_autogen.dir/ParseCache.txt --cmake-autogen-info-file /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_module_autogen.dir/AutogenInfo.json --output-file-path /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/styles_module_json_file_list.txt --timestamp-file-path /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/styles_module_json_file_list.txt.timestamp --cmake-autogen-include-dir-path /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_module_autogen/include
 
 styles_module_autogen/timestamp: /usr/lib64/qt6/libexec/moc
+styles_module_autogen/timestamp: /usr/lib64/qt6/libexec/uic
 styles_module_autogen/timestamp: CMakeFiles/styles_module_qmltyperegistration.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Automatic MOC and UIC for target styles_module"
 	/usr/bin/cmake -E cmake_autogen /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_module_autogen.dir/AutogenInfo.json Release

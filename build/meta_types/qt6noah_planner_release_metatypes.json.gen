@@ -93,13 +93,13 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 8,
+                        "index": 9,
                         "name": "selectDateIso",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 9,
+                        "index": 10,
                         "name": "refreshToday",
                         "returnType": "void"
                     },
@@ -115,7 +115,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "index": 10,
+                        "index": 11,
                         "name": "toggleTaskDone",
                         "returnType": "void"
                     },
@@ -127,7 +127,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 11,
+                        "index": 12,
                         "isConst": true,
                         "name": "dayEvents",
                         "returnType": "QVariantList"
@@ -140,7 +140,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 12,
+                        "index": 13,
                         "isConst": true,
                         "name": "daySummary",
                         "returnType": "QVariantMap"
@@ -153,7 +153,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 13,
+                        "index": 14,
                         "name": "toggleSubject",
                         "returnType": "void"
                     },
@@ -165,13 +165,13 @@
                                 "type": "QStringList"
                             }
                         ],
-                        "index": 14,
+                        "index": 15,
                         "name": "setSubjectFilter",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 15,
+                        "index": 16,
                         "isConst": true,
                         "name": "subjectFilter",
                         "returnType": "QStringList"
@@ -184,7 +184,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 16,
+                        "index": 17,
                         "isConst": true,
                         "name": "subjectById",
                         "returnType": "QVariantMap"
@@ -197,7 +197,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 17,
+                        "index": 18,
                         "isConst": true,
                         "name": "subjectColor",
                         "returnType": "QColor"
@@ -210,14 +210,14 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 18,
+                        "index": 19,
                         "isConst": true,
                         "name": "weekEvents",
                         "returnType": "QVariantList"
                     },
                     {
                         "access": "public",
-                        "index": 19,
+                        "index": 20,
                         "isConst": true,
                         "name": "listBuckets",
                         "returnType": "QVariantList"
@@ -230,7 +230,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 20,
+                        "index": 21,
                         "name": "quickAdd",
                         "returnType": "void"
                     },
@@ -242,7 +242,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 21,
+                        "index": 22,
                         "name": "showToast",
                         "returnType": "void"
                     }
@@ -362,6 +362,51 @@
                         "type": "QString",
                         "user": false,
                         "write": "setSearchQuery"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 8,
+                        "name": "language",
+                        "notify": "settingsChanged",
+                        "read": "language",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false,
+                        "write": "setLanguage"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 9,
+                        "name": "weekStart",
+                        "notify": "settingsChanged",
+                        "read": "weekStart",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false,
+                        "write": "setWeekStart"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 10,
+                        "name": "showWeekNumbers",
+                        "notify": "settingsChanged",
+                        "read": "showWeekNumbers",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "write": "setShowWeekNumbers"
                     }
                 ],
                 "qualifiedClassName": "PlannerBackend",
@@ -418,6 +463,12 @@
                         ],
                         "index": 7,
                         "name": "toastRequested",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 8,
+                        "name": "settingsChanged",
                         "returnType": "void"
                     }
                 ],

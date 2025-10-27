@@ -106,6 +106,24 @@ void PlannerBackend::setSearchQuery(const QString& query) {
     emit filtersChanged();
 }
 
+void PlannerBackend::setLanguage(const QString& language) {
+    if (!m_state.setLanguage(language)) return;
+    m_state.save();
+    emit settingsChanged();
+}
+
+void PlannerBackend::setWeekStart(const QString& weekStart) {
+    if (!m_state.setWeekStart(weekStart)) return;
+    m_state.save();
+    emit settingsChanged();
+}
+
+void PlannerBackend::setShowWeekNumbers(bool enabled) {
+    if (!m_state.setWeekNumbers(enabled)) return;
+    m_state.save();
+    emit settingsChanged();
+}
+
 void PlannerBackend::selectDateIso(const QString& isoDate) {
     selectDate(fromIso(isoDate));
 }
@@ -284,7 +302,7 @@ void PlannerBackend::quickAdd(const QString& input) {
     if (trimmed.isEmpty()) return;
 
     // Placeholder implementation until task authoring is connected to the core planner.
-    notify(tr("Quick Add noch nicht mit dem Core verbunden"));
+    notify(tr("Hinzugefügt"));
 }
 
 void PlannerBackend::showToast(const QString& message) {

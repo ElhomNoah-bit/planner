@@ -13,43 +13,339 @@
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 28,
-                        "durationMicroseconds": 173,
-                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
-                        "functionName": "onCompleted",
-                        "line": 17
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 17,
-                        "durationMicroseconds": 57,
+                        "column": 5,
+                        "durationMicroseconds": 171,
                         "errorMessage": "Cannot access value for name PlannerBackend",
-                        "functionName": "target",
+                        "functionName": "syncState",
                         "line": 22
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 9,
-                        "durationMicroseconds": 1531,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
-                        "functionName": "onDarkThemeChanged",
-                        "line": 23
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 23,
-                        "durationMicroseconds": 82,
-                        "errorMessage": "",
-                        "functionName": "fill",
+                        "column": 5,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "goToday",
                         "line": 30
                     },
                     {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "quickAddOpen",
+                        "line": 34
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "openQuickAddFor",
+                        "line": 38
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "openCommandPalette",
+                        "line": 51
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "toggleOnlyOpen",
+                        "line": 55
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "createQuickItem",
+                        "line": 62
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "handleCommand",
+                        "line": 66
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "setViewMode",
+                        "line": 94
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 1790,
+                        "errorMessage": "Cannot load property g16 from ThemeStore::gap with type QObject.",
+                        "functionName": "spacing",
+                        "line": 104
+                    },
+                    {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 35
+                        "line": 102
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 25,
+                        "errorMessage": "Cannot load property g24 from ThemeStore::gap with type QObject.",
+                        "functionName": "margins",
+                        "line": 103
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot load property g16 from ThemeStore::gap with type QObject.",
+                        "functionName": "spacing",
+                        "line": 109
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 424,
+                        "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
+                        "functionName": "options",
+                        "line": 114
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
+                        "functionName": "value",
+                        "line": 119
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
+                        "durationMicroseconds": 24,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
+                        "functionName": "onValueChanged",
+                        "line": 120
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 126
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 132
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 25,
+                        "durationMicroseconds": 14,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
+                        "functionName": "active",
+                        "line": 137
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 25,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
+                        "functionName": "onToggled",
+                        "line": 138
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 29,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"accepted\".",
+                        "functionName": "onAccepted",
+                        "line": 148
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"textChanged\".",
+                        "functionName": "onTextChanged",
+                        "line": 152
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 14,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
+                        "functionName": "viewMode",
+                        "line": 163
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 10,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
+                        "functionName": "onlyOpen",
+                        "line": 164
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
+                        "functionName": "onQuickAddRequested",
+                        "line": 165
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 47,
+                        "errorMessage": "",
+                        "functionName": "onQuickAddRequested",
+                        "line": 165
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 37,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
+                        "functionName": "onJumpToTodayRequested",
+                        "line": 166
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 21,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"accepted\".",
+                        "functionName": "onAccepted",
+                        "line": 173
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 21,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"accepted\".",
+                        "functionName": "onAccepted",
+                        "line": 173
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"fill\".",
+                        "functionName": "fill",
+                        "line": 172
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 29,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"commandTriggered\".",
+                        "functionName": "onCommandTriggered",
+                        "line": 179
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 29,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"commandTriggered\".",
+                        "functionName": "onCommandTriggered",
+                        "line": 179
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"fill\".",
+                        "functionName": "fill",
+                        "line": 178
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 27,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"centerIn\".",
+                        "functionName": "centerIn",
+                        "line": 184
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 189
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 17,
+                        "durationMicroseconds": 67,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "target",
+                        "line": 193
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 9,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
+                        "functionName": "onDarkThemeChanged",
+                        "line": 194
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 9,
+                        "durationMicroseconds": 64,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "onViewModeChanged",
+                        "line": 197
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 9,
+                        "durationMicroseconds": 150,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "onFiltersChanged",
+                        "line": 200
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "",
+                        "functionName": "onCompleted",
+                        "line": 208
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 21,
+                        "durationMicroseconds": 1226,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "onPressed",
+                        "line": 210
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "onPressed",
+                        "line": 210
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/App.qml"

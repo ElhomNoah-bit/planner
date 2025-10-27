@@ -39,6 +39,7 @@ QtObject {
 
     // Fonts
     readonly property string fontFamily: "Inter"
+    readonly property string fontHeading: "Inter"
     readonly property string fontFallback: "Sans Serif"
 
     // Legacy groupings kept for gradual migration
@@ -96,7 +97,10 @@ QtObject {
     }
 
     readonly property QtObject fonts: QtObject {
-        readonly property alias uiFallback: theme.fontFallback
+        readonly property alias body: theme.fontFamily
+        readonly property alias heading: theme.fontHeading
+        readonly property alias uiFallback: theme.fontFamily
+        readonly property alias fallback: theme.fontFallback
         readonly property url interUrl: "qrc:/fonts/Inter-Regular.ttf"
     }
 }

@@ -42,16 +42,17 @@ noah_planner: \
   libstyles_module.a \
   /usr/lib64/libQt6QuickControls2.so.6.9.2 \
   /usr/lib64/libQt6QuickLayouts.so.6.9.2 \
+  /usr/lib64/libQt6Widgets.so.6.9.2 \
   NoahPlanner/Styles/libstyles_moduleplugin.a \
   /usr/lib64/libQt6Quick.so.6.9.2 \
   /usr/lib64/libQt6OpenGL.so.6.9.2 \
-  /usr/lib64/libQt6Gui.so.6.9.2 \
-  /usr/lib64/libGLX.so \
-  /usr/lib64/libOpenGL.so \
   /usr/lib64/libxkbcommon.so \
   /usr/lib64/libQt6QmlMeta.so.6.9.2 \
   /usr/lib64/libQt6QmlModels.so.6.9.2 \
   /usr/lib64/libQt6QmlWorkerScript.so.6.9.2 \
+  /usr/lib64/libQt6Gui.so.6.9.2 \
+  /usr/lib64/libGLX.so \
+  /usr/lib64/libOpenGL.so \
   libstyles_module.a \
   /usr/lib64/libQt6Qml.so.6.9.2 \
   /usr/lib64/libQt6Network.so.6.9.2 \
@@ -234,17 +235,13 @@ libstyles_module.a:
 
 /usr/lib64/libQt6QuickLayouts.so.6.9.2:
 
+/usr/lib64/libQt6Widgets.so.6.9.2:
+
 NoahPlanner/Styles/libstyles_moduleplugin.a:
 
 /usr/lib64/libQt6Quick.so.6.9.2:
 
 /usr/lib64/libQt6OpenGL.so.6.9.2:
-
-/usr/lib64/libQt6Gui.so.6.9.2:
-
-/usr/lib64/libGLX.so:
-
-/usr/lib64/libOpenGL.so:
 
 /usr/lib64/libxkbcommon.so:
 
@@ -253,6 +250,12 @@ NoahPlanner/Styles/libstyles_moduleplugin.a:
 /usr/lib64/libQt6QmlModels.so.6.9.2:
 
 /usr/lib64/libQt6QmlWorkerScript.so.6.9.2:
+
+/usr/lib64/libQt6Gui.so.6.9.2:
+
+/usr/lib64/libGLX.so:
+
+/usr/lib64/libOpenGL.so:
 
 libstyles_module.a:
 

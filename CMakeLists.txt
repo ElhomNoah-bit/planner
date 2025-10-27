@@ -4,7 +4,7 @@ project(noah_planner LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.5 COMPONENTS Quick Qml QuickControls2 QuickLayouts REQUIRED)
+find_package(Qt6 6.5 COMPONENTS Quick Qml QuickControls2 QuickLayouts Widgets REQUIRED)
 
 qt_standard_project_setup()
 
@@ -60,11 +60,20 @@ qt_add_qml_module(noah_planner
         src/ui/qml/views/WeekView.qml
 )
 
+set_source_files_properties(
+    ${CMAKE_CURRENT_SOURCE_DIR}/assets/fonts/Inter-Regular.ttf
+    PROPERTIES QT_RESOURCE_ALIAS "Inter-Regular.ttf"
+)
+set_source_files_properties(
+    ${CMAKE_CURRENT_SOURCE_DIR}/assets/fonts/Inter-Bold.ttf
+    PROPERTIES QT_RESOURCE_ALIAS "Inter-Bold.ttf"
+)
+
 qt_add_resources(noah_planner fonts
     PREFIX "/fonts"
     FILES
-        assets/fonts/Inter-Regular.ttf
-        assets/fonts/Inter-Bold.ttf
+        ${CMAKE_CURRENT_SOURCE_DIR}/assets/fonts/Inter-Regular.ttf
+        ${CMAKE_CURRENT_SOURCE_DIR}/assets/fonts/Inter-Bold.ttf
 )
 
 qt_add_qml_module(styles_module
@@ -81,6 +90,6 @@ target_link_libraries(noah_planner PRIVATE styles_module)
 
 target_include_directories(noah_planner PRIVATE src)
 
-target_link_libraries(noah_planner PRIVATE Qt6::Gui Qt6::Quick Qt6::Qml Qt6::QuickControls2 Qt6::QuickLayouts)
+target_link_libraries(noah_planner PRIVATE Qt6::Gui Qt6::Quick Qt6::Qml Qt6::QuickControls2 Qt6::QuickLayouts Qt6::Widgets)
 
 install(TARGETS noah_planner RUNTIME DESTINATION bin)
