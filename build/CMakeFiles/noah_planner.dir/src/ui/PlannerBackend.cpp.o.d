@@ -1,12 +1,11 @@
-CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.o: \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/mocs_compilation.cpp \
+CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o: \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/PlannerBackend.cpp \
  /usr/include/stdc-predef.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/PRMOGMWJPH/moc_PlannerService.cpp \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/PRMOGMWJPH/../../../src/core/PlannerService.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/PRMOGMWJPH/../../../src/core/Task.h \
- /usr/include/qt6/QtGui/QColor /usr/include/qt6/QtGui/qcolor.h \
- /usr/include/qt6/QtGui/qtguiglobal.h /usr/include/qt6/QtCore/qglobal.h \
- /usr/include/c++/15/type_traits \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/PlannerBackend.h \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/AppState.h \
+ /usr/include/qt6/QtCore/QSet /usr/include/qt6/QtCore/qset.h \
+ /usr/include/qt6/QtCore/qhash.h /usr/include/qt6/QtCore/qalgorithms.h \
+ /usr/include/qt6/QtCore/qglobal.h /usr/include/c++/15/type_traits \
  /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/os_defines.h \
@@ -140,47 +139,14 @@ CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtCore/qtresource.h \
  /usr/include/qt6/QtCore/qttranslation.h \
  /usr/include/qt6/QtCore/qversiontagging.h \
- /usr/include/qt6/QtGui/qtgui-config.h \
- /usr/include/qt6/QtGui/qtguiexports.h /usr/include/qt6/QtGui/qrgb.h \
- /usr/include/qt6/QtCore/qnamespace.h /usr/include/qt6/QtCore/qcompare.h \
- /usr/include/qt6/QtCore/qstdlibdetection.h \
- /usr/include/qt6/QtCore/qcomparehelpers.h \
- /usr/include/qt6/QtCore/q20type_traits.h /usr/include/c++/15/functional \
- /usr/include/c++/15/bits/stl_function.h \
- /usr/include/c++/15/backward/binders.h \
- /usr/include/c++/15/bits/refwrap.h \
- /usr/include/c++/15/bits/std_function.h \
- /usr/include/c++/15/unordered_map \
- /usr/include/c++/15/bits/unordered_map.h \
- /usr/include/c++/15/bits/hashtable.h \
- /usr/include/c++/15/bits/hashtable_policy.h \
- /usr/include/c++/15/ext/alloc_traits.h \
- /usr/include/c++/15/bits/alloc_traits.h \
- /usr/include/c++/15/bits/memoryfwd.h \
- /usr/include/c++/15/bits/allocator.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h \
- /usr/include/c++/15/bits/new_allocator.h \
- /usr/include/c++/15/bits/node_handle.h \
- /usr/include/c++/15/bits/range_access.h \
- /usr/include/c++/15/bits/erase_if.h \
- /usr/include/c++/15/bits/memory_resource.h \
- /usr/include/c++/15/bits/uses_allocator_args.h \
- /usr/include/c++/15/vector /usr/include/c++/15/bits/stl_uninitialized.h \
- /usr/include/c++/15/bits/stl_vector.h \
- /usr/include/c++/15/bits/stl_bvector.h \
- /usr/include/c++/15/bits/vector.tcc /usr/include/c++/15/array \
- /usr/include/c++/15/compare /usr/include/qt6/QtCore/qtmetamacros.h \
- /usr/include/qt6/QtCore/qstringlist.h /usr/include/qt6/QtCore/qlist.h \
- /usr/include/qt6/QtCore/qarraydatapointer.h \
- /usr/include/qt6/QtCore/qarraydataops.h \
- /usr/include/qt6/QtCore/qarraydata.h /usr/include/qt6/QtCore/qpair.h \
- /usr/include/string.h /usr/include/strings.h \
  /usr/include/qt6/QtCore/qcontainertools_impl.h \
- /usr/include/qt6/QtCore/qxptype_traits.h /usr/include/c++/15/cstring \
+ /usr/include/qt6/QtCore/qxptype_traits.h \
+ /usr/include/qt6/QtCore/q20type_traits.h /usr/include/c++/15/cstring \
+ /usr/include/string.h /usr/include/strings.h \
  /usr/include/c++/15/iterator /usr/include/c++/15/bits/stream_iterator.h \
  /usr/include/c++/15/iosfwd /usr/include/c++/15/bits/stringfwd.h \
- /usr/include/c++/15/bits/postypes.h /usr/include/c++/15/cwchar \
- /usr/include/wchar.h \
+ /usr/include/c++/15/bits/memoryfwd.h /usr/include/c++/15/bits/postypes.h \
+ /usr/include/c++/15/cwchar /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h \
  /usr/include/bits/types/wint_t.h /usr/include/bits/types/mbstate_t.h \
  /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
@@ -211,9 +177,18 @@ CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.o: \
  /usr/include/sys/single_threaded.h \
  /usr/include/c++/15/bits/locale_classes.h /usr/include/c++/15/string \
  /usr/include/c++/15/bits/char_traits.h \
+ /usr/include/c++/15/bits/allocator.h \
+ /usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h \
+ /usr/include/c++/15/bits/new_allocator.h \
  /usr/include/c++/15/bits/ostream_insert.h \
  /usr/include/c++/15/bits/cxxabi_forced.h \
- /usr/include/c++/15/bits/basic_string.h /usr/include/c++/15/string_view \
+ /usr/include/c++/15/bits/stl_function.h \
+ /usr/include/c++/15/backward/binders.h \
+ /usr/include/c++/15/bits/refwrap.h \
+ /usr/include/c++/15/bits/range_access.h \
+ /usr/include/c++/15/bits/basic_string.h \
+ /usr/include/c++/15/ext/alloc_traits.h \
+ /usr/include/c++/15/bits/alloc_traits.h /usr/include/c++/15/string_view \
  /usr/include/c++/15/bits/string_view.tcc \
  /usr/include/c++/15/ext/string_conversions.h /usr/include/c++/15/cstdio \
  /usr/include/stdio.h /usr/include/bits/types/__fpos_t.h \
@@ -227,11 +202,13 @@ CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.o: \
  /usr/include/asm-generic/errno-base.h /usr/include/bits/types/error_t.h \
  /usr/include/c++/15/bits/charconv.h \
  /usr/include/c++/15/bits/basic_string.tcc \
+ /usr/include/c++/15/bits/memory_resource.h \
+ /usr/include/c++/15/bits/uses_allocator_args.h \
  /usr/include/c++/15/bits/locale_classes.tcc \
  /usr/include/c++/15/system_error \
  /usr/include/c++/15/x86_64-redhat-linux/bits/error_constants.h \
  /usr/include/c++/15/stdexcept /usr/include/c++/15/bits/streambuf.tcc \
- /usr/include/c++/15/memory \
+ /usr/include/c++/15/memory /usr/include/c++/15/bits/stl_uninitialized.h \
  /usr/include/c++/15/bits/stl_raw_storage_iter.h \
  /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/unique_ptr.h \
  /usr/include/c++/15/bits/shared_ptr.h \
@@ -241,12 +218,30 @@ CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/15/bits/shared_ptr_atomic.h \
  /usr/include/c++/15/backward/auto_ptr.h \
  /usr/include/c++/15/pstl/glue_memory_defs.h \
- /usr/include/qt6/QtCore/q20functional.h \
- /usr/include/qt6/QtCore/q20memory.h /usr/include/qt6/QtCore/q17memory.h \
  /usr/include/qt6/QtCore/qhashfunctions.h \
  /usr/include/qt6/QtCore/qstring.h /usr/include/qt6/QtCore/qchar.h \
- /usr/include/qt6/QtCore/qstringview.h \
+ /usr/include/qt6/QtCore/qcompare.h \
+ /usr/include/qt6/QtCore/qstdlibdetection.h \
+ /usr/include/qt6/QtCore/qcomparehelpers.h /usr/include/c++/15/functional \
+ /usr/include/c++/15/bits/std_function.h \
+ /usr/include/c++/15/unordered_map \
+ /usr/include/c++/15/bits/unordered_map.h \
+ /usr/include/c++/15/bits/hashtable.h \
+ /usr/include/c++/15/bits/hashtable_policy.h \
+ /usr/include/c++/15/bits/node_handle.h \
+ /usr/include/c++/15/bits/erase_if.h /usr/include/c++/15/vector \
+ /usr/include/c++/15/bits/stl_vector.h \
+ /usr/include/c++/15/bits/stl_bvector.h \
+ /usr/include/c++/15/bits/vector.tcc /usr/include/c++/15/array \
+ /usr/include/c++/15/compare /usr/include/qt6/QtCore/qstringview.h \
  /usr/include/qt6/QtCore/qbytearray.h /usr/include/qt6/QtCore/qrefcount.h \
+ /usr/include/qt6/QtCore/qnamespace.h \
+ /usr/include/qt6/QtCore/qtmetamacros.h \
+ /usr/include/qt6/QtCore/qarraydata.h /usr/include/qt6/QtCore/qpair.h \
+ /usr/include/qt6/QtCore/qarraydatapointer.h \
+ /usr/include/qt6/QtCore/qarraydataops.h \
+ /usr/include/qt6/QtCore/q20functional.h \
+ /usr/include/qt6/QtCore/q20memory.h /usr/include/qt6/QtCore/q17memory.h \
  /usr/include/qt6/QtCore/qbytearrayalgorithms.h \
  /usr/include/qt6/QtCore/qbytearrayview.h \
  /usr/include/qt6/QtCore/qstringfwd.h /usr/include/c++/15/stdlib.h \
@@ -261,10 +256,17 @@ CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtCore/qstringconverter_base.h \
  /usr/include/c++/15/numeric /usr/include/c++/15/bits/stl_numeric.h \
  /usr/include/c++/15/pstl/glue_numeric_defs.h \
- /usr/include/qt6/QtCore/qiterator.h \
+ /usr/include/qt6/QtCore/qiterator.h /usr/include/qt6/QtCore/qlist.h \
  /usr/include/qt6/QtCore/qbytearraylist.h \
- /usr/include/qt6/QtCore/qalgorithms.h \
- /usr/include/qt6/QtCore/qstringmatcher.h \
+ /usr/include/qt6/QtCore/qstringlist.h \
+ /usr/include/qt6/QtCore/qstringmatcher.h /usr/include/qt6/QtCore/QString \
+ /usr/include/qt6/QtCore/qstring.h \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/PlannerService.h \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Task.h \
+ /usr/include/qt6/QtGui/QColor /usr/include/qt6/QtGui/qcolor.h \
+ /usr/include/qt6/QtGui/qtguiglobal.h \
+ /usr/include/qt6/QtGui/qtgui-config.h \
+ /usr/include/qt6/QtGui/qtguiexports.h /usr/include/qt6/QtGui/qrgb.h \
  /usr/include/qt6/QtGui/qrgba64.h \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/limits.h \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/syslimits.h \
@@ -304,17 +306,15 @@ CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/15/unordered_set \
  /usr/include/c++/15/bits/unordered_set.h /usr/include/qt6/QtCore/qmap.h \
  /usr/include/qt6/QtCore/qshareddata_impl.h \
- /usr/include/qt6/QtCore/qset.h /usr/include/qt6/QtCore/qhash.h \
- /usr/include/qt6/QtCore/qvarlengtharray.h \
+ /usr/include/qt6/QtCore/qset.h /usr/include/qt6/QtCore/qvarlengtharray.h \
  /usr/include/qt6/QtCore/q23utility.h \
  /usr/include/qt6/QtCore/q20utility.h /usr/include/qt6/QtCore/qobject.h \
  /usr/include/qt6/QtCore/qobject_impl.h \
  /usr/include/qt6/QtCore/qbindingstorage.h \
- /usr/include/qt6/QtCore/QString /usr/include/qt6/QtCore/qstring.h \
  /usr/include/qt6/QtCore/QStringList \
  /usr/include/qt6/QtCore/qstringlist.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/PRMOGMWJPH/../../../src/core/Subject.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/PRMOGMWJPH/../../../src/core/Exam.h \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Subject.h \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Exam.h \
  /usr/include/qt6/QtCore/QHash /usr/include/qt6/QtCore/qhash.h \
  /usr/include/qt6/QtCore/QJsonObject \
  /usr/include/qt6/QtCore/qjsonobject.h \
@@ -328,30 +328,21 @@ CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtCore/qjsondocument.h \
  /usr/include/qt6/QtCore/qjsonparseerror.h /usr/include/qt6/QtCore/QList \
  /usr/include/qt6/QtCore/qlist.h /usr/include/qt6/QtCore/QObject \
- /usr/include/qt6/QtCore/qobject.h /usr/include/qt6/QtCore/QSet \
- /usr/include/qt6/QtCore/qset.h /usr/include/qt6/QtCore/QVector \
- /usr/include/qt6/QtCore/qvector.h /usr/include/qt6/QtCore/qtmochelpers.h \
- /usr/include/qt6/QtCore/qtmocconstants.h \
- /usr/include/qt6/QtCore/q20algorithm.h \
- /usr/include/qt6/QtCore/q23type_traits.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/M4YTXQ7V2H/moc_ExamModel.cpp \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/M4YTXQ7V2H/../../../src/models/ExamModel.h \
+ /usr/include/qt6/QtCore/qobject.h /usr/include/qt6/QtCore/QVector \
+ /usr/include/qt6/QtCore/qvector.h \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/ExamModel.h \
  /usr/include/qt6/QtCore/QAbstractListModel \
  /usr/include/qt6/QtCore/qabstractitemmodel.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/M4YTXQ7V2H/moc_TaskFilterProxy.cpp \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/M4YTXQ7V2H/../../../src/models/TaskFilterProxy.h \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/TaskFilterProxy.h \
  /usr/include/qt6/QtCore/QSortFilterProxyModel \
  /usr/include/qt6/QtCore/qsortfilterproxymodel.h \
  /usr/include/qt6/QtCore/qabstractproxymodel.h \
  /usr/include/qt6/QtCore/qabstractitemmodel.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/M4YTXQ7V2H/moc_TaskModel.cpp \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/M4YTXQ7V2H/../../../src/models/TaskModel.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/YPKJ5OE7LN/moc_PlannerBackend.cpp \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/YPKJ5OE7LN/../../../src/ui/PlannerBackend.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/YPKJ5OE7LN/../../../src/ui/AppState.h \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/TaskModel.h \
  /usr/include/qt6/QtCore/QVariantList \
  /usr/include/qt6/QtCore/qvariantlist.h /usr/include/qt6/QtCore/QList \
  /usr/include/qt6/QtCore/QVariant /usr/include/qt6/QtCore/qvariant.h \
  /usr/include/qt6/QtCore/QVariantMap \
  /usr/include/qt6/QtCore/qvariantmap.h /usr/include/qt6/QtCore/QMap \
- /usr/include/qt6/QtCore/qmap.h /usr/include/qt6/QtCore/QString
+ /usr/include/qt6/QtCore/qmap.h /usr/include/qt6/QtCore/QString \
+ /usr/include/qt6/QtCore/QDateTime /usr/include/qt6/QtCore/QModelIndex

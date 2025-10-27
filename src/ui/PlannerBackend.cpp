@@ -181,7 +181,17 @@ QStringList PlannerBackend::subjectFilter() const {
 
 QVariantMap PlannerBackend::subjectById(const QString& id) const {
     QVariantMap out;
-    const Subject subject = m_planner.subjectById(id);
+    auto findSubject = [&]() -> Subject {
+        for (const auto& subject : m_subjects) {
+            if (subject.id == id) return subject;
+        }
+        Subject fallback;
+        fallback.id = id;
+        fallback.name = id;
+        fallback.color = QColor("#4C4C4C");
+        return fallback;
+    };
+    const Subject subject = findSubject();
     out.insert("id", subject.id);
     out.insert("name", subject.name);
     out.insert("color", subject.color);
@@ -189,7 +199,10 @@ QVariantMap PlannerBackend::subjectById(const QString& id) const {
 }
 
 QColor PlannerBackend::subjectColor(const QString& id) const {
-    return m_planner.subjectById(id).color;
+    for (const auto& subject : m_subjects) {
+        if (subject.id == id) return subject.color;
+    }
+    return QColor("#4C4C4C");
 }
 
 QVariantList PlannerBackend::weekEvents(const QString& weekStartIso) const {

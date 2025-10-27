@@ -18,15 +18,14 @@ int main(int argc, char* argv[]) {
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("PlannerBackend", &backend);
-    const QUrl url(QStringLiteral("qrc:/NoahPlanner/App.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated, &app,
-                     [url](QObject* obj, const QUrl& objUrl) {
-                         if (!obj && url == objUrl) {
+                     [](QObject* obj, const QUrl& objUrl) {
+                         if (!obj && objUrl.isEmpty()) {
                              QCoreApplication::exit(-1);
                          }
                      },
                      Qt::QueuedConnection);
-    engine.load(url);
+    engine.loadFromModule("NoahPlanner", "App");
 
     return app.exec();
 }

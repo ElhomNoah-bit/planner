@@ -8,11 +8,10 @@ Button {
     property bool active: false
     property bool subtle: false
     property alias icon: iconGlyph.symbol
-    property real spacing: NP.ThemeStore.spacing.gap8
 
     implicitHeight: 36
     padding: NP.ThemeStore.spacing.gap12
-    spacing: control.spacing
+    spacing: NP.ThemeStore.spacing.gap8
     hoverEnabled: true
 
     font.pixelSize: 14
@@ -28,7 +27,7 @@ Button {
 
     contentItem: Row {
         anchors.centerIn: parent
-        spacing: control.spacing
+    spacing: control.spacing
         IconGlyph {
             id: iconGlyph
             visible: iconGlyph.symbol.length > 0
