@@ -69,7 +69,6 @@ include CMakeFiles/noah_planner_copy_res.dir/progress.make
 CMakeFiles/noah_planner_copy_res: .qt/noah_planner_res.txt
 
 .qt/noah_planner_res.txt: /usr/lib64/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
-.qt/noah_planner_res.txt: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/assets/fonts/Inter-Regular.ttf
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Copying noah_planner qml resources into build dir"
 	/usr/bin/cmake -DFILES_INFO_PATH=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/noah_planner_res.cmake -P /usr/lib64/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
 

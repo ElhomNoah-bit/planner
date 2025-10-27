@@ -6,207 +6,207 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 1438,
-                        "errorMessage": "Cannot load property accent from ThemeStore::colors with type QObject.",
+                        "durationMicroseconds": 82,
+                        "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "subjectColor",
                         "line": 10
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 12,
-                        "durationMicroseconds": 233,
+                        "durationMicroseconds": 248,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 16
                     },
                     {
-                        "codegenSuccessful": true,
-                        "column": 34,
-                        "durationMicroseconds": 109,
-                        "errorMessage": "",
-                        "functionName": "theme",
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
+                        "functionName": "colors",
                         "line": 18
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 35,
-                        "durationMicroseconds": 36,
-                        "errorMessage": "Cannot load property colors from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/TodayTaskDelegate.qml)::theme with type QVariant.",
-                        "functionName": "colors",
+                        "column": 38,
+                        "durationMicroseconds": 28,
+                        "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
+                        "functionName": "gaps",
                         "line": 19
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 29,
-                        "errorMessage": "Cannot load property gap from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/TodayTaskDelegate.qml)::theme with type QVariant.",
-                        "functionName": "gap",
+                        "column": 39,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
+                        "functionName": "radii",
                         "line": 20
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 34,
-                        "durationMicroseconds": 29,
-                        "errorMessage": "Cannot load property radii from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/TodayTaskDelegate.qml)::theme with type QVariant.",
-                        "functionName": "radii",
+                        "column": 43,
+                        "durationMicroseconds": 24,
+                        "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
+                        "functionName": "typeScale",
                         "line": 21
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 38,
-                        "durationMicroseconds": 27,
-                        "errorMessage": "Cannot load property type from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/TodayTaskDelegate.qml)::theme with type QVariant.",
-                        "functionName": "typeScale",
-                        "line": 22
+                        "column": 13,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "Cannot access value for name radii",
+                        "functionName": "radius",
+                        "line": 26
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 17,
-                        "durationMicroseconds": 65,
-                        "errorMessage": "Cannot access value for name radii",
-                        "functionName": "radius",
+                        "column": 12,
+                        "durationMicroseconds": 75,
+                        "errorMessage": "Cannot access value for name colors",
+                        "functionName": "color",
                         "line": 27
                     },
                     {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 88,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 25
+                    },
+                    {
                         "codegenSuccessful": false,
-                        "column": 16,
-                        "durationMicroseconds": 272,
+                        "column": 19,
+                        "durationMicroseconds": 72,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 28
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 23,
-                        "durationMicroseconds": 79,
+                        "column": 74,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 26
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 23,
-                        "durationMicroseconds": 233,
-                        "errorMessage": "Cannot access value for name colors",
-                        "functionName": "color",
-                        "line": 29
+                        "functionName": "type",
+                        "line": 30
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 74,
-                        "durationMicroseconds": 99,
+                        "column": 81,
+                        "durationMicroseconds": 90,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 31
                     },
                     {
-                        "codegenSuccessful": true,
-                        "column": 81,
-                        "durationMicroseconds": 87,
-                        "errorMessage": "",
-                        "functionName": "type",
-                        "line": 32
-                    },
-                    {
                         "codegenSuccessful": false,
-                        "column": 18,
-                        "durationMicroseconds": 69,
-                        "errorMessage": "Cannot access value for name gap",
+                        "column": 14,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
-                        "line": 38
+                        "line": 37
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 74,
                         "errorMessage": "",
                         "functionName": "fill",
+                        "line": 35
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 36,
+                        "errorMessage": "Cannot access value for name gaps",
+                        "functionName": "margins",
                         "line": 36
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 26,
-                        "durationMicroseconds": 66,
-                        "errorMessage": "Cannot access value for name gap",
-                        "functionName": "margins",
-                        "line": 37
-                    },
-                    {
-                        "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 87,
-                        "errorMessage": "Cannot access value for name colors",
-                        "functionName": "color",
-                        "line": 47
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 27,
-                        "durationMicroseconds": 284,
+                        "durationMicroseconds": 58,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 46
                     },
                     {
+                        "codegenSuccessful": false,
+                        "column": 27,
+                        "durationMicroseconds": 83,
+                        "errorMessage": "Cannot access value for name colors",
+                        "functionName": "color",
+                        "line": 45
+                    },
+                    {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 131,
+                        "durationMicroseconds": 135,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
-                        "line": 48
+                        "line": 47
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 79,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 92,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 48
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 85,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 49
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 85,
-                        "durationMicroseconds": 84,
-                        "errorMessage": "",
-                        "functionName": "type",
-                        "line": 50
-                    },
-                    {
-                        "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 209,
+                        "durationMicroseconds": 181,
                         "errorMessage": "",
                         "functionName": "text",
-                        "line": 53
+                        "line": 52
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 74,
+                        "durationMicroseconds": 46,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
-                        "line": 54
+                        "line": 53
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 35,
-                        "durationMicroseconds": 70,
+                        "column": 29,
+                        "durationMicroseconds": 98,
                         "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 52
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 30,
-                        "durationMicroseconds": 103,
-                        "errorMessage": "",
-                        "functionName": "weight",
+                        "functionName": "renderType",
                         "line": 56
                     },
                     {
                         "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 51
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 88,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 55
+                    },
+                    {
+                        "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 486,
+                        "durationMicroseconds": 3670,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 61
@@ -214,15 +214,15 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 75,
-                        "errorMessage": "Cannot access value for name gap",
+                        "durationMicroseconds": 69,
+                        "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 62
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 132,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 64
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 78,
+                        "durationMicroseconds": 70,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 68
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 127,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 69
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 84,
+                        "durationMicroseconds": 117,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 70
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 84,
+                        "durationMicroseconds": 58,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 65
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "weight",
                         "line": 66
@@ -270,15 +270,15 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 39,
-                        "errorMessage": "Cannot load property uiFallback from ThemeStore::fonts with type QObject.",
+                        "durationMicroseconds": 48,
+                        "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "family",
                         "line": 67
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 127,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 73
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 78,
+                        "durationMicroseconds": 56,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 77
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 130,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 78
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 82,
+                        "durationMicroseconds": 116,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 79
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 82,
+                        "durationMicroseconds": 54,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 74
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 98,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "weight",
                         "line": 75
@@ -326,31 +326,31 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 39,
-                        "errorMessage": "Cannot load property uiFallback from ThemeStore::fonts with type QObject.",
+                        "durationMicroseconds": 29,
+                        "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "family",
                         "line": 76
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 37,
-                        "errorMessage": "Cannot load property pillH from ThemeStore::layout with type QObject.",
+                        "durationMicroseconds": 55,
+                        "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "height",
                         "line": 85
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 31,
-                        "errorMessage": "Cannot load property md from ThemeStore::radii with type QObject.",
+                        "durationMicroseconds": 32,
+                        "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "radius",
                         "line": 87
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 136,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 88
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 131,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 89
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 146,
+                        "durationMicroseconds": 131,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 91
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 233,
+                        "durationMicroseconds": 286,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 94
@@ -382,7 +382,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 55,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 98
@@ -390,7 +390,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 110,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 99
@@ -398,7 +398,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 63,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 93
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 80,
+                        "durationMicroseconds": 47,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 95
@@ -414,7 +414,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "weight",
                         "line": 96
@@ -422,15 +422,15 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 50,
-                        "errorMessage": "Cannot load property uiFallback from ThemeStore::fonts with type QObject.",
+                        "durationMicroseconds": 36,
+                        "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "family",
                         "line": 97
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 103,
+                        "durationMicroseconds": 107,
                         "errorMessage": "",
                         "functionName": "cursorShape",
                         "line": 103
@@ -438,7 +438,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 196,
+                        "durationMicroseconds": 201,
                         "errorMessage": "",
                         "functionName": "onClicked",
                         "line": 104
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 102
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 132,
                         "errorMessage": "",
                         "functionName": "acceptedButtons",
                         "line": 110
@@ -462,7 +462,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 242,
+                        "durationMicroseconds": 235,
                         "errorMessage": "",
                         "functionName": "onTapped",
                         "line": 111

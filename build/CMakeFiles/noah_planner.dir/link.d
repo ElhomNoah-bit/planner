@@ -33,15 +33,13 @@ noah_planner: \
   CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp.o \
   CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o \
   CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o \
+  CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o \
   CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o \
   CMakeFiles/styles_module_resources_2.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.o \
   CMakeFiles/styles_module_resources_3.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.o \
-  CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init_autogen/mocs_compilation.cpp.o \
-  CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init.cpp.o \
   libstyles_module.a \
   /usr/lib64/libQt6QuickControls2.so.6.9.2 \
   /usr/lib64/libQt6QuickLayouts.so.6.9.2 \
-  styles/libstyles_moduleplugin.a \
   /usr/lib64/libQt6Quick.so.6.9.2 \
   /usr/lib64/libQt6OpenGL.so.6.9.2 \
   /usr/lib64/libQt6Gui.so.6.9.2 \
@@ -51,7 +49,6 @@ noah_planner: \
   /usr/lib64/libQt6QmlMeta.so.6.9.2 \
   /usr/lib64/libQt6QmlModels.so.6.9.2 \
   /usr/lib64/libQt6QmlWorkerScript.so.6.9.2 \
-  libstyles_module.a \
   /usr/lib64/libQt6Qml.so.6.9.2 \
   /usr/lib64/libQt6Network.so.6.9.2 \
   /usr/lib64/libQt6Core.so.6.9.2 \
@@ -215,23 +212,19 @@ CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o:
 
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o:
 
+CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o:
+
 CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o:
 
 CMakeFiles/styles_module_resources_2.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.o:
 
 CMakeFiles/styles_module_resources_3.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.o:
 
-CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init_autogen/mocs_compilation.cpp.o:
-
-CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init.cpp.o:
-
 libstyles_module.a:
 
 /usr/lib64/libQt6QuickControls2.so.6.9.2:
 
 /usr/lib64/libQt6QuickLayouts.so.6.9.2:
-
-styles/libstyles_moduleplugin.a:
 
 /usr/lib64/libQt6Quick.so.6.9.2:
 
@@ -250,8 +243,6 @@ styles/libstyles_moduleplugin.a:
 /usr/lib64/libQt6QmlModels.so.6.9.2:
 
 /usr/lib64/libQt6QmlWorkerScript.so.6.9.2:
-
-libstyles_module.a:
 
 /usr/lib64/libQt6Qml.so.6.9.2:
 

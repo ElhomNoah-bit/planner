@@ -2,56 +2,55 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import styles 1.0 as Styles
+import "styles" as Styles
 
-GlassPanel {
+Rectangle {
     id: root
     property string selectedIso: PlannerBackend.selectedDate
     property var summary: PlannerBackend.daySummary(selectedIso)
     signal startTimerRequested(int minutes)
 
-    readonly property var theme: Styles.ThemeStore
-    readonly property var colors: theme ? theme.colors : null
-    readonly property var gap: theme ? theme.gap : null
-    readonly property var typeScale: theme ? theme.type : null
-    readonly property var radii: theme ? theme.radii : null
-    readonly property var layout: theme ? theme.layout : null
+    readonly property QtObject colors: Styles.ThemeStore.colors
+    readonly property QtObject gaps: Styles.ThemeStore.gap
+    readonly property QtObject typeScale: Styles.ThemeStore.type
+    readonly property QtObject radii: Styles.ThemeStore.radii
+    readonly property QtObject metrics: Styles.ThemeStore.layout
 
-    width: layout ? layout.sidebarW : 340
-    padding: layout ? layout.margin : (gap ? gap.g24 : 24)
-    tint: colors ? colors.cardGlass : Qt.rgba(0, 0, 0, 0.45)
-    stroke: colors ? colors.divider : Qt.rgba(1, 1, 1, 0.18)
+    width: metrics.sidebarW
+    radius: radii.xl
+    color: colors.cardGlass
+    border.width: 1
+    border.color: colors.divider
 
     ColumnLayout {
         anchors.fill: parent
-        spacing: gap ? gap.g16 : 16
+        anchors.margins: metrics.margin
+        spacing: gaps.g16
 
         Column {
             Layout.fillWidth: true
-            spacing: gap ? gap.g4 : 4
+            spacing: gaps.g4
             Text {
                 text: qsTr("Heute")
-                font.pixelSize: typeScale ? typeScale.lg : 16
-                font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                font.pixelSize: typeScale.lg
+                font.weight: typeScale.weightMedium
                 font.family: Styles.ThemeStore.fonts.uiFallback
-                color: colors ? colors.text : "#F2F5F9"
+                color: colors.text
                 renderType: Text.NativeRendering
             }
             Text {
                 text: summary.total > 0 ? summary.done + "/" + summary.total + qsTr(" erledigt") : qsTr("Keine Aufgaben")
-                font.pixelSize: typeScale ? typeScale.metaSize : 11
-                font.weight: typeScale ? typeScale.weightRegular : Font.Normal
+                font.pixelSize: typeScale.xs
+                font.weight: typeScale.weightRegular
                 font.family: Styles.ThemeStore.fonts.uiFallback
-                color: colors ? colors.text2 : "#B7C0CC"
+                color: colors.text2
                 renderType: Text.NativeRendering
             }
         }
 
-        GlassPanel {
+        Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
-            tint: colors ? colors.cardGlass : Qt.rgba(0, 0, 0, 0.4)
-            padding: gap ? gap.g16 : 16
 
             Flickable {
                 id: contentFlick
@@ -64,23 +63,23 @@ GlassPanel {
                 Column {
                     id: contentColumn
                     width: parent.width
-                    spacing: gap ? gap.g16 : 16
+                    spacing: gaps.g16
 
                     Column {
-                        spacing: gap ? gap.g8 : 8
+                        spacing: gaps.g8
                         Text {
                             text: qsTr("Nächste Aufgaben")
-                            font.pixelSize: typeScale ? typeScale.md : 14
-                            font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                            font.pixelSize: typeScale.sm
+                            font.weight: typeScale.weightMedium
                             font.family: Styles.ThemeStore.fonts.uiFallback
-                            color: colors ? colors.text : "#F2F5F9"
+                            color: colors.text2
                             renderType: Text.NativeRendering
                         }
 
                         Column {
                             id: tasksColumn
                             width: parent.width
-                            spacing: gap ? gap.g12 : 12
+                            spacing: gaps.g12
                             visible: tasksRepeater.count > 0
                             height: visible ? implicitHeight : 0
                             Repeater {
@@ -105,13 +104,13 @@ GlassPanel {
                             height: 80
                             Column {
                                 anchors.centerIn: parent
-                                spacing: gap ? gap.g4 : 4
+                                spacing: gaps.g4
                                 Text {
                                     text: qsTr("Alles erledigt - super!")
-                                    font.pixelSize: typeScale ? typeScale.sm : 12
-                                    font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                                    font.pixelSize: typeScale.sm
+                                    font.weight: typeScale.weightMedium
                                     font.family: Styles.ThemeStore.fonts.uiFallback
-                                    color: colors ? colors.text2 : "#B7C0CC"
+                                    color: colors.text2
                                     horizontalAlignment: Text.AlignHCenter
                                     width: parent.width
                                     renderType: Text.NativeRendering
@@ -122,25 +121,25 @@ GlassPanel {
 
                     Rectangle {
                         height: 1
-                        color: colors ? colors.divider : Qt.rgba(1, 1, 1, 0.12)
+                        color: colors.divider
                         width: parent.width
                     }
 
                     Column {
-                        spacing: gap ? gap.g8 : 8
+                        spacing: gaps.g8
                         Text {
                             text: qsTr("Klassenarbeiten")
-                            font.pixelSize: typeScale ? typeScale.md : 14
-                            font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                            font.pixelSize: typeScale.sm
+                            font.weight: typeScale.weightMedium
                             font.family: Styles.ThemeStore.fonts.uiFallback
-                            color: colors ? colors.text : "#F2F5F9"
+                            color: colors.text2
                             renderType: Text.NativeRendering
                         }
 
                         Column {
                             id: examsColumn
                             width: parent.width
-                            spacing: gap ? gap.g12 : 12
+                            spacing: gaps.g12
                             visible: examsRepeater.count > 0
                             height: visible ? implicitHeight : 0
                             Repeater {
@@ -148,13 +147,13 @@ GlassPanel {
                                 model: PlannerBackend.exams
                                 delegate: GlassPanel {
                                     width: examsColumn.width
-                                    radius: radii ? radii.md : 12
-                                    padding: gap ? gap.g12 : 12
+                                    radius: radii.md
+                                    padding: gaps.g12
                                     Column {
-                                        spacing: gap ? gap.g8 : 8
+                                        spacing: gaps.g8
                                         property var subject: PlannerBackend.subjectById(model.subjectId)
                                         Row {
-                                            spacing: gap ? gap.g8 : 8
+                                            spacing: gaps.g8
                                             Rectangle {
                                                 width: 10
                                                 height: 10
@@ -164,27 +163,28 @@ GlassPanel {
                                             }
                                             Text {
                                                 text: subject.name
-                                                font.pixelSize: typeScale ? typeScale.md : 14
-                                                font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                                                font.pixelSize: typeScale.md
+                                                font.weight: typeScale.weightMedium
                                                 font.family: Styles.ThemeStore.fonts.uiFallback
-                                                color: colors ? colors.text : "#F2F5F9"
+                                                color: colors.text
                                                 renderType: Text.NativeRendering
                                             }
                                             Text {
                                                 text: Qt.formatDate(model.date, "dd.MM.yyyy")
-                                                font.pixelSize: typeScale ? typeScale.metaSize : 11
-                                                font.weight: typeScale ? typeScale.weightRegular : Font.Normal
+                                                font.pixelSize: typeScale.xs
+                                                font.weight: typeScale.weightRegular
                                                 font.family: Styles.ThemeStore.fonts.uiFallback
-                                                color: colors ? colors.text2 : "#B7C0CC"
+                                                color: colors.text2
                                                 renderType: Text.NativeRendering
                                             }
                                         }
                                         Text {
                                             text: model.topics.join(", ")
-                                            font.pixelSize: typeScale ? typeScale.metaSize : 11
-                                            font.weight: typeScale ? typeScale.weightRegular : Font.Normal
+                                            font.pixelSize: typeScale.xs
+                                            font.weight: typeScale.weightRegular
                                             font.family: Styles.ThemeStore.fonts.uiFallback
-                                            color: colors ? colors.textMuted : "#8B93A2"
+                                            color: colors.text2
+                                            opacity: 0.7
                                             wrapMode: Text.WrapAnywhere
                                             renderType: Text.NativeRendering
                                         }
@@ -201,18 +201,16 @@ GlassPanel {
                         Text {
                             visible: examsRepeater.count === 0
                             text: qsTr("Keine Prüfungen in Sicht")
-                            font.pixelSize: typeScale ? typeScale.sm : 12
-                            font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                            font.pixelSize: typeScale.sm
+                            font.weight: typeScale.weightMedium
                             font.family: Styles.ThemeStore.fonts.uiFallback
-                            color: colors ? colors.text2 : "#B7C0CC"
+                            color: colors.text2
                             renderType: Text.NativeRendering
                         }
                     }
                 }
 
-                ScrollIndicator.vertical: ScrollIndicator {
-                    active: contentFlick.interactive
-                }
+                ScrollIndicator.vertical: ScrollIndicator {}
             }
         }
     }

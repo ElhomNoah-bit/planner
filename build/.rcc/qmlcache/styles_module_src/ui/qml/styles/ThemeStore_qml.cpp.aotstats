@@ -3,6 +3,14 @@
         "moduleFiles": [
             {
                 "entries": [
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 160,
+                        "errorMessage": "",
+                        "functionName": "focus",
+                        "line": 16
+                    }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml"
             }

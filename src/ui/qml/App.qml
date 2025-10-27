@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import styles 1.0 as Styles
+import "styles" as Styles
 
 ApplicationWindow {
     id: app

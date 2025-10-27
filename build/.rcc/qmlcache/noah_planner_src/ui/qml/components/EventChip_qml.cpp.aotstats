@@ -6,210 +6,186 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 3502,
-                        "errorMessage": "Cannot load property accent from ThemeStore::colors with type QObject.",
+                        "durationMicroseconds": 90,
+                        "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
                         "functionName": "subjectColor",
                         "line": 7
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 20,
-                        "durationMicroseconds": 88,
-                        "errorMessage": "Cannot load property g12 from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/EventChip.qml)::gap with type QVariant.",
-                        "functionName": "implicitWidth",
-                        "line": 12
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 34,
-                        "durationMicroseconds": 123,
-                        "errorMessage": "",
-                        "functionName": "theme",
-                        "line": 13
+                        "column": 40,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
+                        "functionName": "colors",
+                        "line": 10
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 35,
-                        "durationMicroseconds": 34,
-                        "errorMessage": "Cannot load property colors from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/EventChip.qml)::theme with type QVariant.",
-                        "functionName": "colors",
-                        "line": 14
+                        "column": 43,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
+                        "functionName": "typeScale",
+                        "line": 11
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 30,
-                        "errorMessage": "Cannot load property type from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/EventChip.qml)::theme with type QVariant.",
-                        "functionName": "typeScale",
+                        "durationMicroseconds": 24,
+                        "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
+                        "functionName": "gaps",
+                        "line": 12
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 365,
+                        "errorMessage": "",
+                        "functionName": "implicitWidth",
                         "line": 15
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 29,
-                        "errorMessage": "Cannot load property gap from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/EventChip.qml)::theme with type QVariant.",
-                        "functionName": "gap",
-                        "line": 16
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 40,
-                        "durationMicroseconds": 208,
-                        "errorMessage": "Cannot load property hover from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/EventChip.qml)::colors with type QVariant.",
-                        "functionName": "baseColor",
-                        "line": 18
-                    },
-                    {
-                        "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 156,
-                        "errorMessage": "Cannot load property hover from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/EventChip.qml)::colors with type QVariant.",
+                        "durationMicroseconds": 61,
+                        "errorMessage": "Cannot load property hover from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/EventChip.qml)::colors with type QObject.",
                         "functionName": "color",
-                        "line": 21
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 19,
-                        "durationMicroseconds": 154,
-                        "errorMessage": "Cannot load property divider from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/EventChip.qml)::colors with type QVariant.",
-                        "functionName": "color",
-                        "line": 22
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 19,
-                        "durationMicroseconds": 161,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 23
+                        "line": 17
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 72,
-                        "errorMessage": "Cannot access value for name gap",
+                        "durationMicroseconds": 38,
+                        "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
-                        "line": 32
+                        "line": 25
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 84,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 28
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 29,
-                        "durationMicroseconds": 65,
-                        "errorMessage": "Cannot access value for name gap",
-                        "functionName": "leftMargin",
-                        "line": 29
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 30,
-                        "durationMicroseconds": 62,
-                        "errorMessage": "Cannot access value for name gap",
-                        "functionName": "rightMargin",
-                        "line": 30
+                        "line": 21
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 115,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 99,
+                        "errorMessage": "Cannot access value for name muted",
+                        "functionName": "color",
                         "line": 31
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 20,
-                        "durationMicroseconds": 120,
-                        "errorMessage": "",
-                        "functionName": "color",
-                        "line": 37
-                    },
-                    {
-                        "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 111,
+                        "durationMicroseconds": 117,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
-                        "line": 38
+                        "line": 32
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 96,
                         "errorMessage": "",
                         "functionName": "text",
-                        "line": 42
+                        "line": 37
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
-                        "line": 43
+                        "line": 38
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 93,
+                        "durationMicroseconds": 100,
                         "errorMessage": "",
                         "functionName": "elide",
-                        "line": 47
+                        "line": 42
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 84,
+                        "durationMicroseconds": 80,
                         "errorMessage": "",
                         "functionName": "verticalAlignment",
-                        "line": 48
+                        "line": 43
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 102,
                         "errorMessage": "",
                         "functionName": "renderType",
-                        "line": 49
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 29,
-                        "durationMicroseconds": 74,
-                        "errorMessage": "Cannot access value for name typeScale",
-                        "functionName": "pixelSize",
                         "line": 44
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 26,
-                        "durationMicroseconds": 96,
+                        "column": 29,
+                        "durationMicroseconds": 42,
                         "errorMessage": "Cannot access value for name typeScale",
-                        "functionName": "weight",
-                        "line": 45
+                        "functionName": "pixelSize",
+                        "line": 39
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 37,
-                        "errorMessage": "Cannot load property uiFallback from ThemeStore::fonts with type QObject.",
+                        "durationMicroseconds": 33,
+                        "errorMessage": "Cannot access value for name typeScale",
+                        "functionName": "weight",
+                        "line": 40
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 31,
+                        "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
                         "functionName": "family",
-                        "line": 46
+                        "line": 41
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 55,
-                        "durationMicroseconds": 92,
+                        "column": 17,
+                        "durationMicroseconds": 94,
                         "errorMessage": "",
-                        "functionName": "type",
-                        "line": 58
+                        "functionName": "radius",
+                        "line": 50
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "Cannot access value for name colors",
+                        "functionName": "color",
+                        "line": 51
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 18,
+                        "durationMicroseconds": 98,
+                        "errorMessage": "",
+                        "functionName": "visible",
+                        "line": 52
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 49
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/EventChip.qml"

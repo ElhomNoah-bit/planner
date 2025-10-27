@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import styles 1.0 as Styles
+import "styles" as Styles
 
 Flickable {
     id: root
@@ -11,52 +11,51 @@ Flickable {
     contentHeight: contentItem.implicitHeight
     clip: true
 
-    readonly property var theme: Styles.ThemeStore
-    readonly property var colors: theme ? theme.colors : null
-    readonly property var gap: theme ? theme.gap : null
-    readonly property var radii: theme ? theme.radii : null
-    readonly property var typeScale: theme ? theme.type : null
-    readonly property var layout: theme ? theme.layout : null
+    readonly property QtObject colors: Styles.ThemeStore.colors
+    readonly property QtObject gaps: Styles.ThemeStore.gap
+    readonly property QtObject radii: Styles.ThemeStore.radii
+    readonly property QtObject typeScale: Styles.ThemeStore.type
+    readonly property QtObject metrics: Styles.ThemeStore.layout
 
     Column {
         id: contentItem
         width: root.width
-    spacing: gap ? gap.g24 : 24
+        spacing: gaps.g24
         anchors.margins: 0
 
         Repeater {
             model: root.buckets
             delegate: GlassPanel {
                 width: parent.width
-                padding: gap ? gap.g16 : 16
+                padding: gaps.g16
 
                 Column {
                     width: parent.width
-                    spacing: gap ? gap.g16 : 16
+                    spacing: gaps.g16
 
                     Text {
                         text: modelData.label
-                        font.pixelSize: typeScale ? typeScale.lg : 16
-                        font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                        font.pixelSize: typeScale.lg
+                        font.weight: typeScale.weightMedium
                         font.family: Styles.ThemeStore.fonts.uiFallback
-                        color: colors ? colors.text : "#F2F5F9"
+                        color: colors.text
                         renderType: Text.NativeRendering
                     }
 
                     Column {
-                        spacing: gap ? gap.g12 : 12
+                        spacing: gaps.g12
                         Repeater {
                             model: modelData.items
                             delegate: GlassPanel {
-                                padding: gap ? gap.g16 : 16
+                                padding: gaps.g16
 
                                 RowLayout {
                                     anchors.fill: parent
-                                    spacing: gap ? gap.g12 : 12
+                                    spacing: gaps.g12
 
                                     Rectangle {
                                         width: 10
-                                        height: layout ? layout.pillH : 30
+                                        height: metrics.pillH
                                         radius: 6
                                         color: modelData.color
                                         Layout.alignment: Qt.AlignVCenter
@@ -64,24 +63,24 @@ Flickable {
 
                                     ColumnLayout {
                                         Layout.fillWidth: true
-                                        spacing: gap ? gap.g4 : 4
+                                        spacing: gaps.g4
 
                                         Text {
                                             text: modelData.title
-                                            font.pixelSize: typeScale ? typeScale.md : 14
-                                            font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                                            font.pixelSize: typeScale.md
+                                            font.weight: typeScale.weightMedium
                                             font.family: Styles.ThemeStore.fonts.uiFallback
-                                            color: colors ? colors.text : "#F2F5F9"
+                                            color: colors.text
                                             elide: Text.ElideRight
                                             renderType: Text.NativeRendering
                                         }
 
                                         Text {
                                             text: modelData.goal
-                                            font.pixelSize: typeScale ? typeScale.metaSize : 11
-                                            font.weight: typeScale ? typeScale.weightRegular : Font.Normal
+                                            font.pixelSize: typeScale.xs
+                                            font.weight: typeScale.weightRegular
                                             font.family: Styles.ThemeStore.fonts.uiFallback
-                                            color: colors ? colors.text2 : "#B7C0CC"
+                                            color: colors.text2
                                             elide: Text.ElideRight
                                             renderType: Text.NativeRendering
                                         }

@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Effects
-import styles 1.0 as Styles
+import "styles" as Styles
 
 Item {
     id: root

@@ -76,15 +76,14 @@ noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6core_relwithd
 noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6qml_relwithdebinfo_metatypes.json
 noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6network_relwithdebinfo_metatypes.json
 noah_planner_qmltyperegistrations.cpp: meta_types/qt6styles_module_release_metatypes.json
-noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6quick_relwithdebinfo_metatypes.json
 noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6gui_relwithdebinfo_metatypes.json
+noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6quick_relwithdebinfo_metatypes.json
 noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6qmlmeta_relwithdebinfo_metatypes.json
 noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6qmlmodels_relwithdebinfo_metatypes.json
 noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6qmlworkerscript_relwithdebinfo_metatypes.json
 noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6opengl_relwithdebinfo_metatypes.json
 noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6quickcontrols2_relwithdebinfo_metatypes.json
 noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6quicklayouts_relwithdebinfo_metatypes.json
-noah_planner_qmltyperegistrations.cpp: meta_types/qt6styles_moduleplugin_init_release_metatypes.json
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic QML type registration for target noah_planner"
 	/usr/lib64/qt6/libexec/qmltyperegistrar --generate-qmltypes=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/NoahPlanner/noah_planner.qmltypes --import-name=NoahPlanner --major-version=1 --minor-version=0 @/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/qmltypes/noah_planner_foreign_types.txt -o /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_qmltyperegistrations.cpp /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/qt6noah_planner_release_metatypes.json
 	/usr/bin/cmake -E make_directory /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/qmltypes
@@ -97,43 +96,22 @@ meta_types/qt6noah_planner_release_metatypes.json: meta_types/qt6noah_planner_re
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating meta_types/qt6noah_planner_release_metatypes.json"
 	/usr/bin/cmake -E true
 
-meta_types/qt6styles_moduleplugin_init_release_metatypes.json: meta_types/qt6styles_moduleplugin_init_release_metatypes.json.gen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating meta_types/qt6styles_moduleplugin_init_release_metatypes.json"
-	/usr/bin/cmake -E true
-
 meta_types/qt6noah_planner_release_metatypes.json.gen: /usr/lib64/qt6/libexec/moc
 meta_types/qt6noah_planner_release_metatypes.json.gen: meta_types/noah_planner_json_file_list.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Running moc --collect-json for target noah_planner"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Running moc --collect-json for target noah_planner"
 	/usr/lib64/qt6/libexec/moc -o /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/qt6noah_planner_release_metatypes.json.gen --collect-json @/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/noah_planner_json_file_list.txt
 	/usr/bin/cmake -E copy_if_different /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/qt6noah_planner_release_metatypes.json.gen /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/qt6noah_planner_release_metatypes.json
 
-meta_types/qt6styles_moduleplugin_init_release_metatypes.json.gen: /usr/lib64/qt6/libexec/moc
-meta_types/qt6styles_moduleplugin_init_release_metatypes.json.gen: meta_types/styles_moduleplugin_init_json_file_list.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Running moc --collect-json for target styles_moduleplugin_init"
-	/usr/lib64/qt6/libexec/moc -o /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/qt6styles_moduleplugin_init_release_metatypes.json.gen --collect-json @/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/styles_moduleplugin_init_json_file_list.txt
-	/usr/bin/cmake -E copy_if_different /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/qt6styles_moduleplugin_init_release_metatypes.json.gen /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/qt6styles_moduleplugin_init_release_metatypes.json
-
 meta_types/noah_planner_json_file_list.txt: /usr/lib64/qt6/libexec/cmake_automoc_parser
 meta_types/noah_planner_json_file_list.txt: noah_planner_autogen/timestamp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Running AUTOMOC file extraction for target noah_planner"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Running AUTOMOC file extraction for target noah_planner"
 	/usr/lib64/qt6/libexec/cmake_automoc_parser --cmake-autogen-cache-file /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner_autogen.dir/ParseCache.txt --cmake-autogen-info-file /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner_autogen.dir/AutogenInfo.json --output-file-path /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/noah_planner_json_file_list.txt --timestamp-file-path /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/noah_planner_json_file_list.txt.timestamp --cmake-autogen-include-dir-path /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/include
-
-meta_types/styles_moduleplugin_init_json_file_list.txt: /usr/lib64/qt6/libexec/cmake_automoc_parser
-meta_types/styles_moduleplugin_init_json_file_list.txt: styles_moduleplugin_init_autogen/timestamp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Running AUTOMOC file extraction for target styles_moduleplugin_init"
-	/usr/lib64/qt6/libexec/cmake_automoc_parser --cmake-autogen-cache-file /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_moduleplugin_init_autogen.dir/ParseCache.txt --cmake-autogen-info-file /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_moduleplugin_init_autogen.dir/AutogenInfo.json --output-file-path /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/styles_moduleplugin_init_json_file_list.txt --timestamp-file-path /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/styles_moduleplugin_init_json_file_list.txt.timestamp --cmake-autogen-include-dir-path /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_init_autogen/include
 
 noah_planner_autogen/timestamp: /usr/lib64/qt6/libexec/moc
 noah_planner_autogen/timestamp: CMakeFiles/noah_planner_qmltyperegistration.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Automatic MOC and UIC for target noah_planner"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Automatic MOC and UIC for target noah_planner"
 	/usr/bin/cmake -E cmake_autogen /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner_autogen.dir/AutogenInfo.json Release
 	/usr/bin/cmake -E touch /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/timestamp
-
-styles_moduleplugin_init_autogen/timestamp: /usr/lib64/qt6/libexec/moc
-styles_moduleplugin_init_autogen/timestamp: CMakeFiles/noah_planner_qmltyperegistration.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Automatic MOC and UIC for target styles_moduleplugin_init"
-	/usr/bin/cmake -E cmake_autogen /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_moduleplugin_init_autogen.dir/AutogenInfo.json Release
-	/usr/bin/cmake -E touch /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_init_autogen/timestamp
 
 CMakeFiles/noah_planner_qmltyperegistration.dir/codegen:
 .PHONY : CMakeFiles/noah_planner_qmltyperegistration.dir/codegen
@@ -143,12 +121,8 @@ noah_planner_qmltyperegistration: NoahPlanner/noah_planner.qmltypes
 noah_planner_qmltyperegistration: meta_types/noah_planner_json_file_list.txt
 noah_planner_qmltyperegistration: meta_types/qt6noah_planner_release_metatypes.json
 noah_planner_qmltyperegistration: meta_types/qt6noah_planner_release_metatypes.json.gen
-noah_planner_qmltyperegistration: meta_types/qt6styles_moduleplugin_init_release_metatypes.json
-noah_planner_qmltyperegistration: meta_types/qt6styles_moduleplugin_init_release_metatypes.json.gen
-noah_planner_qmltyperegistration: meta_types/styles_moduleplugin_init_json_file_list.txt
 noah_planner_qmltyperegistration: noah_planner_autogen/timestamp
 noah_planner_qmltyperegistration: noah_planner_qmltyperegistrations.cpp
-noah_planner_qmltyperegistration: styles_moduleplugin_init_autogen/timestamp
 noah_planner_qmltyperegistration: CMakeFiles/noah_planner_qmltyperegistration.dir/build.make
 .PHONY : noah_planner_qmltyperegistration
 

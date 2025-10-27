@@ -1,5 +1,5 @@
 import QtQuick
-import styles 1.0 as Styles
+import "styles" as Styles
 
 Item {
     id: root

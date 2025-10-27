@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import styles 1.0 as Styles
+import "styles" as Styles
 
 Button {
     id: btn
@@ -9,23 +9,21 @@ Button {
     flat: true
     hoverEnabled: true
     padding: 0
-    implicitHeight: Styles.ThemeStore.layout.pillH
-    implicitWidth: Math.max(implicitHeight, contentItem.implicitWidth + (Styles.ThemeStore.gap.g16 * 2))
+    implicitHeight: Math.max(Styles.ThemeStore.layout.pillH, 36)
+    implicitWidth: Math.max(implicitHeight, contentItem.implicitWidth + 24)
 
-    readonly property var theme: Styles.ThemeStore
-    readonly property var colors: theme ? theme.colors : null
-    readonly property var gap: theme ? theme.gap : null
-    readonly property var radii: theme ? theme.radii : null
-    readonly property var typeScale: theme ? theme.type : null
+    readonly property QtObject colors: Styles.ThemeStore.colors
+    readonly property QtObject gaps: Styles.ThemeStore.gap
+    readonly property QtObject radii: Styles.ThemeStore.radii
+    readonly property QtObject typeScale: Styles.ThemeStore.type
 
-    font.pixelSize: typeScale ? typeScale.sm : 12
-    font.weight: kind === "primary" ? (typeScale ? typeScale.weightBold : Font.Bold)
-                                     : (typeScale ? typeScale.weightMedium : Font.Medium)
+    font.pixelSize: typeScale.sm
+    font.weight: kind === "primary" ? typeScale.weightBold : typeScale.weightMedium
     font.family: Styles.ThemeStore.fonts.uiFallback
 
     background: Rectangle {
         id: frame
-        radius: radii ? radii.xl : 20
+        radius: radii.xl
         color: btn.backgroundColor()
         border.color: btn.borderColor()
         border.width: btn.borderWidth()
@@ -33,10 +31,10 @@ Button {
 
         Rectangle {
             anchors.fill: parent
-            anchors.margins: -2
-            radius: (radii ? radii.xl : 20) + 2
+            anchors.margins: -1
+            radius: radii.xl + 2
             border.width: btn.activeFocus ? 1 : 0
-            border.color: btn.activeFocus && colors ? colors.focus : "transparent"
+            border.color: btn.activeFocus ? colors.focus : "transparent"
             color: "transparent"
         }
 
@@ -45,9 +43,9 @@ Button {
     }
 
     contentItem: Row {
-        spacing: gap ? gap.g8 : 8
+        spacing: gaps.g8
         anchors.centerIn: parent
-        anchors.margins: gap ? gap.g12 : 12
+        anchors.margins: 12
 
         IconGlyph {
             id: iconGlyph
@@ -70,11 +68,8 @@ Button {
     }
 
     function backgroundColor() {
-        if (!colors) {
-            return kind === "primary" ? "#0A84FF" : (kind === "ghost" ? "transparent" : "#1F232C")
-        }
         if (kind === "primary") {
-            return down ? Qt.darker(colors.accent, 1.1) : colors.accent
+            return down ? Qt.darker(colors.accent, 1.05) : colors.accent
         }
         if (kind === "ghost") {
             if (checked) return colors.accentBg
@@ -84,38 +79,32 @@ Button {
         }
         // neutral
         if (checked) return colors.accentBg
-        if (down) return Qt.darker(colors.cardBg, 1.1)
+        if (down) return colors.press
         if (hovered) return colors.hover
-        return colors.cardBg
+        return colors.hover
     }
 
     function borderColor() {
-        if (!colors) {
-            return kind === "primary" ? "transparent" : "#2A2F3A"
-        }
         if (kind === "primary") {
             return "transparent"
         }
         if (kind === "ghost") {
             return checked ? colors.accent : "transparent"
         }
-        return checked ? colors.accent : colors.divider
+        return colors.divider
     }
 
     function borderWidth() {
-        return (kind === "ghost" || kind === "primary") ? 0 : 1
+        return kind === "neutral" ? 1 : 0
     }
 
     function foregroundColor() {
-        if (!colors) {
-            return kind === "primary" ? "#0F1115" : "#F2F5F9"
-        }
         if (kind === "primary") {
             return colors.appBg
         }
         if (kind === "ghost") {
             return checked ? colors.accent : colors.text
         }
-        return checked ? colors.accent : colors.text
+        return colors.text
     }
 }

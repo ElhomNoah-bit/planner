@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import styles 1.0 as Styles
+import "styles" as Styles
 
 Item {
     id: root
@@ -15,18 +15,17 @@ Item {
     implicitHeight: 68
     width: parent ? parent.width : 320
 
-    readonly property var theme: Styles.ThemeStore
-    readonly property var colors: theme ? theme.colors : null
-    readonly property var gap: theme ? theme.gap : null
-    readonly property var radii: theme ? theme.radii : null
-    readonly property var typeScale: theme ? theme.type : null
+    readonly property QtObject colors: Styles.ThemeStore.colors
+    readonly property QtObject gaps: Styles.ThemeStore.gap
+    readonly property QtObject radii: Styles.ThemeStore.radii
+    readonly property QtObject typeScale: Styles.ThemeStore.type
 
     Rectangle {
         id: container
         anchors.fill: parent
-        radius: radii ? radii.md : 12
-        color: root.done ? (colors ? colors.accentBg : Qt.rgba(0.04, 0.35, 0.84, 0.18)) : (colors ? colors.cardBg : Qt.rgba(0, 0, 0, 0.25))
-        border.color: root.done ? (colors ? colors.accent : "#0A84FF") : (colors ? colors.divider : Qt.rgba(1, 1, 1, 0.18))
+    radius: radii.md
+    color: root.done ? colors.accentBg : colors.cardBg
+    border.color: root.done ? colors.accent : colors.divider
         border.width: 1
         Behavior on color { ColorAnimation { duration: 140; easing.type: Easing.InOutQuad } }
         Behavior on border.color { ColorAnimation { duration: 140; easing.type: Easing.InOutQuad } }
@@ -34,8 +33,8 @@ Item {
 
     Row {
         anchors.fill: parent
-        anchors.margins: gap ? gap.g16 : 16
-        spacing: gap ? gap.g16 : 16
+    anchors.margins: gaps.g16
+    spacing: gaps.g16
 
         Rectangle {
             id: checkbox
@@ -43,38 +42,39 @@ Item {
             height: 20
             radius: 10
             border.width: 2
-            border.color: root.done ? (colors ? colors.accent : "#0A84FF") : (colors ? colors.divider : Qt.rgba(1, 1, 1, 0.2))
-            color: root.done ? (colors ? colors.accent : "#0A84FF") : "transparent"
+            border.color: root.done ? colors.accent : colors.divider
+            color: root.done ? colors.accent : "transparent"
             anchors.verticalCenter: parent.verticalCenter
             Behavior on color { NumberAnimation { duration: 140; easing.type: Easing.OutCubic } }
             Behavior on border.color { ColorAnimation { duration: 140; easing.type: Easing.OutCubic } }
             Text {
                 anchors.centerIn: parent
                 text: root.done ? "✓" : ""
-                color: colors ? colors.appBg : "#0F1115"
+                color: colors.appBg
                 font.pixelSize: 12
                 font.weight: Font.DemiBold
+                renderType: Text.NativeRendering
             }
         }
 
         Column {
             width: Math.max(0, parent.width - timerPill.width - checkbox.width - 48)
-            spacing: gap ? gap.g8 : 8
+            spacing: gaps.g8
             Text {
                 text: root.title
-                font.pixelSize: typeScale ? typeScale.md : 14
-                font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                font.pixelSize: typeScale.md
+                font.weight: typeScale.weightMedium
                 font.family: Styles.ThemeStore.fonts.uiFallback
-                color: colors ? colors.text : "#F2F5F9"
+                color: colors.text
                 elide: Text.ElideRight
                 renderType: Text.NativeRendering
             }
             Text {
                 text: root.goal
-                font.pixelSize: typeScale ? typeScale.metaSize : 11
-                font.weight: typeScale ? typeScale.weightRegular : Font.Normal
+                font.pixelSize: typeScale.xs
+                font.weight: typeScale.weightRegular
                 font.family: Styles.ThemeStore.fonts.uiFallback
-                color: colors ? colors.text2 : "#B7C0CC"
+                color: colors.text2
                 elide: Text.ElideRight
                 renderType: Text.NativeRendering
             }
@@ -82,20 +82,20 @@ Item {
 
         Rectangle {
             id: timerPill
-            height: Styles.ThemeStore.layout.pillH
+            height: Math.max(Styles.ThemeStore.layout.pillH, 36)
             width: 70
             radius: Styles.ThemeStore.radii.md
-            color: colors ? colors.hover : Qt.rgba(1, 1, 1, 0.12)
-            border.color: colors ? colors.divider : Qt.rgba(1, 1, 1, 0.18)
+            color: colors.hover
+            border.color: colors.divider
             border.width: 1
             anchors.verticalCenter: parent.verticalCenter
             Text {
                 anchors.centerIn: parent
                 text: root.duration + qsTr("m")
-                font.pixelSize: typeScale ? typeScale.sm : 12
-                font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                font.pixelSize: typeScale.sm
+                font.weight: typeScale.weightMedium
                 font.family: Styles.ThemeStore.fonts.uiFallback
-                color: colors ? colors.text : "#F2F5F9"
+                color: colors.text
                 renderType: Text.NativeRendering
             }
             MouseArea {

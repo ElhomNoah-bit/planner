@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import styles 1.0 as Styles
+import "styles" as Styles
 
 Control {
     id: pill
@@ -10,27 +10,24 @@ Control {
     property bool active: false
     signal toggled()
 
-    implicitHeight: 32
-    readonly property var theme: Styles.ThemeStore
-    readonly property var colors: theme ? theme.colors : null
-    readonly property var gap: theme ? theme.gap : null
-    readonly property var radii: theme ? theme.radii : null
-    readonly property var typeScale: theme ? theme.type : null
+    implicitHeight: Math.max(Styles.ThemeStore.layout.pillH, 36)
+    readonly property QtObject colors: Styles.ThemeStore.colors
+    readonly property QtObject gaps: Styles.ThemeStore.gap
+    readonly property QtObject radii: Styles.ThemeStore.radii
+    readonly property QtObject typeScale: Styles.ThemeStore.type
 
-    padding: gap ? gap.g12 : 12
+    padding: gaps.g12
 
     background: Rectangle {
         id: backdrop
-        radius: radii ? radii.xl : 20
-        color: pill.active
-            ? colors ? colors.accentBg : Qt.rgba(pill.chipColor.r, pill.chipColor.g, pill.chipColor.b, 0.12)
-            : colors ? colors.hover : Qt.rgba(1, 1, 1, 0.08)
-        border.color: pill.active ? pill.chipColor : (colors ? colors.divider : Qt.rgba(1, 1, 1, 0.18))
+        radius: radii.xl
+        color: pill.active ? colors.accentBg : colors.hover
+        border.color: pill.active ? pill.chipColor : colors.divider
         border.width: 1
     }
 
     contentItem: Row {
-        spacing: 8
+        spacing: gaps.g8
         anchors.centerIn: parent
         Rectangle {
             width: 8
@@ -41,12 +38,10 @@ Control {
         Text {
             id: labelText
             text: pill.label
-            font.pixelSize: typeScale ? typeScale.sm : 12
-            font.weight: pill.active
-                ? (typeScale ? typeScale.weightBold : Font.DemiBold)
-                : (typeScale ? typeScale.weightMedium : Font.Medium)
+            font.pixelSize: typeScale.sm
+            font.weight: pill.active ? typeScale.weightBold : typeScale.weightMedium
             font.family: Styles.ThemeStore.fonts.uiFallback
-            color: pill.active ? pill.chipColor : (colors ? colors.text : "#F2F5F9")
+            color: pill.active ? pill.chipColor : colors.text
             renderType: Text.NativeRendering
         }
     }
@@ -60,11 +55,12 @@ Control {
         when: hover.hovered && !pill.active
         PropertyChanges {
             target: backdrop
-            color: colors ? colors.hover : Qt.rgba(1, 1, 1, 0.12)
+            color: colors.hover
         }
     }
 
     TapHandler {
+        acceptedButtons: Qt.LeftButton
         onTapped: pill.toggled()
     }
 }

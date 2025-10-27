@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import NoahPlanner 1.0
-import styles 1.0 as Styles
+import "styles" as Styles
 
 Item {
     id: overlay
@@ -17,10 +17,10 @@ Item {
     opacity: open ? 1 : 0
     z: 100
 
-    readonly property var theme: Styles.ThemeStore
-    readonly property var colors: theme ? theme.colors : null
-    readonly property var gap: theme ? theme.gap : null
-    readonly property var typeScale: theme ? theme.type : null
+    readonly property QtObject colors: Styles.ThemeStore.colors
+    readonly property QtObject gaps: Styles.ThemeStore.gap
+    readonly property QtObject typeScale: Styles.ThemeStore.type
+    readonly property QtObject radii: Styles.ThemeStore.radii
 
     Behavior on opacity {
         NumberAnimation { duration: 200; easing.type: Easing.OutCubic }
@@ -36,17 +36,17 @@ Item {
         width: 320
         height: 380
         anchors.centerIn: parent
-        radius: (theme && theme.radii) ? theme.radii.lg : 16
+        radius: radii.lg
         Column {
             anchors.fill: parent
-            anchors.margins: gap ? gap.g24 : 24
-            spacing: gap ? gap.g16 : 16
+            anchors.margins: gaps.g24
+            spacing: gaps.g16
             Text {
                 text: qsTr("Fokus-Timer")
-                font.pixelSize: typeScale ? typeScale.lg : 16
-                font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                font.pixelSize: typeScale.lg
+                font.weight: typeScale.weightMedium
                 font.family: Styles.ThemeStore.fonts.uiFallback
-                color: colors ? colors.text : "#F2F5F9"
+                color: colors.text
                 renderType: Text.NativeRendering
             }
             Canvas {
@@ -67,7 +67,7 @@ Item {
                     ctx.stroke()
                     var total = Math.max(1, minutes * 60)
                     var progress = Math.max(0, remainingSeconds) / total
-                    ctx.strokeStyle = colors ? colors.accent : "#0A84FF"
+                    ctx.strokeStyle = colors.accent
                     ctx.beginPath()
                     ctx.arc(0, 0, radius, 0, Math.PI * 2 * progress)
                     ctx.stroke()
@@ -80,16 +80,16 @@ Item {
             }
             Text {
                 text: Math.floor(remainingSeconds / 60) + ":" + ("0" + Math.floor(remainingSeconds % 60)).slice(-2)
-                font.pixelSize: typeScale ? typeScale.monthTitle : 28
-                font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
+                font.pixelSize: typeScale.monthTitle
+                font.weight: typeScale.weightBold
                 font.family: Styles.ThemeStore.fonts.uiFallback
-                color: colors ? colors.text : "#F2F5F9"
+                color: colors.text
                 horizontalAlignment: Text.AlignHCenter
                 anchors.horizontalCenter: parent.horizontalCenter
                 renderType: Text.NativeRendering
             }
             Row {
-                spacing: gap ? gap.g12 : 12
+                spacing: gaps.g12
                 anchors.horizontalCenter: parent.horizontalCenter
                 PillButton {
                     text: overlay.running ? qsTr("Pause") : qsTr("Start")

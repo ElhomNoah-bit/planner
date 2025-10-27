@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
-import styles 1.0 as Styles
+import "styles" as Styles
 
 Item {
     id: month
@@ -11,33 +11,32 @@ Item {
     property string locale: Qt.locale().name
     signal daySelected(string iso)
 
-    readonly property var theme: Styles.ThemeStore
-    readonly property var colors: theme ? theme.colors : null
-    readonly property var gap: theme ? theme.gap : null
-    readonly property var typeScale: theme ? theme.type : null
-    readonly property var layout: theme ? theme.layout : null
+    readonly property QtObject colors: Styles.ThemeStore.colors
+    readonly property QtObject gaps: Styles.ThemeStore.gap
+    readonly property QtObject typeScale: Styles.ThemeStore.type
+    readonly property QtObject metrics: Styles.ThemeStore.layout
 
     readonly property var weekdayNames: [qsTr("Mo"), qsTr("Di"), qsTr("Mi"), qsTr("Do"), qsTr("Fr"), qsTr("Sa"), qsTr("So")]
     readonly property var anchorDate: selectedIso.length > 0 ? new Date(selectedIso) : new Date()
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: layout ? layout.margin : (gap ? gap.g24 : 24)
-        spacing: gap ? gap.g16 : 16
+        spacing: gaps.g8
 
         RowLayout {
             Layout.fillWidth: true
-            spacing: layout ? layout.gridGap : (gap ? gap.g12 : 12)
+            Layout.bottomMargin: gaps.g8
+            spacing: metrics.gridGap
             Repeater {
                 model: weekdayNames
                 delegate: Text {
                     Layout.fillWidth: true
                     text: modelData
                     horizontalAlignment: Text.AlignRight
-                    font.pixelSize: typeScale ? typeScale.sm : 12
-                    font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                    font.pixelSize: typeScale.sm
+                    font.weight: typeScale.weightMedium
                     font.family: Styles.ThemeStore.fonts.uiFallback
-                    color: colors ? colors.text2 : "#B7C0CC"
+                    color: colors.text2
                     renderType: Text.NativeRendering
                 }
             }
@@ -48,8 +47,8 @@ Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
             columns: 7
-            columnSpacing: layout ? layout.gridGap : (gap ? gap.g12 : 12)
-            rowSpacing: layout ? layout.gridGap : (gap ? gap.g12 : 12)
+            columnSpacing: metrics.gridGap
+            rowSpacing: metrics.gridGap
             property real cellWidth: columns > 0 ? (width - columnSpacing * (columns - 1)) / columns : width
             property real cellHeight: (height - rowSpacing * 5) / 6
 
@@ -94,10 +93,10 @@ Item {
         if (Qt.application.arguments && Qt.application.arguments.indexOf("--debug-events") !== -1) {
             for (var j = 0; j < collection.length; ++j) {
                 if (j % 10 === 0) {
-                    collection[j].events.push({ title: qsTr("Projekt Status"), color: colors ? colors.accent : "#0A84FF" })
+                    collection[j].events.push({ title: qsTr("Projekt Status"), color: colors.accent })
                 }
                 if (j % 15 === 0) {
-                    collection[j].events.push({ title: qsTr("Mathe lernen"), color: "#FF9F0A" })
+                    collection[j].events.push({ title: qsTr("Mathe lernen"), color: colors.accent })
                 }
             }
         }

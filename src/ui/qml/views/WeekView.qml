@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import styles 1.0 as Styles
+import "styles" as Styles
 
 Item {
     id: root
@@ -17,41 +17,39 @@ Item {
     readonly property real timelineHeight: (endHour - startHour) * 60 * minuteHeight
     readonly property var weekdayNames: [qsTr("Mo"), qsTr("Di"), qsTr("Mi"), qsTr("Do"), qsTr("Fr"), qsTr("Sa"), qsTr("So")]
 
-    readonly property var theme: Styles.ThemeStore
-    readonly property var colors: theme ? theme.colors : null
-    readonly property var gap: theme ? theme.gap : null
-    readonly property var typeScale: theme ? theme.type : null
-    readonly property var radii: theme ? theme.radii : null
+    readonly property QtObject colors: Styles.ThemeStore.colors
+    readonly property QtObject gaps: Styles.ThemeStore.gap
+    readonly property QtObject typeScale: Styles.ThemeStore.type
+    readonly property QtObject radii: Styles.ThemeStore.radii
 
     Rectangle {
         anchors.fill: parent
-        radius: radii ? radii.lg : 16
-        color: colors ? colors.cardBg : Qt.rgba(1, 1, 1, 0.05)
-        border.color: colors ? colors.divider : Qt.rgba(1, 1, 1, 0.1)
+        radius: radii.lg
+        color: colors.cardBg
         border.width: 1
+        border.color: colors.divider
     }
 
     Flickable {
         anchors.fill: parent
         contentWidth: width
-        contentHeight: timelineHeight + 120
+        contentHeight: timelineHeight + gaps.g24
         clip: true
 
         Item {
             id: content
             width: parent.width
-            height: timelineHeight + 120
+            height: timelineHeight + gaps.g24
 
             Row {
                 id: row
                 anchors.fill: parent
-                anchors.margins: gap ? gap.g16 : 16
-                spacing: gap ? gap.g12 : 12
+                anchors.margins: gaps.g16
+                spacing: gaps.g12
 
                 Column {
                     id: timeAxis
                     width: 44
-                    spacing: 0
                     Repeater {
                         model: endHour - startHour + 1
                         delegate: Item {
@@ -62,10 +60,12 @@ Item {
                                 anchors.rightMargin: 4
                                 anchors.verticalCenter: parent.verticalCenter
                                 text: (startHour + index) + ":00"
-                                font.pixelSize: typeScale ? typeScale.xs : 11
-                                font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                                font.pixelSize: typeScale.xs
+                                font.weight: typeScale.weightMedium
                                 font.family: Styles.ThemeStore.fonts.uiFallback
-                                color: colors ? colors.textMuted : "#9AA3AF"
+                                color: colors.text2
+                                opacity: 0.7
+                                renderType: Text.NativeRendering
                             }
                         }
                     }
@@ -82,21 +82,22 @@ Item {
                         Column {
                             anchors.left: parent.left
                             anchors.right: parent.right
-                            spacing: 4
+                            spacing: gaps.g4
                             Text {
                                 text: root.weekdayNames[index]
-                                    font.pixelSize: typeScale ? typeScale.sm : 12
-                                    font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                                font.pixelSize: typeScale.sm
+                                font.weight: typeScale.weightMedium
                                 font.family: Styles.ThemeStore.fonts.uiFallback
-                                    color: colors ? colors.textMuted : "#9AA3AF"
+                                color: colors.text2
+                                opacity: 0.7
                                 renderType: Text.NativeRendering
                             }
                             Text {
                                 text: dayIso ? dayIso.split("-")[2] : ""
-                                    font.pixelSize: typeScale ? typeScale.md : 16
-                                    font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
+                                font.pixelSize: typeScale.md
+                                font.weight: typeScale.weightBold
                                 font.family: Styles.ThemeStore.fonts.uiFallback
-                                color: colors ? colors.text : "#F2F5F9"
+                                color: colors.text
                                 renderType: Text.NativeRendering
                             }
                         }
@@ -111,10 +112,10 @@ Item {
 
                             Rectangle {
                                 anchors.fill: parent
-                                radius: 12
-                                color: colors ? colors.cardGlass : Qt.rgba(1, 1, 1, 0.06)
-                                border.color: colors ? colors.divider : Qt.rgba(1, 1, 1, 0.08)
+                                radius: radii.md
+                                color: colors.cardGlass
                                 border.width: 1
+                                border.color: colors.divider
                             }
 
                             Repeater {
@@ -124,8 +125,8 @@ Item {
                                     x: 5
                                     y: Math.max(0, (modelData.startMinutes - root.startHour * 60) * root.minuteHeight)
                                     height: Math.max(36, modelData.duration * root.minuteHeight)
-                                    radius: 16
-                                    readonly property color eventColor: modelData.color || (colors ? colors.accent : "#0A84FF")
+                                    radius: radii.lg
+                                    readonly property color eventColor: modelData.color || colors.accent
                                     color: Qt.rgba(eventColor.r, eventColor.g, eventColor.b, 0.22)
                                     border.color: eventColor
                                     border.width: 1
@@ -136,10 +137,10 @@ Item {
                                         anchors.right: parent.right
                                         anchors.rightMargin: 12
                                         text: modelData.title
-                                        font.pixelSize: typeScale ? typeScale.sm : 13
-                                        font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                                        font.pixelSize: typeScale.sm
+                                        font.weight: typeScale.weightMedium
                                         font.family: Styles.ThemeStore.fonts.uiFallback
-                                        color: colors ? colors.text : "#F2F5F9"
+                                        color: colors.text
                                         elide: Text.ElideRight
                                         renderType: Text.NativeRendering
                                     }
