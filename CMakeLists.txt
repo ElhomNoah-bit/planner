@@ -61,11 +61,13 @@ qt_add_qml_module(noah_planner
         src/ui/qml/views/WeekView.qml
 )
 
+set(INTER_FONT ${CMAKE_CURRENT_SOURCE_DIR}/assets/fonts/Inter-Regular.ttf)
+set_source_files_properties(${INTER_FONT} PROPERTIES QT_RESOURCE_ALIAS "Inter-Regular.ttf")
+
 qt_add_resources(noah_planner font_assets
     PREFIX "/fonts/assets/fonts"
-    BASE assets/fonts
     FILES
-        Inter-Regular.ttf
+        ${INTER_FONT}
 )
 
 target_include_directories(noah_planner PRIVATE src)
