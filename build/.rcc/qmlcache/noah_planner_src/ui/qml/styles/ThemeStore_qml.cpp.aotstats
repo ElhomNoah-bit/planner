@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 800,
+                        "durationMicroseconds": 799,
                         "errorMessage": "",
                         "functionName": "darkPalette",
                         "line": 7
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 41,
-                        "durationMicroseconds": 891,
+                        "durationMicroseconds": 886,
                         "errorMessage": "",
                         "functionName": "lightPalette",
                         "line": 20
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 234,
+                        "durationMicroseconds": 232,
                         "errorMessage": "",
                         "functionName": "radii",
                         "line": 33
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 224,
+                        "durationMicroseconds": 221,
                         "errorMessage": "",
                         "functionName": "spacing",
                         "line": 40
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 148,
+                        "durationMicroseconds": 137,
                         "errorMessage": "",
                         "functionName": "blur",
                         "line": 47
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 376,
+                        "durationMicroseconds": 359,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "fonts",
                         "line": 52
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 479,
+                        "durationMicroseconds": 462,
                         "errorMessage": "",
                         "functionName": "typography",
                         "line": 64
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 176,
+                        "durationMicroseconds": 167,
                         "errorMessage": "",
                         "functionName": "palette",
                         "line": 75
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot load property bg from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
                         "functionName": "bg",
                         "line": 76
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 13,
                         "errorMessage": "Cannot load property text from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
                         "functionName": "text",
                         "line": 79

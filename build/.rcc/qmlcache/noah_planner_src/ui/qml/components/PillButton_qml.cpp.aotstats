@@ -5,35 +5,27 @@
                 "entries": [
                     {
                         "codegenSuccessful": false,
-                        "column": 14,
+                        "column": 20,
                         "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"padding\".",
-                        "functionName": "padding",
-                        "line": 13
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 14,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"spacing\".",
-                        "functionName": "spacing",
-                        "line": 14
+                        "errorMessage": "Could not find property \"implicitWidth\".",
+                        "functionName": "implicitWidth",
+                        "line": 15
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 6506,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: control",
+                        "durationMicroseconds": 6430,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: btn",
                         "functionName": "backgroundColor",
-                        "line": 48
+                        "line": 56
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 129,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: control",
+                        "durationMicroseconds": 201,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: btn",
                         "functionName": "borderColor",
-                        "line": 68
+                        "line": 76
                     },
                     {
                         "codegenSuccessful": false,
@@ -54,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 22
@@ -62,98 +54,114 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 205,
-                        "errorMessage": "method backgroundColor cannot be resolved.",
+                        "durationMicroseconds": 30,
+                        "errorMessage": "Cannot access value for name btn",
                         "functionName": "color",
                         "line": 23
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 225,
-                        "errorMessage": "method borderColor cannot be resolved.",
+                        "durationMicroseconds": 28,
+                        "errorMessage": "Cannot access value for name btn",
                         "functionName": "color",
                         "line": 24
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 14,
-                        "durationMicroseconds": 38,
-                        "errorMessage": "Cannot access value for name control",
-                        "functionName": "spacing",
-                        "line": 30
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 27,
-                        "durationMicroseconds": 16,
-                        "errorMessage": "Cannot access value for name parent",
-                        "functionName": "centerIn",
-                        "line": 29
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 22,
-                        "durationMicroseconds": 52,
+                        "column": 24,
+                        "durationMicroseconds": 171,
                         "errorMessage": "Cannot access value for name iconGlyph",
-                        "functionName": "visible",
-                        "line": 33
+                        "functionName": "implicitWidth",
+                        "line": 34
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 19,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"tint\".",
-                        "functionName": "tint",
+                        "column": 25,
+                        "durationMicroseconds": 243,
+                        "errorMessage": "Cannot access value for name Math",
+                        "functionName": "implicitHeight",
                         "line": 35
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 20,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"muted\".",
-                        "functionName": "muted",
-                        "line": 36
+                        "column": 27,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "Cannot access value for name parent",
+                        "functionName": "centerIn",
+                        "line": 32
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 20,
-                        "errorMessage": "Cannot access value for name control",
-                        "functionName": "text",
+                        "durationMicroseconds": 85,
+                        "errorMessage": "Cannot access value for name btn",
+                        "functionName": "name",
                         "line": 40
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 12,
-                        "errorMessage": "Cannot access value for name text",
+                        "durationMicroseconds": 19,
+                        "errorMessage": "Cannot access value for name name",
                         "functionName": "visible",
                         "line": 41
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 19,
-                        "durationMicroseconds": 16,
-                        "errorMessage": "Cannot access value for name control",
-                        "functionName": "font",
+                        "column": 20,
+                        "durationMicroseconds": 73,
+                        "errorMessage": "Cannot access value for name btn",
+                        "functionName": "color",
                         "line": 42
                     },
                     {
                         "codegenSuccessful": false,
+                        "column": 19,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "Cannot access value for name btn",
+                        "functionName": "text",
+                        "line": 47
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 23,
+                        "errorMessage": "Cannot access value for name text",
+                        "functionName": "visible",
+                        "line": 48
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 19,
+                        "durationMicroseconds": 28,
+                        "errorMessage": "Cannot access value for name btn",
+                        "functionName": "font",
+                        "line": 49
+                    },
+                    {
+                        "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 50,
-                        "errorMessage": "Cannot access value for name control",
+                        "durationMicroseconds": 86,
+                        "errorMessage": "Cannot access value for name btn",
                         "functionName": "color",
-                        "line": 43
+                        "line": 50
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 175,
+                        "durationMicroseconds": 284,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "verticalAlignment",
-                        "line": 44
+                        "line": 51
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 258,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "elide",
+                        "line": 52
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/PillButton.qml"

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 4820,
+                        "durationMicroseconds": 2786,
                         "errorMessage": "Cannot load property accent from const QMetaObject.",
                         "functionName": "chipColor",
                         "line": 9
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 18
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 360,
+                        "durationMicroseconds": 448,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "color",
                         "line": 19
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 79,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "color",
                         "line": 20
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "centerIn",
                         "line": 26
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "text",
                         "line": 35
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 70,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "color",
                         "line": 39
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 1214,
+                        "durationMicroseconds": 596,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "weight",
                         "line": 37
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name backdrop",
                         "functionName": "target",
                         "line": 51
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot retrieve a non-object type by ID: pill",
                         "functionName": "onTapped",
                         "line": 57

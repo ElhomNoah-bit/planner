@@ -1144,6 +1144,9 @@ noah_planner_autogen/timestamp: /home/noah/Dokumente/dev/project_study_planner/n
   /usr/share/cmake/Modules/Platform/Linux.cmake \
   /usr/share/cmake/Modules/Platform/UnixPaths.cmake
 
+CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o: .qt/rcc/qrc_font_assets.cpp \
+  /usr/include/stdc-predef.h
+
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o: .qt/rcc/qrc_noah_planner_raw_qml_0.cpp \
   /usr/include/stdc-predef.h
 
@@ -14592,6 +14595,7 @@ noah_planner: /lib64/ld-linux-x86-64.so.2 \
   /usr/lib64/libxml2.so.2 \
   /usr/lib64/libz.so.1 \
   /usr/lib64/libzstd.so.1 \
+  CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o \
   CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o \
   CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o \
   CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o \
@@ -14661,6 +14665,8 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/App_qml.cpp.o:
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp.o:
+
+CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o:
 
 /usr/lib64/libzstd.so.1:
 
@@ -15257,6 +15263,8 @@ noah_planner_autogen/M4YTXQ7V2H/moc_TaskModel.cpp:
 /usr/include/c++/15/bits/nested_exception.h:
 
 /usr/include/qt6/QtCore/QCoreApplication:
+
+.qt/rcc/qrc_font_assets.cpp:
 
 /usr/include/qt6/QtCore/qswap.h:
 
