@@ -34,6 +34,7 @@ noah_planner: \
   CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp.o \
   CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o \
   CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o \
+  CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o \
   /usr/lib64/libQt6QuickControls2.so.6.9.2 \
   /usr/lib64/libQt6QuickLayouts.so.6.9.2 \
   /usr/lib64/libQt6Quick.so.6.9.2 \
@@ -209,6 +210,8 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/We
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o:
 
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o:
+
+CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o:
 
 /usr/lib64/libQt6QuickControls2.so.6.9.2:
 

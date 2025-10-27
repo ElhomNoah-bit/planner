@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  ".qt/rcc/qrc_font_assets.cpp"
   ".qt/rcc/qrc_noah_planner_raw_qml_0.cpp"
   ".qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp"
   ".qt/rcc/qrc_qmake_NoahPlanner.cpp"
@@ -45,6 +46,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/noah_planner_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/noah_planner_autogen.dir/ParseCache.txt"
   "noah_planner_autogen"
+  "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o"
+  "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o.d"
   "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o"
   "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o.d"
   "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o"

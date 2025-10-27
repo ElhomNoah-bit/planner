@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 2748,
+                        "durationMicroseconds": 4820,
                         "errorMessage": "Cannot load property accent from const QMetaObject.",
                         "functionName": "chipColor",
                         "line": 9
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 18
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 386,
+                        "durationMicroseconds": 360,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "color",
                         "line": 19
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 76,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "color",
                         "line": 20
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 630,
+                        "durationMicroseconds": 1214,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "weight",
                         "line": 37
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 15,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 53,
                         "errorMessage": "Cannot access value for name hover",
                         "functionName": "when",
                         "line": 49
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot access value for name backdrop",
                         "functionName": "target",
                         "line": 51
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 42,
                         "errorMessage": "Cannot retrieve a non-object type by ID: pill",
                         "functionName": "onTapped",
                         "line": 57

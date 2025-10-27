@@ -6,42 +6,42 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 120,
+                        "durationMicroseconds": 348,
                         "errorMessage": "function without return type annotation returns QQuickFontLoader::name with type QString. This may prevent proper compilation to Cpp.",
                         "functionName": "pickFamily",
-                        "line": 13
+                        "line": 12
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 1703,
+                        "durationMicroseconds": 2630,
                         "errorMessage": "Cannot load property text from const QMetaObject.",
                         "functionName": "color",
-                        "line": 26
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 30,
-                        "durationMicroseconds": 88,
-                        "errorMessage": "",
-                        "functionName": "horizontalAlignment",
-                        "line": 27
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 28,
-                        "durationMicroseconds": 53,
-                        "errorMessage": "",
-                        "functionName": "verticalAlignment",
                         "line": 28
                     },
                     {
                         "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 113,
+                        "errorMessage": "",
+                        "functionName": "horizontalAlignment",
+                        "line": 29
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 94,
+                        "errorMessage": "",
+                        "functionName": "verticalAlignment",
+                        "line": 30
+                    },
+                    {
+                        "codegenSuccessful": true,
                         "column": 41,
-                        "durationMicroseconds": 352,
+                        "durationMicroseconds": 498,
                         "errorMessage": "",
                         "functionName": "glyphMap",
-                        "line": 30
+                        "line": 32
                     },
                     {
                         "codegenSuccessful": false,
@@ -49,47 +49,47 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "resolvedSymbol",
-                        "line": 44
+                        "line": 46
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 163,
+                        "durationMicroseconds": 259,
                         "errorMessage": "",
                         "functionName": "materialMap",
-                        "line": 55
+                        "line": 57
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 70,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 22
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 25,
-                        "durationMicroseconds": 59,
-                        "errorMessage": "",
-                        "functionName": "pixelSize",
-                        "line": 23
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 22,
-                        "durationMicroseconds": 246,
-                        "errorMessage": "method pickFamily cannot be resolved.",
-                        "functionName": "family",
                         "line": 24
                     },
                     {
                         "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 116,
+                        "errorMessage": "",
+                        "functionName": "pixelSize",
+                        "line": 25
+                    },
+                    {
+                        "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 414,
+                        "errorMessage": "method pickFamily cannot be resolved.",
+                        "functionName": "family",
+                        "line": 26
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "weight",
-                        "line": 25
+                        "line": 27
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/IconGlyph.qml"

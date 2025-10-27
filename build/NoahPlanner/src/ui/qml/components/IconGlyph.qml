@@ -5,15 +5,17 @@ Item {
     id: root
     property alias text: glyph.text
     property int size: 16
-    // Fallback loaders
-    FontLoader { id: sf;    name: "SF Pro" }
-    FontLoader { id: inter; name: "Inter" }
-    FontLoader { id: noto;  name: "Noto Sans" }
+
+    // Embedded fonts served via Qt resource system.
+    FontLoader { id: inter; source: "qrc:/fonts/Inter-Regular.ttf" }
 
     function pickFamily() {
-        if (sf.status === FontLoader.Ready)    return sf.name
-        if (inter.status === FontLoader.Ready) return inter.name
-        if (noto.status === FontLoader.Ready)  return noto.name
+        if (inter.status === FontLoader.Ready && inter.name.length) {
+            return inter.name
+        }
+        if (Qt.application.font && Qt.application.font.family.length) {
+            return Qt.application.font.family
+        }
         return "Sans"
     }
 

@@ -710,6 +710,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "NoahPlanner/src/ui/qml/styles/qmldir"
   "NoahPlanner/src/ui/qml/views/qmldir"
   ".qt/rcc/noah_planner_raw_qml_0_extra_qmldirs.qrc"
+  ".qt/rcc/font_assets.qrc"
   "NoahPlanner/qmldir"
   "CMakeFiles/noah_planner_autogen.dir/AutogenInfo.json"
   ".qt/QtDeploySupport.cmake"

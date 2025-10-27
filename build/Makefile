@@ -369,6 +369,30 @@ noah_planner_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner_autogen.dir/build.make CMakeFiles/noah_planner_autogen.dir/build
 .PHONY : noah_planner_autogen/fast
 
+build/.qt/rcc/qrc_font_assets.o: build/.qt/rcc/qrc_font_assets.cpp.o
+.PHONY : build/.qt/rcc/qrc_font_assets.o
+
+# target to build an object file
+build/.qt/rcc/qrc_font_assets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o
+.PHONY : build/.qt/rcc/qrc_font_assets.cpp.o
+
+build/.qt/rcc/qrc_font_assets.i: build/.qt/rcc/qrc_font_assets.cpp.i
+.PHONY : build/.qt/rcc/qrc_font_assets.i
+
+# target to preprocess a source file
+build/.qt/rcc/qrc_font_assets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.i
+.PHONY : build/.qt/rcc/qrc_font_assets.cpp.i
+
+build/.qt/rcc/qrc_font_assets.s: build/.qt/rcc/qrc_font_assets.cpp.s
+.PHONY : build/.qt/rcc/qrc_font_assets.s
+
+# target to generate assembly for a file
+build/.qt/rcc/qrc_font_assets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.s
+.PHONY : build/.qt/rcc/qrc_font_assets.cpp.s
+
 build/.qt/rcc/qrc_noah_planner_raw_qml_0.o: build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o
 .PHONY : build/.qt/rcc/qrc_noah_planner_raw_qml_0.o
 
@@ -1165,6 +1189,9 @@ help:
 	@echo "... noah_planner_qmllint_module"
 	@echo "... noah_planner_qmltyperegistration"
 	@echo "... noah_planner"
+	@echo "... build/.qt/rcc/qrc_font_assets.o"
+	@echo "... build/.qt/rcc/qrc_font_assets.i"
+	@echo "... build/.qt/rcc/qrc_font_assets.s"
 	@echo "... build/.qt/rcc/qrc_noah_planner_raw_qml_0.o"
 	@echo "... build/.qt/rcc/qrc_noah_planner_raw_qml_0.i"
 	@echo "... build/.qt/rcc/qrc_noah_planner_raw_qml_0.s"
