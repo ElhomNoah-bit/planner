@@ -44,7 +44,9 @@ GlassPanel {
             interactive: true
             boundsBehavior: Flickable.StopAtBounds
             flickDeceleration: 3500
-            verticalScrollBarPolicy: Qt.ScrollBarAlwaysOff
+            ScrollBar.vertical: ScrollBar {
+                policy: ScrollBar.AlwaysOff
+            }
             implicitHeight: 240
             delegate: TodayTaskDelegate {
                 width: tasksView.width
