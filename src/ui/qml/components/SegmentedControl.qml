@@ -9,7 +9,6 @@ Item {
         { "label": qsTr("Liste"), "value": "list" }
     ]
     property string value: options.length > 0 ? options[0].value : ""
-    signal valueChanged(string value)
 
     implicitHeight: 40
     implicitWidth: 240
@@ -55,7 +54,6 @@ Item {
                         if (root.value === option.value)
                             return
                         root.value = option.value
-                        root.valueChanged(root.value)
                     }
                 }
                 Text {
