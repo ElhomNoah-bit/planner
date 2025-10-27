@@ -47,12 +47,16 @@ qt_add_qml_module(noah_planner
         src/ui/qml/components/FilterPill.qml
         src/ui/qml/components/GlassPanel.qml
         src/ui/qml/components/IconGlyph.qml
+    src/ui/qml/components/CommandPalette.qml
         src/ui/qml/components/PillButton.qml
+    src/ui/qml/components/QuickAddDialog.qml
         src/ui/qml/components/QuickAddPill.qml
+    src/ui/qml/components/SearchField.qml
         src/ui/qml/components/SegmentedControl.qml
         src/ui/qml/components/TimerOverlay.qml
         src/ui/qml/components/Toast.qml
         src/ui/qml/components/ToastHost.qml
+    src/ui/qml/components/SettingsDialog.qml
         src/ui/qml/components/TodayTaskDelegate.qml
         src/ui/qml/views/AgendaView.qml
         src/ui/qml/views/MonthView.qml
