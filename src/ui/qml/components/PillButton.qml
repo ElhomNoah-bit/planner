@@ -27,12 +27,9 @@ Button {
     }
 
     contentItem: Row {
-        id: contentRow
         spacing: 8
         anchors.centerIn: parent
         anchors.margins: 10
-        implicitWidth: (iconGlyph.visible ? iconGlyph.implicitWidth : 0) + (label.visible ? label.implicitWidth : 0) + ((iconGlyph.visible && label.visible) ? spacing : 0)
-        implicitHeight: Math.max(iconGlyph.implicitHeight, label.implicitHeight)
 
         IconGlyph {
             id: iconGlyph
