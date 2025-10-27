@@ -56,6 +56,12 @@ qt_add_qml_module(noah_planner
         src/ui/qml/views/WeekView.qml
 )
 
+qt_add_resources(noah_planner font_assets
+    PREFIX "/fonts"
+    FILES
+        assets/fonts/Inter-Regular.ttf
+)
+
 target_include_directories(noah_planner PRIVATE src)
 
 target_link_libraries(noah_planner PRIVATE Qt6::Quick Qt6::Qml Qt6::QuickControls2 Qt6::QuickLayouts)
