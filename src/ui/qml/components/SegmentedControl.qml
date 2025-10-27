@@ -61,7 +61,7 @@ Item {
                     text: option.label
                     font.pixelSize: 14
                     font.weight: root.value === option.value ? Font.DemiBold : Font.Medium
-                    font.preferredFamilies: NP.ThemeStore.fonts.stack
+                    font.family: NP.ThemeStore.defaultFontFamily
                     color: root.value === option.value ? NP.ThemeStore.accent : NP.ThemeStore.text
                 }
             }

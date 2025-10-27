@@ -43,7 +43,7 @@ Item {
             text: root.dayNumber
             font.pixelSize: NP.ThemeStore.typography.dateSize
             font.weight: NP.ThemeStore.typography.dateWeight
-            font.preferredFamilies: NP.ThemeStore.fonts.stack
+            font.family: NP.ThemeStore.defaultFontFamily
             color: NP.ThemeStore.accent
         }
     }
@@ -57,7 +57,7 @@ Item {
         text: root.dayNumber
         font.pixelSize: NP.ThemeStore.typography.dateSize
         font.weight: NP.ThemeStore.typography.dateWeight
-        font.preferredFamilies: NP.ThemeStore.fonts.stack
+        font.family: NP.ThemeStore.defaultFontFamily
         color: root.isToday ? NP.ThemeStore.accent : (root.inMonth ? NP.ThemeStore.text : NP.ThemeStore.muted)
     }
 

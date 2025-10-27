@@ -35,7 +35,7 @@ Control {
             text: pill.label
             font.pixelSize: 13
             font.weight: pill.active ? Font.DemiBold : Font.Medium
-            font.preferredFamilies: NP.ThemeStore.fonts.stack
+            font.family: NP.ThemeStore.defaultFontFamily
             color: pill.active ? NP.ThemeStore.accent : NP.ThemeStore.text
         }
     }

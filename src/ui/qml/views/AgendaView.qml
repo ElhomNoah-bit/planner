@@ -30,7 +30,7 @@ Flickable {
                         text: modelData.label
                         font.pixelSize: 18
                         font.weight: Font.DemiBold
-                        font.preferredFamilies: NP.ThemeStore.fonts.stack
+                        font.family: NP.ThemeStore.defaultFontFamily
                         color: NP.ThemeStore.text
                     }
 
@@ -64,7 +64,7 @@ Flickable {
                                             text: modelData.title
                                             font.pixelSize: 15
                                             font.weight: Font.DemiBold
-                                            font.preferredFamilies: NP.ThemeStore.fonts.stack
+                                            font.family: NP.ThemeStore.defaultFontFamily
                                             color: NP.ThemeStore.text
                                             elide: Text.ElideRight
                                         }
@@ -72,7 +72,7 @@ Flickable {
                                             text: modelData.goal
                                             font.pixelSize: NP.ThemeStore.typography.metaSize
                                             font.weight: NP.ThemeStore.typography.metaWeight
-                                            font.preferredFamilies: NP.ThemeStore.fonts.stack
+                                            font.family: NP.ThemeStore.defaultFontFamily
                                             color: NP.ThemeStore.muted
                                             elide: Text.ElideRight
                                         }

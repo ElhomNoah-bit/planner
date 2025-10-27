@@ -40,7 +40,7 @@ Item {
                 text: qsTr("Fokus-Timer")
                 font.pixelSize: 20
                 font.weight: Font.DemiBold
-                font.preferredFamilies: NP.ThemeStore.fonts.stack
+                font.family: NP.ThemeStore.defaultFontFamily
                 color: NP.ThemeStore.text
             }
             Canvas {
@@ -76,7 +76,7 @@ Item {
                 text: Math.floor(remainingSeconds / 60) + ":" + ("0" + Math.floor(remainingSeconds % 60)).slice(-2)
                 font.pixelSize: 40
                 font.weight: Font.DemiBold
-                font.preferredFamilies: NP.ThemeStore.fonts.stack
+                font.family: NP.ThemeStore.defaultFontFamily
                 color: NP.ThemeStore.text
                 horizontalAlignment: Text.AlignHCenter
                 anchors.horizontalCenter: parent.horizontalCenter

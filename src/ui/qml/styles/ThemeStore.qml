@@ -61,6 +61,10 @@ QtObject {
         ]
     })
 
+    readonly property string defaultFontFamily: (Qt.application.font && Qt.application.font.family && Qt.application.font.family.length)
+        ? Qt.application.font.family
+        : (fonts.stack.length > 0 ? fonts.stack[0] : "Sans")
+
     readonly property var typography: ({
         "monthTitleSize": 42,
         "monthTitleWeight": Font.ExtraBold,
