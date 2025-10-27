@@ -5,91 +5,91 @@
                 "entries": [
                     {
                         "codegenSuccessful": false,
-                        "column": 26,
-                        "durationMicroseconds": 5188,
-                        "errorMessage": "Cannot load property text from const QMetaObject.",
-                        "functionName": "tint",
-                        "line": 7
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 12,
-                        "durationMicroseconds": 69,
-                        "errorMessage": "Cannot load property muted from const QMetaObject.",
-                        "functionName": "color",
-                        "line": 11
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 11,
-                        "durationMicroseconds": 164,
-                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
-                        "functionName": "text",
-                        "line": 15
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 26,
-                        "durationMicroseconds": 95,
-                        "errorMessage": "",
-                        "functionName": "horizontalAlignment",
-                        "line": 16
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 24,
-                        "durationMicroseconds": 79,
-                        "errorMessage": "",
-                        "functionName": "verticalAlignment",
-                        "line": 17
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 37,
-                        "durationMicroseconds": 2888,
-                        "errorMessage": "",
-                        "functionName": "glyphMap",
-                        "line": 19
-                    },
-                    {
-                        "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Functions without type annotations won't be compiled",
-                        "functionName": "resolvedSymbol",
-                        "line": 33
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 40,
-                        "durationMicroseconds": 307,
-                        "errorMessage": "",
-                        "functionName": "materialMap",
-                        "line": 44
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 21,
-                        "durationMicroseconds": 99,
-                        "errorMessage": "",
-                        "functionName": "pixelSize",
-                        "line": 12
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 18,
-                        "durationMicroseconds": 106,
-                        "errorMessage": "",
-                        "functionName": "weight",
+                        "durationMicroseconds": 120,
+                        "errorMessage": "function without return type annotation returns QQuickFontLoader::name with type QString. This may prevent proper compilation to Cpp.",
+                        "functionName": "pickFamily",
                         "line": 13
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 29,
+                        "column": 16,
+                        "durationMicroseconds": 1703,
+                        "errorMessage": "Cannot load property text from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 26
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 88,
+                        "errorMessage": "",
+                        "functionName": "horizontalAlignment",
+                        "line": 27
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "verticalAlignment",
+                        "line": 28
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 352,
+                        "errorMessage": "",
+                        "functionName": "glyphMap",
+                        "line": 30
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 9,
                         "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"preferredFamilies\".",
-                        "functionName": "preferredFamilies",
-                        "line": 14
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "resolvedSymbol",
+                        "line": 44
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 44,
+                        "durationMicroseconds": 163,
+                        "errorMessage": "",
+                        "functionName": "materialMap",
+                        "line": 55
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 22
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 59,
+                        "errorMessage": "",
+                        "functionName": "pixelSize",
+                        "line": 23
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 246,
+                        "errorMessage": "method pickFamily cannot be resolved.",
+                        "functionName": "family",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 25
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/IconGlyph.qml"
