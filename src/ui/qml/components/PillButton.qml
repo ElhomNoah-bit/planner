@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import "styles" as Styles
+import NoahPlanner.Styles as Styles
 
 Button {
     id: btn
@@ -72,16 +72,14 @@ Button {
             return down ? Qt.darker(colors.accent, 1.05) : colors.accent
         }
         if (kind === "ghost") {
-            if (checked) return colors.accentBg
             if (down) return colors.press
             if (hovered) return colors.hover
             return "transparent"
         }
         // neutral
-        if (checked) return colors.accentBg
         if (down) return colors.press
         if (hovered) return colors.hover
-        return colors.hover
+        return colors.neutralBg
     }
 
     function borderColor() {
@@ -91,11 +89,17 @@ Button {
         if (kind === "ghost") {
             return checked ? colors.accent : "transparent"
         }
-        return colors.divider
+        return checked ? colors.accent : colors.divider
     }
 
     function borderWidth() {
-        return kind === "neutral" ? 1 : 0
+        if (kind === "neutral") {
+            return 1
+        }
+        if (kind === "ghost" && checked) {
+            return 1
+        }
+        return 0
     }
 
     function foregroundColor() {

@@ -14,11 +14,11 @@
 #else
 #define Q_QMLTYPE_EXPORT
 #endif
-Q_QMLTYPE_EXPORT void qml_register_types_styles()
+Q_QMLTYPE_EXPORT void qml_register_types_NoahPlanner_Styles()
 {
     QT_WARNING_PUSH QT_WARNING_DISABLE_DEPRECATED
     QT_WARNING_POP
-    qmlRegisterModule("styles", 1, 0);
+    qmlRegisterModule("NoahPlanner.Styles", 1, 0);
 }
 
-static const QQmlModuleRegistration stylesRegistration("styles", qml_register_types_styles);
+static const QQmlModuleRegistration noahPlannerStylesRegistration("NoahPlanner.Styles", qml_register_types_NoahPlanner_Styles);

@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import "styles" as Styles
+import NoahPlanner.Styles as Styles
 
 Flickable {
     id: root

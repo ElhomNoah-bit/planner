@@ -911,7 +911,7 @@
 		"/usr/lib64/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
 		"/usr/lib64/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
 		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/qml_imports/noah_planner_conf.cmake",
-		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_stylesPlugin_in.cpp"
+		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6",
 	"CROSS_CONFIG" : false,
@@ -979,12 +979,12 @@
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : 
 	[
-		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_font_assets.cpp",
+		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_fonts.cpp",
 		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp",
 		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp",
 		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp",
-		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_styles.cpp",
-		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_styles_init.cpp",
+		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp",
+		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp",
 		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp",
 		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp",
 		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp",
@@ -1036,12 +1036,12 @@
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : 
 	[
-		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_font_assets.cpp",
+		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_fonts.cpp",
 		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp",
 		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp",
 		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp",
-		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_styles.cpp",
-		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_styles_init.cpp",
+		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp",
+		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp",
 		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp",
 		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp",
 		"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp",

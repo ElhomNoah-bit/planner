@@ -7,7 +7,7 @@
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/3.31.6/CMakeCXXCompiler.cmake
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/3.31.6/CMakeSystem.cmake
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/moc_predefs.h
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_stylesPlugin_in.cpp
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Exam.h
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/PlannerService.cpp
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/PlannerService.h
@@ -1148,8 +1148,8 @@
  /usr/share/cmake/Modules/Platform/Linux.cmake
  /usr/share/cmake/Modules/Platform/UnixPaths.cmake
 
-CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_font_assets.cpp
+CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_fonts.cpp
  /usr/include/stdc-predef.h
 
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o
@@ -14181,7 +14181,7 @@ noah_planner
  /usr/lib64/libxml2.so.2
  /usr/lib64/libz.so.1
  /usr/lib64/libzstd.so.1
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o
@@ -14213,7 +14213,7 @@ noah_planner
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_module_resources_2.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_module_resources_3.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/libstyles_module.a

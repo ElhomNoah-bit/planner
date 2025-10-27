@@ -9,8 +9,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "styles_moduleplugin_autogen/timestamp" "custom" "styles_moduleplugin_autogen/deps"
+  "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp" "CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o" "gcc" "CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o.d"
   "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_autogen/mocs_compilation.cpp" "CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_autogen/mocs_compilation.cpp.o.d"
-  "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_stylesPlugin.cpp" "CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o" "gcc" "CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

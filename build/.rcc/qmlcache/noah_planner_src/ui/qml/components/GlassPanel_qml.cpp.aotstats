@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 106,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 7
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 69,
                         "errorMessage": "",
                         "functionName": "padding",
                         "line": 8
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 107,
+                        "durationMicroseconds": 59,
                         "errorMessage": "",
                         "functionName": "tint",
                         "line": 10
@@ -30,23 +30,23 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 52,
                         "errorMessage": "",
                         "functionName": "stroke",
                         "line": 11
                     },
                     {
-                        "codegenSuccessful": false,
+                        "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 46,
-                        "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
+                        "durationMicroseconds": 1291,
+                        "errorMessage": "",
                         "functionName": "theme",
                         "line": 14
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot load property colors from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::theme with type QVariant.",
                         "functionName": "colors",
                         "line": 15
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 49,
                         "errorMessage": "Cannot load property gap from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::theme with type QVariant.",
                         "functionName": "gap",
                         "line": 16
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 18,
                         "errorMessage": "Cannot load property radii from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::theme with type QVariant.",
                         "functionName": "radii",
                         "line": 17
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot load property lg from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::radii with type QVariant.",
                         "functionName": "baseRadius",
                         "line": 19
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot load property g16 from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::gap with type QVariant.",
                         "functionName": "basePadding",
                         "line": 20
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 98,
+                        "durationMicroseconds": 60,
                         "errorMessage": "Cannot load property cardGlass from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::colors with type QVariant.",
                         "functionName": "baseTint",
                         "line": 21
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 54,
                         "errorMessage": "Cannot load property divider from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::colors with type QVariant.",
                         "functionName": "baseStroke",
                         "line": 22
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 63,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 28
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 117,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 29
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 27
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 145,
+                        "durationMicroseconds": 73,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 30
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 54,
                         "errorMessage": "",
                         "functionName": "enabled",
                         "line": 32
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 58,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "blurMax",
                         "line": 35
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 55,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 42
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 84,
+                        "durationMicroseconds": 95,
                         "errorMessage": "",
                         "functionName": "margins",
                         "line": 43

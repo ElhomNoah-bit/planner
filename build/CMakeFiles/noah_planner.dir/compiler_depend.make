@@ -6,7 +6,7 @@ noah_planner_autogen/timestamp: /home/noah/Dokumente/dev/project_study_planner/n
   CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
   CMakeFiles/3.31.6/CMakeSystem.cmake \
   noah_planner_autogen/moc_predefs.h \
-  styles_moduleplugin_stylesPlugin_in.cpp \
+  styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp \
   /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Exam.h \
   /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/PlannerService.cpp \
   /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/PlannerService.h \
@@ -1147,7 +1147,7 @@ noah_planner_autogen/timestamp: /home/noah/Dokumente/dev/project_study_planner/n
   /usr/share/cmake/Modules/Platform/Linux.cmake \
   /usr/share/cmake/Modules/Platform/UnixPaths.cmake
 
-CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o: .qt/rcc/qrc_font_assets.cpp \
+CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o: .qt/rcc/qrc_fonts.cpp \
   /usr/include/stdc-predef.h
 
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o: .qt/rcc/qrc_noah_planner_raw_qml_0.cpp \
@@ -14147,7 +14147,7 @@ noah_planner: /lib64/ld-linux-x86-64.so.2 \
   /usr/lib64/libxml2.so.2 \
   /usr/lib64/libz.so.1 \
   /usr/lib64/libzstd.so.1 \
-  CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o \
+  CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o \
   CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o \
   CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o \
   CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o \
@@ -14179,7 +14179,7 @@ noah_planner: /lib64/ld-linux-x86-64.so.2 \
   CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o \
   CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o \
   CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o \
-  CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o \
+  CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o \
   CMakeFiles/styles_module_resources_2.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.o \
   CMakeFiles/styles_module_resources_3.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.o \
   libstyles_module.a
@@ -14187,7 +14187,7 @@ noah_planner: /lib64/ld-linux-x86-64.so.2 \
 
 libstyles_module.a:
 
-CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o:
+CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o:
 
 CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o:
 
@@ -14225,8 +14225,6 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/App_qml.
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp.o:
 
-CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o:
-
 /usr/lib64/libzstd.so.1:
 
 /usr/lib64/libxml2.so.2:
@@ -14258,6 +14256,8 @@ CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o:
 /usr/lib64/libidn2.so.0:
 
 /usr/lib64/libicui18n.so.76:
+
+CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o:
 
 /usr/lib64/libicudata.so.76:
 
@@ -14820,8 +14820,6 @@ noah_planner_autogen/M4YTXQ7V2H/moc_TaskModel.cpp:
 /usr/include/c++/15/bits/nested_exception.h:
 
 /usr/include/qt6/QtCore/QCoreApplication:
-
-.qt/rcc/qrc_font_assets.cpp:
 
 /usr/include/qt6/QtCore/qswap.h:
 
@@ -15485,14 +15483,6 @@ CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o:
 
 /usr/lib64/cmake/Qt6Qml/Qt6QmlAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCore/QAbstractListModel:
-
-/usr/include/qt6/QtCore/qendian.h:
-
-/usr/include/c++/15/x86_64-redhat-linux/bits/gthr.h:
-
-/usr/lib64/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake:
-
 /usr/include/bits/floatn-common.h:
 
 /usr/lib64/cmake/Qt6DBus/Qt6DBusConfigVersion.cmake:
@@ -15520,22 +15510,6 @@ CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o:
 /usr/lib64/cmake/Qt6/Qt6ConfigExtras.cmake:
 
 /usr/include/c++/15/type_traits:
-
-/usr/include/qt6/QtCore/qcontainerinfo.h:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginConfig.cmake:
-
-/usr/include/c++/15/bits/basic_string.tcc:
-
-/usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
-
-noah_planner_autogen/moc_predefs.h:
-
-/usr/include/c++/15/bits/streambuf.tcc:
-
-/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/ExamModel.h:
-
-.qt/qml_imports/noah_planner_conf.cmake:
 
 /usr/include/c++/15/bits/allocator.h:
 
@@ -15571,6 +15545,44 @@ CMakeFiles/3.31.6/CMakeSystem.cmake:
 
 /usr/lib64/cmake/Qt6QuickControls2Private/Qt6QuickControls2PrivateAdditionalTargetInfo.cmake:
 
+/usr/include/qt6/QtCore/qcontainerinfo.h:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginConfig.cmake:
+
+/usr/include/c++/15/bits/basic_string.tcc:
+
+/usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
+
+noah_planner_autogen/moc_predefs.h:
+
+/usr/include/c++/15/bits/streambuf.tcc:
+
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/ExamModel.h:
+
+.qt/qml_imports/noah_planner_conf.cmake:
+
+/usr/include/bits/pthreadtypes-arch.h:
+
+/usr/lib64/cmake/Qt6/QtPublicToolHelpers.cmake:
+
+/usr/lib64/cmake/Qt6Quick/Qt6QuickConfigVersionImpl.cmake:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/lib64/cmake/Qt6QuickControls2Private/Qt6QuickControls2PrivateConfigVersion.cmake:
+
+CMakeFiles/3.31.6/CMakeCXXCompiler.cmake:
+
+/usr/include/alloca.h:
+
+/usr/include/qt6/QtCore/QAbstractListModel:
+
+/usr/include/qt6/QtCore/qendian.h:
+
+/usr/include/c++/15/x86_64-redhat-linux/bits/gthr.h:
+
+/usr/lib64/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake:
+
 /usr/lib64/libgraphite2.so.3:
 
 /usr/include/c++/15/bits/cpp_type_traits.h:
@@ -15588,6 +15600,10 @@ CMakeFiles/3.31.6/CMakeSystem.cmake:
 /usr/include/bits/setjmp.h:
 
 /usr/include/c++/15/bits/char_traits.h:
+
+/usr/lib64/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptConfig.cmake:
+
+/usr/include/c++/15/cctype:
 
 /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/CMakeLists.txt:
 
@@ -15619,21 +15635,13 @@ CMakeFiles/3.31.6/CMakeSystem.cmake:
 
 /usr/include/c++/15/bits/stl_multiset.h:
 
-CMakeFiles/3.31.6/CMakeCXXCompiler.cmake:
+styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp:
 
-/usr/include/alloca.h:
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginTargets-relwithdebinfo.cmake:
 
-/usr/lib64/cmake/Qt6/QtPublicToolHelpers.cmake:
+/usr/include/qt6/QtCore/qvector.h:
 
-/usr/include/c++/15/cctype:
-
-/usr/lib64/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptConfig.cmake:
-
-/usr/lib64/cmake/Qt6Quick/Qt6QuickConfigVersionImpl.cmake:
-
-/usr/include/bits/pthreadtypes.h:
-
-/usr/lib64/cmake/Qt6QuickControls2Private/Qt6QuickControls2PrivateConfigVersion.cmake:
+/usr/lib64/cmake/Qt6QmlTools/Qt6QmlToolsConfigVersion.cmake:
 
 /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/TaskFilterProxy.h:
 
@@ -15726,8 +15734,6 @@ CMakeFiles/3.31.6/CMakeCXXCompiler.cmake:
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginConfig.cmake:
 
 /usr/include/asm/errno.h:
-
-/usr/include/bits/pthreadtypes-arch.h:
 
 /usr/lib64/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateDependencies.cmake:
 
@@ -16023,10 +16029,6 @@ CMakeFiles/3.31.6/CMakeCXXCompiler.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginTargets-relwithdebinfo.cmake:
 
-styles_moduleplugin_stylesPlugin_in.cpp:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginTargets-relwithdebinfo.cmake:
-
 /usr/include/c++/15/tr1/special_function_util.h:
 
 /usr/include/qt6/QtCore/qtmochelpers.h:
@@ -16270,6 +16272,8 @@ noah_planner_autogen/YPKJ5OE7LN/moc_PlannerBackend.cpp:
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginAdditionalTargetInfo.cmake:
+
+.qt/rcc/qrc_fonts.cpp:
 
 /usr/include/bits/floatn.h:
 
@@ -16687,6 +16691,8 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginConfig.cmake:
 
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginTargets-relwithdebinfo.cmake:
+
 /usr/lib64/cmake/Qt6Gui/Qt6QGtk3ThemePluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginAdditionalTargetInfo.cmake:
@@ -16722,12 +16728,6 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginTargets-relwithdebinfo.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginAdditionalTargetInfo.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtCore/qvector.h:
-
-/usr/lib64/cmake/Qt6QmlTools/Qt6QmlToolsConfigVersion.cmake:
 
 /usr/include/qt6/QtCore/qshareddata.h:
 

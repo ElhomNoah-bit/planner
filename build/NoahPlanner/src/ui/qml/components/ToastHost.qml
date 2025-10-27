@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import "styles" as Styles
+import NoahPlanner.Styles as Styles
 
 Item {
     id: host
@@ -23,14 +23,14 @@ Item {
         id: wrapper
         visible: false
         opacity: 0
-    radius: radii.lg
-    color: colors.cardGlass
-    border.color: colors.divider
+        radius: radii.lg
+        color: colors.cardGlass
+        border.color: colors.divider
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         anchors.bottomMargin: host.margin
-    width: textItem.implicitWidth + gaps.g24
-    height: textItem.implicitHeight + gaps.g24
+        width: textItem.implicitWidth + gaps.g24
+        height: textItem.implicitHeight + gaps.g24
 
         Behavior on opacity {
             NumberAnimation {

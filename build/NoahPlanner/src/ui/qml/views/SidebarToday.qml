@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import "styles" as Styles
+import NoahPlanner.Styles as Styles
 
 Rectangle {
     id: root
@@ -16,7 +16,7 @@ Rectangle {
     readonly property QtObject radii: Styles.ThemeStore.radii
     readonly property QtObject metrics: Styles.ThemeStore.layout
 
-    width: metrics.sidebarW
+    implicitWidth: metrics.sidebarW
     radius: radii.xl
     color: colors.cardGlass
     border.width: 1

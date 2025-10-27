@@ -1,7 +1,7 @@
 --resource
-/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qmake_styles.qrc
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qmake_NoahPlanner_Styles.qrc
 --resource
 /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/styles_module_raw_qml_0.qrc
 --resource
 /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/styles_module_raw_qml_0_extra_qmldirs.qrc
-/qt/qml/styles/src/ui/qml/styles/ThemeStore.qml
+/qt/qml/NoahPlanner/Styles/src/ui/qml/styles/ThemeStore.qml

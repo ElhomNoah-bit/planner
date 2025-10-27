@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "styles/libstyles_moduleplugin.a"
+  "NoahPlanner/Styles/libstyles_moduleplugin.a"
 )

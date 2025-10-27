@@ -71,7 +71,7 @@ qt_add_qml_module(styles_module
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
     STATIC
-    OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/styles
+    OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/NoahPlanner/Styles
     QML_FILES
         src/ui/qml/styles/ThemeStore.qml
 )

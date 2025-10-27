@@ -6,15 +6,15 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 112,
+                        "durationMicroseconds": 119,
                         "errorMessage": "",
                         "functionName": "focus",
-                        "line": 16
+                        "line": 17
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml"
             }
         ],
-        "moduleId": "styles(styles_module)"
+        "moduleId": "NoahPlanner.Styles(styles_module)"
     }
 ]

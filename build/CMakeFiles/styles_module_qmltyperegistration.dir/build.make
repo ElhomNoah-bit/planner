@@ -67,7 +67,7 @@ include CMakeFiles/styles_module_qmltyperegistration.dir/compiler_depend.make
 include CMakeFiles/styles_module_qmltyperegistration.dir/progress.make
 
 CMakeFiles/styles_module_qmltyperegistration: styles_module_qmltyperegistrations.cpp
-CMakeFiles/styles_module_qmltyperegistration: styles/styles_module.qmltypes
+CMakeFiles/styles_module_qmltyperegistration: NoahPlanner/Styles/styles_module.qmltypes
 
 styles_module_qmltyperegistrations.cpp: qmltypes/styles_module_foreign_types.txt
 styles_module_qmltyperegistrations.cpp: meta_types/qt6styles_module_release_metatypes.json
@@ -76,12 +76,12 @@ styles_module_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6qml_relwithd
 styles_module_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6core_relwithdebinfo_metatypes.json
 styles_module_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6network_relwithdebinfo_metatypes.json
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic QML type registration for target styles_module"
-	/usr/lib64/qt6/libexec/qmltyperegistrar --generate-qmltypes=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles/styles_module.qmltypes --import-name=styles --major-version=1 --minor-version=0 @/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/qmltypes/styles_module_foreign_types.txt -o /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_module_qmltyperegistrations.cpp /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/qt6styles_module_release_metatypes.json
+	/usr/lib64/qt6/libexec/qmltyperegistrar --generate-qmltypes=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/NoahPlanner/Styles/styles_module.qmltypes --import-name=NoahPlanner.Styles --major-version=1 --minor-version=0 @/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/qmltypes/styles_module_foreign_types.txt -o /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_module_qmltyperegistrations.cpp /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/qt6styles_module_release_metatypes.json
 	/usr/bin/cmake -E make_directory /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/qmltypes
 	/usr/bin/cmake -E touch /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/qmltypes/styles_module.qmltypes
 
-styles/styles_module.qmltypes: styles_module_qmltyperegistrations.cpp
-	@$(CMAKE_COMMAND) -E touch_nocreate styles/styles_module.qmltypes
+NoahPlanner/Styles/styles_module.qmltypes: styles_module_qmltyperegistrations.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate NoahPlanner/Styles/styles_module.qmltypes
 
 meta_types/qt6styles_module_release_metatypes.json: meta_types/qt6styles_module_release_metatypes.json.gen
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating meta_types/qt6styles_module_release_metatypes.json"
@@ -108,10 +108,10 @@ CMakeFiles/styles_module_qmltyperegistration.dir/codegen:
 .PHONY : CMakeFiles/styles_module_qmltyperegistration.dir/codegen
 
 styles_module_qmltyperegistration: CMakeFiles/styles_module_qmltyperegistration
+styles_module_qmltyperegistration: NoahPlanner/Styles/styles_module.qmltypes
 styles_module_qmltyperegistration: meta_types/qt6styles_module_release_metatypes.json
 styles_module_qmltyperegistration: meta_types/qt6styles_module_release_metatypes.json.gen
 styles_module_qmltyperegistration: meta_types/styles_module_json_file_list.txt
-styles_module_qmltyperegistration: styles/styles_module.qmltypes
 styles_module_qmltyperegistration: styles_module_autogen/timestamp
 styles_module_qmltyperegistration: styles_module_qmltyperegistrations.cpp
 styles_module_qmltyperegistration: CMakeFiles/styles_module_qmltyperegistration.dir/build.make

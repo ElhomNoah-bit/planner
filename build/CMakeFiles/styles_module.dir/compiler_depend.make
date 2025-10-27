@@ -5,7 +5,7 @@ styles_module_autogen/timestamp: /home/noah/Dokumente/dev/project_study_planner/
   .qt/qml_imports/noah_planner_conf.cmake \
   CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
   CMakeFiles/3.31.6/CMakeSystem.cmake \
-  styles_moduleplugin_stylesPlugin_in.cpp \
+  styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp \
   /usr/bin/cmake \
   /usr/lib64/cmake/Qt6/3rdparty/kwin/FindXKB.cmake \
   /usr/lib64/cmake/Qt6/FindWrapAtomic.cmake \
@@ -691,7 +691,7 @@ styles_module_autogen/timestamp: /home/noah/Dokumente/dev/project_study_planner/
   /usr/share/cmake/Modules/Platform/Linux.cmake \
   /usr/share/cmake/Modules/Platform/UnixPaths.cmake
 
-CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.o: .qt/rcc/qrc_qmake_styles.cpp \
+CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.o: .qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp \
   /usr/include/stdc-predef.h
 
 CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.o: .qt/rcc/qrc_styles_module_raw_qml_0.cpp \
@@ -2214,8 +2214,6 @@ styles_module_qmltyperegistrations.cpp:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginTargets-relwithdebinfo.cmake:
 
-styles_moduleplugin_stylesPlugin_in.cpp:
-
 /usr/lib64/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateConfigVersionImpl.cmake:
 
 /usr/lib64/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateConfig.cmake:
@@ -2313,6 +2311,8 @@ styles_moduleplugin_stylesPlugin_in.cpp:
 /usr/include/bits/waitflags.h:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginTargets-relwithdebinfo.cmake:
+
+styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp:
 
 /usr/lib64/cmake/Qt6QmlTools/Qt6QmlToolsConfigVersion.cmake:
 
@@ -2456,6 +2456,8 @@ styles_moduleplugin_stylesPlugin_in.cpp:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginConfig.cmake:
 
+.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp:
+
 /usr/lib64/cmake/Qt6Qml/Qt6QmlFindQmlscInternal.cmake:
 
 /usr/include/qt6/QtCore/qconstructormacros.h:
@@ -2498,6 +2500,8 @@ styles_moduleplugin_stylesPlugin_in.cpp:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginAdditionalTargetInfo.cmake:
 
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginAdditionalTargetInfo.cmake:
+
 /usr/lib64/cmake/Qt6QmlIntegration/Qt6QmlIntegrationVersionlessAliasTargets.cmake:
 
 /usr/include/asm-generic/int-ll64.h:
@@ -2533,10 +2537,6 @@ styles_moduleplugin_stylesPlugin_in.cpp:
 /usr/lib64/cmake/Qt6Qml/Qt6QTcpServerConnectionFactoryPluginConfig.cmake:
 
 /usr/include/c++/15/set:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginConfig.cmake:
-
-/usr/include/qt6/QtCore/qgenericatomic.h:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginTargets-relwithdebinfo.cmake:
 
@@ -2768,6 +2768,14 @@ styles_moduleplugin_stylesPlugin_in.cpp:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginTargets.cmake:
 
+/usr/lib64/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginConfig.cmake:
+
+/usr/lib64/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersion.cmake:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/c++/15/tr1/ell_integral.tcc:
+
 /usr/lib64/cmake/Qt6/QtPublicAndroidHelpers.cmake:
 
 /usr/lib64/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginTargets.cmake:
@@ -2896,6 +2904,16 @@ CMakeFiles/3.31.6/CMakeCXXCompiler.cmake:
 
 /usr/lib64/cmake/Qt6QmlTools/Qt6QmlToolsVersionlessTargets.cmake:
 
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginConfig.cmake:
+
+/usr/include/qt6/QtCore/qgenericatomic.h:
+
+/usr/lib64/cmake/Qt6Core/Qt6CoreResourceInit.in.cpp:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginTargets.cmake:
+
+/usr/lib64/cmake/Qt6/QtPublicWindowsHelpers.cmake:
+
 /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h:
 
 /usr/include/wctype.h:
@@ -2978,24 +2996,6 @@ CMakeFiles/3.31.6/CMakeCXXCompiler.cmake:
 
 /usr/lib64/cmake/Qt6/Qt6Targets.cmake:
 
-.qt/qml_imports/noah_planner_conf.cmake:
-
-/usr/lib64/cmake/Qt6Qml/Qt6QmlAdditionalTargetInfo.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginTargets-relwithdebinfo.cmake:
-
-/usr/lib64/cmake/Qt6QmlTools/Qt6QmlToolsTargets.cmake:
-
-/usr/lib64/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake:
-
-/usr/lib64/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginConfig.cmake:
-
-/usr/include/time.h:
-
-/usr/lib64/cmake/Qt6QmlMeta/Qt6QmlMetaTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtCore/qcontainerfwd.h:
-
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginConfig.cmake:
 
 /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/CMakeLists.txt:
@@ -3014,17 +3014,23 @@ CMakeFiles/3.31.6/CMakeCXXCompiler.cmake:
 
 /usr/include/bits/atomic_wide_counter.h:
 
-/usr/lib64/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginConfig.cmake:
+.qt/qml_imports/noah_planner_conf.cmake:
 
-/usr/lib64/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersion.cmake:
+/usr/lib64/cmake/Qt6Qml/Qt6QmlAdditionalTargetInfo.cmake:
 
-/usr/include/stdc-predef.h:
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginTargets-relwithdebinfo.cmake:
 
-/usr/include/c++/15/tr1/ell_integral.tcc:
+/usr/lib64/cmake/Qt6QmlTools/Qt6QmlToolsTargets.cmake:
 
-/usr/lib64/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake:
+/usr/lib64/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake:
 
-/usr/lib64/cmake/Qt6QmlMeta/Qt6QmlMetaConfigVersionImpl.cmake:
+/usr/lib64/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginConfig.cmake:
+
+/usr/include/time.h:
+
+/usr/lib64/cmake/Qt6QmlMeta/Qt6QmlMetaTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/qcontainerfwd.h:
 
 /usr/lib64/cmake/Qt6QmlModels/Qt6QmlModelsConfig.cmake:
 
@@ -3148,12 +3154,6 @@ CMakeFiles/3.31.6/CMakeSystem.cmake:
 
 /usr/lib64/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets.cmake:
 
-/usr/lib64/cmake/Qt6Core/Qt6CoreResourceInit.in.cpp:
-
-/usr/lib64/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginTargets.cmake:
-
-/usr/lib64/cmake/Qt6/QtPublicWindowsHelpers.cmake:
-
 /usr/lib64/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateConfigVersionImpl.cmake:
 
 /usr/lib64/cmake/Qt6Qml/Qt6QmlPluginTemplate.cpp.in:
@@ -3191,6 +3191,8 @@ CMakeFiles/3.31.6/CMakeSystem.cmake:
 /usr/include/c++/15/bits/ostream.h:
 
 /usr/include/c++/15/bits/stl_raw_storage_iter.h:
+
+/usr/lib64/cmake/Qt6QmlMeta/Qt6QmlMetaConfigVersionImpl.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginTargets.cmake:
 
@@ -3410,6 +3412,8 @@ CMakeFiles/3.31.6/CMakeSystem.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginTargets.cmake:
 
+/usr/lib64/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake:
+
 /usr/lib64/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6QmlMeta/Qt6QmlMetaAdditionalTargetInfo.cmake:
@@ -3569,10 +3573,6 @@ CMakeFiles/3.31.6/CMakeSystem.cmake:
 /usr/include/qt6/QtCore/qchar.h:
 
 /usr/lib64/cmake/Qt6Quick/Qt6QuickConfigVersion.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginAdditionalTargetInfo.cmake:
-
-.qt/rcc/qrc_qmake_styles.cpp:
 
 /usr/lib64/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake:
 

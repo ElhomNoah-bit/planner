@@ -616,29 +616,29 @@ styles_moduleplugin_init_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin_init_autogen.dir/build.make CMakeFiles/styles_moduleplugin_init_autogen.dir/build
 .PHONY : styles_moduleplugin_init_autogen/fast
 
-build/.qt/rcc/qrc_font_assets.o: build/.qt/rcc/qrc_font_assets.cpp.o
-.PHONY : build/.qt/rcc/qrc_font_assets.o
+build/.qt/rcc/qrc_fonts.o: build/.qt/rcc/qrc_fonts.cpp.o
+.PHONY : build/.qt/rcc/qrc_fonts.o
 
 # target to build an object file
-build/.qt/rcc/qrc_font_assets.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o
-.PHONY : build/.qt/rcc/qrc_font_assets.cpp.o
+build/.qt/rcc/qrc_fonts.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o
+.PHONY : build/.qt/rcc/qrc_fonts.cpp.o
 
-build/.qt/rcc/qrc_font_assets.i: build/.qt/rcc/qrc_font_assets.cpp.i
-.PHONY : build/.qt/rcc/qrc_font_assets.i
+build/.qt/rcc/qrc_fonts.i: build/.qt/rcc/qrc_fonts.cpp.i
+.PHONY : build/.qt/rcc/qrc_fonts.i
 
 # target to preprocess a source file
-build/.qt/rcc/qrc_font_assets.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.i
-.PHONY : build/.qt/rcc/qrc_font_assets.cpp.i
+build/.qt/rcc/qrc_fonts.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.i
+.PHONY : build/.qt/rcc/qrc_fonts.cpp.i
 
-build/.qt/rcc/qrc_font_assets.s: build/.qt/rcc/qrc_font_assets.cpp.s
-.PHONY : build/.qt/rcc/qrc_font_assets.s
+build/.qt/rcc/qrc_fonts.s: build/.qt/rcc/qrc_fonts.cpp.s
+.PHONY : build/.qt/rcc/qrc_fonts.s
 
 # target to generate assembly for a file
-build/.qt/rcc/qrc_font_assets.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.s
-.PHONY : build/.qt/rcc/qrc_font_assets.cpp.s
+build/.qt/rcc/qrc_fonts.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.s
+.PHONY : build/.qt/rcc/qrc_fonts.cpp.s
 
 build/.qt/rcc/qrc_noah_planner_raw_qml_0.o: build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o
 .PHONY : build/.qt/rcc/qrc_noah_planner_raw_qml_0.o
@@ -712,53 +712,53 @@ build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.s
 .PHONY : build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.s
 
-build/.qt/rcc/qrc_qmake_styles.o: build/.qt/rcc/qrc_qmake_styles.cpp.o
-.PHONY : build/.qt/rcc/qrc_qmake_styles.o
+build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.o: build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.o
+.PHONY : build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.o
 
 # target to build an object file
-build/.qt/rcc/qrc_qmake_styles.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.o
-.PHONY : build/.qt/rcc/qrc_qmake_styles.cpp.o
+build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.o
+.PHONY : build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.o
 
-build/.qt/rcc/qrc_qmake_styles.i: build/.qt/rcc/qrc_qmake_styles.cpp.i
-.PHONY : build/.qt/rcc/qrc_qmake_styles.i
+build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.i: build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.i
+.PHONY : build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.i
 
 # target to preprocess a source file
-build/.qt/rcc/qrc_qmake_styles.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.i
-.PHONY : build/.qt/rcc/qrc_qmake_styles.cpp.i
+build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.i
+.PHONY : build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.i
 
-build/.qt/rcc/qrc_qmake_styles.s: build/.qt/rcc/qrc_qmake_styles.cpp.s
-.PHONY : build/.qt/rcc/qrc_qmake_styles.s
+build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.s: build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.s
+.PHONY : build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.s
 
 # target to generate assembly for a file
-build/.qt/rcc/qrc_qmake_styles.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.s
-.PHONY : build/.qt/rcc/qrc_qmake_styles.cpp.s
+build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.s
+.PHONY : build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.s
 
-build/.qt/rcc/qrc_qmake_styles_init.o: build/.qt/rcc/qrc_qmake_styles_init.cpp.o
-.PHONY : build/.qt/rcc/qrc_qmake_styles_init.o
+build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.o: build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o
+.PHONY : build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.o
 
 # target to build an object file
-build/.qt/rcc/qrc_qmake_styles_init.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_1.dir/build.make CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o
-.PHONY : build/.qt/rcc/qrc_qmake_styles_init.cpp.o
+build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_1.dir/build.make CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o
+.PHONY : build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o
 
-build/.qt/rcc/qrc_qmake_styles_init.i: build/.qt/rcc/qrc_qmake_styles_init.cpp.i
-.PHONY : build/.qt/rcc/qrc_qmake_styles_init.i
+build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.i: build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.i
+.PHONY : build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.i
 
 # target to preprocess a source file
-build/.qt/rcc/qrc_qmake_styles_init.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_1.dir/build.make CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.i
-.PHONY : build/.qt/rcc/qrc_qmake_styles_init.cpp.i
+build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_1.dir/build.make CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.i
+.PHONY : build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.i
 
-build/.qt/rcc/qrc_qmake_styles_init.s: build/.qt/rcc/qrc_qmake_styles_init.cpp.s
-.PHONY : build/.qt/rcc/qrc_qmake_styles_init.s
+build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.s: build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.s
+.PHONY : build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.s
 
 # target to generate assembly for a file
-build/.qt/rcc/qrc_qmake_styles_init.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_1.dir/build.make CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.s
-.PHONY : build/.qt/rcc/qrc_qmake_styles_init.cpp.s
+build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_1.dir/build.make CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.s
+.PHONY : build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.s
 
 build/.qt/rcc/qrc_styles_module_raw_qml_0.o: build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.o
 .PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0.o
@@ -1624,6 +1624,30 @@ styles_module_qmltyperegistrations.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/styles_module_qmltyperegistrations.cpp.s
 .PHONY : styles_module_qmltyperegistrations.cpp.s
 
+styles_moduleplugin_NoahPlanner_StylesPlugin.o: styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o
+.PHONY : styles_moduleplugin_NoahPlanner_StylesPlugin.o
+
+# target to build an object file
+styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin.dir/build.make CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o
+.PHONY : styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o
+
+styles_moduleplugin_NoahPlanner_StylesPlugin.i: styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.i
+.PHONY : styles_moduleplugin_NoahPlanner_StylesPlugin.i
+
+# target to preprocess a source file
+styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin.dir/build.make CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.i
+.PHONY : styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.i
+
+styles_moduleplugin_NoahPlanner_StylesPlugin.s: styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.s
+.PHONY : styles_moduleplugin_NoahPlanner_StylesPlugin.s
+
+# target to generate assembly for a file
+styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin.dir/build.make CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.s
+.PHONY : styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.s
+
 styles_moduleplugin_autogen/mocs_compilation.o: styles_moduleplugin_autogen/mocs_compilation.cpp.o
 .PHONY : styles_moduleplugin_autogen/mocs_compilation.o
 
@@ -1696,30 +1720,6 @@ styles_moduleplugin_init_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin_init.dir/build.make CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init_autogen/mocs_compilation.cpp.s
 .PHONY : styles_moduleplugin_init_autogen/mocs_compilation.cpp.s
 
-styles_moduleplugin_stylesPlugin.o: styles_moduleplugin_stylesPlugin.cpp.o
-.PHONY : styles_moduleplugin_stylesPlugin.o
-
-# target to build an object file
-styles_moduleplugin_stylesPlugin.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin.dir/build.make CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o
-.PHONY : styles_moduleplugin_stylesPlugin.cpp.o
-
-styles_moduleplugin_stylesPlugin.i: styles_moduleplugin_stylesPlugin.cpp.i
-.PHONY : styles_moduleplugin_stylesPlugin.i
-
-# target to preprocess a source file
-styles_moduleplugin_stylesPlugin.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin.dir/build.make CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.i
-.PHONY : styles_moduleplugin_stylesPlugin.cpp.i
-
-styles_moduleplugin_stylesPlugin.s: styles_moduleplugin_stylesPlugin.cpp.s
-.PHONY : styles_moduleplugin_stylesPlugin.s
-
-# target to generate assembly for a file
-styles_moduleplugin_stylesPlugin.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin.dir/build.make CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.s
-.PHONY : styles_moduleplugin_stylesPlugin.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1767,9 +1767,9 @@ help:
 	@echo "... styles_module_resources_3"
 	@echo "... styles_moduleplugin"
 	@echo "... styles_moduleplugin_init"
-	@echo "... build/.qt/rcc/qrc_font_assets.o"
-	@echo "... build/.qt/rcc/qrc_font_assets.i"
-	@echo "... build/.qt/rcc/qrc_font_assets.s"
+	@echo "... build/.qt/rcc/qrc_fonts.o"
+	@echo "... build/.qt/rcc/qrc_fonts.i"
+	@echo "... build/.qt/rcc/qrc_fonts.s"
 	@echo "... build/.qt/rcc/qrc_noah_planner_raw_qml_0.o"
 	@echo "... build/.qt/rcc/qrc_noah_planner_raw_qml_0.i"
 	@echo "... build/.qt/rcc/qrc_noah_planner_raw_qml_0.s"
@@ -1779,12 +1779,12 @@ help:
 	@echo "... build/.qt/rcc/qrc_qmake_NoahPlanner.o"
 	@echo "... build/.qt/rcc/qrc_qmake_NoahPlanner.i"
 	@echo "... build/.qt/rcc/qrc_qmake_NoahPlanner.s"
-	@echo "... build/.qt/rcc/qrc_qmake_styles.o"
-	@echo "... build/.qt/rcc/qrc_qmake_styles.i"
-	@echo "... build/.qt/rcc/qrc_qmake_styles.s"
-	@echo "... build/.qt/rcc/qrc_qmake_styles_init.o"
-	@echo "... build/.qt/rcc/qrc_qmake_styles_init.i"
-	@echo "... build/.qt/rcc/qrc_qmake_styles_init.s"
+	@echo "... build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.o"
+	@echo "... build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.i"
+	@echo "... build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.s"
+	@echo "... build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.o"
+	@echo "... build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.i"
+	@echo "... build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.s"
 	@echo "... build/.qt/rcc/qrc_styles_module_raw_qml_0.o"
 	@echo "... build/.qt/rcc/qrc_styles_module_raw_qml_0.i"
 	@echo "... build/.qt/rcc/qrc_styles_module_raw_qml_0.s"
@@ -1893,6 +1893,9 @@ help:
 	@echo "... styles_module_qmltyperegistrations.o"
 	@echo "... styles_module_qmltyperegistrations.i"
 	@echo "... styles_module_qmltyperegistrations.s"
+	@echo "... styles_moduleplugin_NoahPlanner_StylesPlugin.o"
+	@echo "... styles_moduleplugin_NoahPlanner_StylesPlugin.i"
+	@echo "... styles_moduleplugin_NoahPlanner_StylesPlugin.s"
 	@echo "... styles_moduleplugin_autogen/mocs_compilation.o"
 	@echo "... styles_moduleplugin_autogen/mocs_compilation.i"
 	@echo "... styles_moduleplugin_autogen/mocs_compilation.s"
@@ -1902,9 +1905,6 @@ help:
 	@echo "... styles_moduleplugin_init_autogen/mocs_compilation.o"
 	@echo "... styles_moduleplugin_init_autogen/mocs_compilation.i"
 	@echo "... styles_moduleplugin_init_autogen/mocs_compilation.s"
-	@echo "... styles_moduleplugin_stylesPlugin.o"
-	@echo "... styles_moduleplugin_stylesPlugin.i"
-	@echo "... styles_moduleplugin_stylesPlugin.s"
 .PHONY : help
 
 

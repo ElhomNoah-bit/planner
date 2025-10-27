@@ -11,6 +11,7 @@ QtObject {
         readonly property color divider:  "#2A2F3A"
         readonly property color accent:   "#0A84FF"
         readonly property color accentBg: "#0A84FF1F"
+        readonly property color neutralBg:"#FFFFFF12"
         readonly property color hover:    "#FFFFFF1A"
         readonly property color press:    "#FFFFFF33"
         readonly property color focus:    accent

@@ -17,6 +17,7 @@ int main(int argc, char* argv[]) {
     PlannerBackend backend;
 
     QQmlApplicationEngine engine;
+    engine.addImportPath("qrc:/qt/qml");
     engine.rootContext()->setContextProperty("PlannerBackend", &backend);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated, &app,
                      [](QObject* obj, const QUrl& objUrl) {

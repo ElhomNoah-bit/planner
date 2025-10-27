@@ -66,7 +66,7 @@ include CMakeFiles/styles_moduleplugin_autogen_timestamp_deps.dir/compiler_depen
 # Include the progress variables for this target.
 include CMakeFiles/styles_moduleplugin_autogen_timestamp_deps.dir/progress.make
 
-CMakeFiles/styles_moduleplugin_autogen_timestamp_deps: styles_moduleplugin_stylesPlugin.cpp
+CMakeFiles/styles_moduleplugin_autogen_timestamp_deps: styles_moduleplugin_NoahPlanner_StylesPlugin.cpp
 
 CMakeFiles/styles_moduleplugin_autogen_timestamp_deps.dir/codegen:
 .PHONY : CMakeFiles/styles_moduleplugin_autogen_timestamp_deps.dir/codegen

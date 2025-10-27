@@ -72,21 +72,21 @@ include CMakeFiles/styles_module_resources_1.dir/flags.make
 CMakeFiles/styles_module_resources_1.dir/codegen:
 .PHONY : CMakeFiles/styles_module_resources_1.dir/codegen
 
-CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o: CMakeFiles/styles_module_resources_1.dir/flags.make
-CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o: .qt/rcc/qrc_qmake_styles_init.cpp
-CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o: CMakeFiles/styles_module_resources_1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o -MF CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o.d -o CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_styles_init.cpp
+CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o: CMakeFiles/styles_module_resources_1.dir/flags.make
+CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o: .qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp
+CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o: CMakeFiles/styles_module_resources_1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o -MF CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o.d -o CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp
 
-CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_styles_init.cpp > CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.i
+CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp > CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.i
 
-CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_styles_init.cpp -o CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.s
+CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp -o CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.s
 
-styles_module_resources_1: CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o
+styles_module_resources_1: CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o
 styles_module_resources_1: CMakeFiles/styles_module_resources_1.dir/build.make
 .PHONY : styles_module_resources_1
 

@@ -1,5 +1,5 @@
 import QtQuick
-import "styles" as Styles
+import NoahPlanner.Styles as Styles
 
 FocusScope {
     id: root
@@ -18,8 +18,7 @@ FocusScope {
     readonly property QtObject typeScale: Styles.ThemeStore.type
     readonly property QtObject radii: Styles.ThemeStore.radii
     readonly property QtObject gaps: Styles.ThemeStore.gap
-    readonly property color baseAccent: colors.accent
-    readonly property color baseAccentBg: colors.accentBg
+    readonly property QtObject fonts: Styles.ThemeStore.fonts
 
     readonly property var dateObject: isoDate.length > 0 ? new Date(isoDate) : new Date()
     readonly property int dayNumber: dateObject.getDate()
@@ -28,9 +27,9 @@ FocusScope {
         id: backdrop
         anchors.fill: parent
         radius: radii.lg
-        color: root.selected ? baseAccentBg : colors.cardBg
+        color: root.selected ? colors.accentBg : colors.cardBg
         border.width: 1
-        border.color: root.selected ? baseAccent : colors.divider
+        border.color: root.selected ? colors.accent : colors.divider
     }
 
     Rectangle {
@@ -58,14 +57,14 @@ FocusScope {
         height: 24
 
         Rectangle {
-            width: 8
-            height: 8
-            radius: 4
+            width: 12
+            height: 12
+            radius: 6
             anchors.top: parent.top
             anchors.right: parent.right
-            color: baseAccentBg
+            color: colors.accentBg
             border.width: 1
-            border.color: baseAccent
+            border.color: colors.accent
             visible: root.isToday
         }
 
@@ -75,7 +74,7 @@ FocusScope {
             text: root.dayNumber
             font.pixelSize: typeScale.dateSize
             font.weight: typeScale.weightMedium
-            font.family: Styles.ThemeStore.fonts.uiFallback
+            font.family: fonts.uiFallback
             color: root.inMonth ? colors.text : colors.text2
             opacity: root.inMonth ? 1 : 0.6
             renderType: Text.NativeRendering
@@ -105,7 +104,7 @@ FocusScope {
             visible: extraCount > 0
             label: "+" + extraCount
             muted: true
-            subjectColor: baseAccent
+            subjectColor: colors.accent
             width: list.width
         }
     }

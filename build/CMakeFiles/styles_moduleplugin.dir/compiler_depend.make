@@ -5,9 +5,9 @@ styles_moduleplugin_autogen/timestamp: /home/noah/Dokumente/dev/project_study_pl
   .qt/qml_imports/noah_planner_conf.cmake \
   CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
   CMakeFiles/3.31.6/CMakeSystem.cmake \
+  styles_moduleplugin_NoahPlanner_StylesPlugin.cpp \
+  styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp \
   styles_moduleplugin_autogen/moc_predefs.h \
-  styles_moduleplugin_stylesPlugin.cpp \
-  styles_moduleplugin_stylesPlugin_in.cpp \
   /usr/bin/cmake \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -1101,11 +1101,8 @@ styles_moduleplugin_autogen/timestamp: /home/noah/Dokumente/dev/project_study_pl
   /usr/share/cmake/Modules/Platform/Linux.cmake \
   /usr/share/cmake/Modules/Platform/UnixPaths.cmake
 
-CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_autogen/mocs_compilation.cpp.o: styles_moduleplugin_autogen/mocs_compilation.cpp \
-  /usr/include/stdc-predef.h
-
-CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o: styles_moduleplugin_stylesPlugin.cpp \
-  styles_moduleplugin_autogen/include/styles_moduleplugin_stylesPlugin.moc \
+CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o: styles_moduleplugin_NoahPlanner_StylesPlugin.cpp \
+  styles_moduleplugin_autogen/include/styles_moduleplugin_NoahPlanner_StylesPlugin.moc \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -1554,6 +1551,11 @@ CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o: style
   /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h \
   /usr/lib/gcc/x86_64-redhat-linux/15/include/syslimits.h
 
+CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_autogen/mocs_compilation.cpp.o: styles_moduleplugin_autogen/mocs_compilation.cpp \
+  /usr/include/stdc-predef.h
+
+
+styles_moduleplugin_autogen/mocs_compilation.cpp:
 
 /usr/include/sys/select.h:
 
@@ -1588,8 +1590,6 @@ CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o: style
 /usr/include/bits/mathcalls.h:
 
 /usr/include/bits/mathcalls-helper-functions.h:
-
-/usr/include/bits/math-vector.h:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginAdditionalTargetInfo.cmake:
 
@@ -1913,8 +1913,6 @@ CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o: style
 
 /usr/include/qt6/QtCore/qplugin.h:
 
-styles_moduleplugin_stylesPlugin.cpp:
-
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginTargets-relwithdebinfo.cmake:
 
 /usr/lib64/cmake/Qt6DBus/Qt6DBusMacros.cmake:
@@ -2205,6 +2203,10 @@ styles_moduleplugin_stylesPlugin.cpp:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginTargets.cmake:
 
+/usr/include/c++/15/bits/concept_check.h:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginConfig.cmake:
+
 /usr/include/c++/15/bits/new_allocator.h:
 
 /usr/lib64/cmake/Qt6DBusPrivate/Qt6DBusPrivateDependencies.cmake:
@@ -2301,7 +2303,11 @@ styles_moduleplugin_stylesPlugin.cpp:
 
 /usr/include/c++/15/bits/unordered_map.h:
 
-/usr/lib64/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake:
+/usr/lib64/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake:
+
+/usr/lib64/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginTargets-relwithdebinfo.cmake:
+
+styles_moduleplugin_NoahPlanner_StylesPlugin.cpp:
 
 /usr/include/qt6/QtCore/qbytearray.h:
 
@@ -2359,19 +2365,13 @@ CMakeFiles/3.31.6/CMakeCXXCompiler.cmake:
 
 /usr/include/c++/15/bits/allocator.h:
 
-/usr/include/bits/types/cookie_io_functions_t.h:
+styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp:
 
-/usr/lib64/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake:
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginTargets-relwithdebinfo.cmake:
 
-/usr/lib64/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginTargets-relwithdebinfo.cmake:
+/usr/lib64/cmake/Qt6QmlTools/Qt6QmlToolsConfigVersion.cmake:
 
-/usr/lib64/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginConfig.cmake:
-
-/usr/include/asm-generic/types.h:
-
-/usr/include/bits/stdio.h:
-
-/usr/lib64/cmake/Qt6QuickLayouts/Qt6QuickLayoutsConfig.cmake:
+/usr/lib64/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake:
 
 /usr/include/bits/pthread_stack_min-dynamic.h:
 
@@ -2384,6 +2384,16 @@ CMakeFiles/3.31.6/CMakeCXXCompiler.cmake:
 /usr/include/bits/types/clock_t.h:
 
 /usr/include/c++/15/tr1/poly_laguerre.tcc:
+
+/usr/include/bits/types/cookie_io_functions_t.h:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginConfig.cmake:
+
+/usr/include/asm-generic/types.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/lib64/cmake/Qt6QuickLayouts/Qt6QuickLayoutsConfig.cmake:
 
 /usr/include/c++/15/bits/cpp_type_traits.h:
 
@@ -2494,20 +2504,6 @@ CMakeFiles/3.31.6/CMakeCXXCompiler.cmake:
 /usr/include/c++/15/exception:
 
 /usr/lib64/cmake/Qt6Network/Qt6NetworkTargets.cmake:
-
-/usr/include/c++/15/bits/concept_check.h:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginConfig.cmake:
-
-/usr/include/ctype.h:
-
-/usr/include/qt6/QtCore/qvarlengtharray.h:
-
-/usr/lib64/cmake/Qt6/Qt6ConfigVersion.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginConfig.cmake:
-
-/usr/share/cmake/Modules/CMakeGenericSystem.cmake:
 
 /usr/include/qt6/QtCore/qlatin1stringview.h:
 
@@ -2825,10 +2821,6 @@ CMakeFiles/3.31.6/CMakeSystem.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginTargets-relwithdebinfo.cmake:
 
-styles_moduleplugin_stylesPlugin_in.cpp:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginTargets-relwithdebinfo.cmake:
-
 /usr/include/c++/15/tr1/special_function_util.h:
 
 /usr/include/qt6/QtCore/qtmochelpers.h:
@@ -2836,6 +2828,16 @@ styles_moduleplugin_stylesPlugin_in.cpp:
 /usr/include/c++/15/chrono:
 
 /usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h:
+
+/usr/include/ctype.h:
+
+/usr/include/qt6/QtCore/qvarlengtharray.h:
+
+/usr/lib64/cmake/Qt6/Qt6ConfigVersion.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginConfig.cmake:
+
+/usr/share/cmake/Modules/CMakeGenericSystem.cmake:
 
 /usr/include/gnu/stubs-64.h:
 
@@ -3037,9 +3039,9 @@ styles_moduleplugin_stylesPlugin_in.cpp:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QVncIntegrationPluginAdditionalTargetInfo.cmake:
 
-styles_moduleplugin_autogen/mocs_compilation.cpp:
-
 /usr/lib64/cmake/Qt6Gui/Qt6QVncIntegrationPluginConfig.cmake:
+
+styles_moduleplugin_autogen/include/styles_moduleplugin_NoahPlanner_StylesPlugin.moc:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QVncIntegrationPluginTargets-relwithdebinfo.cmake:
 
@@ -3395,6 +3397,8 @@ styles_moduleplugin_autogen/mocs_compilation.cpp:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginConfig.cmake:
 
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginTargets-relwithdebinfo.cmake:
+
 /usr/lib64/cmake/Qt6Gui/Qt6QGtk3ThemePluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginAdditionalTargetInfo.cmake:
@@ -3434,10 +3438,6 @@ styles_moduleplugin_autogen/mocs_compilation.cpp:
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginTargets-relwithdebinfo.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginAdditionalTargetInfo.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginTargets-relwithdebinfo.cmake:
-
-/usr/lib64/cmake/Qt6QmlTools/Qt6QmlToolsConfigVersion.cmake:
 
 /usr/include/qt6/QtCore/qarraydatapointer.h:
 
@@ -3723,8 +3723,6 @@ styles_moduleplugin_autogen/mocs_compilation.cpp:
 
 /usr/lib64/cmake/Qt6QuickLayoutsPrivate/Qt6QuickLayoutsPrivateTargets.cmake:
 
-styles_moduleplugin_autogen/include/styles_moduleplugin_stylesPlugin.moc:
-
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginTargets.cmake:
 
 /usr/lib64/cmake/Qt6QuickPrivate/Qt6QuickPrivateAdditionalTargetInfo.cmake:
@@ -3834,3 +3832,5 @@ styles_moduleplugin_autogen/include/styles_moduleplugin_stylesPlugin.moc:
 /usr/lib64/cmake/Qt6Gui/Qt6QJpegPluginAdditionalTargetInfo.cmake:
 
 /usr/include/bits/libm-simd-decl-stubs.h:
+
+/usr/include/bits/math-vector.h:

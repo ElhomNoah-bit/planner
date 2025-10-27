@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/styles_module_qmltyperegistration"
+  "NoahPlanner/Styles/styles_module.qmltypes"
   "meta_types/qt6styles_module_release_metatypes.json"
   "meta_types/qt6styles_module_release_metatypes.json.gen"
   "meta_types/styles_module_json_file_list.txt"
   "meta_types/styles_module_json_file_list.txt.timestamp"
-  "styles/styles_module.qmltypes"
   "styles_module_autogen/mocs_compilation.cpp"
   "styles_module_autogen/timestamp"
   "styles_module_qmltyperegistrations.cpp"

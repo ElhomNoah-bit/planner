@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "noah_planner_autogen/timestamp" "custom" "noah_planner_autogen/deps"
-  "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_font_assets.cpp" "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o" "gcc" "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o.d"
+  "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_fonts.cpp" "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o" "gcc" "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o.d"
   "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp" "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o" "gcc" "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o.d"
   "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp" "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o" "gcc" "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o.d"
   "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp" "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o" "gcc" "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o.d"

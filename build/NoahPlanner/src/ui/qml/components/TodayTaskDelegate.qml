@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import "styles" as Styles
+import NoahPlanner.Styles as Styles
 
 Item {
     id: root
@@ -23,9 +23,9 @@ Item {
     Rectangle {
         id: container
         anchors.fill: parent
-    radius: radii.md
-    color: root.done ? colors.accentBg : colors.cardBg
-    border.color: root.done ? colors.accent : colors.divider
+        radius: radii.md
+        color: root.done ? colors.accentBg : colors.cardBg
+        border.color: root.done ? colors.accent : colors.divider
         border.width: 1
         Behavior on color { ColorAnimation { duration: 140; easing.type: Easing.InOutQuad } }
         Behavior on border.color { ColorAnimation { duration: 140; easing.type: Easing.InOutQuad } }
@@ -33,8 +33,8 @@ Item {
 
     Row {
         anchors.fill: parent
-    anchors.margins: gaps.g16
-    spacing: gaps.g16
+        anchors.margins: gaps.g16
+        spacing: gaps.g16
 
         Rectangle {
             id: checkbox

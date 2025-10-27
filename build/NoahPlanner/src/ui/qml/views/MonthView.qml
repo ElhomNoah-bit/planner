@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
-import "styles" as Styles
+import NoahPlanner.Styles as Styles
 
 Item {
     id: month
@@ -26,7 +26,7 @@ Item {
         RowLayout {
             Layout.fillWidth: true
             Layout.bottomMargin: gaps.g8
-            spacing: metrics.gridGap
+            spacing: gaps.g8
             Repeater {
                 model: weekdayNames
                 delegate: Text {

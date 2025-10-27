@@ -1,2 +1,2 @@
-module styles
+module NoahPlanner.Styles
 singleton ThemeStore 1.0 ThemeStore.qml

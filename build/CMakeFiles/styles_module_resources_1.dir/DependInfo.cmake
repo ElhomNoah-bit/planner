@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_styles_init.cpp" "CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o" "gcc" "CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o.d"
+  "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp" "CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o" "gcc" "CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles_init.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

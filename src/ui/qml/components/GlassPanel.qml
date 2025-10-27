@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Effects
-import "styles" as Styles
+import NoahPlanner.Styles as Styles
 
 Item {
     id: root

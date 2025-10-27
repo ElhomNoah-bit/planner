@@ -82,22 +82,22 @@ styles_module_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6qml_relwithd
 styles_module_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6core_relwithdebinfo_metatypes.json
 styles_module_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6network_relwithdebinfo_metatypes.json
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic QML type registration for target styles_module"
-	/usr/lib64/qt6/libexec/qmltyperegistrar --generate-qmltypes=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles/styles_module.qmltypes --import-name=styles --major-version=1 --minor-version=0 @/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/qmltypes/styles_module_foreign_types.txt -o /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_module_qmltyperegistrations.cpp /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/qt6styles_module_release_metatypes.json
+	/usr/lib64/qt6/libexec/qmltyperegistrar --generate-qmltypes=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/NoahPlanner/Styles/styles_module.qmltypes --import-name=NoahPlanner.Styles --major-version=1 --minor-version=0 @/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/qmltypes/styles_module_foreign_types.txt -o /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_module_qmltyperegistrations.cpp /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/qt6styles_module_release_metatypes.json
 	/usr/bin/cmake -E make_directory /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/qmltypes
 	/usr/bin/cmake -E touch /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/qmltypes/styles_module.qmltypes
 
-styles/styles_module.qmltypes: styles_module_qmltyperegistrations.cpp
-	@$(CMAKE_COMMAND) -E touch_nocreate styles/styles_module.qmltypes
+NoahPlanner/Styles/styles_module.qmltypes: styles_module_qmltyperegistrations.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate NoahPlanner/Styles/styles_module.qmltypes
 
-.qt/rcc/qrc_qmake_styles.cpp: styles/qmldir
-.qt/rcc/qrc_qmake_styles.cpp: .qt/rcc/qmake_styles.qrc
-.qt/rcc/qrc_qmake_styles.cpp: /usr/lib64/qt6/libexec/rcc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Running rcc for resource qmake_styles"
-	/usr/lib64/qt6/libexec/rcc --output /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_styles.cpp --name qmake_styles /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qmake_styles.qrc
+.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp: NoahPlanner/Styles/qmldir
+.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp: .qt/rcc/qmake_NoahPlanner_Styles.qrc
+.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp: /usr/lib64/qt6/libexec/rcc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Running rcc for resource qmake_NoahPlanner_Styles"
+	/usr/lib64/qt6/libexec/rcc --output /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp --name qmake_NoahPlanner_Styles /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qmake_NoahPlanner_Styles.qrc
 
 .rcc/qmlcache/styles_module_qmlcache_loader.cpp: /usr/lib64/qt6/libexec/qmlcachegen
 .rcc/qmlcache/styles_module_qmlcache_loader.cpp: .rcc/qmlcache/styles_module_qml_loader_file_list.rsp
-.rcc/qmlcache/styles_module_qmlcache_loader.cpp: .qt/rcc/qmake_styles.qrc
+.rcc/qmlcache/styles_module_qmlcache_loader.cpp: .qt/rcc/qmake_NoahPlanner_Styles.qrc
 .rcc/qmlcache/styles_module_qmlcache_loader.cpp: .qt/rcc/styles_module_raw_qml_0.qrc
 .rcc/qmlcache/styles_module_qmlcache_loader.cpp: .qt/rcc/styles_module_raw_qml_0_extra_qmldirs.qrc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating .rcc/qmlcache/styles_module_qmlcache_loader.cpp"
@@ -105,14 +105,14 @@ styles/styles_module.qmltypes: styles_module_qmltyperegistrations.cpp
 
 .rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp: /usr/lib64/qt6/libexec/qmlcachegen
 .rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml
-.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp: .qt/rcc/qmake_styles.qrc
+.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp: .qt/rcc/qmake_NoahPlanner_Styles.qrc
 .rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp: .qt/rcc/styles_module_raw_qml_0.qrc
 .rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp: .qt/rcc/styles_module_raw_qml_0_extra_qmldirs.qrc
-.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp: styles/styles_module.qmltypes
-.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp: styles/qmldir
+.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp: NoahPlanner/Styles/styles_module.qmltypes
+.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp: NoahPlanner/Styles/qmldir
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating .rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp, .rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/styles_module_src/ui/qml/styles
-	/usr/lib64/qt6/libexec/qmlcachegen --bare --resource-path /qt/qml/styles/src/ui/qml/styles/ThemeStore.qml -I /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/ -I /usr/lib64/qt6/qml -i /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles/qmldir --resource /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qmake_styles.qrc --resource /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/styles_module_raw_qml_0.qrc --resource /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/styles_module_raw_qml_0_extra_qmldirs.qrc --dump-aot-stats "--module-id=styles(styles_module)" -o /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml
+	/usr/lib64/qt6/libexec/qmlcachegen --bare --resource-path /qt/qml/NoahPlanner/Styles/src/ui/qml/styles/ThemeStore.qml -I /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/ -I /usr/lib64/qt6/qml -i /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/NoahPlanner/Styles/qmldir --resource /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qmake_NoahPlanner_Styles.qrc --resource /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/styles_module_raw_qml_0.qrc --resource /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/styles_module_raw_qml_0_extra_qmldirs.qrc --dump-aot-stats "--module-id=NoahPlanner.Styles(styles_module)" -o /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml
 
 .rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.aotstats: .rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.aotstats
@@ -123,7 +123,7 @@ styles/styles_module.qmltypes: styles_module_qmltyperegistrations.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Running rcc for resource styles_module_raw_qml_0"
 	/usr/lib64/qt6/libexec/rcc --output /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp --name styles_module_raw_qml_0 /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/styles_module_raw_qml_0.qrc
 
-.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp: styles/src/ui/qml/styles/qmldir
+.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp: NoahPlanner/Styles/src/ui/qml/styles/qmldir
 .qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp: .qt/rcc/styles_module_raw_qml_0_extra_qmldirs.qrc
 .qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp: /usr/lib64/qt6/libexec/rcc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Running rcc for resource styles_module_raw_qml_0_extra_qmldirs"
@@ -175,19 +175,19 @@ CMakeFiles/styles_module.dir/styles_module_qmltyperegistrations.cpp.s: cmake_for
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/styles_module.dir/styles_module_qmltyperegistrations.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_module_qmltyperegistrations.cpp -o CMakeFiles/styles_module.dir/styles_module_qmltyperegistrations.cpp.s
 
-CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.o: CMakeFiles/styles_module.dir/flags.make
-CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.o: .qt/rcc/qrc_qmake_styles.cpp
-CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.o: CMakeFiles/styles_module.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.o -MF CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.o.d -o CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_styles.cpp
+CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.o: CMakeFiles/styles_module.dir/flags.make
+CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.o: .qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp
+CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.o: CMakeFiles/styles_module.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.o -MF CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.o.d -o CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp
 
-CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_styles.cpp > CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.i
+CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp > CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.i
 
-CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_styles.cpp -o CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.s
+CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp -o CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.s
 
 CMakeFiles/styles_module.dir/build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.o: CMakeFiles/styles_module.dir/flags.make
 CMakeFiles/styles_module.dir/build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.o: .rcc/qmlcache/styles_module_qmlcache_loader.cpp
@@ -249,7 +249,7 @@ CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qml
 styles_module_OBJECTS = \
 "CMakeFiles/styles_module.dir/styles_module_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/styles_module.dir/styles_module_qmltyperegistrations.cpp.o" \
-"CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.o" \
+"CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.o" \
 "CMakeFiles/styles_module.dir/build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.o" \
 "CMakeFiles/styles_module.dir/build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.o" \
 "CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.o" \
@@ -260,7 +260,7 @@ styles_module_EXTERNAL_OBJECTS =
 
 libstyles_module.a: CMakeFiles/styles_module.dir/styles_module_autogen/mocs_compilation.cpp.o
 libstyles_module.a: CMakeFiles/styles_module.dir/styles_module_qmltyperegistrations.cpp.o
-libstyles_module.a: CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.o
+libstyles_module.a: CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp.o
 libstyles_module.a: CMakeFiles/styles_module.dir/build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.o
 libstyles_module.a: CMakeFiles/styles_module.dir/build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.o
 libstyles_module.a: CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.o
@@ -279,16 +279,16 @@ CMakeFiles/styles_module.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/styles_module.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/styles_module.dir/clean
 
-CMakeFiles/styles_module.dir/depend: .qt/rcc/qrc_qmake_styles.cpp
+CMakeFiles/styles_module.dir/depend: .qt/rcc/qrc_qmake_NoahPlanner_Styles.cpp
 CMakeFiles/styles_module.dir/depend: .qt/rcc/qrc_styles_module_raw_qml_0.cpp
 CMakeFiles/styles_module.dir/depend: .qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp
 CMakeFiles/styles_module.dir/depend: .rcc/qmlcache/styles_module_qmlcache_loader.cpp
 CMakeFiles/styles_module.dir/depend: .rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp
 CMakeFiles/styles_module.dir/depend: .rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.aotstats
+CMakeFiles/styles_module.dir/depend: NoahPlanner/Styles/styles_module.qmltypes
 CMakeFiles/styles_module.dir/depend: meta_types/qt6styles_module_release_metatypes.json
 CMakeFiles/styles_module.dir/depend: meta_types/qt6styles_module_release_metatypes.json.gen
 CMakeFiles/styles_module.dir/depend: meta_types/styles_module_json_file_list.txt
-CMakeFiles/styles_module.dir/depend: styles/styles_module.qmltypes
 CMakeFiles/styles_module.dir/depend: styles_module_autogen/timestamp
 CMakeFiles/styles_module.dir/depend: styles_module_qmltyperegistrations.cpp
 	cd /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6 /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6 /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_module.dir/DependInfo.cmake "--color=$(COLOR)"

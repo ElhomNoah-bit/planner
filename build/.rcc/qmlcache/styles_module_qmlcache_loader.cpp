@@ -5,7 +5,7 @@
 #include <QtCore/qstring.h>
 
 namespace QmlCacheGeneratedCode {
-namespace _qt_qml_styles_src_ui_qml_styles_ThemeStore_qml { 
+namespace _qt_qml_NoahPlanner_Styles_src_ui_qml_styles_ThemeStore_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
@@ -26,7 +26,7 @@ Q_GLOBAL_STATIC(Registry, unitRegistry)
 
 
 Registry::Registry() {
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/styles/src/ui/qml/styles/ThemeStore.qml"), &QmlCacheGeneratedCode::_qt_qml_styles_src_ui_qml_styles_ThemeStore_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/Styles/src/ui/qml/styles/ThemeStore.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_Styles_src_ui_qml_styles_ThemeStore_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;

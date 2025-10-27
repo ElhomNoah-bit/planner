@@ -1,5 +1,5 @@
 import QtQuick
-import "styles" as Styles
+import NoahPlanner.Styles as Styles
 
 Item {
     id: root
@@ -22,7 +22,9 @@ Item {
         id: track
         anchors.fill: parent
         radius: radii.xl
-        color: colors.hover
+        color: colors.cardBg
+        border.width: 1
+        border.color: colors.divider
     }
 
     Rectangle {

@@ -1,2 +1,2 @@
 #include <QtPlugin>
-Q_IMPORT_PLUGIN(stylesPlugin)
+Q_IMPORT_PLUGIN(NoahPlanner_StylesPlugin)

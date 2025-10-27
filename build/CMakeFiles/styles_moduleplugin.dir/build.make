@@ -92,38 +92,38 @@ CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_autogen/mocs_compilation.
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_autogen/mocs_compilation.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_autogen/mocs_compilation.cpp -o CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_autogen/mocs_compilation.cpp.s
 
-CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o: CMakeFiles/styles_moduleplugin.dir/flags.make
-CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o: styles_moduleplugin_stylesPlugin.cpp
-CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o: CMakeFiles/styles_moduleplugin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o -MF CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o.d -o CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_stylesPlugin.cpp
+CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o: CMakeFiles/styles_moduleplugin.dir/flags.make
+CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o: styles_moduleplugin_NoahPlanner_StylesPlugin.cpp
+CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o: CMakeFiles/styles_moduleplugin.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o -MF CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o.d -o CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp
 
-CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_stylesPlugin.cpp > CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.i
+CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp > CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.i
 
-CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_stylesPlugin.cpp -o CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.s
+CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp -o CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.s
 
 # Object files for target styles_moduleplugin
 styles_moduleplugin_OBJECTS = \
 "CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_autogen/mocs_compilation.cpp.o" \
-"CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o"
+"CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o"
 
 # External object files for target styles_moduleplugin
 styles_moduleplugin_EXTERNAL_OBJECTS =
 
-styles/libstyles_moduleplugin.a: CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_autogen/mocs_compilation.cpp.o
-styles/libstyles_moduleplugin.a: CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o
-styles/libstyles_moduleplugin.a: CMakeFiles/styles_moduleplugin.dir/build.make
-styles/libstyles_moduleplugin.a: CMakeFiles/styles_moduleplugin.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library styles/libstyles_moduleplugin.a"
+NoahPlanner/Styles/libstyles_moduleplugin.a: CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_autogen/mocs_compilation.cpp.o
+NoahPlanner/Styles/libstyles_moduleplugin.a: CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o
+NoahPlanner/Styles/libstyles_moduleplugin.a: CMakeFiles/styles_moduleplugin.dir/build.make
+NoahPlanner/Styles/libstyles_moduleplugin.a: CMakeFiles/styles_moduleplugin.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library NoahPlanner/Styles/libstyles_moduleplugin.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/styles_moduleplugin.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/styles_moduleplugin.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/styles_moduleplugin.dir/build: styles/libstyles_moduleplugin.a
+CMakeFiles/styles_moduleplugin.dir/build: NoahPlanner/Styles/libstyles_moduleplugin.a
 .PHONY : CMakeFiles/styles_moduleplugin.dir/build
 
 CMakeFiles/styles_moduleplugin.dir/clean:
