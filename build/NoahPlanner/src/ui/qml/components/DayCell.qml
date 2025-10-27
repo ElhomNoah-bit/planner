@@ -1,5 +1,4 @@
 import QtQuick
-import QtQuick.Accessibility
 import QtQuick.Controls
 import NoahPlanner.Styles as Styles
 
