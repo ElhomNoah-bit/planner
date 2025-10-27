@@ -5,7 +5,7 @@ import NoahPlanner.Styles as Styles
 
 TextField {
     id: search
-    property alias placeholder: placeholderText
+    property alias placeholder: search.placeholderText
 
     implicitHeight: Styles.ThemeStore.layout.pillH
     leftPadding: Styles.ThemeStore.gap.g12 + icon.width + Styles.ThemeStore.gap.g8
