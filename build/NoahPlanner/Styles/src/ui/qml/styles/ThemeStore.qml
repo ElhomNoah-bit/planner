@@ -61,7 +61,7 @@ QtObject {
         readonly property alias md: theme.md
         readonly property alias sm: theme.sm
         readonly property alias lg: theme.lg
-    readonly property alias xs: theme.xs
+        readonly property alias xs: theme.xs
         readonly property alias h1: theme.xl
         readonly property alias monthTitle: theme.xl
         readonly property alias dateSize: theme.sm
