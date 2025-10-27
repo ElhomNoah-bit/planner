@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 1680,
+                        "durationMicroseconds": 11649,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 9
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 202,
+                        "durationMicroseconds": 351,
                         "errorMessage": "",
                         "functionName": "family",
                         "line": 10
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 1342,
                         "errorMessage": "",
                         "functionName": "implicitHeight",
                         "line": 14
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 127,
                         "errorMessage": "",
                         "functionName": "implicitWidth",
                         "line": 15
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 371,
+                        "durationMicroseconds": 513,
                         "errorMessage": "",
                         "functionName": "glyphMap",
                         "line": 17
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 165,
+                        "durationMicroseconds": 268,
                         "errorMessage": "",
                         "functionName": "materialMap",
                         "line": 31
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 228,
+                        "durationMicroseconds": 379,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "updateGlyph",
                         "line": 53
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 74,
                         "errorMessage": "",
                         "functionName": "onNameChanged",
                         "line": 60
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 59
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 122,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 68
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 9149,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 69
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 118,
                         "errorMessage": "",
                         "functionName": "verticalAlignment",
                         "line": 70
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 71
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 64
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 101,
                         "errorMessage": "",
                         "functionName": "pixelSize",
                         "line": 65
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "family",
                         "line": 66
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 67

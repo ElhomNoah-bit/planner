@@ -74,12 +74,16 @@ CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/
 CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/FilterPill.qml
 CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml
 CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/IconGlyph.qml
+CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/CommandPalette.qml
 CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/PillButton.qml
+CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/QuickAddDialog.qml
 CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/QuickAddPill.qml
+CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/SearchField.qml
 CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/SegmentedControl.qml
 CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/TimerOverlay.qml
 CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/Toast.qml
 CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/ToastHost.qml
+CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/SettingsDialog.qml
 CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/TodayTaskDelegate.qml
 CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/views/AgendaView.qml
 CMakeFiles/noah_planner_qmllint: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/views/MonthView.qml

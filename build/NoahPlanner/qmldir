@@ -8,12 +8,16 @@ EventChip 1.0 src/ui/qml/components/EventChip.qml
 FilterPill 1.0 src/ui/qml/components/FilterPill.qml
 GlassPanel 1.0 src/ui/qml/components/GlassPanel.qml
 IconGlyph 1.0 src/ui/qml/components/IconGlyph.qml
+CommandPalette 1.0 src/ui/qml/components/CommandPalette.qml
 PillButton 1.0 src/ui/qml/components/PillButton.qml
+QuickAddDialog 1.0 src/ui/qml/components/QuickAddDialog.qml
 QuickAddPill 1.0 src/ui/qml/components/QuickAddPill.qml
+SearchField 1.0 src/ui/qml/components/SearchField.qml
 SegmentedControl 1.0 src/ui/qml/components/SegmentedControl.qml
 TimerOverlay 1.0 src/ui/qml/components/TimerOverlay.qml
 Toast 1.0 src/ui/qml/components/Toast.qml
 ToastHost 1.0 src/ui/qml/components/ToastHost.qml
+SettingsDialog 1.0 src/ui/qml/components/SettingsDialog.qml
 TodayTaskDelegate 1.0 src/ui/qml/components/TodayTaskDelegate.qml
 AgendaView 1.0 src/ui/qml/views/AgendaView.qml
 MonthView 1.0 src/ui/qml/views/MonthView.qml

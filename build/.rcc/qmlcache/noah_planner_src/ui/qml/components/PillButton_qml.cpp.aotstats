@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 1496,
+                        "durationMicroseconds": 3103,
                         "errorMessage": "",
                         "functionName": "colors",
                         "line": 15
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 103,
                         "errorMessage": "",
                         "functionName": "gaps",
                         "line": 16
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "radii",
                         "line": 17
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "typeScale",
                         "line": 18
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 327,
+                        "durationMicroseconds": 458,
                         "errorMessage": "Cannot access value for name down",
                         "functionName": "backgroundColor",
                         "line": 70
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 177,
                         "errorMessage": "function without return type annotation returns QString. This may prevent proper compilation to Cpp.",
                         "functionName": "borderColor",
                         "line": 85
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 73,
                         "errorMessage": "function without return type annotation returns int. This may prevent proper compilation to Cpp.",
                         "functionName": "borderWidth",
                         "line": 95
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 82,
+                        "durationMicroseconds": 135,
                         "errorMessage": "Cannot load property appBg from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/PillButton.qml)::colors with type QObject.",
                         "functionName": "foregroundColor",
                         "line": 105
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot access value for name radii",
                         "functionName": "radius",
                         "line": 26
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 64,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "color",
                         "line": 27
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "implicitHeight",
                         "line": 30
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "color",
                         "line": 28
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "width",
                         "line": 29
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot access value for name radii",
                         "functionName": "radius",
                         "line": 35
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "fill",
                         "line": 33
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "width",
                         "line": 36
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 49,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "color",
                         "line": 37
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 75,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 95,
                         "errorMessage": "Cannot access value for name Easing",
                         "functionName": "type",
                         "line": 41
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 81,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 89,
                         "errorMessage": "Cannot access value for name Easing",
                         "functionName": "type",
                         "line": 42
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 46
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "centerIn",
                         "line": 47
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 79,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "name",
                         "line": 53
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot access value for name name",
                         "functionName": "visible",
                         "line": 54
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "color",
                         "line": 55
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "text",
                         "line": 60
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name text",
                         "functionName": "visible",
                         "line": 61
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "font",
                         "line": 62
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "color",
                         "line": 63
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 166,
+                        "durationMicroseconds": 262,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "verticalAlignment",
                         "line": 64
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 154,
+                        "durationMicroseconds": 246,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "elide",
                         "line": 65
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 151,
+                        "durationMicroseconds": 251,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "renderType",
                         "line": 66

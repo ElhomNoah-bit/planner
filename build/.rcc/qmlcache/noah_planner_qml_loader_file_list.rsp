@@ -13,12 +13,16 @@
 /qt/qml/NoahPlanner/src/ui/qml/components/FilterPill.qml
 /qt/qml/NoahPlanner/src/ui/qml/components/GlassPanel.qml
 /qt/qml/NoahPlanner/src/ui/qml/components/IconGlyph.qml
+/qt/qml/NoahPlanner/src/ui/qml/components/CommandPalette.qml
 /qt/qml/NoahPlanner/src/ui/qml/components/PillButton.qml
+/qt/qml/NoahPlanner/src/ui/qml/components/QuickAddDialog.qml
 /qt/qml/NoahPlanner/src/ui/qml/components/QuickAddPill.qml
+/qt/qml/NoahPlanner/src/ui/qml/components/SearchField.qml
 /qt/qml/NoahPlanner/src/ui/qml/components/SegmentedControl.qml
 /qt/qml/NoahPlanner/src/ui/qml/components/TimerOverlay.qml
 /qt/qml/NoahPlanner/src/ui/qml/components/Toast.qml
 /qt/qml/NoahPlanner/src/ui/qml/components/ToastHost.qml
+/qt/qml/NoahPlanner/src/ui/qml/components/SettingsDialog.qml
 /qt/qml/NoahPlanner/src/ui/qml/components/TodayTaskDelegate.qml
 /qt/qml/NoahPlanner/src/ui/qml/views/AgendaView.qml
 /qt/qml/NoahPlanner/src/ui/qml/views/MonthView.qml

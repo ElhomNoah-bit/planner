@@ -54,6 +54,13 @@ namespace _qt_qml_NoahPlanner_src_ui_qml_components_IconGlyph_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _qt_qml_NoahPlanner_src_ui_qml_components_CommandPalette_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 namespace _qt_qml_NoahPlanner_src_ui_qml_components_PillButton_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
@@ -61,7 +68,21 @@ namespace _qt_qml_NoahPlanner_src_ui_qml_components_PillButton_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _qt_qml_NoahPlanner_src_ui_qml_components_QuickAddDialog_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 namespace _qt_qml_NoahPlanner_src_ui_qml_components_QuickAddPill_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_NoahPlanner_src_ui_qml_components_SearchField_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
@@ -90,6 +111,13 @@ namespace _qt_qml_NoahPlanner_src_ui_qml_components_Toast_qml {
     };
 }
 namespace _qt_qml_NoahPlanner_src_ui_qml_components_ToastHost_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_NoahPlanner_src_ui_qml_components_SettingsDialog_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
@@ -152,12 +180,16 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/FilterPill.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_FilterPill_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/GlassPanel.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_GlassPanel_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/IconGlyph.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_IconGlyph_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/CommandPalette.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_CommandPalette_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/PillButton.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_PillButton_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/QuickAddDialog.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_QuickAddDialog_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/QuickAddPill.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_QuickAddPill_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/SearchField.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_SearchField_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/SegmentedControl.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_SegmentedControl_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/TimerOverlay.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_TimerOverlay_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/Toast.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_Toast_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/ToastHost.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_ToastHost_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/SettingsDialog.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_SettingsDialog_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/TodayTaskDelegate.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_TodayTaskDelegate_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/views/AgendaView.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_views_AgendaView_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/views/MonthView.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_views_MonthView_qml::unit);

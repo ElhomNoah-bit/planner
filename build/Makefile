@@ -928,6 +928,30 @@ build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.cpp.s
 .PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.cpp.s
 
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.o: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.o
+
+# target to build an object file
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.o
+
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.i: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.i
+
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.s: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.s
+
 build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.o: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.cpp.o
 .PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.o
 
@@ -1072,6 +1096,30 @@ build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.cpp.s
 .PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.cpp.s
 
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.o: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.o
+
+# target to build an object file
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.o
+
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.i: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.i
+
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.s: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.s
+
 build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.o: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.cpp.o
 .PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.o
 
@@ -1096,6 +1144,30 @@ build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.cpp.s
 .PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.cpp.s
 
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.o: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.o
+
+# target to build an object file
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.o
+
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.i: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.i
+
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.s: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.s
+
 build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.o: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.cpp.o
 .PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.o
 
@@ -1119,6 +1191,30 @@ build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.s: b
 build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.cpp.s
 .PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.cpp.s
+
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.o: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.o
+
+# target to build an object file
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.o
+
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.i: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.i
+
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.s: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.s
 
 build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.o: build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.cpp.o
 .PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.o
@@ -1806,6 +1902,9 @@ help:
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.o"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.i"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.s"
+	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.o"
+	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.i"
+	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.s"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.o"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.i"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.s"
@@ -1824,12 +1923,21 @@ help:
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.o"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.i"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.s"
+	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.o"
+	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.i"
+	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.s"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.o"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.i"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.s"
+	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.o"
+	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.i"
+	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.s"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.o"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.i"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.s"
+	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.o"
+	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.i"
+	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.s"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.o"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.i"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.s"
