@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 165,
+                        "durationMicroseconds": 167,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "syncState",
                         "line": 21
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "goToday",
                         "line": 29
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 1951,
+                        "durationMicroseconds": 1741,
                         "errorMessage": "Cannot load property g16 from ThemeStore::gap with type QObject.",
                         "functionName": "spacing",
                         "line": 103
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 103,
+                        "durationMicroseconds": 76,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 101
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot load property g24 from ThemeStore::gap with type QObject.",
                         "functionName": "margins",
                         "line": 102
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot load property g16 from ThemeStore::gap with type QObject.",
                         "functionName": "spacing",
                         "line": 108
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 474,
+                        "durationMicroseconds": 341,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "options",
                         "line": 113
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "value",
                         "line": 118
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onValueChanged",
                         "line": 119
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 13,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "active",
                         "line": 136
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onToggled",
                         "line": 137
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "viewMode",
                         "line": 162
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onQuickAddRequested",
                         "line": 164
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 46,
                         "errorMessage": "",
                         "functionName": "onQuickAddRequested",
                         "line": 164
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 15,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onJumpToTodayRequested",
                         "line": 165
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onAccepted",
                         "line": 172
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 35,
                         "errorMessage": "",
                         "functionName": "onAccepted",
                         "line": 172
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 171
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onCommandTriggered",
                         "line": 178
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 33,
                         "errorMessage": "",
                         "functionName": "onCommandTriggered",
                         "line": 178
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 104,
+                        "durationMicroseconds": 48,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 177
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 48,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 183
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 42,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 188
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 67,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "target",
                         "line": 192
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onDarkThemeChanged",
                         "line": 193
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 94,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onViewModeChanged",
                         "line": 196
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 189,
+                        "durationMicroseconds": 166,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onFiltersChanged",
                         "line": 199
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 57,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onCompleted",
                         "line": 207
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 1325,
+                        "durationMicroseconds": 1237,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "onPressed",
                         "line": 213
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
                         "functionName": "onPressed",
                         "line": 213
