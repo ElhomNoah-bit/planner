@@ -32,177 +32,131 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        color: colors ? colors.bg : "#0B0B0D"
-            anchors.margins: layout ? layout.margin : (space ? space.gap24 : 24)
-            spacing: space ? space.gap16 : 16
+        color: colors ? colors.bg : "#0B0C0F"
+    }
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: space ? space.gap24 : 24
+        anchors.margins: layout ? layout.margin : (space ? space.gap24 : 24)
         spacing: space ? space.gap16 : 16
-                RowLayout {
+
         GlassPanel {
             id: navBar
-                    Column {
-                        Layout.alignment: Qt.AlignVCenter
-                        spacing: space ? space.gap4 : 4
+            Layout.fillWidth: true
+            padding: space ? space.gap20 : 20
 
-                        Row {
-                            spacing: space ? space.gap8 : 8
-                            Text {
-                                text: Qt.formatDate(selectedDateObj, "MMMM yyyy")
-                                font.pixelSize: typeScale ? typeScale.monthTitleSize : 28
-                                font.weight: typeScale ? typeScale.weightMedium : Font.DemiBold
-                                font.letterSpacing: 0.2
-                                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                                color: colors ? colors.text : "#FFFFFF"
-                                renderType: Text.NativeRendering
-                            }
+            RowLayout {
+                anchors.fill: parent
+                spacing: space ? space.gap16 : 16
 
-                            Row {
-                                spacing: space ? space.gap4 : 4
-                                PillButton {
-                                    kind: "ghost"
-                                    icon.name: "chevron.backward"
-                                    onClicked: root.shiftMonth(-1)
-                                    Accessible.name: qsTr("Voriger Monat")
-                                }
-                                PillButton {
-                                    kind: "ghost"
-                                    icon.name: "chevron.forward"
-                                    onClicked: root.shiftMonth(1)
-                                    Accessible.name: qsTr("Nächster Monat")
-                                }
-                                PillButton {
-                                    kind: "ghost"
-                                    text: qsTr("Heute")
-                                    onClicked: PlannerBackend.refreshToday()
-                                }
-                            }
-                        }
+                Column {
+                    Layout.alignment: Qt.AlignVCenter
+                    spacing: space ? space.gap4 : 4
+
+                    Row {
+                        spacing: space ? space.gap8 : 8
 
                         Text {
-                            text: headerSubtitle
-                            font.pixelSize: typeScale ? typeScale.metaSize : 12
-                            font.weight: typeScale ? typeScale.metaWeight : Font.Normal
+                            text: Qt.formatDate(selectedDateObj, "MMMM yyyy")
+                            font.pixelSize: typeScale ? typeScale.monthTitleSize : 28
+                            font.weight: typeScale ? typeScale.weightMedium : Font.DemiBold
+                            font.letterSpacing: 0.2
                             font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                            color: theme && theme.text ? theme.text.secondary : "#A3ACB8"
-                            opacity: 0.9
+                            color: colors ? colors.text : "#FFFFFF"
                             renderType: Text.NativeRendering
                         }
-                    }
 
-                    Item {
-                        Layout.fillWidth: true
-                        Layout.alignment: Qt.AlignVCenter
-                        implicitWidth: 1
+                        Row {
+                            spacing: space ? space.gap4 : 4
 
-                        SegmentedControl {
-                            id: segmented
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            value: currentView
-                            onValueChanged: PlannerBackend.viewMode = value
-                            width: 260
-                            implicitHeight: layout ? layout.pillH : 30
-                        }
-                    }
+                            PillButton {
+                                kind: "ghost"
+                                icon.name: "chevron.backward"
+                                onClicked: root.shiftMonth(-1)
+                                Accessible.name: qsTr("Voriger Monat")
+                            }
 
-                    RowLayout {
-                        spacing: space ? space.gap12 : 12
+                            PillButton {
+                                kind: "ghost"
+                                icon.name: "chevron.forward"
+                                onClicked: root.shiftMonth(1)
+                                Accessible.name: qsTr("Nächster Monat")
+                            }
 
-                        GlassPanel {
-                            id: searchPill
-                            padding: 0
-                            implicitHeight: layout ? layout.pillH : 30
-                            Layout.preferredWidth: 220
-                            TextField {
-                                anchors.fill: parent
-                                anchors.margins: 12
-                                placeholderText: qsTr("Suche…")
-                                text: PlannerBackend.searchQuery
-                                onTextChanged: PlannerBackend.searchQuery = text
-                                font.pixelSize: typeScale ? typeScale.md : 15
-                                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                                color: colors ? colors.text : "#FFFFFF"
-                                renderType: Text.NativeRendering
-                                background: Rectangle { color: "transparent" }
-                                leftPadding: 0
-                                rightPadding: 0
-                                cursorDelegate: Rectangle { width: 2; color: theme ? theme.accent.base : "#0A84FF" }
+                            PillButton {
+                                kind: "ghost"
+                                text: qsTr("Heute")
+                                onClicked: PlannerBackend.refreshToday()
                             }
                         }
-
-                        PillButton {
-                            kind: "ghost"
-                            icon.name: darkTheme ? "sun.max" : "moon"
-                            onClicked: PlannerBackend.darkTheme = !PlannerBackend.darkTheme
-                        }
-
-                        PillButton {
-                            kind: "primary"
-                            icon.name: "plus"
-                            text: qsTr("Neu")
-                            onClicked: quickAdd.focusInput()
-                        }
                     }
-                }
-            }
 
-                PillButton {
-                    icon.name: "chevron.backward"
-                    text: headlineYear
-                    accent: false
-                    active: false
-                    onClicked: root.shiftMonth(-1)
-                }
-
-                PillButton {
-                    icon.name: "chevron.forward"
-                    text: qsTr("Heute")
-                    subtle: true
-                    onClicked: PlannerBackend.refreshToday()
-                }
-
-                Item { Layout.fillWidth: true }
-
-                PillButton {
-                    icon.name: darkTheme ? "sun.max" : "moon"
-                    subtle: true
-                    onClicked: PlannerBackend.darkTheme = !PlannerBackend.darkTheme
-                }
-
-                SegmentedControl {
-                    id: segmented
-                    value: currentView
-                    onValueChanged: PlannerBackend.viewMode = value
-                }
-
-                GlassPanel {
-                    id: searchPill
-                    radius: radii ? radii.xl : 22
-                    padding: 0
-                    width: 220
-                    TextField {
-                        anchors.fill: parent
-                        anchors.margins: 14
-                        placeholderText: qsTr("Suche…")
-                        text: PlannerBackend.searchQuery
-                        onTextChanged: PlannerBackend.searchQuery = text
-                        font.pixelSize: typeScale ? typeScale.md : 15
+                    Text {
+                        text: headerSubtitle
+                        font.pixelSize: typeScale ? typeScale.metaSize : 12
+                        font.weight: typeScale ? typeScale.metaWeight : Font.Normal
                         font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                        color: colors ? colors.text : "#FFFFFF"
-                        background: Rectangle { color: "transparent" }
-                        leftPadding: 0
-                        rightPadding: 0
-                        cursorDelegate: Rectangle { width: 2; color: colors ? colors.tint : "#0A84FF" }
+                        color: theme && theme.text ? theme.text.secondary : "#A3ACB8"
+                        opacity: 0.9
+                        renderType: Text.NativeRendering
                     }
                 }
 
-                PillButton {
-                    icon.name: "plus"
-                    text: qsTr("Neu")
-                    accent: true
-                    onClicked: quickAdd.focusInput()
+                Item {
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignVCenter
+                    implicitHeight: 0
+
+                    SegmentedControl {
+                        id: segmented
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        value: currentView
+                        onValueChanged: PlannerBackend.viewMode = value
+                        width: 260
+                        implicitHeight: layout ? layout.pillH : 30
+                    }
+                }
+
+                RowLayout {
+                    spacing: space ? space.gap12 : 12
+                    Layout.alignment: Qt.AlignVCenter
+
+                    GlassPanel {
+                        id: searchPill
+                        padding: 0
+                        implicitHeight: layout ? layout.pillH : 30
+                        Layout.preferredWidth: 220
+                        Layout.alignment: Qt.AlignVCenter
+
+                        TextField {
+                            anchors.fill: parent
+                            anchors.margins: 12
+                            placeholderText: qsTr("Suche…")
+                            text: PlannerBackend.searchQuery
+                            onTextChanged: PlannerBackend.searchQuery = text
+                            font.pixelSize: typeScale ? typeScale.md : 15
+                            font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                            color: colors ? colors.text : "#FFFFFF"
+                            renderType: Text.NativeRendering
+                            background: Rectangle { color: "transparent" }
+                            leftPadding: 0
+                            rightPadding: 0
+                            cursorDelegate: Rectangle { width: 2; color: theme ? theme.accent.base : "#0A84FF" }
+                        }
+                    }
+
+                    PillButton {
+                        kind: "ghost"
+                        icon.name: darkTheme ? "sun.max" : "moon"
+                        onClicked: PlannerBackend.darkTheme = !PlannerBackend.darkTheme
+                    }
+
+                    PillButton {
+                        kind: "primary"
+                        icon.name: "plus"
+                        text: qsTr("Neu")
+                        onClicked: quickAdd.focusInput()
+                    }
                 }
             }
         }

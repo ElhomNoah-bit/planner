@@ -110,6 +110,4 @@ Button {
         if (checked) return accent ? accent.base : "#0A84FF"
         return colors ? colors.text : "#FFFFFF"
     }
-
-    }
 }
