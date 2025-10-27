@@ -1,0 +1,26 @@
+{
+    "classes": [
+        {
+            "className": "PlannerService",
+            "lineNumber": 14,
+            "object": true,
+            "qualifiedClassName": "PlannerService",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "dataChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "PlannerService.h",
+    "outputRevision": 69
+}
