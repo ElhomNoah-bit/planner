@@ -15,7 +15,6 @@ TimerOverlay 1.0 src/ui/qml/components/TimerOverlay.qml
 Toast 1.0 src/ui/qml/components/Toast.qml
 ToastHost 1.0 src/ui/qml/components/ToastHost.qml
 TodayTaskDelegate 1.0 src/ui/qml/components/TodayTaskDelegate.qml
-singleton ThemeStore 1.0 src/ui/qml/styles/ThemeStore.qml
 AgendaView 1.0 src/ui/qml/views/AgendaView.qml
 MonthView 1.0 src/ui/qml/views/MonthView.qml
 SidebarToday 1.0 src/ui/qml/views/SidebarToday.qml

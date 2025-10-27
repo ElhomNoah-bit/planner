@@ -72,7 +72,6 @@ CMakeFiles/noah_planner_qmlimportscan: .qt/qml_imports/noah_planner_build.cmake
 .qt/qml_imports/noah_planner_build.cmake: .qt/rcc/qmake_NoahPlanner.qrc
 .qt/qml_imports/noah_planner_build.cmake: .qt/rcc/noah_planner_raw_qml_0.qrc
 .qt/qml_imports/noah_planner_build.cmake: .qt/rcc/noah_planner_raw_qml_0_extra_qmldirs.qrc
-.qt/qml_imports/noah_planner_build.cmake: .qt/rcc/font_assets.qrc
 .qt/qml_imports/noah_planner_build.cmake: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/App.qml
 .qt/qml_imports/noah_planner_build.cmake: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/Main.qml
 .qt/qml_imports/noah_planner_build.cmake: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/DayCell.qml
@@ -87,7 +86,6 @@ CMakeFiles/noah_planner_qmlimportscan: .qt/qml_imports/noah_planner_build.cmake
 .qt/qml_imports/noah_planner_build.cmake: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/Toast.qml
 .qt/qml_imports/noah_planner_build.cmake: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/ToastHost.qml
 .qt/qml_imports/noah_planner_build.cmake: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/TodayTaskDelegate.qml
-.qt/qml_imports/noah_planner_build.cmake: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml
 .qt/qml_imports/noah_planner_build.cmake: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/views/AgendaView.qml
 .qt/qml_imports/noah_planner_build.cmake: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/views/MonthView.qml
 .qt/qml_imports/noah_planner_build.cmake: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/views/SidebarToday.qml

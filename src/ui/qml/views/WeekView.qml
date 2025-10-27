@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import "../styles" as Styles
+import styles 1.0 as Styles
 
 Item {
     id: root
@@ -19,14 +19,14 @@ Item {
 
     readonly property var theme: Styles.ThemeStore
     readonly property var colors: theme ? theme.colors : null
-    readonly property var space: theme ? theme.space : null
+    readonly property var gap: theme ? theme.gap : null
     readonly property var typeScale: theme ? theme.type : null
     readonly property var radii: theme ? theme.radii : null
 
     Rectangle {
         anchors.fill: parent
         radius: radii ? radii.lg : 16
-        color: colors ? colors.card : Qt.rgba(1, 1, 1, 0.05)
+        color: colors ? colors.cardBg : Qt.rgba(1, 1, 1, 0.05)
         border.color: colors ? colors.divider : Qt.rgba(1, 1, 1, 0.1)
         border.width: 1
     }
@@ -45,8 +45,8 @@ Item {
             Row {
                 id: row
                 anchors.fill: parent
-                anchors.margins: space ? space.gap16 : 16
-                spacing: space ? space.gap12 : 12
+                anchors.margins: gap ? gap.g16 : 16
+                spacing: gap ? gap.g12 : 12
 
                 Column {
                     id: timeAxis
@@ -64,7 +64,7 @@ Item {
                                 text: (startHour + index) + ":00"
                                 font.pixelSize: typeScale ? typeScale.xs : 11
                                 font.weight: typeScale ? typeScale.weightMedium : Font.Medium
-                                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                                font.family: Styles.ThemeStore.fonts.uiFallback
                                 color: colors ? colors.textMuted : "#9AA3AF"
                             }
                         }
@@ -87,15 +87,17 @@ Item {
                                 text: root.weekdayNames[index]
                                     font.pixelSize: typeScale ? typeScale.sm : 12
                                     font.weight: typeScale ? typeScale.weightMedium : Font.Medium
-                                    font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+                                font.family: Styles.ThemeStore.fonts.uiFallback
                                     color: colors ? colors.textMuted : "#9AA3AF"
+                                renderType: Text.NativeRendering
                             }
                             Text {
                                 text: dayIso ? dayIso.split("-")[2] : ""
                                     font.pixelSize: typeScale ? typeScale.md : 16
                                     font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
-                                    font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                                    color: colors ? colors.text : "#FFFFFF"
+                                font.family: Styles.ThemeStore.fonts.uiFallback
+                                color: colors ? colors.text : "#F2F5F9"
+                                renderType: Text.NativeRendering
                             }
                         }
 
@@ -123,7 +125,7 @@ Item {
                                     y: Math.max(0, (modelData.startMinutes - root.startHour * 60) * root.minuteHeight)
                                     height: Math.max(36, modelData.duration * root.minuteHeight)
                                     radius: 16
-                                    readonly property color eventColor: modelData.color || (colors ? colors.tint : "#0A84FF")
+                                    readonly property color eventColor: modelData.color || (colors ? colors.accent : "#0A84FF")
                                     color: Qt.rgba(eventColor.r, eventColor.g, eventColor.b, 0.22)
                                     border.color: eventColor
                                     border.width: 1
@@ -136,9 +138,10 @@ Item {
                                         text: modelData.title
                                         font.pixelSize: typeScale ? typeScale.sm : 13
                                         font.weight: typeScale ? typeScale.weightMedium : Font.Medium
-                                        font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                                        color: colors ? colors.text : "#FFFFFF"
+                                        font.family: Styles.ThemeStore.fonts.uiFallback
+                                        color: colors ? colors.text : "#F2F5F9"
                                         elide: Text.ElideRight
+                                        renderType: Text.NativeRendering
                                     }
                                 }
                             }

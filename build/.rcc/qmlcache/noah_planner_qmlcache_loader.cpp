@@ -103,13 +103,6 @@ namespace _qt_qml_NoahPlanner_src_ui_qml_components_TodayTaskDelegate_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
-namespace _qt_qml_NoahPlanner_src_ui_qml_styles_ThemeStore_qml { 
-    extern const unsigned char qmlData[];
-    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
-    const QQmlPrivate::CachedQmlUnit unit = {
-        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
-    };
-}
 namespace _qt_qml_NoahPlanner_src_ui_qml_views_AgendaView_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
@@ -166,7 +159,6 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/Toast.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_Toast_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/ToastHost.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_ToastHost_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/components/TodayTaskDelegate.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_components_TodayTaskDelegate_qml::unit);
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/styles/ThemeStore.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_styles_ThemeStore_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/views/AgendaView.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_views_AgendaView_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/views/MonthView.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_views_MonthView_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NoahPlanner/src/ui/qml/views/SidebarToday.qml"), &QmlCacheGeneratedCode::_qt_qml_NoahPlanner_src_ui_qml_views_SidebarToday_qml::unit);

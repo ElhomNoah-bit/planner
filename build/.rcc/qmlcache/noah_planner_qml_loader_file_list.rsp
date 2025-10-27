@@ -4,8 +4,6 @@
 /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/noah_planner_raw_qml_0.qrc
 --resource
 /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/noah_planner_raw_qml_0_extra_qmldirs.qrc
---resource
-/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/font_assets.qrc
 /qt/qml/NoahPlanner/src/ui/qml/App.qml
 /qt/qml/NoahPlanner/src/ui/qml/Main.qml
 /qt/qml/NoahPlanner/src/ui/qml/components/DayCell.qml
@@ -20,7 +18,6 @@
 /qt/qml/NoahPlanner/src/ui/qml/components/Toast.qml
 /qt/qml/NoahPlanner/src/ui/qml/components/ToastHost.qml
 /qt/qml/NoahPlanner/src/ui/qml/components/TodayTaskDelegate.qml
-/qt/qml/NoahPlanner/src/ui/qml/styles/ThemeStore.qml
 /qt/qml/NoahPlanner/src/ui/qml/views/AgendaView.qml
 /qt/qml/NoahPlanner/src/ui/qml/views/MonthView.qml
 /qt/qml/NoahPlanner/src/ui/qml/views/SidebarToday.qml

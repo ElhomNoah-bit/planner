@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/styles">
+    <file alias="qmldir">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles/qmldir</file>
+  </qresource>
+</RCC>
+

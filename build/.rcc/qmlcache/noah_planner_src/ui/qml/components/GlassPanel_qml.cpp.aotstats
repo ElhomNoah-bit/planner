@@ -6,178 +6,162 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 105,
+                        "durationMicroseconds": 91,
                         "errorMessage": "",
                         "functionName": "radius",
+                        "line": 7
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "padding",
                         "line": 8
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 28,
-                        "durationMicroseconds": 66,
+                        "column": 26,
+                        "durationMicroseconds": 59,
                         "errorMessage": "",
-                        "functionName": "padding",
-                        "line": 9
+                        "functionName": "tint",
+                        "line": 10
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 26,
-                        "durationMicroseconds": 92,
+                        "column": 28,
+                        "durationMicroseconds": 52,
                         "errorMessage": "",
-                        "functionName": "tint",
+                        "functionName": "stroke",
                         "line": 11
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 28,
-                        "durationMicroseconds": 91,
-                        "errorMessage": "",
-                        "functionName": "stroke",
-                        "line": 12
-                    },
-                    {
-                        "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 100,
+                        "durationMicroseconds": 944,
                         "errorMessage": "",
                         "functionName": "theme",
-                        "line": 15
+                        "line": 14
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot load property colors from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::theme with type QVariant.",
                         "functionName": "colors",
+                        "line": 15
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "Cannot load property gap from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::theme with type QVariant.",
+                        "functionName": "gap",
                         "line": 16
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 31,
-                        "errorMessage": "Cannot load property space from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::theme with type QVariant.",
-                        "functionName": "space",
+                        "durationMicroseconds": 17,
+                        "errorMessage": "Cannot load property radii from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::theme with type QVariant.",
+                        "functionName": "radii",
                         "line": 17
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 34,
-                        "durationMicroseconds": 30,
-                        "errorMessage": "Cannot load property radii from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::theme with type QVariant.",
-                        "functionName": "radii",
-                        "line": 18
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 36,
-                        "durationMicroseconds": 26,
-                        "errorMessage": "Cannot load property surface from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::theme with type QVariant.",
-                        "functionName": "surface",
+                        "column": 40,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "Cannot load property lg from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::radii with type QVariant.",
+                        "functionName": "baseRadius",
                         "line": 19
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 34,
-                        "durationMicroseconds": 28,
-                        "errorMessage": "Cannot load property state from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::theme with type QVariant.",
-                        "functionName": "state",
+                        "column": 41,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "Cannot load property g16 from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::gap with type QVariant.",
+                        "functionName": "basePadding",
                         "line": 20
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 40,
-                        "durationMicroseconds": 27,
-                        "errorMessage": "Cannot load property lg from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::radii with type QVariant.",
-                        "functionName": "baseRadius",
-                        "line": 22
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 41,
-                        "durationMicroseconds": 30,
-                        "errorMessage": "Cannot load property gap16 from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::space with type QVariant.",
-                        "functionName": "basePadding",
-                        "line": 23
-                    },
-                    {
-                        "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 90,
-                        "errorMessage": "Cannot load property level1Glass from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::surface with type QVariant.",
+                        "durationMicroseconds": 60,
+                        "errorMessage": "Cannot load property cardGlass from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::colors with type QVariant.",
                         "functionName": "baseTint",
-                        "line": 24
+                        "line": 21
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 149,
+                        "durationMicroseconds": 55,
                         "errorMessage": "Cannot load property divider from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml)::colors with type QVariant.",
                         "functionName": "baseStroke",
-                        "line": 25
+                        "line": 22
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 61,
                         "errorMessage": "",
                         "functionName": "radius",
-                        "line": 31
+                        "line": 28
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 119,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "color",
-                        "line": 32
+                        "line": 29
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 51,
                         "errorMessage": "",
                         "functionName": "fill",
+                        "line": 27
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 112,
+                        "errorMessage": "",
+                        "functionName": "color",
                         "line": 30
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 23,
-                        "durationMicroseconds": 122,
-                        "errorMessage": "",
-                        "functionName": "color",
-                        "line": 33
-                    },
-                    {
-                        "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 54,
                         "errorMessage": "",
                         "functionName": "enabled",
-                        "line": 35
+                        "line": 32
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "blurMax",
-                        "line": 38
+                        "line": 35
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 45
+                        "line": 42
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 51,
                         "errorMessage": "",
                         "functionName": "margins",
-                        "line": 46
+                        "line": 43
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml"

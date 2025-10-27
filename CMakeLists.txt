@@ -54,21 +54,25 @@ qt_add_qml_module(noah_planner
         src/ui/qml/components/Toast.qml
         src/ui/qml/components/ToastHost.qml
         src/ui/qml/components/TodayTaskDelegate.qml
-        src/ui/qml/styles/ThemeStore.qml
         src/ui/qml/views/AgendaView.qml
         src/ui/qml/views/MonthView.qml
         src/ui/qml/views/SidebarToday.qml
         src/ui/qml/views/WeekView.qml
+    RESOURCES
+        assets/fonts/Inter-Regular.ttf
 )
 
-set(INTER_FONT ${CMAKE_CURRENT_SOURCE_DIR}/assets/fonts/Inter-Regular.ttf)
-set_source_files_properties(${INTER_FONT} PROPERTIES QT_RESOURCE_ALIAS "Inter-Regular.ttf")
-
-qt_add_resources(noah_planner font_assets
-    PREFIX "/fonts/assets/fonts"
-    FILES
-        ${INTER_FONT}
+qt_add_qml_module(styles_module
+    URI styles
+    VERSION 1.0
+    RESOURCE_PREFIX "/qt/qml"
+    STATIC
+    OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/styles
+    QML_FILES
+        src/ui/qml/styles/ThemeStore.qml
 )
+
+target_link_libraries(noah_planner PRIVATE styles_module)
 
 target_include_directories(noah_planner PRIVATE src)
 

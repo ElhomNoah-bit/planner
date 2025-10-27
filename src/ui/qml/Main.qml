@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import "styles" as Styles
+import styles 1.0 as Styles
 
 Item {
     id: root
@@ -20,7 +20,7 @@ Item {
 
     readonly property var theme: Styles.ThemeStore
     readonly property var colors: theme ? theme.colors : null
-    readonly property var space: theme ? theme.space : null
+    readonly property var gap: theme ? theme.gap : null
     readonly property var typeScale: theme ? theme.type : null
     readonly property var layout: theme ? theme.layout : null
 
@@ -28,46 +28,45 @@ Item {
     readonly property string headerSubtitle: summaryToday.total > 0
         ? qsTr("%1 von %2 Aufgaben erledigt").arg(summaryToday.done).arg(summaryToday.total)
         : qsTr("Keine Aufgaben für diesen Tag")
-    readonly property var radii: theme ? theme.radii : null
 
     Rectangle {
         anchors.fill: parent
-        color: colors ? colors.bg : "#0B0C0F"
+        color: colors ? colors.appBg : "#0F1115"
     }
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: layout ? layout.margin : (space ? space.gap24 : 24)
-        spacing: space ? space.gap16 : 16
+        anchors.margins: layout ? layout.margin : (gap ? gap.g24 : 24)
+        spacing: gap ? gap.g16 : 16
 
         GlassPanel {
             id: navBar
             Layout.fillWidth: true
-            padding: space ? space.gap20 : 20
+            padding: gap ? gap.g16 : 16
 
             RowLayout {
                 anchors.fill: parent
-                spacing: space ? space.gap16 : 16
+                spacing: gap ? gap.g16 : 16
 
                 Column {
                     Layout.alignment: Qt.AlignVCenter
-                    spacing: space ? space.gap4 : 4
+                    spacing: gap ? gap.g8 : 8
 
-                    Row {
-                        spacing: space ? space.gap8 : 8
+                    RowLayout {
+                        spacing: gap ? gap.g12 : 12
+                        Layout.alignment: Qt.AlignVCenter
 
                         Text {
                             text: Qt.formatDate(selectedDateObj, "MMMM yyyy")
-                            font.pixelSize: typeScale ? typeScale.monthTitleSize : 28
-                            font.weight: typeScale ? typeScale.weightMedium : Font.DemiBold
-                            font.letterSpacing: 0.2
-                            font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                            color: colors ? colors.text : "#FFFFFF"
+                            font.pixelSize: typeScale ? typeScale.monthTitle : 28
+                            font.weight: typeScale ? typeScale.weightMedium : 600
+                            font.family: Styles.ThemeStore.fonts.uiFallback
+                            color: colors ? colors.text : "#F2F5F9"
                             renderType: Text.NativeRendering
                         }
 
-                        Row {
-                            spacing: space ? space.gap4 : 4
+                        RowLayout {
+                            spacing: gap ? gap.g8 : 8
 
                             PillButton {
                                 kind: "ghost"
@@ -93,33 +92,25 @@ Item {
 
                     Text {
                         text: headerSubtitle
-                        font.pixelSize: typeScale ? typeScale.metaSize : 12
-                        font.weight: typeScale ? typeScale.metaWeight : Font.Normal
-                        font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                        color: theme && theme.text ? theme.text.secondary : "#A3ACB8"
-                        opacity: 0.9
+                        font.pixelSize: typeScale ? typeScale.metaSize : 11
+                        font.weight: typeScale ? typeScale.weightRegular : Font.Normal
+                        font.family: Styles.ThemeStore.fonts.uiFallback
+                        color: colors ? colors.text2 : "#B7C0CC"
                         renderType: Text.NativeRendering
                     }
                 }
 
-                Item {
-                    Layout.fillWidth: true
+                Item { Layout.fillWidth: true }
+
+                RowLayout {
+                    spacing: gap ? gap.g12 : 12
                     Layout.alignment: Qt.AlignVCenter
-                    implicitHeight: 0
 
                     SegmentedControl {
                         id: segmented
-                        anchors.horizontalCenter: parent.horizontalCenter
                         value: currentView
                         onValueChanged: PlannerBackend.viewMode = value
-                        width: 260
-                        implicitHeight: layout ? layout.pillH : 30
                     }
-                }
-
-                RowLayout {
-                    spacing: space ? space.gap12 : 12
-                    Layout.alignment: Qt.AlignVCenter
 
                     GlassPanel {
                         id: searchPill
@@ -130,18 +121,18 @@ Item {
 
                         TextField {
                             anchors.fill: parent
-                            anchors.margins: 12
+                            anchors.margins: gap ? gap.g12 : 12
                             placeholderText: qsTr("Suche…")
                             text: PlannerBackend.searchQuery
                             onTextChanged: PlannerBackend.searchQuery = text
-                            font.pixelSize: typeScale ? typeScale.md : 15
-                            font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                            color: colors ? colors.text : "#FFFFFF"
+                            font.pixelSize: typeScale ? typeScale.md : 14
+                            font.family: Styles.ThemeStore.fonts.uiFallback
+                            color: colors ? colors.text : "#F2F5F9"
                             renderType: Text.NativeRendering
                             background: Rectangle { color: "transparent" }
                             leftPadding: 0
                             rightPadding: 0
-                            cursorDelegate: Rectangle { width: 2; color: theme ? theme.accent.base : "#0A84FF" }
+                            cursorDelegate: Rectangle { width: 2; color: colors ? colors.accent : "#0A84FF" }
                         }
                     }
 
@@ -169,7 +160,7 @@ Item {
 
         Flow {
             Layout.fillWidth: true
-            spacing: space ? space.gap8 : 8
+            spacing: gap ? gap.g8 : 8
             Repeater {
                 model: subjectsModel
                 delegate: FilterPill {
@@ -191,7 +182,7 @@ Item {
         }
 
         RowLayout {
-            spacing: space ? space.gap24 : 24
+            spacing: gap ? gap.g24 : 24
             Layout.fillWidth: true
             Layout.fillHeight: true
 

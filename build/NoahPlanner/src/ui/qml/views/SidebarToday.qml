@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import "../styles" as Styles
+import styles 1.0 as Styles
 
 GlassPanel {
     id: root
@@ -12,36 +12,37 @@ GlassPanel {
 
     readonly property var theme: Styles.ThemeStore
     readonly property var colors: theme ? theme.colors : null
-    readonly property var space: theme ? theme.space : null
+    readonly property var gap: theme ? theme.gap : null
     readonly property var typeScale: theme ? theme.type : null
     readonly property var radii: theme ? theme.radii : null
-    readonly property var surface: theme ? theme.surface : null
     readonly property var layout: theme ? theme.layout : null
 
     width: layout ? layout.sidebarW : 340
-    padding: layout ? layout.margin : (space ? space.gap24 : 24)
+    padding: layout ? layout.margin : (gap ? gap.g24 : 24)
+    tint: colors ? colors.cardGlass : Qt.rgba(0, 0, 0, 0.45)
+    stroke: colors ? colors.divider : Qt.rgba(1, 1, 1, 0.18)
 
     ColumnLayout {
         anchors.fill: parent
-        spacing: space ? space.gap16 : 16
+        spacing: gap ? gap.g16 : 16
 
         Column {
             Layout.fillWidth: true
-            spacing: space ? space.gap4 : 4
+            spacing: gap ? gap.g4 : 4
             Text {
                 text: qsTr("Heute")
-                font.pixelSize: typeScale ? typeScale.lg : 18
-                font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
-                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                color: colors ? colors.text : "#FFFFFF"
+                font.pixelSize: typeScale ? typeScale.lg : 16
+                font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                font.family: Styles.ThemeStore.fonts.uiFallback
+                color: colors ? colors.text : "#F2F5F9"
                 renderType: Text.NativeRendering
             }
             Text {
                 text: summary.total > 0 ? summary.done + "/" + summary.total + qsTr(" erledigt") : qsTr("Keine Aufgaben")
-                font.pixelSize: typeScale ? typeScale.metaSize : 12
-                font.weight: typeScale ? typeScale.metaWeight : Font.Normal
-                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                color: colors ? colors.textMuted : "#9AA3AF"
+                font.pixelSize: typeScale ? typeScale.metaSize : 11
+                font.weight: typeScale ? typeScale.weightRegular : Font.Normal
+                font.family: Styles.ThemeStore.fonts.uiFallback
+                color: colors ? colors.text2 : "#B7C0CC"
                 renderType: Text.NativeRendering
             }
         }
@@ -49,8 +50,8 @@ GlassPanel {
         GlassPanel {
             Layout.fillWidth: true
             Layout.fillHeight: true
-            tint: surface ? surface.level1Glass : Qt.rgba(0.07, 0.07, 0.09, 0.9)
-            padding: space ? space.gap16 : 16
+            tint: colors ? colors.cardGlass : Qt.rgba(0, 0, 0, 0.4)
+            padding: gap ? gap.g16 : 16
 
             Flickable {
                 id: contentFlick
@@ -58,27 +59,28 @@ GlassPanel {
                 contentWidth: width
                 contentHeight: contentColumn.implicitHeight
                 clip: true
+                interactive: contentHeight > height
 
                 Column {
                     id: contentColumn
                     width: parent.width
-                    spacing: space ? space.gap16 : 16
+                    spacing: gap ? gap.g16 : 16
 
                     Column {
-                        spacing: space ? space.gap8 : 8
+                        spacing: gap ? gap.g8 : 8
                         Text {
                             text: qsTr("Nächste Aufgaben")
-                            font.pixelSize: typeScale ? typeScale.md : 15
-                            font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
-                            font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                            color: colors ? colors.text : "#FFFFFF"
+                            font.pixelSize: typeScale ? typeScale.md : 14
+                            font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                            font.family: Styles.ThemeStore.fonts.uiFallback
+                            color: colors ? colors.text : "#F2F5F9"
                             renderType: Text.NativeRendering
                         }
 
                         Column {
                             id: tasksColumn
                             width: parent.width
-                            spacing: space ? space.gap12 : 12
+                            spacing: gap ? gap.g12 : 12
                             visible: tasksRepeater.count > 0
                             height: visible ? implicitHeight : 0
                             Repeater {
@@ -103,13 +105,13 @@ GlassPanel {
                             height: 80
                             Column {
                                 anchors.centerIn: parent
-                                spacing: space ? space.gap4 : 4
+                                spacing: gap ? gap.g4 : 4
                                 Text {
                                     text: qsTr("Alles erledigt - super!")
-                                    font.pixelSize: typeScale ? typeScale.sm : 13
+                                    font.pixelSize: typeScale ? typeScale.sm : 12
                                     font.weight: typeScale ? typeScale.weightMedium : Font.Medium
-                                    font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                                    color: colors ? colors.textMuted : "#9AA3AF"
+                                    font.family: Styles.ThemeStore.fonts.uiFallback
+                                    color: colors ? colors.text2 : "#B7C0CC"
                                     horizontalAlignment: Text.AlignHCenter
                                     width: parent.width
                                     renderType: Text.NativeRendering
@@ -121,25 +123,24 @@ GlassPanel {
                     Rectangle {
                         height: 1
                         color: colors ? colors.divider : Qt.rgba(1, 1, 1, 0.12)
-                        opacity: theme && theme.text ? theme.text.subtle : 0.55
                         width: parent.width
                     }
 
                     Column {
-                        spacing: space ? space.gap8 : 8
+                        spacing: gap ? gap.g8 : 8
                         Text {
                             text: qsTr("Klassenarbeiten")
-                            font.pixelSize: typeScale ? typeScale.md : 15
-                            font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
-                            font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                            color: colors ? colors.text : "#FFFFFF"
+                            font.pixelSize: typeScale ? typeScale.md : 14
+                            font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                            font.family: Styles.ThemeStore.fonts.uiFallback
+                            color: colors ? colors.text : "#F2F5F9"
                             renderType: Text.NativeRendering
                         }
 
                         Column {
                             id: examsColumn
                             width: parent.width
-                            spacing: space ? space.gap12 : 12
+                            spacing: gap ? gap.g12 : 12
                             visible: examsRepeater.count > 0
                             height: visible ? implicitHeight : 0
                             Repeater {
@@ -147,13 +148,13 @@ GlassPanel {
                                 model: PlannerBackend.exams
                                 delegate: GlassPanel {
                                     width: examsColumn.width
-                                    radius: radii ? radii.md : 14
-                                    padding: space ? space.gap12 : 12
+                                    radius: radii ? radii.md : 12
+                                    padding: gap ? gap.g12 : 12
                                     Column {
-                                        spacing: space ? space.gap8 : 8
+                                        spacing: gap ? gap.g8 : 8
                                         property var subject: PlannerBackend.subjectById(model.subjectId)
                                         Row {
-                                            spacing: space ? space.gap8 : 8
+                                            spacing: gap ? gap.g8 : 8
                                             Rectangle {
                                                 width: 10
                                                 height: 10
@@ -164,26 +165,26 @@ GlassPanel {
                                             Text {
                                                 text: subject.name
                                                 font.pixelSize: typeScale ? typeScale.md : 14
-                                                font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
-                                                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                                                color: colors ? colors.text : "#FFFFFF"
+                                                font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                                                font.family: Styles.ThemeStore.fonts.uiFallback
+                                                color: colors ? colors.text : "#F2F5F9"
                                                 renderType: Text.NativeRendering
                                             }
                                             Text {
                                                 text: Qt.formatDate(model.date, "dd.MM.yyyy")
-                                                font.pixelSize: typeScale ? typeScale.metaSize : 12
-                                                font.weight: typeScale ? typeScale.metaWeight : Font.Normal
-                                                font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                                                color: colors ? colors.textMuted : "#9AA3AF"
+                                                font.pixelSize: typeScale ? typeScale.metaSize : 11
+                                                font.weight: typeScale ? typeScale.weightRegular : Font.Normal
+                                                font.family: Styles.ThemeStore.fonts.uiFallback
+                                                color: colors ? colors.text2 : "#B7C0CC"
                                                 renderType: Text.NativeRendering
                                             }
                                         }
                                         Text {
                                             text: model.topics.join(", ")
-                                            font.pixelSize: typeScale ? typeScale.metaSize : 12
-                                            font.weight: typeScale ? typeScale.metaWeight : Font.Normal
-                                            font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                                            color: colors ? colors.textMuted : "#9AA3AF"
+                                            font.pixelSize: typeScale ? typeScale.metaSize : 11
+                                            font.weight: typeScale ? typeScale.weightRegular : Font.Normal
+                                            font.family: Styles.ThemeStore.fonts.uiFallback
+                                            color: colors ? colors.textMuted : "#8B93A2"
                                             wrapMode: Text.WrapAnywhere
                                             renderType: Text.NativeRendering
                                         }
@@ -200,16 +201,18 @@ GlassPanel {
                         Text {
                             visible: examsRepeater.count === 0
                             text: qsTr("Keine Prüfungen in Sicht")
-                            font.pixelSize: typeScale ? typeScale.sm : 13
+                            font.pixelSize: typeScale ? typeScale.sm : 12
                             font.weight: typeScale ? typeScale.weightMedium : Font.Medium
-                            font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                            color: colors ? colors.textMuted : "#9AA3AF"
+                            font.family: Styles.ThemeStore.fonts.uiFallback
+                            color: colors ? colors.text2 : "#B7C0CC"
                             renderType: Text.NativeRendering
                         }
                     }
                 }
 
-                ScrollIndicator.vertical: ScrollIndicator { }
+                ScrollIndicator.vertical: ScrollIndicator {
+                    active: contentFlick.interactive
+                }
             }
         }
     }

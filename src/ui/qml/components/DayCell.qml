@@ -1,5 +1,5 @@
 import QtQuick
-import "../styles" as Styles
+import styles 1.0 as Styles
 
 Item {
     id: root
@@ -21,31 +21,28 @@ Item {
     readonly property var colors: theme ? theme.colors : null
     readonly property var typeScale: theme ? theme.type : null
     readonly property var radii: theme ? theme.radii : null
-    readonly property var space: theme ? theme.space : null
-    readonly property var accent: theme ? theme.accent : null
-    readonly property var state: theme ? theme.state : null
+    readonly property var gap: theme ? theme.gap : null
 
-    readonly property real baseRadiusMd: radii ? radii.md : 14
-    readonly property color baseAccent: colors ? colors.tint : "#0A84FF"
-    readonly property string baseFont: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-    readonly property int baseDateSize: typeScale ? typeScale.dateSize : 14
-    readonly property int baseDateWeight: typeScale ? typeScale.dateWeight : Font.DemiBold
-    readonly property color baseText: colors ? colors.text : "#FFFFFF"
-    readonly property color baseMuted: colors ? colors.textMuted : "#808080"
+    readonly property int dateSize: typeScale ? typeScale.dateSize : 12
+    readonly property int dateWeight: typeScale ? typeScale.weightMedium : Font.Medium
+    readonly property color accentColor: colors ? colors.accent : "#0A84FF"
+    readonly property color bgColor: root.selected
+        ? (colors ? colors.accentBg : Qt.rgba(0.04, 0.35, 0.84, 0.18))
+        : (colors ? colors.cardBg : Qt.rgba(0, 0, 0, 0.25))
 
     Rectangle {
         id: backdrop
         anchors.fill: parent
-        radius: baseRadiusMd
-        color: root.selected
-            ? (state ? state.select : Qt.rgba(0.04, 0.35, 0.84, 0.3))
-            : (hoverArea.containsMouse ? (state ? state.hover : Qt.rgba(1, 1, 1, 0.12)) : Qt.rgba(1, 1, 1, 0.04))
-        border.color: root.selected ? (accent ? accent.base : baseAccent) : (colors ? colors.divider : Qt.rgba(1, 1, 1, 0.08))
-        border.width: root.selected ? 1 : 0
-        opacity: root.inMonth ? 1 : 0.35
-        Behavior on color { ColorAnimation { duration: 120; easing.type: Easing.InOutQuad } }
-        Behavior on border.color { ColorAnimation { duration: 120; easing.type: Easing.InOutQuad } }
-        Behavior on opacity { NumberAnimation { duration: 120; easing.type: Easing.InOutQuad } }
+        radius: radii ? radii.lg : 16
+        color: hoverArea.containsMouse && !root.selected
+            ? (colors ? colors.hover : Qt.rgba(1, 1, 1, 0.1))
+            : bgColor
+        border.color: root.selected ? accentColor : (colors ? colors.divider : Qt.rgba(1, 1, 1, 0.12))
+        border.width: root.selected ? 1 : 1
+        opacity: root.inMonth ? 1 : 0.45
+        Behavior on color { ColorAnimation { duration: 140; easing.type: Easing.InOutQuad } }
+        Behavior on border.color { ColorAnimation { duration: 140; easing.type: Easing.InOutQuad } }
+        Behavior on opacity { NumberAnimation { duration: 140; easing.type: Easing.InOutQuad } }
     }
 
     Item {
@@ -53,29 +50,31 @@ Item {
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.margins: space ? space.gap8 : 8
+        anchors.margins: gap ? gap.g12 : 12
         height: 28
 
         Rectangle {
             id: dayHalo
-            width: 24
-            height: 24
-            radius: 12
+            width: 20
+            height: 20
+            radius: 10
             anchors.top: parent.top
             anchors.right: parent.right
-            color: root.isToday ? (state ? state.today : Qt.rgba(0.04, 0.35, 0.84, 0.3)) : "transparent"
-            border.color: root.selected ? (accent ? accent.base : baseAccent) : "transparent"
-            border.width: root.selected ? 1 : 0
+            color: root.isToday ? (colors ? colors.accentBg : Qt.rgba(0.04, 0.35, 0.84, 0.18)) : "transparent"
+            border.color: root.isToday ? accentColor : "transparent"
+            border.width: root.isToday ? 1 : 0
         }
 
         Text {
             anchors.right: dayHalo.right
             anchors.verticalCenter: dayHalo.verticalCenter
             text: root.dayNumber
-            font.pixelSize: baseDateSize
-            font.weight: baseDateWeight
-            font.family: baseFont
-            color: root.isToday ? (accent ? accent.base : baseAccent) : (root.inMonth ? baseText : baseMuted)
+            font.pixelSize: dateSize
+            font.weight: dateWeight
+            font.family: Styles.ThemeStore.fonts.uiFallback
+            color: root.isToday
+                ? (colors ? colors.accent : "#0A84FF")
+                : (root.inMonth ? (colors ? colors.text : "#F2F5F9") : (colors ? colors.text2 : "#B7C0CC"))
             renderType: Text.NativeRendering
         }
     }
@@ -86,9 +85,9 @@ Item {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-    anchors.margins: space ? space.gap8 : 8
-    anchors.topMargin: space ? space.gap24 : 24
-        spacing: space ? space.gap8 : 6
+        anchors.margins: gap ? gap.g12 : 12
+        anchors.topMargin: gap ? gap.g24 : 24
+        spacing: gap ? gap.g8 : 8
         Repeater {
             model: visibleEvents
             delegate: EventChip {

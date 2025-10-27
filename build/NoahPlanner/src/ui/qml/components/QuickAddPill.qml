@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import NoahPlanner 1.0
-import "../styles" as Styles
+import styles 1.0 as Styles
 
 GlassPanel {
     id: root
@@ -15,7 +14,7 @@ GlassPanel {
     readonly property var theme: Styles.ThemeStore
     readonly property var colors: theme ? theme.colors : null
     readonly property var radii: theme ? theme.radii : null
-    readonly property var space: theme ? theme.space : null
+    readonly property var gap: theme ? theme.gap : null
     readonly property var typeScale: theme ? theme.type : null
     readonly property var layout: theme ? theme.layout : null
 
@@ -24,27 +23,29 @@ GlassPanel {
 
     Row {
         anchors.fill: parent
-        anchors.leftMargin: space ? space.gap16 : 16
-        anchors.rightMargin: space ? space.gap8 : 8
-        anchors.topMargin: space ? space.gap8 : 8
-        anchors.bottomMargin: space ? space.gap8 : 8
-        spacing: space ? space.gap12 : 12
+        anchors.leftMargin: gap ? gap.g16 : 16
+        anchors.rightMargin: gap ? gap.g8 : 8
+        anchors.topMargin: gap ? gap.g8 : 8
+        anchors.bottomMargin: gap ? gap.g8 : 8
+        spacing: gap ? gap.g12 : 12
 
         TextField {
             id: input
             placeholderText: root.placeholder
-            font.pixelSize: typeScale ? typeScale.md : 15
-            font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-            color: colors ? colors.text : "#FFFFFF"
+            placeholderTextColor: colors ? colors.textMuted : "#8B93A2"
+            font.pixelSize: typeScale ? typeScale.md : 14
+            font.family: Styles.ThemeStore.fonts.uiFallback
+            color: colors ? colors.text : "#F2F5F9"
             height: layout ? layout.pillH : 30
             background: Rectangle { color: "transparent" }
-            selectionColor: theme ? theme.accent.base : "#0A84FF"
-            cursorDelegate: Rectangle { width: 2; color: theme ? theme.accent.base : "#0A84FF" }
+            selectionColor: colors ? colors.accent : "#0A84FF"
+            cursorDelegate: Rectangle { width: 2; color: colors ? colors.accent : "#0A84FF" }
             anchors.verticalCenter: parent.verticalCenter
             onAccepted: {
                 root.submitted(text)
                 text = ""
             }
+            renderType: Text.NativeRendering
         }
 
         PillButton {

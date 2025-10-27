@@ -14,11 +14,11 @@
     <file alias="src/ui/qml/components/Toast.qml">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/Toast.qml</file>
     <file alias="src/ui/qml/components/ToastHost.qml">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/ToastHost.qml</file>
     <file alias="src/ui/qml/components/TodayTaskDelegate.qml">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/TodayTaskDelegate.qml</file>
-    <file alias="src/ui/qml/styles/ThemeStore.qml">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml</file>
     <file alias="src/ui/qml/views/AgendaView.qml">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/views/AgendaView.qml</file>
     <file alias="src/ui/qml/views/MonthView.qml">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/views/MonthView.qml</file>
     <file alias="src/ui/qml/views/SidebarToday.qml">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/views/SidebarToday.qml</file>
     <file alias="src/ui/qml/views/WeekView.qml">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/views/WeekView.qml</file>
+    <file alias="assets/fonts/Inter-Regular.ttf">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/assets/fonts/Inter-Regular.ttf</file>
   </qresource>
 </RCC>
 

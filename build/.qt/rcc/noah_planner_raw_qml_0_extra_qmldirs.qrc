@@ -2,7 +2,6 @@
   <qresource prefix="/qt/qml/NoahPlanner/">
     <file alias="src/ui/qml/qmldir">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/NoahPlanner/src/ui/qml/qmldir</file>
     <file alias="src/ui/qml/components/qmldir">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/NoahPlanner/src/ui/qml/components/qmldir</file>
-    <file alias="src/ui/qml/styles/qmldir">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/NoahPlanner/src/ui/qml/styles/qmldir</file>
     <file alias="src/ui/qml/views/qmldir">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/NoahPlanner/src/ui/qml/views/qmldir</file>
   </qresource>
 </RCC>

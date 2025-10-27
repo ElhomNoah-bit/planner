@@ -1,39 +1,35 @@
 import QtQuick
-import "../styles" as Styles
+import styles 1.0 as Styles
 
 Rectangle {
     id: chip
     property string label: ""
-    property color subjectColor: accentColor
+    property color subjectColor: Styles.ThemeStore.colors.accent
     property bool muted: false
 
     radius: 10
-    height: 20
-    implicitWidth: labelText.implicitWidth + 20
-    readonly property color baseColor: muted ? Qt.rgba(1, 1, 1, 0.08) : chipBackground
-    color: hover.hovered ? Qt.lighter(baseColor, 1.2) : baseColor
-    border.color: muted ? Qt.rgba(1, 1, 1, 0.05) : subjectColor
-    border.width: muted ? 0 : 1
-    antialiasing: true
-
+    implicitHeight: 20
+    implicitWidth: Math.max(60, labelText.implicitWidth + 2 * (gap ? gap.g12 : 12))
     readonly property var theme: Styles.ThemeStore
     readonly property var colors: theme ? theme.colors : null
     readonly property var typeScale: theme ? theme.type : null
+    readonly property var gap: theme ? theme.gap : null
 
-    readonly property color accentColor: colors ? colors.tint : "#0A84FF"
-    readonly property color chipBackground: colors ? colors.chipBg : Qt.rgba(0, 0, 0, 0.18)
-    readonly property color textColor: colors ? colors.chipFg : "#FFFFFF"
-    readonly property string fontFamily: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-    readonly property int fontSize: typeScale ? typeScale.eventChipSize : 12
-    readonly property int fontWeight: typeScale ? typeScale.eventChipWeight : Font.DemiBold
+    readonly property color baseColor: muted
+        ? (colors ? colors.hover : Qt.rgba(1, 1, 1, 0.08))
+        : (colors ? colors.cardBg : Qt.rgba(0, 0, 0, 0.25))
+    color: hover.hovered ? (colors ? colors.hover : Qt.lighter(baseColor, 1.1)) : baseColor
+    border.color: muted ? (colors ? colors.divider : Qt.rgba(1, 1, 1, 0.1)) : subjectColor
+    border.width: muted ? 0 : 1
+    antialiasing: true
 
     Row {
         id: row
         anchors.fill: parent
-        anchors.leftMargin: 6
-        anchors.rightMargin: 8
+        anchors.leftMargin: gap ? gap.g8 : 6
+        anchors.rightMargin: gap ? gap.g12 : 8
         anchors.verticalCenter: parent.verticalCenter
-        spacing: 6
+        spacing: gap ? gap.g8 : 6
         Rectangle {
             width: 6
             height: 6
@@ -44,10 +40,10 @@ Rectangle {
         Text {
             id: labelText
             text: chip.label
-            color: textColor
-            font.pixelSize: fontSize
-            font.weight: fontWeight
-            font.family: fontFamily
+            color: colors ? colors.text : "#F2F5F9"
+            font.pixelSize: typeScale ? typeScale.eventChipSize : 11
+            font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+            font.family: Styles.ThemeStore.fonts.uiFallback
             elide: Text.ElideRight
             verticalAlignment: Text.AlignVCenter
             renderType: Text.NativeRendering

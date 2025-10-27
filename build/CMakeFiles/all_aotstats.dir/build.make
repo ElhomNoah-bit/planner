@@ -70,6 +70,7 @@ CMakeFiles/all_aotstats: .rcc/qmlcache/all_aotstats.txt
 	/usr/bin/cmake -E cat /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/all_aotstats.txt
 
 .rcc/qmlcache/all_aotstats.aotstats: .rcc/qmlcache/module_noah_planner.aotstats
+.rcc/qmlcache/all_aotstats.aotstats: .rcc/qmlcache/module_styles_module.aotstats
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating .rcc/qmlcache/all_aotstats.aotstats, .rcc/qmlcache/all_aotstats.txt"
 	/usr/lib64/qt6/libexec/qmlaotstats aggregate /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/all_aotstats.aotstatslist /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/all_aotstats.aotstats
 	/usr/lib64/qt6/libexec/qmlaotstats format /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/all_aotstats.aotstats /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/all_aotstats.txt

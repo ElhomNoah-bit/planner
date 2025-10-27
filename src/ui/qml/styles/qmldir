@@ -1,0 +1,2 @@
+module styles
+singleton ThemeStore 1.0 ThemeStore.qml

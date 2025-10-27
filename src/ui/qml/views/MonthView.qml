@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
-import "../styles" as Styles
+import styles 1.0 as Styles
 
 Item {
     id: month
@@ -13,9 +13,8 @@ Item {
 
     readonly property var theme: Styles.ThemeStore
     readonly property var colors: theme ? theme.colors : null
-    readonly property var space: theme ? theme.space : null
+    readonly property var gap: theme ? theme.gap : null
     readonly property var typeScale: theme ? theme.type : null
-    readonly property var radii: theme ? theme.radii : null
     readonly property var layout: theme ? theme.layout : null
 
     readonly property var weekdayNames: [qsTr("Mo"), qsTr("Di"), qsTr("Mi"), qsTr("Do"), qsTr("Fr"), qsTr("Sa"), qsTr("So")]
@@ -23,23 +22,22 @@ Item {
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: layout ? layout.margin : (space ? space.gap24 : 24)
-        spacing: space ? space.gap16 : 16
+        anchors.margins: layout ? layout.margin : (gap ? gap.g24 : 24)
+        spacing: gap ? gap.g16 : 16
 
         RowLayout {
             Layout.fillWidth: true
-            spacing: layout ? layout.gridGap : (space ? space.gap12 : 12)
+            spacing: layout ? layout.gridGap : (gap ? gap.g12 : 12)
             Repeater {
                 model: weekdayNames
                 delegate: Text {
                     Layout.fillWidth: true
                     text: modelData
                     horizontalAlignment: Text.AlignRight
-                    font.pixelSize: typeScale ? typeScale.sm : 13
+                    font.pixelSize: typeScale ? typeScale.sm : 12
                     font.weight: typeScale ? typeScale.weightMedium : Font.Medium
-                    font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                    color: theme && theme.text ? theme.text.secondary : "#A3ACB8"
-                    opacity: 0.92
+                    font.family: Styles.ThemeStore.fonts.uiFallback
+                    color: colors ? colors.text2 : "#B7C0CC"
                     renderType: Text.NativeRendering
                 }
             }
@@ -50,8 +48,8 @@ Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
             columns: 7
-            columnSpacing: layout ? layout.gridGap : (space ? space.gap12 : 12)
-            rowSpacing: layout ? layout.gridGap : (space ? space.gap12 : 12)
+            columnSpacing: layout ? layout.gridGap : (gap ? gap.g12 : 12)
+            rowSpacing: layout ? layout.gridGap : (gap ? gap.g12 : 12)
             property real cellWidth: columns > 0 ? (width - columnSpacing * (columns - 1)) / columns : width
             property real cellHeight: (height - rowSpacing * 5) / 6
 
@@ -96,7 +94,7 @@ Item {
         if (Qt.application.arguments && Qt.application.arguments.indexOf("--debug-events") !== -1) {
             for (var j = 0; j < collection.length; ++j) {
                 if (j % 10 === 0) {
-                    collection[j].events.push({ title: qsTr("Projekt Status"), color: theme ? theme.accent.base : "#0A84FF" })
+                    collection[j].events.push({ title: qsTr("Projekt Status"), color: colors ? colors.accent : "#0A84FF" })
                 }
                 if (j % 15 === 0) {
                     collection[j].events.push({ title: qsTr("Mathe lernen"), color: "#FF9F0A" })

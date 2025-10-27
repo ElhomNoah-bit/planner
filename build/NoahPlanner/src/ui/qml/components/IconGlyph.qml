@@ -1,25 +1,22 @@
 import QtQuick
-import NoahPlanner 1.0
-import "../styles" as Styles
+import styles 1.0 as Styles
 
 Item {
     id: root
-    property string text: ""
+    property alias text: glyph.text
     property string name: ""
-    property int size: 16
-    property color color: glyphColor
+    property real size: 14
+    property color color: Styles.ThemeStore.colors.text
+    property string family: fontLoader.status === FontLoader.Ready ? fontLoader.name
+                                                                  : Styles.ThemeStore.fonts.uiFallback
 
     implicitHeight: glyph.implicitHeight
     implicitWidth: glyph.implicitWidth
 
-    // Embedded fonts served via Qt resource system.
     FontLoader {
-        id: inter
-        source: "qrc:/fonts/assets/fonts/Inter-Regular.ttf"
-        onStatusChanged: if (status === FontLoader.Error) console.warn("Inter font failed to load:", errorString)
+        id: fontLoader
+        source: Styles.ThemeStore.fonts.interUrl
     }
-
-    readonly property color glyphColor: Styles.ThemeStore && Styles.ThemeStore.colors ? Styles.ThemeStore.colors.text : "#F5F7FA"
 
     readonly property var glyphMap: ({
         "chevron.backward": "\u2039",
@@ -43,16 +40,6 @@ Item {
         "moon": "moon"
     })
 
-    function pickFamily() {
-        if (inter.status === FontLoader.Ready && inter.name.length) {
-            return inter.name
-        }
-        if (Qt.application.font && Qt.application.font.family.length) {
-            return Qt.application.font.family
-        }
-        return "Sans"
-    }
-
     function resolveSymbol(iconName) {
         if (!iconName || !iconName.length) {
             return ""
@@ -67,15 +54,24 @@ Item {
         return iconName.charAt(0)
     }
 
+    function updateGlyph() {
+        if (root.name.length) {
+            glyph.text = resolveSymbol(root.name)
+        }
+    }
+
+    Component.onCompleted: updateGlyph()
+    onNameChanged: updateGlyph()
+
     Text {
         id: glyph
         anchors.centerIn: parent
         font.pixelSize: root.size
-        font.family: pickFamily()
+        font.family: root.family
         font.weight: Font.DemiBold
         color: root.color
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        text: root.name.length ? resolveSymbol(root.name) : root.text
+        renderType: Text.NativeRendering
     }
 }

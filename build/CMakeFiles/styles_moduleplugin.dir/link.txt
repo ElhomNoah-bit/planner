@@ -1,0 +1,2 @@
+/usr/bin/ar qc styles/libstyles_moduleplugin.a CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_autogen/mocs_compilation.cpp.o CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o
+/usr/bin/ranlib styles/libstyles_moduleplugin.a

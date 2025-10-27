@@ -81,7 +81,6 @@ CMakeFiles/noah_planner_qmllint_module: /home/noah/Dokumente/dev/project_study_p
 CMakeFiles/noah_planner_qmllint_module: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/Toast.qml
 CMakeFiles/noah_planner_qmllint_module: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/ToastHost.qml
 CMakeFiles/noah_planner_qmllint_module: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/TodayTaskDelegate.qml
-CMakeFiles/noah_planner_qmllint_module: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml
 CMakeFiles/noah_planner_qmllint_module: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/views/AgendaView.qml
 CMakeFiles/noah_planner_qmllint_module: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/views/MonthView.qml
 CMakeFiles/noah_planner_qmllint_module: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/views/SidebarToday.qml

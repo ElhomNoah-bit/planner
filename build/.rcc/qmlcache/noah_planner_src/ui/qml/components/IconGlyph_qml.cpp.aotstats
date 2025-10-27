@@ -4,60 +4,52 @@
             {
                 "entries": [
                     {
-                        "codegenSuccessful": true,
+                        "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 143,
-                        "errorMessage": "",
+                        "durationMicroseconds": 1038,
+                        "errorMessage": "Cannot load property text from ThemeStore::colors with type QObject.",
                         "functionName": "color",
+                        "line": 9
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 29,
+                        "durationMicroseconds": 62,
+                        "errorMessage": "Cannot load property uiFallback from ThemeStore::fonts with type QObject.",
+                        "functionName": "family",
                         "line": 10
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "implicitHeight",
-                        "line": 12
+                        "line": 13
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 57,
                         "errorMessage": "",
                         "functionName": "implicitWidth",
-                        "line": 13
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 41,
-                        "durationMicroseconds": 201,
-                        "errorMessage": "Cannot load property text from ThemeStore::colors with type QObject.",
-                        "functionName": "glyphColor",
-                        "line": 22
+                        "line": 14
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 513,
+                        "durationMicroseconds": 373,
                         "errorMessage": "",
                         "functionName": "glyphMap",
-                        "line": 24
+                        "line": 21
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 271,
+                        "durationMicroseconds": 165,
                         "errorMessage": "",
                         "functionName": "materialMap",
-                        "line": 38
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 5,
-                        "durationMicroseconds": 322,
-                        "errorMessage": "function without return type annotation returns QQuickFontLoader::name with type QString. This may prevent proper compilation to Cpp.",
-                        "functionName": "pickFamily",
-                        "line": 46
+                        "line": 35
                     },
                     {
                         "codegenSuccessful": false,
@@ -65,79 +57,103 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "resolveSymbol",
-                        "line": 56
+                        "line": 43
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 26,
-                        "durationMicroseconds": 197,
-                        "errorMessage": "Cannot access value for name errorString",
-                        "functionName": "onStatusChanged",
-                        "line": 19
+                        "column": 5,
+                        "durationMicroseconds": 232,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "updateGlyph",
+                        "line": 57
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 16,
-                        "durationMicroseconds": 161,
+                        "column": 20,
+                        "durationMicroseconds": 45,
                         "errorMessage": "",
-                        "functionName": "color",
-                        "line": 76
+                        "functionName": "onNameChanged",
+                        "line": 64
                     },
                     {
-                        "codegenSuccessful": true,
-                        "column": 30,
-                        "durationMicroseconds": 112,
-                        "errorMessage": "",
-                        "functionName": "horizontalAlignment",
-                        "line": 77
+                        "codegenSuccessful": false,
+                        "column": 17,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "Cannot load property interUrl from ThemeStore::fonts with type QObject.",
+                        "functionName": "source",
+                        "line": 18
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 109,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
-                        "functionName": "verticalAlignment",
-                        "line": 78
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 15,
-                        "durationMicroseconds": 3287,
-                        "errorMessage": "method resolveSymbol cannot be resolved.",
-                        "functionName": "text",
-                        "line": 79
+                        "functionName": "onCompleted",
+                        "line": 63
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 27,
-                        "durationMicroseconds": 98,
+                        "column": 16,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
-                        "functionName": "centerIn",
+                        "functionName": "color",
                         "line": 72
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 25,
-                        "durationMicroseconds": 100,
+                        "column": 30,
+                        "durationMicroseconds": 56,
                         "errorMessage": "",
-                        "functionName": "pixelSize",
+                        "functionName": "horizontalAlignment",
                         "line": 73
                     },
                     {
-                        "codegenSuccessful": false,
-                        "column": 22,
-                        "durationMicroseconds": 492,
-                        "errorMessage": "method pickFamily cannot be resolved.",
-                        "functionName": "family",
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 50,
+                        "errorMessage": "",
+                        "functionName": "verticalAlignment",
                         "line": 74
                     },
                     {
                         "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 74,
+                        "errorMessage": "",
+                        "functionName": "renderType",
+                        "line": 75
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 68
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 61,
+                        "errorMessage": "",
+                        "functionName": "pixelSize",
+                        "line": 69
+                    },
+                    {
+                        "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 100,
+                        "durationMicroseconds": 54,
+                        "errorMessage": "",
+                        "functionName": "family",
+                        "line": 70
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 52,
                         "errorMessage": "",
                         "functionName": "weight",
-                        "line": 75
+                        "line": 71
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/IconGlyph.qml"

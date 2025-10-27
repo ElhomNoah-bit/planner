@@ -305,6 +305,162 @@ noah_planner_copy_res/fast:
 .PHONY : noah_planner_copy_res/fast
 
 #=============================================================================
+# Target rules for targets named styles_module
+
+# Build rule for target.
+styles_module: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_module
+.PHONY : styles_module
+
+# fast build rule for target.
+styles_module/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build
+.PHONY : styles_module/fast
+
+#=============================================================================
+# Target rules for targets named styles_module_qmltyperegistration
+
+# Build rule for target.
+styles_module_qmltyperegistration: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_module_qmltyperegistration
+.PHONY : styles_module_qmltyperegistration
+
+# fast build rule for target.
+styles_module_qmltyperegistration/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_qmltyperegistration.dir/build.make CMakeFiles/styles_module_qmltyperegistration.dir/build
+.PHONY : styles_module_qmltyperegistration/fast
+
+#=============================================================================
+# Target rules for targets named styles_module_resources_1
+
+# Build rule for target.
+styles_module_resources_1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_module_resources_1
+.PHONY : styles_module_resources_1
+
+# fast build rule for target.
+styles_module_resources_1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_1.dir/build.make CMakeFiles/styles_module_resources_1.dir/build
+.PHONY : styles_module_resources_1/fast
+
+#=============================================================================
+# Target rules for targets named styles_moduleplugin
+
+# Build rule for target.
+styles_moduleplugin: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_moduleplugin
+.PHONY : styles_moduleplugin
+
+# fast build rule for target.
+styles_moduleplugin/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin.dir/build.make CMakeFiles/styles_moduleplugin.dir/build
+.PHONY : styles_moduleplugin/fast
+
+#=============================================================================
+# Target rules for targets named styles_module_qmllint
+
+# Build rule for target.
+styles_module_qmllint: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_module_qmllint
+.PHONY : styles_module_qmllint
+
+# fast build rule for target.
+styles_module_qmllint/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_qmllint.dir/build.make CMakeFiles/styles_module_qmllint.dir/build
+.PHONY : styles_module_qmllint/fast
+
+#=============================================================================
+# Target rules for targets named styles_module_qmllint_json
+
+# Build rule for target.
+styles_module_qmllint_json: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_module_qmllint_json
+.PHONY : styles_module_qmllint_json
+
+# fast build rule for target.
+styles_module_qmllint_json/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_qmllint_json.dir/build.make CMakeFiles/styles_module_qmllint_json.dir/build
+.PHONY : styles_module_qmllint_json/fast
+
+#=============================================================================
+# Target rules for targets named styles_module_qmllint_module
+
+# Build rule for target.
+styles_module_qmllint_module: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_module_qmllint_module
+.PHONY : styles_module_qmllint_module
+
+# fast build rule for target.
+styles_module_qmllint_module/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_qmllint_module.dir/build.make CMakeFiles/styles_module_qmllint_module.dir/build
+.PHONY : styles_module_qmllint_module/fast
+
+#=============================================================================
+# Target rules for targets named styles_module_copy_qml
+
+# Build rule for target.
+styles_module_copy_qml: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_module_copy_qml
+.PHONY : styles_module_copy_qml
+
+# fast build rule for target.
+styles_module_copy_qml/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_copy_qml.dir/build.make CMakeFiles/styles_module_copy_qml.dir/build
+.PHONY : styles_module_copy_qml/fast
+
+#=============================================================================
+# Target rules for targets named styles_module_copy_res
+
+# Build rule for target.
+styles_module_copy_res: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_module_copy_res
+.PHONY : styles_module_copy_res
+
+# fast build rule for target.
+styles_module_copy_res/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_copy_res.dir/build.make CMakeFiles/styles_module_copy_res.dir/build
+.PHONY : styles_module_copy_res/fast
+
+#=============================================================================
+# Target rules for targets named styles_module_resources_2
+
+# Build rule for target.
+styles_module_resources_2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_module_resources_2
+.PHONY : styles_module_resources_2
+
+# fast build rule for target.
+styles_module_resources_2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_2.dir/build.make CMakeFiles/styles_module_resources_2.dir/build
+.PHONY : styles_module_resources_2/fast
+
+#=============================================================================
+# Target rules for targets named styles_module_resources_3
+
+# Build rule for target.
+styles_module_resources_3: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_module_resources_3
+.PHONY : styles_module_resources_3
+
+# fast build rule for target.
+styles_module_resources_3/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_3.dir/build.make CMakeFiles/styles_module_resources_3.dir/build
+.PHONY : styles_module_resources_3/fast
+
+#=============================================================================
+# Target rules for targets named styles_moduleplugin_init
+
+# Build rule for target.
+styles_moduleplugin_init: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_moduleplugin_init
+.PHONY : styles_moduleplugin_init
+
+# fast build rule for target.
+styles_moduleplugin_init/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin_init.dir/build.make CMakeFiles/styles_moduleplugin_init.dir/build
+.PHONY : styles_moduleplugin_init/fast
+
+#=============================================================================
 # Target rules for targets named module_noah_planner_aotstats_target
 
 # Build rule for target.
@@ -316,6 +472,19 @@ module_noah_planner_aotstats_target: cmake_check_build_system
 module_noah_planner_aotstats_target/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/module_noah_planner_aotstats_target.dir/build.make CMakeFiles/module_noah_planner_aotstats_target.dir/build
 .PHONY : module_noah_planner_aotstats_target/fast
+
+#=============================================================================
+# Target rules for targets named module_styles_module_aotstats_target
+
+# Build rule for target.
+module_styles_module_aotstats_target: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 module_styles_module_aotstats_target
+.PHONY : module_styles_module_aotstats_target
+
+# fast build rule for target.
+module_styles_module_aotstats_target/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/module_styles_module_aotstats_target.dir/build.make CMakeFiles/module_styles_module_aotstats_target.dir/build
+.PHONY : module_styles_module_aotstats_target/fast
 
 #=============================================================================
 # Target rules for targets named all_aotstats
@@ -369,29 +538,83 @@ noah_planner_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner_autogen.dir/build.make CMakeFiles/noah_planner_autogen.dir/build
 .PHONY : noah_planner_autogen/fast
 
-build/.qt/rcc/qrc_font_assets.o: build/.qt/rcc/qrc_font_assets.cpp.o
-.PHONY : build/.qt/rcc/qrc_font_assets.o
+#=============================================================================
+# Target rules for targets named styles_module_autogen_timestamp_deps
 
-# target to build an object file
-build/.qt/rcc/qrc_font_assets.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o
-.PHONY : build/.qt/rcc/qrc_font_assets.cpp.o
+# Build rule for target.
+styles_module_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_module_autogen_timestamp_deps
+.PHONY : styles_module_autogen_timestamp_deps
 
-build/.qt/rcc/qrc_font_assets.i: build/.qt/rcc/qrc_font_assets.cpp.i
-.PHONY : build/.qt/rcc/qrc_font_assets.i
+# fast build rule for target.
+styles_module_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_autogen_timestamp_deps.dir/build.make CMakeFiles/styles_module_autogen_timestamp_deps.dir/build
+.PHONY : styles_module_autogen_timestamp_deps/fast
 
-# target to preprocess a source file
-build/.qt/rcc/qrc_font_assets.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.i
-.PHONY : build/.qt/rcc/qrc_font_assets.cpp.i
+#=============================================================================
+# Target rules for targets named styles_module_autogen
 
-build/.qt/rcc/qrc_font_assets.s: build/.qt/rcc/qrc_font_assets.cpp.s
-.PHONY : build/.qt/rcc/qrc_font_assets.s
+# Build rule for target.
+styles_module_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_module_autogen
+.PHONY : styles_module_autogen
 
-# target to generate assembly for a file
-build/.qt/rcc/qrc_font_assets.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.s
-.PHONY : build/.qt/rcc/qrc_font_assets.cpp.s
+# fast build rule for target.
+styles_module_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_autogen.dir/build.make CMakeFiles/styles_module_autogen.dir/build
+.PHONY : styles_module_autogen/fast
+
+#=============================================================================
+# Target rules for targets named styles_moduleplugin_autogen_timestamp_deps
+
+# Build rule for target.
+styles_moduleplugin_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_moduleplugin_autogen_timestamp_deps
+.PHONY : styles_moduleplugin_autogen_timestamp_deps
+
+# fast build rule for target.
+styles_moduleplugin_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin_autogen_timestamp_deps.dir/build.make CMakeFiles/styles_moduleplugin_autogen_timestamp_deps.dir/build
+.PHONY : styles_moduleplugin_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named styles_moduleplugin_autogen
+
+# Build rule for target.
+styles_moduleplugin_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_moduleplugin_autogen
+.PHONY : styles_moduleplugin_autogen
+
+# fast build rule for target.
+styles_moduleplugin_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin_autogen.dir/build.make CMakeFiles/styles_moduleplugin_autogen.dir/build
+.PHONY : styles_moduleplugin_autogen/fast
+
+#=============================================================================
+# Target rules for targets named styles_moduleplugin_init_autogen_timestamp_deps
+
+# Build rule for target.
+styles_moduleplugin_init_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_moduleplugin_init_autogen_timestamp_deps
+.PHONY : styles_moduleplugin_init_autogen_timestamp_deps
+
+# fast build rule for target.
+styles_moduleplugin_init_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin_init_autogen_timestamp_deps.dir/build.make CMakeFiles/styles_moduleplugin_init_autogen_timestamp_deps.dir/build
+.PHONY : styles_moduleplugin_init_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named styles_moduleplugin_init_autogen
+
+# Build rule for target.
+styles_moduleplugin_init_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 styles_moduleplugin_init_autogen
+.PHONY : styles_moduleplugin_init_autogen
+
+# fast build rule for target.
+styles_moduleplugin_init_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin_init_autogen.dir/build.make CMakeFiles/styles_moduleplugin_init_autogen.dir/build
+.PHONY : styles_moduleplugin_init_autogen/fast
 
 build/.qt/rcc/qrc_noah_planner_raw_qml_0.o: build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o
 .PHONY : build/.qt/rcc/qrc_noah_planner_raw_qml_0.o
@@ -464,6 +687,150 @@ build/.qt/rcc/qrc_qmake_NoahPlanner.s: build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.s
 build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.s
 .PHONY : build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.s
+
+build/.qt/rcc/qrc_qmake_styles.o: build/.qt/rcc/qrc_qmake_styles.cpp.o
+.PHONY : build/.qt/rcc/qrc_qmake_styles.o
+
+# target to build an object file
+build/.qt/rcc/qrc_qmake_styles.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.o
+.PHONY : build/.qt/rcc/qrc_qmake_styles.cpp.o
+
+build/.qt/rcc/qrc_qmake_styles.i: build/.qt/rcc/qrc_qmake_styles.cpp.i
+.PHONY : build/.qt/rcc/qrc_qmake_styles.i
+
+# target to preprocess a source file
+build/.qt/rcc/qrc_qmake_styles.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.i
+.PHONY : build/.qt/rcc/qrc_qmake_styles.cpp.i
+
+build/.qt/rcc/qrc_qmake_styles.s: build/.qt/rcc/qrc_qmake_styles.cpp.s
+.PHONY : build/.qt/rcc/qrc_qmake_styles.s
+
+# target to generate assembly for a file
+build/.qt/rcc/qrc_qmake_styles.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_qmake_styles.cpp.s
+.PHONY : build/.qt/rcc/qrc_qmake_styles.cpp.s
+
+build/.qt/rcc/qrc_qmake_styles_init.o: build/.qt/rcc/qrc_qmake_styles_init.cpp.o
+.PHONY : build/.qt/rcc/qrc_qmake_styles_init.o
+
+# target to build an object file
+build/.qt/rcc/qrc_qmake_styles_init.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_1.dir/build.make CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o
+.PHONY : build/.qt/rcc/qrc_qmake_styles_init.cpp.o
+
+build/.qt/rcc/qrc_qmake_styles_init.i: build/.qt/rcc/qrc_qmake_styles_init.cpp.i
+.PHONY : build/.qt/rcc/qrc_qmake_styles_init.i
+
+# target to preprocess a source file
+build/.qt/rcc/qrc_qmake_styles_init.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_1.dir/build.make CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.i
+.PHONY : build/.qt/rcc/qrc_qmake_styles_init.cpp.i
+
+build/.qt/rcc/qrc_qmake_styles_init.s: build/.qt/rcc/qrc_qmake_styles_init.cpp.s
+.PHONY : build/.qt/rcc/qrc_qmake_styles_init.s
+
+# target to generate assembly for a file
+build/.qt/rcc/qrc_qmake_styles_init.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_1.dir/build.make CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.s
+.PHONY : build/.qt/rcc/qrc_qmake_styles_init.cpp.s
+
+build/.qt/rcc/qrc_styles_module_raw_qml_0.o: build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.o
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0.o
+
+# target to build an object file
+build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.o
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.o
+
+build/.qt/rcc/qrc_styles_module_raw_qml_0.i: build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.i
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0.i
+
+# target to preprocess a source file
+build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.i
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.i
+
+build/.qt/rcc/qrc_styles_module_raw_qml_0.s: build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.s
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0.s
+
+# target to generate assembly for a file
+build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.s
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0.cpp.s
+
+build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.o: build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp.o
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.o
+
+# target to build an object file
+build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp.o
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp.o
+
+build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.i: build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp.i
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.i
+
+# target to preprocess a source file
+build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp.i
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp.i
+
+build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.s: build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp.s
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.s
+
+# target to generate assembly for a file
+build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp.s
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.cpp.s
+
+build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.o: build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.o
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.o
+
+# target to build an object file
+build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_3.dir/build.make CMakeFiles/styles_module_resources_3.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.o
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.o
+
+build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.i: build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.i
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.i
+
+# target to preprocess a source file
+build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_3.dir/build.make CMakeFiles/styles_module_resources_3.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.i
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.i
+
+build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.s: build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.s
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.s
+
+# target to generate assembly for a file
+build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_3.dir/build.make CMakeFiles/styles_module_resources_3.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.s
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.s
+
+build/.qt/rcc/qrc_styles_module_raw_qml_0_init.o: build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.o
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_init.o
+
+# target to build an object file
+build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_2.dir/build.make CMakeFiles/styles_module_resources_2.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.o
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.o
+
+build/.qt/rcc/qrc_styles_module_raw_qml_0_init.i: build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.i
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_init.i
+
+# target to preprocess a source file
+build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_2.dir/build.make CMakeFiles/styles_module_resources_2.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.i
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.i
+
+build/.qt/rcc/qrc_styles_module_raw_qml_0_init.s: build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.s
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_init.s
+
+# target to generate assembly for a file
+build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module_resources_2.dir/build.make CMakeFiles/styles_module_resources_2.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.s
+.PHONY : build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.s
 
 build/.rcc/qmlcache/noah_planner_qmlcache_loader.o: build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp.o
 .PHONY : build/.rcc/qmlcache/noah_planner_qmlcache_loader.o
@@ -825,30 +1192,6 @@ build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp.s
 .PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp.s
 
-build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.o: build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.o
-.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.o
-
-# target to build an object file
-build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.o
-.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.o
-
-build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.i: build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.i
-.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.i
-
-# target to preprocess a source file
-build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.i
-.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.i
-
-build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.s: build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.s
-.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.s
-
-# target to generate assembly for a file
-build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.s
-.PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.s
-
 build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.o: build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp.o
 .PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.o
 
@@ -944,6 +1287,54 @@ build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.s: build/.rcc/qml
 build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp.s
 .PHONY : build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp.s
+
+build/.rcc/qmlcache/styles_module_qmlcache_loader.o: build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.o
+.PHONY : build/.rcc/qmlcache/styles_module_qmlcache_loader.o
+
+# target to build an object file
+build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.o
+.PHONY : build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.o
+
+build/.rcc/qmlcache/styles_module_qmlcache_loader.i: build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.i
+.PHONY : build/.rcc/qmlcache/styles_module_qmlcache_loader.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.i
+.PHONY : build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.i
+
+build/.rcc/qmlcache/styles_module_qmlcache_loader.s: build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.s
+.PHONY : build/.rcc/qmlcache/styles_module_qmlcache_loader.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.s
+.PHONY : build/.rcc/qmlcache/styles_module_qmlcache_loader.cpp.s
+
+build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.o: build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.o
+
+# target to build an object file
+build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.o
+
+build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.i: build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.i
+
+build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.s: build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.cpp.s
 
 noah_planner_autogen/mocs_compilation.o: noah_planner_autogen/mocs_compilation.cpp.o
 .PHONY : noah_planner_autogen/mocs_compilation.o
@@ -1161,6 +1552,150 @@ src/ui/PlannerBackend.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.s
 .PHONY : src/ui/PlannerBackend.cpp.s
 
+styles_module_autogen/mocs_compilation.o: styles_module_autogen/mocs_compilation.cpp.o
+.PHONY : styles_module_autogen/mocs_compilation.o
+
+# target to build an object file
+styles_module_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/styles_module_autogen/mocs_compilation.cpp.o
+.PHONY : styles_module_autogen/mocs_compilation.cpp.o
+
+styles_module_autogen/mocs_compilation.i: styles_module_autogen/mocs_compilation.cpp.i
+.PHONY : styles_module_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+styles_module_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/styles_module_autogen/mocs_compilation.cpp.i
+.PHONY : styles_module_autogen/mocs_compilation.cpp.i
+
+styles_module_autogen/mocs_compilation.s: styles_module_autogen/mocs_compilation.cpp.s
+.PHONY : styles_module_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+styles_module_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/styles_module_autogen/mocs_compilation.cpp.s
+.PHONY : styles_module_autogen/mocs_compilation.cpp.s
+
+styles_module_qmltyperegistrations.o: styles_module_qmltyperegistrations.cpp.o
+.PHONY : styles_module_qmltyperegistrations.o
+
+# target to build an object file
+styles_module_qmltyperegistrations.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/styles_module_qmltyperegistrations.cpp.o
+.PHONY : styles_module_qmltyperegistrations.cpp.o
+
+styles_module_qmltyperegistrations.i: styles_module_qmltyperegistrations.cpp.i
+.PHONY : styles_module_qmltyperegistrations.i
+
+# target to preprocess a source file
+styles_module_qmltyperegistrations.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/styles_module_qmltyperegistrations.cpp.i
+.PHONY : styles_module_qmltyperegistrations.cpp.i
+
+styles_module_qmltyperegistrations.s: styles_module_qmltyperegistrations.cpp.s
+.PHONY : styles_module_qmltyperegistrations.s
+
+# target to generate assembly for a file
+styles_module_qmltyperegistrations.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_module.dir/build.make CMakeFiles/styles_module.dir/styles_module_qmltyperegistrations.cpp.s
+.PHONY : styles_module_qmltyperegistrations.cpp.s
+
+styles_moduleplugin_autogen/mocs_compilation.o: styles_moduleplugin_autogen/mocs_compilation.cpp.o
+.PHONY : styles_moduleplugin_autogen/mocs_compilation.o
+
+# target to build an object file
+styles_moduleplugin_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin.dir/build.make CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_autogen/mocs_compilation.cpp.o
+.PHONY : styles_moduleplugin_autogen/mocs_compilation.cpp.o
+
+styles_moduleplugin_autogen/mocs_compilation.i: styles_moduleplugin_autogen/mocs_compilation.cpp.i
+.PHONY : styles_moduleplugin_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+styles_moduleplugin_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin.dir/build.make CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_autogen/mocs_compilation.cpp.i
+.PHONY : styles_moduleplugin_autogen/mocs_compilation.cpp.i
+
+styles_moduleplugin_autogen/mocs_compilation.s: styles_moduleplugin_autogen/mocs_compilation.cpp.s
+.PHONY : styles_moduleplugin_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+styles_moduleplugin_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin.dir/build.make CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_autogen/mocs_compilation.cpp.s
+.PHONY : styles_moduleplugin_autogen/mocs_compilation.cpp.s
+
+styles_moduleplugin_init.o: styles_moduleplugin_init.cpp.o
+.PHONY : styles_moduleplugin_init.o
+
+# target to build an object file
+styles_moduleplugin_init.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin_init.dir/build.make CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init.cpp.o
+.PHONY : styles_moduleplugin_init.cpp.o
+
+styles_moduleplugin_init.i: styles_moduleplugin_init.cpp.i
+.PHONY : styles_moduleplugin_init.i
+
+# target to preprocess a source file
+styles_moduleplugin_init.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin_init.dir/build.make CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init.cpp.i
+.PHONY : styles_moduleplugin_init.cpp.i
+
+styles_moduleplugin_init.s: styles_moduleplugin_init.cpp.s
+.PHONY : styles_moduleplugin_init.s
+
+# target to generate assembly for a file
+styles_moduleplugin_init.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin_init.dir/build.make CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init.cpp.s
+.PHONY : styles_moduleplugin_init.cpp.s
+
+styles_moduleplugin_init_autogen/mocs_compilation.o: styles_moduleplugin_init_autogen/mocs_compilation.cpp.o
+.PHONY : styles_moduleplugin_init_autogen/mocs_compilation.o
+
+# target to build an object file
+styles_moduleplugin_init_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin_init.dir/build.make CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init_autogen/mocs_compilation.cpp.o
+.PHONY : styles_moduleplugin_init_autogen/mocs_compilation.cpp.o
+
+styles_moduleplugin_init_autogen/mocs_compilation.i: styles_moduleplugin_init_autogen/mocs_compilation.cpp.i
+.PHONY : styles_moduleplugin_init_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+styles_moduleplugin_init_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin_init.dir/build.make CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init_autogen/mocs_compilation.cpp.i
+.PHONY : styles_moduleplugin_init_autogen/mocs_compilation.cpp.i
+
+styles_moduleplugin_init_autogen/mocs_compilation.s: styles_moduleplugin_init_autogen/mocs_compilation.cpp.s
+.PHONY : styles_moduleplugin_init_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+styles_moduleplugin_init_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin_init.dir/build.make CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init_autogen/mocs_compilation.cpp.s
+.PHONY : styles_moduleplugin_init_autogen/mocs_compilation.cpp.s
+
+styles_moduleplugin_stylesPlugin.o: styles_moduleplugin_stylesPlugin.cpp.o
+.PHONY : styles_moduleplugin_stylesPlugin.o
+
+# target to build an object file
+styles_moduleplugin_stylesPlugin.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin.dir/build.make CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.o
+.PHONY : styles_moduleplugin_stylesPlugin.cpp.o
+
+styles_moduleplugin_stylesPlugin.i: styles_moduleplugin_stylesPlugin.cpp.i
+.PHONY : styles_moduleplugin_stylesPlugin.i
+
+# target to preprocess a source file
+styles_moduleplugin_stylesPlugin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin.dir/build.make CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.i
+.PHONY : styles_moduleplugin_stylesPlugin.cpp.i
+
+styles_moduleplugin_stylesPlugin.s: styles_moduleplugin_stylesPlugin.cpp.s
+.PHONY : styles_moduleplugin_stylesPlugin.s
+
+# target to generate assembly for a file
+styles_moduleplugin_stylesPlugin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/styles_moduleplugin.dir/build.make CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_stylesPlugin.cpp.s
+.PHONY : styles_moduleplugin_stylesPlugin.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1179,6 +1714,7 @@ help:
 	@echo "... all_qmllint_module"
 	@echo "... all_qmltyperegistrations"
 	@echo "... module_noah_planner_aotstats_target"
+	@echo "... module_styles_module_aotstats_target"
 	@echo "... noah_planner_autogen"
 	@echo "... noah_planner_autogen_timestamp_deps"
 	@echo "... noah_planner_copy_qml"
@@ -1188,10 +1724,25 @@ help:
 	@echo "... noah_planner_qmllint_json"
 	@echo "... noah_planner_qmllint_module"
 	@echo "... noah_planner_qmltyperegistration"
+	@echo "... styles_module_autogen"
+	@echo "... styles_module_autogen_timestamp_deps"
+	@echo "... styles_module_copy_qml"
+	@echo "... styles_module_copy_res"
+	@echo "... styles_module_qmllint"
+	@echo "... styles_module_qmllint_json"
+	@echo "... styles_module_qmllint_module"
+	@echo "... styles_module_qmltyperegistration"
+	@echo "... styles_moduleplugin_autogen"
+	@echo "... styles_moduleplugin_autogen_timestamp_deps"
+	@echo "... styles_moduleplugin_init_autogen"
+	@echo "... styles_moduleplugin_init_autogen_timestamp_deps"
 	@echo "... noah_planner"
-	@echo "... build/.qt/rcc/qrc_font_assets.o"
-	@echo "... build/.qt/rcc/qrc_font_assets.i"
-	@echo "... build/.qt/rcc/qrc_font_assets.s"
+	@echo "... styles_module"
+	@echo "... styles_module_resources_1"
+	@echo "... styles_module_resources_2"
+	@echo "... styles_module_resources_3"
+	@echo "... styles_moduleplugin"
+	@echo "... styles_moduleplugin_init"
 	@echo "... build/.qt/rcc/qrc_noah_planner_raw_qml_0.o"
 	@echo "... build/.qt/rcc/qrc_noah_planner_raw_qml_0.i"
 	@echo "... build/.qt/rcc/qrc_noah_planner_raw_qml_0.s"
@@ -1201,6 +1752,24 @@ help:
 	@echo "... build/.qt/rcc/qrc_qmake_NoahPlanner.o"
 	@echo "... build/.qt/rcc/qrc_qmake_NoahPlanner.i"
 	@echo "... build/.qt/rcc/qrc_qmake_NoahPlanner.s"
+	@echo "... build/.qt/rcc/qrc_qmake_styles.o"
+	@echo "... build/.qt/rcc/qrc_qmake_styles.i"
+	@echo "... build/.qt/rcc/qrc_qmake_styles.s"
+	@echo "... build/.qt/rcc/qrc_qmake_styles_init.o"
+	@echo "... build/.qt/rcc/qrc_qmake_styles_init.i"
+	@echo "... build/.qt/rcc/qrc_qmake_styles_init.s"
+	@echo "... build/.qt/rcc/qrc_styles_module_raw_qml_0.o"
+	@echo "... build/.qt/rcc/qrc_styles_module_raw_qml_0.i"
+	@echo "... build/.qt/rcc/qrc_styles_module_raw_qml_0.s"
+	@echo "... build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.o"
+	@echo "... build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.i"
+	@echo "... build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs.s"
+	@echo "... build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.o"
+	@echo "... build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.i"
+	@echo "... build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.s"
+	@echo "... build/.qt/rcc/qrc_styles_module_raw_qml_0_init.o"
+	@echo "... build/.qt/rcc/qrc_styles_module_raw_qml_0_init.i"
+	@echo "... build/.qt/rcc/qrc_styles_module_raw_qml_0_init.s"
 	@echo "... build/.rcc/qmlcache/noah_planner_qmlcache_loader.o"
 	@echo "... build/.rcc/qmlcache/noah_planner_qmlcache_loader.i"
 	@echo "... build/.rcc/qmlcache/noah_planner_qmlcache_loader.s"
@@ -1246,9 +1815,6 @@ help:
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.o"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.i"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.s"
-	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.o"
-	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.i"
-	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.s"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.o"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.i"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.s"
@@ -1261,6 +1827,12 @@ help:
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.o"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.i"
 	@echo "... build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.s"
+	@echo "... build/.rcc/qmlcache/styles_module_qmlcache_loader.o"
+	@echo "... build/.rcc/qmlcache/styles_module_qmlcache_loader.i"
+	@echo "... build/.rcc/qmlcache/styles_module_qmlcache_loader.s"
+	@echo "... build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.o"
+	@echo "... build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.i"
+	@echo "... build/.rcc/qmlcache/styles_module_src/ui/qml/styles/ThemeStore_qml.s"
 	@echo "... noah_planner_autogen/mocs_compilation.o"
 	@echo "... noah_planner_autogen/mocs_compilation.i"
 	@echo "... noah_planner_autogen/mocs_compilation.s"
@@ -1288,6 +1860,24 @@ help:
 	@echo "... src/ui/PlannerBackend.o"
 	@echo "... src/ui/PlannerBackend.i"
 	@echo "... src/ui/PlannerBackend.s"
+	@echo "... styles_module_autogen/mocs_compilation.o"
+	@echo "... styles_module_autogen/mocs_compilation.i"
+	@echo "... styles_module_autogen/mocs_compilation.s"
+	@echo "... styles_module_qmltyperegistrations.o"
+	@echo "... styles_module_qmltyperegistrations.i"
+	@echo "... styles_module_qmltyperegistrations.s"
+	@echo "... styles_moduleplugin_autogen/mocs_compilation.o"
+	@echo "... styles_moduleplugin_autogen/mocs_compilation.i"
+	@echo "... styles_moduleplugin_autogen/mocs_compilation.s"
+	@echo "... styles_moduleplugin_init.o"
+	@echo "... styles_moduleplugin_init.i"
+	@echo "... styles_moduleplugin_init.s"
+	@echo "... styles_moduleplugin_init_autogen/mocs_compilation.o"
+	@echo "... styles_moduleplugin_init_autogen/mocs_compilation.i"
+	@echo "... styles_moduleplugin_init_autogen/mocs_compilation.s"
+	@echo "... styles_moduleplugin_stylesPlugin.o"
+	@echo "... styles_moduleplugin_stylesPlugin.i"
+	@echo "... styles_moduleplugin_stylesPlugin.s"
 .PHONY : help
 
 

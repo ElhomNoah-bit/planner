@@ -1,0 +1,8 @@
+module styles
+linktarget styles_moduleplugin
+optional plugin styles_moduleplugin
+classname stylesPlugin
+typeinfo styles_module.qmltypes
+prefer :/qt/qml/styles/
+singleton ThemeStore 1.0 src/ui/qml/styles/ThemeStore.qml
+

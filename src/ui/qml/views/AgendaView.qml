@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import "../styles" as Styles
+import styles 1.0 as Styles
 
 Flickable {
     id: root
@@ -13,7 +13,7 @@ Flickable {
 
     readonly property var theme: Styles.ThemeStore
     readonly property var colors: theme ? theme.colors : null
-    readonly property var space: theme ? theme.space : null
+    readonly property var gap: theme ? theme.gap : null
     readonly property var radii: theme ? theme.radii : null
     readonly property var typeScale: theme ? theme.type : null
     readonly property var layout: theme ? theme.layout : null
@@ -21,38 +21,38 @@ Flickable {
     Column {
         id: contentItem
         width: root.width
-        spacing: space ? space.gap20 : 20
+    spacing: gap ? gap.g24 : 24
         anchors.margins: 0
 
         Repeater {
             model: root.buckets
             delegate: GlassPanel {
                 width: parent.width
-                padding: space ? space.gap20 : 20
+                padding: gap ? gap.g16 : 16
 
                 Column {
                     width: parent.width
-                    spacing: space ? space.gap16 : 16
+                    spacing: gap ? gap.g16 : 16
 
                     Text {
                         text: modelData.label
-                        font.pixelSize: typeScale ? typeScale.lg : 18
-                        font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
-                        font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                        color: colors ? colors.text : "#FFFFFF"
+                        font.pixelSize: typeScale ? typeScale.lg : 16
+                        font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                        font.family: Styles.ThemeStore.fonts.uiFallback
+                        color: colors ? colors.text : "#F2F5F9"
                         renderType: Text.NativeRendering
                     }
 
                     Column {
-                        spacing: space ? space.gap12 : 12
+                        spacing: gap ? gap.g12 : 12
                         Repeater {
                             model: modelData.items
                             delegate: GlassPanel {
-                                padding: space ? space.gap16 : 16
+                                padding: gap ? gap.g16 : 16
 
                                 RowLayout {
                                     anchors.fill: parent
-                                    spacing: space ? space.gap12 : 12
+                                    spacing: gap ? gap.g12 : 12
 
                                     Rectangle {
                                         width: 10
@@ -64,24 +64,24 @@ Flickable {
 
                                     ColumnLayout {
                                         Layout.fillWidth: true
-                                        spacing: space ? space.gap4 : 4
+                                        spacing: gap ? gap.g4 : 4
 
                                         Text {
                                             text: modelData.title
-                                            font.pixelSize: typeScale ? typeScale.md : 15
-                                            font.weight: typeScale ? typeScale.weightBold : Font.DemiBold
-                                            font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                                            color: colors ? colors.text : "#FFFFFF"
+                                            font.pixelSize: typeScale ? typeScale.md : 14
+                                            font.weight: typeScale ? typeScale.weightMedium : Font.Medium
+                                            font.family: Styles.ThemeStore.fonts.uiFallback
+                                            color: colors ? colors.text : "#F2F5F9"
                                             elide: Text.ElideRight
                                             renderType: Text.NativeRendering
                                         }
 
                                         Text {
                                             text: modelData.goal
-                                            font.pixelSize: typeScale ? typeScale.metaSize : 12
-                                            font.weight: typeScale ? typeScale.metaWeight : Font.Normal
-                                            font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                                            color: colors ? colors.textMuted : "#9AA3AF"
+                                            font.pixelSize: typeScale ? typeScale.metaSize : 11
+                                            font.weight: typeScale ? typeScale.weightRegular : Font.Normal
+                                            font.family: Styles.ThemeStore.fonts.uiFallback
+                                            color: colors ? colors.text2 : "#B7C0CC"
                                             elide: Text.ElideRight
                                             renderType: Text.NativeRendering
                                         }

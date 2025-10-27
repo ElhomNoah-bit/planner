@@ -28,8 +28,6 @@ file(REMOVE_RECURSE
   ".rcc/qmlcache/noah_planner_src/ui/qml/components/Toast_qml.cpp.aotstats"
   ".rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp"
   ".rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp.aotstats"
-  ".rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp"
-  ".rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.aotstats"
   ".rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp"
   ".rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp.aotstats"
   ".rcc/qmlcache/noah_planner_src/ui/qml/views/MonthView_qml.cpp"

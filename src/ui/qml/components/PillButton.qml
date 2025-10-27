@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import "../styles" as Styles
+import styles 1.0 as Styles
 
 Button {
     id: btn
@@ -9,41 +9,45 @@ Button {
     flat: true
     hoverEnabled: true
     padding: 0
-    implicitHeight: (Styles.ThemeStore && Styles.ThemeStore.layout) ? Styles.ThemeStore.layout.pillH : 30
-    implicitWidth: Math.max(implicitHeight, contentItem.implicitWidth + 24)
+    implicitHeight: Styles.ThemeStore.layout.pillH
+    implicitWidth: Math.max(implicitHeight, contentItem.implicitWidth + (Styles.ThemeStore.gap.g16 * 2))
 
     readonly property var theme: Styles.ThemeStore
     readonly property var colors: theme ? theme.colors : null
-    readonly property var accent: theme ? theme.accent : null
-    readonly property var state: theme ? theme.state : null
-    readonly property var typeScale: theme ? theme.type : null
+    readonly property var gap: theme ? theme.gap : null
     readonly property var radii: theme ? theme.radii : null
+    readonly property var typeScale: theme ? theme.type : null
 
-    font.pixelSize: typeScale ? typeScale.sm : 14
-    font.weight: kind === "primary" ? (typeScale ? typeScale.weightBold : Font.DemiBold) : (typeScale ? typeScale.weightMedium : Font.Medium)
-    font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
+    font.pixelSize: typeScale ? typeScale.sm : 12
+    font.weight: kind === "primary" ? (typeScale ? typeScale.weightBold : Font.Bold)
+                                     : (typeScale ? typeScale.weightMedium : Font.Medium)
+    font.family: Styles.ThemeStore.fonts.uiFallback
 
     background: Rectangle {
-        radius: radii ? radii.xl : 22
+        id: frame
+        radius: radii ? radii.xl : 20
         color: btn.backgroundColor()
         border.color: btn.borderColor()
         border.width: btn.borderWidth()
-        Behavior on color { NumberAnimation { duration: 120; easing.type: Easing.InOutQuad } }
-        Behavior on border.color { ColorAnimation { duration: 120; easing.type: Easing.InOutQuad } }
+        implicitHeight: btn.implicitHeight
+
         Rectangle {
             anchors.fill: parent
             anchors.margins: -2
-            radius: (radii ? radii.xl : 22) + 2
+            radius: (radii ? radii.xl : 20) + 2
             border.width: btn.activeFocus ? 1 : 0
-            border.color: btn.activeFocus && accent ? accent.base : "transparent"
+            border.color: btn.activeFocus && colors ? colors.focus : "transparent"
             color: "transparent"
         }
+
+        Behavior on color { NumberAnimation { duration: 140; easing.type: Easing.InOutQuad } }
+        Behavior on border.color { ColorAnimation { duration: 140; easing.type: Easing.InOutQuad } }
     }
 
     contentItem: Row {
-        spacing: 8
+        spacing: gap ? gap.g8 : 8
         anchors.centerIn: parent
-        anchors.margins: 10
+        anchors.margins: gap ? gap.g12 : 12
 
         IconGlyph {
             id: iconGlyph
@@ -66,47 +70,52 @@ Button {
     }
 
     function backgroundColor() {
+        if (!colors) {
+            return kind === "primary" ? "#0A84FF" : (kind === "ghost" ? "transparent" : "#1F232C")
+        }
         if (kind === "primary") {
-            return down ? Qt.darker(accent ? accent.base : "#0A84FF", 1.2) : (accent ? accent.base : "#0A84FF")
+            return down ? Qt.darker(colors.accent, 1.1) : colors.accent
         }
         if (kind === "ghost") {
-            if (checked) return accent ? accent.bg : Qt.rgba(0.04, 0.35, 0.84, 0.18)
-            if (down) return state ? state.press : Qt.rgba(1, 1, 1, 0.18)
-            if (hovered) return state ? state.hover : Qt.rgba(1, 1, 1, 0.1)
+            if (checked) return colors.accentBg
+            if (down) return colors.press
+            if (hovered) return colors.hover
             return "transparent"
         }
-        const base = colors ? colors.pillBg : Qt.rgba(0.12, 0.13, 0.18, 0.9)
-        if (checked) return accent ? accent.bg : Qt.rgba(0.04, 0.35, 0.84, 0.18)
-        if (down) return Qt.darker(base, 1.3)
-        if (hovered) return Qt.darker(base, 1.15)
-        return base
+        // neutral
+        if (checked) return colors.accentBg
+        if (down) return Qt.darker(colors.cardBg, 1.1)
+        if (hovered) return colors.hover
+        return colors.cardBg
     }
 
     function borderColor() {
+        if (!colors) {
+            return kind === "primary" ? "transparent" : "#2A2F3A"
+        }
         if (kind === "primary") {
             return "transparent"
         }
         if (kind === "ghost") {
-            if (checked) return accent ? accent.base : "#0A84FF"
-            return "transparent"
+            return checked ? colors.accent : "transparent"
         }
-        if (checked) return accent ? accent.base : "#0A84FF"
-        return colors ? colors.pillBorder : Qt.rgba(0.28, 0.3, 0.36, 1)
+        return checked ? colors.accent : colors.divider
     }
 
     function borderWidth() {
-        return (kind === "primary" || kind === "ghost") ? 0 : 1
+        return (kind === "ghost" || kind === "primary") ? 0 : 1
     }
 
     function foregroundColor() {
+        if (!colors) {
+            return kind === "primary" ? "#0F1115" : "#F2F5F9"
+        }
         if (kind === "primary") {
-            return "#0B0C0F"
+            return colors.appBg
         }
         if (kind === "ghost") {
-            if (checked) return accent ? accent.base : "#0A84FF"
-            return colors ? colors.text : "#FFFFFF"
+            return checked ? colors.accent : colors.text
         }
-        if (checked) return accent ? accent.base : "#0A84FF"
-        return colors ? colors.text : "#FFFFFF"
+        return checked ? colors.accent : colors.text
     }
 }

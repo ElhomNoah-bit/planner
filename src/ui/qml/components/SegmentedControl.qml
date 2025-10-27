@@ -1,5 +1,5 @@
 import QtQuick
-import "../styles" as Styles
+import styles 1.0 as Styles
 
 Item {
     id: root
@@ -10,45 +10,41 @@ Item {
     ]
     property string value: options.length > 0 ? options[0].value : ""
 
-    implicitHeight: 40
-    implicitWidth: 240
+    implicitHeight: Styles.ThemeStore.layout.pillH
+    implicitWidth: 260
 
     readonly property var theme: Styles.ThemeStore
     readonly property var colors: theme ? theme.colors : null
-    readonly property var accent: theme ? theme.accent : null
-    readonly property var state: theme ? theme.state : null
+    readonly property var gap: theme ? theme.gap : null
     readonly property var radii: theme ? theme.radii : null
     readonly property var typeScale: theme ? theme.type : null
 
     Rectangle {
+        id: track
         anchors.fill: parent
-        radius: radii ? radii.xl : 22
-        color: colors ? colors.pillBg : Qt.rgba(0.12, 0.13, 0.18, 0.9)
-        border.color: colors ? colors.pillBorder : Qt.rgba(0.28, 0.3, 0.36, 1)
+        radius: radii ? radii.xl : 20
+        color: colors ? colors.hover : Qt.rgba(1, 1, 1, 0.12)
+        border.color: colors ? colors.divider : Qt.rgba(1, 1, 1, 0.18)
         border.width: 1
     }
 
     Rectangle {
         id: indicator
         anchors.verticalCenter: parent.verticalCenter
-        width: root.options.length > 0 ? (parent.width - 8) / root.options.length : 0
-        height: parent.height - 8
-        radius: radii ? radii.xl : 22
-        color: accent ? accent.base : "#0A84FF"
+        width: root.options.length > 0 ? (parent.width - (gap ? gap.g8 : 8)) / root.options.length : 0
+        height: parent.height - (gap ? gap.g8 : 8)
+        radius: radii ? radii.xl : 20
+        color: colors ? colors.accent : "#0A84FF"
         visible: root.options.length > 0
-        x: 4 + currentIndex() * width
-        Behavior on x {
-            NumberAnimation { duration: 140; easing.type: Easing.InOutQuad }
-        }
-        Behavior on width {
-            NumberAnimation { duration: 140; easing.type: Easing.InOutQuad }
-        }
+        x: (gap ? gap.g4 : 4) + currentIndex() * width
+        Behavior on x { NumberAnimation { duration: 140; easing.type: Easing.InOutQuad } }
+        Behavior on width { NumberAnimation { duration: 140; easing.type: Easing.InOutQuad } }
     }
 
     Row {
         id: row
         anchors.fill: parent
-        anchors.margins: 4
+        anchors.margins: gap ? gap.g4 : 4
         spacing: 0
         Repeater {
             model: root.options
@@ -56,37 +52,27 @@ Item {
                 width: row.width / Math.max(1, root.options.length)
                 height: row.height
                 property var option: modelData
-                property bool hovered: false
-
-                MouseArea {
-                    anchors.fill: parent
-                    hoverEnabled: true
-                    onEntered: parent.hovered = true
-                    onExited: parent.hovered = false
-                    onClicked: {
+                HoverHandler { id: hover }
+                TapHandler {
+                    acceptedButtons: Qt.LeftButton
+                    onTapped: {
                         if (root.value !== option.value) {
                             root.value = option.value
                         }
                     }
                 }
 
-                Rectangle {
-                    anchors.fill: parent
-                    radius: radii ? radii.xl : 22
-                    color: parent.hovered && root.value !== option.value
-                        ? (state ? state.hover : Qt.rgba(1, 1, 1, 0.12))
-                        : "transparent"
-                }
-
                 Text {
                     anchors.centerIn: parent
                     text: option.label
-                    font.pixelSize: typeScale ? typeScale.sm : 14
+                    font.pixelSize: typeScale ? typeScale.sm : 12
                     font.weight: root.value === option.value
-                        ? (typeScale ? typeScale.weightBold : Font.DemiBold)
+                        ? (typeScale ? typeScale.weightBold : Font.Bold)
                         : (typeScale ? typeScale.weightMedium : Font.Medium)
-                    font.family: Qt.application.font && Qt.application.font.family.length ? Qt.application.font.family : "Inter"
-                    color: root.value === option.value ? "#0B0C0F" : (colors ? colors.textMuted : "#9AA3AF")
+                    font.family: Styles.ThemeStore.fonts.uiFallback
+                    color: root.value === option.value
+                        ? (colors ? colors.appBg : "#0F1115")
+                        : (hover.hovered ? (colors ? colors.text : "#F2F5F9") : (colors ? colors.text2 : "#B7C0CC"))
                     renderType: Text.NativeRendering
                 }
             }
