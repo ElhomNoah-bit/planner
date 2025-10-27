@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   ".qt/rcc/qrc_noah_planner_raw_qml_0.cpp"
+  ".qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp"
   ".qt/rcc/qrc_qmake_NoahPlanner.cpp"
   ".rcc/qmlcache/noah_planner_qmlcache_loader.cpp"
   ".rcc/qmlcache/noah_planner_src/ui/qml/App_qml.cpp"
@@ -46,6 +47,8 @@ file(REMOVE_RECURSE
   "noah_planner_autogen"
   "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o"
   "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o.d"
+  "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o"
+  "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o.d"
   "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o"
   "CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o.d"
   "CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp.o"

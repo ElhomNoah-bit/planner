@@ -15,6 +15,7 @@ ApplicationWindow {
 
     Component.onCompleted: {
         NP.ThemeStore.dark = PlannerBackend.darkTheme
+        toasts.show("Hello, Noah!", 1200)
     }
 
     Connections {
@@ -31,6 +32,7 @@ ApplicationWindow {
     }
 
     ToastHost {
+        id: toasts
         anchors.fill: parent
     }
 }

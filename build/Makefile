@@ -393,6 +393,30 @@ build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.s
 .PHONY : build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.s
 
+build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.o: build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o
+.PHONY : build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.o
+
+# target to build an object file
+build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o
+.PHONY : build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o
+
+build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.i: build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.i
+.PHONY : build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.i
+
+# target to preprocess a source file
+build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.i
+.PHONY : build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.i
+
+build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.s: build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.s
+.PHONY : build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.s
+
+# target to generate assembly for a file
+build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.s
+.PHONY : build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.s
+
 build/.qt/rcc/qrc_qmake_NoahPlanner.o: build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o
 .PHONY : build/.qt/rcc/qrc_qmake_NoahPlanner.o
 
@@ -1144,6 +1168,9 @@ help:
 	@echo "... build/.qt/rcc/qrc_noah_planner_raw_qml_0.o"
 	@echo "... build/.qt/rcc/qrc_noah_planner_raw_qml_0.i"
 	@echo "... build/.qt/rcc/qrc_noah_planner_raw_qml_0.s"
+	@echo "... build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.o"
+	@echo "... build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.i"
+	@echo "... build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.s"
 	@echo "... build/.qt/rcc/qrc_qmake_NoahPlanner.o"
 	@echo "... build/.qt/rcc/qrc_qmake_NoahPlanner.i"
 	@echo "... build/.qt/rcc/qrc_qmake_NoahPlanner.s"

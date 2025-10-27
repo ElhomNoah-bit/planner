@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 1579,
+                        "durationMicroseconds": 3287,
                         "errorMessage": "Cannot retrieve a non-object type by ID: control",
                         "functionName": "backgroundColor",
                         "line": 48
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 118,
+                        "durationMicroseconds": 205,
                         "errorMessage": "Cannot retrieve a non-object type by ID: control",
                         "functionName": "borderColor",
                         "line": 68
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 22
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 219,
+                        "durationMicroseconds": 349,
                         "errorMessage": "method backgroundColor cannot be resolved.",
                         "functionName": "color",
                         "line": 23
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 164,
+                        "durationMicroseconds": 257,
                         "errorMessage": "method borderColor cannot be resolved.",
                         "functionName": "color",
                         "line": 24
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 14,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot access value for name control",
                         "functionName": "spacing",
                         "line": 30
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 12,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "centerIn",
                         "line": 29
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot access value for name iconGlyph",
                         "functionName": "visible",
                         "line": 33
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 80,
                         "errorMessage": "Cannot access value for name control",
                         "functionName": "tint",
                         "line": 35
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 51,
                         "errorMessage": "Cannot access value for name control",
                         "functionName": "muted",
                         "line": 36
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name control",
                         "functionName": "text",
                         "line": 40
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 18,
                         "errorMessage": "Cannot access value for name text",
                         "functionName": "visible",
                         "line": 41
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot access value for name control",
                         "functionName": "font",
                         "line": 42
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 75,
                         "errorMessage": "Cannot access value for name control",
                         "functionName": "color",
                         "line": 43
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 163,
+                        "durationMicroseconds": 262,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "verticalAlignment",
                         "line": 44

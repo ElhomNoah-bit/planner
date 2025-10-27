@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 844,
+                        "durationMicroseconds": 860,
                         "errorMessage": "",
                         "functionName": "darkPalette",
                         "line": 7
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 41,
-                        "durationMicroseconds": 966,
+                        "durationMicroseconds": 961,
                         "errorMessage": "",
                         "functionName": "lightPalette",
                         "line": 20
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 245,
+                        "durationMicroseconds": 247,
                         "errorMessage": "",
                         "functionName": "radii",
                         "line": 33
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 231,
+                        "durationMicroseconds": 221,
                         "errorMessage": "",
                         "functionName": "spacing",
                         "line": 40
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 151,
+                        "durationMicroseconds": 1399,
                         "errorMessage": "",
                         "functionName": "blur",
                         "line": 47
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 358,
+                        "durationMicroseconds": 368,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "fonts",
                         "line": 52
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 448,
+                        "durationMicroseconds": 483,
                         "errorMessage": "",
                         "functionName": "typography",
                         "line": 64
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 171,
+                        "durationMicroseconds": 166,
                         "errorMessage": "",
                         "functionName": "palette",
                         "line": 75
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot load property bg from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
                         "functionName": "bg",
                         "line": 76
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot load property panel from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
                         "functionName": "panel",
                         "line": 77
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot load property text from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
                         "functionName": "text",
                         "line": 79

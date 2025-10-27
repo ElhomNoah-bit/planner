@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 84,
+                        "durationMicroseconds": 154,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onCompleted",
                         "line": 16
@@ -22,34 +22,34 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 91,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "target",
-                        "line": 21
+                        "line": 22
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 80,
+                        "durationMicroseconds": 135,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onDarkThemeChanged",
-                        "line": 22
+                        "line": 23
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 30
+                        "line": 31
                     },
                     {
-                        "codegenSuccessful": false,
+                        "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"fill\".",
+                        "durationMicroseconds": 62,
+                        "errorMessage": "",
                         "functionName": "fill",
-                        "line": 34
+                        "line": 36
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/App.qml"

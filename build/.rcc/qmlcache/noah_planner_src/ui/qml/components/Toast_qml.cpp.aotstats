@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 13,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 61,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 12
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 14,
-                        "durationMicroseconds": 263,
+                        "durationMicroseconds": 206,
                         "errorMessage": "",
                         "functionName": "opacity",
                         "line": 14
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 343,
+                        "durationMicroseconds": 264,
                         "errorMessage": "",
                         "functionName": "onVisibleChanged",
                         "line": 35
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 131,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 17
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 15,
-                        "durationMicroseconds": 127,
+                        "durationMicroseconds": 99,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 22
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot load property text from const QMetaObject.",
                         "functionName": "color",
                         "line": 25
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 69,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 21
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 122,
+                        "durationMicroseconds": 99,
                         "errorMessage": "",
                         "functionName": "interval",
                         "line": 30
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 161,
+                        "durationMicroseconds": 138,
                         "errorMessage": "",
                         "functionName": "onTriggered",
                         "line": 32

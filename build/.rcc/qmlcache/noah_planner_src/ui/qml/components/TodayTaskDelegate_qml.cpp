@@ -1,4 +1,4 @@
-// /NoahPlanner/src/ui/qml/components/TodayTaskDelegate.qml
+// /qt/qml/NoahPlanner/src/ui/qml/components/TodayTaskDelegate.qml
 #include <QtQml/qqmlprivate.h>
 #include <QtCore/qalgorithms.h>
 #include <QtCore/qcoreapplication.h>
@@ -21,7 +21,7 @@
 #include <limits>
 #include <type_traits>
 namespace QmlCacheGeneratedCode {
-namespace _0x5f_NoahPlanner_src_ui_qml_components_TodayTaskDelegate_qml {
+namespace _qt_qml_NoahPlanner_src_ui_qml_components_TodayTaskDelegate_qml {
 extern const unsigned char qmlData alignas(16) [];
 extern const unsigned char qmlData alignas(16) [] = {
 

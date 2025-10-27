@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 49,
                         "errorMessage": "Cannot retrieve a non-object type by ID: input",
                         "functionName": "focusInput",
                         "line": 11
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 24
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 4417,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 19
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 58,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot load property accent from const QMetaObject.",
                         "functionName": "color",
                         "line": 34

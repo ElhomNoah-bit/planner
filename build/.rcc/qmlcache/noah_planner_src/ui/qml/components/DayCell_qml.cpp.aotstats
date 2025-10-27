@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 136,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "events",
                         "line": 10
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 406,
+                        "durationMicroseconds": 403,
                         "errorMessage": "",
                         "functionName": "dateObject",
                         "line": 17
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 123,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "dayNumber",
                         "line": 18
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 281,
+                        "durationMicroseconds": 276,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "visibleEvents",
                         "line": 96
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 59,
                         "errorMessage": "Cannot load property length from conversion to QVariant.",
                         "functionName": "extraCount",
                         "line": 97
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 1652,
+                        "durationMicroseconds": 2571,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 22
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 85,
                         "errorMessage": "Cannot access value for name selected",
                         "functionName": "color",
                         "line": 23
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 371,
+                        "durationMicroseconds": 79,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 21
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot access value for name selected",
                         "functionName": "width",
                         "line": 25
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot access value for name selected",
                         "functionName": "visible",
                         "line": 30
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 31
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 242,
+                        "durationMicroseconds": 1678,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 36
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 181,
+                        "durationMicroseconds": 172,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 39
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 2170,
+                        "durationMicroseconds": 126,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 33
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 120,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 34
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot load property accent from const QMetaObject.",
                         "functionName": "color",
                         "line": 37
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 197,
+                        "durationMicroseconds": 118,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 43
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot load property accent from const QMetaObject.",
                         "functionName": "color",
                         "line": 47
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 42
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 2096,
                         "errorMessage": "Cannot load property typography from const QMetaObject.",
                         "functionName": "pixelSize",
                         "line": 44
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot load property typography from const QMetaObject.",
                         "functionName": "weight",
                         "line": 45
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 15,
-                        "durationMicroseconds": 140,
+                        "durationMicroseconds": 110,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 57
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 120,
+                        "durationMicroseconds": 107,
                         "errorMessage": "Cannot load property accent from const QMetaObject.",
                         "functionName": "color",
                         "line": 61
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 130,
+                        "durationMicroseconds": 117,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 53
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 110,
+                        "durationMicroseconds": 114,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 54
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 45,
                         "errorMessage": "Cannot load property typography from const QMetaObject.",
                         "functionName": "pixelSize",
                         "line": 58
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot load property typography from const QMetaObject.",
                         "functionName": "weight",
                         "line": 59
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 117,
+                        "durationMicroseconds": 129,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 66
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 404,
+                        "durationMicroseconds": 143,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 67
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 120,
+                        "durationMicroseconds": 131,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 68
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 139,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 69
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 44,
                         "errorMessage": "Cannot access value for name visibleEvents",
                         "functionName": "model",
                         "line": 74
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 279,
+                        "durationMicroseconds": 289,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "label",
                         "line": 76
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 289,
+                        "durationMicroseconds": 265,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "subjectColor",
                         "line": 77
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 47,
                         "errorMessage": "Cannot access value for name list",
                         "functionName": "width",
                         "line": 78
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot access value for name extraCount",
                         "functionName": "visible",
                         "line": 82
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name extraCount",
                         "functionName": "label",
                         "line": 83
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot load property accent from const QMetaObject.",
                         "functionName": "subjectColor",
                         "line": 85
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 96,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 86
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 108,
                         "errorMessage": "",
                         "functionName": "cursorShape",
                         "line": 92
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 79,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 91

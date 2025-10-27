@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 10513,
+                        "durationMicroseconds": 5188,
                         "errorMessage": "Cannot load property text from const QMetaObject.",
                         "functionName": "tint",
                         "line": 7
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 69,
                         "errorMessage": "Cannot load property muted from const QMetaObject.",
                         "functionName": "color",
                         "line": 11
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 11,
-                        "durationMicroseconds": 6400,
+                        "durationMicroseconds": 164,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "text",
                         "line": 15
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 108,
+                        "durationMicroseconds": 95,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 16
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 79,
                         "errorMessage": "",
                         "functionName": "verticalAlignment",
                         "line": 17
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 529,
+                        "durationMicroseconds": 2888,
                         "errorMessage": "",
                         "functionName": "glyphMap",
                         "line": 19
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 280,
+                        "durationMicroseconds": 307,
                         "errorMessage": "",
                         "functionName": "materialMap",
                         "line": 44
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 78,
+                        "durationMicroseconds": 99,
                         "errorMessage": "",
                         "functionName": "pixelSize",
                         "line": 12
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 106,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 13

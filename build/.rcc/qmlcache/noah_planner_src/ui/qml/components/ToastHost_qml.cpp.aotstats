@@ -4,60 +4,124 @@
             {
                 "entries": [
                     {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "show",
+                        "line": 9
+                    },
+                    {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 91,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 6
                     },
                     {
-                        "codegenSuccessful": false,
-                        "column": 18,
-                        "durationMicroseconds": 46,
-                        "errorMessage": "Cannot access value for name currentMessage",
-                        "functionName": "visible",
-                        "line": 14
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 18,
-                        "durationMicroseconds": 25,
-                        "errorMessage": "Cannot access value for name currentMessage",
-                        "functionName": "message",
-                        "line": 15
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 159,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 26
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 27,
-                        "durationMicroseconds": 233,
+                        "column": 17,
+                        "durationMicroseconds": 99,
                         "errorMessage": "",
-                        "functionName": "onVisibleChanged",
-                        "line": 16
+                        "functionName": "height",
+                        "line": 27
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 122,
+                        "durationMicroseconds": 75,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
-                        "line": 11
+                        "line": 23
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 111,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "bottom",
-                        "line": 12
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 57,
+                        "errorMessage": "",
+                        "functionName": "bottomMargin",
+                        "line": 25
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 57,
+                        "errorMessage": "",
+                        "functionName": "when",
+                        "line": 46
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 48
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 70,
+                        "errorMessage": "",
+                        "functionName": "when",
+                        "line": 38
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 51,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 40
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "",
+                        "functionName": "wrapMode",
+                        "line": 59
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 56
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 77,
+                        "errorMessage": "",
+                        "functionName": "onTriggered",
+                        "line": 65
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 127,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "target",
-                        "line": 24
+                        "line": 69
                     },
                     {
                         "codegenSuccessful": false,
@@ -65,7 +129,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "onToastRequested",
-                        "line": 25
+                        "line": 70
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/ToastHost.qml"

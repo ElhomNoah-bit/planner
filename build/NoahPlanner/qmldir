@@ -1,6 +1,6 @@
 module NoahPlanner
 typeinfo noah_planner.qmltypes
-prefer :/NoahPlanner/
+prefer :/qt/qml/NoahPlanner/
 App 1.0 src/ui/qml/App.qml
 Main 1.0 src/ui/qml/Main.qml
 DayCell 1.0 src/ui/qml/components/DayCell.qml

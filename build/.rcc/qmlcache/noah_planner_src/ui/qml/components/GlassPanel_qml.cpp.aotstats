@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 4050,
+                        "durationMicroseconds": 8813,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 7
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 2108,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "padding",
                         "line": 8
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot load property panel from const QMetaObject.",
                         "functionName": "tint",
                         "line": 10
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot load property border from const QMetaObject.",
                         "functionName": "stroke",
                         "line": 11
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 112,
+                        "durationMicroseconds": 140,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 17
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 127,
+                        "durationMicroseconds": 131,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 18
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 67,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 16
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 139,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 19
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 89,
                         "errorMessage": "",
                         "functionName": "enabled",
                         "line": 21
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 30
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "margins",
                         "line": 31

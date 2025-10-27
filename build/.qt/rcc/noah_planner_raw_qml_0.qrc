@@ -1,5 +1,5 @@
 <RCC>
-  <qresource prefix="/NoahPlanner/">
+  <qresource prefix="/qt/qml/NoahPlanner/">
     <file alias="src/ui/qml/App.qml">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/App.qml</file>
     <file alias="src/ui/qml/Main.qml">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/Main.qml</file>
     <file alias="src/ui/qml/components/DayCell.qml">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/DayCell.qml</file>

@@ -8,6 +8,9 @@ find_package(Qt6 6.5 COMPONENTS Quick Qml QuickControls2 QuickLayouts REQUIRED)
 
 qt_standard_project_setup()
 
+qt_policy(SET QTP0001 NEW)
+qt_policy(SET QTP0004 NEW)
+
 qt_add_executable(noah_planner
     src/main.cpp
     src/core/PlannerService.cpp
@@ -30,6 +33,7 @@ qt_add_executable(noah_planner
 qt_add_qml_module(noah_planner
     URI NoahPlanner
     VERSION 1.0
+    RESOURCE_PREFIX "/qt/qml"
     QML_FILES
         src/ui/qml/App.qml
         src/ui/qml/Main.qml
@@ -46,7 +50,7 @@ qt_add_qml_module(noah_planner
         src/ui/qml/components/ToastHost.qml
         src/ui/qml/components/TodayTaskDelegate.qml
         src/ui/qml/styles/ThemeStore.qml
-    src/ui/qml/views/AgendaView.qml
+        src/ui/qml/views/AgendaView.qml
         src/ui/qml/views/MonthView.qml
         src/ui/qml/views/SidebarToday.qml
         src/ui/qml/views/WeekView.qml
