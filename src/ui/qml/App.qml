@@ -18,6 +18,81 @@ ApplicationWindow {
     property bool onlyOpen: false
     property string searchQuery: ""
 
+    Shortcut {
+        id: shortcutCommandPalette
+        sequences: ["Ctrl+K", "Meta+K"]
+        enabled: app.visible
+        onActivated: app.openCommandPalette("")
+    }
+
+    Shortcut {
+        sequence: StandardKey.New
+        enabled: app.visible
+        onActivated: app.quickAddOpen()
+    }
+
+    Shortcut {
+        sequences: ["Ctrl+T", "Meta+T"]
+        enabled: app.visible
+        onActivated: app.goToday()
+    }
+
+    Shortcut {
+        sequences: ["Ctrl+1", "Meta+1"]
+        enabled: app.visible
+        onActivated: app.setViewMode("month")
+    }
+
+    Shortcut {
+        sequences: ["Ctrl+2", "Meta+2"]
+        enabled: app.visible
+        onActivated: app.setViewMode("week")
+    }
+
+    Shortcut {
+        sequences: ["Ctrl+3", "Meta+3"]
+        enabled: app.visible
+        onActivated: app.setViewMode("list")
+    }
+
+    FocusScope {
+        id: keyScope
+        anchors.fill: parent
+        focus: true
+        z: -1
+
+        Keys.onPressed: function(event) {
+            if (!visible || event.isAutoRepeat)
+                return
+            if (event.modifiers !== Qt.NoModifier)
+                return
+            switch (event.key) {
+            case Qt.Key_N:
+                app.quickAddOpen()
+                event.accepted = true
+                break
+            case Qt.Key_T:
+                app.goToday()
+                event.accepted = true
+                break
+            case Qt.Key_M:
+                app.setViewMode("month")
+                event.accepted = true
+                break
+            case Qt.Key_W:
+                app.setViewMode("week")
+                event.accepted = true
+                break
+            case Qt.Key_L:
+                app.setViewMode("list")
+                event.accepted = true
+                break
+            default:
+                break
+            }
+        }
+    }
+
     function syncState() {
         viewMode = PlannerBackend.viewMode
         onlyOpen = PlannerBackend.onlyOpen
@@ -60,6 +135,10 @@ ApplicationWindow {
 
     function createQuickItem(value) {
         PlannerBackend.quickAdd(value)
+    }
+
+    function openSettings() {
+        settingsDialog.open()
     }
 
     function handleCommand(command) {
@@ -105,11 +184,13 @@ ApplicationWindow {
         RowLayout {
             id: topBar
             Layout.fillWidth: true
-            spacing: Styles.ThemeStore.gap.g16
+            spacing: Styles.ThemeStore.gap.g12
 
             SegmentedControl {
                 id: viewSwitch
                 Layout.preferredWidth: 320
+                Layout.preferredHeight: Styles.ThemeStore.layout.pillH
+                Layout.alignment: Qt.AlignVCenter
                 options: [
                     { "label": qsTr("Monat"), "value": "month" },
                     { "label": qsTr("Woche"), "value": "week" },
@@ -122,18 +203,21 @@ ApplicationWindow {
             PillButton {
                 text: qsTr("Heute")
                 kind: "ghost"
+                Layout.alignment: Qt.AlignVCenter
                 onClicked: app.goToday()
             }
 
             PillButton {
                 text: qsTr("+ Neu")
                 kind: "primary"
+                Layout.alignment: Qt.AlignVCenter
                 onClicked: app.quickAddOpen()
             }
 
             FilterPill {
                 label: qsTr("Nur offene")
                 active: app.onlyOpen
+                Layout.alignment: Qt.AlignVCenter
                 onToggled: app.toggleOnlyOpen(!app.onlyOpen)
             }
 
@@ -143,6 +227,7 @@ ApplicationWindow {
                 id: globalSearch
                 Layout.preferredWidth: 280
                 Layout.maximumWidth: 320
+                Layout.alignment: Qt.AlignVCenter
                 placeholderText: qsTr("Suchen (Ctrl/Cmd+K)…")
                 onAccepted: {
                     app.openCommandPalette(text)
@@ -175,7 +260,6 @@ ApplicationWindow {
     CommandPalette {
         id: commandPalette
         anchors.fill: parent
-        onCommandTriggered: command => app.handleCommand(command)
     }
 
     SettingsDialog {
@@ -205,42 +289,31 @@ ApplicationWindow {
     }
 
     Component.onCompleted: {
-        if (app.contentItem)
-            app.contentItem.forceActiveFocus()
         syncState()
+        Qt.callLater(() => keyScope.forceActiveFocus())
     }
 
-    Keys.onPressed: function(event) {
-        if (event.modifiers & (Qt.ControlModifier | Qt.MetaModifier)) {
-            if (event.key === Qt.Key_K) {
-                event.accepted = true
-                openCommandPalette("")
-                return
-            }
+    Connections {
+        target: commandPalette
+        function onVisibleChanged() {
+            if (!commandPalette.visible)
+                Qt.callLater(() => keyScope.forceActiveFocus())
         }
-        switch (event.key) {
-        case Qt.Key_N:
-            event.accepted = true
-            quickAddOpen()
-            break
-        case Qt.Key_T:
-            event.accepted = true
-            goToday()
-            break
-        case Qt.Key_M:
-            event.accepted = true
-            setViewMode("month")
-            break
-        case Qt.Key_W:
-            event.accepted = true
-            setViewMode("week")
-            break
-        case Qt.Key_L:
-            event.accepted = true
-            setViewMode("list")
-            break
-        default:
-            break
+    }
+
+    Connections {
+        target: quickAddDialog
+        function onVisibleChanged() {
+            if (!quickAddDialog.visible)
+                Qt.callLater(() => keyScope.forceActiveFocus())
+        }
+    }
+
+    Connections {
+        target: settingsDialog
+        function onVisibleChanged() {
+            if (!settingsDialog.visible)
+                Qt.callLater(() => keyScope.forceActiveFocus())
         }
     }
 }

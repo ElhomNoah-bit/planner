@@ -6,7 +6,8 @@ import NoahPlanner.Styles as Styles
 
 Item {
     id: root
-    anchors.fill: parent
+    implicitWidth: Styles.ThemeStore.layout.sidebarW * 2
+    implicitHeight: Styles.ThemeStore.layout.headerH + 640
 
     property string viewMode: "month"
     property bool onlyOpen: false

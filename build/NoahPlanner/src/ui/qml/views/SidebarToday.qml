@@ -6,8 +6,7 @@ import NoahPlanner.Styles as Styles
 
 Item {
     id: root
-    width: Styles.ThemeStore.layout.sidebarW
-    anchors.fill: parent
+    implicitWidth: Styles.ThemeStore.layout.sidebarW
     property string selectedIso: PlannerBackend.selectedDate
     property var summary: PlannerBackend.daySummary(selectedIso)
     signal startTimerRequested(int minutes)
@@ -24,12 +23,13 @@ Item {
         contentHeight: contentColumn.implicitHeight
         clip: true
 
-        Column {
+        ColumnLayout {
             id: contentColumn
             width: flick.width
             spacing: gaps.g16
 
             GlassPanel {
+                Layout.fillWidth: true
                 padding: gaps.g16
                 Column {
                     spacing: gaps.g8
@@ -55,6 +55,7 @@ Item {
             }
 
             GlassPanel {
+                Layout.fillWidth: true
                 padding: gaps.g16
                 Column {
                     spacing: gaps.g12
@@ -76,6 +77,7 @@ Item {
                         id: emptyTasks
                         visible: false
                         text: qsTr("Keine Einträge")
+                        width: parent.width
                         font.pixelSize: typeScale.sm
                         font.weight: typeScale.weightRegular
                         font.family: Styles.ThemeStore.fonts.body
@@ -87,6 +89,8 @@ Item {
             }
 
             GlassPanel {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
                 padding: gaps.g16
                 Column {
                     spacing: gaps.g12
@@ -108,6 +112,7 @@ Item {
                         id: emptyExams
                         visible: false
                         text: qsTr("Keine Einträge")
+                        width: parent.width
                         font.pixelSize: typeScale.sm
                         font.weight: typeScale.weightRegular
                         font.family: Styles.ThemeStore.fonts.body

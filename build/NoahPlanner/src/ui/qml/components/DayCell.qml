@@ -15,6 +15,7 @@ FocusScope {
     readonly property bool hovered: hoverHandler.hovered
     property var visibleEvents: (events || []).slice(0, maxVisible)
     property int extraCount: Math.max(0, (events || []).length - maxVisible)
+    readonly property color hoverFill: Qt.lighter(Styles.ThemeStore.colors.cardBg, 1.08)
 
     signal activated(string isoDate)
     signal contextCreateEvent(string isoDate)
@@ -32,12 +33,12 @@ FocusScope {
         anchors.fill: parent
         radius: Styles.ThemeStore.r12
         border.width: root.isToday ? 2 : 1
-        border.color: root.isToday
-                     ? Styles.ThemeStore.focus
-                     : (root.selected ? Styles.ThemeStore.accent : Styles.ThemeStore.divider)
-        color: root.selected
-               ? Styles.ThemeStore.accentBg
-               : (root.hovered ? Styles.ThemeStore.hover : Styles.ThemeStore.cardBg)
+     border.color: root.isToday
+            ? Styles.ThemeStore.colors.focus
+            : (root.selected ? Styles.ThemeStore.colors.accent : Styles.ThemeStore.colors.divider)
+     color: root.selected
+         ? Styles.ThemeStore.colors.accentBg
+         : (root.hovered ? hoverFill : Styles.ThemeStore.colors.cardBg)
         antialiasing: true
 
         Behavior on color {
@@ -65,7 +66,7 @@ FocusScope {
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.margins: Styles.ThemeStore.g12
-        font.pixelSize: Styles.ThemeStore.sm
+        font.pixelSize: Styles.ThemeStore.type.sm + 2
         font.family: Styles.ThemeStore.fonts.heading
         font.weight: root.isToday ? Styles.ThemeStore.type.weightBold : Styles.ThemeStore.type.weightMedium
         color: root.inMonth ? Styles.ThemeStore.colors.text : Styles.ThemeStore.colors.text2

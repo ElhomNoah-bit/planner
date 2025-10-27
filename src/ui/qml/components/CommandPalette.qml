@@ -13,25 +13,59 @@ Item {
 
     signal commandTriggered(string command)
 
-    property alias query: queryField.text
-    property int currentIndex: Math.max(0, listView.currentIndex)
-
-    readonly property var actions: [
-        { "label": qsTr("Heute"), "command": "go-today", "keywords": ["today", "heute", "jump"] },
-        { "label": qsTr("Neuer Eintrag"), "command": "new-item", "keywords": ["neu", "add", "task"] },
-        { "label": qsTr("Monatsansicht"), "command": "view-month", "keywords": ["month", "monats", "kalender"] },
-        { "label": qsTr("Wochenansicht"), "command": "view-week", "keywords": ["week", "woche"] },
-        { "label": qsTr("Listenansicht"), "command": "view-list", "keywords": ["list", "liste"] },
-        { "label": qsTr("Nur offene toggeln"), "command": "toggle-open", "keywords": ["open", "offen", "filter"] },
-        { "label": qsTr("Einstellungen"), "command": "open-settings", "keywords": ["settings", "einstellungen", "preferences"] }
+    property string queryText: ""
+    property var allActions: [
+        {
+            label: qsTr("Heute"),
+            command: "go-today",
+            keywords: ["today", "heute", "jump"],
+            run: function() { app.goToday() }
+        },
+        {
+            label: qsTr("Neuer Eintrag"),
+            command: "new-item",
+            keywords: ["neu", "add", "task"],
+            run: function() { app.quickAddOpen() }
+        },
+        {
+            label: qsTr("Ansicht: Monat"),
+            command: "view-month",
+            keywords: ["month", "monats", "kalender"],
+            run: function() { app.setViewMode("month") }
+        },
+        {
+            label: qsTr("Ansicht: Woche"),
+            command: "view-week",
+            keywords: ["week", "woche"],
+            run: function() { app.setViewMode("week") }
+        },
+        {
+            label: qsTr("Ansicht: Liste"),
+            command: "view-list",
+            keywords: ["list", "liste"],
+            run: function() { app.setViewMode("list") }
+        },
+        {
+            label: qsTr("Nur offene toggeln"),
+            command: "toggle-open",
+            keywords: ["open", "offen", "filter"],
+            run: function() { app.toggleOnlyOpen(!app.onlyOpen) }
+        },
+        {
+            label: qsTr("Einstellungen"),
+            command: "open-settings",
+            keywords: ["settings", "einstellungen", "preferences"],
+            run: function() { app.openSettings() }
+        }
     ]
 
-    property var filteredActions: actions
+    property var filteredActions: []
 
     function open(initialQuery) {
         palette.visible = true
-        query = initialQuery || ""
-        updateFilter()
+        palette.queryText = initialQuery || ""
+        queryField.text = palette.queryText
+        recompute()
         Qt.callLater(() => {
             queryField.selectAll()
             queryField.forceActiveFocus()
@@ -40,31 +74,47 @@ Item {
 
     function close() {
         palette.visible = false
+        queryField.text = ""
+        palette.queryText = ""
+        palette.recompute()
     }
 
-    function updateFilter() {
-        var term = queryField.text.trim().toLowerCase()
+    function recompute() {
+        var term = (palette.queryText || "").toLowerCase()
         if (!term.length) {
-            filteredActions = actions
-            listView.currentIndex = filteredActions.length > 0 ? 0 : -1
-            return
-        }
-        filteredActions = actions.filter(function(action) {
-            if (action.label.toLowerCase().indexOf(term) !== -1)
-                return true
-            for (var i = 0; i < action.keywords.length; ++i) {
-                if (action.keywords[i].indexOf(term) !== -1)
+            filteredActions = allActions.slice(0)
+        } else {
+            filteredActions = allActions.filter(function(action) {
+                if (!action)
+                    return false
+                var label = (action.label || "").toLowerCase()
+                if (label.indexOf(term) !== -1)
                     return true
-            }
-            return false
-        })
-        listView.currentIndex = filteredActions.length > 0 ? 0 : -1
+                var keys = action.keywords || []
+                for (var i = 0; i < keys.length; ++i) {
+                    if ((keys[i] || "").toLowerCase().indexOf(term) !== -1)
+                        return true
+                }
+                return false
+            })
+        }
+        if (listView)
+            listView.currentIndex = filteredActions.length > 0 ? 0 : -1
     }
 
-    function trigger(index) {
-        if (index < 0 || index >= filteredActions.length)
+    function trigger(actionOrIndex) {
+        var action = actionOrIndex
+        if (typeof actionOrIndex === "number") {
+            action = filteredActions.length > actionOrIndex && actionOrIndex >= 0
+                    ? filteredActions[actionOrIndex]
+                    : null
+        }
+        if (!action)
             return
-        commandTriggered(filteredActions[index].command)
+        if (action.run)
+            action.run()
+        if (action.command)
+            commandTriggered(action.command)
         close()
     }
 
@@ -74,11 +124,16 @@ Item {
             return
         if (event.key === Qt.Key_Down) {
             event.accepted = true
-            listView.currentIndex = Math.min(listView.count - 1, listView.currentIndex + 1)
+            if (listView.count === 0)
+                return
+            var maxIndex = listView.count - 1
+            listView.currentIndex = Math.min(maxIndex, Math.max(0, listView.currentIndex + 1))
             return
         }
         if (event.key === Qt.Key_Up) {
             event.accepted = true
+            if (listView.count === 0)
+                return
             listView.currentIndex = Math.max(0, listView.currentIndex - 1)
             return
         }
@@ -130,7 +185,10 @@ Item {
                     border.color: queryField.activeFocus ? Styles.ThemeStore.colors.focus : Styles.ThemeStore.colors.divider
                     border.width: queryField.activeFocus ? 2 : 1
                 }
-                onTextChanged: updateFilter()
+                onTextChanged: {
+                    palette.queryText = queryField.text
+                    palette.recompute()
+                }
             }
 
             ListView {
@@ -138,7 +196,7 @@ Item {
                 Layout.fillWidth: true
                 Layout.preferredHeight: Math.min(264, contentHeight)
                 clip: true
-                model: palette.filteredActions
+                model: palette.filteredActions || []
                 delegate: Control {
                     id: control
                     width: ListView.view.width
@@ -155,7 +213,7 @@ Item {
                         anchors.margins: Styles.ThemeStore.gap.g12
                         spacing: Styles.ThemeStore.gap.g12
                         Text {
-                            text: modelData.label
+                            text: modelData && modelData.label ? modelData.label : ""
                             font.pixelSize: Styles.ThemeStore.type.sm
                             font.weight: Styles.ThemeStore.type.weightMedium
                             font.family: Styles.ThemeStore.fonts.heading
@@ -164,7 +222,7 @@ Item {
                         }
                         Item { Layout.fillWidth: true }
                         Text {
-                            text: modelData.command
+                            text: modelData && modelData.command ? modelData.command : ""
                             font.pixelSize: Styles.ThemeStore.type.xs
                             font.weight: Styles.ThemeStore.type.weightRegular
                             font.family: Styles.ThemeStore.fonts.body
@@ -176,25 +234,21 @@ Item {
                         anchors.fill: parent
                         hoverEnabled: true
                         onEntered: listView.currentIndex = index
-                        onClicked: palette.trigger(index)
+                        onClicked: palette.trigger(modelData)
                     }
                 }
-                footer: Component {
-                    Item {
-                        width: ListView.view ? ListView.view.width : 0
-                        height: palette.filteredActions.length === 0 ? 56 : 0
-                        visible: palette.filteredActions.length === 0
-                        Text {
-                            anchors.centerIn: parent
-                            text: qsTr("Keine Treffer")
-                            font.pixelSize: Styles.ThemeStore.type.sm
-                            font.weight: Styles.ThemeStore.type.weightRegular
-                            font.family: Styles.ThemeStore.fonts.body
-                            color: Styles.ThemeStore.colors.text2
-                            renderType: Text.NativeRendering
-                        }
-                    }
-                }
+            }
+
+            Label {
+                Layout.fillWidth: true
+                horizontalAlignment: Text.AlignHCenter
+                visible: listView.count === 0
+                text: qsTr("Keine Treffer")
+                font.pixelSize: Styles.ThemeStore.type.sm
+                font.weight: Styles.ThemeStore.type.weightRegular
+                font.family: Styles.ThemeStore.fonts.body
+                color: Styles.ThemeStore.colors.text2
+                renderType: Text.NativeRendering
             }
         }
     }
