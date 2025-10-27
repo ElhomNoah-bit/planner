@@ -14139,7 +14139,6 @@ noah_planner: /lib64/ld-linux-x86-64.so.2 \
   /usr/lib64/libxml2.so.2 \
   /usr/lib64/libz.so.1 \
   /usr/lib64/libzstd.so.1 \
-  CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o \
   CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o \
   CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o \
   CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o \
@@ -14158,7 +14157,6 @@ noah_planner: /lib64/ld-linux-x86-64.so.2 \
   CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/ToastHost_qml.cpp.o \
   CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/Toast_qml.cpp.o \
   CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp.o \
-  CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.o \
   CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp.o \
   CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/MonthView_qml.cpp.o \
   CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/SidebarToday_qml.cpp.o \
@@ -14171,8 +14169,21 @@ noah_planner: /lib64/ld-linux-x86-64.so.2 \
   CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.o \
   CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o \
   CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o \
-  CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o
+  CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o \
+  CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o \
+  CMakeFiles/styles_module_resources_2.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.o \
+  CMakeFiles/styles_module_resources_3.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.o \
+  CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init.cpp.o \
+  CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init_autogen/mocs_compilation.cpp.o \
+  libstyles_module.a \
+  styles/libstyles_moduleplugin.a
 
+
+libstyles_module.a:
+
+CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init.cpp.o:
+
+CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o:
 
 CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o:
 
@@ -14209,8 +14220,6 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/App_qml.cpp.o:
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp.o:
-
-CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o:
 
 /usr/lib64/libzstd.so.1:
 
@@ -14754,6 +14763,8 @@ noah_planner_autogen/M4YTXQ7V2H/moc_TaskModel.cpp:
 
 /usr/include/qt6/QtCore/qttypetraits.h:
 
+styles/libstyles_moduleplugin.a:
+
 /usr/lib64/cmake/Qt6Qml/Qt6QQmlNativeDebugServiceFactoryPluginAdditionalTargetInfo.cmake:
 
 /usr/include/qt6/QtCore/qversiontagging.h:
@@ -14791,6 +14802,8 @@ noah_planner_autogen/M4YTXQ7V2H/moc_TaskModel.cpp:
 /usr/include/gnu/stubs.h:
 
 /usr/include/qt6/QtCore/qtclasshelpermacros.h:
+
+CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init_autogen/mocs_compilation.cpp.o:
 
 /usr/lib64/cmake/Qt6CorePrivate/Qt6CorePrivateDependencies.cmake:
 
@@ -16326,6 +16339,8 @@ noah_planner_autogen/YPKJ5OE7LN/moc_PlannerBackend.cpp:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginTargets.cmake:
 
+CMakeFiles/styles_module_resources_3.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.o:
+
 /usr/lib64/cmake/Qt6Gui/Qt6QXcbIntegrationPluginAdditionalTargetInfo.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QXcbIntegrationPluginConfig.cmake:
@@ -16549,8 +16564,6 @@ noah_planner_autogen/YPKJ5OE7LN/moc_PlannerBackend.cpp:
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginAdditionalTargetInfo.cmake:
-
-CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.o:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginTargets-relwithdebinfo.cmake:
 
@@ -16939,6 +16952,8 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3stylepluginAdditionalTargetInfo.cmake:
 
 /usr/lib64/cmake/Qt6QmlWorkerScriptPrivate/Qt6QmlWorkerScriptPrivateDependencies.cmake:
+
+CMakeFiles/styles_module_resources_2.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.o:
 
 /usr/include/c++/15/unordered_map:
 

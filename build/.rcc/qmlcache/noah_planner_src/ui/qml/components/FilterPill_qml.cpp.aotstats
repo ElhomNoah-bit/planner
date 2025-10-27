@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 850,
+                        "durationMicroseconds": 12864,
                         "errorMessage": "Cannot load property accent from ThemeStore::colors with type QObject.",
                         "functionName": "chipColor",
                         "line": 9
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 137,
+                        "durationMicroseconds": 167,
                         "errorMessage": "",
                         "functionName": "theme",
                         "line": 14
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 105,
                         "errorMessage": "Cannot load property colors from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/FilterPill.qml)::theme with type QVariant.",
                         "functionName": "colors",
                         "line": 15
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot load property gap from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/FilterPill.qml)::theme with type QVariant.",
                         "functionName": "gap",
                         "line": 16
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot load property radii from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/FilterPill.qml)::theme with type QVariant.",
                         "functionName": "radii",
                         "line": 17
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot load property type from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/FilterPill.qml)::theme with type QVariant.",
                         "functionName": "typeScale",
                         "line": 18
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 58,
                         "errorMessage": "Cannot access value for name radii",
                         "functionName": "radius",
                         "line": 24
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 285,
+                        "durationMicroseconds": 503,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "color",
                         "line": 25
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 152,
+                        "durationMicroseconds": 277,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "color",
                         "line": 28
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "centerIn",
                         "line": 34
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "color",
                         "line": 39
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "text",
                         "line": 43
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 100,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "color",
                         "line": 49
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 202,
+                        "durationMicroseconds": 273,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "renderType",
                         "line": 50
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 61,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 44
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 375,
+                        "durationMicroseconds": 657,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "weight",
                         "line": 45
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot load property uiFallback from ThemeStore::fonts with type QObject.",
                         "functionName": "family",
                         "line": 48
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 15,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot access value for name hover",
                         "functionName": "when",
                         "line": 60
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot access value for name backdrop",
                         "functionName": "target",
                         "line": 62
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 48,
                         "errorMessage": "Cannot retrieve a non-object type by ID: pill",
                         "functionName": "onTapped",
                         "line": 68

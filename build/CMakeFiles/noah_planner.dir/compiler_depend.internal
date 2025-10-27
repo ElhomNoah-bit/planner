@@ -14172,7 +14172,6 @@ noah_planner
  /usr/lib64/libxml2.so.2
  /usr/lib64/libz.so.1
  /usr/lib64/libzstd.so.1
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_font_assets.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o
@@ -14191,7 +14190,6 @@ noah_planner
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/ToastHost_qml.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/Toast_qml.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp.o
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/styles/ThemeStore_qml.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/MonthView_qml.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/SidebarToday_qml.cpp.o
@@ -14205,4 +14203,11 @@ noah_planner
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_module_resources_1.dir/build/.qt/rcc/qrc_qmake_styles_init.cpp.o
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_module_resources_2.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_init.cpp.o
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_module_resources_3.dir/build/.qt/rcc/qrc_styles_module_raw_qml_0_extra_qmldirs_init.cpp.o
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init.cpp.o
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init_autogen/mocs_compilation.cpp.o
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/libstyles_module.a
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles/libstyles_moduleplugin.a
 

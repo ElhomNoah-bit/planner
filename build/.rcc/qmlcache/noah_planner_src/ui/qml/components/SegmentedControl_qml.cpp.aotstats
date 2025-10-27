@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 509,
+                        "durationMicroseconds": 652,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "options",
                         "line": 6
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 75,
                         "errorMessage": "Cannot load property length from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/SegmentedControl.qml)::options with type QVariant.",
                         "functionName": "value",
                         "line": 11
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 1095,
+                        "durationMicroseconds": 1386,
                         "errorMessage": "Cannot load property pillH from ThemeStore::layout with type QObject.",
                         "functionName": "implicitHeight",
                         "line": 13
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 119,
+                        "durationMicroseconds": 109,
                         "errorMessage": "",
                         "functionName": "theme",
                         "line": 16
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot load property colors from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/SegmentedControl.qml)::theme with type QVariant.",
                         "functionName": "colors",
                         "line": 17
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 47,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot load property gap from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/SegmentedControl.qml)::theme with type QVariant.",
                         "functionName": "gap",
                         "line": 18
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot load property radii from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/SegmentedControl.qml)::theme with type QVariant.",
                         "functionName": "radii",
                         "line": 19
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot load property type from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/SegmentedControl.qml)::theme with type QVariant.",
                         "functionName": "typeScale",
                         "line": 20
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 378,
+                        "durationMicroseconds": 653,
                         "errorMessage": "Cannot load property length from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/SegmentedControl.qml)::options with type QVariant.",
                         "functionName": "currentIndex",
                         "line": 82
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 65,
                         "errorMessage": "Cannot access value for name radii",
                         "functionName": "radius",
                         "line": 25
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 80,
+                        "durationMicroseconds": 118,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 26
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 76,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 24
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 120,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 27
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 162,
+                        "durationMicroseconds": 134,
                         "errorMessage": "Cannot load property length from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/SegmentedControl.qml)::options with type QVariant.",
                         "functionName": "width",
                         "line": 34
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 66,
                         "errorMessage": "Cannot access value for name gap",
                         "functionName": "height",
                         "line": 35
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 51,
                         "errorMessage": "Cannot access value for name radii",
                         "functionName": "radius",
                         "line": 36
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 49,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 37
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot load property length from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/SegmentedControl.qml)::options with type QVariant.",
                         "functionName": "visible",
                         "line": 38
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 219,
+                        "durationMicroseconds": 355,
                         "errorMessage": "Cannot access value for name gap",
                         "functionName": "x",
                         "line": 39
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 104,
+                        "durationMicroseconds": 128,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 33
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 71,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 90,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 40
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 75,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 41
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 74,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 46
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 76,
                         "errorMessage": "Cannot access value for name gap",
                         "functionName": "margins",
                         "line": 47
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 117,
+                        "durationMicroseconds": 94,
                         "errorMessage": "",
                         "functionName": "model",
                         "line": 50
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 95,
                         "errorMessage": "Cannot access value for name row",
                         "functionName": "width",
                         "line": 52
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name row",
                         "functionName": "height",
                         "line": 53
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 122,
+                        "durationMicroseconds": 221,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "option",
                         "line": 54
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 132,
                         "errorMessage": "",
                         "functionName": "acceptedButtons",
                         "line": 57
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 168,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "onTapped",
                         "line": 58
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot access value for name option",
                         "functionName": "text",
                         "line": 67
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 170,
+                        "durationMicroseconds": 291,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "color",
                         "line": 73
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 76
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 66
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 82,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 68
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 153,
+                        "durationMicroseconds": 268,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "weight",
                         "line": 69
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot load property uiFallback from ThemeStore::fonts with type QObject.",
                         "functionName": "family",
                         "line": 72

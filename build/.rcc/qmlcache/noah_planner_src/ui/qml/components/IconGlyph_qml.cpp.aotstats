@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 1038,
+                        "durationMicroseconds": 1409,
                         "errorMessage": "Cannot load property text from ThemeStore::colors with type QObject.",
                         "functionName": "color",
                         "line": 9
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 90,
                         "errorMessage": "Cannot load property uiFallback from ThemeStore::fonts with type QObject.",
                         "functionName": "family",
                         "line": 10
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 109,
                         "errorMessage": "",
                         "functionName": "implicitHeight",
                         "line": 13
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
                         "functionName": "implicitWidth",
                         "line": 14
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 373,
+                        "durationMicroseconds": 500,
                         "errorMessage": "",
                         "functionName": "glyphMap",
                         "line": 21
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 165,
+                        "durationMicroseconds": 248,
                         "errorMessage": "",
                         "functionName": "materialMap",
                         "line": 35
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 232,
+                        "durationMicroseconds": 279,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "updateGlyph",
                         "line": 57
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "onNameChanged",
                         "line": 64
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 45,
                         "errorMessage": "Cannot load property interUrl from ThemeStore::fonts with type QObject.",
                         "functionName": "source",
                         "line": 18
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 64,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 63
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 164,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 72
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 73
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 82,
                         "errorMessage": "",
                         "functionName": "verticalAlignment",
                         "line": 74
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 74,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 75
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 69,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 68
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 101,
                         "errorMessage": "",
                         "functionName": "pixelSize",
                         "line": 69
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 90,
                         "errorMessage": "",
                         "functionName": "family",
                         "line": 70
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 89,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 71
