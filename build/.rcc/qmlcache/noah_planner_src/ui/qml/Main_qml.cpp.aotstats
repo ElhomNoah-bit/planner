@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 283,
+                        "durationMicroseconds": 365,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "selectedIso",
                         "line": 11
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 233,
+                        "durationMicroseconds": 346,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "currentView",
                         "line": 12
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 205,
+                        "durationMicroseconds": 332,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "darkTheme",
                         "line": 13
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 202,
+                        "durationMicroseconds": 1409,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "subjectsModel",
                         "line": 14
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 5.",
                         "functionName": "colors",
                         "line": 16
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 5.",
                         "functionName": "gaps",
                         "line": 17
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 5.",
                         "functionName": "typeScale",
                         "line": 18
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 5.",
                         "functionName": "metrics",
                         "line": 19
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 333,
+                        "durationMicroseconds": 421,
                         "errorMessage": "",
                         "functionName": "selectedDateObj",
                         "line": 21
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 331,
+                        "durationMicroseconds": 399,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "summaryToday",
                         "line": 22
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 46,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 140,
                         "errorMessage": "Cannot load property total from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/Main.qml)::summaryToday with type QVariant.",
                         "functionName": "headerSubtitle",
                         "line": 23
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 70,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 9
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 29
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 67,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 28
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 35
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 69,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 33
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 53,
                         "errorMessage": "Cannot access value for name metrics",
                         "functionName": "margins",
                         "line": 34
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 46,
                         "errorMessage": "Cannot access value for name metrics",
                         "functionName": "height",
                         "line": 39
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 54,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "padding",
                         "line": 43
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 114,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 42
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 63,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 47
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 109,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 46
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 63,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 51
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 150,
+                        "durationMicroseconds": 154,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 50
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 66,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 54
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 145,
+                        "durationMicroseconds": 124,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 55
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 231,
+                        "durationMicroseconds": 181,
                         "errorMessage": "Cannot access value for name selectedDateObj",
                         "functionName": "text",
                         "line": 58
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 57,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 62
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 45,
-                        "durationMicroseconds": 141,
+                        "durationMicroseconds": 109,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 63
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 49,
-                        "durationMicroseconds": 74,
+                        "durationMicroseconds": 53,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 59
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 46,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 70,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "weight",
                         "line": 60
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 46,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 5.",
                         "functionName": "family",
                         "line": 61
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 42,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 86,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 67
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 58,
+                        "durationMicroseconds": 52,
                         "errorMessage": "Cannot access value for name headerSubtitle",
                         "functionName": "text",
                         "line": 92
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 51,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 96
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 41,
-                        "durationMicroseconds": 138,
+                        "durationMicroseconds": 106,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 97
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 45,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 52,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 93
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 42,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 45,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "weight",
                         "line": 94
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 42,
-                        "durationMicroseconds": 47,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 5.",
                         "functionName": "family",
                         "line": 95
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 45,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 104
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 149,
+                        "durationMicroseconds": 115,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 105
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 42,
                         "errorMessage": "Cannot access value for name currentView",
                         "functionName": "value",
                         "line": 109
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 45,
-                        "durationMicroseconds": 399,
+                        "durationMicroseconds": 374,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onValueChanged",
                         "line": 110
@@ -382,7 +382,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 45,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 52,
                         "errorMessage": "Cannot access value for name metrics",
                         "functionName": "implicitHeight",
                         "line": 115
@@ -390,7 +390,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 132,
+                        "durationMicroseconds": 96,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 117
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 78,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 44,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 131
@@ -486,7 +486,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 531,
+                        "durationMicroseconds": 486,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onSubmitted",
                         "line": 155
@@ -494,7 +494,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 160
@@ -502,7 +502,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot access value for name subjectsModel",
                         "functionName": "model",
                         "line": 162
@@ -510,7 +510,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 74,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "label",
                         "line": 164
@@ -518,7 +518,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 57,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "subjectId",
                         "line": 165
@@ -526,7 +526,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 58,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "chipColor",
                         "line": 166
@@ -534,7 +534,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 55,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "active",
                         "line": 167
@@ -542,7 +542,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 128,
+                        "durationMicroseconds": 153,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onToggled",
                         "line": 168
@@ -566,7 +566,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 108,
+                        "durationMicroseconds": 109,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 178
@@ -574,7 +574,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 182
@@ -582,7 +582,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 442,
+                        "durationMicroseconds": 463,
                         "errorMessage": "",
                         "functionName": "currentIndex",
                         "line": 194
@@ -590,7 +590,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 193
@@ -598,7 +598,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 104,
                         "errorMessage": "",
                         "functionName": "selectedIso",
                         "line": 198
@@ -606,7 +606,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 323,
+                        "durationMicroseconds": 422,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onDaySelected",
                         "line": 199
@@ -614,7 +614,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 55,
                         "errorMessage": "",
                         "functionName": "onDaySelected",
                         "line": 199
@@ -622,7 +622,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 66,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 197
@@ -630,7 +630,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 110,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "anchorIso",
                         "line": 204
@@ -638,7 +638,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 463,
+                        "durationMicroseconds": 435,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onDaySelected",
                         "line": 205
@@ -646,7 +646,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 52,
                         "errorMessage": "",
                         "functionName": "onDaySelected",
                         "line": 205
@@ -654,7 +654,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 203
@@ -662,7 +662,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 64,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 209
@@ -670,7 +670,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 170,
+                        "durationMicroseconds": 134,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "onStartTimerRequested",
                         "line": 217
@@ -678,7 +678,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 48,
                         "errorMessage": "",
                         "functionName": "onStartTimerRequested",
                         "line": 217
@@ -686,7 +686,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot load property sidebarW from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/Main.qml)::metrics with type QObject.",
                         "functionName": "preferredWidth",
                         "line": 215
@@ -702,7 +702,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 418,
+                        "durationMicroseconds": 411,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onFinished",
                         "line": 228
@@ -710,7 +710,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 95,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "target",
                         "line": 232
@@ -718,7 +718,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 172,
+                        "durationMicroseconds": 100,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onSelectedDateChanged",
                         "line": 233
@@ -726,7 +726,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 148,
+                        "durationMicroseconds": 94,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onViewModeChanged",
                         "line": 236
@@ -734,7 +734,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 80,
+                        "durationMicroseconds": 102,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onSubjectsChanged",
                         "line": 239
@@ -742,7 +742,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 99,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onFiltersChanged",
                         "line": 242
@@ -750,7 +750,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 92,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onDarkThemeChanged",
                         "line": 245
@@ -758,7 +758,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 314,
+                        "durationMicroseconds": 393,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onCompleted",
                         "line": 250

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 65,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 4.",
                         "functionName": "radii",
                         "line": 12
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 4.",
                         "functionName": "gaps",
                         "line": 13
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 4.",
                         "functionName": "typeScale",
                         "line": 14
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 4.",
                         "functionName": "colors",
                         "line": 15
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 13,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot load property md from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/Toast.qml)::radii with type QObject.",
                         "functionName": "radius",
                         "line": 17
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 14,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot load property g16 from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/Toast.qml)::gaps with type QObject.",
                         "functionName": "padding",
                         "line": 18
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 14,
-                        "durationMicroseconds": 201,
+                        "durationMicroseconds": 191,
                         "errorMessage": "",
                         "functionName": "opacity",
                         "line": 19
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 275,
+                        "durationMicroseconds": 259,
                         "errorMessage": "",
                         "functionName": "onVisibleChanged",
                         "line": 41
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 105,
+                        "durationMicroseconds": 97,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 22
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 15,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 27
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 30
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 87,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 31
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 26
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 28
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 4.",
                         "functionName": "family",
                         "line": 29
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 96,
+                        "durationMicroseconds": 94,
                         "errorMessage": "",
                         "functionName": "interval",
                         "line": 36
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 140,
+                        "durationMicroseconds": 139,
                         "errorMessage": "",
                         "functionName": "onTriggered",
                         "line": 38

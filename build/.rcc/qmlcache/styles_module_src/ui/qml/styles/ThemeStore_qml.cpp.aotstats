@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 160,
+                        "durationMicroseconds": 112,
                         "errorMessage": "",
                         "functionName": "focus",
                         "line": 16

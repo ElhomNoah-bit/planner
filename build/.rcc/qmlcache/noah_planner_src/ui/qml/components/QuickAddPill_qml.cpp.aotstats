@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 62,
                         "errorMessage": "Cannot retrieve a non-object type by ID: input",
                         "functionName": "focusInput",
                         "line": 10
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "colors",
                         "line": 14
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "radii",
                         "line": 15
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "gaps",
                         "line": 16
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "typeScale",
                         "line": 17
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "metrics",
                         "line": 18
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 13,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot load property xl from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/QuickAddPill.qml)::radii with type QObject.",
                         "functionName": "radius",
                         "line": 20
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 29
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 128,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 24
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "leftMargin",
                         "line": 25
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "rightMargin",
                         "line": 26
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "topMargin",
                         "line": 27
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "bottomMargin",
                         "line": 28
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 58,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 41

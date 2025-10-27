@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 109,
+                        "durationMicroseconds": 99,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "buckets",
                         "line": 8
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 85,
+                        "durationMicroseconds": 67,
                         "errorMessage": "",
                         "functionName": "contentWidth",
                         "line": 10
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 98,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "contentHeight",
                         "line": 11
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 4.",
                         "functionName": "colors",
                         "line": 14
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 4.",
                         "functionName": "radii",
                         "line": 16
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 4.",
                         "functionName": "typeScale",
                         "line": 17
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 4.",
                         "functionName": "metrics",
                         "line": 18
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 613,
+                        "durationMicroseconds": 650,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "reload",
                         "line": 103
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 4139,
+                        "durationMicroseconds": 79,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 9
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 123,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 22
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 23
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 110,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "model",
                         "line": 27
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "padding",
                         "line": 30
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 33
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 411,
+                        "durationMicroseconds": 405,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 37
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 41
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 93,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 42
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 45,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 38
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "weight",
                         "line": 39
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 46
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 247,
+                        "durationMicroseconds": 251,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "model",
                         "line": 48
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 46,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 47,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 54
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 51,
-                        "durationMicroseconds": 74,
+                        "durationMicroseconds": 73,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 53
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 49,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot access value for name metrics",
                         "functionName": "height",
                         "line": 58
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 48,
-                        "durationMicroseconds": 256,
+                        "durationMicroseconds": 273,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "color",
                         "line": 60
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 59,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 98,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 61
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 50,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 55,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 66
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 51,
-                        "durationMicroseconds": 407,
+                        "durationMicroseconds": 415,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 69
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 52,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 55,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 73
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 52,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 100,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 74
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 57,
-                        "durationMicroseconds": 85,
+                        "durationMicroseconds": 81,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 75
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 61,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 58,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 70
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 58,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 49,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "weight",
                         "line": 71
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 51,
-                        "durationMicroseconds": 395,
+                        "durationMicroseconds": 412,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 79
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 52,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 54,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 83
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 52,
-                        "durationMicroseconds": 98,
+                        "durationMicroseconds": 95,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 84
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 57,
-                        "durationMicroseconds": 85,
+                        "durationMicroseconds": 80,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 85
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 61,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 58,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 80
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 58,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 49,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "weight",
                         "line": 81
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 58,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 4.",
                         "functionName": "family",
                         "line": 82
@@ -382,7 +382,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 81,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 107
@@ -390,7 +390,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 85,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "target",
                         "line": 110
@@ -398,7 +398,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 57,
                         "errorMessage": "method reload cannot be resolved.",
                         "functionName": "onFiltersChanged",
                         "line": 111
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 52,
                         "errorMessage": "method reload cannot be resolved.",
                         "functionName": "onTasksChanged",
                         "line": 112

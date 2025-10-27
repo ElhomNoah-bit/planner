@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 123,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
                         "functionName": "color",
                         "line": 9
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 96,
+                        "durationMicroseconds": 139,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
                         "functionName": "family",
                         "line": 10
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 140,
+                        "durationMicroseconds": 150,
                         "errorMessage": "",
                         "functionName": "implicitHeight",
                         "line": 13
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 123,
                         "errorMessage": "",
                         "functionName": "implicitWidth",
                         "line": 14
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 482,
+                        "durationMicroseconds": 619,
                         "errorMessage": "",
                         "functionName": "glyphMap",
                         "line": 21
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 246,
+                        "durationMicroseconds": 319,
                         "errorMessage": "",
                         "functionName": "materialMap",
                         "line": 35
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 370,
+                        "durationMicroseconds": 383,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "updateGlyph",
                         "line": 57
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "onNameChanged",
                         "line": 64
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
                         "functionName": "source",
                         "line": 18
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 63
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 123,
+                        "durationMicroseconds": 159,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 72
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 87,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 73
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "verticalAlignment",
                         "line": 74
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 75
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 68
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 99,
                         "errorMessage": "",
                         "functionName": "pixelSize",
                         "line": 69
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 87,
                         "errorMessage": "",
                         "functionName": "family",
                         "line": 70
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 71

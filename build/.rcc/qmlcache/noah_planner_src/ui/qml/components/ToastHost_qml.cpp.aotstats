@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 74,
+                        "durationMicroseconds": 62,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "colors",
                         "line": 8
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "gaps",
                         "line": 9
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "radii",
                         "line": 10
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "typeScale",
                         "line": 11
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot load property g16 from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/ToastHost.qml)::gaps with type QObject.",
                         "functionName": "margin",
                         "line": 13
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 110,
+                        "durationMicroseconds": 103,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 7
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 13,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot access value for name radii",
                         "functionName": "radius",
                         "line": 26
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 27
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 59,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "width",
                         "line": 32
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 13,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 54,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "height",
                         "line": 33
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 28
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 133,
+                        "durationMicroseconds": 148,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 29
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 117,
+                        "durationMicroseconds": 113,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 30
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 98,
+                        "durationMicroseconds": 102,
                         "errorMessage": "",
                         "functionName": "bottomMargin",
                         "line": 31
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 2312,
+                        "durationMicroseconds": 100,
                         "errorMessage": "",
                         "functionName": "when",
                         "line": 52
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 82,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 54
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 133,
                         "errorMessage": "",
                         "functionName": "when",
                         "line": 44
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 46
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 63
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 119,
                         "errorMessage": "",
                         "functionName": "wrapMode",
                         "line": 66
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 1157,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 67
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 62
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 64
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 3.",
                         "functionName": "family",
                         "line": 65
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 162,
+                        "durationMicroseconds": 135,
                         "errorMessage": "",
                         "functionName": "onTriggered",
                         "line": 73
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 86,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "target",
                         "line": 77

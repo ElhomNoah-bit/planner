@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 68,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
                         "functionName": "subjectColor",
                         "line": 7
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
                         "functionName": "colors",
                         "line": 10
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
                         "functionName": "typeScale",
                         "line": 11
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
                         "functionName": "gaps",
                         "line": 12
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 365,
+                        "durationMicroseconds": 336,
                         "errorMessage": "",
                         "functionName": "implicitWidth",
                         "line": 15
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 57,
                         "errorMessage": "Cannot load property hover from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/EventChip.qml)::colors with type QObject.",
                         "functionName": "color",
                         "line": 17
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 25
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 84,
+                        "durationMicroseconds": 76,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 21
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 115,
+                        "durationMicroseconds": 120,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 24
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 99,
+                        "durationMicroseconds": 93,
                         "errorMessage": "Cannot access value for name muted",
                         "functionName": "color",
                         "line": 31
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 117,
+                        "durationMicroseconds": 120,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 32
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 96,
+                        "durationMicroseconds": 95,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 37
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 38
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 100,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 42
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 44
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 39
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "weight",
                         "line": 40
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
                         "functionName": "family",
                         "line": 41
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 51
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 98,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 52
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 62,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 49

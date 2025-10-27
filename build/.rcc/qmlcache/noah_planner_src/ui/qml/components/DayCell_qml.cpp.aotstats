@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 127,
+                        "durationMicroseconds": 114,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "events",
                         "line": 10
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 45,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
                         "functionName": "colors",
                         "line": 17
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
                         "functionName": "typeScale",
                         "line": 18
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
                         "functionName": "radii",
                         "line": 19
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
                         "functionName": "gaps",
                         "line": 20
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot load property accent from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/DayCell.qml)::colors with type QObject.",
                         "functionName": "baseAccent",
                         "line": 21
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot load property accentBg from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/DayCell.qml)::colors with type QObject.",
                         "functionName": "baseAccentBg",
                         "line": 22
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 528,
+                        "durationMicroseconds": 520,
                         "errorMessage": "",
                         "functionName": "dateObject",
                         "line": 24
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 143,
+                        "durationMicroseconds": 158,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "dayNumber",
                         "line": 25
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 285,
+                        "durationMicroseconds": 267,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "visibleEvents",
                         "line": 123
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 61,
                         "errorMessage": "Cannot load property length from conversion to QVariant.",
                         "functionName": "extraCount",
                         "line": 124
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot access value for name radii",
                         "functionName": "radius",
                         "line": 30
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 68,
                         "errorMessage": "Cannot access value for name baseAccentBg",
                         "functionName": "color",
                         "line": 31
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 119,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 29
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 68,
                         "errorMessage": "Cannot access value for name baseAccent",
                         "functionName": "color",
                         "line": 33
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 44,
                         "errorMessage": "Cannot access value for name radii",
                         "functionName": "radius",
                         "line": 39
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 124,
+                        "durationMicroseconds": 97,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 43
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 86,
+                        "durationMicroseconds": 66,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 37
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 42
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name radii",
                         "functionName": "radius",
                         "line": 48
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 49
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 251,
+                        "durationMicroseconds": 216,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 50
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 63,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 47
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 112,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 55
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 105,
+                        "durationMicroseconds": 107,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 56
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "margins",
                         "line": 57
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 93,
+                        "durationMicroseconds": 91,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 69
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 119,
+                        "durationMicroseconds": 135,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 64
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 107,
+                        "durationMicroseconds": 150,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 65
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 158,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 75
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 86,
+                        "durationMicroseconds": 119,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 79
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 174,
+                        "durationMicroseconds": 223,
                         "errorMessage": "",
                         "functionName": "opacity",
                         "line": 80
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 81
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 116,
+                        "durationMicroseconds": 134,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 73
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 117,
+                        "durationMicroseconds": 111,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 74
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 40,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 76
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "weight",
                         "line": 77
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot load property ThemeStore from import namespace 2.",
                         "functionName": "family",
                         "line": 78
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 93
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 120,
+                        "durationMicroseconds": 134,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 87
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 109,
+                        "durationMicroseconds": 144,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 88
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 105,
+                        "durationMicroseconds": 123,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 89
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 127,
+                        "durationMicroseconds": 107,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 90
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "margins",
                         "line": 91
@@ -382,7 +382,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "topMargin",
                         "line": 92
@@ -390,7 +390,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name visibleEvents",
                         "functionName": "model",
                         "line": 96
@@ -398,7 +398,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 337,
+                        "durationMicroseconds": 288,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "label",
                         "line": 98
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 327,
+                        "durationMicroseconds": 272,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "subjectColor",
                         "line": 99
@@ -414,7 +414,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 51,
                         "errorMessage": "Cannot access value for name list",
                         "functionName": "width",
                         "line": 100
@@ -422,7 +422,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot access value for name extraCount",
                         "functionName": "visible",
                         "line": 105
@@ -430,7 +430,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name extraCount",
                         "functionName": "label",
                         "line": 106
@@ -438,7 +438,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot access value for name baseAccent",
                         "functionName": "subjectColor",
                         "line": 108
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 132,
+                        "durationMicroseconds": 100,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 109
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 161,
+                        "durationMicroseconds": 125,
                         "errorMessage": "",
                         "functionName": "acceptedButtons",
                         "line": 117
@@ -462,7 +462,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 127,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "cursorShape",
                         "line": 118
@@ -470,7 +470,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 251,
+                        "durationMicroseconds": 187,
                         "errorMessage": "",
                         "functionName": "onClicked",
                         "line": 119
@@ -478,7 +478,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 161,
+                        "durationMicroseconds": 143,
                         "errorMessage": "",
                         "functionName": "onPressed",
                         "line": 120
@@ -486,7 +486,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 66,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 115
@@ -494,7 +494,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 229,
+                        "durationMicroseconds": 192,
                         "errorMessage": "",
                         "functionName": "onReturnPressed",
                         "line": 126
@@ -502,7 +502,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 198,
+                        "durationMicroseconds": 175,
                         "errorMessage": "",
                         "functionName": "onEnterPressed",
                         "line": 127
@@ -510,7 +510,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 182,
+                        "durationMicroseconds": 173,
                         "errorMessage": "",
                         "functionName": "onSpacePressed",
                         "line": 128
