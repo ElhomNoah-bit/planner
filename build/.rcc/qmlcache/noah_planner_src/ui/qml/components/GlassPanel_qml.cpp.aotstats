@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 8813,
+                        "durationMicroseconds": 2073,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 7
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 2108,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "padding",
                         "line": 8
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 15,
                         "errorMessage": "Cannot load property panel from const QMetaObject.",
                         "functionName": "tint",
                         "line": 10
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 13,
                         "errorMessage": "Cannot load property border from const QMetaObject.",
                         "functionName": "stroke",
                         "line": 11
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 140,
+                        "durationMicroseconds": 87,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 17
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 131,
+                        "durationMicroseconds": 81,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 18
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 42,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 16
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 139,
+                        "durationMicroseconds": 109,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 19
@@ -70,34 +70,34 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 59,
                         "errorMessage": "",
                         "functionName": "enabled",
                         "line": 21
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 21,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"radius\".",
-                        "functionName": "radius",
-                        "line": 23
+                        "column": 22,
+                        "durationMicroseconds": 51,
+                        "errorMessage": "Cannot load property blur from const QMetaObject.",
+                        "functionName": "blurMax",
+                        "line": 24
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 30
+                        "line": 31
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 86,
+                        "durationMicroseconds": 52,
                         "errorMessage": "",
                         "functionName": "margins",
-                        "line": 31
+                        "line": 32
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/GlassPanel.qml"

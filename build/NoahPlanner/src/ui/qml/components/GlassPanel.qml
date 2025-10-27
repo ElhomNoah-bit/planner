@@ -1,5 +1,5 @@
 import QtQuick
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 import NoahPlanner 1.0 as NP
 
 Item {
@@ -19,9 +19,10 @@ Item {
         border.color: root.stroke
         border.width: 1
         layer.enabled: root.blurEnabled
-        layer.effect: FastBlur {
-            radius: NP.ThemeStore.blur.medium
-            transparentBorder: true
+        layer.effect: MultiEffect {
+            blurEnabled: true
+            blurMax: Math.min(NP.ThemeStore.blur.medium, 64)
+            blur: 1.0
         }
     }
 
