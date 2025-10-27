@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 799,
+                        "durationMicroseconds": 570,
                         "errorMessage": "",
                         "functionName": "darkPalette",
                         "line": 7
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 41,
-                        "durationMicroseconds": 886,
+                        "durationMicroseconds": 604,
                         "errorMessage": "",
                         "functionName": "lightPalette",
                         "line": 20
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 232,
+                        "durationMicroseconds": 151,
                         "errorMessage": "",
                         "functionName": "radii",
                         "line": 33
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 221,
+                        "durationMicroseconds": 166,
                         "errorMessage": "",
                         "functionName": "spacing",
                         "line": 40
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 137,
+                        "durationMicroseconds": 127,
                         "errorMessage": "",
                         "functionName": "blur",
                         "line": 47
@@ -46,106 +46,114 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 359,
+                        "durationMicroseconds": 301,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "fonts",
                         "line": 52
                     },
                     {
-                        "codegenSuccessful": true,
-                        "column": 39,
-                        "durationMicroseconds": 462,
-                        "errorMessage": "",
-                        "functionName": "typography",
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 220,
+                        "errorMessage": "Cannot load property font from QtObject::application with type QQmlApplication.",
+                        "functionName": "defaultFontFamily",
                         "line": 64
                     },
                     {
                         "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 368,
+                        "errorMessage": "",
+                        "functionName": "typography",
+                        "line": 68
+                    },
+                    {
+                        "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 167,
+                        "durationMicroseconds": 113,
                         "errorMessage": "",
                         "functionName": "palette",
-                        "line": 75
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 33,
-                        "durationMicroseconds": 19,
-                        "errorMessage": "Cannot load property bg from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
-                        "functionName": "bg",
-                        "line": 76
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 36,
-                        "durationMicroseconds": 14,
-                        "errorMessage": "Cannot load property panel from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
-                        "functionName": "panel",
-                        "line": 77
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 37,
-                        "durationMicroseconds": 13,
-                        "errorMessage": "Cannot load property border from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
-                        "functionName": "border",
-                        "line": 78
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 35,
-                        "durationMicroseconds": 13,
-                        "errorMessage": "Cannot load property text from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
-                        "functionName": "text",
                         "line": 79
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 36,
-                        "durationMicroseconds": 12,
-                        "errorMessage": "Cannot load property muted from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
-                        "functionName": "muted",
+                        "column": 33,
+                        "durationMicroseconds": 14,
+                        "errorMessage": "Cannot load property bg from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
+                        "functionName": "bg",
                         "line": 80
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 37,
-                        "durationMicroseconds": 12,
-                        "errorMessage": "Cannot load property accent from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
-                        "functionName": "accent",
+                        "column": 36,
+                        "durationMicroseconds": 10,
+                        "errorMessage": "Cannot load property panel from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
+                        "functionName": "panel",
                         "line": 81
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 12,
-                        "errorMessage": "Cannot load property chipBg from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
-                        "functionName": "chipBg",
+                        "durationMicroseconds": 9,
+                        "errorMessage": "Cannot load property border from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
+                        "functionName": "border",
                         "line": 82
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 37,
-                        "durationMicroseconds": 12,
-                        "errorMessage": "Cannot load property danger from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
-                        "functionName": "danger",
+                        "column": 35,
+                        "durationMicroseconds": 9,
+                        "errorMessage": "Cannot load property text from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
+                        "functionName": "text",
                         "line": 83
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 38,
-                        "durationMicroseconds": 12,
-                        "errorMessage": "Cannot load property warning from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
-                        "functionName": "warning",
+                        "column": 36,
+                        "durationMicroseconds": 9,
+                        "errorMessage": "Cannot load property muted from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
+                        "functionName": "muted",
                         "line": 84
                     },
                     {
                         "codegenSuccessful": false,
+                        "column": 37,
+                        "durationMicroseconds": 9,
+                        "errorMessage": "Cannot load property accent from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
+                        "functionName": "accent",
+                        "line": 85
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 37,
+                        "durationMicroseconds": 9,
+                        "errorMessage": "Cannot load property chipBg from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
+                        "functionName": "chipBg",
+                        "line": 86
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 37,
+                        "durationMicroseconds": 9,
+                        "errorMessage": "Cannot load property danger from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
+                        "functionName": "danger",
+                        "line": 87
+                    },
+                    {
+                        "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 9,
+                        "errorMessage": "Cannot load property warning from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
+                        "functionName": "warning",
+                        "line": 88
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 38,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot load property success from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml)::palette with type QVariant.",
                         "functionName": "success",
-                        "line": 85
+                        "line": 89
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml"

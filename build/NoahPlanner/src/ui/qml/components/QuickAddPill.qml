@@ -27,7 +27,7 @@ GlassPanel {
             id: input
             placeholderText: root.placeholder
             font.pixelSize: 14
-            font.preferredFamilies: NP.ThemeStore.fonts.stack
+            font.family: NP.ThemeStore.defaultFontFamily
             color: NP.ThemeStore.text
             background: Rectangle { color: "transparent" }
             selectionColor: NP.ThemeStore.accent

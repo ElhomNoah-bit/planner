@@ -14,18 +14,18 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 1998,
+                        "durationMicroseconds": 5379,
                         "errorMessage": "Cannot retrieve a non-object type by ID: btn",
                         "functionName": "backgroundColor",
-                        "line": 55
+                        "line": 53
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 115,
+                        "durationMicroseconds": 219,
                         "errorMessage": "Cannot retrieve a non-object type by ID: btn",
                         "functionName": "borderColor",
-                        "line": 75
+                        "line": 73
                     },
                     {
                         "codegenSuccessful": false,
@@ -46,106 +46,106 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
-                        "line": 24
+                        "line": 22
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "color",
-                        "line": 25
+                        "line": 23
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "color",
-                        "line": 26
+                        "line": 24
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "centerIn",
-                        "line": 33
+                        "line": 31
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 89,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "name",
-                        "line": 39
+                        "line": 37
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name name",
                         "functionName": "visible",
-                        "line": 40
+                        "line": 38
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 75,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "color",
-                        "line": 41
+                        "line": 39
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "text",
-                        "line": 46
+                        "line": 44
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name text",
                         "functionName": "visible",
-                        "line": 47
+                        "line": 45
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot access value for name btn",
                         "functionName": "font",
+                        "line": 46
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 177,
+                        "errorMessage": "Cannot access value for name btn",
+                        "functionName": "color",
+                        "line": 47
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 269,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "verticalAlignment",
                         "line": 48
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 41,
-                        "errorMessage": "Cannot access value for name btn",
-                        "functionName": "color",
-                        "line": 49
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 194,
-                        "errorMessage": "Cannot access value for name Text",
-                        "functionName": "verticalAlignment",
-                        "line": 50
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 20,
-                        "durationMicroseconds": 151,
+                        "durationMicroseconds": 245,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "elide",
-                        "line": 51
+                        "line": 49
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/PillButton.qml"

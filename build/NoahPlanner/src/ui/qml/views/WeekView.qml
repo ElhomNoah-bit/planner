@@ -58,7 +58,7 @@ Item {
                                 text: (startHour + index) + ":00"
                                 font.pixelSize: 11
                                 font.weight: Font.Medium
-                                font.preferredFamilies: NP.ThemeStore.fonts.stack
+                                font.family: NP.ThemeStore.defaultFontFamily
                                 color: NP.ThemeStore.muted
                             }
                         }
@@ -81,14 +81,14 @@ Item {
                                 text: root.weekdayNames[index]
                                 font.pixelSize: 12
                                 font.weight: Font.Medium
-                                font.preferredFamilies: NP.ThemeStore.fonts.stack
+                                font.family: NP.ThemeStore.defaultFontFamily
                                 color: NP.ThemeStore.muted
                             }
                             Text {
                                 text: dayIso ? dayIso.split("-")[2] : ""
                                 font.pixelSize: 16
                                 font.weight: Font.DemiBold
-                                font.preferredFamilies: NP.ThemeStore.fonts.stack
+                                font.family: NP.ThemeStore.defaultFontFamily
                                 color: NP.ThemeStore.text
                             }
                         }
@@ -130,7 +130,7 @@ Item {
                                         text: modelData.title
                                         font.pixelSize: 13
                                         font.weight: Font.Medium
-                                        font.preferredFamilies: NP.ThemeStore.fonts.stack
+                                        font.family: NP.ThemeStore.defaultFontFamily
                                         color: NP.ThemeStore.text
                                         elide: Text.ElideRight
                                     }

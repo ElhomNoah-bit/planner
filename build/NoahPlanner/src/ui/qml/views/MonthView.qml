@@ -28,7 +28,7 @@ Column {
                 font.pixelSize: 12
                 font.weight: Font.Medium
                 font.letterSpacing: 1
-                font.preferredFamilies: NP.ThemeStore.fonts.stack
+                font.family: NP.ThemeStore.defaultFontFamily
                 color: NP.ThemeStore.muted
             }
         }

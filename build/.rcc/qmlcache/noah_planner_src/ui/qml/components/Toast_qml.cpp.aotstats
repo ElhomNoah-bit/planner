@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 13,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 59,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 12
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 103,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 17
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot load property text from const QMetaObject.",
                         "functionName": "color",
                         "line": 25
@@ -54,23 +54,23 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 76,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 21
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 33,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"preferredFamilies\".",
-                        "functionName": "preferredFamilies",
+                        "column": 22,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "Cannot load property defaultFontFamily from const QMetaObject.",
+                        "functionName": "family",
                         "line": 24
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 93,
+                        "durationMicroseconds": 110,
                         "errorMessage": "",
                         "functionName": "interval",
                         "line": 30
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 141,
                         "errorMessage": "",
                         "functionName": "onTriggered",
                         "line": 32

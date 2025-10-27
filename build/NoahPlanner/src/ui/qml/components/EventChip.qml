@@ -31,7 +31,7 @@ Rectangle {
             color: NP.ThemeStore.text
             font.pixelSize: NP.ThemeStore.typography.eventChipSize
             font.weight: NP.ThemeStore.typography.eventChipWeight
-            font.preferredFamilies: NP.ThemeStore.fonts.stack
+            font.family: NP.ThemeStore.defaultFontFamily
             elide: Text.ElideRight
             verticalAlignment: Text.AlignVCenter
         }

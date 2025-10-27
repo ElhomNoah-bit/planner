@@ -23,14 +23,14 @@ GlassPanel {
                 text: qsTr("Heute")
                 font.pixelSize: 22
                 font.weight: Font.DemiBold
-                font.preferredFamilies: NP.ThemeStore.fonts.stack
+                font.family: NP.ThemeStore.defaultFontFamily
                 color: NP.ThemeStore.text
             }
             Text {
                 text: summary.total > 0 ? summary.done + "/" + summary.total + qsTr(" erledigt") : qsTr("Keine Aufgaben")
                 font.pixelSize: NP.ThemeStore.typography.metaSize
                 font.weight: NP.ThemeStore.typography.metaWeight
-                font.preferredFamilies: NP.ThemeStore.fonts.stack
+                font.family: NP.ThemeStore.defaultFontFamily
                 color: NP.ThemeStore.muted
             }
         }
@@ -64,7 +64,7 @@ GlassPanel {
                 text: qsTr("Klassenarbeiten")
                 font.pixelSize: 18
                 font.weight: Font.DemiBold
-                font.preferredFamilies: NP.ThemeStore.fonts.stack
+                font.family: NP.ThemeStore.defaultFontFamily
                 color: NP.ThemeStore.text
             }
             ListView {
@@ -93,14 +93,14 @@ GlassPanel {
                                 text: subject.name
                                 font.pixelSize: 14
                                 font.weight: Font.DemiBold
-                                font.preferredFamilies: NP.ThemeStore.fonts.stack
+                                font.family: NP.ThemeStore.defaultFontFamily
                                 color: NP.ThemeStore.text
                             }
                             Text {
                                 text: Qt.formatDate(model.date, "dd.MM.yyyy")
                                 font.pixelSize: NP.ThemeStore.typography.metaSize
                                 font.weight: NP.ThemeStore.typography.metaWeight
-                                font.preferredFamilies: NP.ThemeStore.fonts.stack
+                                font.family: NP.ThemeStore.defaultFontFamily
                                 color: NP.ThemeStore.muted
                             }
                         }
@@ -108,7 +108,7 @@ GlassPanel {
                             text: model.topics.join(", ")
                             font.pixelSize: NP.ThemeStore.typography.metaSize
                             font.weight: NP.ThemeStore.typography.metaWeight
-                            font.preferredFamilies: NP.ThemeStore.fonts.stack
+                            font.family: NP.ThemeStore.defaultFontFamily
                             color: NP.ThemeStore.muted
                             wrapMode: Text.WrapAnywhere
                         }

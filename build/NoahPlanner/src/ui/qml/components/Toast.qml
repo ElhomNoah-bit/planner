@@ -21,7 +21,7 @@ GlassPanel {
         anchors.centerIn: parent
         text: toast.message
         font.pixelSize: 14
-        font.preferredFamilies: NP.ThemeStore.fonts.stack
+        font.family: NP.ThemeStore.defaultFontFamily
         color: NP.ThemeStore.text
     }
 

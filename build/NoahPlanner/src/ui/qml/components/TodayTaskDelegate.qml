@@ -56,7 +56,7 @@ Item {
                 text: root.title
                 font.pixelSize: 15
                 font.weight: Font.DemiBold
-                font.preferredFamilies: NP.ThemeStore.fonts.stack
+                font.family: NP.ThemeStore.defaultFontFamily
                 color: NP.ThemeStore.text
                 elide: Text.ElideRight
             }
@@ -64,7 +64,7 @@ Item {
                 text: root.goal
                 font.pixelSize: NP.ThemeStore.typography.metaSize
                 font.weight: NP.ThemeStore.typography.metaWeight
-                font.preferredFamilies: NP.ThemeStore.fonts.stack
+                font.family: NP.ThemeStore.defaultFontFamily
                 color: NP.ThemeStore.muted
                 elide: Text.ElideRight
             }
@@ -84,7 +84,7 @@ Item {
                 text: root.duration + qsTr("m")
                 font.pixelSize: 13
                 font.weight: Font.DemiBold
-                font.preferredFamilies: NP.ThemeStore.fonts.stack
+                font.family: NP.ThemeStore.defaultFontFamily
                 color: NP.ThemeStore.text
             }
             MouseArea {

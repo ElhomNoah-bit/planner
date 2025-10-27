@@ -77,7 +77,7 @@ Item {
                         text: PlannerBackend.searchQuery
                         onTextChanged: PlannerBackend.searchQuery = text
                         font.pixelSize: 14
-                        font.preferredFamilies: NP.ThemeStore.fonts.stack
+                        font.family: NP.ThemeStore.defaultFontFamily
                         color: NP.ThemeStore.text
                         background: Rectangle { color: "transparent" }
                         leftPadding: 0
@@ -99,7 +99,7 @@ Item {
             text: headlineMonth
             font.pixelSize: NP.ThemeStore.typography.monthTitleSize
             font.weight: NP.ThemeStore.typography.monthTitleWeight
-            font.preferredFamilies: NP.ThemeStore.fonts.stack
+            font.family: NP.ThemeStore.defaultFontFamily
             color: NP.ThemeStore.text
             opacity: 0.98
         }

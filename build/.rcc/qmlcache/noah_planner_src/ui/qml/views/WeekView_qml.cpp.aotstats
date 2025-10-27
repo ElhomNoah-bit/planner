@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 365,
+                        "durationMicroseconds": 352,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "anchorIso",
                         "line": 8
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 109,
+                        "durationMicroseconds": 87,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "events",
                         "line": 10
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 67,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "eventsByDay",
                         "line": 11
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 266,
+                        "durationMicroseconds": 268,
                         "errorMessage": "",
                         "functionName": "timelineHeight",
                         "line": 17
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 586,
+                        "durationMicroseconds": 591,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "weekdayNames",
                         "line": 18
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 2747,
+                        "durationMicroseconds": 3011,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "rebuild",
                         "line": 152
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 87,
+                        "durationMicroseconds": 98,
                         "errorMessage": "",
                         "functionName": "onAnchorIsoChanged",
                         "line": 185
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 47,
+                        "durationMicroseconds": 57,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 22
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 100,
                         "errorMessage": "Cannot load property dark from const QMetaObject.",
                         "functionName": "color",
                         "line": 23
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 86,
+                        "durationMicroseconds": 99,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 21
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 262,
+                        "durationMicroseconds": 332,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 24
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 90,
                         "errorMessage": "",
                         "functionName": "contentWidth",
                         "line": 30
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 47,
+                        "durationMicroseconds": 56,
                         "errorMessage": "Cannot access value for name timelineHeight",
                         "functionName": "contentHeight",
                         "line": 31
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 81,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 29
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 118,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 36
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot access value for name timelineHeight",
                         "functionName": "height",
                         "line": 37
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 43
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 41
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 87,
+                        "durationMicroseconds": 88,
                         "errorMessage": "Cannot access value for name endHour",
                         "functionName": "model",
                         "line": 50
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 97,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 52
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 45,
                         "errorMessage": "Cannot access value for name minuteHeight",
                         "functionName": "height",
                         "line": 53
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 355,
+                        "durationMicroseconds": 2420,
                         "errorMessage": "Cannot access value for name startHour",
                         "functionName": "text",
                         "line": 58
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot load property muted from const QMetaObject.",
                         "functionName": "color",
                         "line": 62
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 48,
-                        "durationMicroseconds": 134,
+                        "durationMicroseconds": 127,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 55
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 57,
-                        "durationMicroseconds": 116,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 57
@@ -222,23 +222,23 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 60
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 57,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"preferredFamilies\".",
-                        "functionName": "preferredFamilies",
+                        "column": 46,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "Cannot load property defaultFontFamily from const QMetaObject.",
+                        "functionName": "family",
                         "line": 61
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 132,
+                        "durationMicroseconds": 137,
                         "errorMessage": "Cannot access value for name content",
                         "functionName": "width",
                         "line": 71
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name content",
                         "functionName": "height",
                         "line": 72
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 49,
-                        "durationMicroseconds": 132,
+                        "durationMicroseconds": 116,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "dayEvents",
                         "line": 73
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 49,
-                        "durationMicroseconds": 58,
+                        "durationMicroseconds": 63,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "dayIso",
                         "line": 74
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 120,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 77
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 119,
+                        "durationMicroseconds": 116,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 78
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 349,
+                        "durationMicroseconds": 3397,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "text",
                         "line": 81
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 46,
                         "errorMessage": "Cannot load property muted from const QMetaObject.",
                         "functionName": "color",
                         "line": 85
@@ -302,23 +302,23 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 113,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 83
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 57,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"preferredFamilies\".",
-                        "functionName": "preferredFamilies",
+                        "column": 46,
+                        "durationMicroseconds": 34,
+                        "errorMessage": "Cannot load property defaultFontFamily from const QMetaObject.",
+                        "functionName": "family",
                         "line": 84
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 120,
+                        "durationMicroseconds": 128,
                         "errorMessage": "Cannot access value for name dayIso",
                         "functionName": "text",
                         "line": 88
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 40,
                         "errorMessage": "Cannot load property text from const QMetaObject.",
                         "functionName": "color",
                         "line": 92
@@ -334,17 +334,17 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 96,
+                        "durationMicroseconds": 90,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 90
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 57,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"preferredFamilies\".",
-                        "functionName": "preferredFamilies",
+                        "column": 46,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "Cannot load property defaultFontFamily from const QMetaObject.",
+                        "functionName": "family",
                         "line": 91
                     },
                     {
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 123,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 98
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 116,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 99
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 105,
+                        "durationMicroseconds": 102,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 100
@@ -382,7 +382,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 287,
+                        "durationMicroseconds": 272,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 107
@@ -390,7 +390,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 67,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 105
@@ -398,7 +398,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 47,
-                        "durationMicroseconds": 257,
+                        "durationMicroseconds": 292,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 108
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot access value for name dayEvents",
                         "functionName": "model",
                         "line": 113
@@ -414,7 +414,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 44,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 54,
                         "errorMessage": "Cannot access value for name timeline",
                         "functionName": "width",
                         "line": 115
@@ -422,7 +422,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 375,
+                        "durationMicroseconds": 366,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "y",
                         "line": 117
@@ -430,7 +430,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 45,
-                        "durationMicroseconds": 325,
+                        "durationMicroseconds": 3429,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "height",
                         "line": 118
@@ -438,7 +438,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 73,
-                        "durationMicroseconds": 302,
+                        "durationMicroseconds": 349,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "eventColor",
                         "line": 120
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 44,
-                        "durationMicroseconds": 424,
+                        "durationMicroseconds": 505,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 121
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 51,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 122
@@ -462,7 +462,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 47,
-                        "durationMicroseconds": 406,
+                        "durationMicroseconds": 433,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 130
@@ -470,7 +470,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 48,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot load property text from const QMetaObject.",
                         "functionName": "color",
                         "line": 134
@@ -478,7 +478,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 48,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 135
@@ -486,7 +486,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 120,
+                        "durationMicroseconds": 137,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 125
@@ -494,7 +494,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 65,
-                        "durationMicroseconds": 109,
+                        "durationMicroseconds": 150,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 127
@@ -502,7 +502,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 56,
-                        "durationMicroseconds": 114,
+                        "durationMicroseconds": 162,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 128
@@ -510,23 +510,23 @@
                     {
                         "codegenSuccessful": true,
                         "column": 54,
-                        "durationMicroseconds": 115,
+                        "durationMicroseconds": 157,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 132
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 65,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"preferredFamilies\".",
-                        "functionName": "preferredFamilies",
+                        "column": 54,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "Cannot load property defaultFontFamily from const QMetaObject.",
+                        "functionName": "family",
                         "line": 133
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 130,
+                        "durationMicroseconds": 152,
                         "errorMessage": "",
                         "functionName": "acceptedButtons",
                         "line": 143
@@ -534,7 +534,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 46,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 115,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "onDoubleClicked",
                         "line": 144
@@ -542,7 +542,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 142
@@ -550,7 +550,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 183
@@ -558,7 +558,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 79,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "target",
                         "line": 188
@@ -566,7 +566,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 124,
+                        "durationMicroseconds": 72,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "onSelectedDateChanged",
                         "line": 189
@@ -574,7 +574,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 9,
-                        "durationMicroseconds": 104,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "onFiltersChanged",
                         "line": 193
@@ -582,7 +582,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 9,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 60,
                         "errorMessage": "",
                         "functionName": "onTasksChanged",
                         "line": 196

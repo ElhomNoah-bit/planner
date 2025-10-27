@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 370,
+                        "durationMicroseconds": 637,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "options",
                         "line": 6
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 71,
                         "errorMessage": "Cannot load property length from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/SegmentedControl.qml)::options with type QVariant.",
                         "functionName": "value",
                         "line": 11
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 399,
+                        "durationMicroseconds": 671,
                         "errorMessage": "Cannot load property length from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/SegmentedControl.qml)::options with type QVariant.",
                         "functionName": "currentIndex",
                         "line": 71
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 1763,
+                        "durationMicroseconds": 2730,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 18
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 105,
                         "errorMessage": "Cannot load property dark from const QMetaObject.",
                         "functionName": "color",
                         "line": 19
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 17
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot load property border from const QMetaObject.",
                         "functionName": "color",
                         "line": 20
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 90,
                         "errorMessage": "Cannot load property length from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/SegmentedControl.qml)::options with type QVariant.",
                         "functionName": "width",
                         "line": 27
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 100,
+                        "durationMicroseconds": 155,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 28
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 29
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 150,
+                        "durationMicroseconds": 296,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 30
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 14,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot load property length from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/SegmentedControl.qml)::options with type QVariant.",
                         "functionName": "visible",
                         "line": 32
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 178,
+                        "durationMicroseconds": 343,
                         "errorMessage": "method currentIndex cannot be resolved.",
                         "functionName": "x",
                         "line": 33
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 138,
+                        "durationMicroseconds": 126,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 26
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot load property accent from const QMetaObject.",
                         "functionName": "color",
                         "line": 31
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 59,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 35
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 70,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 41
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 95,
                         "errorMessage": "",
                         "functionName": "model",
                         "line": 45
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 95,
                         "errorMessage": "Cannot access value for name row",
                         "functionName": "width",
                         "line": 47
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name row",
                         "functionName": "height",
                         "line": 48
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 119,
+                        "durationMicroseconds": 225,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "option",
                         "line": 49
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 86,
+                        "durationMicroseconds": 148,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "onClicked",
                         "line": 53
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 51
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 42,
                         "errorMessage": "Cannot access value for name option",
                         "functionName": "text",
                         "line": 61
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 74,
+                        "durationMicroseconds": 130,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "color",
                         "line": 65
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 75,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 60
@@ -214,17 +214,17 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 116,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "weight",
                         "line": 63
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 45,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"preferredFamilies\".",
-                        "functionName": "preferredFamilies",
+                        "column": 34,
+                        "durationMicroseconds": 30,
+                        "errorMessage": "Cannot load property defaultFontFamily from const QMetaObject.",
+                        "functionName": "family",
                         "line": 64
                     }
                 ],

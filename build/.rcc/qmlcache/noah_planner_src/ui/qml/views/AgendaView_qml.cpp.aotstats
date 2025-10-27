@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 127,
+                        "durationMicroseconds": 101,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "buckets",
                         "line": 8
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 80,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "contentWidth",
                         "line": 10
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 99,
+                        "durationMicroseconds": 96,
                         "errorMessage": "",
                         "functionName": "contentHeight",
                         "line": 11
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 628,
+                        "durationMicroseconds": 607,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "reload",
                         "line": 97
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 586,
+                        "durationMicroseconds": 80,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 9
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 110,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 16
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 48,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 17
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 98,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "model",
                         "line": 21
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 96,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 23
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 24
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 27
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 66,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 26
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 422,
+                        "durationMicroseconds": 406,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 30
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot load property text from const QMetaObject.",
                         "functionName": "color",
                         "line": 34
@@ -118,23 +118,23 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 96,
+                        "durationMicroseconds": 115,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 32
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 49,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"preferredFamilies\".",
-                        "functionName": "preferredFamilies",
+                        "column": 38,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "Cannot load property defaultFontFamily from const QMetaObject.",
+                        "functionName": "family",
                         "line": 33
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 47,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 38
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 255,
+                        "durationMicroseconds": 302,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "model",
                         "line": 40
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 46,
                         "errorMessage": "Cannot load property radii from const QMetaObject.",
                         "functionName": "radius",
                         "line": 42
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 47,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot load property border from const QMetaObject.",
                         "functionName": "color",
                         "line": 45
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 46,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 51
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 51,
-                        "durationMicroseconds": 82,
+                        "durationMicroseconds": 89,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 49
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 48,
-                        "durationMicroseconds": 272,
+                        "durationMicroseconds": 259,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "color",
                         "line": 56
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 65,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 126,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 57
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 48,
-                        "durationMicroseconds": 186,
+                        "durationMicroseconds": 180,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 61
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 51,
-                        "durationMicroseconds": 561,
+                        "durationMicroseconds": 454,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 64
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 52,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 42,
                         "errorMessage": "Cannot load property text from const QMetaObject.",
                         "functionName": "color",
                         "line": 68
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 52,
-                        "durationMicroseconds": 99,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 69
@@ -238,23 +238,23 @@
                     {
                         "codegenSuccessful": true,
                         "column": 58,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 115,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 66
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 69,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"preferredFamilies\".",
-                        "functionName": "preferredFamilies",
+                        "column": 58,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "Cannot load property defaultFontFamily from const QMetaObject.",
+                        "functionName": "family",
                         "line": 67
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 51,
-                        "durationMicroseconds": 422,
+                        "durationMicroseconds": 476,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 72
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 52,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 40,
                         "errorMessage": "Cannot load property muted from const QMetaObject.",
                         "functionName": "color",
                         "line": 76
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 52,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 116,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 77
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 61,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 47,
                         "errorMessage": "Cannot load property typography from const QMetaObject.",
                         "functionName": "pixelSize",
                         "line": 73
@@ -286,17 +286,17 @@
                     {
                         "codegenSuccessful": false,
                         "column": 58,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot load property typography from const QMetaObject.",
                         "functionName": "weight",
                         "line": 74
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 69,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find property \"preferredFamilies\".",
-                        "functionName": "preferredFamilies",
+                        "column": 58,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "Cannot load property defaultFontFamily from const QMetaObject.",
+                        "functionName": "family",
                         "line": 75
                     },
                     {
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 101
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 85,
+                        "durationMicroseconds": 96,
                         "errorMessage": "Cannot access value for name PlannerBackend",
                         "functionName": "target",
                         "line": 104
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 91,
                         "errorMessage": "method reload cannot be resolved.",
                         "functionName": "onFiltersChanged",
                         "line": 105
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 139,
+                        "durationMicroseconds": 71,
                         "errorMessage": "method reload cannot be resolved.",
                         "functionName": "onTasksChanged",
                         "line": 106

@@ -16,9 +16,7 @@ Button {
 
     font.pixelSize: 14
     font.weight: active ? Font.DemiBold : Font.Medium
-    font.family: Qt.application.font && Qt.application.font.family.length
-                    ? Qt.application.font.family
-                    : (NP.ThemeStore.fonts.stack.length > 0 ? NP.ThemeStore.fonts.stack[0] : "Sans")
+    font.family: NP.ThemeStore.defaultFontFamily
 
     background: Rectangle {
         radius: NP.ThemeStore.radii.xl
