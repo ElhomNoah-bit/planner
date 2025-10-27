@@ -1,0 +1,24 @@
+module NoahPlanner
+typeinfo noah_planner.qmltypes
+prefer :/NoahPlanner/
+App 1.0 src/ui/qml/App.qml
+Main 1.0 src/ui/qml/Main.qml
+DayCell 1.0 src/ui/qml/components/DayCell.qml
+EventChip 1.0 src/ui/qml/components/EventChip.qml
+FilterPill 1.0 src/ui/qml/components/FilterPill.qml
+GlassPanel 1.0 src/ui/qml/components/GlassPanel.qml
+IconGlyph 1.0 src/ui/qml/components/IconGlyph.qml
+PillButton 1.0 src/ui/qml/components/PillButton.qml
+QuickAddPill 1.0 src/ui/qml/components/QuickAddPill.qml
+SegmentedControl 1.0 src/ui/qml/components/SegmentedControl.qml
+TimerOverlay 1.0 src/ui/qml/components/TimerOverlay.qml
+Toast 1.0 src/ui/qml/components/Toast.qml
+ToastHost 1.0 src/ui/qml/components/ToastHost.qml
+TodayTaskDelegate 1.0 src/ui/qml/components/TodayTaskDelegate.qml
+ThemeStore 1.0 src/ui/qml/styles/ThemeStore.qml
+AgendaView 1.0 src/ui/qml/views/AgendaView.qml
+MonthView 1.0 src/ui/qml/views/MonthView.qml
+SidebarToday 1.0 src/ui/qml/views/SidebarToday.qml
+WeekView 1.0 src/ui/qml/views/WeekView.qml
+depends QtQuick
+

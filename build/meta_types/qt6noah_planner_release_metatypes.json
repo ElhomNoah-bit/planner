@@ -1,0 +1,435 @@
+[
+    {
+        "classes": [
+            {
+                "className": "ExamModel",
+                "lineNumber": 8,
+                "object": true,
+                "qualifiedClassName": "ExamModel",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QAbstractListModel"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "ExamModel.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "TaskFilterProxy",
+                "lineNumber": 6,
+                "object": true,
+                "qualifiedClassName": "TaskFilterProxy",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QSortFilterProxyModel"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "TaskFilterProxy.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "TaskModel",
+                "lineNumber": 8,
+                "object": true,
+                "qualifiedClassName": "TaskModel",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QAbstractListModel"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "TaskModel.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "PlannerService",
+                "lineNumber": 14,
+                "object": true,
+                "qualifiedClassName": "PlannerService",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "dataChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "PlannerService.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "PlannerBackend",
+                "lineNumber": 17,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "isoDate",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 8,
+                        "name": "selectDateIso",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 9,
+                        "name": "refreshToday",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "proxyRow",
+                                "type": "int"
+                            },
+                            {
+                                "name": "done",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 10,
+                        "name": "toggleTaskDone",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "isoDate",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 11,
+                        "isConst": true,
+                        "name": "dayEvents",
+                        "returnType": "QVariantList"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "isoDate",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 12,
+                        "isConst": true,
+                        "name": "daySummary",
+                        "returnType": "QVariantMap"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "subjectId",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 13,
+                        "name": "toggleSubject",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "subjectIds",
+                                "type": "QStringList"
+                            }
+                        ],
+                        "index": 14,
+                        "name": "setSubjectFilter",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 15,
+                        "isConst": true,
+                        "name": "subjectFilter",
+                        "returnType": "QStringList"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "id",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 16,
+                        "isConst": true,
+                        "name": "subjectById",
+                        "returnType": "QVariantMap"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "id",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 17,
+                        "isConst": true,
+                        "name": "subjectColor",
+                        "returnType": "QColor"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "weekStartIso",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 18,
+                        "isConst": true,
+                        "name": "weekEvents",
+                        "returnType": "QVariantList"
+                    },
+                    {
+                        "access": "public",
+                        "index": 19,
+                        "isConst": true,
+                        "name": "listBuckets",
+                        "returnType": "QVariantList"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "input",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 20,
+                        "name": "quickAdd",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "message",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 21,
+                        "name": "showToast",
+                        "returnType": "void"
+                    }
+                ],
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "darkTheme",
+                        "notify": "darkThemeChanged",
+                        "read": "darkTheme",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "write": "setDarkTheme"
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "todayTasks",
+                        "read": "todayTasks",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "TaskFilterProxy*",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 2,
+                        "name": "exams",
+                        "read": "exams",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "ExamModel*",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 3,
+                        "name": "subjects",
+                        "notify": "subjectsChanged",
+                        "read": "subjects",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QVariantList",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 4,
+                        "name": "selectedDate",
+                        "notify": "selectedDateChanged",
+                        "read": "selectedDateIso",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 5,
+                        "name": "viewMode",
+                        "notify": "viewModeChanged",
+                        "read": "viewMode",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false,
+                        "write": "setViewMode"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 6,
+                        "name": "onlyOpen",
+                        "notify": "filtersChanged",
+                        "read": "onlyOpen",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "write": "setOnlyOpen"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 7,
+                        "name": "searchQuery",
+                        "notify": "filtersChanged",
+                        "read": "searchQuery",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false,
+                        "write": "setSearchQuery"
+                    }
+                ],
+                "qualifiedClassName": "PlannerBackend",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "darkThemeChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 1,
+                        "name": "subjectsChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "name": "selectedDateChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 3,
+                        "name": "tasksChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 4,
+                        "name": "examsChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 5,
+                        "name": "viewModeChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 6,
+                        "name": "filtersChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "message",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 7,
+                        "name": "toastRequested",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "PlannerBackend.h",
+        "outputRevision": 69
+    }
+]

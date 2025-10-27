@@ -1,0 +1,60 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": false,
+                        "column": 12,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"color\".",
+                        "functionName": "color",
+                        "line": 14
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 84,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "onCompleted",
+                        "line": 16
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 17,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "target",
+                        "line": 21
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 9,
+                        "durationMicroseconds": 80,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "onDarkThemeChanged",
+                        "line": 22
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 65,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 30
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"fill\".",
+                        "functionName": "fill",
+                        "line": 34
+                    }
+                ],
+                "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/App.qml"
+            }
+        ],
+        "moduleId": "NoahPlanner(noah_planner)"
+    }
+]

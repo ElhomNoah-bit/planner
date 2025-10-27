@@ -1,0 +1,76 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": true,
+                        "column": 19,
+                        "durationMicroseconds": 106,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 6
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 46,
+                        "errorMessage": "Cannot access value for name currentMessage",
+                        "functionName": "visible",
+                        "line": 14
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 25,
+                        "errorMessage": "Cannot access value for name currentMessage",
+                        "functionName": "message",
+                        "line": 15
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 233,
+                        "errorMessage": "",
+                        "functionName": "onVisibleChanged",
+                        "line": 16
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 122,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 11
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 111,
+                        "errorMessage": "",
+                        "functionName": "bottom",
+                        "line": 12
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 17,
+                        "durationMicroseconds": 94,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "target",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 9,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "onToastRequested",
+                        "line": 25
+                    }
+                ],
+                "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/ToastHost.qml"
+            }
+        ],
+        "moduleId": "NoahPlanner(noah_planner)"
+    }
+]

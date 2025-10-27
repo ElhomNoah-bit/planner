@@ -1,0 +1,92 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": false,
+                        "column": 13,
+                        "durationMicroseconds": 77,
+                        "errorMessage": "Cannot load property radii from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 12
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 14,
+                        "durationMicroseconds": 263,
+                        "errorMessage": "",
+                        "functionName": "opacity",
+                        "line": 14
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 343,
+                        "errorMessage": "",
+                        "functionName": "onVisibleChanged",
+                        "line": 35
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 55,
+                        "durationMicroseconds": 131,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 17
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 15,
+                        "durationMicroseconds": 127,
+                        "errorMessage": "",
+                        "functionName": "text",
+                        "line": 22
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 46,
+                        "errorMessage": "Cannot load property text from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 25
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 91,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 21
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"preferredFamilies\".",
+                        "functionName": "preferredFamilies",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 19,
+                        "durationMicroseconds": 122,
+                        "errorMessage": "",
+                        "functionName": "interval",
+                        "line": 30
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 161,
+                        "errorMessage": "",
+                        "functionName": "onTriggered",
+                        "line": 32
+                    }
+                ],
+                "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/Toast.qml"
+            }
+        ],
+        "moduleId": "NoahPlanner(noah_planner)"
+    }
+]

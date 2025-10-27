@@ -1,4 +1,17 @@
 /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner.dir
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner_qmltyperegistration.dir
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/all_qmltyperegistrations.dir
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner_qmllint.dir
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner_qmllint_json.dir
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner_qmllint_module.dir
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/all_qmllint.dir
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/all_qmllint_json.dir
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/all_qmllint_module.dir
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner_copy_qml.dir
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner_copy_res.dir
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/module_noah_planner_aotstats_target.dir
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/all_aotstats.dir
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/noah_planner_qmlimportscan.dir
 /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/edit_cache.dir
 /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/rebuild_cache.dir
 /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/list_install_components.dir

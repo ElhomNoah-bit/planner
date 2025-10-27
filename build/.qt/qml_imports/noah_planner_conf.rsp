@@ -1,0 +1,14 @@
+-rootPath
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6
+-cmake-output
+-output-file
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/qml_imports/noah_planner_conf.cmake
+-importPath
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/NoahPlanner
+-importPath
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build
+-importPath
+/usr/lib64/qt6/qml
+-qrcFiles
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qmake_NoahPlanner.qrc
+/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/noah_planner_raw_qml_0.qrc

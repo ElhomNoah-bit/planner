@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "className": "TaskFilterProxy",
+            "lineNumber": 6,
+            "object": true,
+            "qualifiedClassName": "TaskFilterProxy",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QSortFilterProxyModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "TaskFilterProxy.h",
+    "outputRevision": 69
+}

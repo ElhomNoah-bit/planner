@@ -1,0 +1,460 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 355,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "selectedIso",
+                        "line": 9
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 27,
+                        "durationMicroseconds": 330,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "summary",
+                        "line": 10
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 329,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "refreshSummary",
+                        "line": 126
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "Cannot load property spacing from const QMetaObject.",
+                        "functionName": "spacing",
+                        "line": 18
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 3099,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 17
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 46,
+                        "errorMessage": "Cannot load property text from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 27
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 124,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 25
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 41,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"preferredFamilies\".",
+                        "functionName": "preferredFamilies",
+                        "line": 26
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 182,
+                        "errorMessage": "Cannot access value for name summary",
+                        "functionName": "text",
+                        "line": 30
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 30,
+                        "errorMessage": "Cannot load property muted from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 34
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "Cannot load property typography from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 31
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 30,
+                        "durationMicroseconds": 30,
+                        "errorMessage": "Cannot load property typography from const QMetaObject.",
+                        "functionName": "weight",
+                        "line": 32
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 41,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"preferredFamilies\".",
+                        "functionName": "preferredFamilies",
+                        "line": 33
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 106,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 40
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 951,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "model",
+                        "line": 41
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 50,
+                        "errorMessage": "Cannot load property spacing from const QMetaObject.",
+                        "functionName": "spacing",
+                        "line": 43
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 146,
+                        "errorMessage": "",
+                        "functionName": "boundsBehavior",
+                        "line": 45
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 38,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"verticalScrollBarPolicy\".",
+                        "functionName": "verticalScrollBarPolicy",
+                        "line": 47
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 59,
+                        "errorMessage": "Cannot access value for name tasksView",
+                        "functionName": "width",
+                        "line": 50
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "Cannot access value for name model",
+                        "functionName": "title",
+                        "line": 51
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "Cannot access value for name model",
+                        "functionName": "goal",
+                        "line": 52
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 27,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "Cannot access value for name model",
+                        "functionName": "duration",
+                        "line": 53
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 31,
+                        "durationMicroseconds": 36,
+                        "errorMessage": "Cannot access value for name model",
+                        "functionName": "subjectColor",
+                        "line": 54
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "Cannot access value for name model",
+                        "functionName": "done",
+                        "line": 55
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 3431,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "onToggled",
+                        "line": 56
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 76,
+                        "errorMessage": "",
+                        "functionName": "onToggled",
+                        "line": 56
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 31,
+                        "durationMicroseconds": 92,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "onStartTimer",
+                        "line": 57
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "Cannot load property text from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 68
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 128,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 66
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 41,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"preferredFamilies\".",
+                        "functionName": "preferredFamilies",
+                        "line": 67
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 134,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 72
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 1107,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "model",
+                        "line": 73
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 63,
+                        "errorMessage": "Cannot access value for name examsView",
+                        "functionName": "width",
+                        "line": 78
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 29,
+                        "durationMicroseconds": 45,
+                        "errorMessage": "Cannot load property radii from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 79
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 47,
+                        "durationMicroseconds": 470,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "subject",
+                        "line": 83
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "Cannot access value for name subject",
+                        "functionName": "color",
+                        "line": 90
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 39,
+                        "durationMicroseconds": 64,
+                        "errorMessage": "Cannot access value for name subject",
+                        "functionName": "text",
+                        "line": 93
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 3074,
+                        "errorMessage": "Cannot load property text from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 97
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 138,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 95
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 57,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"preferredFamilies\".",
+                        "functionName": "preferredFamilies",
+                        "line": 96
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 39,
+                        "durationMicroseconds": 239,
+                        "errorMessage": "Cannot access value for name model",
+                        "functionName": "text",
+                        "line": 100
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "Cannot load property muted from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 104
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "Cannot load property typography from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 101
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "Cannot load property typography from const QMetaObject.",
+                        "functionName": "weight",
+                        "line": 102
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 57,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"preferredFamilies\".",
+                        "functionName": "preferredFamilies",
+                        "line": 103
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 35,
+                        "durationMicroseconds": 82,
+                        "errorMessage": "Cannot access value for name model",
+                        "functionName": "text",
+                        "line": 108
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "Cannot load property muted from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 112
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 124,
+                        "errorMessage": "",
+                        "functionName": "wrapMode",
+                        "line": 113
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 45,
+                        "durationMicroseconds": 48,
+                        "errorMessage": "Cannot load property typography from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 109
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 42,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "Cannot load property typography from const QMetaObject.",
+                        "functionName": "weight",
+                        "line": 110
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 53,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"preferredFamilies\".",
+                        "functionName": "preferredFamilies",
+                        "line": 111
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 118
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 17,
+                        "durationMicroseconds": 111,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "target",
+                        "line": 131
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 9,
+                        "durationMicroseconds": 150,
+                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "functionName": "onSelectedDateChanged",
+                        "line": 132
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 9,
+                        "durationMicroseconds": 150,
+                        "errorMessage": "",
+                        "functionName": "onTasksChanged",
+                        "line": 136
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 9,
+                        "durationMicroseconds": 132,
+                        "errorMessage": "",
+                        "functionName": "onFiltersChanged",
+                        "line": 139
+                    }
+                ],
+                "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/views/SidebarToday.qml"
+            }
+        ],
+        "moduleId": "NoahPlanner(noah_planner)"
+    }
+]
