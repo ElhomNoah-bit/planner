@@ -2,6 +2,7 @@
 
 #include <QDateTime>
 #include <QModelIndex>
+#include <QDebug>
 
 #include <algorithm>
 
@@ -12,6 +13,25 @@ QString toIso(const QDate& date) {
 
 QDate fromIso(const QString& iso) {
     return QDate::fromString(iso, Qt::ISODate);
+}
+
+QString modeToString(PlannerBackend::ViewMode mode) {
+    switch (mode) {
+    case PlannerBackend::Week:
+        return QStringLiteral("week");
+    case PlannerBackend::List:
+        return QStringLiteral("list");
+    case PlannerBackend::Month:
+    default:
+        return QStringLiteral("month");
+    }
+}
+
+PlannerBackend::ViewMode stringToMode(QString value) {
+    const QString normalized = value.trimmed().toLower();
+    if (normalized == QStringLiteral("week")) return PlannerBackend::Week;
+    if (normalized == QStringLiteral("list")) return PlannerBackend::List;
+    return PlannerBackend::Month;
 }
 }
 
@@ -34,6 +54,7 @@ PlannerBackend::PlannerBackend(QObject* parent)
 
     emit subjectsChanged();
     emit selectedDateChanged();
+    emit onlyOpenChanged();
     emit filtersChanged();
     emit viewModeChanged();
     emit darkThemeChanged();
@@ -83,10 +104,28 @@ void PlannerBackend::selectDate(const QDate& date) {
     emit selectedDateChanged();
 }
 
-void PlannerBackend::setViewMode(const QString& mode) {
+QString PlannerBackend::viewModeString() const {
+    return modeToString(m_viewMode);
+}
+
+void PlannerBackend::setViewMode(ViewMode mode) {
+    switch (mode) {
+    case Month:
+    case Week:
+    case List:
+        break;
+    default:
+        mode = Month;
+        break;
+    }
     if (m_viewMode == mode) return;
     m_viewMode = mode;
     emit viewModeChanged();
+    qDebug() << "[PlannerBackend] viewMode ->" << modeToString(m_viewMode);
+}
+
+void PlannerBackend::setViewModeString(const QString& mode) {
+    setViewMode(stringToMode(mode));
 }
 
 void PlannerBackend::setOnlyOpen(bool onlyOpen) {
@@ -94,7 +133,9 @@ void PlannerBackend::setOnlyOpen(bool onlyOpen) {
     m_state.save();
     updateProxyFilters();
     refreshDayTasks(m_selectedDate);
+    emit onlyOpenChanged();
     emit filtersChanged();
+    qDebug() << "[PlannerBackend] onlyOpen ->" << m_state.onlyOpen();
 }
 
 void PlannerBackend::setSearchQuery(const QString& query) {

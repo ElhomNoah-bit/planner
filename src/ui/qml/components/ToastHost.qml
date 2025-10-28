@@ -74,7 +74,7 @@ Item {
     }
 
     Connections {
-        target: PlannerBackend
+        target: planner
         function onToastRequested(message) {
             host.show(message)
         }

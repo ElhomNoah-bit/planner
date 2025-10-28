@@ -44,7 +44,7 @@ Item {
             timerOverlay.minutes = minutes
             timerOverlay.open = true
         }
-        onFinished: PlannerBackend.showToast(qsTr("Timer abgeschlossen"))
+        onFinished: planner.showToast(qsTr("Timer abgeschlossen"))
     }
 
     function componentForMode(mode) {
@@ -62,7 +62,7 @@ Item {
         if (viewLoader.item && viewLoader.item.goToday) {
             viewLoader.item.goToday()
         } else {
-            PlannerBackend.refreshToday()
+            planner.refreshToday()
         }
     }
 
@@ -70,8 +70,8 @@ Item {
         id: monthViewComponent
         MonthView {
             anchors.fill: parent
-            onDaySelected: iso => PlannerBackend.selectDateIso(iso)
-            function goToday() { PlannerBackend.refreshToday() }
+            onDaySelected: iso => planner.selectDateIso(iso)
+            function goToday() { planner.refreshToday() }
             onQuickAddRequested: (iso, kind) => root.quickAddRequested(iso, kind)
             onJumpToTodayRequested: root.jumpToTodayRequested()
         }
@@ -81,8 +81,8 @@ Item {
         id: weekViewComponent
         WeekView {
             anchors.fill: parent
-            onDaySelected: iso => PlannerBackend.selectDateIso(iso)
-            function goToday() { PlannerBackend.refreshToday() }
+            onDaySelected: iso => planner.selectDateIso(iso)
+            function goToday() { planner.refreshToday() }
         }
     }
 

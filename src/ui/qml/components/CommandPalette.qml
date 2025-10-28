@@ -31,25 +31,25 @@ Item {
             label: qsTr("Ansicht: Monat"),
             command: "view-month",
             keywords: ["month", "monats", "kalender"],
-            run: function() { app.setViewMode("month") }
+            run: function() { planner.viewModeString = "month" }
         },
         {
             label: qsTr("Ansicht: Woche"),
             command: "view-week",
             keywords: ["week", "woche"],
-            run: function() { app.setViewMode("week") }
+            run: function() { planner.viewModeString = "week" }
         },
         {
             label: qsTr("Ansicht: Liste"),
             command: "view-list",
             keywords: ["list", "liste"],
-            run: function() { app.setViewMode("list") }
+            run: function() { planner.viewModeString = "list" }
         },
         {
             label: qsTr("Nur offene toggeln"),
             command: "toggle-open",
             keywords: ["open", "offen", "filter"],
-            run: function() { app.toggleOnlyOpen(!app.onlyOpen) }
+            run: function() { planner.onlyOpen = !planner.onlyOpen }
         },
         {
             label: qsTr("Einstellungen"),

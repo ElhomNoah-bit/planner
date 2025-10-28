@@ -21,8 +21,9 @@ class PlannerBackend : public QObject {
     Q_PROPERTY(ExamModel* exams READ exams CONSTANT)
     Q_PROPERTY(QVariantList subjects READ subjects NOTIFY subjectsChanged)
     Q_PROPERTY(QString selectedDate READ selectedDateIso NOTIFY selectedDateChanged)
-    Q_PROPERTY(QString viewMode READ viewMode WRITE setViewMode NOTIFY viewModeChanged)
-    Q_PROPERTY(bool onlyOpen READ onlyOpen WRITE setOnlyOpen NOTIFY filtersChanged)
+    Q_PROPERTY(ViewMode viewMode READ viewMode WRITE setViewMode NOTIFY viewModeChanged)
+    Q_PROPERTY(QString viewModeString READ viewModeString WRITE setViewModeString NOTIFY viewModeChanged)
+    Q_PROPERTY(bool onlyOpen READ onlyOpen WRITE setOnlyOpen NOTIFY onlyOpenChanged)
     Q_PROPERTY(QString searchQuery READ searchQuery WRITE setSearchQuery NOTIFY filtersChanged)
     Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY settingsChanged)
     Q_PROPERTY(QString weekStart READ weekStart WRITE setWeekStart NOTIFY settingsChanged)
@@ -30,6 +31,9 @@ class PlannerBackend : public QObject {
 
 public:
     explicit PlannerBackend(QObject* parent = nullptr);
+
+    enum ViewMode { Month = 0, Week = 1, List = 2 };
+    Q_ENUM(ViewMode)
 
     bool darkTheme() const;
     void setDarkTheme(bool dark);
@@ -42,10 +46,12 @@ public:
     QString selectedDateIso() const;
     void selectDate(const QDate& date);
 
-    QString viewMode() const { return m_viewMode; }
-    void setViewMode(const QString& mode);
+    ViewMode viewMode() const { return m_viewMode; }
+    QString viewModeString() const;
 
     bool onlyOpen() const { return m_state.onlyOpen(); }
+    void setViewMode(ViewMode mode);
+    void setViewModeString(const QString& mode);
     void setOnlyOpen(bool onlyOpen);
 
     QString searchQuery() const { return m_state.searchQuery(); }
@@ -61,6 +67,9 @@ public:
     void setShowWeekNumbers(bool enabled);
 
     Q_INVOKABLE void selectDateIso(const QString& isoDate);
+    Q_INVOKABLE void setViewMode(int mode) { setViewMode(static_cast<ViewMode>(mode)); }
+    Q_INVOKABLE void setViewMode(const QString& mode) { setViewModeString(mode); }
+    Q_INVOKABLE void setOnlyOpenQml(bool value) { setOnlyOpen(value); }
     Q_INVOKABLE void refreshToday();
     Q_INVOKABLE void toggleTaskDone(int proxyRow, bool done);
     Q_INVOKABLE QVariantList dayEvents(const QString& isoDate) const;
@@ -83,6 +92,7 @@ signals:
     void examsChanged();
     void viewModeChanged();
     void filtersChanged();
+    void onlyOpenChanged();
     void toastRequested(const QString& message);
     void settingsChanged();
 
@@ -95,7 +105,7 @@ private:
 
     QList<Subject> m_subjects;
     QDate m_selectedDate;
-    QString m_viewMode = QStringLiteral("month");
+    ViewMode m_viewMode = Month;
 
     void loadSubjects();
     void refreshDayTasks(const QDate& date);

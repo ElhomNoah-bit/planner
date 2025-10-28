@@ -89,7 +89,7 @@ Flickable {
                                     PillButton {
                                         kind: "ghost"
                                         text: qsTr("Zum Tag")
-                                        onClicked: PlannerBackend.selectDateIso(modelData.iso)
+                                        onClicked: planner.selectDateIso(modelData.iso)
                                     }
                                 }
                             }
@@ -101,13 +101,13 @@ Flickable {
     }
 
     function reload() {
-        buckets = PlannerBackend.listBuckets()
+        buckets = planner.listBuckets()
     }
 
     Component.onCompleted: reload()
 
     Connections {
-        target: PlannerBackend
+        target: planner
         function onFiltersChanged() { reload() }
         function onTasksChanged() { reload() }
     }

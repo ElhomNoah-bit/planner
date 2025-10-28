@@ -8,7 +8,8 @@ Item {
         { "label": qsTr("Woche"), "value": "week" },
         { "label": qsTr("Liste"), "value": "list" }
     ]
-    property string value: options.length > 0 ? options[0].value : ""
+    property int currentIndex: 0
+    signal activated(string value, int index)
 
     implicitHeight: Math.max(Styles.ThemeStore.layout.pillH, 36)
     implicitWidth: 260
@@ -35,7 +36,7 @@ Item {
         radius: radii.xl
         color: colors.accent
         visible: root.options.length > 0
-        x: 4 + currentIndex() * width
+        x: 4 + root.currentIndex * width
         Behavior on x { NumberAnimation { duration: 140; easing.type: Easing.InOutQuad } }
         Behavior on width { NumberAnimation { duration: 140; easing.type: Easing.InOutQuad } }
     }
@@ -55,8 +56,8 @@ Item {
                 TapHandler {
                     acceptedButtons: Qt.LeftButton
                     onTapped: {
-                        if (root.value !== option.value) {
-                            root.value = option.value
+                        if (index !== root.currentIndex) {
+                            root.activated(option.value, index)
                         }
                     }
                 }
@@ -65,22 +66,14 @@ Item {
                     anchors.centerIn: parent
                     text: option.label
                     font.pixelSize: typeScale.sm
-                    font.weight: root.value === option.value ? typeScale.weightBold : typeScale.weightMedium
+                    font.weight: index === root.currentIndex ? typeScale.weightBold : typeScale.weightMedium
                     font.family: Styles.ThemeStore.fonts.uiFallback
-                    color: root.value === option.value
+                    color: index === root.currentIndex
                         ? colors.appBg
                         : (hover.hovered ? colors.text : colors.text2)
                     renderType: Text.NativeRendering
                 }
             }
         }
-    }
-
-    function currentIndex() {
-        for (var i = 0; i < root.options.length; ++i) {
-            if (root.options[i].value === value)
-                return i
-        }
-        return 0
     }
 }

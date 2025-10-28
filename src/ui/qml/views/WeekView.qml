@@ -5,7 +5,7 @@ import NoahPlanner.Styles as Styles
 
 Item {
     id: root
-    property string anchorIso: PlannerBackend.selectedDate
+    property string anchorIso: planner.selectedDate
     property string weekStartIso: ""
     property var events: []
     property var eventsByDay: []
@@ -14,7 +14,7 @@ Item {
     property real minuteHeight: 1.1
     signal daySelected(string iso)
 
-    property string weekStartSetting: PlannerBackend.weekStart
+    property string weekStartSetting: planner.weekStart
     property var weekdayLabels: []
 
     readonly property real timelineHeight: (endHour - startHour) * 60 * minuteHeight
@@ -163,7 +163,7 @@ Item {
 
     function rebuild() {
         weekStartIso = weekStart(anchorIso)
-        events = PlannerBackend.weekEvents(weekStartIso)
+    events = planner.weekEvents(weekStartIso)
         eventsByDay = []
         for (var i = 0; i < 7; ++i) {
             eventsByDay.push([])
@@ -204,9 +204,9 @@ Item {
     }
 
     Connections {
-        target: PlannerBackend
+        target: planner
         function onSelectedDateChanged() {
-            root.anchorIso = PlannerBackend.selectedDate
+            root.anchorIso = planner.selectedDate
             root.rebuild()
         }
         function onFiltersChanged() {
