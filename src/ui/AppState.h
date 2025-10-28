@@ -30,6 +30,9 @@ public:
     QSet<QString> subjectFilter() const { return m_subjectFilter; }
     bool setSubjectFilter(const QSet<QString>& subjects);
 
+    QString viewMode() const { return m_viewMode; }
+    bool setViewMode(const QString& mode);
+
     QString language() const { return m_language; }
     bool setLanguage(const QString& language);
 
@@ -48,4 +51,5 @@ private:
     QString m_language = QStringLiteral("de");
     QString m_weekStart = QStringLiteral("monday");
     bool m_weekNumbers = false;
+    QString m_viewMode = QStringLiteral("month");
 };

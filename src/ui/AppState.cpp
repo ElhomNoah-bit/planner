@@ -31,6 +31,10 @@ void AppState::load() {
     m_language = m_settings->value("language", QStringLiteral("de")).toString();
     m_weekStart = m_settings->value("weekStart", QStringLiteral("monday")).toString();
     m_weekNumbers = m_settings->value("weekNumbers", false).toBool();
+    const QString persistedView = m_settings->value("viewMode", QStringLiteral("month")).toString();
+    if (!persistedView.isEmpty()) {
+        m_viewMode = persistedView;
+    }
     m_settings->endGroup();
 }
 
@@ -43,6 +47,7 @@ void AppState::save() const {
     m_settings->setValue("language", m_language);
     m_settings->setValue("weekStart", m_weekStart);
     m_settings->setValue("weekNumbers", m_weekNumbers);
+    m_settings->setValue("viewMode", m_viewMode);
     m_settings->endGroup();
     m_settings->sync();
 }
@@ -90,5 +95,16 @@ bool AppState::setWeekStart(const QString& weekStart) {
 bool AppState::setWeekNumbers(bool enabled) {
     if (m_weekNumbers == enabled) return false;
     m_weekNumbers = enabled;
+    return true;
+}
+
+bool AppState::setViewMode(const QString& mode) {
+    const QString normalized = mode.trimmed().toLower();
+    if (normalized.isEmpty()) return false;
+    if (normalized != QStringLiteral("month") && normalized != QStringLiteral("week") && normalized != QStringLiteral("list")) {
+        return false;
+    }
+    if (m_viewMode == normalized) return false;
+    m_viewMode = normalized;
     return true;
 }

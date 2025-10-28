@@ -1,63 +1,70 @@
 #include "PlannerBackend.h"
 
+#include <QCoreApplication>
 #include <QDateTime>
-#include <QModelIndex>
-#include <QDebug>
+#include <QDir>
+#include <QLocale>
+#include <QMap>
+#include <QStandardPaths>
+#include <QTimeZone>
 
 #include <algorithm>
 
 namespace {
-QString toIso(const QDate& date) {
+QString toIsoDate(const QDate& date) {
     return date.toString(Qt::ISODate);
 }
 
-QDate fromIso(const QString& iso) {
+QString toIsoDateTime(const QDateTime& dateTime) {
+    if (!dateTime.isValid()) {
+        return QString();
+    }
+    return dateTime.toString(Qt::ISODate);
+}
+
+QDate fromIsoDate(const QString& iso) {
     return QDate::fromString(iso, Qt::ISODate);
 }
 
-QString modeToString(PlannerBackend::ViewMode mode) {
-    switch (mode) {
-    case PlannerBackend::Week:
-        return QStringLiteral("week");
-    case PlannerBackend::List:
-        return QStringLiteral("list");
-    case PlannerBackend::Month:
-    default:
-        return QStringLiteral("month");
-    }
+QDateTime fromIsoDateTime(const QString& iso) {
+    return QDateTime::fromString(iso, Qt::ISODate);
 }
 
-PlannerBackend::ViewMode stringToMode(QString value) {
-    const QString normalized = value.trimmed().toLower();
-    if (normalized == QStringLiteral("week")) return PlannerBackend::Week;
-    if (normalized == QStringLiteral("list")) return PlannerBackend::List;
-    return PlannerBackend::Month;
+QLocale germanLocale() {
+    static const QLocale loc(QLocale::German, QLocale::Germany);
+    return loc;
 }
+
+int weekStartDay(const QString& setting) {
+    if (setting.compare(QStringLiteral("sunday"), Qt::CaseInsensitive) == 0) {
+        return Qt::Sunday;
+    }
+    return Qt::Monday;
 }
+} // namespace
 
 PlannerBackend::PlannerBackend(QObject* parent)
     : QObject(parent) {
-    m_subjects = m_planner.subjects();
-    connect(&m_planner, &PlannerService::dataChanged, this, [this]() {
-        loadSubjects();
-        reloadExams();
-        refreshDayTasks(m_selectedDate);
-    });
+    m_searchQuery = m_state.searchQuery();
+    m_viewMode = modeFromString(m_state.viewMode());
+    m_selectedDate = QDate::currentDate();
 
-    m_taskProxy.setSourceModel(&m_taskModel);
-    updateProxyFilters();
+    initializeStorage();
+    reloadEvents();
+    rebuildCommands();
+    rebuildSidebar();
 
-    const QDate today = QDate::currentDate();
-    m_selectedDate = today;
-    refreshDayTasks(today);
-    reloadExams();
-
-    emit subjectsChanged();
     emit selectedDateChanged();
-    emit onlyOpenChanged();
-    emit filtersChanged();
     emit viewModeChanged();
+    emit onlyOpenChanged();
     emit darkThemeChanged();
+    emit commandsChanged();
+    emit todayEventsChanged();
+    emit upcomingEventsChanged();
+    emit examEventsChanged();
+    if (!m_searchQuery.isEmpty()) {
+        emit searchQueryChanged();
+    }
 }
 
 bool PlannerBackend::darkTheme() const {
@@ -65,42 +72,22 @@ bool PlannerBackend::darkTheme() const {
 }
 
 void PlannerBackend::setDarkTheme(bool dark) {
-    if (!m_state.setDarkTheme(dark)) return;
+    if (!m_state.setDarkTheme(dark)) {
+        return;
+    }
     m_state.save();
     emit darkThemeChanged();
 }
 
-TaskFilterProxy* PlannerBackend::todayTasks() {
-    return &m_taskProxy;
-}
-
-ExamModel* PlannerBackend::exams() {
-    return &m_examModel;
-}
-
-QVariantList PlannerBackend::subjects() const {
-    QVariantList list;
-    const QSet<QString> active = m_state.subjectFilter();
-    for (const auto& subject : m_subjects) {
-        QVariantMap entry;
-        entry.insert("id", subject.id);
-        entry.insert("name", subject.name);
-        entry.insert("color", subject.color);
-        entry.insert("active", active.contains(subject.id));
-        list.append(entry);
-    }
-    return list;
-}
-
 QString PlannerBackend::selectedDateIso() const {
-    return toIso(m_selectedDate);
+    return toIsoDate(m_selectedDate);
 }
 
 void PlannerBackend::selectDate(const QDate& date) {
-    if (!date.isValid()) return;
-    if (m_selectedDate == date) return;
+    if (!date.isValid() || date == m_selectedDate) {
+        return;
+    }
     m_selectedDate = date;
-    refreshDayTasks(m_selectedDate);
     emit selectedDateChanged();
 }
 
@@ -109,315 +96,401 @@ QString PlannerBackend::viewModeString() const {
 }
 
 void PlannerBackend::setViewMode(ViewMode mode) {
-    switch (mode) {
-    case Month:
-    case Week:
-    case List:
-        break;
-    default:
-        mode = Month;
-        break;
+    if (m_viewMode == mode) {
+        return;
     }
-    if (m_viewMode == mode) return;
     m_viewMode = mode;
+    m_state.setViewMode(modeToString(mode));
+    m_state.save();
     emit viewModeChanged();
-    qDebug() << "[PlannerBackend] viewMode ->" << modeToString(m_viewMode);
 }
 
 void PlannerBackend::setViewModeString(const QString& mode) {
-    setViewMode(stringToMode(mode));
+    setViewMode(modeFromString(mode));
 }
 
 void PlannerBackend::setOnlyOpen(bool onlyOpen) {
-    if (!m_state.setOnlyOpen(onlyOpen)) return;
+    if (!m_state.setOnlyOpen(onlyOpen)) {
+        return;
+    }
     m_state.save();
-    updateProxyFilters();
-    refreshDayTasks(m_selectedDate);
+    reloadEvents();
+    rebuildSidebar();
     emit onlyOpenChanged();
-    emit filtersChanged();
-    qDebug() << "[PlannerBackend] onlyOpen ->" << m_state.onlyOpen();
 }
 
 void PlannerBackend::setSearchQuery(const QString& query) {
     const QString trimmed = query.trimmed();
-    if (!m_state.setSearchQuery(trimmed)) return;
+    if (m_searchQuery == trimmed) {
+        return;
+    }
+    m_searchQuery = trimmed;
+    m_state.setSearchQuery(trimmed);
     m_state.save();
-    updateProxyFilters();
-    refreshDayTasks(m_selectedDate);
-    emit filtersChanged();
-}
-
-void PlannerBackend::setLanguage(const QString& language) {
-    if (!m_state.setLanguage(language)) return;
-    m_state.save();
-    emit settingsChanged();
-}
-
-void PlannerBackend::setWeekStart(const QString& weekStart) {
-    if (!m_state.setWeekStart(weekStart)) return;
-    m_state.save();
-    emit settingsChanged();
-}
-
-void PlannerBackend::setShowWeekNumbers(bool enabled) {
-    if (!m_state.setWeekNumbers(enabled)) return;
-    m_state.save();
-    emit settingsChanged();
+    emit searchQueryChanged();
 }
 
 void PlannerBackend::selectDateIso(const QString& isoDate) {
-    selectDate(fromIso(isoDate));
+    selectDate(fromIsoDate(isoDate));
 }
 
-void PlannerBackend::refreshToday() {
+void PlannerBackend::jumpToToday() {
     selectDate(QDate::currentDate());
 }
 
-void PlannerBackend::toggleTaskDone(int proxyRow, bool done) {
-    if (proxyRow < 0) return;
-    const QModelIndex proxyIndex = m_taskProxy.index(proxyRow, 0);
-    if (!proxyIndex.isValid()) return;
-    const QModelIndex sourceIndex = m_taskProxy.mapToSource(proxyIndex);
-    if (!sourceIndex.isValid()) return;
-
-    const int planIndex = sourceIndex.data(TaskModel::PlanIndexRole).toInt();
-    m_planner.setDone(m_selectedDate, planIndex, done);
-    m_taskModel.setDone(sourceIndex.row(), done);
-    refreshDayTasks(m_selectedDate);
-    notify(done ? tr("Aufgabe erledigt") : tr("Als offen markiert"));
-}
-
-QVariantList PlannerBackend::dayEvents(const QString& isoDate) const {
-    const QDate date = fromIso(isoDate);
-    if (!date.isValid()) return {};
-    const QVector<Task> tasks = applyFilters(m_planner.generateDay(date));
-    return serializeTasks(tasks);
-}
-
-QVariantMap PlannerBackend::daySummary(const QString& isoDate) const {
-    const QDate date = fromIso(isoDate);
-    QVariantMap out;
-    if (!date.isValid()) return out;
-
-    const QVector<Task> tasks = applyFilters(m_planner.generateDay(date));
-    const int total = tasks.size();
-    const int done = std::count_if(tasks.begin(), tasks.end(), [](const Task& task) { return task.done; });
-    out.insert("total", total);
-    out.insert("done", done);
-    out.insert("remaining", std::max(0, total - done));
-    out.insert("progress", total == 0 ? 0.0 : static_cast<double>(done) / static_cast<double>(total));
-    return out;
-}
-
-void PlannerBackend::toggleSubject(const QString& subjectId) {
-    QSet<QString> current = m_state.subjectFilter();
-    if (current.contains(subjectId)) {
-        current.remove(subjectId);
-    } else {
-        current.insert(subjectId);
-    }
-    if (!m_state.setSubjectFilter(current)) return;
-    m_state.save();
-    updateProxyFilters();
-    refreshDayTasks(m_selectedDate);
-    emit subjectsChanged();
-    emit filtersChanged();
-}
-
-void PlannerBackend::setSubjectFilter(const QStringList& subjectIds) {
-    QSet<QString> set(subjectIds.constBegin(), subjectIds.constEnd());
-    if (!m_state.setSubjectFilter(set)) return;
-    m_state.save();
-    updateProxyFilters();
-    refreshDayTasks(m_selectedDate);
-    emit subjectsChanged();
-    emit filtersChanged();
-}
-
-QStringList PlannerBackend::subjectFilter() const {
-    return QStringList(m_state.subjectFilter().constBegin(), m_state.subjectFilter().constEnd());
-}
-
-QVariantMap PlannerBackend::subjectById(const QString& id) const {
-    QVariantMap out;
-    auto findSubject = [&]() -> Subject {
-        for (const auto& subject : m_subjects) {
-            if (subject.id == id) return subject;
-        }
-        Subject fallback;
-        fallback.id = id;
-        fallback.name = id;
-        fallback.color = QColor("#4C4C4C");
-        return fallback;
-    };
-    const Subject subject = findSubject();
-    out.insert("id", subject.id);
-    out.insert("name", subject.name);
-    out.insert("color", subject.color);
-    return out;
-}
-
-QColor PlannerBackend::subjectColor(const QString& id) const {
-    for (const auto& subject : m_subjects) {
-        if (subject.id == id) return subject.color;
-    }
-    return QColor("#4C4C4C");
-}
-
-QVariantList PlannerBackend::weekEvents(const QString& weekStartIso) const {
-    QVariantList events;
-    const QDate start = fromIso(weekStartIso);
-    if (!start.isValid()) return events;
-
-    const QDate weekStart = start.addDays(-(start.dayOfWeek() - Qt::Monday));
-    for (int dayOffset = 0; dayOffset < 7; ++dayOffset) {
-        const QDate day = weekStart.addDays(dayOffset);
-        const QVector<Task> tasks = applyFilters(m_planner.generateDay(day));
-        int minutesCursor = 8 * 60;
-        for (const auto& task : tasks) {
-            QVariantMap item;
-            item.insert("iso", toIso(day));
-            item.insert("dayIndex", dayOffset);
-            item.insert("startMinutes", minutesCursor);
-            item.insert("duration", task.durationMinutes);
-            item.insert("title", task.title);
-            item.insert("subjectId", task.subjectId);
-            item.insert("color", task.color);
-            item.insert("done", task.done);
-            item.insert("planIndex", task.planIndex);
-            events.append(item);
-            minutesCursor += task.durationMinutes + 10;
-        }
-    }
-    return events;
-}
-
-QVariantList PlannerBackend::listBuckets() const {
-    QVariantList buckets;
-    const QDate today = QDate::currentDate();
-
-    struct Bucket {
-        QString key;
-        QString label;
-        QDate start;
-        QDate end;
-    };
-
-    const QList<Bucket> defs = {
-        {"today", tr("Heute"), today, today},
-        {"tomorrow", tr("Morgen"), today.addDays(1), today.addDays(1)},
-        {"week", tr("Diese Woche"), today.addDays(2), today.addDays(6)},
-        {"later", tr("Später"), today.addDays(7), today.addDays(30)}
-    };
-
-    for (const auto& def : defs) {
-        QVariantMap bucket;
-        bucket.insert("key", def.key);
-        bucket.insert("label", def.label);
-
-        QVariantList items;
-        for (QDate d = def.start; d <= def.end; d = d.addDays(1)) {
-            const QVector<Task> tasks = applyFilters(m_planner.generateDay(d));
-            for (const auto& task : tasks) {
-                QVariantMap item;
-                item.insert("iso", toIso(d));
-                item.insert("title", task.title);
-                item.insert("goal", task.goal);
-                item.insert("subjectId", task.subjectId);
-                item.insert("color", task.color);
-                item.insert("done", task.done);
-                item.insert("duration", task.durationMinutes);
-                item.insert("planIndex", task.planIndex);
-                items.append(item);
-            }
-        }
-        bucket.insert("items", items);
-        buckets.append(bucket);
+QVariant PlannerBackend::addQuickEntry(const QString& text) {
+    const QuickAddResult parsed = m_parser.parse(text);
+    if (!parsed.success) {
+        notify(tr("Eingabe konnte nicht verarbeitet werden"));
+        return {};
     }
 
-    return buckets;
+    EventRecord record = parsed.record;
+    if (!m_repository.insert(record)) {
+        notify(tr("Speichern fehlgeschlagen"));
+        return {};
+    }
+
+    qInfo() << "[QuickAdd]" << record.title
+            << toIsoDateTime(record.start)
+            << toIsoDateTime(record.end)
+            << "allDay=" << record.allDay
+            << "tags=" << record.tags;
+
+    reloadEvents();
+    rebuildSidebar();
+    notify(tr("Eintrag gespeichert"));
+    return toVariant(record);
 }
 
-void PlannerBackend::quickAdd(const QString& input) {
-    const QString trimmed = input.trimmed();
-    if (trimmed.isEmpty()) return;
-
-    // Placeholder implementation until task authoring is connected to the core planner.
-    notify(tr("Hinzugefügt"));
-}
-
-void PlannerBackend::showToast(const QString& message) {
-    if (message.trimmed().isEmpty()) return;
-    notify(message);
-}
-
-void PlannerBackend::loadSubjects() {
-    m_subjects = m_planner.subjects();
-    emit subjectsChanged();
-}
-
-void PlannerBackend::refreshDayTasks(const QDate& date) {
-    const QVector<Task> tasks = filteredTasks(m_planner.generateDay(date));
-    m_taskModel.replaceAll(tasks);
-    m_taskProxy.invalidate();
-    emit tasksChanged();
-}
-
-QVector<Task> PlannerBackend::filteredTasks(const QVector<Task>& tasks) const {
-    QVector<Task> result;
-    result.reserve(tasks.size());
-    for (const auto& task : tasks) {
-        if (!m_state.subjectFilter().isEmpty() && !m_state.subjectFilter().contains(task.subjectId)) {
-            continue;
-        }
-        if (m_state.onlyOpen() && task.done) {
-            continue;
-        }
-        if (!m_state.searchQuery().isEmpty()) {
-            const QString query = m_state.searchQuery();
-            if (!task.title.contains(query, Qt::CaseInsensitive) && !task.goal.contains(query, Qt::CaseInsensitive)) {
-                continue;
-            }
-        }
-        result.append(task);
+QVariantList PlannerBackend::search(const QString& query) const {
+    const QVector<EventRecord> hits = m_repository.search(query, m_state.onlyOpen());
+    QVariantList result;
+    result.reserve(hits.size());
+    for (const auto& record : hits) {
+        result.append(toVariant(record));
     }
     return result;
 }
 
-QVector<Task> PlannerBackend::applyFilters(const QVector<Task>& tasks) const {
-    return filteredTasks(tasks);
-}
-
-QVariantList PlannerBackend::serializeTasks(const QVector<Task>& tasks) const {
-    QVariantList out;
-    for (const auto& task : tasks) {
-        QVariantMap item;
-        item.insert("id", task.id);
-        item.insert("title", task.title);
-        item.insert("goal", task.goal);
-        item.insert("subjectId", task.subjectId);
-        item.insert("color", task.color);
-        item.insert("done", task.done);
-        item.insert("duration", task.durationMinutes);
-        item.insert("planIndex", task.planIndex);
-        out.append(item);
+QVariantList PlannerBackend::dayEvents(const QString& isoDate) const {
+    const QDate date = fromIsoDate(isoDate);
+    if (!date.isValid()) {
+        return {};
     }
-    return out;
+    return buildDayEvents(date);
 }
 
-void PlannerBackend::reloadExams() {
-    QVector<Exam> data = QVector<Exam>::fromList(m_planner.exams());
-    std::sort(data.begin(), data.end(), [](const Exam& a, const Exam& b) {
-        return a.date < b.date;
+QVariantList PlannerBackend::weekEvents(const QString& weekStartIso) const {
+    QDate anchor = fromIsoDate(weekStartIso);
+    if (!anchor.isValid()) {
+        anchor = m_selectedDate;
+    }
+    const int startDay = weekStartDay(m_state.weekStart());
+    while (anchor.dayOfWeek() != startDay) {
+        anchor = anchor.addDays(-1);
+    }
+    const QDate end = anchor.addDays(6);
+
+    QVariantList events;
+    for (const auto& record : m_cachedEvents) {
+        const QDate day = record.start.date();
+        if (day < anchor || day > end) {
+            continue;
+        }
+        QVariantMap map = toVariant(record);
+        map.insert(QStringLiteral("dayIndex"), anchor.daysTo(day));
+        if (record.allDay) {
+            map.insert(QStringLiteral("startMinutes"), 0);
+            map.insert(QStringLiteral("duration"), 24 * 60);
+        } else {
+            const int startMinutes = record.start.time().hour() * 60 + record.start.time().minute();
+            const int endMinutes = record.end.time().hour() * 60 + record.end.time().minute();
+            const int duration = std::max(15, endMinutes - startMinutes);
+            map.insert(QStringLiteral("startMinutes"), std::max(0, startMinutes));
+            map.insert(QStringLiteral("duration"), duration);
+        }
+        events.append(map);
+    }
+
+    std::sort(events.begin(), events.end(), [](const QVariant& left, const QVariant& right) {
+        const QVariantMap l = left.toMap();
+        const QVariantMap r = right.toMap();
+        if (l.value(QStringLiteral("dayIndex")).toInt() == r.value(QStringLiteral("dayIndex")).toInt()) {
+            return l.value(QStringLiteral("startMinutes")).toInt() < r.value(QStringLiteral("startMinutes")).toInt();
+        }
+        return l.value(QStringLiteral("dayIndex")).toInt() < r.value(QStringLiteral("dayIndex")).toInt();
     });
-    m_examModel.replaceAll(data);
-    emit examsChanged();
+
+    return events;
 }
 
-void PlannerBackend::updateProxyFilters() {
-    m_taskProxy.setSubjectFilter(m_state.subjectFilter());
-    m_taskProxy.setOnlyOpen(m_state.onlyOpen());
-    m_taskProxy.setSearchQuery(m_state.searchQuery());
+QVariantList PlannerBackend::listBuckets() const {
+    const QDate today = QDate::currentDate();
+    const QDate start = today.addDays(-30);
+    const QDate end = today.addDays(30);
+    const QLocale loc = germanLocale();
+
+    QMap<QString, QVariantMap> buckets;
+
+    for (const auto& record : m_cachedEvents) {
+        const QDate date = record.start.date();
+        if (date < start || date > end) {
+            continue;
+        }
+        int weekYear = 0;
+        const int weekNumber = date.weekNumber(&weekYear);
+        const QString key = QStringLiteral("%1-%2").arg(weekYear).arg(weekNumber, 2, 10, QLatin1Char('0'));
+
+        QVariantMap bucket = buckets.value(key);
+        if (bucket.isEmpty()) {
+            const int startDay = weekStartDay(m_state.weekStart());
+            QDate weekStart = date;
+            while (weekStart.dayOfWeek() != startDay) {
+                weekStart = weekStart.addDays(-1);
+            }
+            const QDate weekEnd = weekStart.addDays(6);
+            bucket.insert(QStringLiteral("key"), key);
+            bucket.insert(QStringLiteral("label"),
+                          tr("KW %1 (%2 – %3)")
+                              .arg(weekNumber)
+                              .arg(loc.toString(weekStart, QStringLiteral("dd.MM.")))
+                              .arg(loc.toString(weekEnd, QStringLiteral("dd.MM."))));
+            bucket.insert(QStringLiteral("items"), QVariantList());
+        }
+        QVariantList items = bucket.value(QStringLiteral("items")).toList();
+        items.append(toVariant(record));
+        bucket.insert(QStringLiteral("items"), items);
+        buckets.insert(key, bucket);
+    }
+
+    QVariantList result;
+    const auto keys = buckets.keys();
+    for (const auto& key : keys) {
+        result.append(buckets.value(key));
+    }
+
+    std::sort(result.begin(), result.end(), [](const QVariant& a, const QVariant& b) {
+        return a.toMap().value(QStringLiteral("key")).toString() < b.toMap().value(QStringLiteral("key")).toString();
+    });
+
+    return result;
+}
+
+QVariantMap PlannerBackend::eventById(const QString& id) const {
+    if (id.isEmpty()) {
+        return {};
+    }
+    for (const auto& record : m_cachedEvents) {
+        if (record.id == id) {
+            return toVariant(record);
+        }
+    }
+    return {};
+}
+
+void PlannerBackend::setEventDone(const QString& id, bool done) {
+    if (id.isEmpty()) {
+        return;
+    }
+    if (!m_repository.setDone(id, done)) {
+        notify(tr("Status konnte nicht aktualisiert werden"));
+        return;
+    }
+    reloadEvents();
+    rebuildSidebar();
+    notify(done ? tr("Als erledigt markiert") : tr("Als offen markiert"));
+}
+
+void PlannerBackend::showToast(const QString& message) {
+    if (message.trimmed().isEmpty()) {
+        return;
+    }
+    notify(message);
+}
+
+void PlannerBackend::initializeStorage() {
+    QString base = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    if (base.isEmpty()) {
+        base = QDir(QCoreApplication::applicationDirPath()).filePath(QStringLiteral("data"));
+    }
+    QDir dir(base);
+    if (!dir.exists()) {
+        dir.mkpath(QStringLiteral("."));
+    }
+    m_storageDir = dir.absolutePath();
+
+    if (!m_repository.initialize(m_storageDir)) {
+        qWarning() << "[PlannerBackend] Repository initialisation failed for" << m_storageDir;
+    }
+
+    const QString storePath = m_repository.isSqlAvailable() ? m_repository.databasePath() : m_repository.jsonFallbackPath();
+    qInfo() << "[PlannerBackend] DB path:" << storePath;
+}
+
+void PlannerBackend::reloadEvents() {
+    m_cachedEvents = m_repository.loadAll(m_state.onlyOpen());
+    std::sort(m_cachedEvents.begin(), m_cachedEvents.end(), [](const EventRecord& a, const EventRecord& b) {
+        if (a.start == b.start) {
+            return a.title.toLower() < b.title.toLower();
+        }
+        return a.start < b.start;
+    });
+    m_eventModel.replaceAll(m_cachedEvents);
+    emit eventsChanged();
+    logEventLoad(m_cachedEvents.size());
+}
+
+void PlannerBackend::rebuildSidebar() {
+    const QDate today = QDate::currentDate();
+    const QDate upcomingEnd = today.addDays(7);
+
+    QVariantList todayItems;
+    QVariantList upcomingItems;
+    QVariantList examItems;
+
+    for (const auto& record : m_cachedEvents) {
+        const QDate eventDate = record.start.date();
+        if (eventDate == today) {
+            todayItems.append(toVariant(record));
+        }
+        if (eventDate > today && eventDate <= upcomingEnd) {
+            upcomingItems.append(toVariant(record));
+        }
+        if (record.isExam && eventDate >= today) {
+            examItems.append(toVariant(record));
+        }
+    }
+
+    if (m_today != todayItems) {
+        m_today = todayItems;
+        emit todayEventsChanged();
+    }
+    if (m_upcoming != upcomingItems) {
+        m_upcoming = upcomingItems;
+        emit upcomingEventsChanged();
+    }
+    if (m_exams != examItems) {
+        m_exams = examItems;
+        emit examEventsChanged();
+    }
+}
+
+void PlannerBackend::rebuildCommands() {
+    QVariantList list;
+
+    const auto add = [&](const QString& id, const QString& title, const QString& hint) {
+        QVariantMap map;
+        map.insert(QStringLiteral("id"), id);
+        map.insert(QStringLiteral("title"), title);
+        map.insert(QStringLiteral("hint"), hint);
+        list.append(map);
+    };
+
+    add(QStringLiteral("go-today"), tr("Zu heute springen"), tr("Fokus auf das heutige Datum"));
+    add(QStringLiteral("new-item"), tr("Schnellerfassung öffnen"), tr("Neuen Eintrag anlegen"));
+    add(QStringLiteral("view-month"), tr("Ansicht: Monat"), QString());
+    add(QStringLiteral("view-week"), tr("Ansicht: Woche"), QString());
+    add(QStringLiteral("view-list"), tr("Ansicht: Liste"), QString());
+    add(QStringLiteral("toggle-open"), tr("Nur offene umschalten"), QString());
+    add(QStringLiteral("open-settings"), tr("Einstellungen öffnen"), QString());
+
+    if (m_commands != list) {
+        m_commands = list;
+        emit commandsChanged();
+    }
+}
+
+QVariantMap PlannerBackend::toVariant(const EventRecord& record) const {
+    QVariantMap map;
+    const QLocale loc = germanLocale();
+    map.insert(QStringLiteral("id"), record.id);
+    map.insert(QStringLiteral("title"), record.title);
+    map.insert(QStringLiteral("start"), toIsoDateTime(record.start));
+    map.insert(QStringLiteral("end"), toIsoDateTime(record.end));
+    map.insert(QStringLiteral("allDay"), record.allDay);
+    map.insert(QStringLiteral("location"), record.location);
+    map.insert(QStringLiteral("notes"), record.notes);
+    map.insert(QStringLiteral("tags"), QVariant::fromValue(record.tags));
+    map.insert(QStringLiteral("isExam"), record.isExam);
+    map.insert(QStringLiteral("isDone"), record.isDone);
+    map.insert(QStringLiteral("due"), toIsoDateTime(record.due));
+    map.insert(QStringLiteral("colorHint"), record.colorHint);
+    map.insert(QStringLiteral("priority"), record.priority);
+    map.insert(QStringLiteral("day"), toIsoDate(record.start.date()));
+    map.insert(QStringLiteral("weekdayLabel"), loc.toString(record.start.date(), QStringLiteral("ddd")));
+    map.insert(QStringLiteral("dateLabel"), loc.toString(record.start.date(), QStringLiteral("dd.MM.yyyy")));
+    if (record.allDay) {
+        map.insert(QStringLiteral("startTimeLabel"), tr("Ganztägig"));
+        map.insert(QStringLiteral("endTimeLabel"), QString());
+    } else {
+        map.insert(QStringLiteral("startTimeLabel"), loc.toString(record.start.time(), QStringLiteral("HH:mm")));
+        map.insert(QStringLiteral("endTimeLabel"), loc.toString(record.end.time(), QStringLiteral("HH:mm")));
+    }
+    map.insert(QStringLiteral("overdue"),
+               record.due.isValid() && record.due < QDateTime::currentDateTime());
+    return map;
+}
+
+QVariantList PlannerBackend::buildDayEvents(const QDate& date) const {
+    QVariantList list;
+    for (const auto& record : m_cachedEvents) {
+        if (record.start.date() != date) {
+            continue;
+        }
+        list.append(toVariant(record));
+    }
+    std::sort(list.begin(), list.end(), [](const QVariant& a, const QVariant& b) {
+        const QVariantMap left = a.toMap();
+        const QVariantMap right = b.toMap();
+        if (left.value(QStringLiteral("allDay")).toBool() != right.value(QStringLiteral("allDay")).toBool()) {
+            return right.value(QStringLiteral("allDay")).toBool();
+        }
+        return left.value(QStringLiteral("start")).toString() < right.value(QStringLiteral("start")).toString();
+    });
+    return list;
+}
+
+QVariantList PlannerBackend::buildRangeEvents(const QDate& start, const QDate& end) const {
+    QVariantList list;
+    for (const auto& record : m_cachedEvents) {
+        const QDate date = record.start.date();
+        if (date < start || date > end) {
+            continue;
+        }
+        list.append(toVariant(record));
+    }
+    std::sort(list.begin(), list.end(), [](const QVariant& a, const QVariant& b) {
+        return a.toMap().value(QStringLiteral("start"]).toString() < b.toMap().value(QStringLiteral("start")).toString();
+    });
+    return list;
+}
+
+PlannerBackend::ViewMode PlannerBackend::modeFromString(const QString& mode) const {
+    const QString normalized = mode.trimmed().toLower();
+    if (normalized == QStringLiteral("week")) {
+        return ViewMode::Week;
+    }
+    if (normalized == QStringLiteral("list")) {
+        return ViewMode::List;
+    }
+    return ViewMode::Month;
+}
+
+QString PlannerBackend::modeToString(ViewMode mode) const {
+    switch (mode) {
+    case ViewMode::Week:
+        return QStringLiteral("week");
+    case ViewMode::List:
+        return QStringLiteral("list");
+    case ViewMode::Month:
+    default:
+        return QStringLiteral("month");
+    }
+}
+
+void PlannerBackend::logEventLoad(int count) const {
+    qInfo() << "[PlannerBackend] events loaded:" << count;
 }
 
 void PlannerBackend::notify(const QString& message) {

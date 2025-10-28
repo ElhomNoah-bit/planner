@@ -4,7 +4,7 @@ project(noah_planner LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.5 COMPONENTS Quick Qml QuickControls2 QuickLayouts Widgets REQUIRED)
+find_package(Qt6 6.5 COMPONENTS Quick Qml QuickControls2 QuickLayouts Widgets Sql REQUIRED)
 
 qt_standard_project_setup()
 
@@ -15,9 +15,15 @@ qt_add_executable(noah_planner
     src/main.cpp
     src/core/PlannerService.cpp
     src/core/PlannerService.h
+    src/core/EventRepository.cpp
+    src/core/EventRepository.h
+    src/core/QuickAddParser.cpp
+    src/core/QuickAddParser.h
     src/core/Task.h
     src/core/Subject.h
     src/core/Exam.h
+    src/models/EventModel.cpp
+    src/models/EventModel.h
     src/models/TaskModel.cpp
     src/models/TaskModel.h
     src/models/ExamModel.cpp
@@ -94,6 +100,6 @@ target_link_libraries(noah_planner PRIVATE styles_module)
 
 target_include_directories(noah_planner PRIVATE src)
 
-target_link_libraries(noah_planner PRIVATE Qt6::Gui Qt6::Quick Qt6::Qml Qt6::QuickControls2 Qt6::QuickLayouts Qt6::Widgets)
+target_link_libraries(noah_planner PRIVATE Qt6::Gui Qt6::Quick Qt6::Qml Qt6::QuickControls2 Qt6::QuickLayouts Qt6::Widgets Qt6::Sql)
 
 install(TARGETS noah_planner RUNTIME DESTINATION bin)

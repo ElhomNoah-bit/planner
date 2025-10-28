@@ -91,7 +91,9 @@ FocusScope {
             delegate: EventChip {
                 width: list.width
                 label: modelData.title
-                subjectColor: modelData.color
+                subjectColor: modelData.colorHint && modelData.colorHint.length ? modelData.colorHint : Styles.ThemeStore.colors.accent
+                timeText: modelData.startTimeLabel
+                overdue: modelData.overdue
             }
         }
 
@@ -101,6 +103,7 @@ FocusScope {
             label: "+" + root.extraCount
             muted: true
             subjectColor: Styles.ThemeStore.colors.accent
+            timeText: ""
         }
     }
 

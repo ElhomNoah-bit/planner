@@ -17,80 +17,48 @@ ApplicationWindow {
     Shortcut {
         id: shortcutCommandPalette
         sequences: ["Ctrl+K", "Meta+K"]
+        context: Qt.ApplicationShortcut
         enabled: app.visible
         onActivated: app.openCommandPalette("")
     }
 
     Shortcut {
         sequence: StandardKey.New
+        context: Qt.ApplicationShortcut
         enabled: app.visible
         onActivated: app.quickAddOpen()
     }
 
     Shortcut {
         sequences: ["Ctrl+T", "Meta+T"]
+        context: Qt.ApplicationShortcut
         enabled: app.visible
         onActivated: app.goToday()
     }
 
     Shortcut {
         sequences: ["Ctrl+1", "Meta+1"]
+        context: Qt.ApplicationShortcut
         enabled: app.visible
-        onActivated: planner.viewModeString = "month"
+        onActivated: planner.setViewMode("month")
     }
 
     Shortcut {
         sequences: ["Ctrl+2", "Meta+2"]
+        context: Qt.ApplicationShortcut
         enabled: app.visible
-        onActivated: planner.viewModeString = "week"
+        onActivated: planner.setViewMode("week")
     }
 
     Shortcut {
         sequences: ["Ctrl+3", "Meta+3"]
+        context: Qt.ApplicationShortcut
         enabled: app.visible
-        onActivated: planner.viewModeString = "list"
-    }
-
-    FocusScope {
-        id: keyScope
-        anchors.fill: parent
-        focus: true
-        z: -1
-
-        Keys.onPressed: function(event) {
-            if (!visible || event.isAutoRepeat)
-                return
-            if (event.modifiers !== Qt.NoModifier)
-                return
-            switch (event.key) {
-            case Qt.Key_N:
-                app.quickAddOpen()
-                event.accepted = true
-                break
-            case Qt.Key_T:
-                app.goToday()
-                event.accepted = true
-                break
-            case Qt.Key_M:
-                planner.viewModeString = "month"
-                event.accepted = true
-                break
-            case Qt.Key_W:
-                planner.viewModeString = "week"
-                event.accepted = true
-                break
-            case Qt.Key_L:
-                planner.viewModeString = "list"
-                event.accepted = true
-                break
-            default:
-                break
-            }
-        }
+        onActivated: planner.setViewMode("list")
     }
 
     function goToday() {
-        planner.refreshToday()
+        planner.jumpToToday()
     }
 
     function quickAddOpen(initialText) {
@@ -121,7 +89,7 @@ ApplicationWindow {
     }
 
     function createQuickItem(value) {
-        planner.quickAdd(value)
+        planner.addQuickEntry(value)
     }
 
     function openSettings() {
@@ -137,13 +105,13 @@ ApplicationWindow {
             quickAddOpen()
             break
         case "view-month":
-            planner.viewModeString = "month"
+            planner.setViewMode("month")
             break
         case "view-week":
-            planner.viewModeString = "week"
+            planner.setViewMode("week")
             break
         case "view-list":
-            planner.viewModeString = "list"
+            planner.setViewMode("list")
             break
         case "toggle-open":
             planner.onlyOpen = !planner.onlyOpen
@@ -159,7 +127,7 @@ ApplicationWindow {
     function setViewMode(mode) {
         if (planner.viewModeString === mode)
             return
-        planner.viewModeString = mode
+        planner.setViewMode(mode)
     }
 
     ColumnLayout {
@@ -182,9 +150,9 @@ ApplicationWindow {
                     { "label": qsTr("Woche"), "value": "week" },
                     { "label": qsTr("Liste"), "value": "list" }
                 ]
-                currentIndex: planner.viewMode === PlannerBackend.Week ? 1
-                               : planner.viewMode === PlannerBackend.List ? 2 : 0
-                onActivated: (mode, index) => app.setViewMode(mode)
+                currentIndex: planner.viewModeString === "week" ? 1
+                               : planner.viewModeString === "list" ? 2 : 0
+                onActivated: (mode, index) => planner.setViewMode(mode)
             }
 
             PillButton {
@@ -276,30 +244,20 @@ ApplicationWindow {
         if (globalSearch) {
             globalSearch.text = planner.searchQuery
         }
-        Qt.callLater(() => keyScope.forceActiveFocus())
     }
 
     Connections {
         target: commandPalette
-        function onVisibleChanged() {
-            if (!commandPalette.visible)
-                Qt.callLater(() => keyScope.forceActiveFocus())
-        }
+        function onVisibleChanged() {}
     }
 
     Connections {
         target: quickAddDialog
-        function onVisibleChanged() {
-            if (!quickAddDialog.visible)
-                Qt.callLater(() => keyScope.forceActiveFocus())
-        }
+        function onVisibleChanged() {}
     }
 
     Connections {
         target: settingsDialog
-        function onVisibleChanged() {
-            if (!settingsDialog.visible)
-                Qt.callLater(() => keyScope.forceActiveFocus())
-        }
+        function onVisibleChanged() {}
     }
 }

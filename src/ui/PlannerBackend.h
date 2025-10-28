@@ -1,118 +1,113 @@
 #pragma once
 
 #include "AppState.h"
-#include "core/PlannerService.h"
-#include "models/ExamModel.h"
-#include "models/TaskFilterProxy.h"
-#include "models/TaskModel.h"
+#include "core/EventRepository.h"
+#include "core/QuickAddParser.h"
+#include "models/EventModel.h"
 
+#include <QAbstractListModel>
 #include <QDate>
 #include <QObject>
-#include <QColor>
-#include <QSet>
-#include <QStringList>
+#include <QString>
 #include <QVariantList>
 #include <QVariantMap>
+#include <QVector>
 
 class PlannerBackend : public QObject {
     Q_OBJECT
     Q_PROPERTY(bool darkTheme READ darkTheme WRITE setDarkTheme NOTIFY darkThemeChanged)
-    Q_PROPERTY(TaskFilterProxy* todayTasks READ todayTasks CONSTANT)
-    Q_PROPERTY(ExamModel* exams READ exams CONSTANT)
-    Q_PROPERTY(QVariantList subjects READ subjects NOTIFY subjectsChanged)
     Q_PROPERTY(QString selectedDate READ selectedDateIso NOTIFY selectedDateChanged)
     Q_PROPERTY(ViewMode viewMode READ viewMode WRITE setViewMode NOTIFY viewModeChanged)
     Q_PROPERTY(QString viewModeString READ viewModeString WRITE setViewModeString NOTIFY viewModeChanged)
     Q_PROPERTY(bool onlyOpen READ onlyOpen WRITE setOnlyOpen NOTIFY onlyOpenChanged)
-    Q_PROPERTY(QString searchQuery READ searchQuery WRITE setSearchQuery NOTIFY filtersChanged)
-    Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY settingsChanged)
-    Q_PROPERTY(QString weekStart READ weekStart WRITE setWeekStart NOTIFY settingsChanged)
-    Q_PROPERTY(bool showWeekNumbers READ showWeekNumbers WRITE setShowWeekNumbers NOTIFY settingsChanged)
+    Q_PROPERTY(QAbstractListModel* events READ eventsModel NOTIFY eventsChanged)
+    Q_PROPERTY(QVariantList today READ todayEvents NOTIFY todayEventsChanged)
+    Q_PROPERTY(QVariantList upcoming READ upcomingEvents NOTIFY upcomingEventsChanged)
+    Q_PROPERTY(QVariantList exams READ examEvents NOTIFY examEventsChanged)
+    Q_PROPERTY(QVariantList commands READ commands NOTIFY commandsChanged)
+    Q_PROPERTY(QString searchQuery READ searchQuery WRITE setSearchQuery NOTIFY searchQueryChanged)
 
 public:
     explicit PlannerBackend(QObject* parent = nullptr);
 
-    enum ViewMode { Month = 0, Week = 1, List = 2 };
+    enum class ViewMode { Month = 0, Week = 1, List = 2 };
     Q_ENUM(ViewMode)
 
     bool darkTheme() const;
     void setDarkTheme(bool dark);
-
-    TaskFilterProxy* todayTasks();
-    ExamModel* exams();
-
-    QVariantList subjects() const;
 
     QString selectedDateIso() const;
     void selectDate(const QDate& date);
 
     ViewMode viewMode() const { return m_viewMode; }
     QString viewModeString() const;
-
-    bool onlyOpen() const { return m_state.onlyOpen(); }
     void setViewMode(ViewMode mode);
     void setViewModeString(const QString& mode);
+
+    bool onlyOpen() const { return m_state.onlyOpen(); }
     void setOnlyOpen(bool onlyOpen);
 
-    QString searchQuery() const { return m_state.searchQuery(); }
+    QString searchQuery() const { return m_searchQuery; }
     void setSearchQuery(const QString& query);
 
-    QString language() const { return m_state.language(); }
-    void setLanguage(const QString& language);
-
-    QString weekStart() const { return m_state.weekStart(); }
-    void setWeekStart(const QString& weekStart);
-
-    bool showWeekNumbers() const { return m_state.weekNumbers(); }
-    void setShowWeekNumbers(bool enabled);
+    QAbstractListModel* eventsModel() { return &m_eventModel; }
+    QVariantList todayEvents() const { return m_today; }
+    QVariantList upcomingEvents() const { return m_upcoming; }
+    QVariantList examEvents() const { return m_exams; }
+    QVariantList commands() const { return m_commands; }
 
     Q_INVOKABLE void selectDateIso(const QString& isoDate);
-    Q_INVOKABLE void setViewMode(int mode) { setViewMode(static_cast<ViewMode>(mode)); }
-    Q_INVOKABLE void setViewMode(const QString& mode) { setViewModeString(mode); }
+    Q_INVOKABLE void setViewMode(const QString& mode);
     Q_INVOKABLE void setOnlyOpenQml(bool value) { setOnlyOpen(value); }
-    Q_INVOKABLE void refreshToday();
-    Q_INVOKABLE void toggleTaskDone(int proxyRow, bool done);
+    Q_INVOKABLE void jumpToToday();
+    Q_INVOKABLE QVariant addQuickEntry(const QString& text);
+    Q_INVOKABLE QVariantList search(const QString& query) const;
     Q_INVOKABLE QVariantList dayEvents(const QString& isoDate) const;
-    Q_INVOKABLE QVariantMap daySummary(const QString& isoDate) const;
-    Q_INVOKABLE void toggleSubject(const QString& subjectId);
-    Q_INVOKABLE void setSubjectFilter(const QStringList& subjectIds);
-    Q_INVOKABLE QStringList subjectFilter() const;
-    Q_INVOKABLE QVariantMap subjectById(const QString& id) const;
-    Q_INVOKABLE QColor subjectColor(const QString& id) const;
     Q_INVOKABLE QVariantList weekEvents(const QString& weekStartIso) const;
     Q_INVOKABLE QVariantList listBuckets() const;
-    Q_INVOKABLE void quickAdd(const QString& input);
+    Q_INVOKABLE QVariantMap eventById(const QString& id) const;
+    Q_INVOKABLE void setEventDone(const QString& id, bool done);
     Q_INVOKABLE void showToast(const QString& message);
 
 signals:
     void darkThemeChanged();
-    void subjectsChanged();
     void selectedDateChanged();
-    void tasksChanged();
-    void examsChanged();
     void viewModeChanged();
-    void filtersChanged();
     void onlyOpenChanged();
+    void eventsChanged();
+    void todayEventsChanged();
+    void upcomingEventsChanged();
+    void examEventsChanged();
+    void commandsChanged();
+    void searchQueryChanged();
     void toastRequested(const QString& message);
-    void settingsChanged();
 
 private:
-    PlannerService m_planner;
-    TaskModel m_taskModel;
-    TaskFilterProxy m_taskProxy;
-    ExamModel m_examModel;
+    EventRepository m_repository;
+    EventModel m_eventModel;
+    QuickAddParser m_parser;
     AppState m_state;
 
-    QList<Subject> m_subjects;
+    QString m_storageDir;
     QDate m_selectedDate;
-    ViewMode m_viewMode = Month;
+    ViewMode m_viewMode = ViewMode::Month;
+    QString m_searchQuery;
+    QVector<EventRecord> m_cachedEvents;
+    QVariantList m_today;
+    QVariantList m_upcoming;
+    QVariantList m_exams;
+    QVariantList m_commands;
 
-    void loadSubjects();
-    void refreshDayTasks(const QDate& date);
-    QVector<Task> filteredTasks(const QVector<Task>& tasks) const;
-    QVector<Task> applyFilters(const QVector<Task>& tasks) const;
-    QVariantList serializeTasks(const QVector<Task>& tasks) const;
-    void reloadExams();
-    void updateProxyFilters();
+    void initializeStorage();
+    void reloadEvents();
+    void rebuildSidebar();
+    void rebuildCommands();
+    QVariantMap toVariant(const EventRecord& record) const;
+    QVector<EventRecord> filteredEvents() const;
+    QVariantList buildDayEvents(const QDate& date) const;
+    QVariantList buildRangeEvents(const QDate& start, const QDate& end) const;
+    ViewMode modeFromString(const QString& mode) const;
+    QString modeToString(ViewMode mode) const;
+    void logEventLoad(int count) const;
     void notify(const QString& message);
 };

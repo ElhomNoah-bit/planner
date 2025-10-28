@@ -7,14 +7,27 @@ import NoahPlanner.Styles as Styles
 Item {
     id: root
     implicitWidth: Styles.ThemeStore.layout.sidebarW
-    property string selectedIso: planner.selectedDate
-    property var summary: planner.daySummary(selectedIso)
-    signal startTimerRequested(int minutes)
+    Layout.preferredWidth: Styles.ThemeStore.layout.sidebarW
+    property var todayEvents: planner && planner.today ? planner.today : []
+    property var upcomingEvents: planner && planner.upcoming ? planner.upcoming : []
+    property var examEvents: planner && planner.exams ? planner.exams : []
 
     readonly property QtObject colors: Styles.ThemeStore.colors
     readonly property QtObject gaps: Styles.ThemeStore.gap
     readonly property QtObject typeScale: Styles.ThemeStore.type
     readonly property QtObject radii: Styles.ThemeStore.radii
+    readonly property QtObject fonts: Styles.ThemeStore.fonts
+
+    function doneCount(events) {
+        var count = 0
+        if (!events)
+            return 0
+        for (var i = 0; i < events.length; ++i) {
+            if (events[i] && events[i].isDone)
+                count += 1
+        }
+        return count
+    }
 
     Flickable {
         id: flick
@@ -31,25 +44,104 @@ Item {
             GlassPanel {
                 Layout.fillWidth: true
                 padding: gaps.g16
-                Column {
-                    spacing: gaps.g8
-                    Text {
+                ColumnLayout {
+                    Layout.fillWidth: true
+                    spacing: gaps.g12
+
+                    Label {
                         text: qsTr("Heute")
                         font.pixelSize: typeScale.lg
                         font.weight: typeScale.weightBold
-                        font.family: Styles.ThemeStore.fonts.heading
+                        font.family: fonts.heading
                         color: colors.text
                         renderType: Text.NativeRendering
                     }
-                    Text {
-                        text: summary.total > 0
-                              ? qsTr("%1 von %2 Aufgaben erledigt").arg(summary.done).arg(summary.total)
-                              : qsTr("Keine Aufgaben für diesen Tag")
+
+                    Label {
+                        text: todayEvents.length > 0
+                              ? qsTr("%1 von %2 erledigt").arg(doneCount(todayEvents)).arg(todayEvents.length)
+                              : qsTr("Keine Aufgaben")
                         font.pixelSize: typeScale.sm
                         font.weight: typeScale.weightRegular
-                        font.family: Styles.ThemeStore.fonts.body
+                        font.family: fonts.body
                         color: colors.text2
                         renderType: Text.NativeRendering
+                    }
+
+                    Repeater {
+                        model: todayEvents
+                        delegate: RowLayout {
+                            Layout.fillWidth: true
+                            spacing: gaps.g8
+
+                            Rectangle {
+                                width: 6
+                                Layout.preferredHeight: 32
+                                radius: 3
+                                color: modelData && modelData.colorHint && modelData.colorHint.length
+                                       ? modelData.colorHint
+                                       : colors.accent
+                            }
+
+                            CheckBox {
+                                visible: true
+                                checked: modelData && modelData.isDone
+                                focusPolicy: Qt.NoFocus
+                                onToggled: planner.setEventDone(modelData.id, checked)
+                            }
+
+                            ColumnLayout {
+                                Layout.fillWidth: true
+                                spacing: gaps.g4
+
+                                Text {
+                                    text: modelData && modelData.title ? modelData.title : ""
+                                    font.pixelSize: typeScale.sm
+                                    font.weight: typeScale.weightMedium
+                                    font.family: fonts.heading
+                                    color: colors.text
+                                    elide: Text.ElideRight
+                                    renderType: Text.NativeRendering
+                                }
+
+                                Text {
+                                    text: {
+                                        var time = modelData.startTimeLabel || ""
+                                        var date = modelData.dateLabel || ""
+                                        if (time.length && date.length)
+                                            return time + " • " + date
+                                        if (time.length)
+                                            return time
+                                        return date
+                                    }
+                                    visible: text.length > 0
+                                    font.pixelSize: typeScale.xs
+                                    font.weight: typeScale.weightRegular
+                                    font.family: fonts.body
+                                    color: colors.text2
+                                    renderType: Text.NativeRendering
+                                }
+
+                                Text {
+                                    text: {
+                                        var parts = []
+                                        if (modelData.location && modelData.location.length)
+                                            parts.push(modelData.location)
+                                        if (modelData.tags && modelData.tags.length)
+                                            parts.push(modelData.tags.join(', '))
+                                        return parts.join(" • ")
+                                    }
+                                    visible: text.length > 0
+                                    font.pixelSize: typeScale.xs
+                                    font.weight: typeScale.weightRegular
+                                    font.family: fonts.body
+                                    color: colors.text2
+                                    opacity: 0.8
+                                    elide: Text.ElideRight
+                                    renderType: Text.NativeRendering
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -57,32 +149,110 @@ Item {
             GlassPanel {
                 Layout.fillWidth: true
                 padding: gaps.g16
-                Column {
+                ColumnLayout {
+                    Layout.fillWidth: true
                     spacing: gaps.g12
-                    Text {
+
+                    Label {
                         text: qsTr("Nächste Aufgaben")
                         font.pixelSize: typeScale.sm
                         font.weight: typeScale.weightBold
-                        font.family: Styles.ThemeStore.fonts.heading
+                        font.family: fonts.heading
                         color: colors.text
                         renderType: Text.NativeRendering
                     }
+
                     Loader {
-                        id: tasksLoader
-                        active: planner.todayTasks && planner.todayTasks.count > 0
-                        sourceComponent: tasksList
-                        onActiveChanged: emptyTasks.visible = !active
+                        active: upcomingEvents && upcomingEvents.length > 0
+                        sourceComponent: Component {
+                            ColumnLayout {
+                                spacing: gaps.g12
+                                Repeater {
+                                    model: upcomingEvents
+                                    delegate: RowLayout {
+                                        Layout.fillWidth: true
+                                        spacing: gaps.g8
+
+                                        Rectangle {
+                                            width: 6
+                                            Layout.preferredHeight: 32
+                                            radius: 3
+                                            color: modelData && modelData.colorHint && modelData.colorHint.length
+                                                   ? modelData.colorHint
+                                                   : colors.accent
+                                        }
+
+                                        CheckBox {
+                                            visible: true
+                                            checked: modelData && modelData.isDone
+                                            focusPolicy: Qt.NoFocus
+                                            onToggled: planner.setEventDone(modelData.id, checked)
+                                        }
+
+                                        ColumnLayout {
+                                            Layout.fillWidth: true
+                                            spacing: gaps.g4
+
+                                            Text {
+                                                text: modelData && modelData.title ? modelData.title : ""
+                                                font.pixelSize: typeScale.sm
+                                                font.weight: typeScale.weightMedium
+                                                font.family: fonts.heading
+                                                color: colors.text
+                                                elide: Text.ElideRight
+                                                renderType: Text.NativeRendering
+                                            }
+
+                                            Text {
+                                                text: {
+                                                    var time = modelData.startTimeLabel || ""
+                                                    var date = modelData.dateLabel || ""
+                                                    if (time.length && date.length)
+                                                        return time + " • " + date
+                                                    if (date.length)
+                                                        return date
+                                                    return time
+                                                }
+                                                visible: text.length > 0
+                                                font.pixelSize: typeScale.xs
+                                                font.weight: typeScale.weightRegular
+                                                font.family: fonts.body
+                                                color: colors.text2
+                                                renderType: Text.NativeRendering
+                                            }
+
+                                            Text {
+                                                text: {
+                                                    var parts = []
+                                                    if (modelData.location && modelData.location.length)
+                                                        parts.push(modelData.location)
+                                                    if (modelData.tags && modelData.tags.length)
+                                                        parts.push(modelData.tags.join(', '))
+                                                    return parts.join(" • ")
+                                                }
+                                                visible: text.length > 0
+                                                font.pixelSize: typeScale.xs
+                                                font.weight: typeScale.weightRegular
+                                                font.family: fonts.body
+                                                color: colors.text2
+                                                opacity: 0.8
+                                                elide: Text.ElideRight
+                                                renderType: Text.NativeRendering
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
-                    Text {
-                        id: emptyTasks
-                        visible: false
+
+                    Label {
+                        visible: !upcomingEvents || upcomingEvents.length === 0
                         text: qsTr("Keine Einträge")
-                        width: parent.width
-                        font.pixelSize: typeScale.sm
+                        font.pixelSize: typeScale.xs
                         font.weight: typeScale.weightRegular
-                        font.family: Styles.ThemeStore.fonts.body
+                        font.family: fonts.body
                         color: colors.text2
-                        horizontalAlignment: Text.AlignHCenter
                         renderType: Text.NativeRendering
                     }
                 }
@@ -90,139 +260,112 @@ Item {
 
             GlassPanel {
                 Layout.fillWidth: true
-                Layout.fillHeight: true
                 padding: gaps.g16
-                Column {
+                ColumnLayout {
+                    Layout.fillWidth: true
                     spacing: gaps.g12
-                    Text {
+
+                    Label {
                         text: qsTr("Klassenarbeiten")
                         font.pixelSize: typeScale.sm
                         font.weight: typeScale.weightBold
-                        font.family: Styles.ThemeStore.fonts.heading
+                        font.family: fonts.heading
                         color: colors.text
                         renderType: Text.NativeRendering
                     }
+
                     Loader {
-                        id: examsLoader
-                        active: planner.exams && planner.exams.count > 0
-                        sourceComponent: examsList
-                        onActiveChanged: emptyExams.visible = !active
+                        active: examEvents && examEvents.length > 0
+                        sourceComponent: Component {
+                            ColumnLayout {
+                                spacing: gaps.g12
+                                Repeater {
+                                    model: examEvents
+                                    delegate: RowLayout {
+                                        Layout.fillWidth: true
+                                        spacing: gaps.g8
+
+                                        Rectangle {
+                                            width: 6
+                                            Layout.preferredHeight: 32
+                                            radius: 3
+                                            color: colors.accent
+                                        }
+
+                                        ColumnLayout {
+                                            Layout.fillWidth: true
+                                            spacing: gaps.g4
+
+                                            Text {
+                                                text: modelData && modelData.title ? modelData.title : ""
+                                                font.pixelSize: typeScale.sm
+                                                font.weight: typeScale.weightMedium
+                                                font.family: fonts.heading
+                                                color: colors.text
+                                                elide: Text.ElideRight
+                                                renderType: Text.NativeRendering
+                                            }
+
+                                            Text {
+                                                text: modelData && modelData.dateLabel ? modelData.dateLabel : ""
+                                                font.pixelSize: typeScale.xs
+                                                font.weight: typeScale.weightRegular
+                                                font.family: fonts.body
+                                                color: colors.text2
+                                                renderType: Text.NativeRendering
+                                            }
+
+                                            Text {
+                                                text: {
+                                                    var parts = []
+                                                    if (modelData.location && modelData.location.length)
+                                                        parts.push(modelData.location)
+                                                    if (modelData.tags && modelData.tags.length)
+                                                        parts.push(modelData.tags.join(', '))
+                                                    return parts.join(" • ")
+                                                }
+                                                visible: text.length > 0
+                                                font.pixelSize: typeScale.xs
+                                                font.weight: typeScale.weightRegular
+                                                font.family: fonts.body
+                                                color: colors.text2
+                                                opacity: 0.8
+                                                elide: Text.ElideRight
+                                                renderType: Text.NativeRendering
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
-                    Text {
-                        id: emptyExams
-                        visible: false
+
+                    Label {
+                        visible: !examEvents || examEvents.length === 0
                         text: qsTr("Keine Einträge")
-                        width: parent.width
-                        font.pixelSize: typeScale.sm
+                        font.pixelSize: typeScale.xs
                         font.weight: typeScale.weightRegular
-                        font.family: Styles.ThemeStore.fonts.body
+                        font.family: fonts.body
                         color: colors.text2
-                        horizontalAlignment: Text.AlignHCenter
                         renderType: Text.NativeRendering
                     }
                 }
             }
         }
 
-        ScrollIndicator.vertical: ScrollIndicator {}
-    }
-
-    Component {
-        id: tasksList
-        Column {
-            width: flick.width - gaps.g16 * 2
-            spacing: gaps.g12
-            Repeater {
-                model: planner.todayTasks
-                delegate: TodayTaskDelegate {
-                    width: parent ? parent.width : 320
-                    title: model.title
-                    goal: model.goal
-                    duration: model.duration
-                    subjectColor: model.color
-                    done: model.done
-                    onToggled: function(next) { planner.toggleTaskDone(index, next) }
-                    onStartTimer: root.startTimerRequested(minutes)
-                }
-            }
-        }
-    }
-
-    Component {
-        id: examsList
-        Column {
-            width: flick.width - gaps.g16 * 2
-            spacing: gaps.g12
-            Repeater {
-                model: planner.exams
-                delegate: GlassPanel {
-                    padding: gaps.g12
-                    radius: radii.md
-                    Column {
-                        spacing: gaps.g8
-                        property var subject: planner.subjectById(model.subjectId)
-                        Row {
-                            spacing: gaps.g8
-                            Rectangle {
-                                width: 10
-                                height: 10
-                                radius: 5
-                                color: subject.color
-                                anchors.verticalCenter: parent.verticalCenter
-                            }
-                            Text {
-                                text: subject.name
-                                font.pixelSize: typeScale.md
-                                font.weight: typeScale.weightMedium
-                                font.family: Styles.ThemeStore.fonts.heading
-                                color: colors.text
-                                renderType: Text.NativeRendering
-                            }
-                            Text {
-                                text: Qt.formatDate(model.date, "dd.MM.yyyy")
-                                font.pixelSize: typeScale.xs
-                                font.weight: typeScale.weightRegular
-                                font.family: Styles.ThemeStore.fonts.body
-                                color: colors.text2
-                                renderType: Text.NativeRendering
-                            }
-                        }
-                        Text {
-                            text: model.topics.join(", ")
-                            font.pixelSize: typeScale.xs
-                            font.weight: typeScale.weightRegular
-                            font.family: Styles.ThemeStore.fonts.body
-                            color: colors.text2
-                            opacity: 0.8
-                            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                            renderType: Text.NativeRendering
-                        }
-                        PillButton {
-                            text: qsTr("Zum Tag")
-                            kind: "ghost"
-                            onClicked: planner.selectDateIso(Qt.formatDate(model.date, "yyyy-MM-dd"))
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    function refreshSummary() {
-        summary = planner.daySummary(selectedIso)
+        ScrollIndicator.vertical: ScrollIndicator { }
     }
 
     Connections {
         target: planner
-        function onSelectedDateChanged() {
-            root.selectedIso = planner.selectedDate
-            root.refreshSummary()
+        function onTodayEventsChanged() {
+            root.todayEvents = planner.today || []
         }
-        function onTasksChanged() {
-            root.refreshSummary()
+        function onUpcomingEventsChanged() {
+            root.upcomingEvents = planner.upcoming || []
         }
-        function onFiltersChanged() {
-            root.refreshSummary()
+        function onExamEventsChanged() {
+            root.examEvents = planner.exams || []
         }
     }
 }

@@ -23,11 +23,36 @@ Item {
         anchors.fill: parent
         spacing: gaps.g24
 
-        Loader {
-            id: viewLoader
+        StackLayout {
+            id: viewStack
             Layout.fillWidth: true
             Layout.fillHeight: true
-            sourceComponent: root.componentForMode(root.viewMode)
+            currentIndex: root.viewMode === "week" ? 1 : root.viewMode === "list" ? 2 : 0
+
+            MonthView {
+                id: monthView
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                visible: viewStack.currentIndex === 0
+                onDaySelected: iso => planner.selectDateIso(iso)
+                onQuickAddRequested: (iso, kind) => root.quickAddRequested(iso, kind)
+                onJumpToTodayRequested: root.jumpToTodayRequested()
+            }
+
+            WeekView {
+                id: weekView
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                visible: viewStack.currentIndex === 1
+                onDaySelected: iso => planner.selectDateIso(iso)
+            }
+
+            AgendaView {
+                id: agendaView
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                visible: viewStack.currentIndex === 2
+            }
         }
 
         SidebarToday {
@@ -47,49 +72,7 @@ Item {
         onFinished: planner.showToast(qsTr("Timer abgeschlossen"))
     }
 
-    function componentForMode(mode) {
-        switch (mode) {
-        case "week":
-            return weekViewComponent
-        case "list":
-            return listViewComponent
-        default:
-            return monthViewComponent
-        }
-    }
-
     function goToday() {
-        if (viewLoader.item && viewLoader.item.goToday) {
-            viewLoader.item.goToday()
-        } else {
-            planner.refreshToday()
-        }
-    }
-
-    Component {
-        id: monthViewComponent
-        MonthView {
-            anchors.fill: parent
-            onDaySelected: iso => planner.selectDateIso(iso)
-            function goToday() { planner.refreshToday() }
-            onQuickAddRequested: (iso, kind) => root.quickAddRequested(iso, kind)
-            onJumpToTodayRequested: root.jumpToTodayRequested()
-        }
-    }
-
-    Component {
-        id: weekViewComponent
-        WeekView {
-            anchors.fill: parent
-            onDaySelected: iso => planner.selectDateIso(iso)
-            function goToday() { planner.refreshToday() }
-        }
-    }
-
-    Component {
-        id: listViewComponent
-        AgendaView {
-            anchors.fill: parent
-        }
+        planner.jumpToToday()
     }
 }
