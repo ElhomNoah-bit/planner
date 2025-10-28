@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 1504,
+                        "durationMicroseconds": 8718,
                         "errorMessage": "Cannot load property xl from ThemeStore::radii with type QObject.",
                         "functionName": "radius",
                         "line": 22
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 100,
                         "errorMessage": "Cannot access value for name search",
                         "functionName": "color",
                         "line": 23
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 84,
                         "errorMessage": "Cannot access value for name search",
                         "functionName": "color",
                         "line": 24
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot access value for name search",
                         "functionName": "width",
                         "line": 25
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 99,
                         "errorMessage": "Cannot retrieve a non-object type by ID: search",
                         "functionName": "color",
                         "line": 35
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 165,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 30
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot load property g12 from ThemeStore::gap with type QObject.",
                         "functionName": "leftMargin",
                         "line": 31
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 125,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 32
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 38,
                         "errorMessage": "method clear cannot be resolved.",
                         "functionName": "onEscapePressed",
                         "line": 38

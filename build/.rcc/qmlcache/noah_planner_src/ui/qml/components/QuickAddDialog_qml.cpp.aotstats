@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 5,
-                        "durationMicroseconds": 210,
+                        "durationMicroseconds": 260,
                         "errorMessage": "",
                         "functionName": "close",
                         "line": 25
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 105,
                         "errorMessage": "Cannot access value for name text",
                         "functionName": "submit",
                         "line": 105
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 57,
                         "errorMessage": "Cannot find name text",
                         "functionName": "onVisibleChanged",
                         "line": 115
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 206,
+                        "durationMicroseconds": 99,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 9
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 340,
+                        "durationMicroseconds": 448,
                         "errorMessage": "",
                         "functionName": "onPressed",
                         "line": 30
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "onPressed",
                         "line": 30
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 254,
+                        "durationMicroseconds": 366,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 39
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 122,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 40
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 38
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 2450,
+                        "durationMicroseconds": 2926,
                         "errorMessage": "Cannot load property g24 from ThemeStore::gap with type QObject.",
                         "functionName": "width",
                         "line": 47
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 40,
                         "errorMessage": "Cannot load property g24 from ThemeStore::gap with type QObject.",
                         "functionName": "padding",
                         "line": 48
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot load property lg from ThemeStore::radii with type QObject.",
                         "functionName": "radius",
                         "line": 49
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 112,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 50
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 115,
+                        "durationMicroseconds": 2163,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 45
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 129,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 46
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 53,
                         "errorMessage": "Cannot load property g16 from ThemeStore::gap with type QObject.",
                         "functionName": "spacing",
                         "line": 53
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 73,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 52
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 42,
                         "errorMessage": "Cannot load property text from ThemeStore::colors with type QObject.",
                         "functionName": "color",
                         "line": 60
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 98,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 61
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 42,
                         "errorMessage": "Cannot load property lg from ThemeStore::type with type QObject.",
                         "functionName": "pixelSize",
                         "line": 57
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot load property weightBold from ThemeStore::type with type QObject.",
                         "functionName": "weight",
                         "line": 58
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot load property heading from ThemeStore::fonts with type QObject.",
                         "functionName": "family",
                         "line": 59
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot load property md from ThemeStore::radii with type QObject.",
                         "functionName": "radius",
                         "line": 76
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 98,
+                        "durationMicroseconds": 99,
                         "errorMessage": "Cannot access value for name input",
                         "functionName": "color",
                         "line": 78
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 44,
                         "errorMessage": "Cannot access value for name input",
                         "functionName": "width",
                         "line": 79
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 35,
                         "errorMessage": "method submit cannot be resolved.",
                         "functionName": "onReturnPressed",
                         "line": 81
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 27,
                         "errorMessage": "method submit cannot be resolved.",
                         "functionName": "onEnterPressed",
                         "line": 82
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot load property g12 from ThemeStore::gap with type QObject.",
                         "functionName": "spacing",
                         "line": 87

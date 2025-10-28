@@ -47,11 +47,16 @@ template <> constexpr inline auto PlannerBackend::qt_create_metaobjectdata<qt_me
         "examsChanged",
         "viewModeChanged",
         "filtersChanged",
+        "onlyOpenChanged",
         "toastRequested",
         "message",
         "settingsChanged",
         "selectDateIso",
         "isoDate",
+        "setViewMode",
+        "mode",
+        "setOnlyOpenQml",
+        "value",
         "refreshToday",
         "toggleTaskDone",
         "proxyRow",
@@ -82,11 +87,16 @@ template <> constexpr inline auto PlannerBackend::qt_create_metaobjectdata<qt_me
         "subjects",
         "selectedDate",
         "viewMode",
+        "ViewMode",
+        "viewModeString",
         "onlyOpen",
         "searchQuery",
         "language",
         "weekStart",
-        "showWeekNumbers"
+        "showWeekNumbers",
+        "Month",
+        "Week",
+        "List"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -104,88 +114,110 @@ template <> constexpr inline auto PlannerBackend::qt_create_metaobjectdata<qt_me
         QtMocHelpers::SignalData<void()>(7, 2, QMC::AccessPublic, QMetaType::Void),
         // Signal 'filtersChanged'
         QtMocHelpers::SignalData<void()>(8, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'onlyOpenChanged'
+        QtMocHelpers::SignalData<void()>(9, 2, QMC::AccessPublic, QMetaType::Void),
         // Signal 'toastRequested'
-        QtMocHelpers::SignalData<void(const QString &)>(9, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 10 },
+        QtMocHelpers::SignalData<void(const QString &)>(10, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 11 },
         }}),
         // Signal 'settingsChanged'
-        QtMocHelpers::SignalData<void()>(11, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SignalData<void()>(12, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'selectDateIso'
-        QtMocHelpers::MethodData<void(const QString &)>(12, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 13 },
+        QtMocHelpers::MethodData<void(const QString &)>(13, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 14 },
+        }}),
+        // Method 'setViewMode'
+        QtMocHelpers::MethodData<void(int)>(15, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 16 },
+        }}),
+        // Method 'setViewMode'
+        QtMocHelpers::MethodData<void(const QString &)>(15, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 16 },
+        }}),
+        // Method 'setOnlyOpenQml'
+        QtMocHelpers::MethodData<void(bool)>(17, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 18 },
         }}),
         // Method 'refreshToday'
-        QtMocHelpers::MethodData<void()>(14, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(19, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'toggleTaskDone'
-        QtMocHelpers::MethodData<void(int, bool)>(15, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 16 }, { QMetaType::Bool, 17 },
+        QtMocHelpers::MethodData<void(int, bool)>(20, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 21 }, { QMetaType::Bool, 22 },
         }}),
         // Method 'dayEvents'
-        QtMocHelpers::MethodData<QVariantList(const QString &) const>(18, 2, QMC::AccessPublic, 0x80000000 | 19, {{
-            { QMetaType::QString, 13 },
+        QtMocHelpers::MethodData<QVariantList(const QString &) const>(23, 2, QMC::AccessPublic, 0x80000000 | 24, {{
+            { QMetaType::QString, 14 },
         }}),
         // Method 'daySummary'
-        QtMocHelpers::MethodData<QVariantMap(const QString &) const>(20, 2, QMC::AccessPublic, 0x80000000 | 21, {{
-            { QMetaType::QString, 13 },
+        QtMocHelpers::MethodData<QVariantMap(const QString &) const>(25, 2, QMC::AccessPublic, 0x80000000 | 26, {{
+            { QMetaType::QString, 14 },
         }}),
         // Method 'toggleSubject'
-        QtMocHelpers::MethodData<void(const QString &)>(22, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 23 },
+        QtMocHelpers::MethodData<void(const QString &)>(27, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 28 },
         }}),
         // Method 'setSubjectFilter'
-        QtMocHelpers::MethodData<void(const QStringList &)>(24, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QStringList, 25 },
+        QtMocHelpers::MethodData<void(const QStringList &)>(29, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QStringList, 30 },
         }}),
         // Method 'subjectFilter'
-        QtMocHelpers::MethodData<QStringList() const>(26, 2, QMC::AccessPublic, QMetaType::QStringList),
+        QtMocHelpers::MethodData<QStringList() const>(31, 2, QMC::AccessPublic, QMetaType::QStringList),
         // Method 'subjectById'
-        QtMocHelpers::MethodData<QVariantMap(const QString &) const>(27, 2, QMC::AccessPublic, 0x80000000 | 21, {{
-            { QMetaType::QString, 28 },
+        QtMocHelpers::MethodData<QVariantMap(const QString &) const>(32, 2, QMC::AccessPublic, 0x80000000 | 26, {{
+            { QMetaType::QString, 33 },
         }}),
         // Method 'subjectColor'
-        QtMocHelpers::MethodData<QColor(const QString &) const>(29, 2, QMC::AccessPublic, QMetaType::QColor, {{
-            { QMetaType::QString, 28 },
+        QtMocHelpers::MethodData<QColor(const QString &) const>(34, 2, QMC::AccessPublic, QMetaType::QColor, {{
+            { QMetaType::QString, 33 },
         }}),
         // Method 'weekEvents'
-        QtMocHelpers::MethodData<QVariantList(const QString &) const>(30, 2, QMC::AccessPublic, 0x80000000 | 19, {{
-            { QMetaType::QString, 31 },
+        QtMocHelpers::MethodData<QVariantList(const QString &) const>(35, 2, QMC::AccessPublic, 0x80000000 | 24, {{
+            { QMetaType::QString, 36 },
         }}),
         // Method 'listBuckets'
-        QtMocHelpers::MethodData<QVariantList() const>(32, 2, QMC::AccessPublic, 0x80000000 | 19),
+        QtMocHelpers::MethodData<QVariantList() const>(37, 2, QMC::AccessPublic, 0x80000000 | 24),
         // Method 'quickAdd'
-        QtMocHelpers::MethodData<void(const QString &)>(33, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 34 },
+        QtMocHelpers::MethodData<void(const QString &)>(38, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 39 },
         }}),
         // Method 'showToast'
-        QtMocHelpers::MethodData<void(const QString &)>(35, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 10 },
+        QtMocHelpers::MethodData<void(const QString &)>(40, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 11 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'darkTheme'
-        QtMocHelpers::PropertyData<bool>(36, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 0),
+        QtMocHelpers::PropertyData<bool>(41, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 0),
         // property 'todayTasks'
-        QtMocHelpers::PropertyData<TaskFilterProxy*>(37, 0x80000000 | 38, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
+        QtMocHelpers::PropertyData<TaskFilterProxy*>(42, 0x80000000 | 43, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
         // property 'exams'
-        QtMocHelpers::PropertyData<ExamModel*>(39, 0x80000000 | 40, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
+        QtMocHelpers::PropertyData<ExamModel*>(44, 0x80000000 | 45, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
         // property 'subjects'
-        QtMocHelpers::PropertyData<QVariantList>(41, 0x80000000 | 19, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 1),
+        QtMocHelpers::PropertyData<QVariantList>(46, 0x80000000 | 24, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 1),
         // property 'selectedDate'
-        QtMocHelpers::PropertyData<QString>(42, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
+        QtMocHelpers::PropertyData<QString>(47, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
         // property 'viewMode'
-        QtMocHelpers::PropertyData<QString>(43, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 5),
+        QtMocHelpers::PropertyData<enum ViewMode>(48, 0x80000000 | 49, QMC::DefaultPropertyFlags | QMC::Writable | QMC::EnumOrFlag | QMC::StdCppSet, 5),
+        // property 'viewModeString'
+        QtMocHelpers::PropertyData<QString>(50, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 5),
         // property 'onlyOpen'
-        QtMocHelpers::PropertyData<bool>(44, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 6),
+        QtMocHelpers::PropertyData<bool>(51, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 7),
         // property 'searchQuery'
-        QtMocHelpers::PropertyData<QString>(45, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 6),
+        QtMocHelpers::PropertyData<QString>(52, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 6),
         // property 'language'
-        QtMocHelpers::PropertyData<QString>(46, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 8),
+        QtMocHelpers::PropertyData<QString>(53, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 9),
         // property 'weekStart'
-        QtMocHelpers::PropertyData<QString>(47, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 8),
+        QtMocHelpers::PropertyData<QString>(54, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 9),
         // property 'showWeekNumbers'
-        QtMocHelpers::PropertyData<bool>(48, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 8),
+        QtMocHelpers::PropertyData<bool>(55, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 9),
     };
     QtMocHelpers::UintData qt_enums {
+        // enum 'ViewMode'
+        QtMocHelpers::EnumData<enum ViewMode>(49, 49, QMC::EnumFlags{}).add({
+            {   56, ViewMode::Month },
+            {   57, ViewMode::Week },
+            {   58, ViewMode::List },
+        }),
     };
     return QtMocHelpers::metaObjectData<PlannerBackend, qt_meta_tag_ZN14PlannerBackendE_t>(QMC::MetaObjectFlag{}, qt_stringData,
             qt_methods, qt_properties, qt_enums);
@@ -212,29 +244,33 @@ void PlannerBackend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 4: _t->examsChanged(); break;
         case 5: _t->viewModeChanged(); break;
         case 6: _t->filtersChanged(); break;
-        case 7: _t->toastRequested((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 8: _t->settingsChanged(); break;
-        case 9: _t->selectDateIso((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 10: _t->refreshToday(); break;
-        case 11: _t->toggleTaskDone((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
-        case 12: { QVariantList _r = _t->dayEvents((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
+        case 7: _t->onlyOpenChanged(); break;
+        case 8: _t->toastRequested((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 9: _t->settingsChanged(); break;
+        case 10: _t->selectDateIso((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 11: _t->setViewMode((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 12: _t->setViewMode((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 13: _t->setOnlyOpenQml((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 14: _t->refreshToday(); break;
+        case 15: _t->toggleTaskDone((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
+        case 16: { QVariantList _r = _t->dayEvents((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast< QVariantList*>(_a[0]) = std::move(_r); }  break;
-        case 13: { QVariantMap _r = _t->daySummary((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
+        case 17: { QVariantMap _r = _t->daySummary((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast< QVariantMap*>(_a[0]) = std::move(_r); }  break;
-        case 14: _t->toggleSubject((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 15: _t->setSubjectFilter((*reinterpret_cast< std::add_pointer_t<QStringList>>(_a[1]))); break;
-        case 16: { QStringList _r = _t->subjectFilter();
+        case 18: _t->toggleSubject((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 19: _t->setSubjectFilter((*reinterpret_cast< std::add_pointer_t<QStringList>>(_a[1]))); break;
+        case 20: { QStringList _r = _t->subjectFilter();
             if (_a[0]) *reinterpret_cast< QStringList*>(_a[0]) = std::move(_r); }  break;
-        case 17: { QVariantMap _r = _t->subjectById((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
+        case 21: { QVariantMap _r = _t->subjectById((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast< QVariantMap*>(_a[0]) = std::move(_r); }  break;
-        case 18: { QColor _r = _t->subjectColor((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
+        case 22: { QColor _r = _t->subjectColor((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast< QColor*>(_a[0]) = std::move(_r); }  break;
-        case 19: { QVariantList _r = _t->weekEvents((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
+        case 23: { QVariantList _r = _t->weekEvents((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast< QVariantList*>(_a[0]) = std::move(_r); }  break;
-        case 20: { QVariantList _r = _t->listBuckets();
+        case 24: { QVariantList _r = _t->listBuckets();
             if (_a[0]) *reinterpret_cast< QVariantList*>(_a[0]) = std::move(_r); }  break;
-        case 21: _t->quickAdd((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 22: _t->showToast((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 25: _t->quickAdd((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 26: _t->showToast((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     }
@@ -253,9 +289,11 @@ void PlannerBackend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
             return;
         if (QtMocHelpers::indexOfMethod<void (PlannerBackend::*)()>(_a, &PlannerBackend::filtersChanged, 6))
             return;
-        if (QtMocHelpers::indexOfMethod<void (PlannerBackend::*)(const QString & )>(_a, &PlannerBackend::toastRequested, 7))
+        if (QtMocHelpers::indexOfMethod<void (PlannerBackend::*)()>(_a, &PlannerBackend::onlyOpenChanged, 7))
             return;
-        if (QtMocHelpers::indexOfMethod<void (PlannerBackend::*)()>(_a, &PlannerBackend::settingsChanged, 8))
+        if (QtMocHelpers::indexOfMethod<void (PlannerBackend::*)(const QString & )>(_a, &PlannerBackend::toastRequested, 8))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (PlannerBackend::*)()>(_a, &PlannerBackend::settingsChanged, 9))
             return;
     }
     if (_c == QMetaObject::RegisterPropertyMetaType) {
@@ -275,12 +313,13 @@ void PlannerBackend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 2: *reinterpret_cast<ExamModel**>(_v) = _t->exams(); break;
         case 3: *reinterpret_cast<QVariantList*>(_v) = _t->subjects(); break;
         case 4: *reinterpret_cast<QString*>(_v) = _t->selectedDateIso(); break;
-        case 5: *reinterpret_cast<QString*>(_v) = _t->viewMode(); break;
-        case 6: *reinterpret_cast<bool*>(_v) = _t->onlyOpen(); break;
-        case 7: *reinterpret_cast<QString*>(_v) = _t->searchQuery(); break;
-        case 8: *reinterpret_cast<QString*>(_v) = _t->language(); break;
-        case 9: *reinterpret_cast<QString*>(_v) = _t->weekStart(); break;
-        case 10: *reinterpret_cast<bool*>(_v) = _t->showWeekNumbers(); break;
+        case 5: *reinterpret_cast<enum ViewMode*>(_v) = _t->viewMode(); break;
+        case 6: *reinterpret_cast<QString*>(_v) = _t->viewModeString(); break;
+        case 7: *reinterpret_cast<bool*>(_v) = _t->onlyOpen(); break;
+        case 8: *reinterpret_cast<QString*>(_v) = _t->searchQuery(); break;
+        case 9: *reinterpret_cast<QString*>(_v) = _t->language(); break;
+        case 10: *reinterpret_cast<QString*>(_v) = _t->weekStart(); break;
+        case 11: *reinterpret_cast<bool*>(_v) = _t->showWeekNumbers(); break;
         default: break;
         }
     }
@@ -288,12 +327,13 @@ void PlannerBackend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         void *_v = _a[0];
         switch (_id) {
         case 0: _t->setDarkTheme(*reinterpret_cast<bool*>(_v)); break;
-        case 5: _t->setViewMode(*reinterpret_cast<QString*>(_v)); break;
-        case 6: _t->setOnlyOpen(*reinterpret_cast<bool*>(_v)); break;
-        case 7: _t->setSearchQuery(*reinterpret_cast<QString*>(_v)); break;
-        case 8: _t->setLanguage(*reinterpret_cast<QString*>(_v)); break;
-        case 9: _t->setWeekStart(*reinterpret_cast<QString*>(_v)); break;
-        case 10: _t->setShowWeekNumbers(*reinterpret_cast<bool*>(_v)); break;
+        case 5: _t->setViewMode(*reinterpret_cast<enum ViewMode*>(_v)); break;
+        case 6: _t->setViewModeString(*reinterpret_cast<QString*>(_v)); break;
+        case 7: _t->setOnlyOpen(*reinterpret_cast<bool*>(_v)); break;
+        case 8: _t->setSearchQuery(*reinterpret_cast<QString*>(_v)); break;
+        case 9: _t->setLanguage(*reinterpret_cast<QString*>(_v)); break;
+        case 10: _t->setWeekStart(*reinterpret_cast<QString*>(_v)); break;
+        case 11: _t->setShowWeekNumbers(*reinterpret_cast<bool*>(_v)); break;
         default: break;
         }
     }
@@ -318,20 +358,20 @@ int PlannerBackend::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 23)
+        if (_id < 27)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 23;
+        _id -= 27;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 23)
+        if (_id < 27)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 23;
+        _id -= 27;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
             || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 12;
     }
     return _id;
 }
@@ -379,14 +419,20 @@ void PlannerBackend::filtersChanged()
 }
 
 // SIGNAL 7
-void PlannerBackend::toastRequested(const QString & _t1)
+void PlannerBackend::onlyOpenChanged()
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 7, nullptr, _t1);
+    QMetaObject::activate(this, &staticMetaObject, 7, nullptr);
 }
 
 // SIGNAL 8
+void PlannerBackend::toastRequested(const QString & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 8, nullptr, _t1);
+}
+
+// SIGNAL 9
 void PlannerBackend::settingsChanged()
 {
-    QMetaObject::activate(this, &staticMetaObject, 8, nullptr);
+    QMetaObject::activate(this, &staticMetaObject, 9, nullptr);
 }
 QT_WARNING_POP

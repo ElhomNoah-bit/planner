@@ -83,6 +83,18 @@
         "classes": [
             {
                 "className": "PlannerBackend",
+                "enums": [
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "ViewMode",
+                        "values": [
+                            "Month",
+                            "Week",
+                            "List"
+                        ]
+                    }
+                ],
                 "lineNumber": 17,
                 "methods": [
                     {
@@ -93,13 +105,49 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 9,
+                        "index": 10,
                         "name": "selectDateIso",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 10,
+                        "arguments": [
+                            {
+                                "name": "mode",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 11,
+                        "name": "setViewMode",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "mode",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 12,
+                        "name": "setViewMode",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "value",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 13,
+                        "name": "setOnlyOpenQml",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 14,
                         "name": "refreshToday",
                         "returnType": "void"
                     },
@@ -115,7 +163,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "index": 11,
+                        "index": 15,
                         "name": "toggleTaskDone",
                         "returnType": "void"
                     },
@@ -127,7 +175,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 12,
+                        "index": 16,
                         "isConst": true,
                         "name": "dayEvents",
                         "returnType": "QVariantList"
@@ -140,7 +188,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 13,
+                        "index": 17,
                         "isConst": true,
                         "name": "daySummary",
                         "returnType": "QVariantMap"
@@ -153,7 +201,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 14,
+                        "index": 18,
                         "name": "toggleSubject",
                         "returnType": "void"
                     },
@@ -165,13 +213,13 @@
                                 "type": "QStringList"
                             }
                         ],
-                        "index": 15,
+                        "index": 19,
                         "name": "setSubjectFilter",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 16,
+                        "index": 20,
                         "isConst": true,
                         "name": "subjectFilter",
                         "returnType": "QStringList"
@@ -184,7 +232,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 17,
+                        "index": 21,
                         "isConst": true,
                         "name": "subjectById",
                         "returnType": "QVariantMap"
@@ -197,7 +245,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 18,
+                        "index": 22,
                         "isConst": true,
                         "name": "subjectColor",
                         "returnType": "QColor"
@@ -210,14 +258,14 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 19,
+                        "index": 23,
                         "isConst": true,
                         "name": "weekEvents",
                         "returnType": "QVariantList"
                     },
                     {
                         "access": "public",
-                        "index": 20,
+                        "index": 24,
                         "isConst": true,
                         "name": "listBuckets",
                         "returnType": "QVariantList"
@@ -230,7 +278,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 21,
+                        "index": 25,
                         "name": "quickAdd",
                         "returnType": "void"
                     },
@@ -242,7 +290,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 22,
+                        "index": 26,
                         "name": "showToast",
                         "returnType": "void"
                     }
@@ -329,7 +377,7 @@
                         "required": false,
                         "scriptable": true,
                         "stored": true,
-                        "type": "QString",
+                        "type": "ViewMode",
                         "user": false,
                         "write": "setViewMode"
                     },
@@ -338,8 +386,23 @@
                         "designable": true,
                         "final": false,
                         "index": 6,
+                        "name": "viewModeString",
+                        "notify": "viewModeChanged",
+                        "read": "viewModeString",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false,
+                        "write": "setViewModeString"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 7,
                         "name": "onlyOpen",
-                        "notify": "filtersChanged",
+                        "notify": "onlyOpenChanged",
                         "read": "onlyOpen",
                         "required": false,
                         "scriptable": true,
@@ -352,7 +415,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 7,
+                        "index": 8,
                         "name": "searchQuery",
                         "notify": "filtersChanged",
                         "read": "searchQuery",
@@ -367,7 +430,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 8,
+                        "index": 9,
                         "name": "language",
                         "notify": "settingsChanged",
                         "read": "language",
@@ -382,7 +445,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 9,
+                        "index": 10,
                         "name": "weekStart",
                         "notify": "settingsChanged",
                         "read": "weekStart",
@@ -397,7 +460,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 10,
+                        "index": 11,
                         "name": "showWeekNumbers",
                         "notify": "settingsChanged",
                         "read": "showWeekNumbers",
@@ -455,19 +518,25 @@
                     },
                     {
                         "access": "public",
+                        "index": 7,
+                        "name": "onlyOpenChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
                         "arguments": [
                             {
                                 "name": "message",
                                 "type": "QString"
                             }
                         ],
-                        "index": 7,
+                        "index": 8,
                         "name": "toastRequested",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 8,
+                        "index": 9,
                         "name": "settingsChanged",
                         "returnType": "void"
                     }

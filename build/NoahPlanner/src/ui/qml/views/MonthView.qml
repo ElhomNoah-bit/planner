@@ -6,15 +6,15 @@ Item {
     id: month
     anchors.fill: parent
 
-    property string selectedIso: PlannerBackend.selectedDate
+    property string selectedIso: planner.selectedDate
     property var days: []
     property string locale: Qt.locale().name
     signal daySelected(string iso)
     signal quickAddRequested(string iso, string kind)
     signal jumpToTodayRequested()
 
-    property string weekStartSetting: PlannerBackend.weekStart
-    property bool showWeekNumbersSetting: PlannerBackend.showWeekNumbers
+    property string weekStartSetting: planner.weekStart
+    property bool showWeekNumbersSetting: planner.showWeekNumbers
     property var weekdayLabels: []
     property var weekNumbers: []
 
@@ -128,7 +128,7 @@ Item {
                 iso: iso,
                 inMonth: current.getMonth() === monthIndex,
                 isToday: Qt.formatDate(current, "yyyy-MM-dd") === Qt.formatDate(new Date(), "yyyy-MM-dd"),
-                events: PlannerBackend.dayEvents(iso)
+                events: planner.dayEvents(iso)
             })
             if (i % 7 === 0) {
                 weeks.push(Qt.formatDate(current, "ww"))
@@ -173,9 +173,9 @@ Item {
     }
 
     Connections {
-        target: PlannerBackend
+        target: planner
         function onSelectedDateChanged() {
-            month.selectedIso = PlannerBackend.selectedDate
+            month.selectedIso = planner.selectedDate
         }
         function onFiltersChanged() {
             month.rebuild()

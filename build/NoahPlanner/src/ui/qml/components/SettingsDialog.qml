@@ -21,10 +21,10 @@ Item {
     }
 
     function sync() {
-        themeGroup.current = PlannerBackend.darkTheme ? themeDark : themeSystem
-        languageGroup.current = PlannerBackend.language === "en" ? languageEn : languageDe
-        weekStartGroup.current = PlannerBackend.weekStart === "sunday" ? weekStartSunday : weekStartMonday
-        weekNumbersSwitch.checked = PlannerBackend.showWeekNumbers
+        themeGroup.current = planner.darkTheme ? themeDark : themeSystem
+        languageGroup.current = planner.language === "en" ? languageEn : languageDe
+        weekStartGroup.current = planner.weekStart === "sunday" ? weekStartSunday : weekStartMonday
+        weekNumbersSwitch.checked = planner.showWeekNumbers
     }
 
     Keys.onEscapePressed: close()
@@ -91,13 +91,13 @@ Item {
                         id: themeDark
                         text: qsTr("Dunkel")
                         ButtonGroup.group: themeGroup
-                        onToggled: if (checked) PlannerBackend.setDarkTheme(true)
+                        onToggled: if (checked) planner.darkTheme = true
                     }
                     RadioButton {
                         id: themeSystem
                         text: qsTr("System")
                         ButtonGroup.group: themeGroup
-                        onToggled: if (checked) PlannerBackend.setDarkTheme(false)
+                        onToggled: if (checked) planner.darkTheme = false
                     }
                 }
 
@@ -116,13 +116,13 @@ Item {
                         id: languageDe
                         text: qsTr("Deutsch")
                         ButtonGroup.group: languageGroup
-                        onToggled: if (checked) PlannerBackend.setLanguage("de")
+                        onToggled: if (checked) planner.language = "de"
                     }
                     RadioButton {
                         id: languageEn
                         text: qsTr("Englisch")
                         ButtonGroup.group: languageGroup
-                        onToggled: if (checked) PlannerBackend.setLanguage("en")
+                        onToggled: if (checked) planner.language = "en"
                     }
                 }
 
@@ -141,13 +141,13 @@ Item {
                         id: weekStartMonday
                         text: qsTr("Montag")
                         ButtonGroup.group: weekStartGroup
-                        onToggled: if (checked) PlannerBackend.setWeekStart("monday")
+                        onToggled: if (checked) planner.weekStart = "monday"
                     }
                     RadioButton {
                         id: weekStartSunday
                         text: qsTr("Sonntag")
                         ButtonGroup.group: weekStartGroup
-                        onToggled: if (checked) PlannerBackend.setWeekStart("sunday")
+                        onToggled: if (checked) planner.weekStart = "sunday"
                     }
                 }
 
@@ -164,7 +164,7 @@ Item {
                     Switch {
                         id: weekNumbersSwitch
                         text: checked ? qsTr("An") : qsTr("Aus")
-                        onToggled: PlannerBackend.setShowWeekNumbers(checked)
+                        onToggled: planner.showWeekNumbers = checked
                     }
                 }
             }
@@ -183,7 +183,7 @@ Item {
     }
 
     Connections {
-        target: PlannerBackend
+        target: planner
         function onSettingsChanged() {
             if (dialog.visible) dialog.sync()
         }

@@ -15753,6 +15753,7 @@ CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o: /home/noah/Dokumente/de
   /usr/include/qt6/QtCore/QAbstractListModel \
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QDateTime \
+  /usr/include/qt6/QtCore/QDebug \
   /usr/include/qt6/QtCore/QHash \
   /usr/include/qt6/QtCore/QJsonObject \
   /usr/include/qt6/QtCore/QList \

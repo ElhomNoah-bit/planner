@@ -14,10 +14,6 @@ ApplicationWindow {
     title: qsTr("Noah Planner")
     color: Styles.ThemeStore.colors.appBg
 
-    property string viewMode: "month"
-    property bool onlyOpen: false
-    property string searchQuery: ""
-
     Shortcut {
         id: shortcutCommandPalette
         sequences: ["Ctrl+K", "Meta+K"]
@@ -40,19 +36,19 @@ ApplicationWindow {
     Shortcut {
         sequences: ["Ctrl+1", "Meta+1"]
         enabled: app.visible
-        onActivated: app.setViewMode("month")
+        onActivated: planner.viewModeString = "month"
     }
 
     Shortcut {
         sequences: ["Ctrl+2", "Meta+2"]
         enabled: app.visible
-        onActivated: app.setViewMode("week")
+        onActivated: planner.viewModeString = "week"
     }
 
     Shortcut {
         sequences: ["Ctrl+3", "Meta+3"]
         enabled: app.visible
-        onActivated: app.setViewMode("list")
+        onActivated: planner.viewModeString = "list"
     }
 
     FocusScope {
@@ -76,15 +72,15 @@ ApplicationWindow {
                 event.accepted = true
                 break
             case Qt.Key_M:
-                app.setViewMode("month")
+                planner.viewModeString = "month"
                 event.accepted = true
                 break
             case Qt.Key_W:
-                app.setViewMode("week")
+                planner.viewModeString = "week"
                 event.accepted = true
                 break
             case Qt.Key_L:
-                app.setViewMode("list")
+                planner.viewModeString = "list"
                 event.accepted = true
                 break
             default:
@@ -93,16 +89,8 @@ ApplicationWindow {
         }
     }
 
-    function syncState() {
-        viewMode = PlannerBackend.viewMode
-        onlyOpen = PlannerBackend.onlyOpen
-        searchQuery = PlannerBackend.searchQuery
-        if (globalSearch)
-            globalSearch.text = searchQuery
-    }
-
     function goToday() {
-        PlannerBackend.refreshToday()
+        planner.refreshToday()
     }
 
     function quickAddOpen(initialText) {
@@ -127,14 +115,13 @@ ApplicationWindow {
     }
 
     function toggleOnlyOpen(next) {
-        if (onlyOpen === next)
+        if (planner.onlyOpen === next)
             return
-        onlyOpen = next
-        PlannerBackend.setOnlyOpen(next)
+        planner.onlyOpen = next
     }
 
     function createQuickItem(value) {
-        PlannerBackend.quickAdd(value)
+        planner.quickAdd(value)
     }
 
     function openSettings() {
@@ -150,16 +137,16 @@ ApplicationWindow {
             quickAddOpen()
             break
         case "view-month":
-            setViewMode("month")
+            planner.viewModeString = "month"
             break
         case "view-week":
-            setViewMode("week")
+            planner.viewModeString = "week"
             break
         case "view-list":
-            setViewMode("list")
+            planner.viewModeString = "list"
             break
         case "toggle-open":
-            toggleOnlyOpen(!onlyOpen)
+            planner.onlyOpen = !planner.onlyOpen
             break
         case "open-settings":
             settingsDialog.open()
@@ -170,10 +157,9 @@ ApplicationWindow {
     }
 
     function setViewMode(mode) {
-        if (viewMode === mode)
+        if (planner.viewModeString === mode)
             return
-        viewMode = mode
-        PlannerBackend.setViewMode(mode)
+        planner.viewModeString = mode
     }
 
     ColumnLayout {
@@ -196,8 +182,9 @@ ApplicationWindow {
                     { "label": qsTr("Woche"), "value": "week" },
                     { "label": qsTr("Liste"), "value": "list" }
                 ]
-                value: app.viewMode
-                onValueChanged: app.setViewMode(value)
+                currentIndex: planner.viewMode === PlannerBackend.Week ? 1
+                               : planner.viewMode === PlannerBackend.List ? 2 : 0
+                onActivated: (mode, index) => app.setViewMode(mode)
             }
 
             PillButton {
@@ -216,9 +203,9 @@ ApplicationWindow {
 
             FilterPill {
                 label: qsTr("Nur offene")
-                active: app.onlyOpen
+                active: planner.onlyOpen
                 Layout.alignment: Qt.AlignVCenter
-                onToggled: app.toggleOnlyOpen(!app.onlyOpen)
+                onToggled: app.toggleOnlyOpen(!planner.onlyOpen)
             }
 
             Item { Layout.fillWidth: true }
@@ -234,8 +221,9 @@ ApplicationWindow {
                     clear()
                 }
                 onTextChanged: {
-                    app.searchQuery = text
-                    PlannerBackend.setSearchQuery(text)
+                    if (planner.searchQuery !== text) {
+                        planner.searchQuery = text
+                    }
                 }
             }
         }
@@ -244,8 +232,8 @@ ApplicationWindow {
             id: mainView
             Layout.fillWidth: true
             Layout.fillHeight: true
-            viewMode: app.viewMode
-            onlyOpen: app.onlyOpen
+            viewMode: planner.viewModeString
+            onlyOpen: planner.onlyOpen
             onQuickAddRequested: (iso, kind) => app.openQuickAddFor(kind, iso)
             onJumpToTodayRequested: app.goToday()
         }
@@ -273,23 +261,21 @@ ApplicationWindow {
     }
 
     Connections {
-        target: PlannerBackend
+        target: planner
         function onDarkThemeChanged() {
             app.color = Styles.ThemeStore.colors.appBg
         }
-        function onViewModeChanged() {
-            viewMode = PlannerBackend.viewMode
-        }
         function onFiltersChanged() {
-            onlyOpen = PlannerBackend.onlyOpen
-            searchQuery = PlannerBackend.searchQuery
-            if (globalSearch)
-                globalSearch.text = searchQuery
+            if (globalSearch) {
+                globalSearch.text = planner.searchQuery
+            }
         }
     }
 
     Component.onCompleted: {
-        syncState()
+        if (globalSearch) {
+            globalSearch.text = planner.searchQuery
+        }
         Qt.callLater(() => keyScope.forceActiveFocus())
     }
 

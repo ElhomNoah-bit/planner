@@ -7,8 +7,8 @@ import NoahPlanner.Styles as Styles
 Item {
     id: root
     implicitWidth: Styles.ThemeStore.layout.sidebarW
-    property string selectedIso: PlannerBackend.selectedDate
-    property var summary: PlannerBackend.daySummary(selectedIso)
+    property string selectedIso: planner.selectedDate
+    property var summary: planner.daySummary(selectedIso)
     signal startTimerRequested(int minutes)
 
     readonly property QtObject colors: Styles.ThemeStore.colors
@@ -69,7 +69,7 @@ Item {
                     }
                     Loader {
                         id: tasksLoader
-                        active: PlannerBackend.todayTasks && PlannerBackend.todayTasks.count > 0
+                        active: planner.todayTasks && planner.todayTasks.count > 0
                         sourceComponent: tasksList
                         onActiveChanged: emptyTasks.visible = !active
                     }
@@ -104,7 +104,7 @@ Item {
                     }
                     Loader {
                         id: examsLoader
-                        active: PlannerBackend.exams && PlannerBackend.exams.count > 0
+                        active: planner.exams && planner.exams.count > 0
                         sourceComponent: examsList
                         onActiveChanged: emptyExams.visible = !active
                     }
@@ -133,7 +133,7 @@ Item {
             width: flick.width - gaps.g16 * 2
             spacing: gaps.g12
             Repeater {
-                model: PlannerBackend.todayTasks
+                model: planner.todayTasks
                 delegate: TodayTaskDelegate {
                     width: parent ? parent.width : 320
                     title: model.title
@@ -141,7 +141,7 @@ Item {
                     duration: model.duration
                     subjectColor: model.color
                     done: model.done
-                    onToggled: function(next) { PlannerBackend.toggleTaskDone(index, next) }
+                    onToggled: function(next) { planner.toggleTaskDone(index, next) }
                     onStartTimer: root.startTimerRequested(minutes)
                 }
             }
@@ -154,13 +154,13 @@ Item {
             width: flick.width - gaps.g16 * 2
             spacing: gaps.g12
             Repeater {
-                model: PlannerBackend.exams
+                model: planner.exams
                 delegate: GlassPanel {
                     padding: gaps.g12
                     radius: radii.md
                     Column {
                         spacing: gaps.g8
-                        property var subject: PlannerBackend.subjectById(model.subjectId)
+                        property var subject: planner.subjectById(model.subjectId)
                         Row {
                             spacing: gaps.g8
                             Rectangle {
@@ -200,7 +200,7 @@ Item {
                         PillButton {
                             text: qsTr("Zum Tag")
                             kind: "ghost"
-                            onClicked: PlannerBackend.selectDateIso(Qt.formatDate(model.date, "yyyy-MM-dd"))
+                            onClicked: planner.selectDateIso(Qt.formatDate(model.date, "yyyy-MM-dd"))
                         }
                     }
                 }
@@ -209,13 +209,13 @@ Item {
     }
 
     function refreshSummary() {
-        summary = PlannerBackend.daySummary(selectedIso)
+        summary = planner.daySummary(selectedIso)
     }
 
     Connections {
-        target: PlannerBackend
+        target: planner
         function onSelectedDateChanged() {
-            root.selectedIso = PlannerBackend.selectedDate
+            root.selectedIso = planner.selectedDate
             root.refreshSummary()
         }
         function onTasksChanged() {

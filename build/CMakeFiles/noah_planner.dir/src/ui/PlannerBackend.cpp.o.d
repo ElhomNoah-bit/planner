@@ -345,4 +345,5 @@ CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o: \
  /usr/include/qt6/QtCore/QVariantMap \
  /usr/include/qt6/QtCore/qvariantmap.h /usr/include/qt6/QtCore/QMap \
  /usr/include/qt6/QtCore/qmap.h /usr/include/qt6/QtCore/QString \
- /usr/include/qt6/QtCore/QDateTime /usr/include/qt6/QtCore/QModelIndex
+ /usr/include/qt6/QtCore/QDateTime /usr/include/qt6/QtCore/QModelIndex \
+ /usr/include/qt6/QtCore/QDebug /usr/include/qt6/QtCore/qdebug.h

@@ -14,18 +14,10 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 211,
-                        "errorMessage": "Cannot access value for name PlannerBackend",
-                        "functionName": "syncState",
-                        "line": 96
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 5,
-                        "durationMicroseconds": 41,
-                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "durationMicroseconds": 48,
+                        "errorMessage": "Cannot access value for name planner",
                         "functionName": "goToday",
-                        "line": 104
+                        "line": 92
                     },
                     {
                         "codegenSuccessful": false,
@@ -33,7 +25,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "quickAddOpen",
-                        "line": 108
+                        "line": 96
                     },
                     {
                         "codegenSuccessful": false,
@@ -41,7 +33,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "openQuickAddFor",
-                        "line": 112
+                        "line": 100
                     },
                     {
                         "codegenSuccessful": false,
@@ -49,7 +41,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "openCommandPalette",
-                        "line": 125
+                        "line": 113
                     },
                     {
                         "codegenSuccessful": false,
@@ -57,7 +49,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "toggleOnlyOpen",
-                        "line": 129
+                        "line": 117
                     },
                     {
                         "codegenSuccessful": false,
@@ -65,15 +57,15 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "createQuickItem",
-                        "line": 136
+                        "line": 123
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 5,
-                        "durationMicroseconds": 104,
+                        "durationMicroseconds": 106,
                         "errorMessage": "",
                         "functionName": "openSettings",
-                        "line": 140
+                        "line": 127
                     },
                     {
                         "codegenSuccessful": false,
@@ -81,7 +73,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "handleCommand",
-                        "line": 144
+                        "line": 131
                     },
                     {
                         "codegenSuccessful": false,
@@ -89,23 +81,23 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "setViewMode",
-                        "line": 172
+                        "line": 159
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 138,
+                        "durationMicroseconds": 172,
                         "errorMessage": "",
                         "functionName": "sequences",
-                        "line": 23
+                        "line": 19
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "enabled",
-                        "line": 24
+                        "line": 20
                     },
                     {
                         "codegenSuccessful": false,
@@ -113,23 +105,23 @@
                         "durationMicroseconds": 18,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onActivated",
-                        "line": 25
+                        "line": 21
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 84,
+                        "durationMicroseconds": 82,
                         "errorMessage": "",
                         "functionName": "sequence",
-                        "line": 29
+                        "line": 25
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "enabled",
-                        "line": 30
+                        "line": 26
                     },
                     {
                         "codegenSuccessful": false,
@@ -137,23 +129,23 @@
                         "durationMicroseconds": 16,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onActivated",
-                        "line": 31
+                        "line": 27
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 110,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "sequences",
-                        "line": 35
+                        "line": 31
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "enabled",
-                        "line": 36
+                        "line": 32
                     },
                     {
                         "codegenSuccessful": false,
@@ -161,95 +153,95 @@
                         "durationMicroseconds": 14,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onActivated",
+                        "line": 33
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 114,
+                        "errorMessage": "",
+                        "functionName": "sequences",
                         "line": 37
                     },
                     {
-                        "codegenSuccessful": true,
-                        "column": 20,
-                        "durationMicroseconds": 148,
-                        "errorMessage": "",
-                        "functionName": "sequences",
-                        "line": 41
-                    },
-                    {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 18,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "enabled",
-                        "line": 42
+                        "line": 38
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 16,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
+                        "durationMicroseconds": 59,
+                        "errorMessage": "Cannot access value for name planner",
                         "functionName": "onActivated",
+                        "line": 39
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 104,
+                        "errorMessage": "",
+                        "functionName": "sequences",
                         "line": 43
                     },
                     {
-                        "codegenSuccessful": true,
-                        "column": 20,
-                        "durationMicroseconds": 109,
-                        "errorMessage": "",
-                        "functionName": "sequences",
-                        "line": 47
-                    },
-                    {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "enabled",
-                        "line": 48
+                        "line": 44
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 15,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
+                        "durationMicroseconds": 104,
+                        "errorMessage": "Cannot access value for name planner",
                         "functionName": "onActivated",
+                        "line": 45
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 106,
+                        "errorMessage": "",
+                        "functionName": "sequences",
                         "line": 49
                     },
                     {
-                        "codegenSuccessful": true,
-                        "column": 20,
-                        "durationMicroseconds": 110,
-                        "errorMessage": "",
-                        "functionName": "sequences",
-                        "line": 53
-                    },
-                    {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "enabled",
-                        "line": 54
+                        "line": 50
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 15,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
+                        "durationMicroseconds": 56,
+                        "errorMessage": "Cannot access value for name planner",
                         "functionName": "onActivated",
-                        "line": 55
+                        "line": 51
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 44,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 60
+                        "line": 56
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 318,
+                        "durationMicroseconds": 608,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onPressed",
-                        "line": 64
+                        "line": 60
                     },
                     {
                         "codegenSuccessful": true,
@@ -257,76 +249,100 @@
                         "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "onPressed",
-                        "line": 64
+                        "line": 60
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 1702,
+                        "durationMicroseconds": 1713,
                         "errorMessage": "Cannot load property g16 from ThemeStore::gap with type QObject.",
                         "functionName": "spacing",
-                        "line": 182
+                        "line": 168
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 180
+                        "line": 166
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 52,
                         "errorMessage": "Cannot load property g24 from ThemeStore::gap with type QObject.",
                         "functionName": "margins",
-                        "line": 181
+                        "line": 167
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot load property g12 from ThemeStore::gap with type QObject.",
                         "functionName": "spacing",
-                        "line": 187
+                        "line": 173
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 346,
+                        "durationMicroseconds": 350,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "options",
-                        "line": 194
+                        "line": 180
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 24,
-                        "durationMicroseconds": 16,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
-                        "functionName": "value",
-                        "line": 199
+                        "column": 31,
+                        "durationMicroseconds": 711,
+                        "errorMessage": "Cannot access value for name planner",
+                        "functionName": "currentIndex",
+                        "line": 185
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 33,
-                        "durationMicroseconds": 22,
+                        "column": 30,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
-                        "functionName": "onValueChanged",
-                        "line": 200
+                        "functionName": "onActivated",
+                        "line": 187
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 45,
+                        "errorMessage": "",
+                        "functionName": "onActivated",
+                        "line": 187
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot load property pillH from ThemeStore::layout with type QObject.",
                         "functionName": "preferredHeight",
-                        "line": 192
+                        "line": 178
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 35,
                         "durationMicroseconds": 61,
+                        "errorMessage": "",
+                        "functionName": "alignment",
+                        "line": 179
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 194
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 62,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 193
@@ -337,55 +353,39 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 207
+                        "line": 201
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "alignment",
+                        "line": 200
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 25,
+                        "durationMicroseconds": 48,
+                        "errorMessage": "Cannot access value for name planner",
+                        "functionName": "active",
                         "line": 206
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find signal \"clicked\".",
-                        "functionName": "onClicked",
-                        "line": 214
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 35,
-                        "durationMicroseconds": 61,
-                        "errorMessage": "",
-                        "functionName": "alignment",
-                        "line": 213
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 25,
-                        "durationMicroseconds": 23,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
-                        "functionName": "active",
-                        "line": 219
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 28,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onToggled",
-                        "line": 221
+                        "line": 208
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 73,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 220
+                        "line": 207
                     },
                     {
                         "codegenSuccessful": false,
@@ -393,7 +393,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"accepted\".",
                         "functionName": "onAccepted",
-                        "line": 232
+                        "line": 219
                     },
                     {
                         "codegenSuccessful": false,
@@ -401,79 +401,71 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"textChanged\".",
                         "functionName": "onTextChanged",
-                        "line": 236
+                        "line": 223
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 230
+                        "line": 217
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 16,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
+                        "durationMicroseconds": 173,
+                        "errorMessage": "Cannot access value for name planner",
                         "functionName": "viewMode",
-                        "line": 247
+                        "line": 235
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 15,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: app",
+                        "durationMicroseconds": 132,
+                        "errorMessage": "Cannot access value for name planner",
                         "functionName": "onlyOpen",
-                        "line": 248
+                        "line": 236
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onQuickAddRequested",
-                        "line": 249
+                        "line": 237
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 46,
                         "errorMessage": "",
                         "functionName": "onQuickAddRequested",
-                        "line": 249
+                        "line": 237
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 17,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onJumpToTodayRequested",
-                        "line": 250
+                        "line": 238
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 17,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onAccepted",
-                        "line": 257
+                        "line": 245
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 33,
                         "errorMessage": "",
                         "functionName": "onAccepted",
-                        "line": 257
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 23,
-                        "durationMicroseconds": 53,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 256
+                        "line": 245
                     },
                     {
                         "codegenSuccessful": true,
@@ -481,87 +473,103 @@
                         "durationMicroseconds": 44,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 262
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 27,
-                        "durationMicroseconds": 45,
-                        "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 267
+                        "line": 244
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 272
+                        "line": 250
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 99,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 255
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 47,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 260
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 67,
-                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "durationMicroseconds": 51,
+                        "errorMessage": "Cannot access value for name planner",
                         "functionName": "target",
-                        "line": 276
+                        "line": 264
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot retrieve a non-object type by ID: app",
                         "functionName": "onDarkThemeChanged",
-                        "line": 277
+                        "line": 265
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 64,
-                        "errorMessage": "Cannot access value for name PlannerBackend",
-                        "functionName": "onViewModeChanged",
-                        "line": 280
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 9,
-                        "durationMicroseconds": 168,
-                        "errorMessage": "Cannot access value for name PlannerBackend",
+                        "durationMicroseconds": 73,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: globalSearch",
                         "functionName": "onFiltersChanged",
-                        "line": 283
+                        "line": 268
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 147,
-                        "errorMessage": "Cannot generate efficient code for LoadClosure",
+                        "durationMicroseconds": 74,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: globalSearch",
                         "functionName": "onCompleted",
-                        "line": 291
+                        "line": 275
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 62,
                         "errorMessage": "",
                         "functionName": "target",
-                        "line": 297
+                        "line": 283
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 250,
+                        "durationMicroseconds": 212,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "onVisibleChanged",
-                        "line": 298
+                        "line": 284
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 90,
                         "errorMessage": "",
                         "functionName": "target",
-                        "line": 305
+                        "line": 291
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 9,
+                        "durationMicroseconds": 201,
+                        "errorMessage": "Cannot generate efficient code for LoadClosure",
+                        "functionName": "onVisibleChanged",
+                        "line": 292
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 17,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 299
                     },
                     {
                         "codegenSuccessful": false,
@@ -569,23 +577,7 @@
                         "durationMicroseconds": 200,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "onVisibleChanged",
-                        "line": 306
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 17,
-                        "durationMicroseconds": 54,
-                        "errorMessage": "",
-                        "functionName": "target",
-                        "line": 313
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 9,
-                        "durationMicroseconds": 189,
-                        "errorMessage": "Cannot generate efficient code for LoadClosure",
-                        "functionName": "onVisibleChanged",
-                        "line": 314
+                        "line": 300
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/App.qml"
