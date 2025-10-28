@@ -5,6 +5,9 @@ noah_planner: \
   CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.o \
   CMakeFiles/noah_planner.dir/src/main.cpp.o \
   CMakeFiles/noah_planner.dir/src/core/PlannerService.cpp.o \
+  CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.o \
+  CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.o \
+  CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.o \
   CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o \
   CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.o \
   CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.o \
@@ -47,6 +50,7 @@ noah_planner: \
   /usr/lib64/libQt6QuickControls2.so.6.9.2 \
   /usr/lib64/libQt6QuickLayouts.so.6.9.2 \
   /usr/lib64/libQt6Widgets.so.6.9.2 \
+  /usr/lib64/libQt6Sql.so.6.9.2 \
   NoahPlanner/Styles/libstyles_moduleplugin.a \
   /usr/lib64/libQt6Quick.so.6.9.2 \
   /usr/lib64/libQt6OpenGL.so.6.9.2 \
@@ -165,6 +169,12 @@ CMakeFiles/noah_planner.dir/src/main.cpp.o:
 
 CMakeFiles/noah_planner.dir/src/core/PlannerService.cpp.o:
 
+CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.o:
+
+CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.o:
+
+CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.o:
+
 CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o:
 
 CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.o:
@@ -248,6 +258,8 @@ libstyles_module.a:
 /usr/lib64/libQt6QuickLayouts.so.6.9.2:
 
 /usr/lib64/libQt6Widgets.so.6.9.2:
+
+/usr/lib64/libQt6Sql.so.6.9.2:
 
 NoahPlanner/Styles/libstyles_moduleplugin.a:
 

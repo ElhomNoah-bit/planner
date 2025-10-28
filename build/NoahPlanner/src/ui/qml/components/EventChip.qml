@@ -7,38 +7,57 @@ Rectangle {
     property color subjectColor: Styles.ThemeStore.accent
     property bool muted: false
     property bool overdue: false
+    property string timeText: ""
+    property bool timed: timeText.length > 0
 
     implicitHeight: 26
-    implicitWidth: Math.max(72, labelText.implicitWidth + Styles.ThemeStore.g16)
+    implicitWidth: Math.max(92, contentRow.implicitWidth + Styles.ThemeStore.g16)
     radius: Styles.ThemeStore.r12
-    color: muted ? Styles.ThemeStore.cardAlt : Styles.ThemeStore.accentBg
+    color: muted ? Styles.ThemeStore.cardAlt : Styles.ThemeStore.cardBg
     border.width: overdue ? 1 : 0
     border.color: overdue ? Styles.ThemeStore.danger : "transparent"
 
-    Row {
+    RowLayout {
+        id: contentRow
         anchors.fill: parent
-        anchors.leftMargin: Styles.ThemeStore.g12
-        anchors.rightMargin: Styles.ThemeStore.g12
+        anchors.margins: Styles.ThemeStore.g12
         spacing: Styles.ThemeStore.g8
-        anchors.verticalCenter: parent.verticalCenter
 
         Rectangle {
-            width: 6
-            height: 6
+            width: timed ? 6 : 0
+            height: timed ? 6 : 0
             radius: 3
             color: muted ? Styles.ThemeStore.divider : subjectColor
-            anchors.verticalCenter: parent.verticalCenter
+            visible: timed
+            Layout.alignment: Qt.AlignVCenter
         }
 
-        Text {
-            id: labelText
-            text: chip.label
-            color: Styles.ThemeStore.text
-            font.pixelSize: Styles.ThemeStore.sm
-            font.family: Styles.ThemeStore.fontFamily
-            elide: Text.ElideRight
-            verticalAlignment: Text.AlignVCenter
-            renderType: Text.NativeRendering
+        ColumnLayout {
+            Layout.fillWidth: true
+            spacing: 2
+
+            Text {
+                visible: timed
+                text: chip.timeText
+                font.pixelSize: Styles.ThemeStore.type.xs
+                font.weight: Styles.ThemeStore.type.weightMedium
+                font.family: Styles.ThemeStore.fonts.uiFallback
+                color: Styles.ThemeStore.colors.text2
+                elide: Text.ElideRight
+                renderType: Text.NativeRendering
+            }
+
+            Text {
+                id: labelText
+                text: chip.label
+                color: Styles.ThemeStore.colors.textPrimary
+                font.pixelSize: Styles.ThemeStore.type.sm
+                font.weight: Styles.ThemeStore.type.weightMedium
+                font.family: Styles.ThemeStore.fonts.heading
+                elide: Text.ElideRight
+                verticalAlignment: Text.AlignVCenter
+                renderType: Text.NativeRendering
+            }
         }
     }
 

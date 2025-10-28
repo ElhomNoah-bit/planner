@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 250,
+                        "durationMicroseconds": 225,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "open",
                         "line": 13
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 5,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 61,
                         "errorMessage": "",
                         "functionName": "close",
                         "line": 19
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 905,
+                        "durationMicroseconds": 914,
                         "errorMessage": "Cannot retrieve a non-object type by ID: themeGroup",
                         "functionName": "sync",
                         "line": 23
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 82,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 9
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 82,
                         "errorMessage": "",
                         "functionName": "onEscapePressed",
                         "line": 30
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 340,
+                        "durationMicroseconds": 255,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 34
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 147,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 35
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 61,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 33
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 109,
+                        "durationMicroseconds": 124,
                         "errorMessage": "",
                         "functionName": "acceptedButtons",
                         "line": 37
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 115,
                         "errorMessage": "",
                         "functionName": "gesturePolicy",
                         "line": 38
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 138,
                         "errorMessage": "",
                         "functionName": "onTapped",
                         "line": 39
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 2229,
+                        "durationMicroseconds": 2635,
                         "errorMessage": "Cannot load property g24 from ThemeStore::gap with type QObject.",
                         "functionName": "width",
                         "line": 45
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot load property g24 from ThemeStore::gap with type QObject.",
                         "functionName": "padding",
                         "line": 46
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 85,
+                        "durationMicroseconds": 135,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 47
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 73,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 44
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 44,
                         "errorMessage": "Cannot load property g24 from ThemeStore::gap with type QObject.",
                         "functionName": "spacing",
                         "line": 51
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 74,
+                        "durationMicroseconds": 73,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 50
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot load property g8 from ThemeStore::gap with type QObject.",
                         "functionName": "spacing",
                         "line": 54
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 40,
                         "errorMessage": "Cannot load property text from ThemeStore::colors with type QObject.",
                         "functionName": "color",
                         "line": 60
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 78,
+                        "durationMicroseconds": 97,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 61
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot load property lg from ThemeStore::type with type QObject.",
                         "functionName": "pixelSize",
                         "line": 57
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot load property weightBold from ThemeStore::type with type QObject.",
                         "functionName": "weight",
                         "line": 58
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot load property heading from ThemeStore::fonts with type QObject.",
                         "functionName": "family",
                         "line": 59
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot load property text2 from ThemeStore::colors with type QObject.",
                         "functionName": "color",
                         "line": 68
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 69
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot load property sm from ThemeStore::type with type QObject.",
                         "functionName": "pixelSize",
                         "line": 65
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot load property weightRegular from ThemeStore::type with type QObject.",
                         "functionName": "weight",
                         "line": 66
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot load property body from ThemeStore::fonts with type QObject.",
                         "functionName": "family",
                         "line": 67
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot load property g24 from ThemeStore::gap with type QObject.",
                         "functionName": "columnSpacing",
                         "line": 75
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot load property g24 from ThemeStore::gap with type QObject.",
                         "functionName": "rowSpacing",
                         "line": 76
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot load property g12 from ThemeStore::gap with type QObject.",
                         "functionName": "spacing",
                         "line": 80
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 86,
+                        "durationMicroseconds": 91,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 87
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot load property sm from ThemeStore::type with type QObject.",
                         "functionName": "pixelSize",
                         "line": 83
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot load property weightBold from ThemeStore::type with type QObject.",
                         "functionName": "weight",
                         "line": 84
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot load property heading from ThemeStore::fonts with type QObject.",
                         "functionName": "family",
                         "line": 85
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot load property g12 from ThemeStore::gap with type QObject.",
                         "functionName": "spacing",
                         "line": 105
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot load property text from ThemeStore::colors with type QObject.",
                         "functionName": "color",
                         "line": 111
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 95,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 112
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 42,
                         "errorMessage": "Cannot load property sm from ThemeStore::type with type QObject.",
                         "functionName": "pixelSize",
                         "line": 108
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot load property weightBold from ThemeStore::type with type QObject.",
                         "functionName": "weight",
                         "line": 109
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot load property heading from ThemeStore::fonts with type QObject.",
                         "functionName": "family",
                         "line": 110
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 40,
                         "errorMessage": "Cannot load property g12 from ThemeStore::gap with type QObject.",
                         "functionName": "spacing",
                         "line": 130
@@ -414,7 +414,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot load property text from ThemeStore::colors with type QObject.",
                         "functionName": "color",
                         "line": 136
@@ -422,7 +422,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 137
@@ -430,7 +430,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot load property sm from ThemeStore::type with type QObject.",
                         "functionName": "pixelSize",
                         "line": 133
@@ -438,7 +438,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot load property weightBold from ThemeStore::type with type QObject.",
                         "functionName": "weight",
                         "line": 134
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 42,
                         "errorMessage": "Cannot load property heading from ThemeStore::fonts with type QObject.",
                         "functionName": "family",
                         "line": 135
@@ -486,7 +486,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 48,
                         "errorMessage": "Cannot load property g12 from ThemeStore::gap with type QObject.",
                         "functionName": "spacing",
                         "line": 155
@@ -494,7 +494,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 44,
                         "errorMessage": "Cannot load property text from ThemeStore::colors with type QObject.",
                         "functionName": "color",
                         "line": 161
@@ -502,7 +502,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 98,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 162
@@ -510,7 +510,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot load property sm from ThemeStore::type with type QObject.",
                         "functionName": "pixelSize",
                         "line": 158
@@ -518,7 +518,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot load property weightBold from ThemeStore::type with type QObject.",
                         "functionName": "weight",
                         "line": 159
@@ -526,7 +526,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot load property heading from ThemeStore::fonts with type QObject.",
                         "functionName": "family",
                         "line": 160
@@ -550,7 +550,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot load property g12 from ThemeStore::gap with type QObject.",
                         "functionName": "spacing",
                         "line": 174
@@ -566,7 +566,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 74,
                         "errorMessage": "Cannot access value for name planner",
                         "functionName": "target",
                         "line": 186
@@ -574,7 +574,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 9,
-                        "durationMicroseconds": 142,
+                        "durationMicroseconds": 211,
                         "errorMessage": "",
                         "functionName": "onSettingsChanged",
                         "line": 187
@@ -582,7 +582,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 9,
-                        "durationMicroseconds": 125,
+                        "durationMicroseconds": 199,
                         "errorMessage": "",
                         "functionName": "onDarkThemeChanged",
                         "line": 190

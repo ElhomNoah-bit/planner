@@ -5,12 +5,18 @@ noah_planner_autogen/timestamp: \
 	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles/3.31.6/CMakeSystem.cmake \
 	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_autogen/moc_predefs.h \
 	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp \
+	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/EventRepository.cpp \
+	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/EventRepository.h \
 	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Exam.h \
 	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/PlannerService.cpp \
 	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/PlannerService.h \
+	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/QuickAddParser.cpp \
+	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/QuickAddParser.h \
 	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Subject.h \
 	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Task.h \
 	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/main.cpp \
+	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/EventModel.cpp \
+	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/EventModel.h \
 	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/ExamModel.cpp \
 	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/ExamModel.h \
 	/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/TaskFilterProxy.cpp \
@@ -287,11 +293,15 @@ noah_planner_autogen/timestamp: \
 	/usr/include/pthread.h \
 	/usr/include/qt6/QtCore/QAbstractListModel \
 	/usr/include/qt6/QtCore/QDate \
+	/usr/include/qt6/QtCore/QDateTime \
 	/usr/include/qt6/QtCore/QHash \
+	/usr/include/qt6/QtCore/QJsonArray \
 	/usr/include/qt6/QtCore/QJsonObject \
 	/usr/include/qt6/QtCore/QList \
 	/usr/include/qt6/QtCore/QMap \
 	/usr/include/qt6/QtCore/QObject \
+	/usr/include/qt6/QtCore/QPair \
+	/usr/include/qt6/QtCore/QRegularExpression \
 	/usr/include/qt6/QtCore/QSet \
 	/usr/include/qt6/QtCore/QSortFilterProxyModel \
 	/usr/include/qt6/QtCore/QString \
@@ -356,6 +366,7 @@ noah_planner_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qiodevicebase.h \
 	/usr/include/qt6/QtCore/qiterable.h \
 	/usr/include/qt6/QtCore/qiterator.h \
+	/usr/include/qt6/QtCore/qjsonarray.h \
 	/usr/include/qt6/QtCore/qjsondocument.h \
 	/usr/include/qt6/QtCore/qjsonobject.h \
 	/usr/include/qt6/QtCore/qjsonparseerror.h \
@@ -368,6 +379,7 @@ noah_planner_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qmap.h \
 	/usr/include/qt6/QtCore/qmath.h \
 	/usr/include/qt6/QtCore/qmetacontainer.h \
+	/usr/include/qt6/QtCore/qmetaobject.h \
 	/usr/include/qt6/QtCore/qmetatype.h \
 	/usr/include/qt6/QtCore/qminmax.h \
 	/usr/include/qt6/QtCore/qnamespace.h \
@@ -444,6 +456,13 @@ noah_planner_autogen/timestamp: \
 	/usr/include/qt6/QtGui/qtgui-config.h \
 	/usr/include/qt6/QtGui/qtguiexports.h \
 	/usr/include/qt6/QtGui/qtguiglobal.h \
+	/usr/include/qt6/QtSql/QSqlDatabase \
+	/usr/include/qt6/QtSql/QSqlQuery \
+	/usr/include/qt6/QtSql/qsqldatabase.h \
+	/usr/include/qt6/QtSql/qsqlquery.h \
+	/usr/include/qt6/QtSql/qtsql-config.h \
+	/usr/include/qt6/QtSql/qtsqlexports.h \
+	/usr/include/qt6/QtSql/qtsqlglobal.h \
 	/usr/include/sched.h \
 	/usr/include/stdc-predef.h \
 	/usr/include/stdint.h \
@@ -1103,6 +1122,42 @@ noah_planner_autogen/timestamp: \
 	/usr/lib64/cmake/Qt6QuickTools/Qt6QuickToolsTargets-relwithdebinfo.cmake \
 	/usr/lib64/cmake/Qt6QuickTools/Qt6QuickToolsTargets.cmake \
 	/usr/lib64/cmake/Qt6QuickTools/Qt6QuickToolsVersionlessTargets.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfig.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6SqlConfig.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6SqlDependencies.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6SqlPlugins.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6SqlTargets.cmake \
+	/usr/lib64/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake \
+	/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfig.cmake \
+	/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersion.cmake \
+	/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersionImpl.cmake \
+	/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateDependencies.cmake \
+	/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateTargets.cmake \
+	/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateVersionlessAliasTargets.cmake \
 	/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake \
 	/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake \
 	/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake \

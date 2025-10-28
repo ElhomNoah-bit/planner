@@ -105,6 +105,10 @@ void PlannerBackend::setViewMode(ViewMode mode) {
     emit viewModeChanged();
 }
 
+void PlannerBackend::setViewMode(const QString& mode) {
+    setViewModeString(mode);
+}
+
 void PlannerBackend::setViewModeString(const QString& mode) {
     setViewMode(modeFromString(mode));
 }
@@ -461,7 +465,9 @@ QVariantList PlannerBackend::buildRangeEvents(const QDate& start, const QDate& e
         list.append(toVariant(record));
     }
     std::sort(list.begin(), list.end(), [](const QVariant& a, const QVariant& b) {
-        return a.toMap().value(QStringLiteral("start"]).toString() < b.toMap().value(QStringLiteral("start")).toString();
+        const QVariantMap left = a.toMap();
+        const QVariantMap right = b.toMap();
+        return left.value(QStringLiteral("start")).toString() < right.value(QStringLiteral("start")).toString();
     });
     return list;
 }

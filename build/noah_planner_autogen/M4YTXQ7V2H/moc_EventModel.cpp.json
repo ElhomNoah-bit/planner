@@ -1,0 +1,40 @@
+{
+    "classes": [
+        {
+            "className": "EventModel",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "Roles",
+                    "values": [
+                        "IdRole",
+                        "TitleRole",
+                        "StartRole",
+                        "EndRole",
+                        "AllDayRole",
+                        "LocationRole",
+                        "NotesRole",
+                        "TagsRole",
+                        "IsExamRole",
+                        "IsDoneRole",
+                        "DueRole",
+                        "ColorHintRole",
+                        "PriorityRole"
+                    ]
+                }
+            ],
+            "lineNumber": 24,
+            "object": true,
+            "qualifiedClassName": "EventModel",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractListModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "EventModel.h",
+    "outputRevision": 69
+}

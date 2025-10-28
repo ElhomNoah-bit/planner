@@ -651,6 +651,42 @@ styles_moduleplugin_init_autogen/timestamp: /home/noah/Dokumente/dev/project_stu
   /usr/lib64/cmake/Qt6QuickTools/Qt6QuickToolsTargets-relwithdebinfo.cmake \
   /usr/lib64/cmake/Qt6QuickTools/Qt6QuickToolsTargets.cmake \
   /usr/lib64/cmake/Qt6QuickTools/Qt6QuickToolsVersionlessTargets.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginAdditionalTargetInfo.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfig.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets-relwithdebinfo.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginAdditionalTargetInfo.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets-relwithdebinfo.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6SqlConfig.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6SqlDependencies.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6SqlPlugins.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6SqlTargets.cmake \
+  /usr/lib64/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake \
+  /usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateAdditionalTargetInfo.cmake \
+  /usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfig.cmake \
+  /usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersion.cmake \
+  /usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersionImpl.cmake \
+  /usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateDependencies.cmake \
+  /usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateTargets.cmake \
+  /usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateVersionlessAliasTargets.cmake \
   /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake \
   /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake \
   /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake \
@@ -1212,9 +1248,55 @@ CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init_autogen/mocs_co
 
 /usr/include/qt6/QtCore/qtenvironmentvariables.h:
 
+/usr/include/qt6/QtCore/qtcoreglobal.h:
+
+/usr/include/qt6/QtCore/qtcoreexports.h:
+
+/usr/include/qt6/QtCore/qtcore-config.h:
+
+/usr/include/qt6/QtCore/qtconfigmacros.h:
+
+/usr/include/qt6/QtCore/qtclasshelpermacros.h:
+
+/usr/include/qt6/QtCore/qsystemdetection.h:
+
+/usr/include/qt6/QtCore/qsysinfo.h:
+
+/usr/include/qt6/QtCore/qswap.h:
+
+/usr/include/qt6/QtCore/qstringview.h:
+
+/usr/include/qt6/QtCore/qstringlist.h:
+
+/usr/include/qt6/QtCore/qstringconverter_base.h:
+
+/usr/include/qt6/QtCore/qstringbuilder.h:
+
+/usr/include/qt6/QtCore/qstring.h:
+
+/usr/include/qt6/QtCore/qstdlibdetection.h:
+
+/usr/include/qt6/QtCore/qsharedpointer.h:
+
+/usr/include/qt6/QtCore/qshareddata_impl.h:
+
+/usr/include/qt6/QtCore/qset.h:
+
+/usr/include/qt6/QtCore/qscopedpointer.h:
+
+/usr/include/qt6/QtCore/qregularexpression.h:
+
+/usr/include/qt6/QtCore/qrefcount.h:
+
+/usr/include/qt6/QtCore/qplugin.h:
+
 /usr/lib64/cmake/Qt6QmlModels/Qt6QmlModelsConfigVersionImpl.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginTargets.cmake:
+
+/usr/include/qt6/QtCore/qstringfwd.h:
+
+/usr/lib64/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateConfig.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginTargets-relwithdebinfo.cmake:
 
@@ -1230,6 +1312,8 @@ CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init_autogen/mocs_co
 
 /usr/include/features.h:
 
+/usr/lib64/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake:
+
 /usr/lib64/cmake/Qt6QmlIntegration/Qt6QmlIntegrationTargets.cmake:
 
 /usr/include/c++/15/ctime:
@@ -1244,7 +1328,7 @@ CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init_autogen/mocs_co
 
 /usr/lib64/cmake/Qt6QmlTools/Qt6QmlToolsAdditionalTargetInfo.cmake:
 
-/usr/lib64/cmake/Qt6Qml/Qt6QmlMacros.cmake:
+/usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib64/cmake/Qt6Qml/Qt6QmlDependencies.cmake:
 
@@ -1255,6 +1339,10 @@ CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init_autogen/mocs_co
 /usr/lib64/cmake/Qt6Qml/Qt6QTcpServerConnectionFactoryPluginAdditionalTargetInfo.cmake:
 
 /usr/lib64/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/qsharedpointer_impl.h:
+
+/usr/lib64/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib64/cmake/Qt6CorePrivate/Qt6CorePrivateAdditionalTargetInfo.cmake:
 
@@ -1281,6 +1369,8 @@ CMakeFiles/styles_moduleplugin_init.dir/styles_moduleplugin_init_autogen/mocs_co
 /usr/lib64/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginAdditionalTargetInfo.cmake:
 
 /usr/lib64/cmake/Qt6DBusTools/Qt6DBusToolsVersionlessTargets.cmake:
+
+/usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginConfig.cmake:
 
@@ -1336,6 +1426,10 @@ styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp:
 
 /usr/lib64/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptConfigVersion.cmake:
 
+/usr/include/qt6/QtCore/qstringmatcher.h:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginAdditionalTargetInfo.cmake:
+
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginTargets-relwithdebinfo.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginTargets.cmake:
@@ -1350,7 +1444,7 @@ styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp:
 
 /usr/include/c++/15/bits/concept_check.h:
 
-/usr/include/qt6/QtCore/qstringconverter_base.h:
+/usr/lib64/cmake/Qt6Sql/Qt6SqlConfig.cmake:
 
 /usr/lib64/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateAdditionalTargetInfo.cmake:
 
@@ -1440,6 +1534,8 @@ styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlxmllistmodelpluginConfig.cmake:
 
+/usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginAdditionalTargetInfo.cmake:
+
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlxmllistmodelpluginAdditionalTargetInfo.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginAdditionalTargetInfo.cmake:
@@ -1477,8 +1573,6 @@ styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp:
 /usr/lib64/cmake/Qt6QuickControls2/Qt6QuickControls2VersionlessAliasTargets.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginConfig.cmake:
-
-/usr/include/qt6/QtCore/qcontainerinfo.h:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginConfig.cmake:
 
@@ -1527,8 +1621,6 @@ styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp:
 /usr/include/qt6/QtCore/qlogging.h:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtCore/qswap.h:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginTargets-relwithdebinfo.cmake:
 
@@ -1614,6 +1706,10 @@ styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp:
 
 /usr/lib64/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets-relwithdebinfo.cmake:
 
+/usr/include/qt6/QtCore/qpointer.h:
+
+/usr/include/bits/types/wint_t.h:
+
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginTargets-relwithdebinfo.cmake:
 
 /usr/lib64/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateConfigVersion.cmake:
@@ -1630,11 +1726,17 @@ styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginTargets.cmake:
 
+/usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake:
+
 /usr/lib64/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateDependencies.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QTsLibPluginTargets.cmake:
+
+/usr/include/qt6/QtCore/qstringliteral.h:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QEglFSKmsEglDeviceIntegrationPluginConfig.cmake:
 
 /usr/include/c++/15/tr1/poly_hermite.tcc:
 
@@ -1655,8 +1757,6 @@ styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp:
 /usr/lib64/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginAdditionalTargetInfo.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginTargets.cmake:
 
 /usr/lib64/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfig.cmake:
 
@@ -1681,8 +1781,6 @@ styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp:
 /usr/lib64/cmake/Qt6QuickTemplates2/Qt6QuickTemplates2Dependencies.cmake:
 
 /usr/include/bits/cpu-set.h:
-
-/usr/lib64/cmake/Qt6QmlMeta/Qt6QmlMetaConfigVersion.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6sharedimagepluginConfig.cmake:
 
@@ -1742,8 +1840,6 @@ styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6quicktoolingConfig.cmake:
 
-/usr/lib64/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginTargets.cmake:
-
 /usr/lib64/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersion.cmake:
@@ -1802,9 +1898,11 @@ styles_moduleplugin_NoahPlanner_StylesPlugin_in.cpp:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCore/qstringview.h:
-
 /usr/lib64/cmake/Qt6CorePrivate/Qt6CorePrivateTargets.cmake:
+
+/usr/include/qt6/QtCore/qstringconverter.h:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginAdditionalTargetInfo.cmake:
 
@@ -1880,6 +1978,8 @@ CMakeFiles/3.31.6/CMakeCXXCompiler.cmake:
 
 /usr/lib64/cmake/Qt6QmlTools/Qt6QmlToolsVersionlessTargets.cmake:
 
+/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateVersionlessAliasTargets.cmake:
+
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginConfig.cmake:
 
 /usr/include/qt6/QtCore/qgenericatomic.h:
@@ -1897,10 +1997,6 @@ CMakeFiles/3.31.6/CMakeCXXCompiler.cmake:
 /usr/lib64/cmake/Qt6/QtPublicAppleHelpers.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginAdditionalTargetInfo.cmake:
-
-/usr/lib64/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateConfig.cmake:
-
-/usr/include/qt6/QtCore/qstringfwd.h:
 
 /usr/lib64/cmake/Qt6DBusPrivate/Qt6DBusPrivateDependencies.cmake:
 
@@ -2002,8 +2098,6 @@ CMakeFiles/3.31.6/CMakeCXXCompiler.cmake:
 
 /usr/lib64/cmake/Qt6QmlModels/Qt6QmlModelsConfig.cmake:
 
-/usr/lib64/cmake/Qt6/3rdparty/kwin/FindXKB.cmake:
-
 /usr/lib64/cmake/Qt6Qml/Qt6QQmlInspectorServiceFactoryPluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6/QtPublicFinalizerHelpers.cmake:
@@ -2094,6 +2188,8 @@ CMakeFiles/3.31.6/CMakeSystem.cmake:
 
 /usr/include/pthread.h:
 
+/usr/lib64/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake:
+
 /usr/lib64/cmake/Qt6/QtPublicToolHelpers.cmake:
 
 /usr/include/c++/15/bits/functional_hash.h:
@@ -2174,6 +2270,12 @@ CMakeFiles/3.31.6/CMakeSystem.cmake:
 
 /usr/lib64/cmake/Qt6QmlMeta/Qt6QmlMetaConfigVersionImpl.cmake:
 
+/usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake:
+
+/usr/include/qt6/QtCore/qscopeguard.h:
+
+/usr/lib64/cmake/Qt6Core/Qt6CoreConfig.cmake:
+
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginTargets.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginTargets.cmake:
@@ -2185,6 +2287,8 @@ CMakeFiles/3.31.6/CMakeSystem.cmake:
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginAdditionalTargetInfo.cmake:
 
 /usr/lib64/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfigVersionImpl.cmake:
+
+/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersion.cmake:
 
 /usr/include/c++/15/bits/stl_numeric.h:
 
@@ -2280,6 +2384,8 @@ CMakeFiles/3.31.6/CMakeSystem.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginTargets.cmake:
 
+/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersionImpl.cmake:
+
 /usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginAdditionalTargetInfo.cmake:
@@ -2290,9 +2396,15 @@ CMakeFiles/3.31.6/CMakeSystem.cmake:
 
 /usr/lib64/cmake/Qt6Qml/Qt6QQmlNativeDebugConnectorFactoryPluginTargets-relwithdebinfo.cmake:
 
+/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateAdditionalTargetInfo.cmake:
+
 /usr/lib64/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateTargets.cmake:
 
 /usr/lib64/cmake/Qt6Qml/Qt6QmlConfigExtras.cmake:
+
+/usr/include/qt6/QtCore/qshareddata.h:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets.cmake:
 
@@ -2325,6 +2437,8 @@ CMakeFiles/3.31.6/CMakeSystem.cmake:
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginAdditionalTargetInfo.cmake:
 
 /usr/lib64/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateVersionlessAliasTargets.cmake:
+
+/usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfig.cmake:
 
 /usr/include/bits/types/struct_timeval.h:
 
@@ -2442,6 +2556,12 @@ styles_moduleplugin_init.cpp:
 
 /usr/lib64/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateTargets.cmake:
 
+/usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake:
+
+/usr/lib64/cmake/Qt6QmlMeta/Qt6QmlMetaConfigVersion.cmake:
+
+/usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake:
+
 /usr/lib64/cmake/Qt6Network/Qt6NetworkVersionlessAliasTargets.cmake:
 
 /usr/include/c++/15/pstl/execution_defs.h:
@@ -2505,6 +2625,10 @@ styles_moduleplugin_init.cpp:
 /usr/lib64/cmake/Qt6QmlTools/Qt6QmlToolsConfigVersionImpl.cmake:
 
 /usr/lib64/cmake/Qt6QmlTools/Qt6QmlToolsDependencies.cmake:
+
+/usr/lib64/cmake/Qt6/3rdparty/kwin/FindXKB.cmake:
+
+/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateDependencies.cmake:
 
 /usr/lib64/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptAdditionalTargetInfo.cmake:
 
@@ -2594,8 +2718,6 @@ styles_moduleplugin_init.cpp:
 
 /usr/include/asm-generic/errno-base.h:
 
-/usr/include/qt6/QtCore/qstdlibdetection.h:
-
 /usr/include/c++/15/variant:
 
 /usr/lib64/cmake/Qt6QuickLayouts/Qt6QuickLayoutsConfigVersionImpl.cmake:
@@ -2664,10 +2786,6 @@ styles_moduleplugin_init.cpp:
 
 /usr/include/qt6/QtCore/qcalendar.h:
 
-/usr/include/qt6/QtCore/qrefcount.h:
-
-/usr/lib64/cmake/Qt6QuickTools/Qt6QuickToolsConfigVersionImpl.cmake:
-
 /usr/lib64/cmake/Qt6QuickTemplates2Private/Qt6QuickTemplates2PrivateConfig.cmake:
 
 /usr/lib64/cmake/Qt6QuickTemplates2Private/Qt6QuickTemplates2PrivateConfigVersion.cmake:
@@ -2675,6 +2793,72 @@ styles_moduleplugin_init.cpp:
 /usr/include/bits/long-double.h:
 
 /usr/lib64/cmake/Qt6QuickTemplates2Private/Qt6QuickTemplates2PrivateDependencies.cmake:
+
+/usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginTargets.cmake:
+
+/usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake:
+
+/usr/lib64/cmake/Qt6Qml/Qt6QmlMacros.cmake:
+
+/usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15/bits/stl_multiset.h:
+
+/usr/include/qt6/QtCore/qpair.h:
+
+/usr/lib64/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateAdditionalTargetInfo.cmake:
+
+/usr/lib64/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake:
+
+/usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qcontainerinfo.h:
+
+/usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake:
+
+/usr/include/c++/15/bits/specfun.h:
+
+/usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake:
+
+/usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QEvdevMousePluginConfig.cmake:
+
+/usr/include/c++/15/bits/atomic_lockfree_defines.h:
+
+/usr/lib64/cmake/Qt6QuickTools/Qt6QuickToolsConfigVersionImpl.cmake:
+
+/usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake:
+
+/usr/lib64/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake:
+
+/usr/include/c++/15/iosfwd:
+
+/usr/lib64/cmake/Qt6Sql/Qt6SqlDependencies.cmake:
+
+/usr/include/c++/15/bits/stl_map.h:
+
+/usr/include/c++/15/ratio:
+
+/usr/lib64/cmake/Qt6Sql/Qt6SqlTargets.cmake:
+
+/usr/lib64/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake:
+
+/usr/include/qt6/QtCore/qstringtokenizer.h:
+
+/usr/include/c++/15/bits/monostate.h:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginTargets.cmake:
+
+/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfig.cmake:
+
+/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateTargets.cmake:
 
 /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake:
 
@@ -2698,15 +2882,15 @@ styles_moduleplugin_init.cpp:
 
 /usr/include/c++/15/bits/unique_ptr.h:
 
+/usr/lib64/cmake/Qt6GuiPrivate/Qt6GuiPrivateDependencies.cmake:
+
+/usr/include/bits/types/__fpos_t.h:
+
+/usr/lib64/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateVersionlessAliasTargets.cmake:
+
 /usr/lib64/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake:
 
 /usr/share/cmake/Modules/Linker/GNU.cmake:
-
-/usr/lib64/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtCore/qpair.h:
-
-/usr/lib64/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake:
 
 /usr/lib64/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake:
 
@@ -2846,10 +3030,6 @@ styles_moduleplugin_init.cpp:
 
 /usr/include/assert.h:
 
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtCore/qstringmatcher.h:
-
 /usr/include/bits/endian.h:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginTargets.cmake:
@@ -2888,10 +3068,6 @@ styles_moduleplugin_init.cpp:
 
 /usr/include/bits/pthreadtypes-arch.h:
 
-/usr/include/bits/types/wint_t.h:
-
-/usr/include/qt6/QtCore/qpointer.h:
-
 /usr/lib64/cmake/Qt6QmlModels/Qt6QmlModelsTargets.cmake:
 
 /usr/include/bits/sched.h:
@@ -2900,11 +3076,11 @@ styles_moduleplugin_init.cpp:
 
 /usr/include/qt6/QtCore/qconfig.h:
 
-/usr/include/qt6/QtCore/qshareddata_impl.h:
-
 /usr/include/bits/setjmp.h:
 
 /usr/include/bits/stdio_lim.h:
+
+/usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginAdditionalTargetInfo.cmake:
 
 /usr/include/bits/stdlib-bsearch.h:
 
@@ -2913,14 +3089,6 @@ styles_moduleplugin_init.cpp:
 /usr/include/bits/time64.h:
 
 /usr/include/c++/15/bits/requires_hosted.h:
-
-/usr/lib64/cmake/Qt6GuiPrivate/Qt6GuiPrivateDependencies.cmake:
-
-/usr/lib64/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateVersionlessAliasTargets.cmake:
-
-/usr/include/bits/types/__fpos_t.h:
-
-/usr/include/c++/15/bits/specfun.h:
 
 /usr/include/bits/types/__locale_t.h:
 
@@ -3002,10 +3170,6 @@ styles_moduleplugin_init_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/15/bits/atomic_base.h:
 
-/usr/lib64/cmake/Qt6Gui/Qt6QEvdevMousePluginConfig.cmake:
-
-/usr/include/c++/15/bits/atomic_lockfree_defines.h:
-
 /usr/include/c++/15/bits/basic_string.h:
 
 /usr/include/c++/15/bits/basic_string.tcc:
@@ -3025,8 +3189,6 @@ styles_moduleplugin_init_autogen/mocs_compilation.cpp:
 /usr/include/c++/15/bits/cxxabi_init_exception.h:
 
 /usr/include/c++/15/bits/enable_special_members.h:
-
-/usr/include/qt6/QtCore/qset.h:
 
 /usr/lib64/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateConfigVersion.cmake:
 
@@ -3060,12 +3222,6 @@ styles_moduleplugin_init_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/15/bits/nested_exception.h:
 
-/usr/include/qt6/QtCore/qsysinfo.h:
-
-/usr/include/qt6/QtCore/qstringtokenizer.h:
-
-/usr/include/c++/15/bits/monostate.h:
-
 /usr/include/c++/15/bits/new_allocator.h:
 
 /usr/lib64/cmake/Qt6DBus/Qt6DBusConfigVersion.cmake:
@@ -3080,6 +3236,12 @@ styles_moduleplugin_init_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/15/bits/shared_ptr_base.h:
 
+/usr/include/qt6/QtCore/qtaggedpointer.h:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15/bits/std_abs.h:
+
 /usr/include/c++/15/bits/std_function.h:
 
 /usr/include/c++/15/bits/stl_algobase.h:
@@ -3090,15 +3252,7 @@ styles_moduleplugin_init_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/15/bits/stl_iterator_base_types.h:
 
-/usr/include/c++/15/bits/stl_map.h:
-
-/usr/include/c++/15/ratio:
-
-/usr/include/qt6/QtCore/qsharedpointer.h:
-
 /usr/include/c++/15/bits/stl_multimap.h:
-
-/usr/include/c++/15/bits/stl_multiset.h:
 
 /usr/lib64/cmake/Qt6QuickTemplates2/Qt6QuickTemplates2VersionlessAliasTargets.cmake:
 
@@ -3154,11 +3308,11 @@ styles_moduleplugin_init_autogen/mocs_compilation.cpp:
 
 /usr/lib64/cmake/Qt6QmlMeta/Qt6QmlMetaVersionlessAliasTargets.cmake:
 
+/usr/lib64/cmake/Qt6Sql/Qt6SqlPlugins.cmake:
+
 /usr/include/bits/thread-shared-types.h:
 
 /usr/include/c++/15/cstddef:
-
-/usr/include/qt6/QtCore/qtcoreglobal.h:
 
 /usr/include/c++/15/cstdio:
 
@@ -3189,8 +3343,6 @@ styles_moduleplugin_init_autogen/mocs_compilation.cpp:
 /usr/include/c++/15/functional:
 
 /usr/include/c++/15/initializer_list:
-
-/usr/include/c++/15/iosfwd:
 
 /usr/include/c++/15/limits:
 
@@ -3241,6 +3393,8 @@ styles_moduleplugin_init_autogen/mocs_compilation.cpp:
 /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake:
 
 /usr/include/qt6/QtCore/qlocale.h:
+
+/usr/lib64/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake:
 
 /usr/include/c++/15/tr1/modified_bessel_func.tcc:
 
@@ -3312,8 +3466,6 @@ styles_moduleplugin_init_autogen/mocs_compilation.cpp:
 
 /usr/include/gnu/stubs.h:
 
-/usr/include/qt6/QtCore/qtconfigmacros.h:
-
 /usr/include/linux/errno.h:
 
 /usr/include/linux/posix_types.h:
@@ -3380,6 +3532,8 @@ styles_moduleplugin_init_autogen/mocs_compilation.cpp:
 
 /usr/include/qt6/QtCore/qiodevicebase.h:
 
+/usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake:
+
 /usr/include/qt6/QtCore/qiterable.h:
 
 /usr/include/stdio.h:
@@ -3413,49 +3567,3 @@ styles_moduleplugin_init_autogen/mocs_compilation.cpp:
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowAdditionalTargetInfo.cmake:
 
 /usr/include/qt6/QtCore/qoverload.h:
-
-/usr/include/qt6/QtCore/qplugin.h:
-
-/usr/include/qt6/QtCore/qregularexpression.h:
-
-/usr/lib64/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtCore/qstringconverter.h:
-
-/usr/include/qt6/QtCore/qscopedpointer.h:
-
-/usr/lib64/cmake/Qt6Core/Qt6CoreConfig.cmake:
-
-/usr/include/qt6/QtCore/qscopeguard.h:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginConfig.cmake:
-
-/usr/include/qt6/QtCore/qshareddata.h:
-
-/usr/lib64/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtCore/qsharedpointer_impl.h:
-
-/usr/include/qt6/QtCore/qstring.h:
-
-/usr/include/qt6/QtCore/qstringbuilder.h:
-
-/usr/include/qt6/QtCore/qstringlist.h:
-
-/usr/lib64/cmake/Qt6Gui/Qt6QEglFSKmsEglDeviceIntegrationPluginConfig.cmake:
-
-/usr/include/qt6/QtCore/qstringliteral.h:
-
-/usr/include/qt6/QtCore/qsystemdetection.h:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginTargets-relwithdebinfo.cmake:
-
-/usr/include/c++/15/bits/std_abs.h:
-
-/usr/include/qt6/QtCore/qtaggedpointer.h:
-
-/usr/include/qt6/QtCore/qtclasshelpermacros.h:
-
-/usr/include/qt6/QtCore/qtcore-config.h:
-
-/usr/include/qt6/QtCore/qtcoreexports.h:

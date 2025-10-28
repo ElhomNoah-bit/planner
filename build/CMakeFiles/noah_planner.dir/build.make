@@ -91,6 +91,7 @@ noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6opengl_relwit
 noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6quickcontrols2_relwithdebinfo_metatypes.json
 noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6quicklayouts_relwithdebinfo_metatypes.json
 noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6widgets_relwithdebinfo_metatypes.json
+noah_planner_qmltyperegistrations.cpp: /usr/lib64/qt6/metatypes/qt6sql_relwithdebinfo_metatypes.json
 noah_planner_qmltyperegistrations.cpp: meta_types/qt6styles_moduleplugin_init_release_metatypes.json
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic QML type registration for target noah_planner"
 	/usr/lib64/qt6/libexec/qmltyperegistrar --generate-qmltypes=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/NoahPlanner/noah_planner.qmltypes --import-name=NoahPlanner --major-version=1 --minor-version=0 @/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/qmltypes/noah_planner_foreign_types.txt -o /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_qmltyperegistrations.cpp /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/meta_types/qt6noah_planner_release_metatypes.json
@@ -552,10 +553,52 @@ CMakeFiles/noah_planner.dir/src/core/PlannerService.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/noah_planner.dir/src/core/PlannerService.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/PlannerService.cpp -o CMakeFiles/noah_planner.dir/src/core/PlannerService.cpp.s
 
+CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.o: CMakeFiles/noah_planner.dir/flags.make
+CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.o: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/EventRepository.cpp
+CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.o -MF CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.o.d -o CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/EventRepository.cpp
+
+CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/EventRepository.cpp > CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.i
+
+CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/EventRepository.cpp -o CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.s
+
+CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.o: CMakeFiles/noah_planner.dir/flags.make
+CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.o: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/QuickAddParser.cpp
+CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.o -MF CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.o.d -o CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/QuickAddParser.cpp
+
+CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/QuickAddParser.cpp > CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.i
+
+CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/QuickAddParser.cpp -o CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.s
+
+CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.o: CMakeFiles/noah_planner.dir/flags.make
+CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.o: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/EventModel.cpp
+CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.o -MF CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.o.d -o CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/EventModel.cpp
+
+CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/EventModel.cpp > CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.i
+
+CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/EventModel.cpp -o CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.s
+
 CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/TaskModel.cpp
 CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o -MF CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o.d -o CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/TaskModel.cpp
 
 CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.i: cmake_force
@@ -569,7 +612,7 @@ CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.s: cmake_force
 CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.o: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/ExamModel.cpp
 CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.o -MF CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.o.d -o CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/ExamModel.cpp
 
 CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.i: cmake_force
@@ -583,7 +626,7 @@ CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.s: cmake_force
 CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.o: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/TaskFilterProxy.cpp
 CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.o -MF CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.o.d -o CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/TaskFilterProxy.cpp
 
 CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.i: cmake_force
@@ -597,7 +640,7 @@ CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.s: cmake_force
 CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/AppState.cpp
 CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o -MF CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o.d -o CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/AppState.cpp
 
 CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.i: cmake_force
@@ -611,7 +654,7 @@ CMakeFiles/noah_planner.dir/src/ui/AppState.cpp.s: cmake_force
 CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o: /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/PlannerBackend.cpp
 CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o -MF CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o.d -o CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/PlannerBackend.cpp
 
 CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.i: cmake_force
@@ -625,7 +668,7 @@ CMakeFiles/noah_planner.dir/src/ui/PlannerBackend.cpp.s: cmake_force
 CMakeFiles/noah_planner.dir/noah_planner_qmltyperegistrations.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/noah_planner_qmltyperegistrations.cpp.o: noah_planner_qmltyperegistrations.cpp
 CMakeFiles/noah_planner.dir/noah_planner_qmltyperegistrations.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/noah_planner.dir/noah_planner_qmltyperegistrations.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/noah_planner.dir/noah_planner_qmltyperegistrations.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/noah_planner_qmltyperegistrations.cpp.o -MF CMakeFiles/noah_planner.dir/noah_planner_qmltyperegistrations.cpp.o.d -o CMakeFiles/noah_planner.dir/noah_planner_qmltyperegistrations.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner_qmltyperegistrations.cpp
 
 CMakeFiles/noah_planner.dir/noah_planner_qmltyperegistrations.cpp.i: cmake_force
@@ -639,7 +682,7 @@ CMakeFiles/noah_planner.dir/noah_planner_qmltyperegistrations.cpp.s: cmake_force
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o: .qt/rcc/qrc_qmake_NoahPlanner.cpp
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o -MF CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp
 
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.i: cmake_force
@@ -653,7 +696,7 @@ CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_qmake_NoahPlanner.cpp.s: cmake_for
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp.o: .rcc/qmlcache/noah_planner_qmlcache_loader.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp.i: cmake_force
@@ -667,7 +710,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_qmlcache_loader.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/App_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/App_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/App_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/App_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/App_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/App_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/App_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/App_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/App_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/App_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/App_qml.cpp.i: cmake_force
@@ -681,7 +724,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/App_qml.
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml.cpp.i: cmake_force
@@ -695,7 +738,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/Main_qml
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/DayCell_qml.cpp.i: cmake_force
@@ -709,7 +752,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/EventChip_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/EventChip_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/EventChip_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/EventChip_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/EventChip_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/EventChip_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/EventChip_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/EventChip_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/EventChip_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/EventChip_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/EventChip_qml.cpp.i: cmake_force
@@ -723,7 +766,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/FilterPill_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/FilterPill_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/FilterPill_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/FilterPill_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/FilterPill_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/FilterPill_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/FilterPill_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/FilterPill_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/FilterPill_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/FilterPill_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/FilterPill_qml.cpp.i: cmake_force
@@ -737,7 +780,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/GlassPanel_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/GlassPanel_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/GlassPanel_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/GlassPanel_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/GlassPanel_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/GlassPanel_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/GlassPanel_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/GlassPanel_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/GlassPanel_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/GlassPanel_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/GlassPanel_qml.cpp.i: cmake_force
@@ -751,7 +794,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/IconGlyph_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/IconGlyph_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/IconGlyph_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/IconGlyph_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/IconGlyph_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/IconGlyph_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/IconGlyph_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/IconGlyph_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/IconGlyph_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/IconGlyph_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/IconGlyph_qml.cpp.i: cmake_force
@@ -765,7 +808,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/CommandPalette_qml.cpp.i: cmake_force
@@ -779,7 +822,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/PillButton_qml.cpp.i: cmake_force
@@ -793,7 +836,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddDialog_qml.cpp.i: cmake_force
@@ -807,7 +850,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/QuickAddPill_qml.cpp.i: cmake_force
@@ -821,7 +864,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SearchField_qml.cpp.i: cmake_force
@@ -835,7 +878,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SegmentedControl_qml.cpp.i: cmake_force
@@ -849,7 +892,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TimerOverlay_qml.cpp.i: cmake_force
@@ -863,7 +906,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/Toast_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/Toast_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/Toast_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/Toast_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/Toast_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/Toast_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/Toast_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/Toast_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/Toast_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/Toast_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/Toast_qml.cpp.i: cmake_force
@@ -877,7 +920,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/ToastHost_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/ToastHost_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/ToastHost_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/ToastHost_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/ToastHost_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/ToastHost_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/ToastHost_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/ToastHost_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/ToastHost_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/ToastHost_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/ToastHost_qml.cpp.i: cmake_force
@@ -891,7 +934,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/SettingsDialog_qml.cpp.i: cmake_force
@@ -905,7 +948,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/components/TodayTaskDelegate_qml.cpp.i: cmake_force
@@ -919,7 +962,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/componen
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/AgendaView_qml.cpp.i: cmake_force
@@ -933,7 +976,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/Ag
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/MonthView_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/MonthView_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/views/MonthView_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/MonthView_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/MonthView_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/MonthView_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/MonthView_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/MonthView_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/MonthView_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/MonthView_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/MonthView_qml.cpp.i: cmake_force
@@ -947,7 +990,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/Mo
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/SidebarToday_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/SidebarToday_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/views/SidebarToday_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/SidebarToday_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/SidebarToday_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/SidebarToday_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/SidebarToday_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/SidebarToday_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/SidebarToday_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/SidebarToday_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/SidebarToday_qml.cpp.i: cmake_force
@@ -961,7 +1004,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/Si
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp.o: .rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp.o -MF CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp
 
 CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/WeekView_qml.cpp.i: cmake_force
@@ -975,7 +1018,7 @@ CMakeFiles/noah_planner.dir/build/.rcc/qmlcache/noah_planner_src/ui/qml/views/We
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o: .qt/rcc/qrc_noah_planner_raw_qml_0.cpp
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o -MF CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp
 
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.i: cmake_force
@@ -989,7 +1032,7 @@ CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0.cpp.s: cmak
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o: .qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o -MF CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp
 
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldirs.cpp.i: cmake_force
@@ -1003,7 +1046,7 @@ CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_noah_planner_raw_qml_0_extra_qmldi
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o: CMakeFiles/noah_planner.dir/flags.make
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o: .qt/rcc/qrc_fonts.cpp
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o: CMakeFiles/noah_planner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o -MF CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o.d -o CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.o -c /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/.qt/rcc/qrc_fonts.cpp
 
 CMakeFiles/noah_planner.dir/build/.qt/rcc/qrc_fonts.cpp.i: cmake_force
@@ -1019,6 +1062,9 @@ noah_planner_OBJECTS = \
 "CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/noah_planner.dir/src/main.cpp.o" \
 "CMakeFiles/noah_planner.dir/src/core/PlannerService.cpp.o" \
+"CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.o" \
+"CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.o" \
+"CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.o" \
 "CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o" \
 "CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.o" \
 "CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.o" \
@@ -1059,6 +1105,9 @@ noah_planner_EXTERNAL_OBJECTS =
 noah_planner: CMakeFiles/noah_planner.dir/noah_planner_autogen/mocs_compilation.cpp.o
 noah_planner: CMakeFiles/noah_planner.dir/src/main.cpp.o
 noah_planner: CMakeFiles/noah_planner.dir/src/core/PlannerService.cpp.o
+noah_planner: CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.o
+noah_planner: CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.o
+noah_planner: CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.o
 noah_planner: CMakeFiles/noah_planner.dir/src/models/TaskModel.cpp.o
 noah_planner: CMakeFiles/noah_planner.dir/src/models/ExamModel.cpp.o
 noah_planner: CMakeFiles/noah_planner.dir/src/models/TaskFilterProxy.cpp.o
@@ -1103,6 +1152,7 @@ noah_planner: libstyles_module.a
 noah_planner: /usr/lib64/libQt6QuickControls2.so.6.9.2
 noah_planner: /usr/lib64/libQt6QuickLayouts.so.6.9.2
 noah_planner: /usr/lib64/libQt6Widgets.so.6.9.2
+noah_planner: /usr/lib64/libQt6Sql.so.6.9.2
 noah_planner: NoahPlanner/Styles/libstyles_moduleplugin.a
 noah_planner: /usr/lib64/libQt6Quick.so.6.9.2
 noah_planner: /usr/lib64/libQt6OpenGL.so.6.9.2
@@ -1118,7 +1168,7 @@ noah_planner: /usr/lib64/libQt6Qml.so.6.9.2
 noah_planner: /usr/lib64/libQt6Network.so.6.9.2
 noah_planner: /usr/lib64/libQt6Core.so.6.9.2
 noah_planner: CMakeFiles/noah_planner.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Linking CXX executable noah_planner"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Linking CXX executable noah_planner"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/noah_planner.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

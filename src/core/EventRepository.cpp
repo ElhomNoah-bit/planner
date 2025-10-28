@@ -521,7 +521,6 @@ bool EventRepository::updateJson(const EventRecord& record) {
 bool EventRepository::removeJson(const QString& id) {
     QJsonArray array = readJsonArray();
     QJsonArray updated;
-    updated.reserve(array.size());
     bool removed = false;
     for (const auto& value : array) {
         if (!value.isObject()) {

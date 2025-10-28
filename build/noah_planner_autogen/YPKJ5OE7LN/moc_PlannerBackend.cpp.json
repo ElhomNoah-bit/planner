@@ -4,7 +4,7 @@
             "className": "PlannerBackend",
             "enums": [
                 {
-                    "isClass": false,
+                    "isClass": true,
                     "isFlag": false,
                     "name": "ViewMode",
                     "values": [
@@ -14,7 +14,7 @@
                     ]
                 }
             ],
-            "lineNumber": 17,
+            "lineNumber": 16,
             "methods": [
                 {
                     "access": "public",
@@ -24,20 +24,8 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 10,
-                    "name": "selectDateIso",
-                    "returnType": "void"
-                },
-                {
-                    "access": "public",
-                    "arguments": [
-                        {
-                            "name": "mode",
-                            "type": "int"
-                        }
-                    ],
                     "index": 11,
-                    "name": "setViewMode",
+                    "name": "selectDateIso",
                     "returnType": "void"
                 },
                 {
@@ -67,36 +55,32 @@
                 {
                     "access": "public",
                     "index": 14,
-                    "name": "refreshToday",
+                    "name": "jumpToToday",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "arguments": [
                         {
-                            "name": "proxyRow",
-                            "type": "int"
-                        },
-                        {
-                            "name": "done",
-                            "type": "bool"
+                            "name": "text",
+                            "type": "QString"
                         }
                     ],
                     "index": 15,
-                    "name": "toggleTaskDone",
-                    "returnType": "void"
+                    "name": "addQuickEntry",
+                    "returnType": "QVariant"
                 },
                 {
                     "access": "public",
                     "arguments": [
                         {
-                            "name": "isoDate",
+                            "name": "query",
                             "type": "QString"
                         }
                     ],
                     "index": 16,
                     "isConst": true,
-                    "name": "dayEvents",
+                    "name": "search",
                     "returnType": "QVariantList"
                 },
                 {
@@ -109,65 +93,8 @@
                     ],
                     "index": 17,
                     "isConst": true,
-                    "name": "daySummary",
-                    "returnType": "QVariantMap"
-                },
-                {
-                    "access": "public",
-                    "arguments": [
-                        {
-                            "name": "subjectId",
-                            "type": "QString"
-                        }
-                    ],
-                    "index": 18,
-                    "name": "toggleSubject",
-                    "returnType": "void"
-                },
-                {
-                    "access": "public",
-                    "arguments": [
-                        {
-                            "name": "subjectIds",
-                            "type": "QStringList"
-                        }
-                    ],
-                    "index": 19,
-                    "name": "setSubjectFilter",
-                    "returnType": "void"
-                },
-                {
-                    "access": "public",
-                    "index": 20,
-                    "isConst": true,
-                    "name": "subjectFilter",
-                    "returnType": "QStringList"
-                },
-                {
-                    "access": "public",
-                    "arguments": [
-                        {
-                            "name": "id",
-                            "type": "QString"
-                        }
-                    ],
-                    "index": 21,
-                    "isConst": true,
-                    "name": "subjectById",
-                    "returnType": "QVariantMap"
-                },
-                {
-                    "access": "public",
-                    "arguments": [
-                        {
-                            "name": "id",
-                            "type": "QString"
-                        }
-                    ],
-                    "index": 22,
-                    "isConst": true,
-                    "name": "subjectColor",
-                    "returnType": "QColor"
+                    "name": "dayEvents",
+                    "returnType": "QVariantList"
                 },
                 {
                     "access": "public",
@@ -177,14 +104,14 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 23,
+                    "index": 18,
                     "isConst": true,
                     "name": "weekEvents",
                     "returnType": "QVariantList"
                 },
                 {
                     "access": "public",
-                    "index": 24,
+                    "index": 19,
                     "isConst": true,
                     "name": "listBuckets",
                     "returnType": "QVariantList"
@@ -193,12 +120,29 @@
                     "access": "public",
                     "arguments": [
                         {
-                            "name": "input",
+                            "name": "id",
                             "type": "QString"
                         }
                     ],
-                    "index": 25,
-                    "name": "quickAdd",
+                    "index": 20,
+                    "isConst": true,
+                    "name": "eventById",
+                    "returnType": "QVariantMap"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "done",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 21,
+                    "name": "setEventDone",
                     "returnType": "void"
                 },
                 {
@@ -209,7 +153,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 26,
+                    "index": 22,
                     "name": "showToast",
                     "returnType": "void"
                 }
@@ -232,50 +176,10 @@
                     "write": "setDarkTheme"
                 },
                 {
-                    "constant": true,
+                    "constant": false,
                     "designable": true,
                     "final": false,
                     "index": 1,
-                    "name": "todayTasks",
-                    "read": "todayTasks",
-                    "required": false,
-                    "scriptable": true,
-                    "stored": true,
-                    "type": "TaskFilterProxy*",
-                    "user": false
-                },
-                {
-                    "constant": true,
-                    "designable": true,
-                    "final": false,
-                    "index": 2,
-                    "name": "exams",
-                    "read": "exams",
-                    "required": false,
-                    "scriptable": true,
-                    "stored": true,
-                    "type": "ExamModel*",
-                    "user": false
-                },
-                {
-                    "constant": false,
-                    "designable": true,
-                    "final": false,
-                    "index": 3,
-                    "name": "subjects",
-                    "notify": "subjectsChanged",
-                    "read": "subjects",
-                    "required": false,
-                    "scriptable": true,
-                    "stored": true,
-                    "type": "QVariantList",
-                    "user": false
-                },
-                {
-                    "constant": false,
-                    "designable": true,
-                    "final": false,
-                    "index": 4,
                     "name": "selectedDate",
                     "notify": "selectedDateChanged",
                     "read": "selectedDateIso",
@@ -289,7 +193,7 @@
                     "constant": false,
                     "designable": true,
                     "final": false,
-                    "index": 5,
+                    "index": 2,
                     "name": "viewMode",
                     "notify": "viewModeChanged",
                     "read": "viewMode",
@@ -304,7 +208,7 @@
                     "constant": false,
                     "designable": true,
                     "final": false,
-                    "index": 6,
+                    "index": 3,
                     "name": "viewModeString",
                     "notify": "viewModeChanged",
                     "read": "viewModeString",
@@ -319,7 +223,7 @@
                     "constant": false,
                     "designable": true,
                     "final": false,
-                    "index": 7,
+                    "index": 4,
                     "name": "onlyOpen",
                     "notify": "onlyOpenChanged",
                     "read": "onlyOpen",
@@ -334,9 +238,79 @@
                     "constant": false,
                     "designable": true,
                     "final": false,
+                    "index": 5,
+                    "name": "events",
+                    "notify": "eventsChanged",
+                    "read": "eventsModel",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QAbstractListModel*",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "name": "today",
+                    "notify": "todayEventsChanged",
+                    "read": "todayEvents",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "name": "upcoming",
+                    "notify": "upcomingEventsChanged",
+                    "read": "upcomingEvents",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
                     "index": 8,
+                    "name": "exams",
+                    "notify": "examEventsChanged",
+                    "read": "examEvents",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 9,
+                    "name": "commands",
+                    "notify": "commandsChanged",
+                    "read": "commands",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 10,
                     "name": "searchQuery",
-                    "notify": "filtersChanged",
+                    "notify": "searchQueryChanged",
                     "read": "searchQuery",
                     "required": false,
                     "scriptable": true,
@@ -344,51 +318,6 @@
                     "type": "QString",
                     "user": false,
                     "write": "setSearchQuery"
-                },
-                {
-                    "constant": false,
-                    "designable": true,
-                    "final": false,
-                    "index": 9,
-                    "name": "language",
-                    "notify": "settingsChanged",
-                    "read": "language",
-                    "required": false,
-                    "scriptable": true,
-                    "stored": true,
-                    "type": "QString",
-                    "user": false,
-                    "write": "setLanguage"
-                },
-                {
-                    "constant": false,
-                    "designable": true,
-                    "final": false,
-                    "index": 10,
-                    "name": "weekStart",
-                    "notify": "settingsChanged",
-                    "read": "weekStart",
-                    "required": false,
-                    "scriptable": true,
-                    "stored": true,
-                    "type": "QString",
-                    "user": false,
-                    "write": "setWeekStart"
-                },
-                {
-                    "constant": false,
-                    "designable": true,
-                    "final": false,
-                    "index": 11,
-                    "name": "showWeekNumbers",
-                    "notify": "settingsChanged",
-                    "read": "showWeekNumbers",
-                    "required": false,
-                    "scriptable": true,
-                    "stored": true,
-                    "type": "bool",
-                    "user": false,
-                    "write": "setShowWeekNumbers"
                 }
             ],
             "qualifiedClassName": "PlannerBackend",
@@ -402,43 +331,55 @@
                 {
                     "access": "public",
                     "index": 1,
-                    "name": "subjectsChanged",
-                    "returnType": "void"
-                },
-                {
-                    "access": "public",
-                    "index": 2,
                     "name": "selectedDateChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 3,
-                    "name": "tasksChanged",
-                    "returnType": "void"
-                },
-                {
-                    "access": "public",
-                    "index": 4,
-                    "name": "examsChanged",
-                    "returnType": "void"
-                },
-                {
-                    "access": "public",
-                    "index": 5,
+                    "index": 2,
                     "name": "viewModeChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
+                    "index": 3,
+                    "name": "onlyOpenChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "name": "eventsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "name": "todayEventsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
                     "index": 6,
-                    "name": "filtersChanged",
+                    "name": "upcomingEventsChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 7,
-                    "name": "onlyOpenChanged",
+                    "name": "examEventsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 8,
+                    "name": "commandsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 9,
+                    "name": "searchQueryChanged",
                     "returnType": "void"
                 },
                 {
@@ -449,14 +390,8 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 8,
+                    "index": 10,
                     "name": "toastRequested",
-                    "returnType": "void"
-                },
-                {
-                    "access": "public",
-                    "index": 9,
-                    "name": "settingsChanged",
                     "returnType": "void"
                 }
             ],

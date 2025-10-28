@@ -1504,6 +1504,30 @@ noah_planner_qmltyperegistrations.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/noah_planner_qmltyperegistrations.cpp.s
 .PHONY : noah_planner_qmltyperegistrations.cpp.s
 
+src/core/EventRepository.o: src/core/EventRepository.cpp.o
+.PHONY : src/core/EventRepository.o
+
+# target to build an object file
+src/core/EventRepository.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.o
+.PHONY : src/core/EventRepository.cpp.o
+
+src/core/EventRepository.i: src/core/EventRepository.cpp.i
+.PHONY : src/core/EventRepository.i
+
+# target to preprocess a source file
+src/core/EventRepository.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.i
+.PHONY : src/core/EventRepository.cpp.i
+
+src/core/EventRepository.s: src/core/EventRepository.cpp.s
+.PHONY : src/core/EventRepository.s
+
+# target to generate assembly for a file
+src/core/EventRepository.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/core/EventRepository.cpp.s
+.PHONY : src/core/EventRepository.cpp.s
+
 src/core/PlannerService.o: src/core/PlannerService.cpp.o
 .PHONY : src/core/PlannerService.o
 
@@ -1528,6 +1552,30 @@ src/core/PlannerService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/core/PlannerService.cpp.s
 .PHONY : src/core/PlannerService.cpp.s
 
+src/core/QuickAddParser.o: src/core/QuickAddParser.cpp.o
+.PHONY : src/core/QuickAddParser.o
+
+# target to build an object file
+src/core/QuickAddParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.o
+.PHONY : src/core/QuickAddParser.cpp.o
+
+src/core/QuickAddParser.i: src/core/QuickAddParser.cpp.i
+.PHONY : src/core/QuickAddParser.i
+
+# target to preprocess a source file
+src/core/QuickAddParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.i
+.PHONY : src/core/QuickAddParser.cpp.i
+
+src/core/QuickAddParser.s: src/core/QuickAddParser.cpp.s
+.PHONY : src/core/QuickAddParser.s
+
+# target to generate assembly for a file
+src/core/QuickAddParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/core/QuickAddParser.cpp.s
+.PHONY : src/core/QuickAddParser.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -1551,6 +1599,30 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/models/EventModel.o: src/models/EventModel.cpp.o
+.PHONY : src/models/EventModel.o
+
+# target to build an object file
+src/models/EventModel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.o
+.PHONY : src/models/EventModel.cpp.o
+
+src/models/EventModel.i: src/models/EventModel.cpp.i
+.PHONY : src/models/EventModel.i
+
+# target to preprocess a source file
+src/models/EventModel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.i
+.PHONY : src/models/EventModel.cpp.i
+
+src/models/EventModel.s: src/models/EventModel.cpp.s
+.PHONY : src/models/EventModel.s
+
+# target to generate assembly for a file
+src/models/EventModel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/src/models/EventModel.cpp.s
+.PHONY : src/models/EventModel.cpp.s
 
 src/models/ExamModel.o: src/models/ExamModel.cpp.o
 .PHONY : src/models/ExamModel.o
@@ -1974,12 +2046,21 @@ help:
 	@echo "... noah_planner_qmltyperegistrations.o"
 	@echo "... noah_planner_qmltyperegistrations.i"
 	@echo "... noah_planner_qmltyperegistrations.s"
+	@echo "... src/core/EventRepository.o"
+	@echo "... src/core/EventRepository.i"
+	@echo "... src/core/EventRepository.s"
 	@echo "... src/core/PlannerService.o"
 	@echo "... src/core/PlannerService.i"
 	@echo "... src/core/PlannerService.s"
+	@echo "... src/core/QuickAddParser.o"
+	@echo "... src/core/QuickAddParser.i"
+	@echo "... src/core/QuickAddParser.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/models/EventModel.o"
+	@echo "... src/models/EventModel.i"
+	@echo "... src/models/EventModel.s"
 	@echo "... src/models/ExamModel.o"
 	@echo "... src/models/ExamModel.i"
 	@echo "... src/models/ExamModel.s"

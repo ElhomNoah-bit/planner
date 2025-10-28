@@ -14,62 +14,37 @@ Item {
     signal commandTriggered(string command)
 
     property string queryText: ""
-    property var allActions: [
-        {
-            label: qsTr("Heute"),
-            command: "go-today",
-            keywords: ["today", "heute", "jump"],
-            run: function() { app.goToday() }
-        },
-        {
-            label: qsTr("Neuer Eintrag"),
-            command: "new-item",
-            keywords: ["neu", "add", "task"],
-            run: function() { app.quickAddOpen() }
-        },
-        {
-            label: qsTr("Ansicht: Monat"),
-            command: "view-month",
-            keywords: ["month", "monats", "kalender"],
-            run: function() { planner.viewModeString = "month" }
-        },
-        {
-            label: qsTr("Ansicht: Woche"),
-            command: "view-week",
-            keywords: ["week", "woche"],
-            run: function() { planner.viewModeString = "week" }
-        },
-        {
-            label: qsTr("Ansicht: Liste"),
-            command: "view-list",
-            keywords: ["list", "liste"],
-            run: function() { planner.viewModeString = "list" }
-        },
-        {
-            label: qsTr("Nur offene toggeln"),
-            command: "toggle-open",
-            keywords: ["open", "offen", "filter"],
-            run: function() { planner.onlyOpen = !planner.onlyOpen }
-        },
-        {
-            label: qsTr("Einstellungen"),
-            command: "open-settings",
-            keywords: ["settings", "einstellungen", "preferences"],
-            run: function() { app.openSettings() }
-        }
-    ]
-
+    property var commands: []
     property var filteredActions: []
+    readonly property var commandMetadata: ({
+        "go-today": { keywords: ["today", "heute", "jump"], run: function() { app.goToday() } },
+        "new-item": { keywords: ["neu", "add", "task"], run: function() { app.quickAddOpen() } },
+        "view-month": { keywords: ["month", "monats", "kalender"], run: function() { planner.setViewMode("month") } },
+        "view-week": { keywords: ["week", "woche"], run: function() { planner.setViewMode("week") } },
+        "view-list": { keywords: ["list", "liste"], run: function() { planner.setViewMode("list") } },
+    "toggle-open": { keywords: ["open", "offen", "filter"], run: function() { planner.setOnlyOpenQml(!planner.onlyOpen) } },
+        "open-settings": { keywords: ["settings", "einstellungen", "preferences"], run: function() { app.openSettings() } }
+    })
 
     function open(initialQuery) {
         palette.visible = true
         palette.queryText = initialQuery || ""
+        palette.commands = planner && planner.commands ? planner.commands : []
         queryField.text = palette.queryText
         recompute()
         Qt.callLater(() => {
             queryField.selectAll()
             queryField.forceActiveFocus()
         })
+    }
+
+    Connections {
+        target: planner
+        function onCommandsChanged() {
+            palette.commands = planner && planner.commands ? planner.commands : []
+            if (palette.visible)
+                palette.recompute()
+        }
     }
 
     function close() {
@@ -81,22 +56,43 @@ Item {
 
     function recompute() {
         var term = (palette.queryText || "").toLowerCase()
-        if (!term.length) {
-            filteredActions = allActions.slice(0)
-        } else {
-            filteredActions = allActions.filter(function(action) {
-                if (!action)
-                    return false
-                var label = (action.label || "").toLowerCase()
-                if (label.indexOf(term) !== -1)
-                    return true
-                var keys = action.keywords || []
-                for (var i = 0; i < keys.length; ++i) {
-                    if ((keys[i] || "").toLowerCase().indexOf(term) !== -1)
-                        return true
-                }
-                return false
+        var source = palette.commands || []
+        var normalized = []
+        for (var i = 0; i < source.length; ++i) {
+            var cmd = source[i] || {}
+            var meta = palette.commandMetadata[cmd.id] || {}
+            normalized.push({
+                id: cmd.id,
+                title: cmd.title || meta.title || cmd.id,
+                hint: cmd.hint || meta.hint || "",
+                keywords: meta.keywords || []
             })
+        }
+        if (!term.length) {
+            filteredActions = normalized
+        } else {
+            var matches = []
+            for (var j = 0; j < normalized.length; ++j) {
+                var entry = normalized[j]
+                if (!entry)
+                    continue
+                var label = (entry.title || "").toLowerCase()
+                if (label.indexOf(term) !== -1) {
+                    matches.push(entry)
+                    continue
+                }
+                var keys = entry.keywords || []
+                var hit = false
+                for (var k = 0; k < keys.length; ++k) {
+                    if ((keys[k] || "").toLowerCase().indexOf(term) !== -1) {
+                        hit = true
+                        break
+                    }
+                }
+                if (hit)
+                    matches.push(entry)
+            }
+            filteredActions = matches
         }
         if (listView)
             listView.currentIndex = filteredActions.length > 0 ? 0 : -1
@@ -111,10 +107,11 @@ Item {
         }
         if (!action)
             return
-        if (action.run)
-            action.run()
-        if (action.command)
-            commandTriggered(action.command)
+        var meta = palette.commandMetadata[action.id] || {}
+        if (meta.run)
+            meta.run()
+        if (action.id)
+            commandTriggered(action.id)
         close()
     }
 
@@ -213,7 +210,7 @@ Item {
                         anchors.margins: Styles.ThemeStore.gap.g12
                         spacing: Styles.ThemeStore.gap.g12
                         Text {
-                            text: modelData && modelData.label ? modelData.label : ""
+                            text: modelData && modelData.title ? modelData.title : ""
                             font.pixelSize: Styles.ThemeStore.type.sm
                             font.weight: Styles.ThemeStore.type.weightMedium
                             font.family: Styles.ThemeStore.fonts.heading
@@ -222,7 +219,7 @@ Item {
                         }
                         Item { Layout.fillWidth: true }
                         Text {
-                            text: modelData && modelData.command ? modelData.command : ""
+                            text: modelData && modelData.hint ? modelData.hint : modelData.id
                             font.pixelSize: Styles.ThemeStore.type.xs
                             font.weight: Styles.ThemeStore.type.weightRegular
                             font.family: Styles.ThemeStore.fonts.body

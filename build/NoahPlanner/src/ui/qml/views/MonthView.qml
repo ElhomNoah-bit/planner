@@ -4,7 +4,8 @@ import NoahPlanner.Styles as Styles
 
 Item {
     id: month
-    anchors.fill: parent
+    Layout.fillWidth: true
+    Layout.fillHeight: true
 
     property string selectedIso: planner.selectedDate
     property var days: []
@@ -13,8 +14,8 @@ Item {
     signal quickAddRequested(string iso, string kind)
     signal jumpToTodayRequested()
 
-    property string weekStartSetting: planner.weekStart
-    property bool showWeekNumbersSetting: planner.showWeekNumbers
+    property string weekStartSetting: "monday"
+    property bool showWeekNumbersSetting: false
     property var weekdayLabels: []
     property var weekNumbers: []
 
@@ -26,7 +27,8 @@ Item {
     readonly property real weekNumberWidth: showWeekNumbersSetting ? 48 : 0
 
     ColumnLayout {
-        anchors.fill: parent
+        width: parent.width
+        height: parent.height
         spacing: gaps.g8
 
         RowLayout {
@@ -177,14 +179,10 @@ Item {
         function onSelectedDateChanged() {
             month.selectedIso = planner.selectedDate
         }
-        function onFiltersChanged() {
+        function onEventsChanged() {
             month.rebuild()
         }
-        function onTasksChanged() {
-            month.rebuild()
-        }
-        function onSettingsChanged() {
-            month.updateWeekdayNames()
+        function onOnlyOpenChanged() {
             month.rebuild()
         }
     }

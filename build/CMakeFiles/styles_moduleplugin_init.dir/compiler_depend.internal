@@ -652,6 +652,42 @@
  /usr/lib64/cmake/Qt6QuickTools/Qt6QuickToolsTargets-relwithdebinfo.cmake
  /usr/lib64/cmake/Qt6QuickTools/Qt6QuickToolsTargets.cmake
  /usr/lib64/cmake/Qt6QuickTools/Qt6QuickToolsVersionlessTargets.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginAdditionalTargetInfo.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfig.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets-relwithdebinfo.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginAdditionalTargetInfo.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets-relwithdebinfo.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6SqlConfig.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6SqlDependencies.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6SqlPlugins.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6SqlTargets.cmake
+ /usr/lib64/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake
+ /usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateAdditionalTargetInfo.cmake
+ /usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfig.cmake
+ /usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersion.cmake
+ /usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersionImpl.cmake
+ /usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateDependencies.cmake
+ /usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateTargets.cmake
+ /usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateVersionlessAliasTargets.cmake
  /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake
  /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake
  /usr/lib64/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake

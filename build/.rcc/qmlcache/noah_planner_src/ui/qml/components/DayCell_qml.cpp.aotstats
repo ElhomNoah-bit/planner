@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 107,
+                        "durationMicroseconds": 131,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "events",
                         "line": 11
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 392,
+                        "durationMicroseconds": 443,
                         "errorMessage": "",
                         "functionName": "dateObject",
                         "line": 13
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 136,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "dayNumber",
                         "line": 14
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 100,
                         "errorMessage": "",
                         "functionName": "hovered",
                         "line": 15
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 281,
+                        "durationMicroseconds": 278,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "visibleEvents",
                         "line": 16
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 75,
                         "errorMessage": "Cannot load property length from conversion to QVariant.",
                         "functionName": "extraCount",
                         "line": 17
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 2490,
+                        "durationMicroseconds": 2505,
                         "errorMessage": "Cannot load property cardBg from ThemeStore::colors with type QObject.",
                         "functionName": "hoverFill",
                         "line": 18
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 134,
+                        "durationMicroseconds": 127,
                         "errorMessage": "",
                         "functionName": "role",
                         "line": 28
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 143,
+                        "durationMicroseconds": 133,
                         "errorMessage": "Multiple matching overrides found. Cannot determine the right one.",
                         "functionName": "name",
                         "line": 29
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 120,
+                        "durationMicroseconds": 133,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 34
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 13,
-                        "durationMicroseconds": 117,
+                        "durationMicroseconds": 134,
                         "errorMessage": "Cannot load property accentBg from ThemeStore::colors with type QObject.",
                         "functionName": "color",
                         "line": 39
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 33
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 181,
+                        "durationMicroseconds": 184,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 35
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 130,
                         "errorMessage": "Cannot load property focus from ThemeStore::colors with type QObject.",
                         "functionName": "color",
                         "line": 36
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 58,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 94,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 45
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 58,
-                        "durationMicroseconds": 84,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 48
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 179,
+                        "durationMicroseconds": 182,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 55
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 93,
+                        "durationMicroseconds": 98,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 59
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 67,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 53
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 138,
+                        "durationMicroseconds": 133,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 58
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 15,
-                        "durationMicroseconds": 143,
+                        "durationMicroseconds": 113,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 65
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 89,
                         "errorMessage": "Cannot load property text from ThemeStore::colors with type QObject.",
                         "functionName": "color",
                         "line": 72
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 173,
+                        "durationMicroseconds": 185,
                         "errorMessage": "",
                         "functionName": "opacity",
                         "line": 73
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "renderType",
                         "line": 74
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 123,
+                        "durationMicroseconds": 119,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 66
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 115,
+                        "durationMicroseconds": 110,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 67
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 110,
+                        "durationMicroseconds": 113,
                         "errorMessage": "",
                         "functionName": "margins",
                         "line": 68
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 56,
                         "errorMessage": "Cannot load property sm from ThemeStore::type with type QObject.",
                         "functionName": "pixelSize",
                         "line": 69
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot load property heading from ThemeStore::fonts with type QObject.",
                         "functionName": "family",
                         "line": 70
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 83,
                         "errorMessage": "Cannot load property weightBold from ThemeStore::type with type QObject.",
                         "functionName": "weight",
                         "line": 71
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 117,
+                        "durationMicroseconds": 128,
                         "errorMessage": "",
                         "functionName": "spacing",
                         "line": 87
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 124,
+                        "durationMicroseconds": 119,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 79
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 110,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 80
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 143,
+                        "durationMicroseconds": 109,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 81
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 147,
+                        "durationMicroseconds": 111,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 82
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 179,
+                        "durationMicroseconds": 114,
                         "errorMessage": "",
                         "functionName": "topMargin",
                         "line": 83
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 112,
+                        "durationMicroseconds": 110,
                         "errorMessage": "",
                         "functionName": "leftMargin",
                         "line": 84
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 119,
                         "errorMessage": "",
                         "functionName": "rightMargin",
                         "line": 85
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 105,
+                        "durationMicroseconds": 107,
                         "errorMessage": "",
                         "functionName": "bottomMargin",
                         "line": 86
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 96,
                         "errorMessage": "",
                         "functionName": "model",
                         "line": 90
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 47,
                         "errorMessage": "Cannot access value for name list",
                         "functionName": "width",
                         "line": 92
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 286,
+                        "durationMicroseconds": 301,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "label",
                         "line": 93
@@ -342,98 +342,114 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 255,
+                        "durationMicroseconds": 901,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "subjectColor",
                         "line": 94
                     },
                     {
+                        "codegenSuccessful": false,
+                        "column": 27,
+                        "durationMicroseconds": 296,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "timeText",
+                        "line": 95
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 283,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "overdue",
+                        "line": 96
+                    },
+                    {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 105,
+                        "durationMicroseconds": 125,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 99
+                        "line": 101
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 163,
+                        "durationMicroseconds": 167,
                         "errorMessage": "",
                         "functionName": "visible",
-                        "line": 100
+                        "line": 102
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 171,
+                        "durationMicroseconds": 172,
                         "errorMessage": "",
                         "functionName": "label",
-                        "line": 101
+                        "line": 103
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 54,
                         "errorMessage": "Cannot load property accent from ThemeStore::colors with type QObject.",
                         "functionName": "subjectColor",
-                        "line": 103
+                        "line": 105
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 134,
+                        "durationMicroseconds": 133,
                         "errorMessage": "",
                         "functionName": "acceptedButtons",
-                        "line": 108
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 24,
-                        "durationMicroseconds": 87,
-                        "errorMessage": "",
-                        "functionName": "gesturePolicy",
-                        "line": 109
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 19,
-                        "durationMicroseconds": 213,
-                        "errorMessage": "",
-                        "functionName": "onTapped",
-                        "line": 110
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 27,
-                        "durationMicroseconds": 219,
-                        "errorMessage": "",
-                        "functionName": "onPressedChanged",
                         "line": 111
                     },
                     {
                         "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 90,
+                        "errorMessage": "",
+                        "functionName": "gesturePolicy",
+                        "line": 112
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 19,
+                        "durationMicroseconds": 219,
+                        "errorMessage": "",
+                        "functionName": "onTapped",
+                        "line": 113
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 233,
+                        "errorMessage": "",
+                        "functionName": "onPressedChanged",
+                        "line": 114
+                    },
+                    {
+                        "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 139,
+                        "durationMicroseconds": 132,
                         "errorMessage": "",
                         "functionName": "acceptedButtons",
-                        "line": 115
+                        "line": 118
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 85,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "gesturePolicy",
-                        "line": 116
+                        "line": 119
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 107,
                         "errorMessage": "Cannot retrieve a non-object type by ID: contextMenu",
                         "functionName": "onTapped",
-                        "line": 117
+                        "line": 120
                     },
                     {
                         "codegenSuccessful": true,
@@ -441,23 +457,23 @@
                         "durationMicroseconds": 74,
                         "errorMessage": "",
                         "functionName": "onTapped",
-                        "line": 117
+                        "line": 120
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 770,
+                        "durationMicroseconds": 2800,
                         "errorMessage": "",
                         "functionName": "onPressed",
-                        "line": 128
+                        "line": 131
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 66,
                         "errorMessage": "",
                         "functionName": "onPressed",
-                        "line": 128
+                        "line": 131
                     },
                     {
                         "codegenSuccessful": false,
@@ -465,7 +481,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"closePolicy\".",
                         "functionName": "closePolicy",
-                        "line": 137
+                        "line": 140
                     },
                     {
                         "codegenSuccessful": false,
@@ -473,7 +489,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"triggered\".",
                         "functionName": "onTriggered",
-                        "line": 141
+                        "line": 144
                     },
                     {
                         "codegenSuccessful": false,
@@ -481,7 +497,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"triggered\".",
                         "functionName": "onTriggered",
-                        "line": 145
+                        "line": 148
                     },
                     {
                         "codegenSuccessful": false,
@@ -489,7 +505,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"triggered\".",
                         "functionName": "onTriggered",
-                        "line": 150
+                        "line": 153
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/DayCell.qml"

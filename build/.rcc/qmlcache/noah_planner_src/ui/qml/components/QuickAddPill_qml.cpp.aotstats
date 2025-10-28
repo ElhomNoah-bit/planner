@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 53,
                         "errorMessage": "Cannot retrieve a non-object type by ID: input",
                         "functionName": "focusInput",
                         "line": 10
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 2459,
+                        "durationMicroseconds": 9898,
                         "errorMessage": "",
                         "functionName": "colors",
                         "line": 14
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 107,
+                        "durationMicroseconds": 112,
                         "errorMessage": "",
                         "functionName": "radii",
                         "line": 15
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 100,
+                        "durationMicroseconds": 98,
                         "errorMessage": "",
                         "functionName": "typeScale",
                         "line": 17
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 41,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 94,
                         "errorMessage": "",
                         "functionName": "metrics",
                         "line": 18
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 13,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot load property xl from (component in /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/components/QuickAddPill.qml)::radii with type QObject.",
                         "functionName": "radius",
                         "line": 20
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 1062,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 29
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 444,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 24
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "rightMargin",
                         "line": 26
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "topMargin",
                         "line": 27
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "bottomMargin",
                         "line": 28
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 58,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 42,
                         "errorMessage": "Cannot access value for name colors",
                         "functionName": "color",
                         "line": 41

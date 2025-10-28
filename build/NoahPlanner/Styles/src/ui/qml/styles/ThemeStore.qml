@@ -5,17 +5,19 @@ QtObject {
     id: theme
 
     // Farben
-    readonly property color appBg:    "#0E1116"
-    readonly property color cardBg:   "#171B22"
-    readonly property color cardAlt:  "#1C222B"
-    readonly property color text:     "#E6EAF2"
-    readonly property color text2:    "#AFB8C5"
-    readonly property color divider:  "#2A3340"
-    readonly property color hover:    "#223043"
-    readonly property color focus:    "#5BA5FF"
-    readonly property color accent:   "#3B82F6"
-    readonly property color accentBg: "#1A2B4D"
-    readonly property color danger:   "#F97066"
+    readonly property color appBg:        "#0E1116"
+    readonly property color cardBg:       "#171B22"
+    readonly property color cardAlt:      "#1C222B"
+    readonly property color text:         "#E6EAF2"
+    readonly property color text2:        "#AFB8C5"
+    readonly property color textPrimary:  "#F6FAFF"
+    readonly property color surfaceOnWeak:"#FFFFFF"
+    readonly property color divider:      "#2A3340"
+    readonly property color hover:        "#223043"
+    readonly property color focus:        "#5BA5FF"
+    readonly property color accent:       "#3B82F6"
+    readonly property color accentBg:     "#1A2B4D"
+    readonly property color danger:       "#F97066"
 
     // Typo
     readonly property int baseSize: 14
@@ -49,11 +51,13 @@ QtObject {
         readonly property alias cardGlass: theme.cardAlt
         readonly property alias text: theme.text
         readonly property alias text2: theme.text2
+        readonly property alias textPrimary: theme.textPrimary
         readonly property alias divider: theme.divider
         readonly property alias hover: theme.hover
         readonly property alias focus: theme.focus
         readonly property alias accent: theme.accent
         readonly property alias accentBg: theme.accentBg
+        readonly property alias surfaceOnWeak: theme.surfaceOnWeak
         readonly property alias neutralBg: theme.cardAlt
         readonly property alias press: theme.hover
     }

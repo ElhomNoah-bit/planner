@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 3098,
+                        "durationMicroseconds": 9621,
                         "errorMessage": "Cannot load property accent from ThemeStore::colors with type QObject.",
                         "functionName": "chipColor",
                         "line": 9
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 131,
+                        "durationMicroseconds": 154,
                         "errorMessage": "",
                         "functionName": "colors",
                         "line": 14
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 136,
+                        "durationMicroseconds": 113,
                         "errorMessage": "",
                         "functionName": "gaps",
                         "line": 15
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 123,
+                        "durationMicroseconds": 94,
                         "errorMessage": "",
                         "functionName": "radii",
                         "line": 16
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 1438,
+                        "durationMicroseconds": 91,
                         "errorMessage": "",
                         "functionName": "typeScale",
                         "line": 17
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name radii",
                         "functionName": "radius",
                         "line": 23
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 82,
+                        "durationMicroseconds": 70,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "color",
                         "line": 24
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 66,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "color",
                         "line": 25
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 30
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 12,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "centerIn",
                         "line": 31
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "color",
                         "line": 36
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "text",
                         "line": 40
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 72,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "color",
                         "line": 44
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 273,
+                        "durationMicroseconds": 6351,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "renderType",
                         "line": 45
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 45,
                         "errorMessage": "Cannot access value for name typeScale",
                         "functionName": "pixelSize",
                         "line": 41
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 85,
                         "errorMessage": "Cannot access value for name pill",
                         "functionName": "weight",
                         "line": 42
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot load property uiFallback from ThemeStore::fonts with type QObject.",
                         "functionName": "family",
                         "line": 43
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 15,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 47,
                         "errorMessage": "Cannot access value for name hover",
                         "functionName": "when",
                         "line": 55
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot access value for name backdrop",
                         "functionName": "target",
                         "line": 57
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 141,
+                        "durationMicroseconds": 162,
                         "errorMessage": "",
                         "functionName": "acceptedButtons",
                         "line": 63
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot retrieve a non-object type by ID: pill",
                         "functionName": "onTapped",
                         "line": 64

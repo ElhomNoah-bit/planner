@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 3125,
+                        "durationMicroseconds": 3308,
                         "errorMessage": "Cannot load property sidebarW from ThemeStore::layout with type QObject.",
                         "functionName": "implicitWidth",
                         "line": 9
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 63,
                         "errorMessage": "Cannot load property headerH from ThemeStore::layout with type QObject.",
                         "functionName": "implicitHeight",
                         "line": 10
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 156,
+                        "durationMicroseconds": 169,
                         "errorMessage": "",
                         "functionName": "colors",
                         "line": 18
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 124,
+                        "durationMicroseconds": 125,
                         "errorMessage": "",
                         "functionName": "gaps",
                         "line": 19
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 41,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 118,
                         "errorMessage": "",
                         "functionName": "metrics",
                         "line": 20
@@ -46,23 +46,15 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Functions without type annotations won't be compiled",
-                        "functionName": "componentForMode",
-                        "line": 50
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 5,
-                        "durationMicroseconds": 497,
-                        "errorMessage": "Cannot load property goToday from QQuickLoader::item with type QObject.",
+                        "durationMicroseconds": 344,
+                        "errorMessage": "Cannot access value for name planner",
                         "functionName": "goToday",
-                        "line": 61
+                        "line": 75
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot access value for name gaps",
                         "functionName": "spacing",
                         "line": 24
@@ -70,34 +62,114 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 103,
+                        "durationMicroseconds": 99,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 23
                     },
                     {
-                        "codegenSuccessful": false,
-                        "column": 30,
-                        "durationMicroseconds": 259,
-                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
-                        "functionName": "sourceComponent",
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 488,
+                        "errorMessage": "",
+                        "functionName": "currentIndex",
                         "line": 30
                     },
                     {
+                        "codegenSuccessful": true,
+                        "column": 26,
+                        "durationMicroseconds": 181,
+                        "errorMessage": "",
+                        "functionName": "visible",
+                        "line": 36
+                    },
+                    {
                         "codegenSuccessful": false,
-                        "column": 36,
-                        "durationMicroseconds": 69,
-                        "errorMessage": "Cannot access value for name minutes",
-                        "functionName": "onStartTimerRequested",
+                        "column": 32,
+                        "durationMicroseconds": 315,
+                        "errorMessage": "Cannot access value for name planner",
+                        "functionName": "onDaySelected",
                         "line": 37
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 67,
+                        "errorMessage": "",
+                        "functionName": "onDaySelected",
+                        "line": 37
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 202,
+                        "errorMessage": "",
+                        "functionName": "onQuickAddRequested",
+                        "line": 38
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 108,
+                        "errorMessage": "",
+                        "functionName": "onQuickAddRequested",
+                        "line": 38
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 171,
+                        "errorMessage": "",
+                        "functionName": "onJumpToTodayRequested",
+                        "line": 39
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 26,
+                        "durationMicroseconds": 203,
+                        "errorMessage": "",
+                        "functionName": "visible",
+                        "line": 46
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 346,
+                        "errorMessage": "Cannot access value for name planner",
+                        "functionName": "onDaySelected",
+                        "line": 47
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 65,
+                        "errorMessage": "",
+                        "functionName": "onDaySelected",
+                        "line": 47
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 26,
+                        "durationMicroseconds": 232,
+                        "errorMessage": "",
+                        "functionName": "visible",
+                        "line": 54
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"startTimerRequested\".",
+                        "functionName": "onStartTimerRequested",
+                        "line": 62
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 49,
                         "errorMessage": "Cannot access value for name metrics",
                         "functionName": "preferredWidth",
-                        "line": 35
+                        "line": 60
                     },
                     {
                         "codegenSuccessful": false,
@@ -105,111 +177,15 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "openTimer",
-                        "line": 43
+                        "line": 68
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 298,
+                        "durationMicroseconds": 350,
                         "errorMessage": "Cannot access value for name planner",
                         "functionName": "onFinished",
-                        "line": 47
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 28,
-                        "durationMicroseconds": 314,
-                        "errorMessage": "Cannot access value for name planner",
-                        "functionName": "onDaySelected",
-                        "line": 73
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 28,
-                        "durationMicroseconds": 76,
-                        "errorMessage": "",
-                        "functionName": "onDaySelected",
-                        "line": 73
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 13,
-                        "durationMicroseconds": 312,
-                        "errorMessage": "Cannot access value for name planner",
-                        "functionName": "goToday",
-                        "line": 74
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 34,
-                        "durationMicroseconds": 54,
-                        "errorMessage": "Cannot access value for name root",
-                        "functionName": "onQuickAddRequested",
-                        "line": 75
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 34,
-                        "durationMicroseconds": 92,
-                        "errorMessage": "",
-                        "functionName": "onQuickAddRequested",
-                        "line": 75
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 37,
-                        "durationMicroseconds": 52,
-                        "errorMessage": "Cannot access value for name root",
-                        "functionName": "onJumpToTodayRequested",
-                        "line": 76
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 27,
-                        "durationMicroseconds": 92,
-                        "errorMessage": "",
-                        "functionName": "fill",
                         "line": 72
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 28,
-                        "durationMicroseconds": 359,
-                        "errorMessage": "Cannot access value for name planner",
-                        "functionName": "onDaySelected",
-                        "line": 84
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 28,
-                        "durationMicroseconds": 71,
-                        "errorMessage": "",
-                        "functionName": "onDaySelected",
-                        "line": 84
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 13,
-                        "durationMicroseconds": 306,
-                        "errorMessage": "Cannot access value for name planner",
-                        "functionName": "goToday",
-                        "line": 85
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 27,
-                        "durationMicroseconds": 93,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 83
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 27,
-                        "durationMicroseconds": 88,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 92
                     }
                 ],
                 "filePath": "/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/Main.qml"

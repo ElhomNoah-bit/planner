@@ -373,36 +373,36 @@ CMakeFiles/noah_planner.dir/src/main.cpp.o: \
  /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/AppState.h \
  /usr/include/qt6/QtCore/QSet /usr/include/qt6/QtCore/qset.h \
  /usr/include/qt6/QtCore/QString /usr/include/qt6/QtCore/qstring.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/PlannerService.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Task.h \
- /usr/include/qt6/QtGui/QColor /usr/include/qt6/QtGui/qcolor.h \
- /usr/include/qt6/QtCore/QDate /usr/include/qt6/QtCore/qdatetime.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Subject.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Exam.h \
- /usr/include/qt6/QtCore/QHash /usr/include/qt6/QtCore/qhash.h \
- /usr/include/qt6/QtCore/QJsonObject \
- /usr/include/qt6/QtCore/qjsonobject.h \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/EventRepository.h \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/EventModel.h \
+ /usr/include/qt6/QtCore/QAbstractListModel \
+ /usr/include/qt6/QtCore/qabstractitemmodel.h \
+ /usr/include/qt6/QtCore/QDateTime /usr/include/qt6/QtCore/qdatetime.h \
+ /usr/include/qt6/QtCore/QVector /usr/include/qt6/QtCore/qvector.h \
+ /usr/include/qt6/QtCore/QDate /usr/include/qt6/QtCore/QJsonArray \
+ /usr/include/qt6/QtCore/qjsonarray.h \
  /usr/include/qt6/QtCore/qjsonvalue.h \
  /usr/include/qt6/QtCore/qcborvalue.h \
  /usr/include/qt6/QtCore/qcborcommon.h \
  /usr/include/qt6/QtCore/qregularexpression.h \
  /usr/include/qt6/QtCore/quuid.h /usr/include/qt6/QtCore/qjsondocument.h \
- /usr/include/qt6/QtCore/qjsonparseerror.h /usr/include/qt6/QtCore/QList \
- /usr/include/qt6/QtCore/qlist.h /usr/include/qt6/QtCore/QObject \
- /usr/include/qt6/QtCore/qobject.h /usr/include/qt6/QtCore/QVector \
- /usr/include/qt6/QtCore/qvector.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/ExamModel.h \
- /usr/include/qt6/QtCore/QAbstractListModel \
- /usr/include/qt6/QtCore/qabstractitemmodel.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/TaskFilterProxy.h \
- /usr/include/qt6/QtCore/QSortFilterProxyModel \
- /usr/include/qt6/QtCore/qsortfilterproxymodel.h \
- /usr/include/qt6/QtCore/qabstractproxymodel.h \
- /usr/include/qt6/QtCore/qabstractitemmodel.h \
- /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/TaskModel.h \
+ /usr/include/qt6/QtCore/qjsonparseerror.h \
+ /usr/include/qt6/QtCore/QJsonObject \
+ /usr/include/qt6/QtCore/qjsonobject.h \
+ /usr/include/qt6/QtSql/QSqlDatabase \
+ /usr/include/qt6/QtSql/qsqldatabase.h \
+ /usr/include/qt6/QtSql/qtsqlglobal.h \
+ /usr/include/qt6/QtSql/qtsql-config.h \
+ /usr/include/qt6/QtSql/qtsqlexports.h /usr/include/qt6/QtSql/QSqlQuery \
+ /usr/include/qt6/QtSql/qsqlquery.h /usr/include/qt6/QtSql/qsqldatabase.h \
+ /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/QuickAddParser.h \
+ /usr/include/qt6/QtCore/QPair /usr/include/qt6/QtCore/qpair.h \
+ /usr/include/qt6/QtCore/QRegularExpression \
+ /usr/include/qt6/QtCore/qregularexpression.h \
+ /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/qobject.h \
  /usr/include/qt6/QtCore/QVariantList \
  /usr/include/qt6/QtCore/qvariantlist.h /usr/include/qt6/QtCore/QList \
- /usr/include/qt6/QtCore/QVariant /usr/include/qt6/QtCore/qvariant.h \
- /usr/include/qt6/QtCore/QVariantMap \
+ /usr/include/qt6/QtCore/qlist.h /usr/include/qt6/QtCore/QVariant \
+ /usr/include/qt6/QtCore/qvariant.h /usr/include/qt6/QtCore/QVariantMap \
  /usr/include/qt6/QtCore/qvariantmap.h /usr/include/qt6/QtCore/QMap \
  /usr/include/qt6/QtCore/qmap.h /usr/include/qt6/QtCore/QString

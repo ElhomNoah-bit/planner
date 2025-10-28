@@ -942,6 +942,49 @@
 		"/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake",
 		"/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake",
 		"/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6SqlConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6SqlDependencies.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6SqlTargets.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake",
+		"/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersion.cmake",
+		"/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersionImpl.cmake",
+		"/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateDependencies.cmake",
+		"/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateTargets.cmake",
+		"/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateAdditionalTargetInfo.cmake",
+		"/usr/lib64/cmake/Qt6SqlPrivate/Qt6SqlPrivateVersionlessAliasTargets.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6SqlPlugins.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets-relwithdebinfo.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QIBaseDriverPluginAdditionalTargetInfo.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets-relwithdebinfo.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QMYSQLDriverPluginAdditionalTargetInfo.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake",
+		"/usr/lib64/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake",
 		"/usr/share/cmake/Modules/GNUInstallDirs.cmake",
 		"/usr/lib64/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
 		"/usr/lib64/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in",
@@ -972,6 +1015,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/EventRepository.h",
+			"MU",
+			"PRMOGMWJPH/moc_EventRepository.cpp",
+			null
+		],
+		[
 			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Exam.h",
 			"MU",
 			"PRMOGMWJPH/moc_Exam.cpp",
@@ -984,6 +1033,12 @@
 			null
 		],
 		[
+			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/QuickAddParser.h",
+			"MU",
+			"PRMOGMWJPH/moc_QuickAddParser.cpp",
+			null
+		],
+		[
 			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Subject.h",
 			"MU",
 			"PRMOGMWJPH/moc_Subject.cpp",
@@ -993,6 +1048,12 @@
 			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/Task.h",
 			"MU",
 			"PRMOGMWJPH/moc_Task.cpp",
+			null
+		],
+		[
+			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/EventModel.h",
+			"MU",
+			"M4YTXQ7V2H/moc_EventModel.cpp",
 			null
 		],
 		[
@@ -1044,6 +1105,7 @@
 		"QT_QUICKCONTROLS2_LIB",
 		"QT_QUICKLAYOUTS_LIB",
 		"QT_QUICK_LIB",
+		"QT_SQL_LIB",
 		"QT_WIDGETS_LIB"
 	],
 	"MOC_DEPEND_FILTERS" : 
@@ -1086,6 +1148,7 @@
 		"/usr/include/qt6/QtQmlWorkerScript/6.9.2",
 		"/usr/include/qt6/QtQmlWorkerScript/6.9.2/QtQmlWorkerScript",
 		"/usr/include/qt6/QtWidgets",
+		"/usr/include/qt6/QtSql",
 		"/usr/include",
 		"/usr/include/c++/15",
 		"/usr/include/c++/15/x86_64-redhat-linux",
@@ -1166,12 +1229,27 @@
 	"SOURCES" : 
 	[
 		[
+			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/EventRepository.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/PlannerService.cpp",
 			"MU",
 			null
 		],
 		[
+			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/core/QuickAddParser.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/models/EventModel.cpp",
 			"MU",
 			null
 		],

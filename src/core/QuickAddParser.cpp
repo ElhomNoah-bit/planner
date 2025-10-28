@@ -189,8 +189,8 @@ QPair<QDate, bool> QuickAddParser::extractDate(QString& text, const QDate& refer
 
     // "in X Tagen"
     {
-        QRegularExpression expr(QStringLiteral("\\bin\\s+(\\d+)\\s+(tag|tage|tagen)\\b"));
-        QRegularExpressionMatch match = expr.match(text, 0, QRegularExpression::NormalMatch, QRegularExpression::DontCaptureOption);
+    QRegularExpression expr(QStringLiteral("\\bin\\s+(\\d+)\\s+(tag|tage|tagen)\\b"));
+    QRegularExpressionMatch match = expr.match(text);
         if (match.hasMatch()) {
             const int days = match.captured(1).toInt();
             const QDate date = referenceDate.addDays(days);
@@ -251,7 +251,7 @@ QPair<QPair<QTime, QTime>, bool> QuickAddParser::extractTime(QString& text) {
 
     // Range with colon 17:00-18:30
     {
-        QRegularExpression expr(QStringLiteral("\\b(\\d{1,2}):(\\d{2})\\s*[-–]\s*(\\d{1,2}):(\\d{2})\\b"));
+    QRegularExpression expr(QStringLiteral("\\b(\\d{1,2}):(\\d{2})\\s*[-–]\\s*(\\d{1,2}):(\\d{2})\\b"));
         QRegularExpressionMatch match = expr.match(text);
         if (match.hasMatch()) {
             const QTime start(match.captured(1).toInt(), match.captured(2).toInt());
