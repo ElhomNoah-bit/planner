@@ -137,8 +137,8 @@ CMakeFiles/noah_planner.dir/all: CMakeFiles/styles_module_resources_2.dir/all
 CMakeFiles/noah_planner.dir/all: CMakeFiles/styles_module_resources_3.dir/all
 CMakeFiles/noah_planner.dir/all: CMakeFiles/styles_moduleplugin_init.dir/all
 CMakeFiles/noah_planner.dir/all: CMakeFiles/noah_planner_qmlimportscan.dir/all
-CMakeFiles/noah_planner.dir/all: CMakeFiles/noah_planner_autogen_timestamp_deps.dir/all
 CMakeFiles/noah_planner.dir/all: CMakeFiles/noah_planner_autogen.dir/all
+CMakeFiles/noah_planner.dir/all: CMakeFiles/noah_planner_autogen_timestamp_deps.dir/all
 CMakeFiles/noah_planner.dir/all: CMakeFiles/styles_module_autogen_timestamp_deps.dir/all
 CMakeFiles/noah_planner.dir/all: CMakeFiles/styles_moduleplugin_init_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/noah_planner.dir/build.make CMakeFiles/noah_planner.dir/depend
