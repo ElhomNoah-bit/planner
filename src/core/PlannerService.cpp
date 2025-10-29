@@ -179,6 +179,7 @@ QVector<Task> PlannerService::generateDay(const QDate& date) const {
     task.isExam = false;
     task.color = subject.color;
         task.planIndex = placed;
+        task.priority = computePriority(task, QDate::currentDate());
 
         tasks.append(task);
         remaining -= ideal;
@@ -336,4 +337,55 @@ Subject PlannerService::subjectById(const QString& subjectId) const {
 
 QString PlannerService::makeTaskId(const QString& subjectId, const QDate& date, int index) const {
     return iso(date) + ":" + subjectId + ":" + QString::number(index);
+}
+
+Priority PlannerService::computePriority(const Task& task, const QDate& currentDate) const {
+    // Load configurable weights from settings
+    const auto priorityConfig = m_config.value("priority_weights").toObject();
+    const double overdueWeight = priorityConfig.value("overdue").toDouble(3.0);
+    const double dueSoonWeight = priorityConfig.value("due_soon").toDouble(2.0);
+    const double estimateWeight = priorityConfig.value("estimate").toDouble(1.0);
+    const int dueSoonThresholdHours = priorityConfig.value("due_soon_hours").toInt(48);
+
+    // Calculate days until due
+    const int daysUntilDue = currentDate.daysTo(task.date);
+    const int hoursUntilDue = daysUntilDue * 24;
+
+    // If task is done, always low priority
+    if (task.done) {
+        return Priority::Low;
+    }
+
+    // Overdue tasks are always high priority
+    if (daysUntilDue < 0) {
+        return Priority::High;
+    }
+
+    // Calculate priority score
+    double score = 0.0;
+
+    // Due soon contribution
+    if (hoursUntilDue <= dueSoonThresholdHours && hoursUntilDue >= 0) {
+        // Linear scaling: closer deadline = higher score
+        const double dueSoonFactor = 1.0 - (static_cast<double>(hoursUntilDue) / dueSoonThresholdHours);
+        score += dueSoonWeight * dueSoonFactor;
+    }
+
+    // Estimate/duration contribution - longer tasks get slightly higher priority
+    if (task.durationMinutes > 0) {
+        const double normalizedDuration = std::min(1.0, task.durationMinutes / 60.0); // Cap at 60 minutes
+        score += estimateWeight * normalizedDuration * 0.5;
+    }
+
+    // Threshold mapping to priority levels
+    const double highThreshold = priorityConfig.value("high_threshold").toDouble(1.5);
+    const double mediumThreshold = priorityConfig.value("medium_threshold").toDouble(0.5);
+
+    if (score >= highThreshold) {
+        return Priority::High;
+    } else if (score >= mediumThreshold) {
+        return Priority::Medium;
+    }
+
+    return Priority::Low;
 }

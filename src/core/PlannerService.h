@@ -32,6 +32,8 @@ public:
     QVector<Task> generateDay(const QDate& date) const;
     QList<QVector<Task>> generateRange(const QDate& start, const QDate& end) const;
 
+    Priority computePriority(const Task& task, const QDate& currentDate) const;
+
 Q_SIGNALS:
     void dataChanged();
 

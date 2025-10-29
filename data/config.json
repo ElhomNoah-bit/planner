@@ -34,5 +34,13 @@
     1.2,
     1.1
   ],
+  "priority_weights": {
+    "overdue": 3.0,
+    "due_soon": 2.0,
+    "estimate": 1.0,
+    "due_soon_hours": 48,
+    "high_threshold": 1.5,
+    "medium_threshold": 0.5
+  },
   "breaks": []
 }

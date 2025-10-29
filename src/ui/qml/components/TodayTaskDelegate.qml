@@ -9,6 +9,7 @@ Item {
     property int duration: 25
     property color subjectColor: Styles.ThemeStore.colors.accent
     property bool done: false
+    property int priority: 1  // 0=Low, 1=Medium, 2=High
     signal toggled(bool done)
     signal startTimer(int minutes)
 
@@ -36,6 +37,22 @@ Item {
         anchors.margins: gaps.g16
         spacing: gaps.g16
 
+        // Priority indicator dot
+        Rectangle {
+            id: priorityDot
+            width: 8
+            height: 8
+            radius: 4
+            color: {
+                if (root.priority === 2) return colors.prioHigh
+                if (root.priority === 1) return colors.prioMedium
+                return colors.prioLow
+            }
+            anchors.verticalCenter: parent.verticalCenter
+            visible: !root.done
+            Behavior on color { ColorAnimation { duration: 140; easing.type: Easing.InOutQuad } }
+        }
+
         Rectangle {
             id: checkbox
             width: 20
@@ -58,7 +75,7 @@ Item {
         }
 
         Column {
-            width: Math.max(0, parent.width - timerPill.width - checkbox.width - 48)
+            width: Math.max(0, parent.width - timerPill.width - checkbox.width - priorityDot.width - 64)
             spacing: gaps.g8
             Text {
                 text: root.title

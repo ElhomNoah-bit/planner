@@ -52,4 +52,6 @@ private:
 
     static QJsonObject recordToJson(const EventRecord& record);
     static EventRecord recordFromJson(const QJsonObject& object);
+    
+    static int computePriority(const EventRecord& record, const QDate& currentDate);
 };

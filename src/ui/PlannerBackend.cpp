@@ -275,6 +275,17 @@ QVariantList PlannerBackend::listBuckets() const {
         }
         QVariantList items = bucket.value(QStringLiteral("items")).toList();
         items.append(toVariant(record));
+        // Sort items by priority (high to low) then by start time
+        std::sort(items.begin(), items.end(), [](const QVariant& a, const QVariant& b) {
+            const QVariantMap aMap = a.toMap();
+            const QVariantMap bMap = b.toMap();
+            const int aPriority = aMap.value(QStringLiteral("priority")).toInt();
+            const int bPriority = bMap.value(QStringLiteral("priority")).toInt();
+            if (aPriority != bPriority) {
+                return aPriority > bPriority; // Higher priority first
+            }
+            return aMap.value(QStringLiteral("start")).toString() < bMap.value(QStringLiteral("start")).toString();
+        });
         bucket.insert(QStringLiteral("items"), items);
         buckets.insert(key, bucket);
     }
@@ -381,6 +392,22 @@ void PlannerBackend::rebuildSidebar() {
             examItems.append(toVariant(record));
         }
     }
+
+    // Sort by priority (high to low) then by start time
+    auto prioritySort = [](const QVariant& a, const QVariant& b) {
+        const QVariantMap aMap = a.toMap();
+        const QVariantMap bMap = b.toMap();
+        const int aPriority = aMap.value(QStringLiteral("priority")).toInt();
+        const int bPriority = bMap.value(QStringLiteral("priority")).toInt();
+        if (aPriority != bPriority) {
+            return aPriority > bPriority; // Higher priority first
+        }
+        return aMap.value(QStringLiteral("start")).toString() < bMap.value(QStringLiteral("start")).toString();
+    };
+
+    std::sort(todayItems.begin(), todayItems.end(), prioritySort);
+    std::sort(upcomingItems.begin(), upcomingItems.end(), prioritySort);
+    std::sort(examItems.begin(), examItems.end(), prioritySort);
 
     if (m_today != todayItems) {
         m_today = todayItems;

@@ -18,6 +18,9 @@ QtObject {
     readonly property color accent:       "#3B82F6"
     readonly property color accentBg:     "#1A2B4D"
     readonly property color danger:       "#F97066"
+    readonly property color prioHigh:     "#F97066"
+    readonly property color prioMedium:   "#FFA726"
+    readonly property color prioLow:      "#66BB6A"
 
     // Typo
     readonly property int baseSize: 14
@@ -65,6 +68,9 @@ QtObject {
         readonly property alias surfaceOnWeak: theme.surfaceOnWeak
         readonly property alias neutralBg: theme.cardAlt
         readonly property alias press: theme.hover
+        readonly property alias prioHigh: theme.prioHigh
+        readonly property alias prioMedium: theme.prioMedium
+        readonly property alias prioLow: theme.prioLow
     }
 
     readonly property QtObject type: QtObject {

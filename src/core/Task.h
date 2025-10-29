@@ -5,6 +5,12 @@
 #include <QString>
 #include <QStringList>
 
+enum class Priority {
+    Low = 0,
+    Medium = 1,
+    High = 2
+};
+
 struct Task {
     QString id;
     QString subjectId;
@@ -17,4 +23,5 @@ struct Task {
     QColor color;
     QString seriesId;
     int planIndex = -1;
+    Priority priority = Priority::Medium;
 };

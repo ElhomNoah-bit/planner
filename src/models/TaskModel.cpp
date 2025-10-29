@@ -35,6 +35,8 @@ QVariant TaskModel::data(const QModelIndex& index, int role) const {
         return task.id;
     case PlanIndexRole:
         return task.planIndex;
+    case PriorityRole:
+        return static_cast<int>(task.priority);
     case Qt::CheckStateRole:
         return task.done ? Qt::Checked : Qt::Unchecked;
     default:
@@ -74,7 +76,8 @@ QHash<int, QByteArray> TaskModel::roleNames() const {
         {DoneRole, "done"},
         {IsExamRole, "isExam"},
         {ColorRole, "color"},
-        {PlanIndexRole, "planIndex"}
+        {PlanIndexRole, "planIndex"},
+        {PriorityRole, "priority"}
     };
 }
 

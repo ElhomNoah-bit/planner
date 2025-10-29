@@ -18,7 +18,8 @@ public:
         DoneRole,
         IsExamRole,
         ColorRole,
-        PlanIndexRole
+        PlanIndexRole,
+        PriorityRole
     };
 
     explicit TaskModel(QObject* parent = nullptr);
