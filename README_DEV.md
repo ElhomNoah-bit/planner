@@ -6,8 +6,9 @@ This document describes the technical implementation details and new features ad
 
 1. [Zen Mode](#zen-mode)
 2. [Category System](#category-system)
-3. [Keyboard Shortcuts](#keyboard-shortcuts)
-4. [Settings & Persistence](#settings--persistence)
+3. [Drag & Drop Rescheduling](#drag--drop-rescheduling)
+4. [Keyboard Shortcuts](#keyboard-shortcuts)
+5. [Settings & Persistence](#settings--persistence)
 
 ---
 
@@ -148,6 +149,66 @@ EventChip {
 
 ---
 
+## Drag & Drop Rescheduling
+
+**Purpose**: Reschedule tasks and events by dragging them to new dates/times in Month and Week views.
+
+### Quick Overview
+
+- **Month View**: Drag events to different days (preserves time)
+- **Week View**: Drag events along timeline (changes time with 15-min snap)
+- **Undo**: Click "Rückgängig" in toast to revert changes
+- **Visual Feedback**: Ghost previews, cursor changes, drop highlights
+
+### Implementation Details
+
+**Backend API**:
+```cpp
+bool moveEntry(const QString& entryId, const QString& newStartIso, const QString& newEndIso);
+```
+
+**Signal for Undo**:
+```cpp
+void entryMoved(const QString& entryId, const QString& oldStartIso, const QString& oldEndIso);
+```
+
+### Drag Behavior
+
+**Month View (DayCell)**:
+- All-day events: Changes date only
+- Timed events: Changes date, preserves time
+- Visual: Drop overlay shows when dragging over cell
+
+**Week View (Timeline)**:
+- Changes both date and time
+- Snaps to 15-minute intervals
+- Ghost line shows drop position
+- Clamps to valid time range (0:00-23:59)
+
+### Features
+
+✅ **Smooth Performance**: No frame jitter, 100ms animations
+✅ **Validation**: Checks for invalid dates, durations, targets
+✅ **Undo Support**: 5-second undo window with toast notification
+✅ **Accessibility**: Proper cursor states, keyboard navigation unaffected
+✅ **Error Handling**: Graceful failure with user feedback
+
+### Usage Example
+
+```qml
+// Make EventChip draggable
+EventChip {
+    entryId: modelData.id
+    startIso: modelData.start
+    endIso: modelData.end
+    allDay: modelData.allDay
+}
+```
+
+For complete documentation, see [docs/DRAG_DROP_IMPLEMENTATION.md](../docs/DRAG_DROP_IMPLEMENTATION.md).
+
+---
+
 ## Keyboard Shortcuts
 
 | Shortcut | Action | Description |
@@ -278,9 +339,22 @@ Location: `~/.local/share/NoahPlanner/`
 - [ ] CategoryPicker shows all categories
 - [ ] Colors meet contrast requirements (AA)
 
+**Drag & Drop**:
+- [ ] Month view: Drag event to different day
+- [ ] Month view: Time preserved for timed events
+- [ ] Week view: Drag event along timeline
+- [ ] Week view: Snaps to 15-minute intervals
+- [ ] Week view: Drag across day columns
+- [ ] Undo button appears in toast
+- [ ] Undo restores original position
+- [ ] Visual feedback during drag (opacity, cursor)
+- [ ] Drop indicators show properly
+- [ ] Invalid drops rejected cleanly
+
 **Integration**:
 - [ ] Zen mode + categories work together
 - [ ] Category filtering doesn't break other filters
+- [ ] Drag & drop works with filtered views
 - [ ] Performance with 100+ events acceptable
 
 ---
@@ -288,7 +362,7 @@ Location: `~/.local/share/NoahPlanner/`
 ## Future Enhancements
 
 Planned features (in order of priority):
-1. Drag & Drop rescheduling
+1. ~~Drag & Drop rescheduling~~ ✅ **Implemented**
 2. Automatic priority calculation
 3. Focus sessions & streaks (Pomodoro)
 4. Deadline stress indicators

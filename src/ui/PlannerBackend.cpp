@@ -632,6 +632,69 @@ bool PlannerBackend::setEntryCategory(const QString& entryId, const QString& cat
     return true;
 }
 
+bool PlannerBackend::moveEntry(const QString& entryId, const QString& newStartIso, const QString& newEndIso) {
+    if (entryId.isEmpty() || newStartIso.isEmpty() || newEndIso.isEmpty()) {
+        notify(tr("Ungültige Parameter für Verschieben"));
+        return false;
+    }
+    
+    // Find the event
+    EventRecord record;
+    bool found = false;
+    for (const auto& ev : m_cachedEvents) {
+        if (ev.id == entryId) {
+            record = ev;
+            found = true;
+            break;
+        }
+    }
+    
+    if (!found) {
+        notify(tr("Eintrag nicht gefunden"));
+        return false;
+    }
+    
+    // Save old values for undo
+    const QString oldStartIso = toIsoDateTime(record.start);
+    const QString oldEndIso = toIsoDateTime(record.end);
+    
+    // Parse new date/time
+    QDateTime newStart = fromIsoDateTime(newStartIso);
+    QDateTime newEnd = fromIsoDateTime(newEndIso);
+    
+    if (!newStart.isValid() || !newEnd.isValid()) {
+        qWarning() << "[moveEntry] Invalid dates:" << newStartIso << newEndIso;
+        notify(tr("Ungültiges Datum/Uhrzeit"));
+        return false;
+    }
+    
+    // Validate that end is after start
+    if (newEnd <= newStart) {
+        qWarning() << "[moveEntry] End time must be after start time";
+        notify(tr("Endzeitpunkt muss nach Startzeitpunkt liegen"));
+        return false;
+    }
+    
+    // Update the record
+    record.start = newStart;
+    record.end = newEnd;
+    
+    // Persist the change
+    if (!m_repository.update(record)) {
+        notify(tr("Verschieben fehlgeschlagen"));
+        return false;
+    }
+    
+    // Reload and notify
+    reloadEvents();
+    rebuildSidebar();
+    
+    // Emit signal for undo support (ToastHost will show the undo snackbar)
+    emit entryMoved(entryId, oldStartIso, oldEndIso);
+    
+    return true;
+}
+
 void PlannerBackend::rebuildCategories() {
     QVector<Category> cats = m_categoryRepository.loadAll();
     QVariantList list;

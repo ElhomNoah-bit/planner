@@ -140,12 +140,19 @@ Item {
                                     timeText: modelData.startTimeLabel && modelData.startTimeLabel.length ? modelData.startTimeLabel : qsTr("Ganztägig")
                                     overdue: modelData.overdue
                                     categoryColor: modelData.categoryColor || ""
+                                    entryId: modelData.id || ""
+                                    startIso: modelData.start || ""
+                                    endIso: modelData.end || ""
+                                    allDay: modelData.allDay || false
                                 }
                             }
                             Item {
                                 id: timeline
                                 width: parent.width
                                 height: root.timelineHeight
+                                
+                                property bool dropActive: dropArea.containsDrag
+                                property real dropY: 0
 
                                 Rectangle {
                                     anchors.fill: parent
@@ -153,6 +160,22 @@ Item {
                                     color: colors.cardGlass
                                     border.width: 1
                                     border.color: colors.divider
+                                }
+                                
+                                // Drop indicator line (ghost preview)
+                                Rectangle {
+                                    width: parent.width - 10
+                                    height: 2
+                                    x: 5
+                                    y: timeline.dropY
+                                    color: colors.accent
+                                    opacity: timeline.dropActive ? 0.6 : 0
+                                    visible: timeline.dropActive
+                                    radius: 1
+                                    
+                                    Behavior on opacity {
+                                        NumberAnimation { duration: 100; easing.type: Easing.InOutQuad }
+                                    }
                                 }
 
                                 Rectangle {
@@ -163,10 +186,55 @@ Item {
                                     visible: dayItem.isToday && root.currentMinutes >= root.startHour * 60 && root.currentMinutes <= root.endHour * 60
                                     opacity: 0.9
                                 }
+                                
+                                DropArea {
+                                    id: dropArea
+                                    anchors.fill: parent
+                                    
+                                    onPositionChanged: function(drag) {
+                                        // Snap to 15-minute intervals
+                                        var minutes = (drag.y / root.minuteHeight) + root.startHour * 60
+                                        var snappedMinutes = Math.round(minutes / 15) * 15
+                                        // Clamp to valid range
+                                        snappedMinutes = Math.max(root.startHour * 60, Math.min(root.endHour * 60, snappedMinutes))
+                                        timeline.dropY = (snappedMinutes - root.startHour * 60) * root.minuteHeight
+                                    }
+                                    
+                                    onDropped: function(drop) {
+                                        if (drop.hasText) {
+                                            var data = drop.getDataAsString("application/x-planner-entry")
+                                            if (data && data.length > 0) {
+                                                try {
+                                                    var dragData = JSON.parse(data)
+                                                    handleTimelineDrop(dragData, drop.y, dayItem.dayIso)
+                                                    drop.accept(Qt.MoveAction)
+                                                } catch (e) {
+                                                    console.warn("Failed to parse drag data:", e)
+                                                    drop.accept(Qt.IgnoreAction)
+                                                }
+                                            } else {
+                                                drop.accept(Qt.IgnoreAction)
+                                            }
+                                        } else {
+                                            drop.accept(Qt.IgnoreAction)
+                                        }
+                                    }
+                                    
+                                    onEntered: function(drag) {
+                                        // Only accept if we have valid entry data
+                                        var data = drag.getDataAsString("application/x-planner-entry")
+                                        drag.accepted = data && data.length > 0
+                                    }
+                                    
+                                    onExited: function() {
+                                        // Cleanup when drag leaves
+                                    }
+                                }
 
                                 Repeater {
                                     model: dayEvents
                                     delegate: Rectangle {
+                                        id: eventRect
                                         readonly property real totalColumns: Math.max(1, modelData.columnCount || 1)
                                         readonly property real columnWidth: (timeline.width - 10) / totalColumns
                                         width: Math.max(60, columnWidth - 6)
@@ -178,6 +246,12 @@ Item {
                                         color: Qt.rgba(eventColor.r, eventColor.g, eventColor.b, 0.18)
                                         border.color: eventColor
                                         border.width: 1
+                                        
+                                        opacity: dragHandler.active ? 0.5 : 1.0
+                                        
+                                        Behavior on opacity {
+                                            NumberAnimation { duration: 100; easing.type: Easing.InOutQuad }
+                                        }
 
                                         Column {
                                             anchors.fill: parent
@@ -208,6 +282,30 @@ Item {
                                                 elide: Text.ElideRight
                                                 renderType: Text.NativeRendering
                                             }
+                                        }
+                                        
+                                        HoverHandler {
+                                            id: hoverHandler
+                                            cursorShape: Qt.OpenHandCursor
+                                        }
+                                        
+                                        DragHandler {
+                                            id: dragHandler
+                                            cursorShape: Qt.ClosedHandCursor
+                                        }
+                                        
+                                        Drag.active: dragHandler.active
+                                        Drag.hotSpot.x: eventRect.width / 2
+                                        Drag.hotSpot.y: eventRect.height / 2
+                                        Drag.mimeData: { 
+                                            "text/plain": modelData.id,
+                                            "application/x-planner-entry": JSON.stringify({
+                                                id: modelData.id,
+                                                startIso: modelData.start,
+                                                endIso: modelData.end,
+                                                allDay: modelData.allDay || false,
+                                                label: modelData.title
+                                            })
                                         }
                                     }
                                 }
@@ -338,6 +436,57 @@ Item {
             weekdayLabels = reordered
         } else {
             weekdayLabels = base
+        }
+    }
+    
+    function handleTimelineDrop(dragData, dropY, targetDayIso) {
+        if (!dragData.id || !dragData.startIso || !dragData.endIso) {
+            console.warn("Invalid drag data, cannot drop")
+            return
+        }
+        
+        // Parse old dates
+        var oldStart = new Date(dragData.startIso)
+        var oldEnd = new Date(dragData.endIso)
+        
+        if (isNaN(oldStart.getTime()) || isNaN(oldEnd.getTime())) {
+            console.warn("Invalid dates in drag data")
+            return
+        }
+        
+        var duration = (oldEnd - oldStart) / (1000 * 60) // duration in minutes
+        
+        if (duration <= 0) {
+            console.warn("Invalid event duration")
+            return
+        }
+        
+        // Calculate new time from drop position with 15-minute snap
+        var dropMinutes = (dropY / root.minuteHeight) + root.startHour * 60
+        var snappedMinutes = Math.round(dropMinutes / 15) * 15
+        
+        // Clamp to valid range
+        snappedMinutes = Math.max(0, Math.min(24 * 60 - duration, snappedMinutes))
+        
+        // Create new date/time
+        var targetDate = new Date(targetDayIso)
+        if (isNaN(targetDate.getTime())) {
+            console.warn("Invalid target date")
+            return
+        }
+        
+        var newStart = new Date(targetDate)
+        newStart.setHours(Math.floor(snappedMinutes / 60), snappedMinutes % 60, 0, 0)
+        
+        var newEnd = new Date(newStart)
+        newEnd.setTime(newEnd.getTime() + duration * 60 * 1000)
+        
+        var newStartIso = Qt.formatDateTime(newStart, Qt.ISODate)
+        var newEndIso = Qt.formatDateTime(newEnd, Qt.ISODate)
+        
+        // Call backend to move entry
+        if (planner.moveEntry(dragData.id, newStartIso, newEndIso)) {
+            console.log("Entry moved to", targetDayIso, "at", snappedMinutes, "minutes")
         }
     }
 }
