@@ -1,2 +1,0 @@
-/usr/bin/ar qc NoahPlanner/Styles/libstyles_moduleplugin.a CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_autogen/mocs_compilation.cpp.o CMakeFiles/styles_moduleplugin.dir/styles_moduleplugin_NoahPlanner_StylesPlugin.cpp.o
-/usr/bin/ranlib NoahPlanner/Styles/libstyles_moduleplugin.a

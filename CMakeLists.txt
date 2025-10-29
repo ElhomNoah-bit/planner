@@ -17,11 +17,14 @@ qt_add_executable(noah_planner
     src/core/PlannerService.h
     src/core/EventRepository.cpp
     src/core/EventRepository.h
+    src/core/CategoryRepository.cpp
+    src/core/CategoryRepository.h
     src/core/QuickAddParser.cpp
     src/core/QuickAddParser.h
     src/core/Task.h
     src/core/Subject.h
     src/core/Exam.h
+    src/core/Category.h
     src/models/EventModel.cpp
     src/models/EventModel.h
     src/models/TaskModel.cpp
@@ -53,7 +56,8 @@ qt_add_qml_module(noah_planner
         src/ui/qml/components/FilterPill.qml
         src/ui/qml/components/GlassPanel.qml
         src/ui/qml/components/IconGlyph.qml
-    src/ui/qml/components/CommandPalette.qml
+        src/ui/qml/components/CategoryPicker.qml
+        src/ui/qml/components/CommandPalette.qml
         src/ui/qml/components/PillButton.qml
     src/ui/qml/components/QuickAddDialog.qml
         src/ui/qml/components/QuickAddPill.qml
@@ -64,6 +68,7 @@ qt_add_qml_module(noah_planner
         src/ui/qml/components/ToastHost.qml
     src/ui/qml/components/SettingsDialog.qml
         src/ui/qml/components/TodayTaskDelegate.qml
+        src/ui/qml/components/ZenToggleButton.qml
         src/ui/qml/views/AgendaView.qml
         src/ui/qml/views/MonthView.qml
         src/ui/qml/views/SidebarToday.qml

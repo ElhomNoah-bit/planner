@@ -11,6 +11,7 @@ Item {
 
     property string viewMode: "month"
     property bool onlyOpen: false
+    property bool zenMode: false
 
     signal quickAddRequested(string isoDate, string kind)
     signal jumpToTodayRequested()
@@ -34,6 +35,7 @@ Item {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 visible: viewStack.currentIndex === 0
+                zenMode: root.zenMode
                 onDaySelected: iso => planner.selectDateIso(iso)
                 onQuickAddRequested: (iso, kind) => root.quickAddRequested(iso, kind)
                 onJumpToTodayRequested: root.jumpToTodayRequested()
@@ -44,6 +46,7 @@ Item {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 visible: viewStack.currentIndex === 1
+                zenMode: root.zenMode
                 onDaySelected: iso => planner.selectDateIso(iso)
             }
 
@@ -59,6 +62,7 @@ Item {
             id: sidebar
             Layout.preferredWidth: metrics.sidebarW
             Layout.fillHeight: true
+            zenMode: root.zenMode
             onStartTimerRequested: timerOverlay.openTimer(minutes)
         }
     }

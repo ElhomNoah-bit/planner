@@ -57,6 +57,13 @@ ApplicationWindow {
         onActivated: planner.setViewMode("list")
     }
 
+    Shortcut {
+        sequences: ["Ctrl+.", "Meta+."]
+        context: Qt.ApplicationShortcut
+        enabled: app.visible
+        onActivated: app.toggleZenMode()
+    }
+
     function goToday() {
         planner.jumpToToday()
     }
@@ -116,6 +123,9 @@ ApplicationWindow {
         case "toggle-open":
             planner.onlyOpen = !planner.onlyOpen
             break
+        case "toggle-zen":
+            app.toggleZenMode()
+            break
         case "open-settings":
             settingsDialog.open()
             break
@@ -128,6 +138,10 @@ ApplicationWindow {
         if (planner.viewModeString === mode)
             return
         planner.setViewMode(mode)
+    }
+
+    function toggleZenMode() {
+        planner.zenMode = !planner.zenMode
     }
 
     ColumnLayout {
@@ -176,6 +190,13 @@ ApplicationWindow {
                 onToggled: app.toggleOnlyOpen(!planner.onlyOpen)
             }
 
+            ZenToggleButton {
+                id: zenToggle
+                Layout.alignment: Qt.AlignVCenter
+                active: planner.zenMode
+                onToggled: app.toggleZenMode()
+            }
+
             Item { Layout.fillWidth: true }
 
             SearchField {
@@ -202,6 +223,7 @@ ApplicationWindow {
             Layout.fillHeight: true
             viewMode: planner.viewModeString
             onlyOpen: planner.onlyOpen
+            zenMode: planner.zenMode
             onQuickAddRequested: (iso, kind) => app.openQuickAddFor(kind, iso)
             onJumpToTodayRequested: app.goToday()
         }

@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/NoahPlanner/Styles/">
-    <file alias="src/ui/qml/styles/ThemeStore.qml">/home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/src/ui/qml/styles/ThemeStore.qml</file>
-  </qresource>
-</RCC>
-

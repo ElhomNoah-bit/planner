@@ -1,6 +1,7 @@
 #pragma once
 
 #include "AppState.h"
+#include "core/CategoryRepository.h"
 #include "core/EventRepository.h"
 #include "core/QuickAddParser.h"
 #include "models/EventModel.h"
@@ -20,12 +21,14 @@ class PlannerBackend : public QObject {
     Q_PROPERTY(ViewMode viewMode READ viewMode WRITE setViewMode NOTIFY viewModeChanged)
     Q_PROPERTY(QString viewModeString READ viewModeString WRITE setViewModeString NOTIFY viewModeChanged)
     Q_PROPERTY(bool onlyOpen READ onlyOpen WRITE setOnlyOpen NOTIFY onlyOpenChanged)
+    Q_PROPERTY(bool zenMode READ zenMode WRITE setZenMode NOTIFY zenModeChanged)
     Q_PROPERTY(QAbstractListModel* events READ eventsModel NOTIFY eventsChanged)
     Q_PROPERTY(QVariantList today READ todayEvents NOTIFY todayEventsChanged)
     Q_PROPERTY(QVariantList upcoming READ upcomingEvents NOTIFY upcomingEventsChanged)
     Q_PROPERTY(QVariantList exams READ examEvents NOTIFY examEventsChanged)
     Q_PROPERTY(QVariantList commands READ commands NOTIFY commandsChanged)
     Q_PROPERTY(QString searchQuery READ searchQuery WRITE setSearchQuery NOTIFY searchQueryChanged)
+    Q_PROPERTY(QVariantList categories READ categories NOTIFY categoriesChanged)
 
 public:
     explicit PlannerBackend(QObject* parent = nullptr);
@@ -47,6 +50,9 @@ public:
     bool onlyOpen() const { return m_state.onlyOpen(); }
     void setOnlyOpen(bool onlyOpen);
 
+    bool zenMode() const { return m_state.zenMode(); }
+    void setZenMode(bool enabled);
+
     QString searchQuery() const { return m_searchQuery; }
     void setSearchQuery(const QString& query);
 
@@ -55,6 +61,7 @@ public:
     QVariantList upcomingEvents() const { return m_upcoming; }
     QVariantList examEvents() const { return m_exams; }
     QVariantList commands() const { return m_commands; }
+    QVariantList categories() const { return m_categories; }
 
     Q_INVOKABLE void selectDateIso(const QString& isoDate);
     Q_INVOKABLE void setViewMode(const QString& mode);
@@ -68,22 +75,30 @@ public:
     Q_INVOKABLE QVariantMap eventById(const QString& id) const;
     Q_INVOKABLE void setEventDone(const QString& id, bool done);
     Q_INVOKABLE void showToast(const QString& message);
+    Q_INVOKABLE QVariantList listCategories() const;
+    Q_INVOKABLE bool addCategory(const QString& id, const QString& name, const QString& color);
+    Q_INVOKABLE bool updateCategory(const QString& id, const QString& name, const QString& color);
+    Q_INVOKABLE bool removeCategory(const QString& id);
+    Q_INVOKABLE bool setEntryCategory(const QString& entryId, const QString& categoryId);
 
 signals:
     void darkThemeChanged();
     void selectedDateChanged();
     void viewModeChanged();
     void onlyOpenChanged();
+    void zenModeChanged();
     void eventsChanged();
     void todayEventsChanged();
     void upcomingEventsChanged();
     void examEventsChanged();
     void commandsChanged();
     void searchQueryChanged();
+    void categoriesChanged();
     void toastRequested(const QString& message);
 
 private:
     EventRepository m_repository;
+    CategoryRepository m_categoryRepository;
     EventModel m_eventModel;
     QuickAddParser m_parser;
     AppState m_state;
@@ -97,11 +112,13 @@ private:
     QVariantList m_upcoming;
     QVariantList m_exams;
     QVariantList m_commands;
+    QVariantList m_categories;
 
     void initializeStorage();
     void reloadEvents();
     void rebuildSidebar();
     void rebuildCommands();
+    void rebuildCategories();
     QVariantMap toVariant(const EventRecord& record) const;
     QVector<EventRecord> filteredEvents() const;
     QVariantList buildDayEvents(const QDate& date) const;

@@ -44,6 +44,11 @@ QtObject {
     readonly property string fontHeading: "Inter"
     readonly property string fontFallback: "Sans Serif"
 
+    // Opacity values for Zen Mode
+    readonly property real opacityFull: 1.0
+    readonly property real opacityMuted: 0.25
+    readonly property real opacityDisabled: 0.4
+
     // Legacy groupings kept for gradual migration
     readonly property QtObject colors: QtObject {
         readonly property alias appBg: theme.appBg

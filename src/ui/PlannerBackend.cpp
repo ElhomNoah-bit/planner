@@ -52,13 +52,16 @@ PlannerBackend::PlannerBackend(QObject* parent)
     initializeStorage();
     reloadEvents();
     rebuildCommands();
+    rebuildCategories();
     rebuildSidebar();
 
     emit selectedDateChanged();
     emit viewModeChanged();
     emit onlyOpenChanged();
+    emit zenModeChanged();
     emit darkThemeChanged();
     emit commandsChanged();
+    emit categoriesChanged();
     emit todayEventsChanged();
     emit upcomingEventsChanged();
     emit examEventsChanged();
@@ -121,6 +124,14 @@ void PlannerBackend::setOnlyOpen(bool onlyOpen) {
     reloadEvents();
     rebuildSidebar();
     emit onlyOpenChanged();
+}
+
+void PlannerBackend::setZenMode(bool enabled) {
+    if (!m_state.setZenMode(enabled)) {
+        return;
+    }
+    m_state.save();
+    emit zenModeChanged();
 }
 
 void PlannerBackend::setSearchQuery(const QString& query) {
@@ -327,9 +338,14 @@ void PlannerBackend::initializeStorage() {
     if (!m_repository.initialize(m_storageDir)) {
         qWarning() << "[PlannerBackend] Repository initialisation failed for" << m_storageDir;
     }
+    
+    if (!m_categoryRepository.initialize(m_storageDir)) {
+        qWarning() << "[PlannerBackend] Category repository initialisation failed for" << m_storageDir;
+    }
 
     const QString storePath = m_repository.isSqlAvailable() ? m_repository.databasePath() : m_repository.jsonFallbackPath();
     qInfo() << "[PlannerBackend] DB path:" << storePath;
+    qInfo() << "[PlannerBackend] Categories path:" << m_categoryRepository.categoriesPath();
 }
 
 void PlannerBackend::reloadEvents() {
@@ -397,6 +413,7 @@ void PlannerBackend::rebuildCommands() {
     add(QStringLiteral("view-week"), tr("Ansicht: Woche"), QString());
     add(QStringLiteral("view-list"), tr("Ansicht: Liste"), QString());
     add(QStringLiteral("toggle-open"), tr("Nur offene umschalten"), QString());
+    add(QStringLiteral("toggle-zen"), tr("Zen-Modus umschalten"), tr("Fokus auf den ausgewählten Tag"));
     add(QStringLiteral("open-settings"), tr("Einstellungen öffnen"), QString());
 
     if (m_commands != list) {
@@ -433,6 +450,16 @@ QVariantMap PlannerBackend::toVariant(const EventRecord& record) const {
     }
     map.insert(QStringLiteral("overdue"),
                record.due.isValid() && record.due < QDateTime::currentDateTime());
+    map.insert(QStringLiteral("categoryId"), record.categoryId);
+    
+    // Add category color if category is assigned
+    if (!record.categoryId.isEmpty()) {
+        Category cat = m_categoryRepository.findById(record.categoryId);
+        if (cat.isValid()) {
+            map.insert(QStringLiteral("categoryColor"), cat.color.name());
+        }
+    }
+    
     return map;
 }
 
@@ -501,4 +528,124 @@ void PlannerBackend::logEventLoad(int count) const {
 
 void PlannerBackend::notify(const QString& message) {
     emit toastRequested(message);
+}
+
+QVariantList PlannerBackend::listCategories() const {
+    return m_categories;
+}
+
+bool PlannerBackend::addCategory(const QString& id, const QString& name, const QString& color) {
+    if (id.isEmpty() || name.isEmpty()) {
+        notify(tr("ID und Name sind erforderlich"));
+        return false;
+    }
+    
+    Category cat;
+    cat.id = id;
+    cat.name = name;
+    cat.color = QColor(color);
+    
+    if (!m_categoryRepository.insert(cat)) {
+        notify(tr("Kategorie konnte nicht hinzugefügt werden"));
+        return false;
+    }
+    
+    rebuildCategories();
+    notify(tr("Kategorie \"%1\" hinzugefügt").arg(name));
+    return true;
+}
+
+bool PlannerBackend::updateCategory(const QString& id, const QString& name, const QString& color) {
+    if (id.isEmpty() || name.isEmpty()) {
+        notify(tr("ID und Name sind erforderlich"));
+        return false;
+    }
+    
+    Category cat;
+    cat.id = id;
+    cat.name = name;
+    cat.color = QColor(color);
+    
+    if (!m_categoryRepository.update(cat)) {
+        notify(tr("Kategorie konnte nicht aktualisiert werden"));
+        return false;
+    }
+    
+    rebuildCategories();
+    notify(tr("Kategorie \"%1\" aktualisiert").arg(name));
+    return true;
+}
+
+bool PlannerBackend::removeCategory(const QString& id) {
+    if (id.isEmpty()) {
+        return false;
+    }
+    
+    if (!m_categoryRepository.remove(id)) {
+        notify(tr("Kategorie konnte nicht entfernt werden"));
+        return false;
+    }
+    
+    rebuildCategories();
+    notify(tr("Kategorie entfernt"));
+    return true;
+}
+
+bool PlannerBackend::setEntryCategory(const QString& entryId, const QString& categoryId) {
+    if (entryId.isEmpty()) {
+        return false;
+    }
+    
+    // Find the event
+    EventRecord record;
+    bool found = false;
+    for (const auto& ev : m_cachedEvents) {
+        if (ev.id == entryId) {
+            record = ev;
+            found = true;
+            break;
+        }
+    }
+    
+    if (!found) {
+        notify(tr("Eintrag nicht gefunden"));
+        return false;
+    }
+    
+    record.categoryId = categoryId;
+    
+    if (!m_repository.update(record)) {
+        notify(tr("Kategorie konnte nicht zugewiesen werden"));
+        return false;
+    }
+    
+    reloadEvents();
+    rebuildSidebar();
+    
+    if (categoryId.isEmpty()) {
+        notify(tr("Kategorie entfernt"));
+    } else {
+        Category cat = m_categoryRepository.findById(categoryId);
+        notify(tr("Kategorie \"%1\" zugewiesen").arg(cat.name));
+    }
+    
+    return true;
+}
+
+void PlannerBackend::rebuildCategories() {
+    QVector<Category> cats = m_categoryRepository.loadAll();
+    QVariantList list;
+    
+    for (const auto& cat : cats) {
+        QVariantMap map;
+        map.insert(QStringLiteral("id"), cat.id);
+        map.insert(QStringLiteral("name"), cat.name);
+        map.insert(QStringLiteral("color"), cat.color.name());
+        list.append(map);
+    }
+    
+    if (m_categories != list) {
+        m_categories = list;
+        emit categoriesChanged();
+    }
 }

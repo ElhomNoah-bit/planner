@@ -10,6 +10,7 @@ Item {
     property string selectedIso: planner.selectedDate
     property var days: []
     property string locale: Qt.locale().name
+    property bool zenMode: false
     signal daySelected(string iso)
     signal quickAddRequested(string iso, string kind)
     signal jumpToTodayRequested()
@@ -100,10 +101,18 @@ Item {
                         Layout.fillHeight: true
                         Layout.preferredWidth: Math.max(120, grid.cellWidth)
                         Layout.preferredHeight: Math.max(100, grid.cellHeight)
+                        opacity: month.zenMode && modelData.iso !== month.selectedIso
+                                 ? Styles.ThemeStore.opacityMuted
+                                 : Styles.ThemeStore.opacityFull
+                        enabled: !month.zenMode || modelData.iso === month.selectedIso
                         onActivated: iso => month.daySelected(iso)
                         onContextCreateEvent: month.quickAddRequested(iso, "event")
                         onContextCreateTask: month.quickAddRequested(iso, "task")
                         onContextJumpToToday: month.jumpToTodayRequested()
+
+                        Behavior on opacity {
+                            NumberAnimation { duration: 150; easing.type: Easing.InOutQuad }
+                        }
                     }
                 }
             }

@@ -1,6 +1,0 @@
-set(__QT_DEPLOY_TARGET_noah_planner_FILE /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/noah_planner)
-set(__QT_DEPLOY_TARGET_noah_planner_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_styles_module_FILE /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/libstyles_module.a)
-set(__QT_DEPLOY_TARGET_styles_module_TYPE STATIC_LIBRARY)
-set(__QT_DEPLOY_TARGET_styles_moduleplugin_FILE /home/noah/Dokumente/dev/project_study_planner/noah_planner_v2_cpp_qt6/build/NoahPlanner/Styles/libstyles_moduleplugin.a)
-set(__QT_DEPLOY_TARGET_styles_moduleplugin_TYPE STATIC_LIBRARY)
