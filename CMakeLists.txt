@@ -56,7 +56,8 @@ qt_add_qml_module(noah_planner
         src/ui/qml/components/FilterPill.qml
         src/ui/qml/components/GlassPanel.qml
         src/ui/qml/components/IconGlyph.qml
-    src/ui/qml/components/CommandPalette.qml
+        src/ui/qml/components/CategoryPicker.qml
+        src/ui/qml/components/CommandPalette.qml
         src/ui/qml/components/PillButton.qml
     src/ui/qml/components/QuickAddDialog.qml
         src/ui/qml/components/QuickAddPill.qml

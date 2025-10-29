@@ -10,13 +10,14 @@ Rectangle {
     property bool overdue: false
     property string timeText: ""
     property bool timed: timeText.length > 0
+    property string categoryColor: ""
 
     implicitHeight: 26
     implicitWidth: Math.max(92, contentRow.implicitWidth + Styles.ThemeStore.g16)
     radius: Styles.ThemeStore.r12
     color: muted ? Styles.ThemeStore.cardAlt : Styles.ThemeStore.cardBg
-    border.width: overdue ? 1 : 0
-    border.color: overdue ? Styles.ThemeStore.danger : "transparent"
+    border.width: categoryColor.length > 0 ? 2 : (overdue ? 1 : 0)
+    border.color: categoryColor.length > 0 ? categoryColor : (overdue ? Styles.ThemeStore.danger : "transparent")
 
     RowLayout {
         id: contentRow

@@ -451,6 +451,15 @@ QVariantMap PlannerBackend::toVariant(const EventRecord& record) const {
     map.insert(QStringLiteral("overdue"),
                record.due.isValid() && record.due < QDateTime::currentDateTime());
     map.insert(QStringLiteral("categoryId"), record.categoryId);
+    
+    // Add category color if category is assigned
+    if (!record.categoryId.isEmpty()) {
+        Category cat = m_categoryRepository.findById(record.categoryId);
+        if (cat.isValid()) {
+            map.insert(QStringLiteral("categoryColor"), cat.color.name());
+        }
+    }
+    
     return map;
 }
 

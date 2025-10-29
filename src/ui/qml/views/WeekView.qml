@@ -139,6 +139,7 @@ Item {
                                     subjectColor: modelData.colorHint && modelData.colorHint.length ? modelData.colorHint : colors.accent
                                     timeText: modelData.startTimeLabel && modelData.startTimeLabel.length ? modelData.startTimeLabel : qsTr("Ganztägig")
                                     overdue: modelData.overdue
+                                    categoryColor: modelData.categoryColor || ""
                                 }
                             }
                             Item {

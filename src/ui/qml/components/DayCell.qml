@@ -94,6 +94,7 @@ FocusScope {
                 subjectColor: modelData.colorHint && modelData.colorHint.length ? modelData.colorHint : Styles.ThemeStore.colors.accent
                 timeText: modelData.startTimeLabel
                 overdue: modelData.overdue
+                categoryColor: modelData.categoryColor || ""
             }
         }
 
