@@ -19,6 +19,7 @@ struct EventRecord {
     QDateTime due;
     QString colorHint;
     int priority = 0;
+    QString categoryId;
 };
 
 class EventModel : public QAbstractListModel {
@@ -37,7 +38,8 @@ public:
         IsDoneRole,
         DueRole,
         ColorHintRole,
-        PriorityRole
+        PriorityRole,
+        CategoryIdRole
     };
     Q_ENUM(Roles)
 
