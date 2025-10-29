@@ -19,12 +19,17 @@ qt_add_executable(noah_planner
     src/core/EventRepository.h
     src/core/CategoryRepository.cpp
     src/core/CategoryRepository.h
+    src/core/FocusSessionRepository.cpp
+    src/core/FocusSessionRepository.h
+    src/core/PomodoroTimer.cpp
+    src/core/PomodoroTimer.h
     src/core/QuickAddParser.cpp
     src/core/QuickAddParser.h
     src/core/Task.h
     src/core/Subject.h
     src/core/Exam.h
     src/core/Category.h
+    src/core/FocusSession.h
     src/models/EventModel.cpp
     src/models/EventModel.h
     src/models/TaskModel.cpp
@@ -64,6 +69,7 @@ qt_add_qml_module(noah_planner
     src/ui/qml/components/SearchField.qml
         src/ui/qml/components/SegmentedControl.qml
         src/ui/qml/components/TimerOverlay.qml
+        src/ui/qml/components/PomodoroOverlay.qml
         src/ui/qml/components/Toast.qml
         src/ui/qml/components/ToastHost.qml
     src/ui/qml/components/SettingsDialog.qml

@@ -342,6 +342,10 @@ void PlannerBackend::initializeStorage() {
     if (!m_categoryRepository.initialize(m_storageDir)) {
         qWarning() << "[PlannerBackend] Category repository initialisation failed for" << m_storageDir;
     }
+    
+    if (!m_pomodoroTimer.initialize(m_storageDir)) {
+        qWarning() << "[PlannerBackend] Pomodoro timer initialisation failed for" << m_storageDir;
+    }
 
     const QString storePath = m_repository.isSqlAvailable() ? m_repository.databasePath() : m_repository.jsonFallbackPath();
     qInfo() << "[PlannerBackend] DB path:" << storePath;
@@ -409,6 +413,7 @@ void PlannerBackend::rebuildCommands() {
 
     add(QStringLiteral("go-today"), tr("Zu heute springen"), tr("Fokus auf das heutige Datum"));
     add(QStringLiteral("new-item"), tr("Schnellerfassung öffnen"), tr("Neuen Eintrag anlegen"));
+    add(QStringLiteral("start-pomodoro"), tr("Pomodoro-Timer starten"), tr("Fokus-Session beginnen"));
     add(QStringLiteral("view-month"), tr("Ansicht: Monat"), QString());
     add(QStringLiteral("view-week"), tr("Ansicht: Woche"), QString());
     add(QStringLiteral("view-list"), tr("Ansicht: Liste"), QString());

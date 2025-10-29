@@ -4,6 +4,7 @@
 #include "core/CategoryRepository.h"
 #include "core/EventRepository.h"
 #include "core/QuickAddParser.h"
+#include "core/PomodoroTimer.h"
 #include "models/EventModel.h"
 
 #include <QAbstractListModel>
@@ -29,6 +30,7 @@ class PlannerBackend : public QObject {
     Q_PROPERTY(QVariantList commands READ commands NOTIFY commandsChanged)
     Q_PROPERTY(QString searchQuery READ searchQuery WRITE setSearchQuery NOTIFY searchQueryChanged)
     Q_PROPERTY(QVariantList categories READ categories NOTIFY categoriesChanged)
+    Q_PROPERTY(QObject* pomodoroTimer READ pomodoroTimer CONSTANT)
 
 public:
     explicit PlannerBackend(QObject* parent = nullptr);
@@ -62,6 +64,7 @@ public:
     QVariantList examEvents() const { return m_exams; }
     QVariantList commands() const { return m_commands; }
     QVariantList categories() const { return m_categories; }
+    QObject* pomodoroTimer() { return &m_pomodoroTimer; }
 
     Q_INVOKABLE void selectDateIso(const QString& isoDate);
     Q_INVOKABLE void setViewMode(const QString& mode);
@@ -102,6 +105,7 @@ private:
     EventModel m_eventModel;
     QuickAddParser m_parser;
     AppState m_state;
+    PomodoroTimer m_pomodoroTimer;
 
     QString m_storageDir;
     QDate m_selectedDate;

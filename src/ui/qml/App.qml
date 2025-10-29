@@ -63,6 +63,13 @@ ApplicationWindow {
         enabled: app.visible
         onActivated: app.toggleZenMode()
     }
+    
+    Shortcut {
+        sequences: ["Ctrl+P", "Meta+P"]
+        context: Qt.ApplicationShortcut
+        enabled: app.visible
+        onActivated: app.openPomodoroOverlay()
+    }
 
     function goToday() {
         planner.jumpToToday()
@@ -129,6 +136,9 @@ ApplicationWindow {
         case "open-settings":
             settingsDialog.open()
             break
+        case "start-pomodoro":
+            app.openPomodoroOverlay()
+            break
         default:
             break
         }
@@ -142,6 +152,10 @@ ApplicationWindow {
 
     function toggleZenMode() {
         planner.zenMode = !planner.zenMode
+    }
+    
+    function openPomodoroOverlay() {
+        pomodoroOverlay.open = true
     }
 
     ColumnLayout {
@@ -281,5 +295,16 @@ ApplicationWindow {
     Connections {
         target: settingsDialog
         function onVisibleChanged() {}
+    }
+    
+    PomodoroOverlay {
+        id: pomodoroOverlay
+        pomodoroTimer: planner.pomodoroTimer
+        onClosed: {
+            console.log("Pomodoro overlay closed")
+        }
+        onFinished: {
+            planner.showToast(qsTr("Pomodoro-Session abgeschlossen!"))
+        }
     }
 }

@@ -68,6 +68,18 @@ Item {
                         color: colors.text2
                         renderType: Text.NativeRendering
                     }
+                    
+                    // Pomodoro Focus Button
+                    PillButton {
+                        Layout.fillWidth: true
+                        text: qsTr("🍅 Jetzt Fokus")
+                        kind: "primary"
+                        onClicked: {
+                            if (typeof app !== 'undefined' && app.openPomodoroOverlay) {
+                                app.openPomodoroOverlay()
+                            }
+                        }
+                    }
 
                     Repeater {
                         model: todayEvents
