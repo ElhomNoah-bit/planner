@@ -6,8 +6,9 @@ This document describes the technical implementation details and new features ad
 
 1. [Zen Mode](#zen-mode)
 2. [Category System](#category-system)
-3. [Keyboard Shortcuts](#keyboard-shortcuts)
-4. [Settings & Persistence](#settings--persistence)
+3. [PDF Export](#pdf-export)
+4. [Keyboard Shortcuts](#keyboard-shortcuts)
+5. [Settings & Persistence](#settings--persistence)
 
 ---
 
@@ -225,6 +226,81 @@ Location: `~/.local/share/NoahPlanner/`
   "priority": 0
 }
 ```
+
+---
+
+## PDF Export
+
+**Purpose**: Export weekly or monthly schedules as high-quality PDF documents for printing or sharing.
+
+### Quick Start
+
+**From Command Palette** (`Ctrl+K`):
+- Type "export" → Select "Woche als PDF exportieren" or "Monat als PDF exportieren"
+- Choose file path and click "Exportieren"
+
+**From Code**:
+```qml
+planner.exportWeekPdf("2024-03-04", "/path/to/wochenplan.pdf")
+planner.exportMonthPdf("2024-03-01", "/path/to/monatsplan.pdf")
+```
+
+### Features
+
+- **High Quality**: 300 DPI resolution, vectorized layout
+- **Paper Sizes**: A4 and US Letter support
+- **Embedded Fonts**: Inter Regular and Bold included
+- **Localized Dates**: German formatting (e.g., "1.–7. März 2024")
+- **Category Colors**: Visual indicators with legend
+- **Theme Conversion**: Dark colors auto-converted to light for print
+- **Two Layouts**:
+  - Week: 7-column layout with time slots
+  - Month: Calendar grid with up to 3 events per day
+
+### Implementation
+
+**Backend (C++)**:
+- `ScheduleExporter` class in `src/core/ScheduleExporter.{h,cpp}`
+- Uses Qt6 PrintSupport (QPdfWriter)
+- Custom layout engine with QPainter
+- Automatic color conversion for print
+
+**UI (QML)**:
+- `ExportDialog.qml`: Modal dialog for file selection
+- Integrated in `CommandPalette.qml`
+- Toast notifications for success/error feedback
+
+### API Reference
+
+**PlannerBackend Methods**:
+```qml
+Q_INVOKABLE bool exportWeekPdf(const QString& weekStartIso, const QString& filePath)
+Q_INVOKABLE bool exportMonthPdf(const QString& monthIso, const QString& filePath)
+Q_INVOKABLE QString lastExportError() const
+```
+
+**Commands**:
+- `export-week`: Keywords: export, pdf, woche, week
+- `export-month`: Keywords: export, pdf, monat, month
+
+### PDF Specifications
+
+- **Resolution**: 300 DPI
+- **Margins**: 15mm on all sides
+- **Layout Sections**:
+  - Header (20mm): Title and date range
+  - Content (flexible): Calendar view with events
+  - Legend (15mm): Category colors
+
+### Detailed Documentation
+
+See [docs/PDF_EXPORT.md](../docs/PDF_EXPORT.md) for complete technical documentation including:
+- Architecture details
+- Layout specifications
+- Color conversion algorithm
+- Error handling
+- Testing checklist
+- Future enhancements
 
 ---
 
