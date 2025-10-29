@@ -608,25 +608,24 @@ int EventRepository::computePriority(const EventRecord& record, const QDate& cur
         return 1; // Medium (default for undated tasks)
     }
 
-    // Calculate days and hours until due
+    // Calculate days until due
     const int daysUntilDue = currentDate.daysTo(taskDate);
-    const int hoursUntilDue = daysUntilDue * 24;
 
     // Overdue tasks are always high priority
     if (daysUntilDue < 0) {
         return 2; // High
     }
 
-    // Due within 48 hours (2 days)
-    if (hoursUntilDue <= 48 && hoursUntilDue >= 0) {
-        // Within 24 hours: High priority
-        if (hoursUntilDue <= 24) {
-            return 2; // High
-        }
-        // Between 24-48 hours: Medium priority
+    // Due today: High priority
+    if (daysUntilDue == 0) {
+        return 2; // High
+    }
+
+    // Due tomorrow (within 48 hours): Medium priority
+    if (daysUntilDue == 1) {
         return 1; // Medium
     }
 
-    // More than 48 hours away: Low priority
+    // More than 2 days away: Low priority
     return 0; // Low
 }
