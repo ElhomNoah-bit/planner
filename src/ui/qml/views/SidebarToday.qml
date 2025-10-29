@@ -11,6 +11,7 @@ Item {
     property var todayEvents: planner && planner.today ? planner.today : []
     property var upcomingEvents: planner && planner.upcoming ? planner.upcoming : []
     property var examEvents: planner && planner.exams ? planner.exams : []
+    property bool zenMode: false
 
     readonly property QtObject colors: Styles.ThemeStore.colors
     readonly property QtObject gaps: Styles.ThemeStore.gap

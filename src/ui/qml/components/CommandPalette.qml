@@ -22,7 +22,8 @@ Item {
         "view-month": { keywords: ["month", "monats", "kalender"], run: function() { planner.setViewMode("month") } },
         "view-week": { keywords: ["week", "woche"], run: function() { planner.setViewMode("week") } },
         "view-list": { keywords: ["list", "liste"], run: function() { planner.setViewMode("list") } },
-    "toggle-open": { keywords: ["open", "offen", "filter"], run: function() { planner.setOnlyOpenQml(!planner.onlyOpen) } },
+        "toggle-open": { keywords: ["open", "offen", "filter"], run: function() { planner.setOnlyOpenQml(!planner.onlyOpen) } },
+        "toggle-zen": { keywords: ["zen", "focus", "fokus"], run: function() { app.toggleZenMode() } },
         "open-settings": { keywords: ["settings", "einstellungen", "preferences"], run: function() { app.openSettings() } }
     })
 

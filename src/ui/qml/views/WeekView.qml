@@ -18,6 +18,7 @@ Item {
     property int endHour: 20
     property real minuteHeight: 1.1
     property int currentMinutes: (new Date()).getHours() * 60 + (new Date()).getMinutes()
+    property bool zenMode: false
     signal daySelected(string iso)
 
     property string weekStartSetting: "monday"
@@ -98,6 +99,14 @@ Item {
                         property var allDayEvents: root.allDayByDay.length > index ? root.allDayByDay[index] : []
                         property string dayIso: root.isoForDay(index)
                         readonly property bool isToday: dayIso === Qt.formatDate(new Date(), "yyyy-MM-dd")
+                        readonly property bool isSelected: dayIso === root.anchorIso
+                        opacity: root.zenMode && !isSelected
+                                 ? Styles.ThemeStore.opacityMuted
+                                 : Styles.ThemeStore.opacityFull
+
+                        Behavior on opacity {
+                            NumberAnimation { duration: 150; easing.type: Easing.InOutQuad }
+                        }
 
                         Column {
                             id: dayColumn

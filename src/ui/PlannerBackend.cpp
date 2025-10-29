@@ -57,6 +57,7 @@ PlannerBackend::PlannerBackend(QObject* parent)
     emit selectedDateChanged();
     emit viewModeChanged();
     emit onlyOpenChanged();
+    emit zenModeChanged();
     emit darkThemeChanged();
     emit commandsChanged();
     emit todayEventsChanged();
@@ -121,6 +122,14 @@ void PlannerBackend::setOnlyOpen(bool onlyOpen) {
     reloadEvents();
     rebuildSidebar();
     emit onlyOpenChanged();
+}
+
+void PlannerBackend::setZenMode(bool enabled) {
+    if (!m_state.setZenMode(enabled)) {
+        return;
+    }
+    m_state.save();
+    emit zenModeChanged();
 }
 
 void PlannerBackend::setSearchQuery(const QString& query) {
@@ -397,6 +406,7 @@ void PlannerBackend::rebuildCommands() {
     add(QStringLiteral("view-week"), tr("Ansicht: Woche"), QString());
     add(QStringLiteral("view-list"), tr("Ansicht: Liste"), QString());
     add(QStringLiteral("toggle-open"), tr("Nur offene umschalten"), QString());
+    add(QStringLiteral("toggle-zen"), tr("Zen-Modus umschalten"), tr("Fokus auf den ausgewählten Tag"));
     add(QStringLiteral("open-settings"), tr("Einstellungen öffnen"), QString());
 
     if (m_commands != list) {

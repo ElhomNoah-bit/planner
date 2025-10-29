@@ -42,6 +42,9 @@ public:
     bool weekNumbers() const { return m_weekNumbers; }
     bool setWeekNumbers(bool enabled);
 
+    bool zenMode() const { return m_zenMode; }
+    bool setZenMode(bool enabled);
+
 private:
     mutable QSettings* m_settings;
     bool m_darkTheme = true;
@@ -52,4 +55,5 @@ private:
     QString m_weekStart = QStringLiteral("monday");
     bool m_weekNumbers = false;
     QString m_viewMode = QStringLiteral("month");
+    bool m_zenMode = false;
 };

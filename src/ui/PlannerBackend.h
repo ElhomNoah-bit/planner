@@ -20,6 +20,7 @@ class PlannerBackend : public QObject {
     Q_PROPERTY(ViewMode viewMode READ viewMode WRITE setViewMode NOTIFY viewModeChanged)
     Q_PROPERTY(QString viewModeString READ viewModeString WRITE setViewModeString NOTIFY viewModeChanged)
     Q_PROPERTY(bool onlyOpen READ onlyOpen WRITE setOnlyOpen NOTIFY onlyOpenChanged)
+    Q_PROPERTY(bool zenMode READ zenMode WRITE setZenMode NOTIFY zenModeChanged)
     Q_PROPERTY(QAbstractListModel* events READ eventsModel NOTIFY eventsChanged)
     Q_PROPERTY(QVariantList today READ todayEvents NOTIFY todayEventsChanged)
     Q_PROPERTY(QVariantList upcoming READ upcomingEvents NOTIFY upcomingEventsChanged)
@@ -46,6 +47,9 @@ public:
 
     bool onlyOpen() const { return m_state.onlyOpen(); }
     void setOnlyOpen(bool onlyOpen);
+
+    bool zenMode() const { return m_state.zenMode(); }
+    void setZenMode(bool enabled);
 
     QString searchQuery() const { return m_searchQuery; }
     void setSearchQuery(const QString& query);
@@ -74,6 +78,7 @@ signals:
     void selectedDateChanged();
     void viewModeChanged();
     void onlyOpenChanged();
+    void zenModeChanged();
     void eventsChanged();
     void todayEventsChanged();
     void upcomingEventsChanged();
