@@ -176,17 +176,4 @@ GlassPanel {
             Layout.fillHeight: true
         }
     }
-    
-    // Auto-refresh statistics
-    Timer {
-        interval: 5000 // Refresh every 5 seconds
-        running: statsPanel.visible
-        repeat: true
-        onTriggered: {
-            // Force property binding re-evaluation
-            if (pomodoroTimer) {
-                // This will trigger the property change signals
-            }
-        }
-    }
 }
