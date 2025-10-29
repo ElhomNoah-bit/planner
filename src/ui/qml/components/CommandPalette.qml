@@ -24,6 +24,8 @@ Item {
         "view-list": { keywords: ["list", "liste"], run: function() { planner.setViewMode("list") } },
         "toggle-open": { keywords: ["open", "offen", "filter"], run: function() { planner.setOnlyOpenQml(!planner.onlyOpen) } },
         "toggle-zen": { keywords: ["zen", "focus", "fokus"], run: function() { app.toggleZenMode() } },
+        "export-week": { keywords: ["export", "pdf", "woche", "week"], run: function() { app.openExportDialog("week") } },
+        "export-month": { keywords: ["export", "pdf", "monat", "month"], run: function() { app.openExportDialog("month") } },
         "open-settings": { keywords: ["settings", "einstellungen", "preferences"], run: function() { app.openSettings() } }
     })
 

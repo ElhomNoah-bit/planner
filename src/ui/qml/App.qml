@@ -126,6 +126,12 @@ ApplicationWindow {
         case "toggle-zen":
             app.toggleZenMode()
             break
+        case "export-week":
+            app.openExportDialog("week")
+            break
+        case "export-month":
+            app.openExportDialog("month")
+            break
         case "open-settings":
             settingsDialog.open()
             break
@@ -142,6 +148,11 @@ ApplicationWindow {
 
     function toggleZenMode() {
         planner.zenMode = !planner.zenMode
+    }
+
+    function openExportDialog(type) {
+        var date = new Date(planner.selectedDate)
+        exportDialog.open(type, date)
     }
 
     ColumnLayout {
@@ -243,6 +254,11 @@ ApplicationWindow {
     SettingsDialog {
         id: settingsDialog
         anchors.centerIn: parent
+    }
+
+    ExportDialog {
+        id: exportDialog
+        anchors.fill: parent
     }
 
     ToastHost {

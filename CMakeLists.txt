@@ -4,7 +4,7 @@ project(noah_planner LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.5 COMPONENTS Quick Qml QuickControls2 QuickLayouts Widgets Sql REQUIRED)
+find_package(Qt6 6.5 COMPONENTS Quick Qml QuickControls2 QuickLayouts Widgets Sql PrintSupport REQUIRED)
 
 qt_standard_project_setup()
 
@@ -21,6 +21,8 @@ qt_add_executable(noah_planner
     src/core/CategoryRepository.h
     src/core/QuickAddParser.cpp
     src/core/QuickAddParser.h
+    src/core/ScheduleExporter.cpp
+    src/core/ScheduleExporter.h
     src/core/Task.h
     src/core/Subject.h
     src/core/Exam.h
@@ -53,6 +55,7 @@ qt_add_qml_module(noah_planner
         src/ui/qml/Main.qml
         src/ui/qml/components/DayCell.qml
         src/ui/qml/components/EventChip.qml
+        src/ui/qml/components/ExportDialog.qml
         src/ui/qml/components/FilterPill.qml
         src/ui/qml/components/GlassPanel.qml
         src/ui/qml/components/IconGlyph.qml
@@ -105,6 +108,6 @@ target_link_libraries(noah_planner PRIVATE styles_module)
 
 target_include_directories(noah_planner PRIVATE src)
 
-target_link_libraries(noah_planner PRIVATE Qt6::Gui Qt6::Quick Qt6::Qml Qt6::QuickControls2 Qt6::QuickLayouts Qt6::Widgets Qt6::Sql)
+target_link_libraries(noah_planner PRIVATE Qt6::Gui Qt6::Quick Qt6::Qml Qt6::QuickControls2 Qt6::QuickLayouts Qt6::Widgets Qt6::Sql Qt6::PrintSupport)
 
 install(TARGETS noah_planner RUNTIME DESTINATION bin)

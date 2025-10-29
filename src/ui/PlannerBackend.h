@@ -80,6 +80,9 @@ public:
     Q_INVOKABLE bool updateCategory(const QString& id, const QString& name, const QString& color);
     Q_INVOKABLE bool removeCategory(const QString& id);
     Q_INVOKABLE bool setEntryCategory(const QString& entryId, const QString& categoryId);
+    Q_INVOKABLE bool exportWeekPdf(const QString& weekStartIso, const QString& filePath);
+    Q_INVOKABLE bool exportMonthPdf(const QString& monthIso, const QString& filePath);
+    Q_INVOKABLE QString lastExportError() const;
 
 signals:
     void darkThemeChanged();
@@ -113,6 +116,7 @@ private:
     QVariantList m_exams;
     QVariantList m_commands;
     QVariantList m_categories;
+    QString m_lastExportError;
 
     void initializeStorage();
     void reloadEvents();

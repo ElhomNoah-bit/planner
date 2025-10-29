@@ -1,4 +1,5 @@
 #include "PlannerBackend.h"
+#include "core/ScheduleExporter.h"
 
 #include <QCoreApplication>
 #include <QDateTime>
@@ -414,6 +415,8 @@ void PlannerBackend::rebuildCommands() {
     add(QStringLiteral("view-list"), tr("Ansicht: Liste"), QString());
     add(QStringLiteral("toggle-open"), tr("Nur offene umschalten"), QString());
     add(QStringLiteral("toggle-zen"), tr("Zen-Modus umschalten"), tr("Fokus auf den ausgewählten Tag"));
+    add(QStringLiteral("export-week"), tr("Woche als PDF exportieren"), tr("Aktuell angezeigte Woche exportieren"));
+    add(QStringLiteral("export-month"), tr("Monat als PDF exportieren"), tr("Aktuell angezeigten Monat exportieren"));
     add(QStringLiteral("open-settings"), tr("Einstellungen öffnen"), QString());
 
     if (m_commands != list) {
@@ -648,4 +651,55 @@ void PlannerBackend::rebuildCategories() {
         m_categories = list;
         emit categoriesChanged();
     }
+}
+
+bool PlannerBackend::exportWeekPdf(const QString& weekStartIso, const QString& filePath)
+{
+    QDate weekStart = fromIsoDate(weekStartIso);
+    if (!weekStart.isValid()) {
+        m_lastExportError = "Invalid week start date";
+        notify("Export fehlgeschlagen: Ungültiges Datum");
+        return false;
+    }
+
+    ScheduleExporter exporter;
+    bool success = exporter.exportWeek(weekStart, filePath, &m_repository, &m_categoryRepository);
+    
+    if (success) {
+        m_lastExportError.clear();
+        notify(QString("Wochenplan exportiert: %1").arg(filePath));
+    } else {
+        m_lastExportError = exporter.lastError();
+        notify(QString("Export fehlgeschlagen: %1").arg(m_lastExportError));
+    }
+
+    return success;
+}
+
+bool PlannerBackend::exportMonthPdf(const QString& monthIso, const QString& filePath)
+{
+    QDate month = fromIsoDate(monthIso);
+    if (!month.isValid()) {
+        m_lastExportError = "Invalid month date";
+        notify("Export fehlgeschlagen: Ungültiges Datum");
+        return false;
+    }
+
+    ScheduleExporter exporter;
+    bool success = exporter.exportMonth(month, filePath, &m_repository, &m_categoryRepository);
+    
+    if (success) {
+        m_lastExportError.clear();
+        notify(QString("Monatsplan exportiert: %1").arg(filePath));
+    } else {
+        m_lastExportError = exporter.lastError();
+        notify(QString("Export fehlgeschlagen: %1").arg(m_lastExportError));
+    }
+
+    return success;
+}
+
+QString PlannerBackend::lastExportError() const
+{
+    return m_lastExportError;
 }
