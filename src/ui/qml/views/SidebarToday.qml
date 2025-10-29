@@ -42,6 +42,60 @@ Item {
             width: flick.width
             spacing: gaps.g16
 
+            // Focus Session Section
+            GlassPanel {
+                Layout.fillWidth: true
+                padding: gaps.g16
+                ColumnLayout {
+                    Layout.fillWidth: true
+                    spacing: gaps.g12
+
+                    Label {
+                        text: qsTr("Fokus & Streak")
+                        font.pixelSize: typeScale.lg
+                        font.weight: typeScale.weightBold
+                        font.family: fonts.heading
+                        color: colors.text
+                        renderType: Text.NativeRendering
+                    }
+
+                    // Streak Badge
+                    StreakBadge {
+                        Layout.alignment: Qt.AlignHCenter
+                        streak: planner ? planner.currentStreak : 0
+                        compact: false
+                    }
+
+                    // Weekly Heatmap
+                    WeeklyHeatmap {
+                        Layout.fillWidth: true
+                        weeklyData: planner ? planner.weeklyMinutes : []
+                    }
+
+                    // Focus Controls (connected to first today task or empty)
+                    FocusControls {
+                        Layout.fillWidth: true
+                        active: planner ? planner.focusSessionActive : false
+                        paused: false
+                        elapsedSeconds: planner ? planner.focusElapsedSeconds : 0
+                        taskId: todayEvents.length > 0 ? todayEvents[0].id : ""
+                        
+                        onStartRequested: function(taskId) {
+                            if (planner) planner.startFocus(taskId);
+                        }
+                        onStopRequested: {
+                            if (planner) planner.stopFocus();
+                        }
+                        onPauseRequested: {
+                            if (planner) planner.pauseFocus();
+                        }
+                        onResumeRequested: {
+                            if (planner) planner.resumeFocus();
+                        }
+                    }
+                }
+            }
+
             GlassPanel {
                 Layout.fillWidth: true
                 padding: gaps.g16

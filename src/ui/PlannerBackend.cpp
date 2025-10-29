@@ -1,5 +1,7 @@
 #include "PlannerBackend.h"
 
+#include "core/FocusSession.h"
+
 #include <QCoreApplication>
 #include <QDateTime>
 #include <QDir>
@@ -7,6 +9,7 @@
 #include <QMap>
 #include <QStandardPaths>
 #include <QTimeZone>
+#include <QUuid>
 
 #include <algorithm>
 
@@ -44,7 +47,8 @@ int weekStartDay(const QString& setting) {
 } // namespace
 
 PlannerBackend::PlannerBackend(QObject* parent)
-    : QObject(parent) {
+    : QObject(parent),
+      m_focusTickTimer(new QTimer(this)) {
     m_searchQuery = m_state.searchQuery();
     m_viewMode = modeFromString(m_state.viewMode());
     m_selectedDate = QDate::currentDate();
@@ -54,6 +58,18 @@ PlannerBackend::PlannerBackend(QObject* parent)
     rebuildCommands();
     rebuildCategories();
     rebuildSidebar();
+    updateStreak();
+    updateWeeklyMinutes();
+
+    // Setup focus tick timer
+    m_focusTickTimer->setInterval(1000);  // 1 second
+    connect(m_focusTickTimer, &QTimer::timeout, this, [this]() {
+        if (m_focusSessionActive && !m_focusPaused) {
+            m_focusElapsedSeconds = static_cast<int>(m_focusTimer.elapsed() / 1000);
+            emit focusElapsedSecondsChanged();
+            emit focusTick(m_focusElapsedSeconds);
+        }
+    });
 
     emit selectedDateChanged();
     emit viewModeChanged();
@@ -65,6 +81,8 @@ PlannerBackend::PlannerBackend(QObject* parent)
     emit todayEventsChanged();
     emit upcomingEventsChanged();
     emit examEventsChanged();
+    emit currentStreakChanged();
+    emit weeklyMinutesChanged();
     if (!m_searchQuery.isEmpty()) {
         emit searchQueryChanged();
     }
@@ -342,10 +360,15 @@ void PlannerBackend::initializeStorage() {
     if (!m_categoryRepository.initialize(m_storageDir)) {
         qWarning() << "[PlannerBackend] Category repository initialisation failed for" << m_storageDir;
     }
+    
+    if (!m_focusSessionRepository.initialize(m_storageDir)) {
+        qWarning() << "[PlannerBackend] Focus session repository initialisation failed for" << m_storageDir;
+    }
 
     const QString storePath = m_repository.isSqlAvailable() ? m_repository.databasePath() : m_repository.jsonFallbackPath();
     qInfo() << "[PlannerBackend] DB path:" << storePath;
     qInfo() << "[PlannerBackend] Categories path:" << m_categoryRepository.categoriesPath();
+    qInfo() << "[PlannerBackend] Focus sessions path:" << m_focusSessionRepository.jsonPath();
 }
 
 void PlannerBackend::reloadEvents() {
@@ -647,5 +670,169 @@ void PlannerBackend::rebuildCategories() {
     if (m_categories != list) {
         m_categories = list;
         emit categoriesChanged();
+    }
+}
+
+bool PlannerBackend::startFocus(const QString& taskId) {
+    if (m_focusSessionActive) {
+        notify(tr("Eine Fokus-Session ist bereits aktiv"));
+        return false;
+    }
+    
+    m_activeTaskId = taskId;
+    m_activeSessionId = QUuid::createUuid().toString(QUuid::WithoutBraces);
+    m_focusSessionActive = true;
+    m_focusPaused = false;
+    m_focusElapsedSeconds = 0;
+    m_focusTimer.start();
+    m_focusTickTimer->start();
+    
+    emit focusSessionActiveChanged();
+    emit activeTaskIdChanged();
+    emit focusElapsedSecondsChanged();
+    
+    notify(tr("Fokus-Session gestartet"));
+    return true;
+}
+
+bool PlannerBackend::stopFocus() {
+    if (!m_focusSessionActive) {
+        return false;
+    }
+    
+    saveFocusSession();
+    
+    m_focusSessionActive = false;
+    m_focusPaused = false;
+    m_focusElapsedSeconds = 0;
+    m_activeTaskId.clear();
+    m_activeSessionId.clear();
+    m_focusTickTimer->stop();
+    
+    emit focusSessionActiveChanged();
+    emit activeTaskIdChanged();
+    emit focusElapsedSecondsChanged();
+    
+    updateStreak();
+    updateWeeklyMinutes();
+    
+    notify(tr("Fokus-Session beendet"));
+    return true;
+}
+
+bool PlannerBackend::pauseFocus() {
+    if (!m_focusSessionActive || m_focusPaused) {
+        return false;
+    }
+    
+    m_focusPaused = true;
+    notify(tr("Fokus-Session pausiert"));
+    return true;
+}
+
+bool PlannerBackend::resumeFocus() {
+    if (!m_focusSessionActive || !m_focusPaused) {
+        return false;
+    }
+    
+    m_focusPaused = false;
+    notify(tr("Fokus-Session fortgesetzt"));
+    return true;
+}
+
+void PlannerBackend::saveFocusSession() {
+    if (!m_focusSessionActive || m_activeSessionId.isEmpty()) {
+        return;
+    }
+    
+    FocusSession session;
+    session.id = m_activeSessionId;
+    session.taskId = m_activeTaskId;
+    session.start = QDateTime::currentDateTime().addSecs(-m_focusElapsedSeconds);
+    session.end = QDateTime::currentDateTime();
+    session.durationSeconds = m_focusElapsedSeconds;
+    session.completed = true;
+    
+    if (!m_focusSessionRepository.insert(session)) {
+        qWarning() << "[PlannerBackend] Failed to save focus session";
+    } else {
+        qInfo() << "[PlannerBackend] Saved focus session:" << session.durationSeconds << "seconds";
+    }
+}
+
+QVariantList PlannerBackend::getFocusHistory(const QString& startDate, const QString& endDate) const {
+    QDate start = QDate::fromString(startDate, Qt::ISODate);
+    QDate end = QDate::fromString(endDate, Qt::ISODate);
+    
+    if (!start.isValid() || !end.isValid()) {
+        return QVariantList();
+    }
+    
+    QVector<FocusSession> sessions = m_focusSessionRepository.loadBetween(start, end);
+    QVariantList result;
+    
+    for (const FocusSession& session : sessions) {
+        QVariantMap map;
+        map.insert(QStringLiteral("id"), session.id);
+        map.insert(QStringLiteral("taskId"), session.taskId);
+        map.insert(QStringLiteral("start"), session.start.toString(Qt::ISODate));
+        map.insert(QStringLiteral("end"), session.end.toString(Qt::ISODate));
+        map.insert(QStringLiteral("durationSeconds"), session.durationSeconds);
+        map.insert(QStringLiteral("completed"), session.completed);
+        result.append(map);
+    }
+    
+    return result;
+}
+
+int PlannerBackend::getTodayFocusMinutes() const {
+    return m_focusSessionRepository.getTotalMinutesForDate(QDate::currentDate());
+}
+
+void PlannerBackend::updateStreak() {
+    QDate today = QDate::currentDate();
+    int streak = 0;
+    
+    // Count consecutive days with at least DAILY_THRESHOLD_MINUTES of focus
+    for (QDate date = today; date.isValid(); date = date.addDays(-1)) {
+        int minutes = m_focusSessionRepository.getTotalMinutesForDate(date);
+        if (minutes >= DAILY_THRESHOLD_MINUTES) {
+            streak++;
+        } else {
+            break;  // Streak broken
+        }
+        
+        // Safety limit: don't check more than 365 days back
+        if (today.daysTo(date) < -365) {
+            break;
+        }
+    }
+    
+    if (m_currentStreak != streak) {
+        m_currentStreak = streak;
+        emit currentStreakChanged();
+    }
+}
+
+void PlannerBackend::updateWeeklyMinutes() {
+    QDate today = QDate::currentDate();
+    int dayOfWeek = today.dayOfWeek();  // Monday = 1, Sunday = 7
+    QDate weekStart = today.addDays(1 - dayOfWeek);  // Start from Monday
+    
+    QMap<QDate, int> weeklyData = m_focusSessionRepository.getWeeklyMinutes(weekStart);
+    
+    QVariantList list;
+    for (int i = 0; i < 7; ++i) {
+        QDate date = weekStart.addDays(i);
+        QVariantMap map;
+        map.insert(QStringLiteral("date"), date.toString(Qt::ISODate));
+        map.insert(QStringLiteral("minutes"), weeklyData.value(date, 0));
+        map.insert(QStringLiteral("dayName"), QLocale().toString(date, QStringLiteral("ddd")));
+        list.append(map);
+    }
+    
+    if (m_weeklyMinutes != list) {
+        m_weeklyMinutes = list;
+        emit weeklyMinutesChanged();
     }
 }

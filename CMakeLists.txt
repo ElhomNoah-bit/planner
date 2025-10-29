@@ -19,12 +19,15 @@ qt_add_executable(noah_planner
     src/core/EventRepository.h
     src/core/CategoryRepository.cpp
     src/core/CategoryRepository.h
+    src/core/FocusSessionRepository.cpp
+    src/core/FocusSessionRepository.h
     src/core/QuickAddParser.cpp
     src/core/QuickAddParser.h
     src/core/Task.h
     src/core/Subject.h
     src/core/Exam.h
     src/core/Category.h
+    src/core/FocusSession.h
     src/models/EventModel.cpp
     src/models/EventModel.h
     src/models/TaskModel.cpp
@@ -69,6 +72,9 @@ qt_add_qml_module(noah_planner
     src/ui/qml/components/SettingsDialog.qml
         src/ui/qml/components/TodayTaskDelegate.qml
         src/ui/qml/components/ZenToggleButton.qml
+        src/ui/qml/components/StreakBadge.qml
+        src/ui/qml/components/WeeklyHeatmap.qml
+        src/ui/qml/components/FocusControls.qml
         src/ui/qml/views/AgendaView.qml
         src/ui/qml/views/MonthView.qml
         src/ui/qml/views/SidebarToday.qml
