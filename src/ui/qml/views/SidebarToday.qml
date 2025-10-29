@@ -364,6 +364,12 @@ Item {
                     }
                 }
             }
+            
+            // Pomodoro Statistics
+            PomodoroStats {
+                Layout.fillWidth: true
+                pomodoroTimer: planner ? planner.pomodoroTimer : null
+            }
         }
 
         ScrollIndicator.vertical: ScrollIndicator { }

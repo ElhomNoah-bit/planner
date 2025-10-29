@@ -70,6 +70,7 @@ qt_add_qml_module(noah_planner
         src/ui/qml/components/SegmentedControl.qml
         src/ui/qml/components/TimerOverlay.qml
         src/ui/qml/components/PomodoroOverlay.qml
+        src/ui/qml/components/PomodoroStats.qml
         src/ui/qml/components/Toast.qml
         src/ui/qml/components/ToastHost.qml
     src/ui/qml/components/SettingsDialog.qml

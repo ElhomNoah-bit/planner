@@ -6,8 +6,9 @@ This document describes the technical implementation details and new features ad
 
 1. [Zen Mode](#zen-mode)
 2. [Category System](#category-system)
-3. [Keyboard Shortcuts](#keyboard-shortcuts)
-4. [Settings & Persistence](#settings--persistence)
+3. [Pomodoro Focus Timer](#pomodoro-focus-timer)
+4. [Keyboard Shortcuts](#keyboard-shortcuts)
+5. [Settings & Persistence](#settings--persistence)
 
 ---
 
@@ -155,6 +156,7 @@ EventChip {
 | `Ctrl/Cmd + K` | Open Command Palette | Quick access to all commands |
 | `Ctrl/Cmd + N` | New Entry | Open quick add dialog |
 | `Ctrl/Cmd + T` | Go to Today | Jump to current date |
+| `Ctrl/Cmd + P` | Start Pomodoro | Open Pomodoro timer overlay |
 | `Ctrl/Cmd + .` | Toggle Zen Mode | Enable/disable focus mode |
 | `Ctrl/Cmd + 1` | Month View | Switch to calendar month view |
 | `Ctrl/Cmd + 2` | Week View | Switch to week timeline view |
@@ -228,6 +230,170 @@ Location: `~/.local/share/NoahPlanner/`
 
 ---
 
+## Pomodoro Focus Timer
+
+**Purpose**: Time-boxed focus sessions using the Pomodoro Technique with automatic break management, session tracking, and statistics.
+
+### Data Model
+
+**FocusSession Structure** (`FocusSession.h`):
+```cpp
+struct FocusSession {
+    QString id;              // Unique session identifier
+    QString taskId;          // Optional linked task
+    FocusMode mode;          // Work, ShortBreak, LongBreak
+    PomodoroPreset preset;   // 25/5, 50/10, Custom
+    int currentRound;        // Current Pomodoro round (1-4)
+    int totalRounds;         // Rounds before long break (default: 4)
+    int workMinutes;         // Work duration
+    int shortBreakMinutes;   // Short break duration
+    int longBreakMinutes;    // Long break duration
+    int remainingSeconds;    // Remaining time in current phase
+    bool isPaused;
+    bool isActive;
+    QDateTime startTime;
+    QDateTime lastTickTime;  // For recovery after app restart
+};
+```
+
+### Presets
+
+Three built-in presets available:
+1. **Classic Pomodoro (25/5)**: 25 min work, 5 min short break, 15 min long break
+2. **Extended (50/10)**: 50 min work, 10 min short break, 20 min long break
+3. **Custom** (planned): User-defined durations
+
+### State Machine
+
+**Work → Break Cycle**:
+1. Start with Work phase (round 1)
+2. After work: Short Break
+3. After short break: Work (round 2)
+4. Repeat until round 4 completes
+5. After round 4: Long Break
+6. After long break: Reset to round 1 or stop
+
+### Persistence
+
+**FocusSessionRepository** (`FocusSessionRepository.cpp`):
+- Active session: `~/.local/share/NoahPlanner/focus_session_active.json`
+- History log: `~/.local/share/NoahPlanner/focus_session_history.json`
+- Keeps last 1000 completed sessions
+- Session recovery on app restart (1-hour timeout)
+
+### Backend API
+
+**PomodoroTimer** (exposed via `PlannerBackend.pomodoroTimer`):
+
+**Properties**:
+```cpp
+bool isActive          // Whether timer is running
+bool isPaused          // Whether timer is paused
+int remainingSeconds   // Seconds left in current phase
+int totalSeconds       // Total seconds in current phase
+QString modeString     // "work", "short_break", "long_break"
+int currentRound       // Current round number
+int totalRounds        // Total rounds in session
+QString presetString   // "25/5", "50/10", "custom"
+int totalFocusMinutes  // All-time focus minutes
+int totalCompletedRounds // All-time completed rounds
+```
+
+**Methods**:
+```cpp
+startSession(preset, taskId)        // Start new session
+startCustomSession(work, break, id) // Custom duration
+pause()                              // Pause current session
+resume()                             // Resume paused session
+skip()                               // Skip to next phase
+extend(minutes)                      // Add minutes to current phase
+stop()                               // Stop and discard session
+getRecentHistory(limit)              // Get last N sessions
+getStatistics()                      // Get statistics including last 7 days
+```
+
+**Signals**:
+```cpp
+phaseChanged(QString)  // Emitted when phase transitions
+roundCompleted()       // Emitted when work round completes
+sessionCompleted()     // Emitted when full session completes
+```
+
+### UI Components
+
+**PomodoroOverlay.qml**:
+- Modal overlay with circular progress ring
+- Preset selection (25/5, 50/10)
+- Timer display with phase indicator
+- Round counter (e.g., "Runde 2 von 4")
+- Controls: Start/Pause/Resume, Stop, Skip, +5 Min
+- Color-coded phases:
+  - Work: Accent color
+  - Short Break: Green
+  - Long Break: Blue
+
+**PomodoroStats.qml** (Sidebar component):
+- Total focus minutes
+- Total completed rounds
+- Average minutes per round
+- Total focus hours
+- Motivational messages based on progress
+
+### Keyboard Shortcut
+
+**Ctrl/Cmd + P**: Open Pomodoro overlay
+
+### Command Palette
+
+Search for "pomodoro", "timer", or "fokus" to start a session.
+
+### Usage Example
+
+**From QML**:
+```qml
+// Access via PlannerBackend
+planner.pomodoroTimer.startSession("25/5", "")
+
+// Listen to phase changes
+Connections {
+    target: planner.pomodoroTimer
+    function onPhaseChanged(newPhase) {
+        console.log("Phase:", newPhase)
+    }
+    function onRoundCompleted() {
+        // Show notification
+    }
+}
+```
+
+**From UI**:
+1. Click "🍅 Jetzt Fokus" button in sidebar
+2. Select preset (25/5 or 50/10)
+3. Click "Start"
+4. Timer runs automatically through work/break cycles
+5. Statistics update in real-time in sidebar
+
+### Features
+
+✅ **Auto-transitions**: Automatically switches between work and break phases
+✅ **State persistence**: Survives app restarts (with 1-hour timeout)
+✅ **Session recovery**: Adjusts remaining time based on elapsed time
+✅ **Pause/Resume**: Can pause and resume at any time
+✅ **Skip phase**: Jump to next phase if needed
+✅ **Extend time**: Add 5 minutes to current phase
+✅ **Statistics tracking**: All-time and daily statistics
+✅ **History log**: Last 1000 sessions stored
+✅ **Round counter**: Visual indication of progress
+
+### Notifications (Planned)
+
+Future enhancement: System notifications when:
+- Work phase completes → Time for break
+- Break completes → Time to focus
+- Full session completes → Achievement unlocked
+
+---
+
 ## Architecture Notes
 
 ### Design Principles
@@ -278,6 +444,26 @@ Location: `~/.local/share/NoahPlanner/`
 - [ ] CategoryPicker shows all categories
 - [ ] Colors meet contrast requirements (AA)
 
+**Pomodoro Timer**:
+- [ ] Can start session with 25/5 preset
+- [ ] Can start session with 50/10 preset
+- [ ] Circular progress ring displays correctly
+- [ ] Timer counts down every second
+- [ ] Pause/resume functionality works
+- [ ] Skip phase transitions correctly
+- [ ] Extend adds 5 minutes correctly
+- [ ] Auto-transitions from work to break
+- [ ] Auto-transitions from break to work
+- [ ] Round counter increments correctly
+- [ ] Long break after 4 rounds
+- [ ] Session completes after long break
+- [ ] Statistics update after completion
+- [ ] State persists across app restarts
+- [ ] Keyboard shortcut (Ctrl+P) opens overlay
+- [ ] "Jetzt Fokus" button in sidebar works
+- [ ] Command palette integration works
+- [ ] Statistics display updates in real-time
+
 **Integration**:
 - [ ] Zen mode + categories work together
 - [ ] Category filtering doesn't break other filters
@@ -290,10 +476,11 @@ Location: `~/.local/share/NoahPlanner/`
 Planned features (in order of priority):
 1. Drag & Drop rescheduling
 2. Automatic priority calculation
-3. Focus sessions & streaks (Pomodoro)
+3. ~~Focus sessions & streaks (Pomodoro)~~ ✅ **COMPLETED**
 4. Deadline stress indicators
 5. PDF export functionality
-6. Enhanced timer with statistics
+6. System notifications for Pomodoro phase transitions
+7. Pomodoro streak tracking and achievements
 
 ---
 
@@ -309,5 +496,5 @@ When adding new features:
 
 ---
 
-Last Updated: 2025-01-29
-Version: 2.1.0
+Last Updated: 2025-10-29
+Version: 2.2.0
