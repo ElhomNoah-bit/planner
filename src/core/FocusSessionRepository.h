@@ -5,6 +5,7 @@
 #include <QDate>
 #include <QJsonArray>
 #include <QJsonObject>
+#include <QMap>
 #include <QString>
 #include <QVector>
 
