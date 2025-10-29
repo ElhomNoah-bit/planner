@@ -11,6 +11,16 @@ Rectangle {
     property string timeText: ""
     property bool timed: timeText.length > 0
     property string categoryColor: ""
+    
+    // Drag & Drop properties
+    property string entryId: ""
+    property string startIso: ""
+    property string endIso: ""
+    property bool allDay: false
+    property bool draggable: entryId.length > 0
+    
+    signal dragStarted(string entryId, string startIso, string endIso, bool allDay)
+    signal dragFinished()
 
     implicitHeight: 26
     implicitWidth: Math.max(92, contentRow.implicitWidth + Styles.ThemeStore.g16)
@@ -18,6 +28,12 @@ Rectangle {
     color: muted ? Styles.ThemeStore.cardAlt : Styles.ThemeStore.cardBg
     border.width: categoryColor.length > 0 ? 2 : (overdue ? 1 : 0)
     border.color: categoryColor.length > 0 ? categoryColor : (overdue ? Styles.ThemeStore.danger : "transparent")
+    
+    opacity: dragHandler.active ? 0.5 : 1.0
+    
+    Behavior on opacity {
+        NumberAnimation { duration: 100; easing.type: Easing.InOutQuad }
+    }
 
     RowLayout {
         id: contentRow
@@ -73,5 +89,34 @@ Rectangle {
 
     HoverHandler {
         id: hoverHandler
+        cursorShape: chip.draggable ? Qt.OpenHandCursor : Qt.ArrowCursor
+    }
+    
+    DragHandler {
+        id: dragHandler
+        enabled: chip.draggable
+        cursorShape: Qt.ClosedHandCursor
+        
+        onActiveChanged: {
+            if (active) {
+                chip.dragStarted(chip.entryId, chip.startIso, chip.endIso, chip.allDay)
+            } else {
+                chip.dragFinished()
+            }
+        }
+    }
+    
+    Drag.active: dragHandler.active
+    Drag.hotSpot.x: width / 2
+    Drag.hotSpot.y: height / 2
+    Drag.mimeData: { 
+        "text/plain": chip.entryId,
+        "application/x-planner-entry": JSON.stringify({
+            id: chip.entryId,
+            startIso: chip.startIso,
+            endIso: chip.endIso,
+            allDay: chip.allDay,
+            label: chip.label
+        })
     }
 }

@@ -16,6 +16,9 @@ FocusScope {
     property var visibleEvents: (events || []).slice(0, maxVisible)
     property int extraCount: Math.max(0, (events || []).length - maxVisible)
     readonly property color hoverFill: Qt.lighter(Styles.ThemeStore.colors.cardBg, 1.08)
+    
+    // Drop support
+    property bool dropActive: dropArea.containsDrag
 
     signal activated(string isoDate)
     signal contextCreateEvent(string isoDate)
@@ -27,6 +30,65 @@ FocusScope {
 
     Accessible.role: Accessible.Button
     Accessible.name: Qt.formatDate(dateObject, "dddd, dd. MMMM")
+    
+    DropArea {
+        id: dropArea
+        anchors.fill: parent
+        
+        onDropped: function(drop) {
+            if (drop.hasText) {
+                var entryId = drop.text
+                var data = drop.getDataAsString("application/x-planner-entry")
+                if (data && data.length > 0) {
+                    try {
+                        var dragData = JSON.parse(data)
+                        handleDrop(dragData)
+                        drop.accept()
+                    } catch (e) {
+                        console.warn("Failed to parse drag data:", e)
+                        drop.accept(Qt.IgnoreAction)
+                    }
+                }
+            }
+        }
+        
+        onEntered: function(drag) {
+            drag.accepted = true
+        }
+    }
+    
+    function handleDrop(dragData) {
+        if (!dragData.id || !dragData.startIso || !dragData.endIso) {
+            return
+        }
+        
+        // Parse old dates
+        var oldStart = new Date(dragData.startIso)
+        var oldEnd = new Date(dragData.endIso)
+        var targetDate = root.dateObject
+        
+        // For month view: keep time, change date
+        var newStart = new Date(targetDate)
+        var newEnd = new Date(targetDate)
+        
+        if (dragData.allDay) {
+            // All-day events: just change the date
+            newStart.setHours(0, 0, 0, 0)
+            newEnd.setHours(23, 59, 59, 999)
+        } else {
+            // Timed events: preserve time, change date
+            newStart.setHours(oldStart.getHours(), oldStart.getMinutes(), oldStart.getSeconds(), oldStart.getMilliseconds())
+            newEnd.setHours(oldEnd.getHours(), oldEnd.getMinutes(), oldEnd.getSeconds(), oldEnd.getMilliseconds())
+        }
+        
+        var newStartIso = Qt.formatDateTime(newStart, Qt.ISODate)
+        var newEndIso = Qt.formatDateTime(newEnd, Qt.ISODate)
+        
+        // Call backend to move entry
+        if (planner.moveEntry(dragData.id, newStartIso, newEndIso)) {
+            console.log("Entry moved successfully to", root.isoDate)
+        }
+    }
 
     Rectangle {
         id: backdrop
@@ -46,6 +108,19 @@ FocusScope {
         }
         Behavior on border.color {
             ColorAnimation { duration: 140; easing.type: Easing.InOutQuad }
+        }
+    }
+    
+    // Drop indicator overlay
+    Rectangle {
+        anchors.fill: parent
+        radius: Styles.ThemeStore.r12
+        color: Styles.ThemeStore.colors.accent
+        opacity: root.dropActive ? 0.15 : 0
+        visible: root.dropActive
+        
+        Behavior on opacity {
+            NumberAnimation { duration: 100; easing.type: Easing.InOutQuad }
         }
     }
 
@@ -95,6 +170,10 @@ FocusScope {
                 timeText: modelData.startTimeLabel
                 overdue: modelData.overdue
                 categoryColor: modelData.categoryColor || ""
+                entryId: modelData.id || ""
+                startIso: modelData.start || ""
+                endIso: modelData.end || ""
+                allDay: modelData.allDay || false
             }
         }
 

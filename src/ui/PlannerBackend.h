@@ -80,6 +80,7 @@ public:
     Q_INVOKABLE bool updateCategory(const QString& id, const QString& name, const QString& color);
     Q_INVOKABLE bool removeCategory(const QString& id);
     Q_INVOKABLE bool setEntryCategory(const QString& entryId, const QString& categoryId);
+    Q_INVOKABLE bool moveEntry(const QString& entryId, const QString& newStartIso, const QString& newEndIso);
 
 signals:
     void darkThemeChanged();
@@ -95,6 +96,7 @@ signals:
     void searchQueryChanged();
     void categoriesChanged();
     void toastRequested(const QString& message);
+    void entryMoved(const QString& entryId, const QString& oldStartIso, const QString& oldEndIso);
 
 private:
     EventRepository m_repository;
