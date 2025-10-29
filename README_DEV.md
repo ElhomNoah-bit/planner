@@ -285,12 +285,196 @@ Location: `~/.local/share/NoahPlanner/`
 
 ---
 
+## Focus Sessions & Streaks
+
+**Purpose**: Track focus time with gamification through daily streaks. Helps maintain consistent study habits.
+
+### Implementation
+
+**Data Model** (`FocusSession.h`):
+```cpp
+struct FocusSession {
+    QString id;
+    QString taskId;
+    QDateTime start;
+    QDateTime end;
+    int durationSeconds;
+    bool completed;
+};
+```
+
+**FocusSessionRepository** (`FocusSessionRepository.cpp`):
+- JSON-based storage in `~/.local/share/NoahPlanner/focus_sessions.json`
+- CRUD operations with date-based queries
+- Streak calculation: minimum 30 minutes per day
+- Weekly aggregation for heatmap visualization
+
+### Backend API
+
+**PlannerBackend Properties**:
+```cpp
+Q_PROPERTY(bool focusSessionActive ...)
+Q_PROPERTY(int focusElapsedSeconds ...)
+Q_PROPERTY(int currentStreak ...)
+Q_PROPERTY(QVariantList weeklyMinutes ...)
+```
+
+**Methods**:
+```cpp
+// Session control
+Q_INVOKABLE bool startFocus(const QString& taskId);
+Q_INVOKABLE bool stopFocus();
+Q_INVOKABLE bool pauseFocus();
+Q_INVOKABLE bool resumeFocus();
+
+// Data access
+Q_INVOKABLE int getTodayFocusMinutes() const;
+Q_INVOKABLE QVariantList getFocusHistory(const QString& start, const QString& end) const;
+```
+
+**Signals**:
+```cpp
+void focusTick(int elapsedSeconds);  // Emitted every second during active session
+void currentStreakChanged();
+void weeklyMinutesChanged();
+```
+
+### QML Components
+
+**StreakBadge** (`components/StreakBadge.qml`):
+- Displays current streak with fire emoji
+- Compact/full modes
+- Tooltip with threshold info
+```qml
+StreakBadge {
+    streak: planner.currentStreak
+    compact: false
+}
+```
+
+**WeeklyHeatmap** (`components/WeeklyHeatmap.qml`):
+- Visual bar chart of weekly focus time
+- Color intensity based on minutes
+- Animated transitions
+```qml
+WeeklyHeatmap {
+    weeklyData: planner.weeklyMinutes
+    maxMinutes: 120
+}
+```
+
+**FocusControls** (`components/FocusControls.qml`):
+- Start/stop/pause controls
+- Real-time timer display (MM:SS)
+- Integrated in SidebarToday
+```qml
+FocusControls {
+    active: planner.focusSessionActive
+    elapsedSeconds: planner.focusElapsedSeconds
+    taskId: currentTaskId
+    onStartRequested: planner.startFocus(taskId)
+    onStopRequested: planner.stopFocus()
+}
+```
+
+### Technical Details
+
+**Timer Accuracy**:
+- Uses `QElapsedTimer` for drift-free timing
+- 1 second update interval via `QTimer`
+- Persists session on stop (prevents data loss)
+
+**Streak Logic**:
+- Threshold: 30 minutes minimum per day
+- Counts backwards from today until first day below threshold
+- Updated automatically when sessions are saved
+- Safety limit: 365 days maximum lookback
+
+**Midnight Boundary**:
+- Sessions spanning midnight attributed to start date
+- No special handling needed (date comparison handles it)
+- Weekly view correctly aggregates by date
+
+**Persistence**:
+- Atomic writes to prevent corruption
+- Session saved immediately on stop
+- No automatic recovery after restart (prevents accidental tracking)
+
+### Integration
+
+Focus session components are integrated into `SidebarToday.qml`:
+1. **Streak Badge**: Shows current streak at top
+2. **Weekly Heatmap**: Visual representation of week's focus time
+3. **Focus Controls**: Start/stop controls linked to first today task
+
+### Usage Example
+
+```qml
+// In SidebarToday.qml
+GlassPanel {
+    ColumnLayout {
+        Label { text: qsTr("Fokus & Streak") }
+        
+        StreakBadge {
+            streak: planner.currentStreak
+        }
+        
+        WeeklyHeatmap {
+            weeklyData: planner.weeklyMinutes
+        }
+        
+        FocusControls {
+            active: planner.focusSessionActive
+            elapsedSeconds: planner.focusElapsedSeconds
+            taskId: todayEvents.length > 0 ? todayEvents[0].id : ""
+            
+            onStartRequested: planner.startFocus(taskId)
+            onStopRequested: planner.stopFocus()
+            onPauseRequested: planner.pauseFocus()
+            onResumeRequested: planner.resumeFocus()
+        }
+    }
+}
+```
+
+### Testing
+
+Manual tests (`docs/FOCUS_SESSIONS.md`):
+- Start/stop session
+- Pause/resume functionality
+- Streak increment logic
+- Midnight boundary handling
+- App restart recovery
+
+Automated test (`test_focus_sessions.py`):
+```bash
+python3 test_focus_sessions.py
+```
+
+### Storage Format
+
+**focus_sessions.json**:
+```json
+[
+  {
+    "id": "session-uuid",
+    "taskId": "task-123",
+    "start": "2025-10-29T10:00:00",
+    "end": "2025-10-29T10:45:00",
+    "durationSeconds": 2700,
+    "completed": true
+  }
+]
+```
+
+---
+
 ## Future Enhancements
 
 Planned features (in order of priority):
-1. Drag & Drop rescheduling
-2. Automatic priority calculation
-3. Focus sessions & streaks (Pomodoro)
+1. ~~Drag & Drop rescheduling~~
+2. ~~Automatic priority calculation~~
+3. ~~Focus sessions & streaks (Pomodoro)~~ ✓ **IMPLEMENTED**
 4. Deadline stress indicators
 5. PDF export functionality
 6. Enhanced timer with statistics
