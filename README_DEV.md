@@ -6,8 +6,9 @@ This document describes the technical implementation details and new features ad
 
 1. [Zen Mode](#zen-mode)
 2. [Category System](#category-system)
-3. [Keyboard Shortcuts](#keyboard-shortcuts)
-4. [Settings & Persistence](#settings--persistence)
+3. [Deadline Stress Indicator](#deadline-stress-indicator)
+4. [Keyboard Shortcuts](#keyboard-shortcuts)
+5. [Settings & Persistence](#settings--persistence)
 
 ---
 
@@ -148,6 +149,125 @@ EventChip {
 
 ---
 
+## Deadline Stress Indicator
+
+**Purpose**: Visual emphasis on approaching deadlines to help users prioritize urgent tasks.
+
+### Implementation
+
+**Backend (C++)**:
+- Added `DeadlineSeverity` enum with levels: None, Normal, Warn, Danger, Overdue
+- `calculateDeadlineSeverity()` method determines severity based on time thresholds
+- Added `stressIndicatorEnabled` boolean property to `AppState` class
+- Persisted in QSettings under `ui/stressIndicatorEnabled` key (default: true)
+- Added corresponding property to `PlannerBackend` with signal support
+- Added `urgentEvents` property that filters events by severity
+
+**Severity Thresholds**:
+- **Normal**: More than 72 hours until deadline
+- **Warn**: Less than 72 hours (3 days) until deadline
+- **Danger**: Less than 24 hours (1 day) until deadline
+- **Overdue**: Deadline has passed
+
+**UI Components**:
+- **EventChip.qml**: Enhanced with deadline severity styling
+  - Border color changes based on severity (warn: amber, danger: orange-red, overdue: red)
+  - Subtle pulse/glow animation for danger and overdue states
+  - Animation is reduced/disabled in Zen Mode
+  - Width: 2px border for danger/overdue, 1px for warn
+
+- **TodayTaskDelegate.qml**: Task cards with severity indicators
+  - Same color coding as EventChip
+  - Pulse/glow effect for urgent items
+  - Animation pauses when task is marked as done
+  - Respects Zen Mode setting
+
+- **SidebarToday.qml**: New "Dringend" (Urgent) section
+  - Displays events with warn/danger/overdue severity
+  - Sorted by deadline (most urgent first)
+  - Shows above "Heute" (Today) section
+  - Icon indicator (⚠️) for visual emphasis
+  - Only visible when stress indicator is enabled and urgent items exist
+
+- **SettingsDialog.qml**: Toggle control
+  - Switch to enable/disable stress indicator feature
+  - Description: "Visuelle Hervorhebung nahender Deadlines"
+  - Changes take effect immediately
+
+**Theme Tokens**:
+- `Styles.ThemeStore.colors.warn` - `#F59E0B` (Amber)
+- `Styles.ThemeStore.colors.danger` - `#F97066` (Orange-Red)
+- `Styles.ThemeStore.colors.overdue` - `#DC2626` (Red)
+
+**Behavior**:
+- Severity is calculated in real-time based on current datetime
+- Time calculations use `QDateTime::currentDateTime()` for timezone awareness
+- Severity updates when events are reloaded or sidebar is rebuilt
+- Pulse animation: 1500ms cycle (smooth sine easing)
+- Animation opacity: 0 to 0.4 (subtle, non-distracting)
+
+**Zen Mode Integration**:
+- Pulse/glow animations are disabled when Zen Mode is active
+- Border colors remain visible for accessibility
+- Ensures focus mode isn't disrupted by animations
+
+### Usage Example
+
+**Backend - Calculate Severity**:
+```cpp
+PlannerBackend::DeadlineSeverity severity = calculateDeadlineSeverity(record.due);
+// Returns: None, Normal, Warn, Danger, or Overdue
+```
+
+**QML - EventChip with Severity**:
+```qml
+EventChip {
+    label: modelData.title
+    deadlineSeverity: modelData.deadlineSeverityString || "none"
+    zenMode: root.zenMode
+    // Border and animation applied automatically
+}
+```
+
+**QML - Check in Sidebar**:
+```qml
+property var urgentEvents: planner && planner.urgentEvents ? planner.urgentEvents : []
+
+GlassPanel {
+    visible: planner.stressIndicatorEnabled && urgentEvents.length > 0
+    // Display urgent section
+}
+```
+
+### Accessibility
+
+- Not reliant solely on color coding
+- Warning icon (⚠️) provides visual indicator
+- Border width changes provide tactile difference
+- Text color changes for deadline information
+- Can be fully disabled via settings for users who prefer minimal UI
+
+### Testing Considerations
+
+**Time Threshold Tests**:
+- Verify transitions at exact threshold times (72h, 24h, 0h)
+- Test with events crossing midnight
+- Verify correct handling across timezones
+- Test daylight saving time transitions
+
+**UI Tests**:
+- Confirm no flickering during auto-updates
+- Verify animation performance with many urgent items
+- Test interaction with Zen Mode (animations off)
+- Confirm sorting order in urgent section
+
+**Settings Tests**:
+- Verify toggle persists across app restarts
+- Confirm urgent section hides when disabled
+- Verify immediate UI update when toggled
+
+---
+
 ## Keyboard Shortcuts
 
 | Shortcut | Action | Description |
@@ -174,6 +294,7 @@ Location: `~/.config/noah/planner.conf` (Linux)
 darkTheme=true
 onlyOpen=false
 zenMode=false
+stressIndicatorEnabled=true
 searchQuery=
 viewMode=month
 language=de
