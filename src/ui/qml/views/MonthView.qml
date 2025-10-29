@@ -97,6 +97,7 @@ Item {
                         isToday: modelData.isToday
                         selected: modelData.iso === month.selectedIso
                         events: modelData.events
+                        zenMode: month.zenMode
                         Layout.fillWidth: true
                         Layout.fillHeight: true
                         Layout.preferredWidth: Math.max(120, grid.cellWidth)

@@ -10,6 +10,7 @@ FocusScope {
     property bool isToday: false
     property var events: []
     property int maxVisible: 3
+    property bool zenMode: false
     readonly property var dateObject: isoDate.length > 0 ? new Date(isoDate) : new Date()
     readonly property int dayNumber: dateObject.getDate()
     readonly property bool hovered: hoverHandler.hovered
@@ -95,6 +96,8 @@ FocusScope {
                 timeText: modelData.startTimeLabel
                 overdue: modelData.overdue
                 categoryColor: modelData.categoryColor || ""
+                deadlineSeverity: modelData.deadlineSeverityString || "none"
+                zenMode: root.zenMode
             }
         }
 

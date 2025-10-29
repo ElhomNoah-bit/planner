@@ -29,12 +29,17 @@ class PlannerBackend : public QObject {
     Q_PROPERTY(QVariantList commands READ commands NOTIFY commandsChanged)
     Q_PROPERTY(QString searchQuery READ searchQuery WRITE setSearchQuery NOTIFY searchQueryChanged)
     Q_PROPERTY(QVariantList categories READ categories NOTIFY categoriesChanged)
+    Q_PROPERTY(bool stressIndicatorEnabled READ stressIndicatorEnabled WRITE setStressIndicatorEnabled NOTIFY stressIndicatorEnabledChanged)
+    Q_PROPERTY(QVariantList urgentEvents READ urgentEvents NOTIFY urgentEventsChanged)
 
 public:
     explicit PlannerBackend(QObject* parent = nullptr);
 
     enum class ViewMode { Month = 0, Week = 1, List = 2 };
     Q_ENUM(ViewMode)
+
+    enum class DeadlineSeverity { None = 0, Normal = 1, Warn = 2, Danger = 3, Overdue = 4 };
+    Q_ENUM(DeadlineSeverity)
 
     bool darkTheme() const;
     void setDarkTheme(bool dark);
@@ -53,6 +58,9 @@ public:
     bool zenMode() const { return m_state.zenMode(); }
     void setZenMode(bool enabled);
 
+    bool stressIndicatorEnabled() const { return m_state.stressIndicatorEnabled(); }
+    void setStressIndicatorEnabled(bool enabled);
+
     QString searchQuery() const { return m_searchQuery; }
     void setSearchQuery(const QString& query);
 
@@ -60,6 +68,7 @@ public:
     QVariantList todayEvents() const { return m_today; }
     QVariantList upcomingEvents() const { return m_upcoming; }
     QVariantList examEvents() const { return m_exams; }
+    QVariantList urgentEvents() const { return m_urgent; }
     QVariantList commands() const { return m_commands; }
     QVariantList categories() const { return m_categories; }
 
@@ -87,10 +96,12 @@ signals:
     void viewModeChanged();
     void onlyOpenChanged();
     void zenModeChanged();
+    void stressIndicatorEnabledChanged();
     void eventsChanged();
     void todayEventsChanged();
     void upcomingEventsChanged();
     void examEventsChanged();
+    void urgentEventsChanged();
     void commandsChanged();
     void searchQueryChanged();
     void categoriesChanged();
@@ -111,6 +122,7 @@ private:
     QVariantList m_today;
     QVariantList m_upcoming;
     QVariantList m_exams;
+    QVariantList m_urgent;
     QVariantList m_commands;
     QVariantList m_categories;
 
@@ -127,4 +139,5 @@ private:
     QString modeToString(ViewMode mode) const;
     void logEventLoad(int count) const;
     void notify(const QString& message);
+    DeadlineSeverity calculateDeadlineSeverity(const QDateTime& due) const;
 };

@@ -9,6 +9,8 @@ Item {
     property int duration: 25
     property color subjectColor: Styles.ThemeStore.colors.accent
     property bool done: false
+    property string deadlineSeverity: "none"
+    property bool zenMode: false
     signal toggled(bool done)
     signal startTimer(int minutes)
 
@@ -25,10 +27,43 @@ Item {
         anchors.fill: parent
         radius: radii.md
         color: root.done ? colors.accentBg : colors.cardBg
-        border.color: root.done ? colors.accent : colors.divider
-        border.width: 1
+        border.color: {
+            if (root.done) return colors.accent
+            if (deadlineSeverity === "overdue") return colors.overdue
+            if (deadlineSeverity === "danger") return colors.danger
+            if (deadlineSeverity === "warn") return colors.warn
+            return colors.divider
+        }
+        border.width: {
+            if (deadlineSeverity === "danger" || deadlineSeverity === "overdue") return 2
+            return 1
+        }
         Behavior on color { ColorAnimation { duration: 140; easing.type: Easing.InOutQuad } }
         Behavior on border.color { ColorAnimation { duration: 140; easing.type: Easing.InOutQuad } }
+    }
+    
+    // Pulse glow effect for danger/overdue (reduced in Zen Mode)
+    Rectangle {
+        anchors.fill: container
+        anchors.margins: -2
+        radius: container.radius + 2
+        color: "transparent"
+        border.width: 2
+        border.color: {
+            if (deadlineSeverity === "overdue") return colors.overdue
+            if (deadlineSeverity === "danger") return colors.danger
+            return "transparent"
+        }
+        opacity: taskGlowAnimation.running ? 0.4 : 0
+        visible: !zenMode && !root.done && (deadlineSeverity === "danger" || deadlineSeverity === "overdue")
+        
+        SequentialAnimation on opacity {
+            id: taskGlowAnimation
+            running: !zenMode && !root.done && (root.deadlineSeverity === "danger" || root.deadlineSeverity === "overdue")
+            loops: Animation.Infinite
+            NumberAnimation { from: 0; to: 0.4; duration: 1500; easing.type: Easing.InOutSine }
+            NumberAnimation { from: 0.4; to: 0; duration: 1500; easing.type: Easing.InOutSine }
+        }
     }
 
     Row {

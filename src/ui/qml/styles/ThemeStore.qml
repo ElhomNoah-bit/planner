@@ -18,6 +18,8 @@ QtObject {
     readonly property color accent:       "#3B82F6"
     readonly property color accentBg:     "#1A2B4D"
     readonly property color danger:       "#F97066"
+    readonly property color warn:         "#F59E0B"
+    readonly property color overdue:      "#DC2626"
 
     // Typo
     readonly property int baseSize: 14
@@ -65,6 +67,9 @@ QtObject {
         readonly property alias surfaceOnWeak: theme.surfaceOnWeak
         readonly property alias neutralBg: theme.cardAlt
         readonly property alias press: theme.hover
+        readonly property alias danger: theme.danger
+        readonly property alias warn: theme.warn
+        readonly property alias overdue: theme.overdue
     }
 
     readonly property QtObject type: QtObject {

@@ -140,6 +140,8 @@ Item {
                                     timeText: modelData.startTimeLabel && modelData.startTimeLabel.length ? modelData.startTimeLabel : qsTr("Ganztägig")
                                     overdue: modelData.overdue
                                     categoryColor: modelData.categoryColor || ""
+                                    deadlineSeverity: modelData.deadlineSeverityString || "none"
+                                    zenMode: root.zenMode
                                 }
                             }
                             Item {

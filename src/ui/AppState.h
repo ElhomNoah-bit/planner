@@ -45,6 +45,9 @@ public:
     bool zenMode() const { return m_zenMode; }
     bool setZenMode(bool enabled);
 
+    bool stressIndicatorEnabled() const { return m_stressIndicatorEnabled; }
+    bool setStressIndicatorEnabled(bool enabled);
+
 private:
     mutable QSettings* m_settings;
     bool m_darkTheme = true;
@@ -56,4 +59,5 @@ private:
     bool m_weekNumbers = false;
     QString m_viewMode = QStringLiteral("month");
     bool m_zenMode = false;
+    bool m_stressIndicatorEnabled = true;
 };

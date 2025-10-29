@@ -59,12 +59,14 @@ PlannerBackend::PlannerBackend(QObject* parent)
     emit viewModeChanged();
     emit onlyOpenChanged();
     emit zenModeChanged();
+    emit stressIndicatorEnabledChanged();
     emit darkThemeChanged();
     emit commandsChanged();
     emit categoriesChanged();
     emit todayEventsChanged();
     emit upcomingEventsChanged();
     emit examEventsChanged();
+    emit urgentEventsChanged();
     if (!m_searchQuery.isEmpty()) {
         emit searchQueryChanged();
     }
@@ -132,6 +134,15 @@ void PlannerBackend::setZenMode(bool enabled) {
     }
     m_state.save();
     emit zenModeChanged();
+}
+
+void PlannerBackend::setStressIndicatorEnabled(bool enabled) {
+    if (!m_state.setStressIndicatorEnabled(enabled)) {
+        return;
+    }
+    m_state.save();
+    rebuildSidebar();
+    emit stressIndicatorEnabledChanged();
 }
 
 void PlannerBackend::setSearchQuery(const QString& query) {
@@ -368,6 +379,7 @@ void PlannerBackend::rebuildSidebar() {
     QVariantList todayItems;
     QVariantList upcomingItems;
     QVariantList examItems;
+    QVariantList urgentItems;
 
     for (const auto& record : m_cachedEvents) {
         const QDate eventDate = record.start.date();
@@ -380,6 +392,27 @@ void PlannerBackend::rebuildSidebar() {
         if (record.isExam && eventDate >= today) {
             examItems.append(toVariant(record));
         }
+        
+        // Add to urgent list if deadline is warn, danger, or overdue
+        if (m_state.stressIndicatorEnabled() && record.due.isValid() && !record.isDone) {
+            const DeadlineSeverity severity = calculateDeadlineSeverity(record.due);
+            if (severity == DeadlineSeverity::Warn || 
+                severity == DeadlineSeverity::Danger || 
+                severity == DeadlineSeverity::Overdue) {
+                urgentItems.append(toVariant(record));
+            }
+        }
+    }
+    
+    // Sort urgent items by deadline (most urgent first)
+    if (!urgentItems.isEmpty()) {
+        std::sort(urgentItems.begin(), urgentItems.end(), [](const QVariant& a, const QVariant& b) {
+            const QVariantMap mapA = a.toMap();
+            const QVariantMap mapB = b.toMap();
+            const QString dueA = mapA.value(QStringLiteral("due")).toString();
+            const QString dueB = mapB.value(QStringLiteral("due")).toString();
+            return dueA < dueB;
+        });
     }
 
     if (m_today != todayItems) {
@@ -393,6 +426,10 @@ void PlannerBackend::rebuildSidebar() {
     if (m_exams != examItems) {
         m_exams = examItems;
         emit examEventsChanged();
+    }
+    if (m_urgent != urgentItems) {
+        m_urgent = urgentItems;
+        emit urgentEventsChanged();
     }
 }
 
@@ -450,6 +487,17 @@ QVariantMap PlannerBackend::toVariant(const EventRecord& record) const {
     }
     map.insert(QStringLiteral("overdue"),
                record.due.isValid() && record.due < QDateTime::currentDateTime());
+    
+    // Calculate deadline severity
+    const DeadlineSeverity severity = calculateDeadlineSeverity(record.due);
+    map.insert(QStringLiteral("deadlineSeverity"), static_cast<int>(severity));
+    map.insert(QStringLiteral("deadlineSeverityString"), 
+               severity == DeadlineSeverity::Overdue ? QStringLiteral("overdue") :
+               severity == DeadlineSeverity::Danger ? QStringLiteral("danger") :
+               severity == DeadlineSeverity::Warn ? QStringLiteral("warn") :
+               severity == DeadlineSeverity::Normal ? QStringLiteral("normal") :
+               QStringLiteral("none"));
+    
     map.insert(QStringLiteral("categoryId"), record.categoryId);
     
     // Add category color if category is assigned
@@ -528,6 +576,27 @@ void PlannerBackend::logEventLoad(int count) const {
 
 void PlannerBackend::notify(const QString& message) {
     emit toastRequested(message);
+}
+
+PlannerBackend::DeadlineSeverity PlannerBackend::calculateDeadlineSeverity(const QDateTime& due) const {
+    if (!due.isValid()) {
+        return DeadlineSeverity::None;
+    }
+    
+    const QDateTime now = QDateTime::currentDateTime();
+    if (due < now) {
+        return DeadlineSeverity::Overdue;
+    }
+    
+    const qint64 hoursUntilDue = now.secsTo(due) / 3600;
+    
+    if (hoursUntilDue < 24) {
+        return DeadlineSeverity::Danger;
+    } else if (hoursUntilDue < 72) {
+        return DeadlineSeverity::Warn;
+    } else {
+        return DeadlineSeverity::Normal;
+    }
 }
 
 QVariantList PlannerBackend::listCategories() const {

@@ -11,13 +11,30 @@ Rectangle {
     property string timeText: ""
     property bool timed: timeText.length > 0
     property string categoryColor: ""
+    property string deadlineSeverity: "none"
+    property bool zenMode: false
 
     implicitHeight: 26
     implicitWidth: Math.max(92, contentRow.implicitWidth + Styles.ThemeStore.g16)
     radius: Styles.ThemeStore.r12
     color: muted ? Styles.ThemeStore.cardAlt : Styles.ThemeStore.cardBg
-    border.width: categoryColor.length > 0 ? 2 : (overdue ? 1 : 0)
-    border.color: categoryColor.length > 0 ? categoryColor : (overdue ? Styles.ThemeStore.danger : "transparent")
+    
+    border.width: {
+        if (categoryColor.length > 0) return 2
+        if (deadlineSeverity === "danger" || deadlineSeverity === "overdue") return 2
+        if (deadlineSeverity === "warn") return 1
+        if (overdue) return 1
+        return 0
+    }
+    
+    border.color: {
+        if (categoryColor.length > 0) return categoryColor
+        if (deadlineSeverity === "overdue") return Styles.ThemeStore.colors.overdue
+        if (deadlineSeverity === "danger") return Styles.ThemeStore.colors.danger
+        if (deadlineSeverity === "warn") return Styles.ThemeStore.colors.warn
+        if (overdue) return Styles.ThemeStore.danger
+        return "transparent"
+    }
 
     RowLayout {
         id: contentRow
@@ -73,5 +90,29 @@ Rectangle {
 
     HoverHandler {
         id: hoverHandler
+    }
+    
+    // Pulse glow effect for danger/overdue (reduced in Zen Mode)
+    Rectangle {
+        anchors.fill: parent
+        anchors.margins: -2
+        radius: chip.radius + 2
+        color: "transparent"
+        border.width: 2
+        border.color: {
+            if (deadlineSeverity === "overdue") return Styles.ThemeStore.colors.overdue
+            if (deadlineSeverity === "danger") return Styles.ThemeStore.colors.danger
+            return "transparent"
+        }
+        opacity: glowAnimation.running ? 0.4 : 0
+        visible: !zenMode && (deadlineSeverity === "danger" || deadlineSeverity === "overdue")
+        
+        SequentialAnimation on opacity {
+            id: glowAnimation
+            running: !zenMode && (chip.deadlineSeverity === "danger" || chip.deadlineSeverity === "overdue")
+            loops: Animation.Infinite
+            NumberAnimation { from: 0; to: 0.4; duration: 1500; easing.type: Easing.InOutSine }
+            NumberAnimation { from: 0.4; to: 0; duration: 1500; easing.type: Easing.InOutSine }
+        }
     }
 }
