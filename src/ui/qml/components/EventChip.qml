@@ -83,13 +83,14 @@ Rectangle {
         anchors.fill: parent
         radius: chip.radius
         color: Styles.ThemeStore.hover
-        visible: hoverHandler.hovered
+        visible: hoverHandler.hovered && !dragHandler.active
         opacity: 0.2
     }
 
     HoverHandler {
         id: hoverHandler
         cursorShape: chip.draggable ? Qt.OpenHandCursor : Qt.ArrowCursor
+        enabled: !dragHandler.active
     }
     
     DragHandler {
@@ -102,6 +103,12 @@ Rectangle {
                 chip.dragStarted(chip.entryId, chip.startIso, chip.endIso, chip.allDay)
             } else {
                 chip.dragFinished()
+            }
+        }
+        
+        onGrabChanged: function(transition, point) {
+            if (transition === PointerDevice.CancelGrabExclusive) {
+                console.log("Drag cancelled")
             }
         }
     }

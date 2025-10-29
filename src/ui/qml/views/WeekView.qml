@@ -195,6 +195,8 @@ Item {
                                         // Snap to 15-minute intervals
                                         var minutes = (drag.y / root.minuteHeight) + root.startHour * 60
                                         var snappedMinutes = Math.round(minutes / 15) * 15
+                                        // Clamp to valid range
+                                        snappedMinutes = Math.max(root.startHour * 60, Math.min(root.endHour * 60, snappedMinutes))
                                         timeline.dropY = (snappedMinutes - root.startHour * 60) * root.minuteHeight
                                     }
                                     
@@ -205,17 +207,27 @@ Item {
                                                 try {
                                                     var dragData = JSON.parse(data)
                                                     handleTimelineDrop(dragData, drop.y, dayItem.dayIso)
-                                                    drop.accept()
+                                                    drop.accept(Qt.MoveAction)
                                                 } catch (e) {
                                                     console.warn("Failed to parse drag data:", e)
                                                     drop.accept(Qt.IgnoreAction)
                                                 }
+                                            } else {
+                                                drop.accept(Qt.IgnoreAction)
                                             }
+                                        } else {
+                                            drop.accept(Qt.IgnoreAction)
                                         }
                                     }
                                     
                                     onEntered: function(drag) {
-                                        drag.accepted = true
+                                        // Only accept if we have valid entry data
+                                        var data = drag.getDataAsString("application/x-planner-entry")
+                                        drag.accepted = data && data.length > 0
+                                    }
+                                    
+                                    onExited: function() {
+                                        // Cleanup when drag leaves
                                     }
                                 }
 
@@ -429,20 +441,40 @@ Item {
     
     function handleTimelineDrop(dragData, dropY, targetDayIso) {
         if (!dragData.id || !dragData.startIso || !dragData.endIso) {
+            console.warn("Invalid drag data, cannot drop")
             return
         }
         
         // Parse old dates
         var oldStart = new Date(dragData.startIso)
         var oldEnd = new Date(dragData.endIso)
+        
+        if (isNaN(oldStart.getTime()) || isNaN(oldEnd.getTime())) {
+            console.warn("Invalid dates in drag data")
+            return
+        }
+        
         var duration = (oldEnd - oldStart) / (1000 * 60) // duration in minutes
+        
+        if (duration <= 0) {
+            console.warn("Invalid event duration")
+            return
+        }
         
         // Calculate new time from drop position with 15-minute snap
         var dropMinutes = (dropY / root.minuteHeight) + root.startHour * 60
         var snappedMinutes = Math.round(dropMinutes / 15) * 15
         
+        // Clamp to valid range
+        snappedMinutes = Math.max(0, Math.min(24 * 60 - duration, snappedMinutes))
+        
         // Create new date/time
         var targetDate = new Date(targetDayIso)
+        if (isNaN(targetDate.getTime())) {
+            console.warn("Invalid target date")
+            return
+        }
+        
         var newStart = new Date(targetDate)
         newStart.setHours(Math.floor(snappedMinutes / 60), snappedMinutes % 60, 0, 0)
         

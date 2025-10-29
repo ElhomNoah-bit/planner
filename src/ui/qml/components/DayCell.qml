@@ -43,28 +43,44 @@ FocusScope {
                     try {
                         var dragData = JSON.parse(data)
                         handleDrop(dragData)
-                        drop.accept()
+                        drop.accept(Qt.MoveAction)
                     } catch (e) {
                         console.warn("Failed to parse drag data:", e)
                         drop.accept(Qt.IgnoreAction)
                     }
+                } else {
+                    drop.accept(Qt.IgnoreAction)
                 }
+            } else {
+                drop.accept(Qt.IgnoreAction)
             }
         }
         
         onEntered: function(drag) {
-            drag.accepted = true
+            // Only accept if we have valid entry data
+            var data = drag.getDataAsString("application/x-planner-entry")
+            drag.accepted = data && data.length > 0
+        }
+        
+        onExited: function() {
+            // Cleanup if needed
         }
     }
     
     function handleDrop(dragData) {
         if (!dragData.id || !dragData.startIso || !dragData.endIso) {
+            console.warn("Invalid drag data, cannot drop")
             return
         }
         
-        // Parse old dates
+        // Validate dates
         var oldStart = new Date(dragData.startIso)
         var oldEnd = new Date(dragData.endIso)
+        if (isNaN(oldStart.getTime()) || isNaN(oldEnd.getTime())) {
+            console.warn("Invalid dates in drag data")
+            return
+        }
+        
         var targetDate = root.dateObject
         
         // For month view: keep time, change date

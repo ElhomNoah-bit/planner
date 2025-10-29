@@ -663,7 +663,15 @@ bool PlannerBackend::moveEntry(const QString& entryId, const QString& newStartIs
     QDateTime newEnd = fromIsoDateTime(newEndIso);
     
     if (!newStart.isValid() || !newEnd.isValid()) {
+        qWarning() << "[moveEntry] Invalid dates:" << newStartIso << newEndIso;
         notify(tr("Ungültiges Datum/Uhrzeit"));
+        return false;
+    }
+    
+    // Validate that end is after start
+    if (newEnd <= newStart) {
+        qWarning() << "[moveEntry] End time must be after start time";
+        notify(tr("Endzeitpunkt muss nach Startzeitpunkt liegen"));
         return false;
     }
     
