@@ -57,7 +57,22 @@ Flickable {
                                         width: 10
                                         height: metrics.pillH
                                         radius: 6
-                                        color: modelData.color
+                                        color: modelData.colorHint || colors.accent
+                                        Layout.alignment: Qt.AlignVCenter
+                                    }
+
+                                    Rectangle {
+                                        width: 10
+                                        height: 10
+                                        radius: 5
+                                        color: {
+                                            if (!modelData) return colors.prioLow
+                                            const priority = modelData.priority || 0
+                                            if (priority === 2) return colors.prioHigh
+                                            if (priority === 1) return colors.prioMedium
+                                            return colors.prioLow
+                                        }
+                                        visible: modelData && !modelData.isDone
                                         Layout.alignment: Qt.AlignVCenter
                                     }
 

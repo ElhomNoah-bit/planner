@@ -342,8 +342,11 @@ QSqlDatabase EventRepository::database() const {
 
 QVector<EventRecord> EventRepository::runQuery(QSqlQuery& query) const {
     QVector<EventRecord> results;
+    const QDate today = QDate::currentDate();
     while (query.next()) {
-        results.append(recordFromQuery(query));
+        EventRecord record = recordFromQuery(query);
+        record.priority = computePriority(record, today);
+        results.append(record);
     }
     return results;
 }
@@ -379,6 +382,7 @@ QVector<EventRecord> EventRepository::loadFromJson(bool onlyOpen) const {
     const QJsonArray array = readJsonArray();
     QVector<EventRecord> records;
     records.reserve(array.size());
+    const QDate today = QDate::currentDate();
     for (const auto& value : array) {
         if (!value.isObject()) {
             continue;
@@ -387,6 +391,7 @@ QVector<EventRecord> EventRepository::loadFromJson(bool onlyOpen) const {
         if (onlyOpen && record.isDone) {
             continue;
         }
+        record.priority = computePriority(record, today);
         records.append(record);
     }
     std::sort(records.begin(), records.end(), [](const EventRecord& a, const EventRecord& b) {
@@ -398,6 +403,7 @@ QVector<EventRecord> EventRepository::loadFromJson(bool onlyOpen) const {
 QVector<EventRecord> EventRepository::loadRangeFromJson(const QDate& start, const QDate& end, bool onlyOpen) const {
     const QJsonArray array = readJsonArray();
     QVector<EventRecord> records;
+    const QDate today = QDate::currentDate();
     for (const auto& value : array) {
         if (!value.isObject()) {
             continue;
@@ -413,6 +419,7 @@ QVector<EventRecord> EventRepository::loadRangeFromJson(const QDate& start, cons
         if (onlyOpen && record.isDone) {
             continue;
         }
+        record.priority = computePriority(record, today);
         records.append(record);
     }
     std::sort(records.begin(), records.end(), [](const EventRecord& a, const EventRecord& b) {
@@ -425,6 +432,7 @@ QVector<EventRecord> EventRepository::searchInJson(const QString& term, bool onl
     const QString needle = term.trimmed().toLower();
     const QJsonArray array = readJsonArray();
     QVector<EventRecord> records;
+    const QDate today = QDate::currentDate();
     for (const auto& value : array) {
         if (!value.isObject()) {
             continue;
@@ -437,6 +445,7 @@ QVector<EventRecord> EventRepository::searchInJson(const QString& term, bool onl
         if (!needle.isEmpty() && !haystack.contains(needle)) {
             continue;
         }
+        record.priority = computePriority(record, today);
         records.append(record);
     }
     std::sort(records.begin(), records.end(), [](const EventRecord& a, const EventRecord& b) {
@@ -581,4 +590,42 @@ EventRecord EventRepository::recordFromJson(const QJsonObject& object) {
     record.priority = object.value(QStringLiteral("priority")).toInt();
     record.categoryId = object.value(QStringLiteral("categoryId")).toString();
     return record;
+}
+
+int EventRepository::computePriority(const EventRecord& record, const QDate& currentDate) {
+    // If task is done, always low priority
+    if (record.isDone) {
+        return 0; // Low
+    }
+
+    // Use due date if available, otherwise use start date
+    QDate taskDate;
+    if (record.due.isValid()) {
+        taskDate = record.due.date();
+    } else if (record.start.isValid()) {
+        taskDate = record.start.date();
+    } else {
+        return 1; // Medium (default for undated tasks)
+    }
+
+    // Calculate days until due
+    const int daysUntilDue = currentDate.daysTo(taskDate);
+
+    // Overdue tasks are always high priority
+    if (daysUntilDue < 0) {
+        return 2; // High
+    }
+
+    // Due today: High priority
+    if (daysUntilDue == 0) {
+        return 2; // High
+    }
+
+    // Due tomorrow (within 48 hours): Medium priority
+    if (daysUntilDue == 1) {
+        return 1; // Medium
+    }
+
+    // More than 2 days away: Low priority
+    return 0; // Low
 }

@@ -179,6 +179,7 @@ QVector<Task> PlannerService::generateDay(const QDate& date) const {
     task.isExam = false;
     task.color = subject.color;
         task.planIndex = placed;
+        task.priority = computePriority(task, QDate::currentDate());
 
         tasks.append(task);
         remaining -= ideal;
@@ -336,4 +337,32 @@ Subject PlannerService::subjectById(const QString& subjectId) const {
 
 QString PlannerService::makeTaskId(const QString& subjectId, const QDate& date, int index) const {
     return iso(date) + ":" + subjectId + ":" + QString::number(index);
+}
+
+Priority PlannerService::computePriority(const Task& task, const QDate& currentDate) const {
+    // If task is done, always low priority
+    if (task.done) {
+        return Priority::Low;
+    }
+
+    // Calculate days until due
+    const int daysUntilDue = currentDate.daysTo(task.date);
+
+    // Overdue tasks are always high priority
+    if (daysUntilDue < 0) {
+        return Priority::High;
+    }
+
+    // Due today: High priority
+    if (daysUntilDue == 0) {
+        return Priority::High;
+    }
+
+    // Due tomorrow (within 48 hours): Medium priority
+    if (daysUntilDue == 1) {
+        return Priority::Medium;
+    }
+
+    // More than 2 days away: Low priority
+    return Priority::Low;
 }

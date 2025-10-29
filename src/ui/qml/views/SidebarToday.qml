@@ -84,6 +84,21 @@ Item {
                                        : colors.accent
                             }
 
+                            Rectangle {
+                                width: 8
+                                height: 8
+                                radius: 4
+                                color: {
+                                    if (!modelData) return colors.prioLow
+                                    const priority = modelData.priority || 0
+                                    if (priority === 2) return colors.prioHigh
+                                    if (priority === 1) return colors.prioMedium
+                                    return colors.prioLow
+                                }
+                                visible: modelData && !modelData.isDone
+                                Layout.alignment: Qt.AlignVCenter
+                            }
+
                             CheckBox {
                                 visible: true
                                 checked: modelData && modelData.isDone
@@ -181,6 +196,21 @@ Item {
                                             color: modelData && modelData.colorHint && modelData.colorHint.length
                                                    ? modelData.colorHint
                                                    : colors.accent
+                                        }
+
+                                        Rectangle {
+                                            width: 8
+                                            height: 8
+                                            radius: 4
+                                            color: {
+                                                if (!modelData) return colors.prioLow
+                                                const priority = modelData.priority || 0
+                                                if (priority === 2) return colors.prioHigh
+                                                if (priority === 1) return colors.prioMedium
+                                                return colors.prioLow
+                                            }
+                                            visible: modelData && !modelData.isDone
+                                            Layout.alignment: Qt.AlignVCenter
                                         }
 
                                         CheckBox {
