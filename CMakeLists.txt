@@ -17,11 +17,14 @@ qt_add_executable(noah_planner
     src/core/PlannerService.h
     src/core/EventRepository.cpp
     src/core/EventRepository.h
+    src/core/CategoryRepository.cpp
+    src/core/CategoryRepository.h
     src/core/QuickAddParser.cpp
     src/core/QuickAddParser.h
     src/core/Task.h
     src/core/Subject.h
     src/core/Exam.h
+    src/core/Category.h
     src/models/EventModel.cpp
     src/models/EventModel.h
     src/models/TaskModel.cpp

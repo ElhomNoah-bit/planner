@@ -554,6 +554,7 @@ QJsonObject EventRepository::recordToJson(const EventRecord& record) {
     obj.insert(QStringLiteral("due"), isoString(record.due));
     obj.insert(QStringLiteral("colorHint"), record.colorHint);
     obj.insert(QStringLiteral("priority"), record.priority);
+    obj.insert(QStringLiteral("categoryId"), record.categoryId);
     return obj;
 }
 
@@ -578,5 +579,6 @@ EventRecord EventRepository::recordFromJson(const QJsonObject& object) {
     record.due = fromIso(object.value(QStringLiteral("due")).toString());
     record.colorHint = object.value(QStringLiteral("colorHint")).toString();
     record.priority = object.value(QStringLiteral("priority")).toInt();
+    record.categoryId = object.value(QStringLiteral("categoryId")).toString();
     return record;
 }
