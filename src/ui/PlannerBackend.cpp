@@ -5,6 +5,7 @@
 #include <QDir>
 #include <QLocale>
 #include <QMap>
+#include <QSet>
 #include <QStandardPaths>
 #include <QTimeZone>
 
@@ -50,10 +51,17 @@ PlannerBackend::PlannerBackend(QObject* parent)
     m_selectedDate = QDate::currentDate();
 
     initializeStorage();
+    connect(&m_pomodoro, &PomodoroTimer::tick, this, &PlannerBackend::rebuildPomodoroState);
+    connect(&m_pomodoro, &PomodoroTimer::phaseChanged, this, &PlannerBackend::rebuildPomodoroState);
+    connect(&m_pomodoro, &PomodoroTimer::runningChanged, this, &PlannerBackend::rebuildPomodoroState);
+    connect(&m_pomodoro, &PomodoroTimer::cycleCompleted, this, &PlannerBackend::rebuildPomodoroState);
+
     reloadEvents();
     rebuildCommands();
     rebuildCategories();
     rebuildSidebar();
+    rebuildFocusState();
+    rebuildPomodoroState();
 
     emit selectedDateChanged();
     emit viewModeChanged();
@@ -65,6 +73,12 @@ PlannerBackend::PlannerBackend(QObject* parent)
     emit todayEventsChanged();
     emit upcomingEventsChanged();
     emit examEventsChanged();
+    emit urgentEventsChanged();
+    emit focusHistoryChanged();
+    emit focusSessionChanged();
+    emit focusSessionActiveChanged();
+    emit focusStreakChanged();
+    emit pomodoroChanged();
     if (!m_searchQuery.isEmpty()) {
         emit searchQueryChanged();
     }
@@ -349,10 +363,12 @@ void PlannerBackend::initializeStorage() {
     if (!m_repository.initialize(m_storageDir)) {
         qWarning() << "[PlannerBackend] Repository initialisation failed for" << m_storageDir;
     }
-    
+
     if (!m_categoryRepository.initialize(m_storageDir)) {
         qWarning() << "[PlannerBackend] Category repository initialisation failed for" << m_storageDir;
     }
+
+    m_focusRepository.setStorageDirectory(m_storageDir);
 
     const QString storePath = m_repository.isSqlAvailable() ? m_repository.databasePath() : m_repository.jsonFallbackPath();
     qInfo() << "[PlannerBackend] DB path:" << storePath;
@@ -421,6 +437,8 @@ void PlannerBackend::rebuildSidebar() {
         m_exams = examItems;
         emit examEventsChanged();
     }
+
+    rebuildUrgent(today);
 }
 
 void PlannerBackend::rebuildCommands() {
@@ -442,6 +460,10 @@ void PlannerBackend::rebuildCommands() {
     add(QStringLiteral("toggle-open"), tr("Nur offene umschalten"), QString());
     add(QStringLiteral("toggle-zen"), tr("Zen-Modus umschalten"), tr("Fokus auf den ausgewählten Tag"));
     add(QStringLiteral("open-settings"), tr("Einstellungen öffnen"), QString());
+    add(QStringLiteral("start-focus"), tr("Fokus-Sitzung starten"), tr("Beginnt eine 25-Minuten-Sitzung"));
+    add(QStringLiteral("open-pomodoro"), tr("Pomodoro öffnen"), tr("Zeigt den Fokus-Timer"));
+    add(QStringLiteral("export-week"), tr("Woche exportieren"), tr("Erstellt eine PDF der Woche"));
+    add(QStringLiteral("export-month"), tr("Monat exportieren"), tr("Erstellt eine PDF des Monats"));
 
     if (m_commands != list) {
         m_commands = list;
@@ -478,7 +500,7 @@ QVariantMap PlannerBackend::toVariant(const EventRecord& record) const {
     map.insert(QStringLiteral("overdue"),
                record.due.isValid() && record.due < QDateTime::currentDateTime());
     map.insert(QStringLiteral("categoryId"), record.categoryId);
-    
+
     // Add category color if category is assigned
     if (!record.categoryId.isEmpty()) {
         Category cat = m_categoryRepository.findById(record.categoryId);
@@ -486,7 +508,11 @@ QVariantMap PlannerBackend::toVariant(const EventRecord& record) const {
             map.insert(QStringLiteral("categoryColor"), cat.color.name());
         }
     }
-    
+
+    const int severity = deadlineSeverity(record, QDate::currentDate());
+    map.insert(QStringLiteral("deadlineLevel"), severity);
+    map.insert(QStringLiteral("deadlineSeverity"), severityLabel(severity));
+
     return map;
 }
 
@@ -555,6 +581,205 @@ void PlannerBackend::logEventLoad(int count) const {
 
 void PlannerBackend::notify(const QString& message) {
     emit toastRequested(message);
+}
+
+int PlannerBackend::deadlineSeverity(const EventRecord& record, const QDate& today) const {
+    QDate targetDate;
+    if (record.due.isValid()) {
+        targetDate = record.due.date();
+    } else if (record.start.isValid()) {
+        targetDate = record.start.date();
+    }
+
+    if (!targetDate.isValid() || !today.isValid()) {
+        return 0;
+    }
+
+    const int diff = today.daysTo(targetDate);
+    if (diff < 0) {
+        return 3;
+    }
+    if (diff == 0) {
+        return 2;
+    }
+    if (diff <= 2) {
+        return 1;
+    }
+    return 0;
+}
+
+QString PlannerBackend::severityLabel(int severity) const {
+    switch (severity) {
+    case 3:
+        return QStringLiteral("overdue");
+    case 2:
+        return QStringLiteral("danger");
+    case 1:
+        return QStringLiteral("warn");
+    default:
+        return QStringLiteral("none");
+    }
+}
+
+void PlannerBackend::rebuildUrgent(const QDate& today) {
+    QVariantList urgent;
+    for (const auto& record : m_cachedEvents) {
+        const int severity = deadlineSeverity(record, today);
+        if (severity <= 0) {
+            continue;
+        }
+        QVariantMap map = toVariant(record);
+        map.insert(QStringLiteral("deadlineLevel"), severity);
+        map.insert(QStringLiteral("deadlineSeverity"), severityLabel(severity));
+        urgent.append(map);
+    }
+
+    std::sort(urgent.begin(), urgent.end(), [](const QVariant& a, const QVariant& b) {
+        const QVariantMap left = a.toMap();
+        const QVariantMap right = b.toMap();
+        const int leftSeverity = left.value(QStringLiteral("deadlineLevel")).toInt();
+        const int rightSeverity = right.value(QStringLiteral("deadlineLevel")).toInt();
+        if (leftSeverity != rightSeverity) {
+            return leftSeverity > rightSeverity;
+        }
+        const QDateTime leftDue = QDateTime::fromString(left.value(QStringLiteral("due")).toString(), Qt::ISODate);
+        const QDateTime rightDue = QDateTime::fromString(right.value(QStringLiteral("due")).toString(), Qt::ISODate);
+        if (leftDue.isValid() && rightDue.isValid()) {
+            return leftDue < rightDue;
+        }
+        return left.value(QStringLiteral("title")).toString() < right.value(QStringLiteral("title")).toString();
+    });
+
+    if (m_urgent != urgent) {
+        m_urgent = urgent;
+        emit urgentEventsChanged();
+    }
+}
+
+void PlannerBackend::rebuildFocusState() {
+    const bool previousActive = m_focusSession.value(QStringLiteral("active")).toBool();
+    QVariantMap session;
+    const bool active = m_focusRepository.hasActiveSession();
+    if (active) {
+        const QDateTime start = m_focusRepository.activeSessionStart();
+        const QDateTime now = QDateTime::currentDateTime();
+        const int elapsed = start.isValid() ? static_cast<int>(start.secsTo(now) / 60) : 0;
+        const double progress = m_focusGoalMinutes > 0
+                ? std::clamp(static_cast<double>(elapsed) / static_cast<double>(m_focusGoalMinutes), 0.0, 1.0)
+                : 0.0;
+        session.insert(QStringLiteral("active"), true);
+        session.insert(QStringLiteral("start"), toIsoDateTime(start));
+        session.insert(QStringLiteral("elapsedMinutes"), elapsed);
+        session.insert(QStringLiteral("goalMinutes"), m_focusGoalMinutes);
+        session.insert(QStringLiteral("progress"), progress);
+        session.insert(QStringLiteral("remainingMinutes"), std::max(0, m_focusGoalMinutes - elapsed));
+    } else {
+        session.insert(QStringLiteral("active"), false);
+        const QVector<FocusSession> sessions = m_focusRepository.sessions();
+        if (!sessions.isEmpty()) {
+            const FocusSession last = sessions.last();
+            session.insert(QStringLiteral("lastStart"), toIsoDateTime(last.start()));
+            session.insert(QStringLiteral("lastEnd"), toIsoDateTime(last.end()));
+            session.insert(QStringLiteral("lastMinutes"), last.durationMinutes());
+            session.insert(QStringLiteral("lastCompleted"), last.completed());
+        }
+        session.insert(QStringLiteral("goalMinutes"), m_focusGoalMinutes);
+    }
+
+    if (m_focusSession != session) {
+        m_focusSession = session;
+        emit focusSessionChanged();
+    }
+
+    const bool newActive = session.value(QStringLiteral("active")).toBool();
+    if (newActive != previousActive) {
+        emit focusSessionActiveChanged();
+    }
+
+    const QVector<FocusSession> allSessions = m_focusRepository.sessions();
+    const QDate today = QDate::currentDate();
+    const int days = 14;
+    QMap<QDate, int> minutes;
+    QSet<QDate> completedDays;
+    for (const auto& item : allSessions) {
+        if (!item.date().isValid()) {
+            continue;
+        }
+        minutes[item.date()] += item.durationMinutes();
+        if (item.completed()) {
+            completedDays.insert(item.date());
+        }
+    }
+
+    QVariantList history;
+    const QDate start = today.addDays(-(days - 1));
+    for (int i = 0; i < days; ++i) {
+        const QDate date = start.addDays(i);
+        QVariantMap map;
+        map.insert(QStringLiteral("date"), toIsoDate(date));
+        map.insert(QStringLiteral("minutes"), minutes.value(date));
+        map.insert(QStringLiteral("completed"), completedDays.contains(date));
+        history.append(map);
+    }
+
+    if (m_focusHistory != history) {
+        m_focusHistory = history;
+        emit focusHistoryChanged();
+    }
+
+    const int streak = m_focusRepository.currentStreak(today);
+    if (streak != m_focusStreak) {
+        m_focusStreak = streak;
+        emit focusStreakChanged();
+    }
+}
+
+void PlannerBackend::rebuildPomodoroState() {
+    QVariantMap state;
+    state.insert(QStringLiteral("running"), m_pomodoro.isRunning());
+    state.insert(QStringLiteral("remainingSeconds"), m_pomodoro.remainingSeconds());
+    state.insert(QStringLiteral("completedCycles"), m_pomodoro.completedCycles());
+    state.insert(QStringLiteral("focusMinutes"), m_pomodoro.focusMinutes());
+    state.insert(QStringLiteral("breakMinutes"), m_pomodoro.breakMinutes());
+    state.insert(QStringLiteral("longBreakMinutes"), m_pomodoro.longBreakMinutes());
+    state.insert(QStringLiteral("cyclesBeforeLongBreak"), m_pomodoro.cyclesBeforeLongBreak());
+
+    QString phaseId;
+    QString phaseLabel;
+    switch (m_pomodoro.phase()) {
+    case PomodoroTimer::Phase::Focus:
+        phaseId = QStringLiteral("focus");
+        phaseLabel = tr("Fokus");
+        break;
+    case PomodoroTimer::Phase::ShortBreak:
+        phaseId = QStringLiteral("short-break");
+        phaseLabel = tr("Kurzpause");
+        break;
+    case PomodoroTimer::Phase::LongBreak:
+        phaseId = QStringLiteral("long-break");
+        phaseLabel = tr("Langpause");
+        break;
+    case PomodoroTimer::Phase::Idle:
+    default:
+        phaseId = QStringLiteral("idle");
+        phaseLabel = tr("Bereit");
+        break;
+    }
+
+    const int remainingSeconds = m_pomodoro.remainingSeconds();
+    const int minutes = remainingSeconds / 60;
+    const int seconds = remainingSeconds % 60;
+    state.insert(QStringLiteral("phase"), phaseId);
+    state.insert(QStringLiteral("phaseLabel"), phaseLabel);
+    state.insert(QStringLiteral("remainingMinutes"), minutes);
+    state.insert(QStringLiteral("remainingDisplay"), QStringLiteral("%1:%2")
+                                                     .arg(minutes, 2, 10, QLatin1Char('0'))
+                                                     .arg(seconds, 2, 10, QLatin1Char('0')));
+
+    if (state != m_pomodoroState) {
+        m_pomodoroState = state;
+        emit pomodoroChanged();
+    }
 }
 
 QVariantList PlannerBackend::listCategories() const {
@@ -718,14 +943,122 @@ bool PlannerBackend::moveEntry(const QString& entryId, const QString& newStartIs
     
     // Emit signal for undo support (ToastHost will show the undo snackbar)
     emit entryMoved(entryId, oldStartIso, oldEndIso);
-    
+
     return true;
+}
+
+bool PlannerBackend::focusSessionActive() const {
+    return m_focusRepository.hasActiveSession();
+}
+
+void PlannerBackend::startFocusSession(int minutes) {
+    if (minutes > 0) {
+        m_focusGoalMinutes = minutes;
+    }
+    if (!m_focusRepository.startSession(QDateTime::currentDateTime())) {
+        notify(tr("Fokus-Sitzung läuft bereits"));
+        return;
+    }
+    rebuildFocusState();
+}
+
+void PlannerBackend::stopFocusSession(bool completed) {
+    const FocusSession session = m_focusRepository.finishSession(QDateTime::currentDateTime(), completed);
+    if (!session.isValid()) {
+        notify(tr("Keine laufende Fokus-Sitzung"));
+        return;
+    }
+    if (completed) {
+        notify(tr("Fokus-Sitzung abgeschlossen: %1 Minuten").arg(session.durationMinutes()));
+    } else {
+        notify(tr("Fokus-Sitzung beendet"));
+    }
+    rebuildFocusState();
+}
+
+void PlannerBackend::cancelFocusSession() {
+    if (!m_focusRepository.hasActiveSession()) {
+        return;
+    }
+    m_focusRepository.cancelActiveSession();
+    rebuildFocusState();
+    notify(tr("Fokus-Sitzung verworfen"));
+}
+
+void PlannerBackend::refreshFocusHistory() {
+    rebuildFocusState();
+}
+
+void PlannerBackend::startPomodoro() {
+    m_pomodoro.start();
+    rebuildPomodoroState();
+}
+
+void PlannerBackend::stopPomodoro() {
+    m_pomodoro.stop();
+    rebuildPomodoroState();
+}
+
+void PlannerBackend::skipPomodoroPhase() {
+    m_pomodoro.skipPhase();
+    rebuildPomodoroState();
+}
+
+bool PlannerBackend::exportWeekPdf(const QString& filePath, const QString& weekStartIso) {
+    if (filePath.trimmed().isEmpty()) {
+        notify(tr("Kein Speicherort angegeben"));
+        return false;
+    }
+
+    QDate start = fromIsoDate(weekStartIso);
+    if (!start.isValid()) {
+        start = m_selectedDate;
+    }
+    if (!start.isValid()) {
+        start = QDate::currentDate();
+    }
+
+    const int startOfWeek = weekStartDay(m_state.weekStart());
+    while (start.dayOfWeek() != startOfWeek) {
+        start = start.addDays(-1);
+    }
+
+    const bool ok = m_exporter.exportWeek(m_cachedEvents, start, filePath);
+    if (ok) {
+        notify(tr("PDF exportiert"));
+    } else {
+        notify(tr("Export fehlgeschlagen"));
+    }
+    return ok;
+}
+
+bool PlannerBackend::exportMonthPdf(const QString& filePath, const QString& monthIso) {
+    if (filePath.trimmed().isEmpty()) {
+        notify(tr("Kein Speicherort angegeben"));
+        return false;
+    }
+
+    QDate anchor = fromIsoDate(monthIso);
+    if (!anchor.isValid()) {
+        anchor = m_selectedDate;
+    }
+    if (!anchor.isValid()) {
+        anchor = QDate::currentDate();
+    }
+
+    const bool ok = m_exporter.exportMonth(m_cachedEvents, anchor.year(), anchor.month(), filePath);
+    if (ok) {
+        notify(tr("Monats-PDF exportiert"));
+    } else {
+        notify(tr("Export fehlgeschlagen"));
+    }
+    return ok;
 }
 
 void PlannerBackend::rebuildCategories() {
     QVector<Category> cats = m_categoryRepository.loadAll();
     QVariantList list;
-    
+
     for (const auto& cat : cats) {
         QVariantMap map;
         map.insert(QStringLiteral("id"), cat.id);

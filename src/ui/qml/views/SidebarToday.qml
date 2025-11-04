@@ -11,6 +11,12 @@ Item {
     property var todayEvents: planner && planner.today ? planner.today : []
     property var upcomingEvents: planner && planner.upcoming ? planner.upcoming : []
     property var examEvents: planner && planner.exams ? planner.exams : []
+    property var urgentEvents: planner && planner.urgent ? planner.urgent : []
+    property var focusHistory: planner && planner.focusHistory ? planner.focusHistory : []
+    property var focusSession: planner && planner.focusSession ? planner.focusSession : ({})
+    property bool focusActive: planner && planner.focusSessionActive
+    property int focusStreak: planner && planner.focusStreak ? planner.focusStreak : 0
+    property var pomodoroState: planner && planner.pomodoro ? planner.pomodoro : ({})
     property bool zenMode: false
 
     readonly property QtObject colors: Styles.ThemeStore.colors
@@ -41,6 +47,113 @@ Item {
             id: contentColumn
             width: flick.width
             spacing: gaps.g16
+
+            GlassPanel {
+                visible: urgentEvents.length > 0
+                Layout.fillWidth: true
+                padding: gaps.g16
+
+                ColumnLayout {
+                    Layout.fillWidth: true
+                    spacing: gaps.g12
+
+                    Label {
+                        text: qsTr("Dringend")
+                        font.pixelSize: typeScale.sm
+                        font.weight: typeScale.weightBold
+                        font.family: fonts.heading
+                        color: colors.text
+                        renderType: Text.NativeRendering
+                    }
+
+                    Repeater {
+                        model: urgentEvents
+                        delegate: EventChip {
+                            Layout.fillWidth: true
+                            label: modelData.title || ""
+                            subjectColor: modelData.colorHint || colors.accent
+                            timeText: modelData.startTimeLabel || ""
+                            deadlineSeverity: modelData.deadlineSeverity || ""
+                            deadlineLevel: modelData.deadlineLevel || 0
+                            overdue: modelData.overdue || false
+                            muted: false
+                            categoryColor: modelData.categoryColor || ""
+                            draggable: false
+                        }
+                    }
+                }
+            }
+
+            GlassPanel {
+                Layout.fillWidth: true
+                padding: gaps.g16
+
+                ColumnLayout {
+                    Layout.fillWidth: true
+                    spacing: gaps.g12
+
+                    Label {
+                        text: qsTr("Fokus & Streak")
+                        font.pixelSize: typeScale.sm
+                        font.weight: typeScale.weightBold
+                        font.family: fonts.heading
+                        color: colors.text
+                        renderType: Text.NativeRendering
+                    }
+
+                    RowLayout {
+                        Layout.fillWidth: true
+                        spacing: gaps.g16
+
+                        StreakBadge {
+                            streak: focusStreak
+                            Layout.alignment: Qt.AlignLeft
+                        }
+
+                        PomodoroStats {
+                            state: pomodoroState || {}
+                            Layout.alignment: Qt.AlignLeft
+                        }
+
+                        Item { Layout.fillWidth: true }
+                    }
+
+                    WeeklyHeatmap {
+                        entries: focusHistory
+                        Layout.fillWidth: true
+                        visible: focusHistory && focusHistory.length > 0
+                    }
+
+                    FocusControls {
+                        planner: planner
+                        Layout.fillWidth: true
+                    }
+
+                    RowLayout {
+                        Layout.fillWidth: true
+                        spacing: gaps.g8
+
+                        Text {
+                            text: focusSession && focusSession.lastMinutes
+                                  ? qsTr("Letzte Sitzung: %1 Minuten").arg(focusSession.lastMinutes)
+                                  : ""
+                            font.pixelSize: typeScale.xs
+                            font.family: fonts.body
+                            color: colors.text2
+                            Layout.alignment: Qt.AlignVCenter
+                            visible: text.length > 0
+                        }
+
+                        Item { Layout.fillWidth: true }
+
+                        PillButton {
+                            text: qsTr("🍅 Pomodoro")
+                            kind: "ghost"
+                            onClicked: app.togglePomodoroOverlay(true)
+                        }
+                    }
+                }
+            }
 
             GlassPanel {
                 Layout.fillWidth: true

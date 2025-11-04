@@ -64,6 +64,13 @@ ApplicationWindow {
         onActivated: app.toggleZenMode()
     }
 
+    Shortcut {
+        sequences: ["Ctrl+P", "Meta+P"]
+        context: Qt.ApplicationShortcut
+        enabled: app.visible
+        onActivated: app.togglePomodoroOverlay()
+    }
+
     function goToday() {
         planner.jumpToToday()
     }
@@ -129,6 +136,18 @@ ApplicationWindow {
         case "open-settings":
             settingsDialog.open()
             break
+        case "start-focus":
+            app.startDefaultFocusSession()
+            break
+        case "open-pomodoro":
+            app.togglePomodoroOverlay(true)
+            break
+        case "export-week":
+            app.openExportDialog("week")
+            break
+        case "export-month":
+            app.openExportDialog("month")
+            break
         default:
             break
         }
@@ -142,6 +161,26 @@ ApplicationWindow {
 
     function toggleZenMode() {
         planner.zenMode = !planner.zenMode
+    }
+
+    function startDefaultFocusSession() {
+        planner.startFocusSession(25)
+    }
+
+    function togglePomodoroOverlay(forceOpen) {
+        if (forceOpen === true) {
+            pomodoroOverlay.open = true
+            return
+        }
+        if (forceOpen === false) {
+            pomodoroOverlay.open = false
+            return
+        }
+        pomodoroOverlay.open = !pomodoroOverlay.open
+    }
+
+    function openExportDialog(mode) {
+        exportDialog.open(mode || "week")
     }
 
     ColumnLayout {
@@ -243,6 +282,24 @@ ApplicationWindow {
     SettingsDialog {
         id: settingsDialog
         anchors.centerIn: parent
+    }
+
+    ExportDialog {
+        id: exportDialog
+        planner: planner
+        onFinished: function(success) {
+            if (success)
+                planner.showToast(qsTr("Export erstellt"))
+            else
+                planner.showToast(qsTr("Export fehlgeschlagen"))
+        }
+    }
+
+    PomodoroOverlay {
+        id: pomodoroOverlay
+        planner: planner
+        open: false
+        anchors.fill: parent
     }
 
     ToastHost {

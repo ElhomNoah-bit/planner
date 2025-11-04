@@ -24,7 +24,11 @@ Item {
         "view-list": { keywords: ["list", "liste"], run: function() { planner.setViewMode("list") } },
         "toggle-open": { keywords: ["open", "offen", "filter"], run: function() { planner.setOnlyOpenQml(!planner.onlyOpen) } },
         "toggle-zen": { keywords: ["zen", "focus", "fokus"], run: function() { app.toggleZenMode() } },
-        "open-settings": { keywords: ["settings", "einstellungen", "preferences"], run: function() { app.openSettings() } }
+        "open-settings": { keywords: ["settings", "einstellungen", "preferences"], run: function() { app.openSettings() } },
+        "start-focus": { keywords: ["focus", "fokus", "session"], run: function() { app.startDefaultFocusSession() } },
+        "open-pomodoro": { keywords: ["pomodoro", "timer"], run: function() { app.togglePomodoroOverlay(true) } },
+        "export-week": { keywords: ["export", "week", "pdf"], run: function() { app.openExportDialog("week") } },
+        "export-month": { keywords: ["export", "month", "pdf"], run: function() { app.openExportDialog("month") } }
     })
 
     function open(initialQuery) {

@@ -18,6 +18,8 @@ QtObject {
     readonly property color accent:       "#3B82F6"
     readonly property color accentBg:     "#1A2B4D"
     readonly property color danger:       "#F97066"
+    readonly property color warn:         "#F59E0B"
+    readonly property color overdue:      "#DC2626"
     readonly property color prioHigh:     "#F97066"
     readonly property color prioMedium:   "#FFA726"
     readonly property color prioLow:      "#66BB6A"
@@ -71,6 +73,8 @@ QtObject {
         readonly property alias prioHigh: theme.prioHigh
         readonly property alias prioMedium: theme.prioMedium
         readonly property alias prioLow: theme.prioLow
+        readonly property alias warn: theme.warn
+        readonly property alias overdue: theme.overdue
     }
 
     readonly property QtObject type: QtObject {

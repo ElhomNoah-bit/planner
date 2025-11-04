@@ -71,6 +71,9 @@ Button {
         if (kind === "primary") {
             return down ? Qt.darker(colors.accent, 1.05) : colors.accent
         }
+        if (kind === "danger") {
+            return down ? Qt.darker(colors.danger, 1.05) : colors.danger
+        }
         if (kind === "ghost") {
             if (down) return colors.press
             if (hovered) return colors.hover
@@ -84,6 +87,9 @@ Button {
 
     function borderColor() {
         if (kind === "primary") {
+            return "transparent"
+        }
+        if (kind === "danger") {
             return "transparent"
         }
         if (kind === "ghost") {
@@ -104,6 +110,9 @@ Button {
 
     function foregroundColor() {
         if (kind === "primary") {
+            return colors.appBg
+        }
+        if (kind === "danger") {
             return colors.appBg
         }
         if (kind === "ghost") {
