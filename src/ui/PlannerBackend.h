@@ -3,7 +3,10 @@
 #include "AppState.h"
 #include "core/CategoryRepository.h"
 #include "core/EventRepository.h"
+#include "core/FocusSessionRepository.h"
+#include "core/PomodoroTimer.h"
 #include "core/QuickAddParser.h"
+#include "core/ScheduleExporter.h"
 #include "models/EventModel.h"
 
 #include <QAbstractListModel>
@@ -26,9 +29,15 @@ class PlannerBackend : public QObject {
     Q_PROPERTY(QVariantList today READ todayEvents NOTIFY todayEventsChanged)
     Q_PROPERTY(QVariantList upcoming READ upcomingEvents NOTIFY upcomingEventsChanged)
     Q_PROPERTY(QVariantList exams READ examEvents NOTIFY examEventsChanged)
+    Q_PROPERTY(QVariantList urgent READ urgentEvents NOTIFY urgentEventsChanged)
     Q_PROPERTY(QVariantList commands READ commands NOTIFY commandsChanged)
     Q_PROPERTY(QString searchQuery READ searchQuery WRITE setSearchQuery NOTIFY searchQueryChanged)
     Q_PROPERTY(QVariantList categories READ categories NOTIFY categoriesChanged)
+    Q_PROPERTY(bool focusSessionActive READ focusSessionActive NOTIFY focusSessionActiveChanged)
+    Q_PROPERTY(QVariantMap focusSession READ focusSession NOTIFY focusSessionChanged)
+    Q_PROPERTY(QVariantList focusHistory READ focusHistory NOTIFY focusHistoryChanged)
+    Q_PROPERTY(int focusStreak READ focusStreak NOTIFY focusStreakChanged)
+    Q_PROPERTY(QVariantMap pomodoro READ pomodoroState NOTIFY pomodoroChanged)
 
 public:
     explicit PlannerBackend(QObject* parent = nullptr);
@@ -62,6 +71,13 @@ public:
     QVariantList examEvents() const { return m_exams; }
     QVariantList commands() const { return m_commands; }
     QVariantList categories() const { return m_categories; }
+    QVariantList urgentEvents() const { return m_urgent; }
+
+    bool focusSessionActive() const;
+    QVariantMap focusSession() const { return m_focusSession; }
+    QVariantList focusHistory() const { return m_focusHistory; }
+    int focusStreak() const { return m_focusStreak; }
+    QVariantMap pomodoroState() const { return m_pomodoroState; }
 
     Q_INVOKABLE void selectDateIso(const QString& isoDate);
     Q_INVOKABLE void setViewMode(const QString& mode);
@@ -82,6 +98,18 @@ public:
     Q_INVOKABLE bool setEntryCategory(const QString& entryId, const QString& categoryId);
     Q_INVOKABLE bool moveEntry(const QString& entryId, const QString& newStartIso, const QString& newEndIso);
 
+    Q_INVOKABLE void startFocusSession(int minutes = 25);
+    Q_INVOKABLE void stopFocusSession(bool completed = true);
+    Q_INVOKABLE void cancelFocusSession();
+    Q_INVOKABLE void refreshFocusHistory();
+
+    Q_INVOKABLE void startPomodoro();
+    Q_INVOKABLE void stopPomodoro();
+    Q_INVOKABLE void skipPomodoroPhase();
+
+    Q_INVOKABLE bool exportWeekPdf(const QString& filePath, const QString& weekStartIso = QString());
+    Q_INVOKABLE bool exportMonthPdf(const QString& filePath, const QString& monthIso = QString());
+
 signals:
     void darkThemeChanged();
     void selectedDateChanged();
@@ -97,6 +125,12 @@ signals:
     void categoriesChanged();
     void toastRequested(const QString& message);
     void entryMoved(const QString& entryId, const QString& oldStartIso, const QString& oldEndIso);
+    void urgentEventsChanged();
+    void focusSessionActiveChanged();
+    void focusSessionChanged();
+    void focusHistoryChanged();
+    void focusStreakChanged();
+    void pomodoroChanged();
 
 private:
     EventRepository m_repository;
@@ -104,6 +138,9 @@ private:
     EventModel m_eventModel;
     QuickAddParser m_parser;
     AppState m_state;
+    FocusSessionRepository m_focusRepository;
+    PomodoroTimer m_pomodoro;
+    ScheduleExporter m_exporter;
 
     QString m_storageDir;
     QDate m_selectedDate;
@@ -115,6 +152,12 @@ private:
     QVariantList m_exams;
     QVariantList m_commands;
     QVariantList m_categories;
+    QVariantList m_urgent;
+    QVariantMap m_focusSession;
+    QVariantList m_focusHistory;
+    QVariantMap m_pomodoroState;
+    int m_focusStreak = 0;
+    int m_focusGoalMinutes = 25;
 
     void initializeStorage();
     void reloadEvents();
@@ -129,4 +172,9 @@ private:
     QString modeToString(ViewMode mode) const;
     void logEventLoad(int count) const;
     void notify(const QString& message);
+    int deadlineSeverity(const EventRecord& record, const QDate& today) const;
+    QString severityLabel(int severity) const;
+    void rebuildUrgent(const QDate& today);
+    void rebuildFocusState();
+    void rebuildPomodoroState();
 };

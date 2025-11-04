@@ -11,7 +11,16 @@ Rectangle {
     property string timeText: ""
     property bool timed: timeText.length > 0
     property string categoryColor: ""
-    
+    property string deadlineSeverity: ""
+    property int deadlineLevel: 0
+
+    readonly property color urgencyColor: deadlineSeverity === "overdue" ? Styles.ThemeStore.colors.overdue
+                                         : deadlineSeverity === "danger" ? Styles.ThemeStore.colors.danger
+                                         : deadlineSeverity === "warn" ? Styles.ThemeStore.colors.warn
+                                         : Styles.ThemeStore.colors.accent
+
+    readonly property bool urgent: deadlineLevel > 0
+
     // Drag & Drop properties
     property string entryId: ""
     property string startIso: ""
@@ -26,13 +35,21 @@ Rectangle {
     implicitWidth: Math.max(92, contentRow.implicitWidth + Styles.ThemeStore.g16)
     radius: Styles.ThemeStore.r12
     color: muted ? Styles.ThemeStore.cardAlt : Styles.ThemeStore.cardBg
-    border.width: categoryColor.length > 0 ? 2 : (overdue ? 1 : 0)
-    border.color: categoryColor.length > 0 ? categoryColor : (overdue ? Styles.ThemeStore.danger : "transparent")
-    
+    border.width: categoryColor.length > 0 ? 2 : (urgent ? 2 : (overdue ? 1 : 0))
+    border.color: categoryColor.length > 0 ? categoryColor : (urgent ? urgencyColor : (overdue ? Styles.ThemeStore.danger : "transparent"))
+
     opacity: dragHandler.active ? 0.5 : 1.0
-    
+
     Behavior on opacity {
         NumberAnimation { duration: 100; easing.type: Easing.InOutQuad }
+    }
+
+    Rectangle {
+        anchors.fill: parent
+        radius: chip.radius
+        color: urgencyColor
+        opacity: urgent ? 0.12 : 0
+        visible: urgent
     }
 
     RowLayout {
