@@ -18,6 +18,7 @@ Item {
     property int focusStreak: planner && planner.focusStreak ? planner.focusStreak : 0
     property var pomodoroState: planner && planner.pomodoro ? planner.pomodoro : ({})
     property bool zenMode: false
+    signal startTimerRequested(int minutes)
 
     readonly property QtObject colors: Styles.ThemeStore.colors
     readonly property QtObject gaps: Styles.ThemeStore.gap
@@ -195,6 +196,17 @@ Item {
                         }
 
                         Item { Layout.fillWidth: true }
+
+                        PillButton {
+                            text: qsTr("⏱ Timer")
+                            kind: "ghost"
+                            onClicked: {
+                                var minutes = 25
+                                if (focusSession && focusSession.goalMinutes)
+                                    minutes = focusSession.goalMinutes
+                                root.startTimerRequested(minutes)
+                            }
+                        }
 
                         PillButton {
                             text: qsTr("🍅 Pomodoro")

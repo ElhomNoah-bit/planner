@@ -70,7 +70,10 @@ Item {
     TimerOverlay {
         id: timerOverlay
         function openTimer(minutes) {
-            timerOverlay.minutes = minutes
+            if (minutes && minutes > 0)
+                timerOverlay.minutes = minutes
+            timerOverlay.remainingSeconds = timerOverlay.minutes * 60
+            timerOverlay.running = false
             timerOverlay.open = true
         }
         onFinished: planner.showToast(qsTr("Timer abgeschlossen"))
