@@ -5,7 +5,11 @@ REM   - CMake 3.16 or higher
 REM   - Qt6 (6.4 or higher) with Qt6Config.cmake in PATH
 REM   - Visual Studio Build Tools or MinGW with C++17 support
 
+set "EXIT_CODE=0"
 setlocal enabledelayedexpansion
+
+set "SCRIPT_DIR=%~dp0"
+pushd "%SCRIPT_DIR%" >nul
 
 set "SKIP_PAUSE="
 for %%A in (%*) do (
@@ -39,7 +43,8 @@ if %ERRORLEVEL% NEQ 0 (
     echo ERROR: CMake not found in PATH and automatic installation failed.
     echo Please install CMake 3.16 or higher manually if automatic installation is not possible.
     pause
-    exit /b 1
+    set "EXIT_CODE=1"
+    goto :cleanup
 )
 
 REM Check if Qt6 is available (basic check)
@@ -73,7 +78,8 @@ if %ERRORLEVEL% NEQ 0 (
     echo 2. Install Qt6 from https://www.qt.io/download
     echo 3. Ensure Visual Studio Build Tools are installed
     pause
-    exit /b 1
+    set "EXIT_CODE=1"
+    goto :cleanup
 )
 
 echo.
@@ -83,7 +89,8 @@ if %ERRORLEVEL% NEQ 0 (
     echo.
     echo ERROR: Build failed
     pause
-    exit /b 1
+    set "EXIT_CODE=1"
+    goto :cleanup
 )
 
 echo.
@@ -94,30 +101,36 @@ echo.
 echo Starting Noah Planner...
 echo.
 
-REM Find and run the application
-if exist "%BUILD_DIR%\Release\noah_planner.exe" (
-    "%BUILD_DIR%\Release\noah_planner.exe"
-) else if exist "%BUILD_DIR%\Debug\noah_planner.exe" (
-    "%BUILD_DIR%\Debug\noah_planner.exe"
-) else if exist "%BUILD_DIR%\noah_planner.exe" (
-    "%BUILD_DIR%\noah_planner.exe"
-) else (
+set "APP_PATH="
+if exist "%BUILD_DIR%\Release\noah_planner.exe" set "APP_PATH=%BUILD_DIR%\Release\noah_planner.exe"
+if "%APP_PATH%"=="" if exist "%BUILD_DIR%\Debug\noah_planner.exe" set "APP_PATH=%BUILD_DIR%\Debug\noah_planner.exe"
+if "%APP_PATH%"=="" if exist "%BUILD_DIR%\noah_planner.exe" set "APP_PATH=%BUILD_DIR%\noah_planner.exe"
+
+if "%APP_PATH%"=="" (
     echo ERROR: noah_planner.exe not found
     echo Checked locations:
     echo   - %BUILD_DIR%\Release\noah_planner.exe
     echo   - %BUILD_DIR%\Debug\noah_planner.exe
     echo   - %BUILD_DIR%\noah_planner.exe
     pause
-    exit /b 1
+    set "EXIT_CODE=1"
+    goto :cleanup
 )
+
+call :deploy_qt_dependencies "%APP_PATH%"
+if %ERRORLEVEL% NEQ 0 (
+    echo WARNING: Qt runtime deployment failed. The application may not start correctly.
+)
+
+"%APP_PATH%"
 
 if not defined SKIP_PAUSE (
     echo.
     pause
 )
 
-endlocal
-goto :EOF
+set "EXIT_CODE=0"
+goto :cleanup
 
 :ensure_tool
 set "TOOL_NAME=%~1"
@@ -206,6 +219,59 @@ if /I "%PACKAGE_MANAGER%"=="choco" (
         echo WARNING: Automatic Qt installation via Chocolatey may not have completed successfully.
     )
     exit /b 0
+)
+
+exit /b 0
+
+:cleanup
+set "CODE=!EXIT_CODE!"
+popd >nul
+endlocal & exit /b %CODE%
+
+:find_windeployqt
+set "WINDEPLOYQT_PATH="
+
+for /f "delims=" %%I in ('where windeployqt 2^>nul') do (
+    if not defined WINDEPLOYQT_PATH set "WINDEPLOYQT_PATH=%%~fI"
+)
+
+if defined WINDEPLOYQT_PATH exit /b 0
+
+if defined Qt6_DIR (
+    for %%I in ("%Qt6_DIR%\..\..\bin\windeployqt.exe") do (
+        if exist "%%~fI" set "WINDEPLOYQT_PATH=%%~fI"
+    )
+)
+
+if defined WINDEPLOYQT_PATH exit /b 0
+
+if defined CMAKE_PREFIX_PATH (
+    for %%P in ("%CMAKE_PREFIX_PATH:;=" "%") do (
+        if not defined WINDEPLOYQT_PATH (
+            if exist "%%~P\bin\windeployqt.exe" set "WINDEPLOYQT_PATH=%%~fP\bin\windeployqt.exe"
+        )
+    )
+)
+
+if defined WINDEPLOYQT_PATH exit /b 0
+
+exit /b 1
+
+:deploy_qt_dependencies
+set "TARGET_EXE=%~1"
+if "%TARGET_EXE%"=="" exit /b 1
+
+call :find_windeployqt
+if not defined WINDEPLOYQT_PATH (
+    echo WARNING: windeployqt not found. Skipping Qt dependency deployment.
+    exit /b 1
+)
+
+echo Running windeployqt to bundle Qt dependencies...
+"%WINDEPLOYQT_PATH%" "%TARGET_EXE%" --qmldir "%SCRIPT_DIR%src\ui\qml"
+if errorlevel 1 (
+    echo WARNING: windeployqt reported an error.
+    exit /b 1
 )
 
 exit /b 0
