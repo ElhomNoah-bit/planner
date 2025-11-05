@@ -85,6 +85,56 @@ Item {
             }
 
             GlassPanel {
+                visible: planner && planner.dueReviewCount > 0
+                Layout.fillWidth: true
+                padding: gaps.g16
+
+                ColumnLayout {
+                    Layout.fillWidth: true
+                    spacing: gaps.g12
+
+                    RowLayout {
+                        Layout.fillWidth: true
+                        spacing: gaps.g8
+
+                        Label {
+                            text: qsTr("Wiederholungen")
+                            font.pixelSize: typeScale.sm
+                            font.weight: typeScale.weightBold
+                            font.family: fonts.heading
+                            color: colors.text
+                            renderType: Text.NativeRendering
+                        }
+
+                        Item { Layout.fillWidth: true }
+
+                        ReviewIndicator {
+                            dueCount: planner ? planner.dueReviewCount : 0
+                            onClicked: app.openReviewDialog()
+                        }
+                    }
+
+                    Text {
+                        text: planner && planner.dueReviewCount > 0
+                              ? qsTr("%1 %2 fällig heute").arg(planner.dueReviewCount).arg(planner.dueReviewCount === 1 ? "Review" : "Reviews")
+                              : qsTr("Keine Reviews fällig")
+                        font.pixelSize: typeScale.sm
+                        font.weight: typeScale.weightRegular
+                        font.family: fonts.body
+                        color: colors.text2
+                        renderType: Text.NativeRendering
+                    }
+
+                    PillButton {
+                        text: qsTr("🔄 Reviews öffnen")
+                        kind: "ghost"
+                        Layout.alignment: Qt.AlignLeft
+                        onClicked: app.openReviewDialog()
+                    }
+                }
+            }
+
+            GlassPanel {
                 Layout.fillWidth: true
                 padding: gaps.g16
 

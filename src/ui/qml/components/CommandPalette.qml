@@ -28,7 +28,8 @@ Item {
         "start-focus": { keywords: ["focus", "fokus", "session"], run: function() { app.startDefaultFocusSession() } },
         "open-pomodoro": { keywords: ["pomodoro", "timer"], run: function() { app.togglePomodoroOverlay(true) } },
         "export-week": { keywords: ["export", "week", "pdf"], run: function() { app.openExportDialog("week") } },
-        "export-month": { keywords: ["export", "month", "pdf"], run: function() { app.openExportDialog("month") } }
+        "export-month": { keywords: ["export", "month", "pdf"], run: function() { app.openExportDialog("month") } },
+        "open-reviews": { keywords: ["review", "reviews", "wiederholung", "wiederholungen", "lernen", "spaced"], run: function() { app.openReviewDialog() } }
     })
 
     function open(initialQuery) {

@@ -71,6 +71,13 @@ ApplicationWindow {
         onActivated: app.togglePomodoroOverlay()
     }
 
+    Shortcut {
+        sequences: ["Ctrl+R", "Meta+R"]
+        context: Qt.ApplicationShortcut
+        enabled: app.visible
+        onActivated: app.openReviewDialog()
+    }
+
     function goToday() {
         planner.jumpToToday()
     }
@@ -148,6 +155,9 @@ ApplicationWindow {
         case "export-month":
             app.openExportDialog("month")
             break
+        case "open-reviews":
+            app.openReviewDialog()
+            break
         default:
             break
         }
@@ -181,6 +191,10 @@ ApplicationWindow {
 
     function openExportDialog(mode) {
         exportDialog.open(mode || "week")
+    }
+
+    function openReviewDialog() {
+        reviewDialog.open()
     }
 
     ColumnLayout {
@@ -293,6 +307,12 @@ ApplicationWindow {
             else
                 planner.showToast(qsTr("Export fehlgeschlagen"))
         }
+    }
+
+    ReviewDialog {
+        id: reviewDialog
+        backend: planner
+        anchors.centerIn: parent
     }
 
     PomodoroOverlay {
