@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import NoahPlanner.Styles as Styles
+import Styles 1.0
 
 FocusScope {
     id: root
@@ -15,7 +15,11 @@ FocusScope {
     readonly property bool hovered: hoverHandler.hovered
     property var visibleEvents: (events || []).slice(0, maxVisible)
     property int extraCount: Math.max(0, (events || []).length - maxVisible)
-    readonly property color hoverFill: Qt.lighter(Styles.ThemeStore.colors.cardBg, 1.08)
+    readonly property QtObject colors: ThemeStore.colors
+    readonly property QtObject gaps: ThemeStore.gap
+    readonly property QtObject radii: ThemeStore.radii
+    readonly property QtObject typeScale: ThemeStore.type
+    readonly property color hoverFill: Qt.lighter(colors.cardBg, 1.08)
     
     // Drop support
     property bool dropActive: dropArea.containsDrag
@@ -109,14 +113,14 @@ FocusScope {
     Rectangle {
         id: backdrop
         anchors.fill: parent
-        radius: Styles.ThemeStore.r12
+        radius: radii.md
         border.width: root.isToday ? 2 : 1
-     border.color: root.isToday
-            ? Styles.ThemeStore.colors.focus
-            : (root.selected ? Styles.ThemeStore.colors.accent : Styles.ThemeStore.colors.divider)
-     color: root.selected
-         ? Styles.ThemeStore.colors.accentBg
-         : (root.hovered ? hoverFill : Styles.ThemeStore.colors.cardBg)
+        border.color: root.isToday
+            ? colors.focus
+            : (root.selected ? colors.accent : colors.divider)
+        color: root.selected
+            ? colors.accentBg
+            : (root.hovered ? hoverFill : colors.cardBg)
         antialiasing: true
 
         Behavior on color {
@@ -130,8 +134,8 @@ FocusScope {
     // Drop indicator overlay
     Rectangle {
         anchors.fill: parent
-        radius: Styles.ThemeStore.r12
-        color: Styles.ThemeStore.colors.accent
+        radius: radii.md
+        color: colors.accent
         opacity: root.dropActive ? 0.15 : 0
         visible: root.dropActive
         
@@ -143,10 +147,10 @@ FocusScope {
     Rectangle {
         anchors.fill: parent
         anchors.margins: -1
-        radius: Styles.ThemeStore.r12 + 2
+        radius: radii.md + 2
         color: "transparent"
         border.width: 1
-        border.color: Styles.ThemeStore.focus
+        border.color: ThemeStore.focus
         visible: root.activeFocus
         opacity: 0.9
     }
@@ -156,11 +160,11 @@ FocusScope {
         text: root.dayNumber
         anchors.left: parent.left
         anchors.top: parent.top
-        anchors.margins: Styles.ThemeStore.g12
-        font.pixelSize: Styles.ThemeStore.type.sm + 2
-        font.family: Styles.ThemeStore.fonts.heading
-        font.weight: root.isToday ? Styles.ThemeStore.type.weightBold : Styles.ThemeStore.type.weightMedium
-        color: root.inMonth ? Styles.ThemeStore.colors.text : Styles.ThemeStore.colors.text2
+        anchors.margins: gaps.g12
+        font.pixelSize: typeScale.sm + 2
+        font.family: ThemeStore.fonts.heading
+        font.weight: root.isToday ? typeScale.weightBold : typeScale.weightMedium
+        color: root.inMonth ? colors.text : colors.text2
         opacity: root.inMonth ? 1 : 0.6
         renderType: Text.NativeRendering
     }
@@ -171,18 +175,18 @@ FocusScope {
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         anchors.top: dayLabel.bottom
-        anchors.topMargin: Styles.ThemeStore.g12
-        anchors.leftMargin: Styles.ThemeStore.g12
-        anchors.rightMargin: Styles.ThemeStore.g12
-        anchors.bottomMargin: Styles.ThemeStore.g12
-        spacing: Styles.ThemeStore.g8
+        anchors.topMargin: gaps.g12
+        anchors.leftMargin: gaps.g12
+        anchors.rightMargin: gaps.g12
+        anchors.bottomMargin: gaps.g12
+        spacing: gaps.g8
 
         Repeater {
             model: root.visibleEvents
             delegate: EventChip {
                 width: list.width
                 label: modelData.title
-                subjectColor: modelData.colorHint && modelData.colorHint.length ? modelData.colorHint : Styles.ThemeStore.colors.accent
+                subjectColor: modelData.colorHint && modelData.colorHint.length ? modelData.colorHint : colors.accent
                 timeText: modelData.startTimeLabel
                 overdue: modelData.overdue
                 categoryColor: modelData.categoryColor || ""
@@ -198,7 +202,7 @@ FocusScope {
             visible: root.extraCount > 0
             label: "+" + root.extraCount
             muted: true
-            subjectColor: Styles.ThemeStore.colors.accent
+            subjectColor: colors.accent
             timeText: ""
         }
     }
