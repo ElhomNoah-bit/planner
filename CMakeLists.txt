@@ -4,12 +4,9 @@ project(noah_planner LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.5 COMPONENTS Core Quick Qml QuickControls2 QuickLayouts Widgets Sql PrintSupport REQUIRED)
+find_package(Qt6 6.4 COMPONENTS Core Quick Qml QuickControls2 QuickLayouts Widgets Sql PrintSupport REQUIRED)
 
 qt_standard_project_setup()
-
-qt_policy(SET QTP0001 NEW)
-qt_policy(SET QTP0004 NEW)
 
 qt_add_executable(noah_planner
     src/main.cpp
