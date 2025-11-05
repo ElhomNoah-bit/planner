@@ -1,13 +1,13 @@
 import QtQuick
 import QtQuick.Controls
-import Styles 1.0 as Styles
+import Styles 1.0
 
 Item {
     id: root
     property string title: ""
     property string goal: ""
     property int duration: 25
-    property color subjectColor: Styles.ThemeStore.colors.accent
+    property color subjectColor: ThemeStore.colors.accent
     property bool done: false
     property int priority: 1  // 0=Low, 1=Medium, 2=High
     signal toggled(bool done)
@@ -16,10 +16,10 @@ Item {
     implicitHeight: 68
     width: parent ? parent.width : 320
 
-    readonly property QtObject colors: Styles.ThemeStore.colors
-    readonly property QtObject gaps: Styles.ThemeStore.gap
-    readonly property QtObject radii: Styles.ThemeStore.radii
-    readonly property QtObject typeScale: Styles.ThemeStore.type
+    readonly property QtObject colors: ThemeStore.colors
+    readonly property QtObject gaps: ThemeStore.gap
+    readonly property QtObject radii: ThemeStore.radii
+    readonly property QtObject typeScale: ThemeStore.type
 
     Rectangle {
         id: container
@@ -80,7 +80,7 @@ Item {
                 text: root.title
                 font.pixelSize: typeScale.md
                 font.weight: typeScale.weightMedium
-                font.family: Styles.ThemeStore.fonts.uiFallback
+                font.family: ThemeStore.fonts.uiFallback
                 color: colors.text
                 elide: Text.ElideRight
                 renderType: Text.NativeRendering
@@ -89,7 +89,7 @@ Item {
                 text: root.goal
                 font.pixelSize: typeScale.xs
                 font.weight: typeScale.weightRegular
-                font.family: Styles.ThemeStore.fonts.uiFallback
+                font.family: ThemeStore.fonts.uiFallback
                 color: colors.text2
                 elide: Text.ElideRight
                 renderType: Text.NativeRendering
@@ -98,9 +98,9 @@ Item {
 
         Rectangle {
             id: timerPill
-            height: Math.max(Styles.ThemeStore.layout.pillH, 36)
+            height: Math.max(ThemeStore.layout.pillH, 36)
             width: 70
-            radius: Styles.ThemeStore.radii.md
+            radius: ThemeStore.radii.md
             color: colors.hover
             border.color: colors.divider
             border.width: 1
@@ -110,7 +110,7 @@ Item {
                 text: root.duration + qsTr("m")
                 font.pixelSize: typeScale.sm
                 font.weight: typeScale.weightMedium
-                font.family: Styles.ThemeStore.fonts.uiFallback
+                font.family: ThemeStore.fonts.uiFallback
                 color: colors.text
                 renderType: Text.NativeRendering
             }

@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import Styles 1.0 as Styles
+import Styles 1.0
 import "../components"
 
 Item {
@@ -26,11 +26,11 @@ Item {
 
     readonly property real timelineHeight: (endHour - startHour) * 60 * minuteHeight
 
-    readonly property QtObject colors: Styles.ThemeStore.colors
-    readonly property QtObject gaps: Styles.ThemeStore.gap
-    readonly property QtObject typeScale: Styles.ThemeStore.type
-    readonly property QtObject radii: Styles.ThemeStore.radii
-    readonly property QtObject fonts: Styles.ThemeStore.fonts
+    readonly property QtObject colors: ThemeStore.colors
+    readonly property QtObject gaps: ThemeStore.gap
+    readonly property QtObject typeScale: ThemeStore.type
+    readonly property QtObject radii: ThemeStore.radii
+    readonly property QtObject fonts: ThemeStore.fonts
 
     Timer {
         interval: 60000
@@ -101,8 +101,8 @@ Item {
                         readonly property bool isToday: dayIso === Qt.formatDate(new Date(), "yyyy-MM-dd")
                         readonly property bool isSelected: dayIso === root.anchorIso
                         opacity: root.zenMode && !isSelected
-                                 ? Styles.ThemeStore.opacityMuted
-                                 : Styles.ThemeStore.opacityFull
+                                 ? ThemeStore.opacityMuted
+                                 : ThemeStore.opacityFull
 
                         Behavior on opacity {
                             NumberAnimation { duration: 150; easing.type: Easing.InOutQuad }

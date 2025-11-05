@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import NoahPlanner.Styles as Styles
+import Styles 1.0 as Styles
 
 Rectangle {
     id: root

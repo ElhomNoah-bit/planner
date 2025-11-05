@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
-import Styles 1.0 as Styles
+import Styles 1.0
 import "../components" as Components
 
 Item {
@@ -21,10 +21,10 @@ Item {
     property var weekdayLabels: []
     property var weekNumbers: []
 
-    readonly property QtObject colors: Styles.ThemeStore.colors
-    readonly property QtObject gaps: Styles.ThemeStore.gap
-    readonly property QtObject typeScale: Styles.ThemeStore.type
-    readonly property QtObject metrics: Styles.ThemeStore.layout
+    readonly property QtObject colors: ThemeStore.colors
+    readonly property QtObject gaps: ThemeStore.gap
+    readonly property QtObject typeScale: ThemeStore.type
+    readonly property QtObject metrics: ThemeStore.layout
     readonly property var anchorDate: selectedIso.length > 0 ? new Date(selectedIso) : new Date()
     readonly property real weekNumberWidth: showWeekNumbersSetting ? 48 : 0
 
@@ -49,7 +49,7 @@ Item {
                     horizontalAlignment: Text.AlignHCenter
                     font.pixelSize: typeScale.sm
                     font.weight: typeScale.weightMedium
-                    font.family: Styles.ThemeStore.fonts.heading
+                    font.family: ThemeStore.fonts.heading
                     color: colors.text2
                     renderType: Text.NativeRendering
                 }
@@ -72,7 +72,7 @@ Item {
                         text: modelData
                         font.pixelSize: typeScale.xs
                         font.weight: typeScale.weightMedium
-                        font.family: Styles.ThemeStore.fonts.body
+                        font.family: ThemeStore.fonts.body
                         color: colors.text2
                         horizontalAlignment: Text.AlignHCenter
                         renderType: Text.NativeRendering
@@ -103,8 +103,8 @@ Item {
                         Layout.preferredWidth: Math.max(120, grid.cellWidth)
                         Layout.preferredHeight: Math.max(100, grid.cellHeight)
                         opacity: month.zenMode && modelData.iso !== month.selectedIso
-                                 ? Styles.ThemeStore.opacityMuted
-                                 : Styles.ThemeStore.opacityFull
+                                 ? ThemeStore.opacityMuted
+                                 : ThemeStore.opacityFull
                         enabled: !month.zenMode || modelData.iso === month.selectedIso
                         onActivated: iso => month.daySelected(iso)
                         onContextCreateEvent: month.quickAddRequested(iso, "event")
