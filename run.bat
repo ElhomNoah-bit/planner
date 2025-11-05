@@ -7,6 +7,11 @@ REM   - Visual Studio Build Tools or MinGW with C++17 support
 
 setlocal enabledelayedexpansion
 
+set "SKIP_PAUSE="
+for %%A in (%*) do (
+    if /I "%%~A"=="--no-pause" set "SKIP_PAUSE=1"
+)
+
 set "PACKAGE_MANAGER="
 where winget >nul 2>nul
 if %ERRORLEVEL%==0 set "PACKAGE_MANAGER=winget"
@@ -104,6 +109,11 @@ if exist "%BUILD_DIR%\Release\noah_planner.exe" (
     echo   - %BUILD_DIR%\noah_planner.exe
     pause
     exit /b 1
+)
+
+if not defined SKIP_PAUSE (
+    echo.
+    pause
 )
 
 endlocal
