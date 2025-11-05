@@ -97,6 +97,7 @@ qt_add_qml_module(noah_planner
         src/ui/qml/components/Toast.qml
         src/ui/qml/components/ToastHost.qml
         src/ui/qml/components/SettingsDialog.qml
+        src/ui/qml/components/SetupWizard.qml
         src/ui/qml/components/TodayTaskDelegate.qml
         src/ui/qml/components/ZenToggleButton.qml
         src/ui/qml/components/ReviewIndicator.qml

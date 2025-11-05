@@ -41,6 +41,10 @@ class PlannerBackend : public QObject {
     Q_PROPERTY(QVariantMap pomodoro READ pomodoroState NOTIFY pomodoroChanged)
     Q_PROPERTY(QVariantList dueReviews READ dueReviews NOTIFY dueReviewsChanged)
     Q_PROPERTY(int dueReviewCount READ dueReviewCount NOTIFY dueReviewsChanged)
+    Q_PROPERTY(bool setupCompleted READ setupCompleted WRITE setSetupCompleted NOTIFY setupCompletedChanged)
+    Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY languageChanged)
+    Q_PROPERTY(QString weekStart READ weekStart WRITE setWeekStart NOTIFY weekStartChanged)
+    Q_PROPERTY(bool showWeekNumbers READ showWeekNumbers WRITE setShowWeekNumbers NOTIFY showWeekNumbersChanged)
 
 public:
     explicit PlannerBackend(QObject* parent = nullptr);
@@ -83,6 +87,18 @@ public:
     QVariantMap pomodoroState() const { return m_pomodoroState; }
     QVariantList dueReviews() const { return m_dueReviews; }
     int dueReviewCount() const { return m_dueReviews.size(); }
+
+    bool setupCompleted() const { return m_state.setupCompleted(); }
+    void setSetupCompleted(bool completed);
+
+    QString language() const { return m_state.language(); }
+    void setLanguage(const QString& language);
+
+    QString weekStart() const { return m_state.weekStart(); }
+    void setWeekStart(const QString& weekStart);
+
+    bool showWeekNumbers() const { return m_state.weekNumbers(); }
+    void setShowWeekNumbers(bool enabled);
 
     Q_INVOKABLE void selectDateIso(const QString& isoDate);
     Q_INVOKABLE void setViewMode(const QString& mode);
@@ -147,6 +163,10 @@ signals:
     void focusStreakChanged();
     void pomodoroChanged();
     void dueReviewsChanged();
+    void setupCompletedChanged();
+    void languageChanged();
+    void weekStartChanged();
+    void showWeekNumbersChanged();
 
 private:
     EventRepository m_repository;
