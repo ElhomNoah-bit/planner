@@ -91,5 +91,5 @@ Alle Dokumentation ist jetzt im `docs/` Verzeichnis organisiert:
 - **✨ Features**:
   - [Prioritäten](docs/features/PRIORITY_FEATURE.md) - Automatische Task-Priorisierung
   - [Drag & Drop](docs/features/DRAG_DROP_IMPLEMENTATION.md) - Kalender-Interaktion
-  - [Spaced Repetition](docs/features/SPACED_REPETITION.md) - Lernsystem
+  - [Spaced Repetition](docs/features/SPACED_REPETITION.md) - Lernsystem mit vollständiger UI ([Anleitung](docs/UI_GUIDE_SPACED_REPETITION.md))
 - **📘 Erweiterte Dokumentation**: `docs/README.md` - Ausführliche Informationen zu Architektur, Konfiguration und Bedienung
