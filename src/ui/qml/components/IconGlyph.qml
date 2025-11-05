@@ -26,8 +26,7 @@ Item {
         "calendar": "\u25A1",
         "list.bullet": "\u2022",
         "ellipsis": "\u2026",
-        "gear": "\u2699",
-        "gearshape": "\u2699"
+        "gear": "\u2699"
     })
 
     readonly property var materialMap: ({
