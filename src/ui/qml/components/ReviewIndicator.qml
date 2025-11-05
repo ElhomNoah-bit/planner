@@ -45,7 +45,7 @@ Item {
             }
             
             Text {
-                text: root.dueCount === 1 ? "Review" : "Reviews"
+                text: root.dueCount === 1 ? "Wiederholung" : "Wiederholungen"
                 font.pixelSize: 12
                 color: "white"
                 visible: root.width > 80
@@ -65,7 +65,7 @@ Item {
     
     ToolTip {
         visible: mouseArea.containsMouse
-        text: root.dueCount + (root.dueCount === 1 ? " Review" : " Reviews") + " fällig heute"
+        text: root.dueCount + (root.dueCount === 1 ? " Wiederholung" : " Wiederholungen") + " fällig heute"
         delay: 500
     }
     
