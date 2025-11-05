@@ -31,6 +31,7 @@ bool CategoryRepository::initialize(const QString& storageDir) {
         defaults.append({QStringLiteral("science"), QStringLiteral("Naturwissenschaften"), QColor(QStringLiteral("#8B5CF6"))});
         defaults.append({QStringLiteral("history"), QStringLiteral("Geschichte"), QColor(QStringLiteral("#EF4444"))});
         defaults.append({QStringLiteral("other"), QStringLiteral("Sonstiges"), QColor(QStringLiteral("#6B7280"))});
+    defaults.append({QStringLiteral("untis"), QStringLiteral("Untis"), QColor(QStringLiteral("#1A2B4D"))});
         
         m_categories = defaults;
         if (!saveToFile()) {

@@ -38,6 +38,26 @@ QString normalizedTerm(const QString& term) {
     }
     return t;
 }
+
+bool ensureColumn(QSqlDatabase& db, const QString& table, const QString& column, const QString& typeDefinition) {
+    QSqlQuery pragma(db);
+    if (!pragma.exec(QStringLiteral("PRAGMA table_info(%1)").arg(table))) {
+        qWarning() << "[EventRepository] Unable to inspect schema for" << table << pragma.lastError();
+        return false;
+    }
+    while (pragma.next()) {
+        if (pragma.value(QStringLiteral("name")).toString().compare(column, Qt::CaseInsensitive) == 0) {
+            return true;
+        }
+    }
+    QSqlQuery alter(db);
+    const QString sql = QStringLiteral("ALTER TABLE %1 ADD COLUMN %2 %3").arg(table, column, typeDefinition);
+    if (!alter.exec(sql)) {
+        qWarning() << "[EventRepository] Failed to add column" << column << alter.lastError();
+        return false;
+    }
+    return true;
+}
 }
 
 EventRepository::EventRepository()
@@ -104,7 +124,11 @@ bool EventRepository::initialize(const QString& storageDir) {
         "isDone INTEGER NOT NULL DEFAULT 0,"
         "due DATETIME,"
         "colorHint TEXT,"
-        "priority INTEGER NOT NULL DEFAULT 0,"
+    "priority INTEGER NOT NULL DEFAULT 0,"
+    "categoryId TEXT,"
+    "source TEXT,"
+    "externalId TEXT,"
+    "eventType TEXT,"
         "createdAt DATETIME NOT NULL,"
         "updatedAt DATETIME NOT NULL"
         ");");
@@ -123,10 +147,17 @@ bool EventRepository::initialize(const QString& storageDir) {
         return true;
     }
 
+    ensureColumn(db, QStringLiteral("events"), QStringLiteral("categoryId"), QStringLiteral("TEXT"));
+    ensureColumn(db, QStringLiteral("events"), QStringLiteral("source"), QStringLiteral("TEXT"));
+    ensureColumn(db, QStringLiteral("events"), QStringLiteral("externalId"), QStringLiteral("TEXT"));
+    ensureColumn(db, QStringLiteral("events"), QStringLiteral("eventType"), QStringLiteral("TEXT"));
+
     QSqlQuery idxStart(db);
     idxStart.exec(QStringLiteral("CREATE INDEX IF NOT EXISTS idx_events_start ON events(start);"));
     QSqlQuery idxTags(db);
     idxTags.exec(QStringLiteral("CREATE INDEX IF NOT EXISTS idx_events_tags ON events(tags);"));
+    QSqlQuery idxSource(db);
+    idxSource.exec(QStringLiteral("CREATE INDEX IF NOT EXISTS idx_events_source_external ON events(source, externalId);"));
 
     return true;
 }
@@ -227,8 +258,8 @@ bool EventRepository::insert(EventRecord& record) {
 
     QSqlQuery query(db);
     const QString sql = QStringLiteral(
-        "INSERT INTO events (id, title, start, end, allDay, location, notes, tags, isExam, isDone, due, colorHint, priority, createdAt, updatedAt) "
-        "VALUES (:id, :title, :start, :end, :allDay, :location, :notes, :tags, :isExam, :isDone, :due, :colorHint, :priority, :createdAt, :updatedAt)");
+        "INSERT INTO events (id, title, start, end, allDay, location, notes, tags, isExam, isDone, due, colorHint, priority, categoryId, source, externalId, eventType, createdAt, updatedAt) "
+        "VALUES (:id, :title, :start, :end, :allDay, :location, :notes, :tags, :isExam, :isDone, :due, :colorHint, :priority, :categoryId, :source, :externalId, :eventType, :createdAt, :updatedAt)");
     if (!query.prepare(sql)) {
         qWarning() << "[EventRepository] insert prepare failed" << query.lastError();
         return false;
@@ -249,6 +280,10 @@ bool EventRepository::insert(EventRecord& record) {
     query.bindValue(QStringLiteral(":due"), dueIso.isEmpty() ? QVariant() : QVariant(dueIso));
     query.bindValue(QStringLiteral(":colorHint"), record.colorHint);
     query.bindValue(QStringLiteral(":priority"), record.priority);
+    query.bindValue(QStringLiteral(":categoryId"), record.categoryId);
+    query.bindValue(QStringLiteral(":source"), record.source);
+    query.bindValue(QStringLiteral(":externalId"), record.externalId);
+    query.bindValue(QStringLiteral(":eventType"), record.eventType);
     query.bindValue(QStringLiteral(":createdAt"), isoString(now));
     query.bindValue(QStringLiteral(":updatedAt"), isoString(now));
 
@@ -293,7 +328,7 @@ bool EventRepository::update(const EventRecord& record) {
     QSqlQuery query(db);
     if (!query.prepare(QStringLiteral(
             "UPDATE events SET title=:title, start=:start, end=:end, allDay=:allDay, location=:location, notes=:notes, tags=:tags,"
-            " isExam=:isExam, isDone=:isDone, due=:due, colorHint=:colorHint, priority=:priority, updatedAt=:updatedAt WHERE id=:id"))) {
+            " isExam=:isExam, isDone=:isDone, due=:due, colorHint=:colorHint, priority=:priority, categoryId=:categoryId, source=:source, externalId=:externalId, eventType=:eventType, updatedAt=:updatedAt WHERE id=:id"))) {
         qWarning() << "[EventRepository] update prepare failed" << query.lastError();
         return false;
     }
@@ -309,6 +344,10 @@ bool EventRepository::update(const EventRecord& record) {
     query.bindValue(QStringLiteral(":due"), record.due.isValid() ? QVariant(isoString(record.due)) : QVariant());
     query.bindValue(QStringLiteral(":colorHint"), record.colorHint);
     query.bindValue(QStringLiteral(":priority"), record.priority);
+    query.bindValue(QStringLiteral(":categoryId"), record.categoryId);
+    query.bindValue(QStringLiteral(":source"), record.source);
+    query.bindValue(QStringLiteral(":externalId"), record.externalId);
+    query.bindValue(QStringLiteral(":eventType"), record.eventType);
     query.bindValue(QStringLiteral(":updatedAt"), isoString(QDateTime::currentDateTimeUtc()));
     query.bindValue(QStringLiteral(":id"), record.id);
     if (!query.exec()) {
@@ -334,6 +373,133 @@ bool EventRepository::remove(const QString& id) {
     query.bindValue(QStringLiteral(":id"), id);
     if (!query.exec()) {
         qWarning() << "[EventRepository] remove exec failed" << query.lastError();
+        return false;
+    }
+    return query.numRowsAffected() > 0;
+}
+
+std::optional<EventRecord> EventRepository::findByExternalId(const QString& source, const QString& externalId) const {
+    if (source.isEmpty() || externalId.isEmpty()) {
+        return std::nullopt;
+    }
+    if (!m_sqlAvailable) {
+        const QJsonArray array = readJsonArray();
+        const QDate today = QDate::currentDate();
+        for (const auto& value : array) {
+            if (!value.isObject()) {
+                continue;
+            }
+            EventRecord record = recordFromJson(value.toObject());
+            if (record.source == source && record.externalId == externalId) {
+                record.priority = computePriority(record, today);
+                return record;
+            }
+        }
+        return std::nullopt;
+    }
+
+    QSqlDatabase db = database();
+    if (!db.isValid()) {
+        return std::nullopt;
+    }
+    QSqlQuery query(db);
+    if (!query.prepare(QStringLiteral("SELECT * FROM events WHERE source = :source AND externalId = :externalId LIMIT 1"))) {
+        qWarning() << "[EventRepository] findByExternalId prepare failed" << query.lastError();
+        return std::nullopt;
+    }
+    query.bindValue(QStringLiteral(":source"), source);
+    query.bindValue(QStringLiteral(":externalId"), externalId);
+    if (!query.exec()) {
+        qWarning() << "[EventRepository] findByExternalId exec failed" << query.lastError();
+        return std::nullopt;
+    }
+    if (!query.next()) {
+        return std::nullopt;
+    }
+    EventRecord record = recordFromQuery(query);
+    record.priority = computePriority(record, QDate::currentDate());
+    return record;
+}
+
+QVector<EventRecord> EventRepository::findBySource(const QString& source) const {
+    if (source.isEmpty()) {
+        return {};
+    }
+    if (!m_sqlAvailable) {
+        const QJsonArray array = readJsonArray();
+        QVector<EventRecord> records;
+        const QDate today = QDate::currentDate();
+        for (const auto& value : array) {
+            if (!value.isObject()) {
+                continue;
+            }
+            EventRecord record = recordFromJson(value.toObject());
+            if (record.source != source) {
+                continue;
+            }
+            record.priority = computePriority(record, today);
+            records.append(record);
+        }
+        std::sort(records.begin(), records.end(), [](const EventRecord& a, const EventRecord& b) {
+            return a.start < b.start;
+        });
+        return records;
+    }
+
+    QSqlDatabase db = database();
+    if (!db.isValid()) {
+        return {};
+    }
+    QSqlQuery query(db);
+    if (!query.prepare(QStringLiteral("SELECT * FROM events WHERE source = :source ORDER BY start ASC"))) {
+        qWarning() << "[EventRepository] findBySource prepare failed" << query.lastError();
+        return {};
+    }
+    query.bindValue(QStringLiteral(":source"), source);
+    if (!query.exec()) {
+        qWarning() << "[EventRepository] findBySource exec failed" << query.lastError();
+        return {};
+    }
+    return runQuery(query);
+}
+
+bool EventRepository::removeBySource(const QString& source) {
+    if (source.isEmpty()) {
+        return false;
+    }
+    if (!m_sqlAvailable) {
+        QJsonArray array = readJsonArray();
+        QJsonArray updated;
+        bool changed = false;
+        for (const auto& value : array) {
+            if (!value.isObject()) {
+                continue;
+            }
+            const QJsonObject obj = value.toObject();
+            if (obj.value(QStringLiteral("source")).toString() == source) {
+                changed = true;
+                continue;
+            }
+            updated.append(obj);
+        }
+        if (!changed) {
+            return false;
+        }
+        return writeJsonArray(updated);
+    }
+
+    QSqlDatabase db = database();
+    if (!db.isValid()) {
+        return false;
+    }
+    QSqlQuery query(db);
+    if (!query.prepare(QStringLiteral("DELETE FROM events WHERE source = :source"))) {
+        qWarning() << "[EventRepository] removeBySource prepare failed" << query.lastError();
+        return false;
+    }
+    query.bindValue(QStringLiteral(":source"), source);
+    if (!query.exec()) {
+        qWarning() << "[EventRepository] removeBySource exec failed" << query.lastError();
         return false;
     }
     return query.numRowsAffected() > 0;
@@ -378,6 +544,10 @@ EventRecord EventRepository::recordFromQuery(const QSqlQuery& query) {
     record.due = fromIso(query.value(QStringLiteral("due")).toString());
     record.colorHint = query.value(QStringLiteral("colorHint")).toString();
     record.priority = query.value(QStringLiteral("priority")).toInt();
+    record.categoryId = query.value(QStringLiteral("categoryId")).toString();
+    record.source = query.value(QStringLiteral("source")).toString();
+    record.externalId = query.value(QStringLiteral("externalId")).toString();
+    record.eventType = query.value(QStringLiteral("eventType")).toString();
     return record;
 }
 
@@ -567,6 +737,9 @@ QJsonObject EventRepository::recordToJson(const EventRecord& record) {
     obj.insert(QStringLiteral("colorHint"), record.colorHint);
     obj.insert(QStringLiteral("priority"), record.priority);
     obj.insert(QStringLiteral("categoryId"), record.categoryId);
+    obj.insert(QStringLiteral("source"), record.source);
+    obj.insert(QStringLiteral("externalId"), record.externalId);
+    obj.insert(QStringLiteral("eventType"), record.eventType);
     return obj;
 }
 
@@ -592,6 +765,9 @@ EventRecord EventRepository::recordFromJson(const QJsonObject& object) {
     record.colorHint = object.value(QStringLiteral("colorHint")).toString();
     record.priority = object.value(QStringLiteral("priority")).toInt();
     record.categoryId = object.value(QStringLiteral("categoryId")).toString();
+    record.source = object.value(QStringLiteral("source")).toString();
+    record.externalId = object.value(QStringLiteral("externalId")).toString();
+    record.eventType = object.value(QStringLiteral("eventType")).toString();
     return record;
 }
 

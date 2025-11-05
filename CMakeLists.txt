@@ -29,6 +29,8 @@ qt_add_executable(noah_planner
     src/core/EventRepository.h
     src/core/CategoryRepository.cpp
     src/core/CategoryRepository.h
+    src/core/IcsImportService.cpp
+    src/core/IcsImportService.h
     src/core/FocusSession.cpp
     src/core/FocusSession.h
     src/core/FocusSessionRepository.cpp
