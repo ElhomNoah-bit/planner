@@ -21,14 +21,14 @@ Noah Planner is now fully compatible with both **Linux** and **Windows 10/11**. 
 
 **New Files:**
 - `run.bat` - Windows build and launch script
-- `WINDOWS_SETUP.md` - Comprehensive Windows installation guide
-- `PLATFORM_COMPATIBILITY.md` - Cross-platform compatibility documentation
+- `docs/setup/WINDOWS_SETUP.md` - Comprehensive Windows installation guide
+- `docs/setup/PLATFORM_COMPATIBILITY.md` - Cross-platform compatibility documentation
 
 **Modified Files:**
 - `CMakeLists.txt` - Added Windows-specific build configuration
 - `.gitignore` - Added Windows build artifacts
 - `README.md` - Updated with cross-platform instructions
-- `README_DEV.md` - Added platform-specific paths
+- `docs/development/README_DEV.md` - Added platform-specific paths
 
 ### 🔧 Code Changes
 
@@ -68,7 +68,7 @@ run.bat
 - CMake (3.16 or higher)
 - Visual Studio Build Tools 2019+ or MinGW
 
-See [WINDOWS_SETUP.md](WINDOWS_SETUP.md) for detailed instructions.
+See [WINDOWS_SETUP.md](../setup/WINDOWS_SETUP.md) for detailed instructions.
 
 ## Building on Linux (unchanged)
 
@@ -139,25 +139,25 @@ Qt automatically handles path separators:
 **No action required.** Everything works as before.
 
 ### For New Windows Users
-1. Follow [WINDOWS_SETUP.md](WINDOWS_SETUP.md)
+1. Follow [WINDOWS_SETUP.md](../setup/WINDOWS_SETUP.md)
 2. Install Qt6 and required tools
 3. Run `run.bat` to build and launch
 
 ### For Developers
 - Use `QDir::filePath()` instead of string concatenation for paths
 - Test changes on both Windows and Linux when possible
-- Refer to [PLATFORM_COMPATIBILITY.md](PLATFORM_COMPATIBILITY.md) for guidelines
+- Refer to [PLATFORM_COMPATIBILITY.md](../setup/PLATFORM_COMPATIBILITY.md) for guidelines
 
 ## Documentation
 
 New documentation files:
-- **WINDOWS_SETUP.md** - Step-by-step Windows installation
-- **PLATFORM_COMPATIBILITY.md** - Platform support matrix and guidelines
-- **This file (CHANGELOG_WINDOWS_COMPATIBILITY.md)** - Summary of changes
+- **docs/setup/WINDOWS_SETUP.md** - Step-by-step Windows installation
+- **docs/setup/PLATFORM_COMPATIBILITY.md** - Platform support matrix and guidelines
+- **This file (docs/development/CHANGELOG_WINDOWS_COMPATIBILITY.md)** - Summary of changes
 
 Updated documentation:
 - **README.md** - Cross-platform quick start
-- **README_DEV.md** - Platform-specific technical details
+- **docs/development/README_DEV.md** - Platform-specific technical details
 
 ## Acknowledgments
 
@@ -166,8 +166,8 @@ This cross-platform compatibility update addresses issue requesting Windows supp
 ## Support
 
 For platform-specific issues:
-- **Windows problems**: See [WINDOWS_SETUP.md](WINDOWS_SETUP.md) troubleshooting section
-- **General issues**: See [PLATFORM_COMPATIBILITY.md](PLATFORM_COMPATIBILITY.md)
+- **Windows problems**: See [WINDOWS_SETUP.md](../setup/WINDOWS_SETUP.md) troubleshooting section
+- **General issues**: See [PLATFORM_COMPATIBILITY.md](../setup/PLATFORM_COMPATIBILITY.md)
 - **Bug reports**: Include OS, Qt version, and compiler in issue description
 
 ---

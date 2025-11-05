@@ -118,7 +118,7 @@ run.bat
 ```
 
 For detailed instructions, see:
-- Linux: [README.md](README.md)
+- Linux: [README.md](../../README.md)
 - Windows: [WINDOWS_SETUP.md](WINDOWS_SETUP.md)
 
 ## Known Platform Differences

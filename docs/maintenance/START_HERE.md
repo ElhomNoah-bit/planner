@@ -6,12 +6,16 @@ This directory contains complete documentation and tools to resolve merge confli
 
 ---
 
+**📍 Note:** All commands below should be run from the repository root directory.
+
+---
+
 ## 🚨 Quick Start (Choose One)
 
 ### For Quick Resolution (Recommended)
 ```bash
 # 1. Read the summary (2 minutes)
-cat WICHTIG_IMPORTANT.md
+cat docs/maintenance/WICHTIG_IMPORTANT.md
 
 # 2. Run the automated script
 ./resolve_merge_conflicts.sh
@@ -22,13 +26,13 @@ cat WICHTIG_IMPORTANT.md
 ### For Complete Understanding
 ```bash
 # 1. Read the overview
-cat MERGE_CONFLICTS_README.md
+cat docs/maintenance/MERGE_CONFLICTS_README.md
 
 # 2. Review the technical analysis
-cat CONFLICT_ANALYSIS.md
+cat docs/maintenance/CONFLICT_ANALYSIS.md
 
 # 3. Follow the detailed guide
-cat MERGE_CONFLICT_RESOLUTION_GUIDE.md
+cat docs/maintenance/MERGE_CONFLICT_RESOLUTION_GUIDE.md
 
 # 4. Execute resolution manually
 ```
@@ -37,6 +41,8 @@ cat MERGE_CONFLICT_RESOLUTION_GUIDE.md
 
 ## 📚 Document Index
 
+All documents are in `docs/maintenance/`:
+
 | File | Size | Purpose | Read This If... |
 |------|------|---------|-----------------|
 | **WICHTIG_IMPORTANT.md** | 5.3K | 🇩🇪🇬🇧 Quick start | You want a fast overview in German or English |
@@ -44,6 +50,8 @@ cat MERGE_CONFLICT_RESOLUTION_GUIDE.md
 | **MERGE_CONFLICT_RESOLUTION_GUIDE.md** | 6.9K | 📝 Step-by-step | You want manual control over resolution |
 | **CONFLICT_ANALYSIS.md** | 8.4K | 🔬 Technical details | You want deep technical understanding |
 | **BRANCH_DIAGRAM.md** | 8.2K | 📊 Visual guides | You prefer visual explanations |
+
+Script is in repository root:
 | **resolve_merge_conflicts.sh** | 7.2K | 🤖 Automation | You want automated resolution |
 
 **Total documentation:** 43.4 KB
@@ -122,15 +130,15 @@ git push origin <feature-branch>
 ## 🎓 Learning Path
 
 ### Beginner (Never resolved merge conflicts)
-1. Read: `WICHTIG_IMPORTANT.md` (overview)
-2. Read: `MERGE_CONFLICTS_README.md` (concepts)
+1. Read: `docs/maintenance/WICHTIG_IMPORTANT.md` (overview)
+2. Read: `docs/maintenance/MERGE_CONFLICTS_README.md` (concepts)
 3. Run: `./resolve_merge_conflicts.sh` (guided)
 4. Learn from the process!
 
 ### Intermediate (Some git experience)
-1. Read: `WICHTIG_IMPORTANT.md` (overview)
-2. Read: `CONFLICT_ANALYSIS.md` (details)
-3. Follow: `MERGE_CONFLICT_RESOLUTION_GUIDE.md` (manual)
+1. Read: `docs/maintenance/WICHTIG_IMPORTANT.md` (overview)
+2. Read: `docs/maintenance/CONFLICT_ANALYSIS.md` (details)
+3. Follow: `docs/maintenance/MERGE_CONFLICT_RESOLUTION_GUIDE.md` (manual)
 4. Resolve each PR manually
 
 ### Advanced (Git expert)
@@ -158,13 +166,13 @@ Before you merge each PR:
 
 ### If the script fails:
 1. Check error messages carefully
-2. Read `MERGE_CONFLICT_RESOLUTION_GUIDE.md`
+2. Read `docs/maintenance/MERGE_CONFLICT_RESOLUTION_GUIDE.md`
 3. Try manual resolution
-4. Check `CONFLICT_ANALYSIS.md` for file-specific guidance
+4. Check `docs/maintenance/CONFLICT_ANALYSIS.md` for file-specific guidance
 
 ### If you're unsure about a conflict:
 1. Check the original PR description
-2. Look at `CONFLICT_ANALYSIS.md`
+2. Look at `docs/maintenance/CONFLICT_ANALYSIS.md`
 3. Examine the commit history: `git log <branch>`
 4. When in doubt: Keep feature branch changes (as instructed)
 
@@ -172,7 +180,7 @@ Before you merge each PR:
 1. Check CMakeLists.txt for syntax errors
 2. Verify all source files are included
 3. Check for missing #includes
-4. Review `CONFLICT_ANALYSIS.md` - "Potential Integration Issues" section
+4. Review `docs/maintenance/CONFLICT_ANALYSIS.md` - "Potential Integration Issues" section
 
 ---
 
@@ -244,10 +252,10 @@ Once all conflicts are resolved:
 
 ## 📞 Questions?
 
-- **Technical questions**: See `CONFLICT_ANALYSIS.md`
-- **Process questions**: See `MERGE_CONFLICTS_README.md`
-- **Quick answers**: See `WICHTIG_IMPORTANT.md`
-- **Visual help**: See `BRANCH_DIAGRAM.md`
+- **Technical questions**: See `docs/maintenance/CONFLICT_ANALYSIS.md`
+- **Process questions**: See `docs/maintenance/MERGE_CONFLICTS_README.md`
+- **Quick answers**: See `docs/maintenance/WICHTIG_IMPORTANT.md`
+- **Visual help**: See `docs/maintenance/BRANCH_DIAGRAM.md`
 
 ---
 

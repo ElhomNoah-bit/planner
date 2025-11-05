@@ -134,7 +134,7 @@ This project implements advanced calendar management features for Noah Planner, 
 ## Infrastructure Improvements
 
 ### Documentation
-- **README_DEV.md**: Comprehensive technical documentation covering:
+- **docs/development/README_DEV.md**: Comprehensive technical documentation covering:
   - Feature implementation details
   - API reference and usage examples
   - Keyboard shortcuts
