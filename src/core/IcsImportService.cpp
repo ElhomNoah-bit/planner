@@ -86,11 +86,13 @@ QDateTime parseDateTimeProperty(const IcsProperty& prop, bool* allDayFlag) {
         return {};
     }
 
+    const QTimeZone systemZone = QTimeZone::systemTimeZone();
+
     if (localAllDay) {
         if (allDayFlag) {
             *allDayFlag = true;
         }
-        result = QDateTime(date, QTime(0, 0), Qt::LocalTime);
+        result = QDateTime(date, QTime(0, 0), systemZone);
         return result.toLocalTime();
     }
 
@@ -117,7 +119,8 @@ QDateTime parseDateTimeProperty(const IcsProperty& prop, bool* allDayFlag) {
     }
 
     if (!result.isValid()) {
-        result = QDateTime(date, time, isUtc ? Qt::UTC : Qt::LocalTime);
+        const QTimeZone zone = isUtc ? QTimeZone::utc() : systemZone;
+        result = QDateTime(date, time, zone);
     }
 
     return result.toLocalTime();
