@@ -3,7 +3,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 # Dependencies (Fedora):
-#   sudo dnf install -y qt6-qtbase-devel cmake gcc-c++
+#   sudo dnf install -y qt6-qtbase-devel qt6-qtdeclarative-devel cmake gcc-c++
 
 build_dir="build"
 mkdir -p "$build_dir"
