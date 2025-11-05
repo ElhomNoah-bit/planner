@@ -73,24 +73,21 @@ echo.
 echo Starting Noah Planner...
 echo.
 
-REM Run the application
-"%BUILD_DIR%\Release\noah_planner.exe"
-if not exist "%BUILD_DIR%\Release\noah_planner.exe" (
-    REM Try debug build location
+REM Find and run the application
+if exist "%BUILD_DIR%\Release\noah_planner.exe" (
+    "%BUILD_DIR%\Release\noah_planner.exe"
+) else if exist "%BUILD_DIR%\Debug\noah_planner.exe" (
     "%BUILD_DIR%\Debug\noah_planner.exe"
-    if not exist "%BUILD_DIR%\Debug\noah_planner.exe" (
-        REM Try root build location (some generators place exe here)
-        "%BUILD_DIR%\noah_planner.exe"
-        if not exist "%BUILD_DIR%\noah_planner.exe" (
-            echo ERROR: noah_planner.exe not found
-            echo Checked locations:
-            echo   - %BUILD_DIR%\Release\noah_planner.exe
-            echo   - %BUILD_DIR%\Debug\noah_planner.exe
-            echo   - %BUILD_DIR%\noah_planner.exe
-            pause
-            exit /b 1
-        )
-    )
+) else if exist "%BUILD_DIR%\noah_planner.exe" (
+    "%BUILD_DIR%\noah_planner.exe"
+) else (
+    echo ERROR: noah_planner.exe not found
+    echo Checked locations:
+    echo   - %BUILD_DIR%\Release\noah_planner.exe
+    echo   - %BUILD_DIR%\Debug\noah_planner.exe
+    echo   - %BUILD_DIR%\noah_planner.exe
+    pause
+    exit /b 1
 )
 
 endlocal
