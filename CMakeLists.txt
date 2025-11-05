@@ -4,7 +4,7 @@ project(noah_planner LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.5 COMPONENTS Quick Qml QuickControls2 QuickLayouts Widgets Sql PrintSupport REQUIRED)
+find_package(Qt6 6.5 COMPONENTS Core Quick Qml QuickControls2 QuickLayouts Widgets Sql PrintSupport REQUIRED)
 
 qt_standard_project_setup()
 
@@ -115,10 +115,28 @@ qt_add_qml_module(styles_module
         src/ui/qml/styles/ThemeStore.qml
 )
 
-target_link_libraries(noah_planner PRIVATE styles_module)
+target_link_libraries(noah_planner PRIVATE
+    styles_module
+    Qt6::Gui
+    Qt6::Quick
+    Qt6::Qml
+    Qt6::QuickControls2
+    Qt6::QuickLayouts
+    Qt6::Widgets
+    Qt6::Sql
+    Qt6::PrintSupport)
 
 target_include_directories(noah_planner PRIVATE src)
 
-    target_link_libraries(noah_planner PRIVATE Qt6::Gui Qt6::Quick Qt6::Qml Qt6::QuickControls2 Qt6::QuickLayouts Qt6::Widgets Qt6::Sql Qt6::PrintSupport)
-
 install(TARGETS noah_planner RUNTIME DESTINATION bin)
+
+enable_testing()
+
+add_executable(priority_rules_test
+    tests/priority_rules_test.cpp
+)
+
+target_include_directories(priority_rules_test PRIVATE src)
+target_link_libraries(priority_rules_test PRIVATE Qt6::Core)
+
+add_test(NAME priority_rules_test COMMAND priority_rules_test)

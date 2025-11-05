@@ -64,7 +64,7 @@ if (daysUntil >= 2) → Low    // Future
 **New Files:**
 - `docs/PRIORITY_FEATURE.md` - Feature documentation
 - `docs/PRIORITY_UI.md` - UI visualization
-- `docs/priority_test.cpp` - Comprehensive tests
+- `tests/priority_rules_test.cpp` - Automatisierte Tests fuer die Prioritaetslogik
 
 ## Testing
 
@@ -81,9 +81,10 @@ All tests pass ✅
 
 ### Test Execution
 ```bash
-cd docs
-g++ -std=c++17 priority_test.cpp -o priority_test
-./priority_test
+cmake -S . -B build
+cmake --build build
+cd build
+ctest --output-on-failure
 ```
 
 ## Visual Design

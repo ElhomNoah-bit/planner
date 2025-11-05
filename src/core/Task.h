@@ -5,11 +5,7 @@
 #include <QString>
 #include <QStringList>
 
-enum class Priority {
-    Low = 0,
-    Medium = 1,
-    High = 2
-};
+#include "Priority.h"
 
 struct Task {
     QString id;
