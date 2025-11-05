@@ -69,6 +69,7 @@ Aenderungen an diesen Dateien werden beim naechsten Start uebernommen. Die Anwen
 - **Quick Add Dialog**:
   - Erreichbar ueber Schnellaktionen (z. B. `QuickAddPill`). Aktuell Platzhalter: Eingaben fuehren zu Toast "Hinzugefuegt"; Persistenz ist noch nicht implementiert.
 - **Einstellungen (`SettingsDialog.qml`)**:
+  - Erreichbar ueber den "Einstellungen"-Button in der Top-Bar (mit Zahnrad-Symbol) oder ueber die Command Palette (Ctrl+K, dann "einstellungen" eingeben).
   - Schaltet Dark/Light, Sprache (`de`/`en`), Wochenstart (Mo/So) und Kalenderwoche-Anzeige.
 - **Tastenkuerzel**:
   - `T`: Heute springen (`PlannerBackend.refreshToday()`).

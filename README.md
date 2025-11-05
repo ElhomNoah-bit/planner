@@ -9,6 +9,7 @@ Noah Planner ist eine native Qt-Quick-Anwendung für Linux und Windows. Sie biet
 - Monats-, Wochen- und Listenansichten inklusive Sidebar für heutige Aufgaben, Timer und Prüfungsübersicht
 - Automatischer Slot-Planer (20–40 Minuten) mit Gewichtung nach Fach, Niveau und Prüfungsnähe
 - Persistente Filter (Suche, Fächer, offene Aufgaben) und Dunkelmodus über `QSettings`
+- Einstellungen-Dialog (⚙ Button in der Top-Bar) für Theme, Sprache, Wochenstart und Kalenderwochennummern
 - Datenhaltung in `~/.local/share/NoahPlanner` mit automatischer Initialbefüllung bei fehlenden Dateien
 - Qt 6.5 Stack mit C++17 Backend (`PlannerService`, Modelle, `PlannerBackend`) und QML-Frontend
 

@@ -262,6 +262,14 @@ ApplicationWindow {
                 onToggled: app.toggleZenMode()
             }
 
+            PillButton {
+                text: qsTr("Einstellungen")
+                kind: "ghost"
+                Layout.alignment: Qt.AlignVCenter
+                icon.name: "gear"
+                onClicked: app.openSettings()
+            }
+
             Item { Layout.fillWidth: true }
 
             SearchField {

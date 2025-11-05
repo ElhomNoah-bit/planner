@@ -25,7 +25,8 @@ Item {
         "moon": "\u263D",
         "calendar": "\u25A1",
         "list.bullet": "\u2022",
-        "ellipsis": "\u2026"
+        "ellipsis": "\u2026",
+        "gear": "\u2699"
     })
 
     readonly property var materialMap: ({
