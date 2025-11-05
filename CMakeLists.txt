@@ -15,7 +15,7 @@ if(WIN32)
     add_definitions(-DUNICODE -D_UNICODE)
 endif()
 
-find_package(Qt6 6.4 COMPONENTS Core Quick Qml QuickControls2 QuickLayouts Widgets Sql PrintSupport REQUIRED)
+find_package(Qt6 6.4 COMPONENTS Core Quick Qml QuickControls2 QuickLayouts Widgets Sql PrintSupport QuickTest REQUIRED)
 
 qt_policy(SET QTP0004 NEW)
 
@@ -210,3 +210,13 @@ add_executable(edge_cases_test
 target_include_directories(edge_cases_test PRIVATE src)
 target_link_libraries(edge_cases_test PRIVATE Qt6::Core Qt6::Gui)
 add_test(NAME edge_cases_test COMMAND edge_cases_test)
+
+set(QML_TEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/tests/qml)
+if(EXISTS ${QML_TEST_DIR})
+    add_test(NAME qml_component_smoke
+        COMMAND Qt6::qmltestrunner
+                -I ${CMAKE_CURRENT_SOURCE_DIR}/src/ui/qml
+                -I ${CMAKE_CURRENT_SOURCE_DIR}/src/ui/qml/components
+                -I ${CMAKE_CURRENT_SOURCE_DIR}/src/ui/qml/styles
+                -input ${QML_TEST_DIR}/tst_component_smoke.qml)
+endif()

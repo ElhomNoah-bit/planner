@@ -9,7 +9,7 @@ Item {
     property int defaultFocusMinutes: 25
     property int defaultTimerMinutes: 60
     property bool isPomodoro: false
-    property int minutes: defaultFocusMinutes
+    property int minutes: Math.max(1, defaultFocusMinutes)
     property int remainingSeconds: minutes * 60
     property bool running: false
     signal closed()
@@ -83,7 +83,7 @@ Item {
             }
             Text {
                 text: Math.floor(remainingSeconds / 60) + ":" + ("0" + Math.floor(remainingSeconds % 60)).slice(-2)
-                font.pixelSize: typeScale.monthTitle
+                font.pixelSize: typeScale.xl
                 font.weight: typeScale.weightBold
                 font.family: Styles.ThemeStore.fonts.uiFallback
                 color: colors.text
@@ -133,7 +133,7 @@ Item {
         if (!isFinite(numeric) || numeric <= 0) {
             return isPomodoro ? defaultFocusMinutes : defaultTimerMinutes
         }
-        return Math.round(numeric)
+        return Math.max(1, Math.round(numeric))
     }
 
     function openTimer(requestedMinutes) {

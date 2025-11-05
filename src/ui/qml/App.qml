@@ -13,6 +13,7 @@ ApplicationWindow {
     visible: true
     title: qsTr("Noah Planner")
     color: ThemeStore.surface
+    contentItem.enabled: !setupWizard.visible
 
     Shortcut {
         id: shortcutCommandPalette
@@ -349,7 +350,6 @@ ApplicationWindow {
 
     SetupWizard {
         id: setupWizard
-        anchors.fill: parent
         onCompleted: {
             planner.showToast(qsTr("Setup abgeschlossen! Viel Erfolg mit Noah Planner!"))
         }
@@ -374,7 +374,7 @@ ApplicationWindow {
         
         // Show setup wizard on first launch
         if (!planner.setupCompleted) {
-            Qt.callLater(() => setupWizard.open())
+            Qt.callLater(() => setupWizard.launch())
         }
     }
 

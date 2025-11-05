@@ -10,6 +10,8 @@ Item {
     visible: false
     z: 250
 
+    property bool syncing: false
+
     function open() {
         visible = true
         sync()
@@ -21,10 +23,22 @@ Item {
     }
 
     function sync() {
-        themeGroup.current = planner.darkTheme ? themeDark : themeSystem
-        languageGroup.current = planner.language === "en" ? languageEn : languageDe
-        weekStartGroup.current = planner.weekStart === "sunday" ? weekStartSunday : weekStartMonday
-        weekNumbersSwitch.checked = planner.showWeekNumbers
+        if (!planner) {
+            return
+        }
+        syncing = true
+        themeDark.checked = !!planner.darkTheme
+        themeSystem.checked = !planner.darkTheme
+        languageDe.checked = planner.language !== "en"
+        languageEn.checked = planner.language === "en"
+        weekStartMonday.checked = planner.weekStart !== "sunday"
+        weekStartSunday.checked = planner.weekStart === "sunday"
+        weekNumbersSwitch.checked = !!planner.showWeekNumbers
+
+        if (typeof planner.reviewInitialInterval === "number" && isFinite(planner.reviewInitialInterval)) {
+            reviewIntervalSpinBox.value = Math.max(reviewIntervalSpinBox.from, Math.min(reviewIntervalSpinBox.to, Math.round(planner.reviewInitialInterval)))
+        }
+        syncing = false
     }
 
     Keys.onEscapePressed: close()
@@ -91,13 +105,13 @@ Item {
                         id: themeDark
                         text: qsTr("Dunkel")
                         ButtonGroup.group: themeGroup
-                        onToggled: if (checked) planner.darkTheme = true
+                        onToggled: if (checked && !dialog.syncing && planner) planner.darkTheme = true
                     }
                     RadioButton {
                         id: themeSystem
                         text: qsTr("System")
                         ButtonGroup.group: themeGroup
-                        onToggled: if (checked) planner.darkTheme = false
+                        onToggled: if (checked && !dialog.syncing && planner) planner.darkTheme = false
                     }
                 }
 
@@ -116,13 +130,13 @@ Item {
                         id: languageDe
                         text: qsTr("Deutsch")
                         ButtonGroup.group: languageGroup
-                        onToggled: if (checked) planner.language = "de"
+                        onToggled: if (checked && !dialog.syncing && planner) planner.language = "de"
                     }
                     RadioButton {
                         id: languageEn
                         text: qsTr("Englisch")
                         ButtonGroup.group: languageGroup
-                        onToggled: if (checked) planner.language = "en"
+                        onToggled: if (checked && !dialog.syncing && planner) planner.language = "en"
                     }
                 }
 
@@ -141,13 +155,13 @@ Item {
                         id: weekStartMonday
                         text: qsTr("Montag")
                         ButtonGroup.group: weekStartGroup
-                        onToggled: if (checked) planner.weekStart = "monday"
+                        onToggled: if (checked && !dialog.syncing && planner) planner.weekStart = "monday"
                     }
                     RadioButton {
                         id: weekStartSunday
                         text: qsTr("Sonntag")
                         ButtonGroup.group: weekStartGroup
-                        onToggled: if (checked) planner.weekStart = "sunday"
+                        onToggled: if (checked && !dialog.syncing && planner) planner.weekStart = "sunday"
                     }
                 }
 
@@ -164,7 +178,7 @@ Item {
                     Switch {
                         id: weekNumbersSwitch
                         text: checked ? qsTr("An") : qsTr("Aus")
-                        onToggled: planner.showWeekNumbers = checked
+                        onToggled: if (!dialog.syncing && planner) planner.showWeekNumbers = checked
                     }
                 }
                 
@@ -184,7 +198,7 @@ Item {
                         to: 7
                         value: 1
                         onValueModified: {
-                            if (planner) {
+                            if (!dialog.syncing && planner && planner.setReviewInitialInterval) {
                                 planner.setReviewInitialInterval(value)
                             }
                         }

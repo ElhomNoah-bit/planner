@@ -14,14 +14,18 @@ Rectangle {
     property string deadlineSeverity: ""
     property int deadlineLevel: 0
 
+    readonly property QtObject colors: Styles.ThemeStore.colors
+    readonly property QtObject radii: Styles.ThemeStore.radii
+    readonly property QtObject gaps: Styles.ThemeStore.gap
+
+    property string resolvedCategoryColor: (typeof categoryColor === "string" && categoryColor.length) ? categoryColor : ""
+    property color resolvedSubjectColor: (subjectColor && subjectColor !== "") ? subjectColor : (colors ? colors.accent : "#3B82F6")
     property color chipBg: resolvedCategoryColor.length > 0
                               ? Qt.lighter(resolvedCategoryColor, 1.3)
-                              : (muted ? Styles.ThemeStore.cardAlt : Styles.ThemeStore.cardBg)
-    property color chipFg: muted ? Styles.ThemeStore.colors.text2 : Styles.ThemeStore.colors.textPrimary
+                              : (muted ? (colors ? colors.cardAlt : "#1C222B") : (colors ? colors.cardBg : "#171B22"))
+    property color chipFg: muted ? (colors ? colors.text2 : "#AFB8C5") : (colors ? colors.textPrimary : "#FFFFFF")
     property real chipAlpha: enabled === false ? 0.5 : 1.0
-    property real chipRadius: Styles.ThemeStore.r12
-    property color resolvedSubjectColor: subjectColor && subjectColor !== "" ? subjectColor : Styles.ThemeStore.accent
-    property string resolvedCategoryColor: (categoryColor && categoryColor.length) ? categoryColor : ""
+    property real chipRadius: radii ? radii.md : 10
 
     readonly property color urgencyColor: deadlineSeverity === "overdue" ? Styles.ThemeStore.colors.overdue
                                          : deadlineSeverity === "danger" ? Styles.ThemeStore.colors.danger
@@ -41,7 +45,7 @@ Rectangle {
     signal dragFinished()
 
     implicitHeight: 26
-    implicitWidth: Math.max(92, contentRow.implicitWidth + Styles.ThemeStore.g16)
+    implicitWidth: Math.max(92, contentRow.implicitWidth + (Styles.ThemeStore.g16 || (gaps ? gaps.g16 : 16)))
     radius: chipRadius
     color: chipBg
     border.width: resolvedCategoryColor.length > 0 ? 2 : (urgent ? 2 : (overdue ? 1 : 0))
@@ -64,8 +68,8 @@ Rectangle {
     RowLayout {
         id: contentRow
         anchors.fill: parent
-        anchors.margins: Styles.ThemeStore.g12
-        spacing: Styles.ThemeStore.g8
+        anchors.margins: Styles.ThemeStore.g12 || (gaps ? gaps.g12 : 12)
+        spacing: Styles.ThemeStore.g8 || (gaps ? gaps.g8 : 8)
 
         Rectangle {
             width: timed ? 6 : 0

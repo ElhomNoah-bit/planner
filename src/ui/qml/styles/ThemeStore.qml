@@ -26,6 +26,7 @@ QtObject {
     readonly property QtObject colors: QtObject {
         readonly property color appBg: theme.surface
         readonly property color cardBg: theme.surfaceAlt
+        readonly property color cardAlt: theme.surfaceRaised
         readonly property color cardGlass: theme.surfaceGlass
         readonly property color text: theme.text
         readonly property color text2: theme.textSecondary
@@ -43,6 +44,9 @@ QtObject {
         readonly property color prioLow: theme.ok
         readonly property color warn: theme.warning
         readonly property color overdue: theme.danger
+        readonly property color border: theme.divider
+        readonly property color primary: theme.accent
+        readonly property color danger: theme.danger
     }
 
     // Typography scale
@@ -114,4 +118,25 @@ QtObject {
         readonly property real muted: theme.opacityMuted
         readonly property real disabled: theme.opacityDisabled
     }
+
+    // Legacy scalar aliases for backwards compatibility with older QML bindings
+    readonly property int g4: gapXs
+    readonly property int g8: gapSm
+    readonly property int g12: gapMd
+    readonly property int g16: gapLg
+    readonly property int g24: gapXl
+
+    readonly property int r4: 4
+    readonly property int r8: 8
+    readonly property int r12: 12
+    readonly property int r16: 16
+
+    readonly property color cardBg: colors.cardBg
+    readonly property color cardAlt: colors.cardAlt
+    readonly property color hover: colors.hover
+    readonly property color divider: colors.divider
+    readonly property color focus: colors.focus
+
+    readonly property string fontFamily: fonts.heading
+    readonly property string fontFallback: fonts.fallback
 }
