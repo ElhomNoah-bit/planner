@@ -19,7 +19,6 @@ AppState::AppState()
 
 AppState::~AppState() {
     save();
-    // m_settings will be automatically deleted by std::unique_ptr
 }
 
 void AppState::load() {
