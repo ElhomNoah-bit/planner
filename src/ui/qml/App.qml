@@ -109,8 +109,20 @@ ApplicationWindow {
         planner.onlyOpen = next
     }
 
-    function createQuickItem(value) {
-        planner.addQuickEntry(value)
+    function createQuickItem(payload) {
+        if (typeof payload === "string") {
+            planner.addQuickEntry(payload)
+            return
+        }
+
+        if (!payload || !payload.text || !payload.text.length) {
+            return
+        }
+
+        var created = planner.addQuickEntry(payload.text)
+        if (created && created.id && payload.categoryId && payload.categoryId.length) {
+            planner.setEntryCategory(created.id, payload.categoryId)
+        }
     }
 
     function openSettings() {
@@ -285,7 +297,7 @@ ApplicationWindow {
     QuickAddDialog {
         id: quickAddDialog
         anchors.fill: parent
-        onAccepted: function(value) { app.createQuickItem(value) }
+        onAccepted: function(payload) { app.createQuickItem(payload) }
     }
 
     CommandPalette {
