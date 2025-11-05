@@ -12,9 +12,12 @@ set "SCRIPT_DIR=%~dp0"
 pushd "%SCRIPT_DIR%" >nul
 
 set "SKIP_PAUSE="
-for %%A in (%*) do (
-    if /I "%%~A"=="--no-pause" set "SKIP_PAUSE=1"
+if not "%~1"=="" (
+    for %%A in (%*) do (
+        if /I "%%~A"=="--no-pause" set "SKIP_PAUSE=1"
+    )
 )
+
 
 set "PACKAGE_MANAGER="
 where winget >nul 2>nul
@@ -246,11 +249,13 @@ if defined Qt6_DIR (
 if defined WINDEPLOYQT_PATH exit /b 0
 
 if defined CMAKE_PREFIX_PATH (
-    for %%P in ("%CMAKE_PREFIX_PATH:;=" "%") do (
+    set "__qt_prefix_list=%CMAKE_PREFIX_PATH%"
+    for %%P in ("!__qt_prefix_list:;=" "!") do (
         if not defined WINDEPLOYQT_PATH (
             if exist "%%~P\bin\windeployqt.exe" set "WINDEPLOYQT_PATH=%%~fP\bin\windeployqt.exe"
         )
     )
+    set "__qt_prefix_list="
 )
 
 if defined WINDEPLOYQT_PATH exit /b 0
