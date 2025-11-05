@@ -52,9 +52,9 @@ PlannerService::PlannerService(QObject* parent)
 void PlannerService::ensureSeed() {
     const QStringList files = {"subjects.json", "diagnostics.json", "config.json", "exams.json", "done.json"};
     for (const auto& name : files) {
-        const QString target = m_dataDir + "/" + name;
+        const QString target = QDir(m_dataDir).filePath(name);
         if (QFileInfo::exists(target)) continue;
-        const QString bundled = QCoreApplication::applicationDirPath() + "/data/" + name;
+        const QString bundled = QDir(QCoreApplication::applicationDirPath()).filePath(QStringLiteral("data/%1").arg(name));
         QDir().mkpath(m_dataDir);
         if (QFileInfo::exists(bundled)) {
             QFile::copy(bundled, target);
@@ -219,7 +219,7 @@ void PlannerService::loadAll() {
 }
 
 void PlannerService::loadSubjects() {
-    const auto obj = readJson(m_dataDir + "/subjects.json");
+    const auto obj = readJson(QDir(m_dataDir).filePath(QStringLiteral("subjects.json")));
     m_subjects.clear();
     for (const auto& value : obj.value("subjects").toArray()) {
         const auto item = value.toObject();
@@ -233,7 +233,7 @@ void PlannerService::loadSubjects() {
 }
 
 void PlannerService::loadDiagnostics() {
-    const auto obj = readJson(m_dataDir + "/diagnostics.json");
+    const auto obj = readJson(QDir(m_dataDir).filePath(QStringLiteral("diagnostics.json")));
     m_levels.clear();
     const auto levelsObj = obj.value("levels").toObject();
     for (const auto& key : levelsObj.keys()) {
@@ -242,12 +242,12 @@ void PlannerService::loadDiagnostics() {
 }
 
 void PlannerService::loadConfig() {
-    m_config = readJson(m_dataDir + "/config.json");
+    m_config = readJson(QDir(m_dataDir).filePath(QStringLiteral("config.json")));
 }
 
 void PlannerService::loadExams() {
     m_exams.clear();
-    const auto obj = readJson(m_dataDir + "/exams.json");
+    const auto obj = readJson(QDir(m_dataDir).filePath(QStringLiteral("exams.json")));
     for (const auto& value : obj.value("exams").toArray()) {
         const auto item = value.toObject();
         Exam exam;
@@ -264,7 +264,7 @@ void PlannerService::loadExams() {
 
 void PlannerService::loadDone() {
     m_done.clear();
-    const auto obj = readJson(m_dataDir + "/done.json");
+    const auto obj = readJson(QDir(m_dataDir).filePath(QStringLiteral("done.json")));
     const auto doneObj = obj.value("done").toObject();
     for (const auto& key : doneObj.keys()) {
         QSet<int> set;
@@ -286,7 +286,7 @@ void PlannerService::saveExams() const {
             {"weight_boost", exam.weightBoost}
         });
     }
-    writeJson(m_dataDir + "/exams.json", QJsonObject{{"exams", examsArray}});
+    writeJson(QDir(m_dataDir).filePath(QStringLiteral("exams.json")), QJsonObject{{"exams", examsArray}});
 }
 
 void PlannerService::saveDone() const {
@@ -296,7 +296,7 @@ void PlannerService::saveDone() const {
         for (int index : it.value()) indices.append(index);
         doneObj.insert(it.key(), indices);
     }
-    writeJson(m_dataDir + "/done.json", QJsonObject{{"done", doneObj}});
+    writeJson(QDir(m_dataDir).filePath(QStringLiteral("done.json")), QJsonObject{{"done", doneObj}});
 }
 
 double PlannerService::baseWeightFor(const QString& subjectId) const {

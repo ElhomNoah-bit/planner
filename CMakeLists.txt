@@ -11,8 +11,6 @@ set(CMAKE_AUTOUIC ON)
 
 # Windows-specific settings
 if(WIN32)
-    # Hide console window on Windows for Release builds
-    set(CMAKE_WIN32_EXECUTABLE ON)
     # Enable Unicode support
     add_definitions(-DUNICODE -D_UNICODE)
 endif()
