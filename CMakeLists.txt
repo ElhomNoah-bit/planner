@@ -17,7 +17,7 @@ endif()
 
 find_package(Qt6 6.4 COMPONENTS Core Quick Qml QuickControls2 QuickLayouts Widgets Sql PrintSupport REQUIRED)
 
-# qt_policy(SET QTP0004 NEW)  # Not available in Qt 6.4.2
+qt_policy(SET QTP0004 NEW)
 
 qt_standard_project_setup()
 

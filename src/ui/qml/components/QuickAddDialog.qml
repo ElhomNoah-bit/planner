@@ -109,8 +109,20 @@ Item {
                         border.color: titleField.activeFocus ? Styles.ThemeStore.colors.focus : Styles.ThemeStore.colors.divider
                         border.width: titleField.activeFocus ? 2 : 1
                     }
-                    Keys.onReturnPressed: submit()
-                    Keys.onEnterPressed: submit()
+                    onAccepted: dialog.submit()
+                    onActiveFocusChanged: if (!activeFocus) dialog.submitIfValid()
+                    Keys.onReturnPressed: function(event) {
+                        if (!event.modifiers) {
+                            dialog.submit()
+                            event.accepted = true
+                        }
+                    }
+                    Keys.onEnterPressed: function(event) {
+                        if (!event.modifiers) {
+                            dialog.submit()
+                            event.accepted = true
+                        }
+                    }
                 }
 
                 RowLayout {
@@ -222,7 +234,7 @@ Item {
                                     to: 31
                                     value: 1
                                     onValueModified: dateSelector.commitSelection()
-                                    onEditingFinished: dateSelector.commitSelection()
+                                    onActiveFocusChanged: if (!activeFocus) dateSelector.commitSelection()
                                 }
                             }
 
@@ -256,7 +268,7 @@ Item {
                                     to: 2100
                                     value: (new Date()).getFullYear()
                                     onValueModified: dateSelector.commitSelection()
-                                    onEditingFinished: dateSelector.commitSelection()
+                                    onActiveFocusChanged: if (!activeFocus) dateSelector.commitSelection()
                                 }
                             }
                         }
@@ -543,18 +555,38 @@ Item {
         return parts.join(" ")
     }
 
-    function submit() {
+    function buildSubmissionPayload() {
         var value = assembleText()
         if (!value.length) {
-            return
+            return null
         }
-        accepted({
+        return {
             text: value,
             categoryId: selectedCategoryId,
             entryType: entryType,
             allDay: allDay
-        })
+        }
+    }
+
+    function finalizeSubmission(payload) {
+        accepted(payload)
         dialog.close()
+    }
+
+    function submit() {
+        var payload = buildSubmissionPayload()
+        if (!payload) {
+            return
+        }
+        finalizeSubmission(payload)
+    }
+
+    function submitIfValid() {
+        var payload = buildSubmissionPayload()
+        if (!payload) {
+            return
+        }
+        finalizeSubmission(payload)
     }
 
     onVisibleChanged: function() {
