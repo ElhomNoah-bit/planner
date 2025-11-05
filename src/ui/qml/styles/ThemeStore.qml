@@ -4,115 +4,124 @@ import QtQuick
 QtObject {
     id: theme
 
-    // Farben
-    readonly property color appBg:        "#0E1116"
-    readonly property color cardBg:       "#171B22"
-    readonly property color cardAlt:      "#1C222B"
-    readonly property color text:         "#E6EAF2"
-    readonly property color text2:        "#AFB8C5"
-    readonly property color textPrimary:  "#F6FAFF"
-    readonly property color surfaceOnWeak:"#FFFFFF"
-    readonly property color divider:      "#2A3340"
-    readonly property color hover:        "#223043"
-    readonly property color focus:        "#5BA5FF"
-    readonly property color accent:       "#3B82F6"
-    readonly property color accentBg:     "#1A2B4D"
-    readonly property color danger:       "#F97066"
-    readonly property color warn:         "#F59E0B"
-    readonly property color overdue:      "#DC2626"
-    readonly property color prioHigh:     "#F97066"
-    readonly property color prioMedium:   "#FFA726"
-    readonly property color prioLow:      "#66BB6A"
+    // --- Color tokens ---------------------------------------------------
+    readonly property color surface: "#0E1116"
+    readonly property color surfaceAlt: "#171B22"
+    readonly property color surfaceRaised: "#1C222B"
+    readonly property color surfaceMuted: "#131821"
+    readonly property color text: "#F6FAFF"
+    readonly property color textSecondary: "#AFB8C5"
+    readonly property color textMuted: "#8A93A3"
+    readonly property color accent: "#3B82F6"
+    readonly property color accentWeak: "#1A2B4D"
+    readonly property color accentStrong: "#5BA5FF"
+    readonly property color ok: "#22C55E"
+    readonly property color danger: "#F97066"
+    readonly property color warning: "#F59E0B"
+    readonly property color info: "#38BDF8"
+    readonly property color overlayBg: "#000000A8"
+    readonly property color overlayStroke: "#1C222B"
+    readonly property color divider: "#2A3340"
+    readonly property color hover: "#223043"
+    readonly property color focus: "#5BA5FF"
+    readonly property color neutral: "#1C222B"
+    readonly property color surfaceOnWeak: "#FFFFFF"
+    readonly property color overdue: "#DC2626"
 
-    // Typo
-    readonly property int baseSize: 14
-    readonly property int sm: baseSize - 2
-    readonly property int md: baseSize
-    readonly property int lg: baseSize + 2
-    readonly property int xl: baseSize + 6
-    readonly property int xs: baseSize - 3
-    readonly property real line: 1.35
-
-    // Spacing & Radii
-    readonly property int g4: 4
-    readonly property int g8: 8
-    readonly property int g12: 12
-    readonly property int g16: 16
-    readonly property int g24: 24
-
-    readonly property int r8: 8
-    readonly property int r12: 12
-    readonly property int r16: 16
-
-    // Fonts
+    // --- Typography tokens ---------------------------------------------
     readonly property string fontFamily: "Inter"
     readonly property string fontHeading: "Inter"
     readonly property string fontFallback: "Sans Serif"
+    readonly property int fontSizeXs: 11
+    readonly property int fontSizeSm: 13
+    readonly property int fontSizeMd: 14
+    readonly property int fontSizeLg: 18
+    readonly property int fontSizeXl: 24
+    readonly property real lineHeight: 1.35
+    readonly property int fontWeightRegular: 400
+    readonly property int fontWeightMedium: 600
+    readonly property int fontWeightBold: 700
 
-    // Opacity values for Zen Mode
+    // --- Spacing & radii ------------------------------------------------
+    readonly property int gapXs: 4
+    readonly property int gapSm: 8
+    readonly property int gapMd: 12
+    readonly property int gapLg: 16
+    readonly property int gapXl: 24
+
+    readonly property int radiusSm: 8
+    readonly property int radiusMd: 12
+    readonly property int radiusLg: 16
+    readonly property int radiusXl: 24
+
+    // --- Misc tokens ----------------------------------------------------
     readonly property real opacityFull: 1.0
     readonly property real opacityMuted: 0.25
     readonly property real opacityDisabled: 0.4
 
-    // Legacy groupings kept for gradual migration
+    // Legacy groups kept for gradual migration --------------------------
     readonly property QtObject colors: QtObject {
-        readonly property alias appBg: theme.appBg
-        readonly property alias cardBg: theme.cardBg
-        readonly property alias cardGlass: theme.cardAlt
+        readonly property alias appBg: theme.surface
+        readonly property alias cardBg: theme.surfaceAlt
+        readonly property alias cardGlass: theme.surfaceRaised
         readonly property alias text: theme.text
-        readonly property alias text2: theme.text2
-        readonly property alias textPrimary: theme.textPrimary
+        readonly property alias text2: theme.textSecondary
+        readonly property alias textPrimary: theme.text
         readonly property alias divider: theme.divider
         readonly property alias hover: theme.hover
         readonly property alias focus: theme.focus
         readonly property alias accent: theme.accent
-        readonly property alias accentBg: theme.accentBg
+        readonly property alias accentBg: theme.accentWeak
         readonly property alias surfaceOnWeak: theme.surfaceOnWeak
-        readonly property alias neutralBg: theme.cardAlt
+        readonly property alias neutralBg: theme.surfaceRaised
         readonly property alias press: theme.hover
-        readonly property alias prioHigh: theme.prioHigh
-        readonly property alias prioMedium: theme.prioMedium
-        readonly property alias prioLow: theme.prioLow
-        readonly property alias warn: theme.warn
+        readonly property alias prioHigh: theme.danger
+        readonly property alias prioMedium: theme.warning
+        readonly property color prioLow: "#66BB6A"
+        readonly property alias warn: theme.warning
         readonly property alias overdue: theme.overdue
+        readonly property alias danger: theme.danger
+        readonly property alias ok: theme.ok
     }
 
     readonly property QtObject type: QtObject {
-        readonly property alias md: theme.md
-        readonly property alias sm: theme.sm
-        readonly property alias lg: theme.lg
-        readonly property alias xs: theme.xs
-        readonly property alias h1: theme.xl
-        readonly property alias monthTitle: theme.xl
-        readonly property alias dateSize: theme.sm
-        readonly property alias eventChipSize: theme.sm
-        readonly property int weightRegular: 400
-        readonly property int weightMedium: 600
-        readonly property int weightBold: 700
+        readonly property alias xs: theme.fontSizeXs
+        readonly property alias sm: theme.fontSizeSm
+        readonly property alias md: theme.fontSizeMd
+        readonly property alias lg: theme.fontSizeLg
+        readonly property alias xl: theme.fontSizeXl
+        readonly property alias h1: theme.fontSizeXl
+        readonly property alias monthTitle: theme.fontSizeXl
+        readonly property alias dateSize: theme.fontSizeSm
+        readonly property alias eventChipSize: theme.fontSizeSm
+        readonly property alias weightRegular: theme.fontWeightRegular
+        readonly property alias weightMedium: theme.fontWeightMedium
+        readonly property alias weightBold: theme.fontWeightBold
+        readonly property alias line: theme.lineHeight
     }
 
     readonly property QtObject radii: QtObject {
-        readonly property alias sm: theme.r8
-        readonly property alias md: theme.r12
-        readonly property alias lg: theme.r16
-        readonly property int xl: theme.r16 + 4
-        readonly property int xxl: theme.r16 + 8
+        readonly property alias sm: theme.radiusSm
+        readonly property alias md: theme.radiusMd
+        readonly property alias lg: theme.radiusLg
+        readonly property alias xl: theme.radiusXl
+        readonly property int xxl: theme.radiusXl + 8
     }
 
     readonly property QtObject gap: QtObject {
-        readonly property alias g4: theme.g4
-        readonly property alias g8: theme.g8
-        readonly property alias g12: theme.g12
-        readonly property alias g16: theme.g16
-        readonly property alias g24: theme.g24
+        readonly property alias g4: theme.gapXs
+        readonly property alias g8: theme.gapSm
+        readonly property alias g12: theme.gapMd
+        readonly property alias g16: theme.gapLg
+        readonly property alias g24: theme.gapXl
     }
 
     readonly property QtObject layout: QtObject {
         readonly property int headerH: 64
         readonly property int pillH: 36
         readonly property int sidebarW: 360
-        readonly property int gridGap: theme.g16
-        readonly property int margin: theme.g24
+        readonly property int gridGap: theme.gapLg
+        readonly property int margin: theme.gapXl
     }
 
     readonly property QtObject fonts: QtObject {

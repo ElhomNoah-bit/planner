@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import NoahPlanner.Styles as Styles
+import Styles 1.0 as Styles
 
 Item {
     id: heatmap

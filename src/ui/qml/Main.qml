@@ -2,12 +2,12 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import NoahPlanner.Styles as Styles
+import Styles 1.0
 
 Item {
     id: root
-    implicitWidth: Styles.ThemeStore.layout.sidebarW * 2
-    implicitHeight: Styles.ThemeStore.layout.headerH + 640
+    implicitWidth: ThemeStore.layout.sidebarW * 2
+    implicitHeight: ThemeStore.layout.headerH + 640
 
     property string viewMode: "month"
     property bool onlyOpen: false
@@ -16,13 +16,13 @@ Item {
     signal quickAddRequested(string isoDate, string kind)
     signal jumpToTodayRequested()
 
-    readonly property QtObject colors: Styles.ThemeStore.colors
-    readonly property QtObject gaps: Styles.ThemeStore.gap
-    readonly property QtObject metrics: Styles.ThemeStore.layout
+    readonly property QtObject colors: ThemeStore.colors
+    readonly property QtObject gaps: ThemeStore.gap
+    readonly property QtObject metrics: ThemeStore.layout
 
     RowLayout {
         anchors.fill: parent
-        spacing: gaps.g24
+        spacing: ThemeStore.gapXl
 
         StackLayout {
             id: viewStack

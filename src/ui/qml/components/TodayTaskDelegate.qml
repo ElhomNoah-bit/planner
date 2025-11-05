@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import NoahPlanner.Styles as Styles
+import Styles 1.0 as Styles
 
 Item {
     id: root
@@ -25,7 +25,6 @@ Item {
         id: container
         anchors.fill: parent
         radius: radii.md
-        color: root.done ? colors.accentBg : colors.cardBg
         border.color: root.done ? colors.accent : colors.divider
         border.width: 1
         Behavior on color { ColorAnimation { duration: 140; easing.type: Easing.InOutQuad } }

@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import NoahPlanner 1.0
-import NoahPlanner.Styles as Styles
+import Styles 1.0 as Styles
 
 GlassPanel {
     id: toast

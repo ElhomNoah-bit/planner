@@ -2,12 +2,12 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import NoahPlanner.Styles as Styles
+import Styles 1.0
 
 Item {
     id: root
-    implicitWidth: Styles.ThemeStore.layout.sidebarW
-    Layout.preferredWidth: Styles.ThemeStore.layout.sidebarW
+    implicitWidth: ThemeStore.layout.sidebarW
+    Layout.preferredWidth: ThemeStore.layout.sidebarW
     property var todayEvents: planner && planner.today ? planner.today : []
     property var upcomingEvents: planner && planner.upcoming ? planner.upcoming : []
     property var examEvents: planner && planner.exams ? planner.exams : []
@@ -20,11 +20,11 @@ Item {
     property bool zenMode: false
     signal startTimerRequested(int minutes)
 
-    readonly property QtObject colors: Styles.ThemeStore.colors
-    readonly property QtObject gaps: Styles.ThemeStore.gap
-    readonly property QtObject typeScale: Styles.ThemeStore.type
-    readonly property QtObject radii: Styles.ThemeStore.radii
-    readonly property QtObject fonts: Styles.ThemeStore.fonts
+    readonly property QtObject colors: ThemeStore.colors
+    readonly property QtObject gaps: ThemeStore.gap
+    readonly property QtObject typeScale: ThemeStore.type
+    readonly property QtObject radii: ThemeStore.radii
+    readonly property QtObject fonts: ThemeStore.fonts
 
     function doneCount(events) {
         var count = 0
