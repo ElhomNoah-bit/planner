@@ -1,9 +1,11 @@
-# Noah Planner v2.0 (Native Linux – C++/Qt6)
+# Noah Planner v2.0 (Cross-Platform – C++/Qt6)
 
-Noah Planner ist eine native Qt-Quick-Anwendung für Fedora und andere Linux-Distributionen. Sie bietet einen fokussierten Lernkalender, generiert Tagespläne auf Basis von Fächern, Leistungsständen und Prüfungsterminen und speichert alle Daten vollständig lokal im JSON-Format.
+Noah Planner ist eine native Qt-Quick-Anwendung für Linux und Windows. Sie bietet einen fokussierten Lernkalender, generiert Tagespläne auf Basis von Fächern, Leistungsständen und Prüfungsterminen und speichert alle Daten vollständig lokal im JSON-Format.
+
+**Unterstützte Plattformen:** Linux (Fedora, Ubuntu, Debian) | Windows 10/11
 
 ## Überblick
-- Native Desktop-App ohne Browser- oder Server-Abhängigkeiten
+- Plattformübergreifende native Desktop-App ohne Browser- oder Server-Abhängigkeiten
 - Monats-, Wochen- und Listenansichten inklusive Sidebar für heutige Aufgaben, Timer und Prüfungsübersicht
 - Automatischer Slot-Planer (20–40 Minuten) mit Gewichtung nach Fach, Niveau und Prüfungsnähe
 - Persistente Filter (Suche, Fächer, offene Aufgaben) und Dunkelmodus über `QSettings`
@@ -70,7 +72,11 @@ cmake --build build --config Release --parallel
 - `src/ui/` – C++-Backend (`PlannerBackend`, `AppState`) sowie QML-Assets unter `src/ui/qml/`
 - `data/` – Beispiel- und Seed-Dateien für lokale Persistenz
 - `assets/` – Schriftarten und weitere Ressourcen
-- `run.sh` – Komfortskript für Build & Start
+- `run.sh` – Build & Start-Skript für Linux
+- `run.bat` – Build & Start-Skript für Windows
 
 ## Weiterführende Dokumentation
-Ausführliche Informationen zu Architektur, Konfiguration, Bedienung und Erweiterung findest du in `docs/README.md`.
+- **Entwickler-Dokumentation**: Siehe [README_DEV.md](README_DEV.md) für technische Details
+- **Windows-Setup**: Detaillierte Anleitung in [WINDOWS_SETUP.md](WINDOWS_SETUP.md)
+- **Plattformkompatibilität**: Informationen zu unterstützten Systemen in [PLATFORM_COMPATIBILITY.md](PLATFORM_COMPATIBILITY.md)
+- **Erweiterte Dokumentation**: Ausführliche Informationen zu Architektur, Konfiguration und Bedienung in `docs/README.md`
