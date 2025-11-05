@@ -339,6 +339,14 @@ ApplicationWindow {
         anchors.fill: parent
     }
 
+    SetupWizard {
+        id: setupWizard
+        anchors.fill: parent
+        onCompleted: {
+            planner.showToast(qsTr("Setup abgeschlossen! Viel Erfolg mit Noah Planner!"))
+        }
+    }
+
     Connections {
         target: planner
         function onDarkThemeChanged() {
@@ -354,6 +362,11 @@ ApplicationWindow {
     Component.onCompleted: {
         if (globalSearch) {
             globalSearch.text = planner.searchQuery
+        }
+        
+        // Show setup wizard on first launch
+        if (!planner.setupCompleted) {
+            Qt.callLater(() => setupWizard.open())
         }
     }
 

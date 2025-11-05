@@ -32,6 +32,7 @@ void AppState::load() {
     m_weekStart = m_settings->value("weekStart", QStringLiteral("monday")).toString();
     m_weekNumbers = m_settings->value("weekNumbers", false).toBool();
     m_zenMode = m_settings->value("zenMode", false).toBool();
+    m_setupCompleted = m_settings->value("setupCompleted", false).toBool();
     const QString persistedView = m_settings->value("viewMode", QStringLiteral("month")).toString();
     if (!persistedView.isEmpty()) {
         m_viewMode = persistedView;
@@ -49,6 +50,7 @@ void AppState::save() const {
     m_settings->setValue("weekStart", m_weekStart);
     m_settings->setValue("weekNumbers", m_weekNumbers);
     m_settings->setValue("zenMode", m_zenMode);
+    m_settings->setValue("setupCompleted", m_setupCompleted);
     m_settings->setValue("viewMode", m_viewMode);
     m_settings->endGroup();
     m_settings->sync();
@@ -114,5 +116,11 @@ bool AppState::setViewMode(const QString& mode) {
 bool AppState::setZenMode(bool enabled) {
     if (m_zenMode == enabled) return false;
     m_zenMode = enabled;
+    return true;
+}
+
+bool AppState::setSetupCompleted(bool completed) {
+    if (m_setupCompleted == completed) return false;
+    m_setupCompleted = completed;
     return true;
 }

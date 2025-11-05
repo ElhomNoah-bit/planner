@@ -82,6 +82,10 @@ PlannerBackend::PlannerBackend(QObject* parent)
     emit focusStreakChanged();
     emit pomodoroChanged();
     emit dueReviewsChanged();
+    emit setupCompletedChanged();
+    emit languageChanged();
+    emit weekStartChanged();
+    emit showWeekNumbersChanged();
     if (!m_searchQuery.isEmpty()) {
         emit searchQueryChanged();
     }
@@ -97,6 +101,38 @@ void PlannerBackend::setDarkTheme(bool dark) {
     }
     m_state.save();
     emit darkThemeChanged();
+}
+
+void PlannerBackend::setSetupCompleted(bool completed) {
+    if (!m_state.setSetupCompleted(completed)) {
+        return;
+    }
+    m_state.save();
+    emit setupCompletedChanged();
+}
+
+void PlannerBackend::setLanguage(const QString& language) {
+    if (!m_state.setLanguage(language)) {
+        return;
+    }
+    m_state.save();
+    emit languageChanged();
+}
+
+void PlannerBackend::setWeekStart(const QString& weekStart) {
+    if (!m_state.setWeekStart(weekStart)) {
+        return;
+    }
+    m_state.save();
+    emit weekStartChanged();
+}
+
+void PlannerBackend::setShowWeekNumbers(bool enabled) {
+    if (!m_state.setWeekNumbers(enabled)) {
+        return;
+    }
+    m_state.save();
+    emit showWeekNumbersChanged();
 }
 
 QString PlannerBackend::selectedDateIso() const {
