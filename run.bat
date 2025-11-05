@@ -63,6 +63,7 @@ if "%Qt6_DIR%"=="" (
         echo   set CMAKE_PREFIX_PATH=C:\Qt\6.5.0\msvc2019_64
         echo.
         call :attempt_install_qt
+        call :configure_qt_env
         echo Attempting build anyway...
         echo.
     )
@@ -251,12 +252,12 @@ if defined Qt6_DIR (
 if defined WINDEPLOYQT_PATH exit /b 0
 
 if defined CMAKE_PREFIX_PATH (
-    for %%P in ("%CMAKE_PREFIX_PATH:;=" "%") do (
-        if not defined WINDEPLOYQT_PATH (
-            if not "%%~P"=="" (
-                if exist "%%~fP\bin\windeployqt.exe" set "WINDEPLOYQT_PATH=%%~fP\bin\windeployqt.exe"
-            )
-        )
+    set "__qt_prefix_list=%CMAKE_PREFIX_PATH%"
+    if "!__qt_prefix_list!"=="" (
+        set "__qt_prefix_list="
+    ) else (
+    call :_scan_prefix_list
+        set "__qt_prefix_list="
     )
 )
 
@@ -283,6 +284,26 @@ if errorlevel 1 (
 
 exit /b 0
 
+:_scan_prefix_list
+if not defined __qt_prefix_list exit /b 0
+
+:_scan_prefix_loop
+if not defined __qt_prefix_list exit /b 0
+for /f "tokens=1* delims=;" %%P in ("!__qt_prefix_list!") do (
+    call :_check_qt_prefix "%%~P"
+    set "__qt_prefix_list=%%Q"
+)
+if defined __qt_prefix_list goto :_scan_prefix_loop
+exit /b 0
+
+:_check_qt_prefix
+if defined WINDEPLOYQT_PATH exit /b 0
+set "_prefix=%~1"
+if "%_prefix%"=="" exit /b 0
+if exist "%_prefix%\bin\windeployqt.exe" set "WINDEPLOYQT_PATH=%_prefix%\bin\windeployqt.exe"
+set "_prefix="
+exit /b 0
+
 :configure_qt_env
 if defined Qt6_DIR exit /b 0
 
@@ -307,6 +328,7 @@ for %%B in ("%ProgramFiles%\Qt" "C:\Qt" "%ProgramFiles(x86)%\Qt" "%USERPROFILE%\
 if defined QT_CANDIDATE_DIR (
     if not defined Qt6_DIR set "Qt6_DIR=%QT_CANDIDATE_DIR%\lib\cmake\Qt6"
     if not defined CMAKE_PREFIX_PATH set "CMAKE_PREFIX_PATH=%QT_CANDIDATE_DIR%"
+    echo INFO: Detected Qt installation at "%QT_CANDIDATE_DIR%"
 )
 
 set "QT_CANDIDATE_DIR="
