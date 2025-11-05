@@ -28,6 +28,12 @@ Located in `docs/features/`:
 - **[Priority UI](features/PRIORITY_UI.md)** - Priority visualization in UI
 - **[Spaced Repetition](features/SPACED_REPETITION.md)** - SM-2 based spaced repetition system
 
+### 📖 User Guides
+
+Located in `docs/`:
+
+- **[Spaced Repetition UI Guide](UI_GUIDE_SPACED_REPETITION.md)** - How to use the Spaced Repetition UI (German)
+
 ### 💻 Development
 
 Located in `docs/development/`:
@@ -71,13 +77,14 @@ Located in `docs/maintenance/`:
 ### For Feature Documentation
 - **Task Management**: [Priority Feature](features/PRIORITY_FEATURE.md) & [Priority UI](features/PRIORITY_UI.md)
 - **Calendar Interaction**: [Drag & Drop Implementation](features/DRAG_DROP_IMPLEMENTATION.md)
-- **Learning System**: [Spaced Repetition](features/SPACED_REPETITION.md)
+- **Learning System**: [Spaced Repetition](features/SPACED_REPETITION.md) & [UI Guide](UI_GUIDE_SPACED_REPETITION.md)
 - **Setup Experience**: [Setup Wizard](setup/SETUP_WIZARD.md)
 
 ## 📝 Document Categories
 
 - **Setup (5 docs)**: Installation, configuration, and initial setup
 - **Features (4 docs)**: User-facing feature documentation
+- **User Guides (1 doc)**: Step-by-step usage instructions
 - **Development (5 docs)**: Technical implementation and development guides
 - **Maintenance (6 docs)**: Merge conflicts, troubleshooting, and maintenance
 
