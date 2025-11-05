@@ -6,7 +6,10 @@ import Styles 1.0 as Styles
 Item {
     id: overlay
     property bool open: false
-    property int minutes: 25
+    property int defaultFocusMinutes: 25
+    property int defaultTimerMinutes: 60
+    property bool isPomodoro: false
+    property int minutes: defaultFocusMinutes
     property int remainingSeconds: minutes * 60
     property bool running: false
     signal closed()
@@ -125,8 +128,25 @@ Item {
         }
     }
 
+    function normalizeMinutes(value) {
+        var numeric = Number(value)
+        if (!isFinite(numeric) || numeric <= 0) {
+            return isPomodoro ? defaultFocusMinutes : defaultTimerMinutes
+        }
+        return Math.round(numeric)
+    }
+
+    function openTimer(requestedMinutes) {
+        minutes = normalizeMinutes(requestedMinutes)
+        remainingSeconds = minutes * 60
+        running = false
+        open = true
+        ring.requestPaint()
+    }
+
     onOpenChanged: {
         if (open) {
+            minutes = normalizeMinutes(minutes)
             remainingSeconds = minutes * 60
             running = false
             ring.requestPaint()

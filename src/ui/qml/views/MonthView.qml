@@ -3,6 +3,16 @@ import QtQuick.Layouts
 import Styles 1.0
 import "../components" as Components
 
+function isoDate(value) {
+    if (!value) {
+        return "";
+    }
+    if (value.toLocaleString) {
+        return Qt.formatDate(value, "yyyy-MM-dd");
+    }
+    return Qt.formatDateTime(value, "yyyy-MM-dd");
+}
+
 Item {
     id: month
     Layout.fillWidth: true
@@ -124,7 +134,7 @@ Item {
         var anchor = anchorDate
         var year = anchor.getFullYear()
         var monthIndex = anchor.getMonth()
-        var first = new Date(year, monthIndex, 1)
+    var first = new Date(year, monthIndex, 1)
         var offset = weekStartSetting === "sunday"
                      ? first.getDay()
                      : ((first.getDay() + 6) % 7)
@@ -135,11 +145,11 @@ Item {
         for (var i = 0; i < 42; ++i) {
             var current = new Date(start)
             current.setDate(start.getDate() + i)
-            var iso = Qt.formatDate(current, "yyyy-MM-dd")
+            var iso = isoDate(current)
             collection.push({
                 iso: iso,
                 inMonth: current.getMonth() === monthIndex,
-                isToday: Qt.formatDate(current, "yyyy-MM-dd") === Qt.formatDate(new Date(), "yyyy-MM-dd"),
+                isToday: iso === isoDate(new Date()),
                 events: planner.dayEvents(iso)
             })
             if (i % 7 === 0) {

@@ -213,10 +213,17 @@ Item {
 
     Connections {
         target: planner
-        function onSettingsChanged() {
+        ignoreUnknownSignals: true
+        function onDarkThemeChanged() {
             if (dialog.visible) dialog.sync()
         }
-        function onDarkThemeChanged() {
+        function onViewModeChanged() {
+            if (dialog.visible) dialog.sync()
+        }
+        function onOnlyOpenChanged() {
+            if (dialog.visible) dialog.sync()
+        }
+        function onZenModeChanged() {
             if (dialog.visible) dialog.sync()
         }
     }

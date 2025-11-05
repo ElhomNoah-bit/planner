@@ -23,17 +23,7 @@ bool CategoryRepository::initialize(const QString& storageDir) {
     m_jsonPath = dir.filePath(QStringLiteral("categories.json"));
     
     if (!QFile::exists(m_jsonPath)) {
-        // Create default categories for school subjects
-        QVector<Category> defaults;
-        defaults.append({QStringLiteral("math"), QStringLiteral("Mathematik"), QColor(QStringLiteral("#3B82F6"))});
-        defaults.append({QStringLiteral("german"), QStringLiteral("Deutsch"), QColor(QStringLiteral("#10B981"))});
-        defaults.append({QStringLiteral("english"), QStringLiteral("Englisch"), QColor(QStringLiteral("#F59E0B"))});
-        defaults.append({QStringLiteral("science"), QStringLiteral("Naturwissenschaften"), QColor(QStringLiteral("#8B5CF6"))});
-        defaults.append({QStringLiteral("history"), QStringLiteral("Geschichte"), QColor(QStringLiteral("#EF4444"))});
-        defaults.append({QStringLiteral("other"), QStringLiteral("Sonstiges"), QColor(QStringLiteral("#6B7280"))});
-    defaults.append({QStringLiteral("untis"), QStringLiteral("Untis"), QColor(QStringLiteral("#1A2B4D"))});
-        
-        m_categories = defaults;
+        m_categories = defaultCategories();
         if (!saveToFile()) {
             qWarning() << "[CategoryRepository] Failed to save default categories";
             return false;
@@ -42,6 +32,13 @@ bool CategoryRepository::initialize(const QString& storageDir) {
         if (!loadFromFile()) {
             qWarning() << "[CategoryRepository] Failed to load categories";
             return false;
+        }
+        if (m_categories.isEmpty()) {
+            m_categories = defaultCategories();
+            if (!saveToFile()) {
+                qWarning() << "[CategoryRepository] Failed to re-save default categories";
+                return false;
+            }
         }
     }
     
@@ -161,6 +158,15 @@ void CategoryRepository::fromJsonArray(const QJsonArray& array) {
             }
         }
     }
+}
+
+QVector<Category> CategoryRepository::defaultCategories() {
+    QVector<Category> defaults;
+    defaults.append({QStringLiteral("default"), QStringLiteral("Allgemein"), QColor(QStringLiteral("#2F3645"))});
+    defaults.append({QStringLiteral("exam"), QStringLiteral("Klausur"), QColor(QStringLiteral("#D9534F"))});
+    defaults.append({QStringLiteral("school"), QStringLiteral("Unterricht"), QColor(QStringLiteral("#3A7CFE"))});
+    defaults.append({QStringLiteral("untis"), QStringLiteral("Untis"), QColor(QStringLiteral("#5CB85C"))});
+    return defaults;
 }
 
 QJsonObject CategoryRepository::categoryToJson(const Category& category) {

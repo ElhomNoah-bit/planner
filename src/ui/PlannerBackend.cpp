@@ -12,6 +12,7 @@
 #include <algorithm>
 
 namespace {
+const QString kDefaultCategoryColor = QStringLiteral("#2F3645");
 QString toIsoDate(const QDate& date) {
     return date.toString(Qt::ISODate);
 }
@@ -508,13 +509,14 @@ QVariantMap PlannerBackend::toVariant(const EventRecord& record) const {
     map.insert(QStringLiteral("externalId"), record.externalId);
     map.insert(QStringLiteral("eventType"), record.eventType);
 
-    // Add category color if category is assigned
+    QString resolvedCategoryColor = kDefaultCategoryColor;
     if (!record.categoryId.isEmpty()) {
         Category cat = m_categoryRepository.findById(record.categoryId);
-        if (cat.isValid()) {
-            map.insert(QStringLiteral("categoryColor"), cat.color.name());
+        if (cat.isValid() && cat.color.isValid()) {
+            resolvedCategoryColor = cat.color.name();
         }
     }
+    map.insert(QStringLiteral("categoryColor"), resolvedCategoryColor);
 
     const int severity = deadlineSeverity(record, QDate::currentDate());
     map.insert(QStringLiteral("deadlineLevel"), severity);
