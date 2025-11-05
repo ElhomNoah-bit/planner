@@ -2,6 +2,7 @@
 
 #include <QSet>
 #include <QString>
+#include <memory>
 
 class QSettings;
 
@@ -49,7 +50,7 @@ public:
     bool setSetupCompleted(bool completed);
 
 private:
-    mutable QSettings* m_settings;
+    std::unique_ptr<QSettings> m_settings;
     bool m_darkTheme = true;
     bool m_onlyOpen = false;
     QString m_searchQuery;

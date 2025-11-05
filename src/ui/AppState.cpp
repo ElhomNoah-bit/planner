@@ -1,6 +1,7 @@
 #include "AppState.h"
 
 #include <QSettings>
+#include <memory>
 
 namespace {
 QStringList toStringList(const QSet<QString>& values) {
@@ -12,13 +13,12 @@ QStringList toStringList(const QSet<QString>& values) {
 }
 
 AppState::AppState()
-    : m_settings(new QSettings("noah", "planner")) {
+    : m_settings(std::make_unique<QSettings>("noah", "planner")) {
     load();
 }
 
 AppState::~AppState() {
     save();
-    delete m_settings;
 }
 
 void AppState::load() {

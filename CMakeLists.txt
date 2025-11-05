@@ -164,11 +164,49 @@ endif()
 
 enable_testing()
 
+# Priority rules test
 add_executable(priority_rules_test
     tests/priority_rules_test.cpp
 )
-
 target_include_directories(priority_rules_test PRIVATE src)
 target_link_libraries(priority_rules_test PRIVATE Qt6::Core Qt6::Gui)
-
 add_test(NAME priority_rules_test COMMAND priority_rules_test)
+
+# PlannerService test
+add_executable(planner_service_test
+    tests/planner_service_test.cpp
+    src/core/PlannerService.cpp
+    src/core/SpacedRepetitionService.cpp
+)
+target_include_directories(planner_service_test PRIVATE src)
+target_link_libraries(planner_service_test PRIVATE Qt6::Core Qt6::Gui)
+add_test(NAME planner_service_test COMMAND planner_service_test)
+
+# SpacedRepetitionService test
+add_executable(spaced_repetition_test
+    tests/spaced_repetition_test.cpp
+    src/core/SpacedRepetitionService.cpp
+)
+target_include_directories(spaced_repetition_test PRIVATE src)
+target_link_libraries(spaced_repetition_test PRIVATE Qt6::Core Qt6::Gui)
+add_test(NAME spaced_repetition_test COMMAND spaced_repetition_test)
+
+# QuickAddParser test
+add_executable(quick_add_parser_test
+    tests/quick_add_parser_test.cpp
+    src/core/QuickAddParser.cpp
+)
+target_include_directories(quick_add_parser_test PRIVATE src)
+target_link_libraries(quick_add_parser_test PRIVATE Qt6::Core Qt6::Gui)
+add_test(NAME quick_add_parser_test COMMAND quick_add_parser_test)
+
+# Edge cases test
+add_executable(edge_cases_test
+    tests/edge_cases_test.cpp
+    src/core/PlannerService.cpp
+    src/core/SpacedRepetitionService.cpp
+    src/core/QuickAddParser.cpp
+)
+target_include_directories(edge_cases_test PRIVATE src)
+target_link_libraries(edge_cases_test PRIVATE Qt6::Core Qt6::Gui)
+add_test(NAME edge_cases_test COMMAND edge_cases_test)

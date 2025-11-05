@@ -16,15 +16,30 @@
 namespace {
 QJsonObject readJson(const QString& path) {
     QFile f(path);
-    if (!f.open(QIODevice::ReadOnly)) return {};
-    const auto doc = QJsonDocument::fromJson(f.readAll());
+    if (!f.open(QIODevice::ReadOnly)) {
+        qWarning() << "[PlannerService] Failed to open file for reading:" << path << f.errorString();
+        return {};
+    }
+    const QByteArray data = f.readAll();
+    const auto doc = QJsonDocument::fromJson(data);
+    if (doc.isNull()) {
+        qWarning() << "[PlannerService] Failed to parse JSON from:" << path;
+        return {};
+    }
     return doc.object();
 }
 
 void writeJson(const QString& path, const QJsonObject& obj) {
     QFile f(path);
-    if (!f.open(QIODevice::WriteOnly)) return;
-    f.write(QJsonDocument(obj).toJson(QJsonDocument::Indented));
+    if (!f.open(QIODevice::WriteOnly)) {
+        qWarning() << "[PlannerService] Failed to open file for writing:" << path << f.errorString();
+        return;
+    }
+    const QByteArray data = QJsonDocument(obj).toJson(QJsonDocument::Indented);
+    const qint64 written = f.write(data);
+    if (written != data.size()) {
+        qWarning() << "[PlannerService] Incomplete write to:" << path;
+    }
 }
 
 QString appDataDir() {
@@ -137,6 +152,7 @@ QVector<Task> PlannerService::generateDay(const QDate& date) const {
         if (parts.size() != 2) continue;
         const auto start = QDate::fromString(parts.at(0), Qt::ISODate);
         const auto end = QDate::fromString(parts.at(1), Qt::ISODate);
+        if (!start.isValid() || !end.isValid()) continue;
         if (date >= start && date <= end) return tasks;
     }
 
@@ -176,7 +192,10 @@ QVector<Task> PlannerService::generateDay(const QDate& date) const {
             continue;
         }
 
-        const int ideal = std::min(slotMax, std::max(slotMin, ((remaining / (maxSlots - placed) + 5) / 10) * 10));
+        const int remainingSlots = maxSlots - placed;
+        const int ideal = (remainingSlots > 0) 
+            ? std::min(slotMax, std::max(slotMin, ((remaining / remainingSlots + 5) / 10) * 10))
+            : slotMin;
 
         const Subject subject = subjectById(subjectId);
 
@@ -253,6 +272,10 @@ void PlannerService::loadExams() {
         exam.id = item.value("id").toString();
         exam.subjectId = item.value("subject").toString();
         exam.date = QDate::fromString(item.value("date").toString(), Qt::ISODate);
+        if (!exam.date.isValid()) {
+            qWarning() << "[PlannerService] Skipping exam with invalid date:" << exam.id;
+            continue;
+        }
         exam.weightBoost = item.value("weight_boost").toDouble(1.3);
         for (const auto& topic : item.value("topics").toArray()) {
             exam.topics.append(topic.toString());

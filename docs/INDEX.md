@@ -43,6 +43,13 @@ Located in `docs/development/`:
 - **[Implementation Summary](development/IMPLEMENTATION_SUMMARY.md)** - Overview of completed features
 - **[Implementation Status](development/IMPLEMENTATION_STATUS.md)** - Feature implementation tracking
 - **[Windows Compatibility Changelog](development/CHANGELOG_WINDOWS_COMPATIBILITY.md)** - Windows support changes
+- **[Performance Guide](development/PERFORMANCE.md)** - Performance optimization guidelines
+
+### 🧪 Testing
+
+Located in `docs/testing/`:
+
+- **[Testing Guide](testing/TESTING_GUIDE.md)** - How to run and write tests
 
 ### 🔨 Maintenance
 
@@ -68,6 +75,8 @@ Located in `docs/maintenance/`:
 1. Read [Developer Documentation](development/README_DEV.md)
 2. Review [Implementation Summary](development/IMPLEMENTATION_SUMMARY.md) for completed features
 3. Check [Implementation Status](development/IMPLEMENTATION_STATUS.md) for current state
+4. See [Testing Guide](testing/TESTING_GUIDE.md) for running tests
+5. Review [Performance Guide](development/PERFORMANCE.md) for optimization tips
 
 ### For Maintainers
 1. If dealing with merge conflicts: [START HERE](maintenance/START_HERE.md)
@@ -85,7 +94,8 @@ Located in `docs/maintenance/`:
 - **Setup (5 docs)**: Installation, configuration, and initial setup
 - **Features (4 docs)**: User-facing feature documentation
 - **User Guides (1 doc)**: Step-by-step usage instructions
-- **Development (5 docs)**: Technical implementation and development guides
+- **Development (6 docs)**: Technical implementation and development guides
+- **Testing (1 doc)**: Test suite documentation and guidelines
 - **Maintenance (6 docs)**: Merge conflicts, troubleshooting, and maintenance
 
 ## 🔍 Finding Documentation
