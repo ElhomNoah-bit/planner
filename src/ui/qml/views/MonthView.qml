@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import NoahPlanner.Styles as Styles
+import "../components" as Components
 
 Item {
     id: month
@@ -91,7 +92,7 @@ Item {
 
                 Repeater {
                     model: days
-                    delegate: DayCell {
+                    delegate: Components.DayCell {
                         isoDate: modelData.iso
                         inMonth: modelData.inMonth
                         isToday: modelData.isToday

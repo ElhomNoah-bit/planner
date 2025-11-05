@@ -7,7 +7,6 @@
 #include <QJsonObject>
 #include <QSet>
 #include <QtDebug>
-#include <QtGlobal>
 
 #include <algorithm>
 
@@ -187,9 +186,6 @@ void FocusSessionRepository::ensureStateLoaded() const {
 
 void FocusSessionRepository::saveSessions(const QVector<FocusSession>& sessions) const {
     QJsonArray array;
-#if QT_VERSION >= QT_VERSION_CHECK(6, 7, 0)
-    array.reserve(sessions.size());
-#endif
     for (const auto& session : sessions) {
         if (session.isValid()) {
             array.append(session.toJson());
