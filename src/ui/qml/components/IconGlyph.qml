@@ -6,10 +6,10 @@ Item {
     property alias text: glyph.text
     property string name: ""
     property real size: 14
-    property color color: Styles.ThemeStore.text
-    property string family: (Styles.ThemeStore.fontFamily && Styles.ThemeStore.fontFamily.length)
-                                  ? Styles.ThemeStore.fontFamily
-                                  : Styles.ThemeStore.fontFallback
+    property color color: Styles.ThemeStore.colors.text
+    property string family: (Styles.ThemeStore.fonts.heading && Styles.ThemeStore.fonts.heading.length)
+                                  ? Styles.ThemeStore.fonts.heading
+                                  : Styles.ThemeStore.fonts.fallback
 
     implicitHeight: glyph.implicitHeight
     implicitWidth: glyph.implicitWidth

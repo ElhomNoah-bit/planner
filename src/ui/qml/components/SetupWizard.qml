@@ -72,8 +72,11 @@ Dialog {
         currentStep = 0
     }
 
-    Keys.onEscapePressed: function(event) {
-        event.accepted = true
+    Shortcut {
+        sequences: [ StandardKey.Cancel, "Escape" ]
+        enabled: wizard.visible
+        context: Qt.ApplicationShortcut
+        onActivated: {/* consume escape without closing */}
     }
 
     Overlay.modal: Rectangle {
@@ -102,7 +105,9 @@ Dialog {
                 Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 80
-                    color: Styles.ThemeStore.colors.primary
+              color: (Styles.ThemeStore.colors && Styles.ThemeStore.colors.primary)
+                  ? Styles.ThemeStore.colors.primary
+                  : Styles.ThemeStore.colors.accent
                     radius: Styles.ThemeStore.radii.lg
 
                     RowLayout {
@@ -138,7 +143,9 @@ Dialog {
                 Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 4
-                    color: Styles.ThemeStore.colors.border
+              color: (Styles.ThemeStore.colors && Styles.ThemeStore.colors.border)
+                  ? Styles.ThemeStore.colors.border
+                  : Qt.rgba(255, 255, 255, 0.08)
 
                     Rectangle {
                         width: parent.width * ((currentStep + 1) / totalSteps)

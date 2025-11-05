@@ -5,7 +5,7 @@ import Styles 1.0 as Styles
 Rectangle {
     id: chip
     property string label: ""
-    property color subjectColor: Styles.ThemeStore.accent
+    property color subjectColor: Styles.ThemeStore.colors.accent
     property bool muted: false
     property bool overdue: false
     property string timeText: ""
@@ -45,11 +45,11 @@ Rectangle {
     signal dragFinished()
 
     implicitHeight: 26
-    implicitWidth: Math.max(92, contentRow.implicitWidth + (Styles.ThemeStore.g16 || (gaps ? gaps.g16 : 16)))
+    implicitWidth: Math.max(92, contentRow.implicitWidth + (gaps ? gaps.g16 : 16))
     radius: chipRadius
     color: chipBg
     border.width: resolvedCategoryColor.length > 0 ? 2 : (urgent ? 2 : (overdue ? 1 : 0))
-    border.color: resolvedCategoryColor.length > 0 ? resolvedCategoryColor : (urgent ? urgencyColor : (overdue ? Styles.ThemeStore.danger : "transparent"))
+    border.color: resolvedCategoryColor.length > 0 ? resolvedCategoryColor : (urgent ? urgencyColor : (overdue ? (colors ? colors.danger : "#F97066") : "transparent"))
 
     opacity: dragHandler.active ? 0.5 : chipAlpha
 
@@ -68,14 +68,14 @@ Rectangle {
     RowLayout {
         id: contentRow
         anchors.fill: parent
-        anchors.margins: Styles.ThemeStore.g12 || (gaps ? gaps.g12 : 12)
-        spacing: Styles.ThemeStore.g8 || (gaps ? gaps.g8 : 8)
+    anchors.margins: gaps ? gaps.g12 : 12
+    spacing: gaps ? gaps.g8 : 8
 
         Rectangle {
             width: timed ? 6 : 0
             height: timed ? 6 : 0
             radius: 3
-            color: muted ? Styles.ThemeStore.divider : resolvedSubjectColor
+            color: muted ? (colors ? colors.divider : "#2A3340") : resolvedSubjectColor
             visible: timed
             Layout.alignment: Qt.AlignVCenter
         }
@@ -112,7 +112,7 @@ Rectangle {
     Rectangle {
         anchors.fill: parent
         radius: chipRadius
-        color: Styles.ThemeStore.hover
+    color: colors ? colors.hover : Qt.rgba(1, 1, 1, 0.05)
         visible: hoverHandler.hovered && !dragHandler.active
         opacity: 0.2
     }

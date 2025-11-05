@@ -56,6 +56,7 @@ QtObject {
         readonly property int md: 14
         readonly property int lg: 16
         readonly property int xl: 20
+        readonly property int xxl: 24
         readonly property int weightRegular: 400
         readonly property int weightMedium: 600
         readonly property int weightBold: 700
@@ -131,12 +132,4 @@ QtObject {
     readonly property int r12: 12
     readonly property int r16: 16
 
-    readonly property color cardBg: colors.cardBg
-    readonly property color cardAlt: colors.cardAlt
-    readonly property color hover: colors.hover
-    readonly property color divider: colors.divider
-    readonly property color focus: colors.focus
-
-    readonly property string fontFamily: fonts.heading
-    readonly property string fontFallback: fonts.fallback
 }
