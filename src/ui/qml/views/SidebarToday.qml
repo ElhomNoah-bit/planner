@@ -117,7 +117,7 @@ Item {
                     Text {
                         text: planner && planner.dueReviewCount === 1
                               ? qsTr("1 Wiederholung fällig heute")
-                              : qsTr("%1 Wiederholungen fällig heute").arg(planner.dueReviewCount)
+                              : qsTr("%1 Wiederholungen fällig heute").arg(planner ? planner.dueReviewCount : 0)
                         font.pixelSize: typeScale.sm
                         font.weight: typeScale.weightRegular
                         font.family: fonts.body

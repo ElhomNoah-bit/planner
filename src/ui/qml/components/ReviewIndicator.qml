@@ -63,7 +63,9 @@ Item {
             onExited: badge.opacity = 1.0
             
             ToolTip.visible: mouseArea.containsMouse
-            ToolTip.text: root.dueCount + (root.dueCount === 1 ? " Wiederholung" : " Wiederholungen") + " fällig heute"
+            ToolTip.text: root.dueCount === 1 
+                          ? qsTr("1 Wiederholung fällig heute")
+                          : qsTr("%1 Wiederholungen fällig heute").arg(root.dueCount)
             ToolTip.delay: 500
         }
     }
