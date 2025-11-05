@@ -1,18 +1,18 @@
 import QtQuick
 import QtQuick.Controls
-import QtQuick
-import QtQuick.Layouts
 import Styles 1.0
+
+Rectangle {
     id: root
     property bool active: false
     signal toggled()
 
-    implicitWidth: Styles.ThemeStore.layout.pillH
     implicitWidth: ThemeStore.layout.pillH
     implicitHeight: ThemeStore.layout.pillH
-    radius: ThemeStore.radiusLg
+    radius: ThemeStore.radii.lg
     color: active ? ThemeStore.colors.accentBg : "transparent"
     border.color: active ? ThemeStore.colors.accent : ThemeStore.colors.divider
+    border.width: 1
 
     Behavior on color {
         ColorAnimation { duration: 150; easing.type: Easing.InOutQuad }

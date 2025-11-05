@@ -72,7 +72,6 @@ qt_add_qml_module(noah_planner
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
     QML_FILES
-        src/ui/qml/qmldir
         src/ui/qml/App.qml
         src/ui/qml/Main.qml
         src/ui/qml/components/DayCell.qml
@@ -105,6 +104,8 @@ qt_add_qml_module(noah_planner
         src/ui/qml/views/SidebarToday.qml
         src/ui/qml/views/WeekView.qml
         src/ui/qml/components/WeeklyHeatmap.qml
+    RESOURCES
+        src/ui/qml/qmldir
 )
 
 set_source_files_properties(
@@ -131,6 +132,7 @@ qt_add_qml_module(styles_module
     OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/NoahPlanner/Styles
     QML_FILES
         src/ui/qml/styles/ThemeStore.qml
+    RESOURCES
         src/ui/qml/styles/qmldir
 )
 
