@@ -14,8 +14,10 @@ Rectangle {
     property string deadlineSeverity: ""
     property int deadlineLevel: 0
 
-    property color chipBg: (categoryColor && categoryColor.length) ? categoryColor : (muted ? Styles.ThemeStore.cardAlt : Styles.ThemeStore.cardBg)
-    property color chipFg: Styles.ThemeStore.colors.textPrimary
+    property color chipBg: resolvedCategoryColor.length > 0
+                              ? Qt.lighter(resolvedCategoryColor, 1.3)
+                              : (muted ? Styles.ThemeStore.cardAlt : Styles.ThemeStore.cardBg)
+    property color chipFg: muted ? Styles.ThemeStore.colors.text2 : Styles.ThemeStore.colors.textPrimary
     property real chipAlpha: enabled === false ? 0.5 : 1.0
     property real chipRadius: Styles.ThemeStore.r12
     property color resolvedSubjectColor: subjectColor && subjectColor !== "" ? subjectColor : Styles.ThemeStore.accent
@@ -41,7 +43,7 @@ Rectangle {
     implicitHeight: 26
     implicitWidth: Math.max(92, contentRow.implicitWidth + Styles.ThemeStore.g16)
     radius: chipRadius
-    color: muted ? Styles.ThemeStore.cardAlt : Styles.ThemeStore.cardBg
+    color: chipBg
     border.width: resolvedCategoryColor.length > 0 ? 2 : (urgent ? 2 : (overdue ? 1 : 0))
     border.color: resolvedCategoryColor.length > 0 ? resolvedCategoryColor : (urgent ? urgencyColor : (overdue ? Styles.ThemeStore.danger : "transparent"))
 
@@ -53,7 +55,7 @@ Rectangle {
 
     Rectangle {
         anchors.fill: parent
-    radius: chipRadius
+        radius: chipRadius
         color: urgencyColor
         opacity: urgent ? 0.12 : 0
         visible: urgent
@@ -84,7 +86,7 @@ Rectangle {
                 font.pixelSize: Styles.ThemeStore.type.xs
                 font.weight: Styles.ThemeStore.type.weightMedium
                 font.family: Styles.ThemeStore.fonts.uiFallback
-                color: Styles.ThemeStore.colors.text2
+                color: chipFg
                 elide: Text.ElideRight
                 renderType: Text.NativeRendering
             }
@@ -92,7 +94,7 @@ Rectangle {
             Text {
                 id: labelText
                 text: chip.label
-                color: Styles.ThemeStore.colors.textPrimary
+                color: chipFg
                 font.pixelSize: Styles.ThemeStore.type.sm
                 font.weight: Styles.ThemeStore.type.weightMedium
                 font.family: Styles.ThemeStore.fonts.heading
@@ -105,7 +107,7 @@ Rectangle {
 
     Rectangle {
         anchors.fill: parent
-    radius: chipRadius
+        radius: chipRadius
         color: Styles.ThemeStore.hover
         visible: hoverHandler.hovered && !dragHandler.active
         opacity: 0.2

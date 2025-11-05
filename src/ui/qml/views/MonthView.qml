@@ -7,10 +7,13 @@ function isoDate(value) {
     if (!value) {
         return "";
     }
-    if (value.toLocaleString) {
+    if (value.getFullYear || value.toLocaleString) {
         return Qt.formatDate(value, "yyyy-MM-dd");
     }
-    return Qt.formatDateTime(value, "yyyy-MM-dd");
+    if (value.toString) {
+        return Qt.formatDateTime(value, "yyyy-MM-dd");
+    }
+    return "";
 }
 
 Item {
