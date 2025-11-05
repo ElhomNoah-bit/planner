@@ -160,14 +160,108 @@ Item {
                     Layout.fillWidth: true
                     spacing: Styles.ThemeStore.gap.g12
 
-                    Calendar {
-                        id: datePicker
+                    ColumnLayout {
+                        id: dateSelector
                         Layout.fillWidth: true
-                        Layout.preferredHeight: 260
-                        weekNumbersVisible: true
-                        locale: Qt.locale()
-                        selectedDate: dialog.selectedDate
-                        onSelectedDateChanged: dialog.selectedDate = selectedDate
+                        spacing: Styles.ThemeStore.gap.g8
+                        property bool internalUpdate: false
+
+                        function updateFromSelectedDate() {
+                            internalUpdate = true
+                            var current = dialog.selectedDate
+                            if (!current || isNaN(current)) {
+                                current = new Date()
+                                dialog.selectedDate = current
+                            }
+                            var normalized = new Date(current.getFullYear(), current.getMonth(), current.getDate())
+                            dayBox.value = normalized.getDate()
+                            monthBox.currentIndex = normalized.getMonth()
+                            yearBox.value = normalized.getFullYear()
+                            internalUpdate = false
+                        }
+
+                        function commitSelection() {
+                            if (internalUpdate) {
+                                return
+                            }
+                            internalUpdate = true
+                            var year = Math.round(yearBox.value)
+                            var month = monthBox.currentIndex
+                            var day = Math.round(dayBox.value)
+                            var maxDay = new Date(year, month + 1, 0).getDate()
+                            if (day > maxDay) {
+                                day = maxDay
+                                dayBox.value = day
+                            }
+                            if (day < 1) {
+                                day = 1
+                                dayBox.value = day
+                            }
+                            var candidate = new Date(year, month, day)
+                            dialog.selectedDate = candidate
+                            dayBox.value = candidate.getDate()
+                            monthBox.currentIndex = candidate.getMonth()
+                            yearBox.value = candidate.getFullYear()
+                            internalUpdate = false
+                        }
+
+                        RowLayout {
+                            Layout.fillWidth: true
+                            spacing: Styles.ThemeStore.gap.g8
+
+                            ColumnLayout {
+                                spacing: Styles.ThemeStore.gap.g4
+                                Label {
+                                    text: qsTr("Tag")
+                                    font.pixelSize: Styles.ThemeStore.type.xs
+                                    color: Styles.ThemeStore.colors.text2
+                                }
+                                SpinBox {
+                                    id: dayBox
+                                    from: 1
+                                    to: 31
+                                    value: 1
+                                    onValueModified: dateSelector.commitSelection()
+                                    onEditingFinished: dateSelector.commitSelection()
+                                }
+                            }
+
+                            ColumnLayout {
+                                spacing: Styles.ThemeStore.gap.g4
+                                Label {
+                                    text: qsTr("Monat")
+                                    font.pixelSize: Styles.ThemeStore.type.xs
+                                    color: Styles.ThemeStore.colors.text2
+                                }
+                                ComboBox {
+                                    id: monthBox
+                                    Layout.fillWidth: true
+                                    model: [qsTr("Jan"), qsTr("Feb"), qsTr("Mär"), qsTr("Apr"), qsTr("Mai"), qsTr("Jun"),
+                                             qsTr("Jul"), qsTr("Aug"), qsTr("Sep"), qsTr("Okt"), qsTr("Nov"), qsTr("Dez")]
+                                    onActivated: dateSelector.commitSelection()
+                                    onCurrentIndexChanged: dateSelector.commitSelection()
+                                }
+                            }
+
+                            ColumnLayout {
+                                spacing: Styles.ThemeStore.gap.g4
+                                Label {
+                                    text: qsTr("Jahr")
+                                    font.pixelSize: Styles.ThemeStore.type.xs
+                                    color: Styles.ThemeStore.colors.text2
+                                }
+                                SpinBox {
+                                    id: yearBox
+                                    from: 1970
+                                    to: 2100
+                                    value: (new Date()).getFullYear()
+                                    onValueModified: dateSelector.commitSelection()
+                                    onEditingFinished: dateSelector.commitSelection()
+                                }
+                            }
+                        }
+
+                        Component.onCompleted: updateFromSelectedDate()
                     }
 
                     ColumnLayout {
@@ -226,6 +320,15 @@ Item {
                                 onValueModified: dialog.durationMinutes = value
                             }
                         }
+                    }
+                }
+            }
+
+            Connections {
+                target: dialog
+                function onSelectedDateChanged() {
+                    if (dateSelector) {
+                        dateSelector.updateFromSelectedDate()
                     }
                 }
             }
