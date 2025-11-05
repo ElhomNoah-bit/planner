@@ -23,6 +23,7 @@ set "QT_ROOT_DIR="
 set "MINGW_BIN_DIR="
 set "CMAKE_GENERATOR_OPTION="
 set "CMAKE_COMPILER_OPTIONS="
+set "TARGET_GENERATOR="
 
 set "PACKAGE_MANAGER="
 where winget >nul 2>nul
@@ -78,6 +79,7 @@ if "%Qt6_DIR%"=="" (
 
 REM Create build directory
 set BUILD_DIR=build
+call :ensure_clean_build_dir
 if not exist "%BUILD_DIR%" mkdir "%BUILD_DIR%"
 
 echo Configuring CMake...
@@ -379,6 +381,7 @@ if /I "%QT_TOOLCHAIN_TYPE%"=="mingw" (
         set "CMAKE_GENERATOR_OPTION=-G ^"MinGW Makefiles^""
         set "CMAKE_COMPILER_OPTIONS=-DCMAKE_C_COMPILER=^"!MINGW_BIN_DIR!\gcc.exe^" -DCMAKE_CXX_COMPILER=^"!MINGW_BIN_DIR!\g++.exe^" -DCMAKE_MAKE_PROGRAM=^"!MINGW_BIN_DIR!\mingw32-make.exe^""
         set "CMAKE_BUILD_CONFIG_SWITCH="
+        set "TARGET_GENERATOR=MinGW Makefiles"
     ) else (
         echo WARNING: MinGW toolchain for Qt not found automatically. Install the Qt MinGW tools or update PATH.
         set "CMAKE_GENERATOR_OPTION=-G ^"MinGW Makefiles^""
