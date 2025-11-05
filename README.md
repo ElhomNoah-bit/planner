@@ -76,8 +76,20 @@ cmake --build build --config Release --parallel
 - `run.sh` – Build & Start-Skript für Linux
 - `run.bat` – Build & Start-Skript für Windows
 
-## Weiterführende Dokumentation
-- **Entwickler-Dokumentation**: Siehe [README_DEV.md](README_DEV.md) für technische Details
-- **Windows-Setup**: Detaillierte Anleitung in [WINDOWS_SETUP.md](WINDOWS_SETUP.md)
-- **Plattformkompatibilität**: Informationen zu unterstützten Systemen in [PLATFORM_COMPATIBILITY.md](PLATFORM_COMPATIBILITY.md)
-- **Erweiterte Dokumentation**: Ausführliche Informationen zu Architektur, Konfiguration und Bedienung in `docs/README.md`
+## 📚 Dokumentation
+
+Alle Dokumentation ist jetzt im `docs/` Verzeichnis organisiert:
+
+- **📖 [Dokumentations-Index](docs/INDEX.md)** - Vollständiger Überblick über alle verfügbaren Dokumente
+- **🔧 Setup & Installation**:
+  - [Windows-Setup](docs/setup/WINDOWS_SETUP.md) - Detaillierte Windows 10/11 Anleitung
+  - [Plattformkompatibilität](docs/setup/PLATFORM_COMPATIBILITY.md) - Unterstützte Systeme
+  - [Setup-Wizard](docs/setup/SETUP_WIZARD.md) - Erste Einrichtung
+- **💻 Entwickler-Dokumentation**:
+  - [README_DEV.md](docs/development/README_DEV.md) - Technische Details
+  - [Implementation Summary](docs/development/IMPLEMENTATION_SUMMARY.md) - Übersicht der Features
+- **✨ Features**:
+  - [Prioritäten](docs/features/PRIORITY_FEATURE.md) - Automatische Task-Priorisierung
+  - [Drag & Drop](docs/features/DRAG_DROP_IMPLEMENTATION.md) - Kalender-Interaktion
+  - [Spaced Repetition](docs/features/SPACED_REPETITION.md) - Lernsystem
+- **📘 Erweiterte Dokumentation**: `docs/README.md` - Ausführliche Informationen zu Architektur, Konfiguration und Bedienung
