@@ -397,7 +397,7 @@ if not defined OPENSSL_BIN (
 set "_copied=0"
 for %%F in (libssl-3-x64.dll libcrypto-3-x64.dll) do (
     if exist "%OPENSSL_BIN%\%%F" (
-        copy /Y "%OPENSSL_BIN%\%%F" "%_target_dir%" >nul
+        copy /Y "%OPENSSL_BIN%\%%F" "%_target_dir%%%F" >nul
         if not errorlevel 1 set "_copied=1"
     )
 )

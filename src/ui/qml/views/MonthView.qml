@@ -3,16 +3,6 @@ import QtQuick.Layouts
 import Styles 1.0
 import "../components" as Components
 
-function isoDate(value) {
-    if (!value) {
-        return "";
-    }
-    if (value.toLocaleString) {
-        return Qt.formatDate(value, "yyyy-MM-dd");
-    }
-    return Qt.formatDateTime(value, "yyyy-MM-dd");
-}
-
 Item {
     id: month
     Layout.fillWidth: true
@@ -37,6 +27,19 @@ Item {
     readonly property QtObject metrics: ThemeStore.layout
     readonly property var anchorDate: selectedIso.length > 0 ? new Date(selectedIso) : new Date()
     readonly property real weekNumberWidth: showWeekNumbersSetting ? 48 : 0
+
+    function isoDate(value) {
+        if (!value) {
+            return "";
+        }
+        if (value.getFullYear || value.toLocaleString) {
+            return Qt.formatDate(value, "yyyy-MM-dd");
+        }
+        if (value.toString) {
+            return Qt.formatDateTime(value, "yyyy-MM-dd");
+        }
+        return "";
+    }
 
     ColumnLayout {
         width: parent.width

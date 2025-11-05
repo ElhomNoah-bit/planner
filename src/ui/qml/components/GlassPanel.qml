@@ -11,6 +11,9 @@ Item {
     property color stroke: baseStroke
     default property alias contentData: content.data
 
+    implicitWidth: content.childrenRect.width + padding * 2
+    implicitHeight: content.childrenRect.height + padding * 2
+
     readonly property var theme: Styles.ThemeStore
     readonly property var colors: theme ? theme.colors : null
     readonly property var gap: theme ? theme.gap : null
