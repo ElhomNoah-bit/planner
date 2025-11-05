@@ -124,7 +124,7 @@ void SpacedRepetitionService::setEaseFactorModifier(double modifier) {
 void SpacedRepetitionService::load() {
     m_reviews.clear();
 
-    const QString path = m_dataDir + "/reviews.json";
+    const QString path = QDir(m_dataDir).filePath(QStringLiteral("reviews.json"));
     QJsonObject root = readJson(path);
 
     // Initialize with empty structure if file doesn't exist
@@ -173,7 +173,7 @@ void SpacedRepetitionService::save() const {
     QJsonObject root;
     root["reviews"] = reviewsArray;
 
-    const QString path = m_dataDir + "/reviews.json";
+    const QString path = QDir(m_dataDir).filePath(QStringLiteral("reviews.json"));
     QDir().mkpath(m_dataDir);
     writeJson(path, root);
 }

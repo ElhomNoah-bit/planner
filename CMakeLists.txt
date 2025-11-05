@@ -4,6 +4,17 @@ project(noah_planner LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Enable automatic MOC, UIC, and RCC for Qt
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+# Windows-specific settings
+if(WIN32)
+    # Enable Unicode support
+    add_definitions(-DUNICODE -D_UNICODE)
+endif()
+
 find_package(Qt6 6.4 COMPONENTS Core Quick Qml QuickControls2 QuickLayouts Widgets Sql PrintSupport REQUIRED)
 
 qt_standard_project_setup()
@@ -132,7 +143,15 @@ target_link_libraries(noah_planner PRIVATE
 
 target_include_directories(noah_planner PRIVATE src)
 
-install(TARGETS noah_planner RUNTIME DESTINATION bin)
+# Platform-specific installation
+if(WIN32)
+    install(TARGETS noah_planner 
+            RUNTIME DESTINATION .
+            LIBRARY DESTINATION .
+            ARCHIVE DESTINATION .)
+else()
+    install(TARGETS noah_planner RUNTIME DESTINATION bin)
+endif()
 
 enable_testing()
 

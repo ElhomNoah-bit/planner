@@ -18,8 +18,29 @@ ui_*.h
 *.user
 *.pro.user
 
+# Windows-specific build files
+*.obj
+*.lib
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.exp
+*.manifest
+*.res
+Debug/
+Release/
+x64/
+x86/
+
+# Visual Studio files
+*.vcxproj
+*.vcxproj.filters
+*.sln
+
 # Temporary files
 *~
 *.swp
 *.swo
 .DS_Store
+Thumbs.db
