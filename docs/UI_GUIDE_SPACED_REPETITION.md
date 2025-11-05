@@ -204,7 +204,7 @@ backend.removeReview("ma_Quadratische_Gleichungen")
 // Queries
 var allReviews = backend.getAllReviews()
 var mathReviews = backend.getReviewsForSubject("ma")
-var todayReviews = backend.getReviewsOnDate("2025-11-05")
+var todayReviews = backend.getReviewsOnDate(Qt.formatDate(new Date(), "yyyy-MM-dd"))
 
 // Properties
 var count = backend.dueReviewCount
