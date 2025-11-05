@@ -199,3 +199,14 @@ add_executable(quick_add_parser_test
 target_include_directories(quick_add_parser_test PRIVATE src)
 target_link_libraries(quick_add_parser_test PRIVATE Qt6::Core Qt6::Gui)
 add_test(NAME quick_add_parser_test COMMAND quick_add_parser_test)
+
+# Edge cases test
+add_executable(edge_cases_test
+    tests/edge_cases_test.cpp
+    src/core/PlannerService.cpp
+    src/core/SpacedRepetitionService.cpp
+    src/core/QuickAddParser.cpp
+)
+target_include_directories(edge_cases_test PRIVATE src)
+target_link_libraries(edge_cases_test PRIVATE Qt6::Core Qt6::Gui)
+add_test(NAME edge_cases_test COMMAND edge_cases_test)
