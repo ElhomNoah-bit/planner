@@ -160,11 +160,13 @@ Item {
                     Layout.fillWidth: true
                     spacing: Styles.ThemeStore.gap.g12
 
-                    DatePicker {
+                    Calendar {
                         id: datePicker
                         Layout.fillWidth: true
+                        Layout.preferredHeight: 260
+                        weekNumbersVisible: true
                         locale: Qt.locale()
-                        date: dialog.selectedDate
+                        selectedDate: dialog.selectedDate
                         onSelectedDateChanged: dialog.selectedDate = selectedDate
                     }
 
