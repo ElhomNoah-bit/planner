@@ -317,11 +317,13 @@ if not defined WINDEPLOYQT_PATH (
 )
 
 echo Running windeployqt to bundle Qt dependencies...
-"%WINDEPLOYQT_PATH%" "%TARGET_EXE%" --qmldir "%SCRIPT_DIR%src\ui\qml"
+"%WINDEPLOYQT_PATH%" --force-openssl "%TARGET_EXE%" --qmldir "%SCRIPT_DIR%src\ui\qml"
 if errorlevel 1 (
     echo WARNING: windeployqt reported an error.
     exit /b 1
 )
+
+call :copy_openssl_dlls "%TARGET_EXE%"
 
 exit /b 0
 
@@ -360,6 +362,52 @@ for %%B in ("%ProgramFiles%\Qt" "C:\Qt" "%ProgramFiles(x86)%\Qt" "%USERPROFILE%\
 )
 
 :_ensure_qt_root_done
+exit /b 0
+
+:copy_openssl_dlls
+set "_target_exe=%~1"
+if "%_target_exe%"=="" exit /b 0
+set "_target_dir=%~dp1"
+if "%_target_dir%"=="" exit /b 0
+
+set "OPENSSL_BIN="
+
+if defined OPENSSL_ROOT_DIR (
+    if exist "%OPENSSL_ROOT_DIR%\bin\libssl-3-x64.dll" set "OPENSSL_BIN=%OPENSSL_ROOT_DIR%\bin"
+    if not defined OPENSSL_BIN if exist "%OPENSSL_ROOT_DIR%\libssl-3-x64.dll" set "OPENSSL_BIN=%OPENSSL_ROOT_DIR%"
+)
+
+if not defined OPENSSL_BIN (
+    for %%B in ("%ProgramFiles%\OpenSSL-Win64\bin" "C:\Program Files\OpenSSL-Win64\bin" "C:\OpenSSL-Win64\bin" "%ProgramFiles%\OpenSSL\bin" "%ProgramFiles(x86)%\OpenSSL-Win64\bin") do (
+        if not defined OPENSSL_BIN if exist "%%~fB\libssl-3-x64.dll" set "OPENSSL_BIN=%%~fB"
+    )
+)
+
+if not defined OPENSSL_BIN (
+    for /f "delims=" %%I in ('where libssl-3-x64.dll 2^>nul') do (
+        if not defined OPENSSL_BIN set "OPENSSL_BIN=%%~dpI"
+    )
+)
+
+if not defined OPENSSL_BIN (
+    echo INFO: OpenSSL binaries not found. Install via "winget install ShiningLight.OpenSSL.Light" to enable HTTPS sync.
+    exit /b 0
+)
+
+set "_copied=0"
+for %%F in (libssl-3-x64.dll libcrypto-3-x64.dll) do (
+    if exist "%OPENSSL_BIN%\%%F" (
+        copy /Y "%OPENSSL_BIN%\%%F" "%_target_dir%" >nul
+        if not errorlevel 1 set "_copied=1"
+    )
+)
+
+if "%_copied%"=="1" (
+    echo Copied OpenSSL runtime DLLs from "%OPENSSL_BIN%".
+) else (
+    echo WARNING: OpenSSL DLLs not found in "%OPENSSL_BIN%".
+)
+
 exit /b 0
 
 :_normalize_qt_root
