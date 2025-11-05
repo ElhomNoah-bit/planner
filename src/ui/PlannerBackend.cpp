@@ -62,6 +62,7 @@ PlannerBackend::PlannerBackend(QObject* parent)
     rebuildSidebar();
     rebuildFocusState();
     rebuildPomodoroState();
+    rebuildDueReviews();
 
     emit selectedDateChanged();
     emit viewModeChanged();
@@ -79,6 +80,7 @@ PlannerBackend::PlannerBackend(QObject* parent)
     emit focusSessionActiveChanged();
     emit focusStreakChanged();
     emit pomodoroChanged();
+    emit dueReviewsChanged();
     if (!m_searchQuery.isEmpty()) {
         emit searchQueryChanged();
     }
@@ -369,6 +371,7 @@ void PlannerBackend::initializeStorage() {
     }
 
     m_focusRepository.setStorageDirectory(m_storageDir);
+    m_reviewService.setDataDirectory(m_storageDir);
 
     const QString storePath = m_repository.isSqlAvailable() ? m_repository.databasePath() : m_repository.jsonFallbackPath();
     qInfo() << "[PlannerBackend] DB path:" << storePath;
@@ -1070,5 +1073,135 @@ void PlannerBackend::rebuildCategories() {
     if (m_categories != list) {
         m_categories = list;
         emit categoriesChanged();
+    }
+}
+
+// Spaced Repetition Methods
+
+QString PlannerBackend::addReview(const QString& subjectId, const QString& topic) {
+    QString reviewId = m_reviewService.addReview(subjectId, topic);
+    rebuildDueReviews();
+    notify(tr("Review hinzugefügt"));
+    return reviewId;
+}
+
+bool PlannerBackend::recordReview(const QString& reviewId, int quality) {
+    if (!m_reviewService.recordReview(reviewId, quality)) {
+        notify(tr("Review konnte nicht gespeichert werden"));
+        return false;
+    }
+    rebuildDueReviews();
+    notify(tr("Review aufgezeichnet"));
+    return true;
+}
+
+bool PlannerBackend::removeReview(const QString& reviewId) {
+    if (!m_reviewService.removeReview(reviewId)) {
+        return false;
+    }
+    rebuildDueReviews();
+    notify(tr("Review entfernt"));
+    return true;
+}
+
+QVariantList PlannerBackend::getReviewsForSubject(const QString& subjectId) const {
+    QList<Review> reviews = m_reviewService.reviewsForSubject(subjectId);
+    QVariantList result;
+    
+    for (const auto& review : reviews) {
+        QVariantMap map;
+        map["id"] = review.id;
+        map["subjectId"] = review.subjectId;
+        map["topic"] = review.topic;
+        map["lastReviewDate"] = review.lastReviewDate.toString(Qt::ISODate);
+        map["nextReviewDate"] = review.nextReviewDate.toString(Qt::ISODate);
+        map["repetitionNumber"] = review.repetitionNumber;
+        map["easeFactor"] = review.easeFactor;
+        map["intervalDays"] = review.intervalDays;
+        map["quality"] = review.quality;
+        map["isDue"] = review.nextReviewDate <= QDate::currentDate();
+        result.append(map);
+    }
+    
+    return result;
+}
+
+QVariantList PlannerBackend::getAllReviews() const {
+    QList<Review> reviews = m_reviewService.reviews();
+    QVariantList result;
+    
+    for (const auto& review : reviews) {
+        QVariantMap map;
+        map["id"] = review.id;
+        map["subjectId"] = review.subjectId;
+        map["topic"] = review.topic;
+        map["lastReviewDate"] = review.lastReviewDate.toString(Qt::ISODate);
+        map["nextReviewDate"] = review.nextReviewDate.toString(Qt::ISODate);
+        map["repetitionNumber"] = review.repetitionNumber;
+        map["easeFactor"] = review.easeFactor;
+        map["intervalDays"] = review.intervalDays;
+        map["quality"] = review.quality;
+        map["isDue"] = review.nextReviewDate <= QDate::currentDate();
+        result.append(map);
+    }
+    
+    return result;
+}
+
+QVariantList PlannerBackend::getReviewsOnDate(const QString& isoDate) const {
+    QDate date = QDate::fromString(isoDate, Qt::ISODate);
+    if (!date.isValid()) {
+        return QVariantList();
+    }
+    
+    QList<Review> reviews = m_reviewService.reviewsOnDate(date);
+    QVariantList result;
+    
+    for (const auto& review : reviews) {
+        QVariantMap map;
+        map["id"] = review.id;
+        map["subjectId"] = review.subjectId;
+        map["topic"] = review.topic;
+        map["lastReviewDate"] = review.lastReviewDate.toString(Qt::ISODate);
+        map["nextReviewDate"] = review.nextReviewDate.toString(Qt::ISODate);
+        map["repetitionNumber"] = review.repetitionNumber;
+        map["easeFactor"] = review.easeFactor;
+        map["intervalDays"] = review.intervalDays;
+        map["quality"] = review.quality;
+        result.append(map);
+    }
+    
+    return result;
+}
+
+void PlannerBackend::setReviewInitialInterval(int days) {
+    m_reviewService.setInitialInterval(days);
+}
+
+void PlannerBackend::refreshReviews() {
+    rebuildDueReviews();
+}
+
+void PlannerBackend::rebuildDueReviews() {
+    QList<Review> due = m_reviewService.dueReviews();
+    QVariantList list;
+    
+    for (const auto& review : due) {
+        QVariantMap map;
+        map["id"] = review.id;
+        map["subjectId"] = review.subjectId;
+        map["topic"] = review.topic;
+        map["lastReviewDate"] = review.lastReviewDate.toString(Qt::ISODate);
+        map["nextReviewDate"] = review.nextReviewDate.toString(Qt::ISODate);
+        map["repetitionNumber"] = review.repetitionNumber;
+        map["easeFactor"] = review.easeFactor;
+        map["intervalDays"] = review.intervalDays;
+        map["quality"] = review.quality;
+        list.append(map);
+    }
+    
+    if (m_dueReviews != list) {
+        m_dueReviews = list;
+        emit dueReviewsChanged();
     }
 }

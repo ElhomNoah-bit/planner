@@ -20,4 +20,8 @@ struct Task {
     QString seriesId;
     int planIndex = -1;
     Priority priority = Priority::Medium;
+    
+    // Spaced repetition properties
+    bool isReview = false;     // True if this is a review task
+    QString reviewId;          // Associated review ID if isReview is true
 };

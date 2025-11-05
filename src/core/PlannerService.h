@@ -3,6 +3,7 @@
 #include "Task.h"
 #include "Subject.h"
 #include "Exam.h"
+#include "SpacedRepetitionService.h"
 
 #include <QHash>
 #include <QJsonObject>
@@ -18,6 +19,8 @@ public:
 
     QString dataDir() const { return m_dataDir; }
     void ensureSeed();
+    
+    SpacedRepetitionService* spacedRepetition() { return &m_spacedRepetition; }
 
     QList<Subject> subjects() const { return m_subjects; }
     QHash<QString, QString> levels() const { return m_levels; }
@@ -44,6 +47,7 @@ private:
     QJsonObject m_config;
     QList<Exam> m_exams;
     QHash<QString, QSet<int>> m_done; // date ISO -> completed slot indices
+    SpacedRepetitionService m_spacedRepetition;
 
     void loadAll();
     void loadSubjects();

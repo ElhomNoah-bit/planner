@@ -37,7 +37,8 @@ QString appDataDir() {
 QString iso(const QDate& date) { return date.toString(Qt::ISODate); }
 }
 
-PlannerService::PlannerService(QObject* parent) : QObject(parent) {
+PlannerService::PlannerService(QObject* parent) 
+    : QObject(parent), m_spacedRepetition(appDataDir(), this) {
     m_dataDir = appDataDir();
     ensureSeed();
     loadAll();

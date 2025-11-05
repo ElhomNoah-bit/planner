@@ -167,6 +167,35 @@ Item {
                         onToggled: planner.showWeekNumbers = checked
                     }
                 }
+                
+                Column {
+                    spacing: Styles.ThemeStore.gap.g12
+                    Text {
+                        text: qsTr("Review Intervall (Tage)")
+                        font.pixelSize: Styles.ThemeStore.type.sm
+                        font.weight: Styles.ThemeStore.type.weightBold
+                        font.family: Styles.ThemeStore.fonts.heading
+                        color: Styles.ThemeStore.colors.text
+                        renderType: Text.NativeRendering
+                    }
+                    SpinBox {
+                        id: reviewIntervalSpinBox
+                        from: 1
+                        to: 7
+                        value: 1
+                        onValueModified: {
+                            if (planner) {
+                                planner.setReviewInitialInterval(value)
+                            }
+                        }
+                    }
+                    Text {
+                        text: qsTr("Initiales Intervall für neue Reviews")
+                        font.pixelSize: Styles.ThemeStore.type.xs
+                        color: Styles.ThemeStore.colors.text2
+                        renderType: Text.NativeRendering
+                    }
+                }
             }
 
             RowLayout {
