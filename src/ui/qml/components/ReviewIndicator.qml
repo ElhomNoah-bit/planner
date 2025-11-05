@@ -53,26 +53,18 @@ Item {
         }
         
         MouseArea {
+            id: mouseArea
             anchors.fill: parent
             cursorShape: Qt.PointingHandCursor
-            onClicked: root.clicked()
-            
             hoverEnabled: true
+            
+            onClicked: root.clicked()
             onEntered: badge.opacity = 0.9
             onExited: badge.opacity = 1.0
+            
+            ToolTip.visible: mouseArea.containsMouse
+            ToolTip.text: root.dueCount + (root.dueCount === 1 ? " Wiederholung" : " Wiederholungen") + " fällig heute"
+            ToolTip.delay: 500
         }
-    }
-    
-    ToolTip {
-        visible: mouseArea.containsMouse
-        text: root.dueCount + (root.dueCount === 1 ? " Wiederholung" : " Wiederholungen") + " fällig heute"
-        delay: 500
-    }
-    
-    MouseArea {
-        id: mouseArea
-        anchors.fill: parent
-        hoverEnabled: true
-        propagateComposedEvents: true
     }
 }
