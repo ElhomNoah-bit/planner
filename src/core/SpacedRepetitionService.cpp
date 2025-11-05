@@ -9,15 +9,30 @@
 namespace {
 QJsonObject readJson(const QString& path) {
     QFile f(path);
-    if (!f.open(QIODevice::ReadOnly)) return {};
-    const auto doc = QJsonDocument::fromJson(f.readAll());
+    if (!f.open(QIODevice::ReadOnly)) {
+        qWarning() << "[SpacedRepetitionService] Failed to open file for reading:" << path << f.errorString();
+        return {};
+    }
+    const QByteArray data = f.readAll();
+    const auto doc = QJsonDocument::fromJson(data);
+    if (doc.isNull()) {
+        qWarning() << "[SpacedRepetitionService] Failed to parse JSON from:" << path;
+        return {};
+    }
     return doc.object();
 }
 
 void writeJson(const QString& path, const QJsonObject& obj) {
     QFile f(path);
-    if (!f.open(QIODevice::WriteOnly)) return;
-    f.write(QJsonDocument(obj).toJson(QJsonDocument::Indented));
+    if (!f.open(QIODevice::WriteOnly)) {
+        qWarning() << "[SpacedRepetitionService] Failed to open file for writing:" << path << f.errorString();
+        return;
+    }
+    const QByteArray data = QJsonDocument(obj).toJson(QJsonDocument::Indented);
+    const qint64 written = f.write(data);
+    if (written != data.size()) {
+        qWarning() << "[SpacedRepetitionService] Incomplete write to:" << path;
+    }
 }
 }
 
