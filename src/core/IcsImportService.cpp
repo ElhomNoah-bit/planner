@@ -535,4 +535,3 @@ QString IcsImportService::detectEventType(const ParsedEvent& input) const {
     }
     return QStringLiteral("lesson");
 }
-*** End of File
