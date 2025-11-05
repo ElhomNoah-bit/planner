@@ -18,6 +18,11 @@ if not "%~1"=="" (
     )
 )
 
+set "QT_TOOLCHAIN_TYPE="
+set "QT_ROOT_DIR="
+set "MINGW_BIN_DIR="
+set "CMAKE_GENERATOR_OPTION="
+set "CMAKE_COMPILER_OPTIONS="
 
 set "PACKAGE_MANAGER="
 where winget >nul 2>nul
@@ -51,6 +56,7 @@ if %ERRORLEVEL% NEQ 0 (
 )
 
 call :configure_qt_env
+call :prepare_toolchain
 
 REM Check if Qt6 is available (basic check)
 if "%Qt6_DIR%"=="" (
@@ -64,6 +70,7 @@ if "%Qt6_DIR%"=="" (
         echo.
         call :attempt_install_qt
         call :configure_qt_env
+        call :prepare_toolchain
         echo Attempting build anyway...
         echo.
     )
@@ -74,7 +81,7 @@ set BUILD_DIR=build
 if not exist "%BUILD_DIR%" mkdir "%BUILD_DIR%"
 
 echo Configuring CMake...
-cmake -S . -B "%BUILD_DIR%" -DCMAKE_BUILD_TYPE=Release
+cmake -S . -B "%BUILD_DIR%" -DCMAKE_BUILD_TYPE=Release %CMAKE_GENERATOR_OPTION% %CMAKE_COMPILER_OPTIONS%
 if %ERRORLEVEL% NEQ 0 (
     echo.
     echo ERROR: CMake configuration failed
@@ -90,7 +97,7 @@ if %ERRORLEVEL% NEQ 0 (
 
 echo.
 echo Building project...
-cmake --build "%BUILD_DIR%" --config Release --parallel
+cmake --build "%BUILD_DIR%" %CMAKE_BUILD_CONFIG_SWITCH% --parallel
 if %ERRORLEVEL% NEQ 0 (
     echo.
     echo ERROR: Build failed
@@ -243,21 +250,22 @@ for /f "delims=" %%I in ('where windeployqt 2^>nul') do (
 
 if defined WINDEPLOYQT_PATH exit /b 0
 
-if defined Qt6_DIR (
-    for %%I in ("%Qt6_DIR%\..\..\bin\windeployqt.exe") do (
-        if exist "%%~fI" set "WINDEPLOYQT_PATH=%%~fI"
+call :_ensure_qt_root_dir
+
+if defined QT_ROOT_DIR (
+    if exist "%QT_ROOT_DIR%\bin\windeployqt.exe" (
+        set "WINDEPLOYQT_PATH=%QT_ROOT_DIR%\bin\windeployqt.exe"
+        exit /b 0
     )
 )
 
-if defined WINDEPLOYQT_PATH exit /b 0
-
-if defined CMAKE_PREFIX_PATH (
-    set "__qt_prefix_list=%CMAKE_PREFIX_PATH%"
-    if "!__qt_prefix_list!"=="" (
-        set "__qt_prefix_list="
-    ) else (
-    call :_scan_prefix_list
-        set "__qt_prefix_list="
+for %%B in ("%ProgramFiles%\Qt" "C:\Qt" "%ProgramFiles(x86)%\Qt" "%USERPROFILE%\Qt" "%USERPROFILE%\AppData\Local\Programs\Qt") do (
+    if not defined WINDEPLOYQT_PATH (
+        if exist "%%~fB" (
+            for /f "delims=" %%F in ('dir /b /s "%%~fB\windeployqt.exe" 2^>nul') do (
+                if not defined WINDEPLOYQT_PATH set "WINDEPLOYQT_PATH=%%~fF"
+            )
+        )
     )
 )
 
@@ -284,40 +292,33 @@ if errorlevel 1 (
 
 exit /b 0
 
-:_scan_prefix_list
-if not defined __qt_prefix_list exit /b 0
-
-:_scan_prefix_loop
-if not defined __qt_prefix_list exit /b 0
-for /f "tokens=1* delims=;" %%P in ("!__qt_prefix_list!") do (
-    call :_check_qt_prefix "%%~P"
-    set "__qt_prefix_list=%%Q"
+:_ensure_qt_root_dir
+if defined QT_ROOT_DIR (
+    call :_normalize_qt_root "%QT_ROOT_DIR%"
+    exit /b 0
 )
-if defined __qt_prefix_list goto :_scan_prefix_loop
-exit /b 0
 
-:_check_qt_prefix
-if defined WINDEPLOYQT_PATH exit /b 0
-set "_prefix=%~1"
-if "%_prefix%"=="" exit /b 0
-if exist "%_prefix%\bin\windeployqt.exe" set "WINDEPLOYQT_PATH=%_prefix%\bin\windeployqt.exe"
-set "_prefix="
-exit /b 0
+if defined Qt6_DIR (
+    call :_normalize_qt_root "%Qt6_DIR%"
+    if defined QT_ROOT_DIR goto :_ensure_qt_root_done
+)
 
-:configure_qt_env
-if defined Qt6_DIR exit /b 0
-
-set "QT_CANDIDATE_DIR="
+if defined CMAKE_PREFIX_PATH (
+    for /f "tokens=1 delims=;" %%P in ("%CMAKE_PREFIX_PATH%") do (
+        if not defined QT_ROOT_DIR (
+            call :_normalize_qt_root "%%~fP"
+        )
+    )
+    if defined QT_ROOT_DIR goto :_ensure_qt_root_done
+)
 
 for %%B in ("%ProgramFiles%\Qt" "C:\Qt" "%ProgramFiles(x86)%\Qt" "%USERPROFILE%\Qt" "%USERPROFILE%\AppData\Local\Programs\Qt") do (
-    if not defined QT_CANDIDATE_DIR (
+    if not defined QT_ROOT_DIR (
         if exist "%%~fB" (
             for /f "delims=" %%V in ('dir /b /ad "%%~fB\6*" 2^>nul ^| sort /r') do (
-                if not defined QT_CANDIDATE_DIR (
-                    for /d %%K in ("%%~fB\%%V\*") do (
-                        if not defined QT_CANDIDATE_DIR (
-                            if exist "%%~fK\lib\cmake\Qt6\Qt6Config.cmake" set "QT_CANDIDATE_DIR=%%~fK"
-                        )
+                for /d %%K in ("%%~fB\%%V\*") do (
+                    if not defined QT_ROOT_DIR (
+                        call :_normalize_qt_root "%%~fK"
                     )
                 )
             )
@@ -325,11 +326,114 @@ for %%B in ("%ProgramFiles%\Qt" "C:\Qt" "%ProgramFiles(x86)%\Qt" "%USERPROFILE%\
     )
 )
 
-if defined QT_CANDIDATE_DIR (
-    if not defined Qt6_DIR set "Qt6_DIR=%QT_CANDIDATE_DIR%\lib\cmake\Qt6"
-    if not defined CMAKE_PREFIX_PATH set "CMAKE_PREFIX_PATH=%QT_CANDIDATE_DIR%"
-    echo INFO: Detected Qt installation at "%QT_CANDIDATE_DIR%"
+:_ensure_qt_root_done
+exit /b 0
+
+:_normalize_qt_root
+set "_candidate=%~1"
+if "%_candidate%"=="" exit /b 0
+
+for %%R in ("%_candidate%" "%_candidate%\.." "%_candidate%\..\.." "%_candidate%\..\..\..") do (
+    if exist "%%~fR\bin\windeployqt.exe" (
+        set "QT_ROOT_DIR=%%~fR"
+        set "_candidate="
+        exit /b 0
+    )
+    if exist "%%~fR\lib\cmake\Qt6\Qt6Config.cmake" (
+        set "QT_ROOT_DIR=%%~fR"
+        set "_candidate="
+        exit /b 0
+    )
 )
 
-set "QT_CANDIDATE_DIR="
+set "_candidate="
+exit /b 0
+
+:configure_qt_env
+call :_ensure_qt_root_dir
+
+if defined QT_ROOT_DIR (
+    if not defined Qt6_DIR (
+        if exist "%QT_ROOT_DIR%\lib\cmake\Qt6\Qt6Config.cmake" set "Qt6_DIR=%QT_ROOT_DIR%\lib\cmake\Qt6"
+    )
+    if not defined CMAKE_PREFIX_PATH set "CMAKE_PREFIX_PATH=%QT_ROOT_DIR%"
+    echo INFO: Using Qt root at "%QT_ROOT_DIR%"
+    call :_determine_qt_toolchain "%QT_ROOT_DIR%"
+) else (
+    set "QT_TOOLCHAIN_TYPE="
+)
+
+exit /b 0
+
+:prepare_toolchain
+set "CMAKE_GENERATOR_OPTION="
+set "CMAKE_COMPILER_OPTIONS="
+set "CMAKE_BUILD_CONFIG_SWITCH=--config Release"
+
+if /I "%QT_TOOLCHAIN_TYPE%"=="mingw" (
+    call :_ensure_mingw_toolchain
+    if defined MINGW_BIN_DIR (
+        echo INFO: MinGW toolchain detected at "!MINGW_BIN_DIR!"
+        echo !PATH! | find /I "!MINGW_BIN_DIR!" >nul
+        if errorlevel 1 set "PATH=!MINGW_BIN_DIR!;!PATH!"
+        set "CMAKE_GENERATOR_OPTION=-G ^"MinGW Makefiles^""
+        set "CMAKE_COMPILER_OPTIONS=-DCMAKE_C_COMPILER=^"!MINGW_BIN_DIR!\gcc.exe^" -DCMAKE_CXX_COMPILER=^"!MINGW_BIN_DIR!\g++.exe^" -DCMAKE_MAKE_PROGRAM=^"!MINGW_BIN_DIR!\mingw32-make.exe^""
+        set "CMAKE_BUILD_CONFIG_SWITCH="
+    ) else (
+        echo WARNING: MinGW toolchain for Qt not found automatically. Install the Qt MinGW tools or update PATH.
+        set "CMAKE_GENERATOR_OPTION=-G ^"MinGW Makefiles^""
+        set "CMAKE_BUILD_CONFIG_SWITCH="
+    )
+) else if /I "%QT_TOOLCHAIN_TYPE%"=="msvc" (
+    set "CMAKE_GENERATOR_OPTION="
+    set "MINGW_BIN_DIR="
+) else (
+    set "CMAKE_GENERATOR_OPTION="
+    set "MINGW_BIN_DIR="
+)
+
+exit /b 0
+
+:_determine_qt_toolchain
+set "_qt_root=%~1"
+if "%_qt_root%"=="" exit /b 0
+
+set "_detected="
+echo %_qt_root% | find /I "mingw" >nul
+if not errorlevel 1 set "_detected=mingw"
+
+if not defined _detected (
+    echo %_qt_root% | find /I "msvc" >nul
+    if not errorlevel 1 set "_detected=msvc"
+)
+
+if not defined _detected set "_detected=unknown"
+
+set "QT_TOOLCHAIN_TYPE=%_detected%"
+set "_detected="
+set "_qt_root="
+exit /b 0
+
+:_ensure_mingw_toolchain
+if not defined QT_ROOT_DIR exit /b 0
+
+if defined MINGW_BIN_DIR (
+    if exist "%MINGW_BIN_DIR%\mingw32-make.exe" exit /b 0
+    set "MINGW_BIN_DIR="
+)
+
+for %%C in ("%QT_ROOT_DIR%" "%QT_ROOT_DIR%\.." "%QT_ROOT_DIR%\..\.." "%QT_ROOT_DIR%\..\..\Tools" "%QT_ROOT_DIR%\..\Tools" "%QT_ROOT_DIR%\Tools") do (
+    if not defined MINGW_BIN_DIR (
+        if exist "%%~fC" (
+            for /f "delims=" %%F in ('dir /b /s "%%~fC\mingw32-make.exe" 2^>nul') do (
+                if not defined MINGW_BIN_DIR set "MINGW_BIN_DIR=%%~dpF"
+            )
+        )
+    )
+)
+
+if defined MINGW_BIN_DIR (
+    if "!MINGW_BIN_DIR:~-1!"=="\" set "MINGW_BIN_DIR=!MINGW_BIN_DIR:~0,-1!"
+)
+
 exit /b 0
