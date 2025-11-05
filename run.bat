@@ -50,6 +50,8 @@ if %ERRORLEVEL% NEQ 0 (
     goto :cleanup
 )
 
+call :configure_qt_env
+
 REM Check if Qt6 is available (basic check)
 if "%Qt6_DIR%"=="" (
     if "%CMAKE_PREFIX_PATH%"=="" (
@@ -249,13 +251,13 @@ if defined Qt6_DIR (
 if defined WINDEPLOYQT_PATH exit /b 0
 
 if defined CMAKE_PREFIX_PATH (
-    set "__qt_prefix_list=%CMAKE_PREFIX_PATH%"
-    for %%P in ("!__qt_prefix_list:;=" "!") do (
+    for %%P in ("%CMAKE_PREFIX_PATH:;=" "%") do (
         if not defined WINDEPLOYQT_PATH (
-            if exist "%%~P\bin\windeployqt.exe" set "WINDEPLOYQT_PATH=%%~fP\bin\windeployqt.exe"
+            if not "%%~P"=="" (
+                if exist "%%~fP\bin\windeployqt.exe" set "WINDEPLOYQT_PATH=%%~fP\bin\windeployqt.exe"
+            )
         )
     )
-    set "__qt_prefix_list="
 )
 
 if defined WINDEPLOYQT_PATH exit /b 0
@@ -279,4 +281,33 @@ if errorlevel 1 (
     exit /b 1
 )
 
+exit /b 0
+
+:configure_qt_env
+if defined Qt6_DIR exit /b 0
+
+set "QT_CANDIDATE_DIR="
+
+for %%B in ("%ProgramFiles%\Qt" "C:\Qt" "%ProgramFiles(x86)%\Qt" "%USERPROFILE%\Qt" "%USERPROFILE%\AppData\Local\Programs\Qt") do (
+    if not defined QT_CANDIDATE_DIR (
+        if exist "%%~fB" (
+            for /f "delims=" %%V in ('dir /b /ad "%%~fB\6*" 2^>nul ^| sort /r') do (
+                if not defined QT_CANDIDATE_DIR (
+                    for /d %%K in ("%%~fB\%%V\*") do (
+                        if not defined QT_CANDIDATE_DIR (
+                            if exist "%%~fK\lib\cmake\Qt6\Qt6Config.cmake" set "QT_CANDIDATE_DIR=%%~fK"
+                        )
+                    )
+                )
+            )
+        )
+    )
+)
+
+if defined QT_CANDIDATE_DIR (
+    if not defined Qt6_DIR set "Qt6_DIR=%QT_CANDIDATE_DIR%\lib\cmake\Qt6"
+    if not defined CMAKE_PREFIX_PATH set "CMAKE_PREFIX_PATH=%QT_CANDIDATE_DIR%"
+)
+
+set "QT_CANDIDATE_DIR="
 exit /b 0
