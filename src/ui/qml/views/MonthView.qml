@@ -1,6 +1,17 @@
 import QtQuick
 import QtQuick.Layouts
-import NoahPlanner.Styles as Styles
+import Styles 1.0
+import "../components" as Components
+
+function isoDate(value) {
+    if (!value) {
+        return "";
+    }
+    if (value.toLocaleString) {
+        return Qt.formatDate(value, "yyyy-MM-dd");
+    }
+    return Qt.formatDateTime(value, "yyyy-MM-dd");
+}
 
 Item {
     id: month
@@ -20,10 +31,10 @@ Item {
     property var weekdayLabels: []
     property var weekNumbers: []
 
-    readonly property QtObject colors: Styles.ThemeStore.colors
-    readonly property QtObject gaps: Styles.ThemeStore.gap
-    readonly property QtObject typeScale: Styles.ThemeStore.type
-    readonly property QtObject metrics: Styles.ThemeStore.layout
+    readonly property QtObject colors: ThemeStore.colors
+    readonly property QtObject gaps: ThemeStore.gap
+    readonly property QtObject typeScale: ThemeStore.type
+    readonly property QtObject metrics: ThemeStore.layout
     readonly property var anchorDate: selectedIso.length > 0 ? new Date(selectedIso) : new Date()
     readonly property real weekNumberWidth: showWeekNumbersSetting ? 48 : 0
 
@@ -48,7 +59,7 @@ Item {
                     horizontalAlignment: Text.AlignHCenter
                     font.pixelSize: typeScale.sm
                     font.weight: typeScale.weightMedium
-                    font.family: Styles.ThemeStore.fonts.heading
+                    font.family: ThemeStore.fonts.heading
                     color: colors.text2
                     renderType: Text.NativeRendering
                 }
@@ -71,7 +82,7 @@ Item {
                         text: modelData
                         font.pixelSize: typeScale.xs
                         font.weight: typeScale.weightMedium
-                        font.family: Styles.ThemeStore.fonts.body
+                        font.family: ThemeStore.fonts.body
                         color: colors.text2
                         horizontalAlignment: Text.AlignHCenter
                         renderType: Text.NativeRendering
@@ -91,7 +102,7 @@ Item {
 
                 Repeater {
                     model: days
-                    delegate: DayCell {
+                    delegate: Components.DayCell {
                         isoDate: modelData.iso
                         inMonth: modelData.inMonth
                         isToday: modelData.isToday
@@ -102,8 +113,8 @@ Item {
                         Layout.preferredWidth: Math.max(120, grid.cellWidth)
                         Layout.preferredHeight: Math.max(100, grid.cellHeight)
                         opacity: month.zenMode && modelData.iso !== month.selectedIso
-                                 ? Styles.ThemeStore.opacityMuted
-                                 : Styles.ThemeStore.opacityFull
+                                 ? ThemeStore.opacityMuted
+                                 : ThemeStore.opacityFull
                         enabled: !month.zenMode || modelData.iso === month.selectedIso
                         onActivated: iso => month.daySelected(iso)
                         onContextCreateEvent: month.quickAddRequested(iso, "event")
@@ -123,7 +134,7 @@ Item {
         var anchor = anchorDate
         var year = anchor.getFullYear()
         var monthIndex = anchor.getMonth()
-        var first = new Date(year, monthIndex, 1)
+    var first = new Date(year, monthIndex, 1)
         var offset = weekStartSetting === "sunday"
                      ? first.getDay()
                      : ((first.getDay() + 6) % 7)
@@ -134,11 +145,11 @@ Item {
         for (var i = 0; i < 42; ++i) {
             var current = new Date(start)
             current.setDate(start.getDate() + i)
-            var iso = Qt.formatDate(current, "yyyy-MM-dd")
+            var iso = isoDate(current)
             collection.push({
                 iso: iso,
                 inMonth: current.getMonth() === monthIndex,
-                isToday: Qt.formatDate(current, "yyyy-MM-dd") === Qt.formatDate(new Date(), "yyyy-MM-dd"),
+                isToday: iso === isoDate(new Date()),
                 events: planner.dayEvents(iso)
             })
             if (i % 7 === 0) {

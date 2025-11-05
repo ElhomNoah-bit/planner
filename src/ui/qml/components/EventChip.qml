@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
-import NoahPlanner.Styles as Styles
+import Styles 1.0 as Styles
 
 Rectangle {
     id: chip
@@ -13,6 +13,13 @@ Rectangle {
     property string categoryColor: ""
     property string deadlineSeverity: ""
     property int deadlineLevel: 0
+
+    property color chipBg: (categoryColor && categoryColor.length) ? categoryColor : (muted ? Styles.ThemeStore.cardAlt : Styles.ThemeStore.cardBg)
+    property color chipFg: Styles.ThemeStore.colors.textPrimary
+    property real chipAlpha: enabled === false ? 0.5 : 1.0
+    property real chipRadius: Styles.ThemeStore.r12
+    property color resolvedSubjectColor: subjectColor && subjectColor !== "" ? subjectColor : Styles.ThemeStore.accent
+    property string resolvedCategoryColor: (categoryColor && categoryColor.length) ? categoryColor : ""
 
     readonly property color urgencyColor: deadlineSeverity === "overdue" ? Styles.ThemeStore.colors.overdue
                                          : deadlineSeverity === "danger" ? Styles.ThemeStore.colors.danger
@@ -33,12 +40,12 @@ Rectangle {
 
     implicitHeight: 26
     implicitWidth: Math.max(92, contentRow.implicitWidth + Styles.ThemeStore.g16)
-    radius: Styles.ThemeStore.r12
+    radius: chipRadius
     color: muted ? Styles.ThemeStore.cardAlt : Styles.ThemeStore.cardBg
-    border.width: categoryColor.length > 0 ? 2 : (urgent ? 2 : (overdue ? 1 : 0))
-    border.color: categoryColor.length > 0 ? categoryColor : (urgent ? urgencyColor : (overdue ? Styles.ThemeStore.danger : "transparent"))
+    border.width: resolvedCategoryColor.length > 0 ? 2 : (urgent ? 2 : (overdue ? 1 : 0))
+    border.color: resolvedCategoryColor.length > 0 ? resolvedCategoryColor : (urgent ? urgencyColor : (overdue ? Styles.ThemeStore.danger : "transparent"))
 
-    opacity: dragHandler.active ? 0.5 : 1.0
+    opacity: dragHandler.active ? 0.5 : chipAlpha
 
     Behavior on opacity {
         NumberAnimation { duration: 100; easing.type: Easing.InOutQuad }
@@ -46,7 +53,7 @@ Rectangle {
 
     Rectangle {
         anchors.fill: parent
-        radius: chip.radius
+    radius: chipRadius
         color: urgencyColor
         opacity: urgent ? 0.12 : 0
         visible: urgent
@@ -62,7 +69,7 @@ Rectangle {
             width: timed ? 6 : 0
             height: timed ? 6 : 0
             radius: 3
-            color: muted ? Styles.ThemeStore.divider : subjectColor
+            color: muted ? Styles.ThemeStore.divider : resolvedSubjectColor
             visible: timed
             Layout.alignment: Qt.AlignVCenter
         }
@@ -98,7 +105,7 @@ Rectangle {
 
     Rectangle {
         anchors.fill: parent
-        radius: chip.radius
+    radius: chipRadius
         color: Styles.ThemeStore.hover
         visible: hoverHandler.hovered && !dragHandler.active
         opacity: 0.2

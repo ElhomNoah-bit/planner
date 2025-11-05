@@ -30,6 +30,7 @@ private:
     bool saveToFile();
     QJsonArray toJsonArray() const;
     void fromJsonArray(const QJsonArray& array);
+    static QVector<Category> defaultCategories();
     
     static QJsonObject categoryToJson(const Category& category);
     static Category categoryFromJson(const QJsonObject& object);

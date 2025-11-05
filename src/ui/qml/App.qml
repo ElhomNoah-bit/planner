@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import NoahPlanner.Styles as Styles
+import Styles 1.0
 
 ApplicationWindow {
     id: app
@@ -12,67 +12,67 @@ ApplicationWindow {
     minimumHeight: 720
     visible: true
     title: qsTr("Noah Planner")
-    color: Styles.ThemeStore.colors.appBg
+    color: ThemeStore.surface
 
     Shortcut {
         id: shortcutCommandPalette
-        sequences: ["Ctrl+K", "Meta+K"]
+        sequences: [ StandardKey.Find, "Ctrl+K", "Meta+K" ]
         context: Qt.ApplicationShortcut
         enabled: app.visible
         onActivated: app.openCommandPalette("")
     }
 
     Shortcut {
-        sequence: StandardKey.New
+        sequences: [ StandardKey.New, "Ctrl+N" ]
         context: Qt.ApplicationShortcut
         enabled: app.visible
         onActivated: app.quickAddOpen()
     }
 
     Shortcut {
-        sequences: ["Ctrl+T", "Meta+T"]
+        sequences: [ "Ctrl+T", "Meta+T" ]
         context: Qt.ApplicationShortcut
         enabled: app.visible
         onActivated: app.goToday()
     }
 
     Shortcut {
-        sequences: ["Ctrl+1", "Meta+1"]
+        sequences: [ "Ctrl+1", "Meta+1" ]
         context: Qt.ApplicationShortcut
         enabled: app.visible
-        onActivated: planner.setViewMode("month")
+        onActivated: planner.setViewMode(0)
     }
 
     Shortcut {
-        sequences: ["Ctrl+2", "Meta+2"]
+        sequences: [ "Ctrl+2", "Meta+2" ]
         context: Qt.ApplicationShortcut
         enabled: app.visible
-        onActivated: planner.setViewMode("week")
+        onActivated: planner.setViewMode(1)
     }
 
     Shortcut {
-        sequences: ["Ctrl+3", "Meta+3"]
+        sequences: [ "Ctrl+3", "Meta+3" ]
         context: Qt.ApplicationShortcut
         enabled: app.visible
-        onActivated: planner.setViewMode("list")
+        onActivated: planner.setViewMode(2)
     }
 
     Shortcut {
-        sequences: ["Ctrl+.", "Meta+."]
+        sequences: [ "Ctrl+.", "Meta+." ]
         context: Qt.ApplicationShortcut
         enabled: app.visible
         onActivated: app.toggleZenMode()
     }
 
     Shortcut {
-        sequences: ["Ctrl+P", "Meta+P"]
+        sequences: [ "Ctrl+P", "Meta+P" ]
         context: Qt.ApplicationShortcut
         enabled: app.visible
         onActivated: app.togglePomodoroOverlay()
     }
 
     Shortcut {
-        sequences: ["Ctrl+R", "Meta+R"]
+        sequences: [ "Ctrl+R", "Meta+R" ]
         context: Qt.ApplicationShortcut
         enabled: app.visible
         onActivated: app.openReviewDialog()
@@ -126,13 +126,13 @@ ApplicationWindow {
             quickAddOpen()
             break
         case "view-month":
-            planner.setViewMode("month")
+            planner.setViewMode(0)
             break
         case "view-week":
-            planner.setViewMode("week")
+            planner.setViewMode(1)
             break
         case "view-list":
-            planner.setViewMode("list")
+            planner.setViewMode(2)
             break
         case "toggle-open":
             planner.onlyOpen = !planner.onlyOpen
@@ -174,7 +174,7 @@ ApplicationWindow {
     }
 
     function startDefaultFocusSession() {
-        planner.startFocusSession(25)
+        planner.startFocusMinutes(25)
     }
 
     function togglePomodoroOverlay(forceOpen) {
@@ -199,18 +199,18 @@ ApplicationWindow {
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: Styles.ThemeStore.gap.g24
-        spacing: Styles.ThemeStore.gap.g16
+        anchors.margins: ThemeStore.gapXl
+        spacing: ThemeStore.gapLg
 
         RowLayout {
             id: topBar
             Layout.fillWidth: true
-            spacing: Styles.ThemeStore.gap.g12
+            spacing: ThemeStore.gapMd
 
             SegmentedControl {
                 id: viewSwitch
                 Layout.preferredWidth: 320
-                Layout.preferredHeight: Styles.ThemeStore.layout.pillH
+                Layout.preferredHeight: ThemeStore.layout.pillH
                 Layout.alignment: Qt.AlignVCenter
                 options: [
                     { "label": qsTr("Monat"), "value": "month" },
@@ -330,10 +330,10 @@ ApplicationWindow {
     Connections {
         target: planner
         function onDarkThemeChanged() {
-            app.color = Styles.ThemeStore.colors.appBg
+            app.color = ThemeStore.surface
         }
-        function onFiltersChanged() {
-            if (globalSearch) {
+        function onSearchQueryChanged() {
+            if (globalSearch && globalSearch.text !== planner.searchQuery) {
                 globalSearch.text = planner.searchQuery
             }
         }

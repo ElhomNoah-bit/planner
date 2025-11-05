@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import NoahPlanner.Styles as Styles
+import Styles 1.0 as Styles
 
 Item {
     id: dialog
@@ -213,10 +213,17 @@ Item {
 
     Connections {
         target: planner
-        function onSettingsChanged() {
+        ignoreUnknownSignals: true
+        function onDarkThemeChanged() {
             if (dialog.visible) dialog.sync()
         }
-        function onDarkThemeChanged() {
+        function onViewModeChanged() {
+            if (dialog.visible) dialog.sync()
+        }
+        function onOnlyOpenChanged() {
+            if (dialog.visible) dialog.sync()
+        }
+        function onZenModeChanged() {
             if (dialog.visible) dialog.sync()
         }
     }

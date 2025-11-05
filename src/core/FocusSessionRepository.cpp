@@ -186,7 +186,6 @@ void FocusSessionRepository::ensureStateLoaded() const {
 
 void FocusSessionRepository::saveSessions(const QVector<FocusSession>& sessions) const {
     QJsonArray array;
-    array.reserve(sessions.size());
     for (const auto& session : sessions) {
         if (session.isValid()) {
             array.append(session.toJson());

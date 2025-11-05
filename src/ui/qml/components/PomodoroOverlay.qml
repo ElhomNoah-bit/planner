@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import NoahPlanner.Styles as Styles
+import Styles 1.0
 
 Item {
     id: overlay
@@ -15,7 +15,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        color: Qt.rgba(0, 0, 0, 0.6)
+        color: ThemeStore.overlayBg
         visible: overlay.open
 
         TapHandler {
@@ -28,20 +28,21 @@ Item {
         id: panel
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
-        width: Math.min(parent.width - Styles.ThemeStore.gap.g24 * 2, 420)
-        padding: Styles.ThemeStore.gap.g24
+        width: Math.min(parent.width - ThemeStore.gapXl * 2, 420)
+        padding: ThemeStore.gapXl
         visible: overlay.open
+        radius: ThemeStore.radii.lg
 
         ColumnLayout {
-            spacing: Styles.ThemeStore.gap.g16
+            spacing: ThemeStore.gapLg
             anchors.fill: parent
 
             Text {
                 text: qsTr("Pomodoro")
-                font.pixelSize: Styles.ThemeStore.type.lg
-                font.weight: Styles.ThemeStore.type.weightBold
-                font.family: Styles.ThemeStore.fonts.heading
-                color: Styles.ThemeStore.colors.text
+                font.pixelSize: ThemeStore.type.lg
+                font.weight: ThemeStore.type.weightBold
+                font.family: ThemeStore.fonts.heading
+                color: ThemeStore.colors.text
             }
 
             Text {
@@ -51,9 +52,9 @@ Item {
                     var state = overlay.planner.pomodoro || {}
                     return state.phaseLabel || ""
                 }
-                font.pixelSize: Styles.ThemeStore.type.sm
-                font.family: Styles.ThemeStore.fonts.body
-                color: Styles.ThemeStore.colors.text2
+                font.pixelSize: ThemeStore.type.sm
+                font.family: ThemeStore.fonts.body
+                color: ThemeStore.colors.text2
             }
 
             Text {
@@ -65,9 +66,9 @@ Item {
                     return state.remainingDisplay || "00:00"
                 }
                 font.pixelSize: 48
-                font.weight: Styles.ThemeStore.type.weightBold
-                font.family: Styles.ThemeStore.fonts.heading
-                color: Styles.ThemeStore.colors.textPrimary
+                font.weight: ThemeStore.type.weightBold
+                font.family: ThemeStore.fonts.heading
+                color: ThemeStore.colors.text
                 horizontalAlignment: Text.AlignHCenter
                 Layout.alignment: Qt.AlignHCenter
             }
@@ -96,12 +97,12 @@ Item {
                 }
                 Layout.fillWidth: true
                 background: Rectangle {
-                    radius: Styles.ThemeStore.radii.sm
-                    color: Styles.ThemeStore.colors.cardAlt
+                    radius: ThemeStore.radii.sm
+                    color: ThemeStore.surfaceRaised
                 }
                 contentItem: Rectangle {
-                    radius: Styles.ThemeStore.radii.sm
-                    color: Styles.ThemeStore.colors.accent
+                    radius: ThemeStore.radii.sm
+                    color: ThemeStore.accent
                     width: progress.visualPosition * progress.width
                 }
             }
@@ -111,7 +112,7 @@ Item {
             }
 
             RowLayout {
-                spacing: Styles.ThemeStore.gap.g8
+                spacing: ThemeStore.gapSm
                 Layout.fillWidth: true
 
                 PillButton {
@@ -166,5 +167,12 @@ Item {
             // Trigger bindings
             timerLabel.text = timerLabel.text
         }
+    }
+
+    Shortcut {
+        sequences: [ "Esc" ]
+        context: Qt.WindowShortcut
+        enabled: overlay.open
+        onActivated: overlay.open = false
     }
 }

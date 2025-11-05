@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import NoahPlanner.Styles
+import Styles 1.0
 
 /**
  * ReviewDialog - Manage spaced repetition reviews
@@ -24,34 +24,34 @@ Dialog {
     
     header: Rectangle {
         height: 60
-        color: ThemeStore.theme.surface
+        color: ThemeStore.surface
         
         RowLayout {
             anchors.fill: parent
-            anchors.margins: 12
-            spacing: 12
+            anchors.margins: ThemeStore.gapMd
+            spacing: ThemeStore.gapSm
             
             Text {
                 text: "📚 Reviews"
                 font.pixelSize: 18
                 font.weight: Font.Bold
-                color: ThemeStore.theme.text
+                color: ThemeStore.text
             }
             
             Rectangle {
                 width: dueText.width + 16
                 height: 24
                 radius: 12
-                color: ThemeStore.theme.accent
+                color: ThemeStore.accent
                 visible: backend && backend.dueReviewCount > 0
                 
                 Text {
                     id: dueText
                     anchors.centerIn: parent
                     text: backend ? backend.dueReviewCount + " fällig" : ""
-                    font.pixelSize: 12
-                    font.weight: Font.Bold
-                    color: "white"
+                    font.pixelSize: ThemeStore.type.xs
+                    font.weight: ThemeStore.type.weightBold
+                    color: ThemeStore.surfaceOnWeak
                 }
             }
             
@@ -66,12 +66,12 @@ Dialog {
     
     ColumnLayout {
         anchors.fill: parent
-        spacing: 8
+        spacing: ThemeStore.gapSm
         
         // Tab bar for filtering
         RowLayout {
             Layout.fillWidth: true
-            spacing: 8
+            spacing: ThemeStore.gapSm
             
             Button {
                 text: "Alle"
@@ -95,7 +95,7 @@ Dialog {
             id: listView
             Layout.fillWidth: true
             Layout.fillHeight: true
-            spacing: 8
+            spacing: ThemeStore.gapSm
             clip: true
             
             property string filterMode: "all"
@@ -112,36 +112,36 @@ Dialog {
             
             delegate: Rectangle {
                 width: listView.width
-                height: delegateLayout.height + 16
-                color: modelData.isDue ? ThemeStore.theme.accent + "20" : ThemeStore.theme.surface
-                radius: 8
+                height: delegateLayout.implicitHeight + ThemeStore.gapSm * 2
+                color: modelData.isDue
+                       ? Qt.rgba(ThemeStore.accent.r, ThemeStore.accent.g, ThemeStore.accent.b, 0.14)
+                       : ThemeStore.surfaceAlt
+                radius: ThemeStore.radii.md
                 border.width: 1
-                border.color: ThemeStore.theme.border
+                border.color: ThemeStore.divider
                 
                 ColumnLayout {
                     id: delegateLayout
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.margins: 12
-                    spacing: 8
+                    anchors.fill: parent
+                    anchors.margins: ThemeStore.gapSm
+                    spacing: ThemeStore.gapSm
                     
                     RowLayout {
                         Layout.fillWidth: true
-                        spacing: 8
+                        spacing: ThemeStore.gapSm
                         
                         Text {
                             text: modelData.topic
-                            font.pixelSize: 14
-                            font.weight: Font.Bold
-                            color: ThemeStore.theme.text
+                            font.pixelSize: ThemeStore.type.md
+                            font.weight: ThemeStore.type.weightBold
+                            color: ThemeStore.text
                             Layout.fillWidth: true
                         }
                         
                         Text {
                             text: modelData.isDue ? "🔴 Fällig" : "⏳ " + modelData.nextReviewDate
-                            font.pixelSize: 11
-                            color: modelData.isDue ? ThemeStore.theme.error : ThemeStore.theme.textSecondary
+                            font.pixelSize: ThemeStore.type.xs
+                            color: modelData.isDue ? ThemeStore.danger : ThemeStore.textSecondary
                         }
                         
                         Button {
@@ -168,30 +168,30 @@ Dialog {
                     
                     RowLayout {
                         Layout.fillWidth: true
-                        spacing: 12
+                        spacing: ThemeStore.gapMd
                         
                         Text {
                             text: "Fach: " + modelData.subjectId
-                            font.pixelSize: 11
-                            color: ThemeStore.theme.textSecondary
+                            font.pixelSize: ThemeStore.type.xs
+                            color: ThemeStore.textSecondary
                         }
                         
                         Text {
                             text: "Wiederholungen: " + modelData.repetitionNumber
-                            font.pixelSize: 11
-                            color: ThemeStore.theme.textSecondary
+                            font.pixelSize: ThemeStore.type.xs
+                            color: ThemeStore.textSecondary
                         }
                         
                         Text {
                             text: "Intervall: " + modelData.intervalDays + " Tage"
-                            font.pixelSize: 11
-                            color: ThemeStore.theme.textSecondary
+                            font.pixelSize: ThemeStore.type.xs
+                            color: ThemeStore.textSecondary
                         }
                         
                         Text {
                             text: "EF: " + modelData.easeFactor.toFixed(2)
-                            font.pixelSize: 11
-                            color: ThemeStore.theme.textSecondary
+                            font.pixelSize: ThemeStore.type.xs
+                            color: ThemeStore.textSecondary
                         }
                     }
                 }
@@ -211,13 +211,14 @@ Dialog {
         
         ColumnLayout {
             anchors.fill: parent
-            spacing: 12
+            anchors.margins: ThemeStore.gapMd
+            spacing: ThemeStore.gapMd
             
             Text {
                 text: "Neues Review hinzufügen"
-                font.pixelSize: 16
-                font.weight: Font.Bold
-                color: ThemeStore.theme.text
+                font.pixelSize: ThemeStore.type.lg
+                font.weight: ThemeStore.type.weightBold
+                color: ThemeStore.text
             }
             
             TextField {
@@ -234,7 +235,7 @@ Dialog {
             
             RowLayout {
                 Layout.fillWidth: true
-                spacing: 8
+                spacing: ThemeStore.gapSm
                 
                 Item { Layout.fillWidth: true }
                 
@@ -273,35 +274,36 @@ Dialog {
         
         ColumnLayout {
             anchors.fill: parent
-            spacing: 16
+            anchors.margins: ThemeStore.gapMd
+            spacing: ThemeStore.gapMd
             
             Text {
                 text: "Review: " + performReviewPopup.topic
-                font.pixelSize: 16
-                font.weight: Font.Bold
-                color: ThemeStore.theme.text
+                font.pixelSize: ThemeStore.type.lg
+                font.weight: ThemeStore.type.weightBold
+                color: ThemeStore.text
                 Layout.fillWidth: true
                 wrapMode: Text.WordWrap
             }
             
             Text {
                 text: "Wie gut konntest du dich erinnern?"
-                font.pixelSize: 13
-                color: ThemeStore.theme.textSecondary
+                font.pixelSize: ThemeStore.type.sm
+                color: ThemeStore.textSecondary
             }
             
             ColumnLayout {
                 Layout.fillWidth: true
-                spacing: 8
+                spacing: ThemeStore.gapSm
                 
                 Repeater {
                     model: [
-                        { value: 5, label: "5 - Perfekte Antwort", color: "#10b981" },
-                        { value: 4, label: "4 - Richtig nach kurzem Überlegen", color: "#22c55e" },
-                        { value: 3, label: "3 - Richtig mit Schwierigkeit", color: "#eab308" },
-                        { value: 2, label: "2 - Falsch, aber leicht zu erinnern", color: "#f97316" },
-                        { value: 1, label: "1 - Falsch, aber erinnert", color: "#ef4444" },
-                        { value: 0, label: "0 - Keine Erinnerung", color: "#dc2626" }
+                        { value: 5, label: "5 - Perfekte Antwort", color: ThemeStore.ok },
+                        { value: 4, label: "4 - Richtig nach kurzem Überlegen", color: ThemeStore.ok },
+                        { value: 3, label: "3 - Richtig mit Schwierigkeit", color: ThemeStore.warning },
+                        { value: 2, label: "2 - Falsch, aber leicht zu erinnern", color: ThemeStore.warning },
+                        { value: 1, label: "1 - Falsch, aber erinnert", color: ThemeStore.danger },
+                        { value: 0, label: "0 - Keine Erinnerung", color: ThemeStore.danger }
                     ]
                     
                     Button {
@@ -310,13 +312,13 @@ Dialog {
                         
                         background: Rectangle {
                             color: parent.down ? Qt.darker(modelData.color, 1.2) : modelData.color
-                            radius: 6
+                            radius: ThemeStore.radii.sm
                         }
                         
                         contentItem: Text {
                             text: parent.text
-                            font.pixelSize: 12
-                            color: "white"
+                            font.pixelSize: ThemeStore.type.sm
+                            color: ThemeStore.surfaceOnWeak
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter
                         }

@@ -20,6 +20,9 @@ struct EventRecord {
     QString colorHint;
     int priority = 0;
     QString categoryId;
+    QString source;
+    QString externalId;
+    QString eventType;
 };
 
 class EventModel : public QAbstractListModel {
@@ -39,7 +42,10 @@ public:
         DueRole,
         ColorHintRole,
         PriorityRole,
-        CategoryIdRole
+        CategoryIdRole,
+        SourceRole,
+        ExternalIdRole,
+        EventTypeRole
     };
     Q_ENUM(Roles)
 

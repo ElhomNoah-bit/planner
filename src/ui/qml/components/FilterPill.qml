@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import NoahPlanner.Styles as Styles
+import Styles 1.0 as Styles
 
 Control {
     id: pill

@@ -4,122 +4,114 @@ import QtQuick
 QtObject {
     id: theme
 
-    // Farben
-    readonly property color appBg:        "#0E1116"
-    readonly property color cardBg:       "#171B22"
-    readonly property color cardAlt:      "#1C222B"
-    readonly property color text:         "#E6EAF2"
-    readonly property color text2:        "#AFB8C5"
-    readonly property color textPrimary:  "#F6FAFF"
-    readonly property color surfaceOnWeak:"#FFFFFF"
-    readonly property color divider:      "#2A3340"
-    readonly property color hover:        "#223043"
-    readonly property color focus:        "#5BA5FF"
-    readonly property color accent:       "#3B82F6"
-    readonly property color accentBg:     "#1A2B4D"
-    readonly property color danger:       "#F97066"
-    readonly property color warn:         "#F59E0B"
-    readonly property color overdue:      "#DC2626"
-    readonly property color prioHigh:     "#F97066"
-    readonly property color prioMedium:   "#FFA726"
-    readonly property color prioLow:      "#66BB6A"
+    // Base palette
+    readonly property color surface: "#0E1116"
+    readonly property color surfaceAlt: "#171B22"
+    readonly property color surfaceRaised: "#1C222B"
+    readonly property color surfaceGlass: "#22304380"
+    readonly property color overlayBg: "#00000080"
+    readonly property color text: "#E6EAF2"
+    readonly property color textSecondary: "#AFB8C5"
+    readonly property color textMuted: "#7A8696"
+    readonly property color surfaceOnWeak: "#FFFFFF"
+    readonly property color divider: "#2A3340"
+    readonly property color focus: "#5BA5FF"
+    readonly property color accent: "#3B82F6"
+    readonly property color accentWeak: "#1A2B4D"
+    readonly property color ok: "#22C55E"
+    readonly property color warning: "#F59E0B"
+    readonly property color danger: "#F97066"
 
-    // Typo
-    readonly property int baseSize: 14
-    readonly property int sm: baseSize - 2
-    readonly property int md: baseSize
-    readonly property int lg: baseSize + 2
-    readonly property int xl: baseSize + 6
-    readonly property int xs: baseSize - 3
-    readonly property real line: 1.35
-
-    // Spacing & Radii
-    readonly property int g4: 4
-    readonly property int g8: 8
-    readonly property int g12: 12
-    readonly property int g16: 16
-    readonly property int g24: 24
-
-    readonly property int r8: 8
-    readonly property int r12: 12
-    readonly property int r16: 16
-
-    // Fonts
-    readonly property string fontFamily: "Inter"
-    readonly property string fontHeading: "Inter"
-    readonly property string fontFallback: "Sans Serif"
-
-    // Opacity values for Zen Mode
-    readonly property real opacityFull: 1.0
-    readonly property real opacityMuted: 0.25
-    readonly property real opacityDisabled: 0.4
-
-    // Legacy groupings kept for gradual migration
+    // Legacy compatibility shorthands
     readonly property QtObject colors: QtObject {
-        readonly property alias appBg: theme.appBg
-        readonly property alias cardBg: theme.cardBg
-        readonly property alias cardGlass: theme.cardAlt
-        readonly property alias text: theme.text
-        readonly property alias text2: theme.text2
-        readonly property alias textPrimary: theme.textPrimary
-        readonly property alias divider: theme.divider
-        readonly property alias hover: theme.hover
-        readonly property alias focus: theme.focus
-        readonly property alias accent: theme.accent
-        readonly property alias accentBg: theme.accentBg
-        readonly property alias surfaceOnWeak: theme.surfaceOnWeak
-        readonly property alias neutralBg: theme.cardAlt
-        readonly property alias press: theme.hover
-        readonly property alias prioHigh: theme.prioHigh
-        readonly property alias prioMedium: theme.prioMedium
-        readonly property alias prioLow: theme.prioLow
-        readonly property alias warn: theme.warn
-        readonly property alias overdue: theme.overdue
+        readonly property color appBg: theme.surface
+        readonly property color cardBg: theme.surfaceAlt
+        readonly property color cardGlass: theme.surfaceGlass
+        readonly property color text: theme.text
+        readonly property color text2: theme.textSecondary
+        readonly property color textPrimary: theme.surfaceOnWeak
+        readonly property color divider: theme.divider
+        readonly property color hover: theme.surfaceRaised
+        readonly property color focus: theme.focus
+        readonly property color accent: theme.accent
+        readonly property color accentBg: theme.accentWeak
+        readonly property color surfaceOnWeak: theme.surfaceOnWeak
+        readonly property color neutralBg: theme.surfaceRaised
+        readonly property color press: theme.surfaceRaised
+        readonly property color prioHigh: theme.danger
+        readonly property color prioMedium: theme.warning
+        readonly property color prioLow: theme.ok
+        readonly property color warn: theme.warning
+        readonly property color overdue: theme.danger
     }
 
+    // Typography scale
     readonly property QtObject type: QtObject {
-        readonly property alias md: theme.md
-        readonly property alias sm: theme.sm
-        readonly property alias lg: theme.lg
-        readonly property alias xs: theme.xs
-        readonly property alias h1: theme.xl
-        readonly property alias monthTitle: theme.xl
-        readonly property alias dateSize: theme.sm
-        readonly property alias eventChipSize: theme.sm
+        readonly property int xs: 12
+        readonly property int sm: 13
+        readonly property int md: 14
+        readonly property int lg: 16
+        readonly property int xl: 20
         readonly property int weightRegular: 400
         readonly property int weightMedium: 600
         readonly property int weightBold: 700
     }
 
-    readonly property QtObject radii: QtObject {
-        readonly property alias sm: theme.r8
-        readonly property alias md: theme.r12
-        readonly property alias lg: theme.r16
-        readonly property int xl: theme.r16 + 4
-        readonly property int xxl: theme.r16 + 8
-    }
+    // Spacing tokens
+    readonly property int gapXs: 4
+    readonly property int gapSm: 8
+    readonly property int gapMd: 12
+    readonly property int gapLg: 16
+    readonly property int gapXl: 24
 
     readonly property QtObject gap: QtObject {
-        readonly property alias g4: theme.g4
-        readonly property alias g8: theme.g8
-        readonly property alias g12: theme.g12
-        readonly property alias g16: theme.g16
-        readonly property alias g24: theme.g24
+        readonly property int g4: theme.gapXs
+        readonly property int g8: theme.gapSm
+        readonly property int g12: theme.gapMd
+        readonly property int g16: theme.gapLg
+        readonly property int g24: theme.gapXl
     }
 
+    // Radius tokens
+    readonly property int radiusSm: 6
+    readonly property int radiusMd: 10
+    readonly property int radiusLg: 16
+    readonly property int radiusXl: 24
+
+    readonly property QtObject radii: QtObject {
+        readonly property int sm: theme.radiusSm
+        readonly property int md: theme.radiusMd
+        readonly property int lg: theme.radiusLg
+        readonly property int xl: theme.radiusXl
+        readonly property int xxl: theme.radiusXl + 6
+    }
+
+    // Layout metrics
     readonly property QtObject layout: QtObject {
         readonly property int headerH: 64
         readonly property int pillH: 36
         readonly property int sidebarW: 360
-        readonly property int gridGap: theme.g16
-        readonly property int margin: theme.g24
+        readonly property int gridGap: theme.gapLg
+        readonly property int margin: theme.gapXl
     }
 
+    // Font families
     readonly property QtObject fonts: QtObject {
-        readonly property alias body: theme.fontFamily
-        readonly property alias heading: theme.fontHeading
-        readonly property alias uiFallback: theme.fontFamily
-        readonly property alias fallback: theme.fontFallback
+        readonly property string body: "Inter"
+        readonly property string heading: "Inter"
+        readonly property string uiFallback: "Inter"
+        readonly property string fallback: "Sans Serif"
         readonly property url interUrl: "qrc:/fonts/Inter-Regular.ttf"
+    }
+
+    // Opacity
+    readonly property real opacityFull: 1.0
+    readonly property real opacityMuted: 0.3
+    readonly property real opacityDisabled: 0.4
+
+    readonly property QtObject opacity: QtObject {
+        readonly property real full: theme.opacityFull
+        readonly property real muted: theme.opacityMuted
+        readonly property real disabled: theme.opacityDisabled
     }
 }

@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import NoahPlanner.Styles as Styles
+import Styles 1.0
 
 Item {
     id: controls
@@ -33,15 +33,15 @@ Item {
 
     ColumnLayout {
         id: column
-        spacing: Styles.ThemeStore.gap.g8
+        spacing: ThemeStore.gapSm
         Layout.fillWidth: true
 
         Text {
             text: controls.planner && controls.planner.focusSessionActive ? qsTr("Fokus läuft") : qsTr("Neue Fokus-Sitzung")
-            font.pixelSize: Styles.ThemeStore.type.sm
-            font.weight: Styles.ThemeStore.type.weightBold
-            font.family: Styles.ThemeStore.fonts.heading
-            color: Styles.ThemeStore.colors.text
+            font.pixelSize: ThemeStore.type.sm
+            font.weight: ThemeStore.type.weightBold
+            font.family: ThemeStore.fonts.heading
+            color: ThemeStore.colors.text
         }
 
         Text {
@@ -58,9 +58,9 @@ Item {
                     return qsTr("Letzte Sitzung: %1 Minuten").arg(info.lastMinutes)
                 return qsTr("Keine Sitzungen protokolliert")
             }
-            font.pixelSize: Styles.ThemeStore.type.xs
-            font.family: Styles.ThemeStore.fonts.body
-            color: Styles.ThemeStore.colors.text2
+            font.pixelSize: ThemeStore.type.xs
+            font.family: ThemeStore.fonts.body
+            color: ThemeStore.colors.text2
             wrapMode: Text.WordWrap
         }
 
@@ -72,18 +72,18 @@ Item {
             value: progressValue
             Layout.fillWidth: true
             background: Rectangle {
-                radius: Styles.ThemeStore.radii.sm
-                color: Styles.ThemeStore.colors.cardAlt
+                radius: ThemeStore.radii.sm
+                color: ThemeStore.surfaceRaised
             }
             contentItem: Rectangle {
-                radius: Styles.ThemeStore.radii.sm
-                color: Styles.ThemeStore.colors.accent
+                radius: ThemeStore.radii.sm
+                color: ThemeStore.accent
                 width: progressBar.visualPosition * progressBar.width
             }
         }
 
         RowLayout {
-            spacing: Styles.ThemeStore.gap.g8
+            spacing: ThemeStore.gapSm
             Layout.fillWidth: true
 
             PillButton {
@@ -96,7 +96,7 @@ Item {
                     if (controls.planner.focusSessionActive) {
                         controls.planner.stopFocusSession(true)
                     } else {
-                        controls.planner.startFocusSession(controls.defaultMinutes)
+                        controls.planner.startFocusMinutes(controls.defaultMinutes)
                     }
                 }
             }
@@ -106,7 +106,7 @@ Item {
                 text: qsTr("Abbrechen")
                 kind: "ghost"
                 Layout.fillWidth: true
-                onClicked: controls.planner.cancelFocusSession()
+                onClicked: controls.planner.cancelFocus()
             }
         }
     }

@@ -17,6 +17,8 @@ endif()
 
 find_package(Qt6 6.4 COMPONENTS Core Quick Qml QuickControls2 QuickLayouts Widgets Sql PrintSupport REQUIRED)
 
+qt_policy(SET QTP0004 NEW)
+
 qt_standard_project_setup()
 
 qt_add_executable(noah_planner
@@ -27,6 +29,8 @@ qt_add_executable(noah_planner
     src/core/EventRepository.h
     src/core/CategoryRepository.cpp
     src/core/CategoryRepository.h
+    src/core/IcsImportService.cpp
+    src/core/IcsImportService.h
     src/core/FocusSession.cpp
     src/core/FocusSession.h
     src/core/FocusSessionRepository.cpp
@@ -102,6 +106,8 @@ qt_add_qml_module(noah_planner
         src/ui/qml/views/SidebarToday.qml
         src/ui/qml/views/WeekView.qml
         src/ui/qml/components/WeeklyHeatmap.qml
+    RESOURCES
+        src/ui/qml/qmldir
 )
 
 set_source_files_properties(
@@ -121,13 +127,15 @@ qt_add_resources(noah_planner fonts
 )
 
 qt_add_qml_module(styles_module
-    URI NoahPlanner.Styles
+    URI Styles
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
     STATIC
     OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/NoahPlanner/Styles
     QML_FILES
         src/ui/qml/styles/ThemeStore.qml
+    RESOURCES
+        src/ui/qml/styles/qmldir
 )
 
 target_link_libraries(noah_planner PRIVATE
@@ -160,6 +168,6 @@ add_executable(priority_rules_test
 )
 
 target_include_directories(priority_rules_test PRIVATE src)
-target_link_libraries(priority_rules_test PRIVATE Qt6::Core)
+target_link_libraries(priority_rules_test PRIVATE Qt6::Core Qt6::Gui)
 
 add_test(NAME priority_rules_test COMMAND priority_rules_test)

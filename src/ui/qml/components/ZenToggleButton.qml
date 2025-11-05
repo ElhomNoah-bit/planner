@@ -1,18 +1,18 @@
 import QtQuick
 import QtQuick.Controls
-import NoahPlanner.Styles as Styles
+import Styles 1.0
 
 Rectangle {
     id: root
     property bool active: false
     signal toggled()
 
-    implicitWidth: Styles.ThemeStore.layout.pillH
-    implicitHeight: Styles.ThemeStore.layout.pillH
-    radius: Styles.ThemeStore.r8
-    color: active ? Styles.ThemeStore.colors.accentBg : "transparent"
+    implicitWidth: ThemeStore.layout.pillH
+    implicitHeight: ThemeStore.layout.pillH
+    radius: ThemeStore.radii.lg
+    color: active ? ThemeStore.colors.accentBg : "transparent"
+    border.color: active ? ThemeStore.colors.accent : ThemeStore.colors.divider
     border.width: 1
-    border.color: active ? Styles.ThemeStore.colors.accent : Styles.ThemeStore.colors.divider
 
     Behavior on color {
         ColorAnimation { duration: 150; easing.type: Easing.InOutQuad }
@@ -24,9 +24,9 @@ Rectangle {
     Text {
         anchors.centerIn: parent
         text: "◉"
-        font.pixelSize: Styles.ThemeStore.type.lg
-        font.family: Styles.ThemeStore.fonts.heading
-        color: active ? Styles.ThemeStore.colors.accent : Styles.ThemeStore.colors.text2
+        font.pixelSize: ThemeStore.type.lg
+        font.family: ThemeStore.fonts.heading
+        color: active ? ThemeStore.colors.accent : ThemeStore.colors.text2
         renderType: Text.NativeRendering
 
         Behavior on color {
@@ -37,7 +37,7 @@ Rectangle {
     Rectangle {
         anchors.fill: parent
         radius: parent.radius
-        color: Styles.ThemeStore.colors.hover
+        color: ThemeStore.colors.hover
         visible: hoverHandler.hovered
         opacity: 0.2
     }

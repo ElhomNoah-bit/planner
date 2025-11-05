@@ -1,5 +1,5 @@
 import QtQuick
-import NoahPlanner.Styles as Styles
+import Styles 1.0 as Styles
 
 Item {
     id: root
@@ -7,7 +7,7 @@ Item {
     property string name: ""
     property real size: 14
     property color color: Styles.ThemeStore.text
-    property string family: Styles.ThemeStore.fontFamily.length
+    property string family: (Styles.ThemeStore.fontFamily && Styles.ThemeStore.fontFamily.length)
                                   ? Styles.ThemeStore.fontFamily
                                   : Styles.ThemeStore.fontFallback
 
@@ -51,13 +51,17 @@ Item {
     }
 
     function updateGlyph() {
-        if (root.name.length) {
+        if (typeof root.name === "string" && root.name.length > 0) {
             glyph.text = resolveSymbol(root.name)
+        } else if (!glyph.text || glyph.text === undefined) {
+            glyph.text = ""
         }
     }
 
     Component.onCompleted: updateGlyph()
     onNameChanged: updateGlyph()
+
+    visible: glyph.text && glyph.text.length > 0
 
     Text {
         id: glyph

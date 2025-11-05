@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import NoahPlanner.Styles
+import Styles 1.0
 
 /**
  * ReviewIndicator - Shows due reviews count and provides quick access
@@ -25,7 +25,7 @@ Item {
         width: contentRow.width + 16
         height: 28
         radius: 14
-        color: ThemeStore.theme.accent
+        color: ThemeStore.accent
         
         RowLayout {
             id: contentRow
@@ -41,13 +41,13 @@ Item {
                 text: root.dueCount
                 font.pixelSize: 13
                 font.weight: Font.Bold
-                color: "white"
+                color: ThemeStore.surfaceOnWeak
             }
             
             Text {
                 text: root.dueCount === 1 ? "Wiederholung" : "Wiederholungen"
                 font.pixelSize: 12
-                color: "white"
+                color: ThemeStore.surfaceOnWeak
                 visible: root.width > 80
             }
         }

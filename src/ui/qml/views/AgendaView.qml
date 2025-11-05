@@ -1,21 +1,20 @@
 import QtQuick
 import QtQuick.Layouts
 import NoahPlanner 1.0
-import NoahPlanner.Styles as Styles
+import Styles 1.0
 
 Flickable {
     id: root
     property var buckets: []
-    anchors.fill: parent
     contentWidth: width
     contentHeight: contentItem.implicitHeight
     clip: true
 
-    readonly property QtObject colors: Styles.ThemeStore.colors
-    readonly property QtObject gaps: Styles.ThemeStore.gap
-    readonly property QtObject radii: Styles.ThemeStore.radii
-    readonly property QtObject typeScale: Styles.ThemeStore.type
-    readonly property QtObject metrics: Styles.ThemeStore.layout
+    readonly property QtObject colors: ThemeStore.colors
+    readonly property QtObject gaps: ThemeStore.gap
+    readonly property QtObject radii: ThemeStore.radii
+    readonly property QtObject typeScale: ThemeStore.type
+    readonly property QtObject metrics: ThemeStore.layout
 
     Column {
         id: contentItem
@@ -37,7 +36,7 @@ Flickable {
                         text: modelData.label
                         font.pixelSize: typeScale.lg
                         font.weight: typeScale.weightMedium
-                        font.family: Styles.ThemeStore.fonts.uiFallback
+                        font.family: ThemeStore.fonts.uiFallback
                         color: colors.text
                         renderType: Text.NativeRendering
                     }
@@ -57,7 +56,7 @@ Flickable {
                                         width: 10
                                         height: metrics.pillH
                                         radius: 6
-                                        color: modelData.colorHint || colors.accent
+                                        color: modelData && modelData.colorHint ? modelData.colorHint : ThemeStore.accent
                                         Layout.alignment: Qt.AlignVCenter
                                     }
 
@@ -84,7 +83,7 @@ Flickable {
                                             text: modelData.title
                                             font.pixelSize: typeScale.md
                                             font.weight: typeScale.weightMedium
-                                            font.family: Styles.ThemeStore.fonts.uiFallback
+                                            font.family: ThemeStore.fonts.uiFallback
                                             color: colors.text
                                             elide: Text.ElideRight
                                             renderType: Text.NativeRendering
@@ -94,7 +93,7 @@ Flickable {
                                             text: modelData.goal
                                             font.pixelSize: typeScale.xs
                                             font.weight: typeScale.weightRegular
-                                            font.family: Styles.ThemeStore.fonts.uiFallback
+                                            font.family: ThemeStore.fonts.uiFallback
                                             color: colors.text2
                                             elide: Text.ElideRight
                                             renderType: Text.NativeRendering
@@ -123,7 +122,8 @@ Flickable {
 
     Connections {
         target: planner
-        function onFiltersChanged() { reload() }
-        function onTasksChanged() { reload() }
+        function onEventsChanged() { reload() }
+        function onOnlyOpenChanged() { reload() }
+        function onSelectedDateChanged() { reload() }
     }
 }

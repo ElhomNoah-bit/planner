@@ -9,6 +9,7 @@
 #include <QSqlQuery>
 #include <QString>
 #include <QVector>
+#include <optional>
 
 class EventRepository {
 public:
@@ -25,6 +26,10 @@ public:
     bool setDone(const QString& id, bool done);
     bool update(const EventRecord& record);
     bool remove(const QString& id);
+
+    std::optional<EventRecord> findByExternalId(const QString& source, const QString& externalId) const;
+    QVector<EventRecord> findBySource(const QString& source) const;
+    bool removeBySource(const QString& source);
 
     bool isSqlAvailable() const { return m_sqlAvailable; }
     QString databasePath() const { return m_dbPath; }

@@ -51,6 +51,12 @@ QVariant EventModel::data(const QModelIndex& index, int role) const {
         return ev.priority;
     case CategoryIdRole:
         return ev.categoryId;
+    case SourceRole:
+        return ev.source;
+    case ExternalIdRole:
+        return ev.externalId;
+    case EventTypeRole:
+        return ev.eventType;
     default:
         break;
     }
@@ -73,6 +79,9 @@ QHash<int, QByteArray> EventModel::roleNames() const {
     roles.insert(ColorHintRole, "colorHint");
     roles.insert(PriorityRole, "priority");
     roles.insert(CategoryIdRole, "categoryId");
+    roles.insert(SourceRole, "source");
+    roles.insert(ExternalIdRole, "externalId");
+    roles.insert(EventTypeRole, "eventType");
     return roles;
 }
 
@@ -102,6 +111,9 @@ QVariantMap EventModel::eventAt(int index) const {
     map.insert(QStringLiteral("colorHint"), ev.colorHint);
     map.insert(QStringLiteral("priority"), ev.priority);
     map.insert(QStringLiteral("categoryId"), ev.categoryId);
+    map.insert(QStringLiteral("source"), ev.source);
+    map.insert(QStringLiteral("externalId"), ev.externalId);
+    map.insert(QStringLiteral("eventType"), ev.eventType);
     return map;
 }
 
