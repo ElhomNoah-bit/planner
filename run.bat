@@ -147,6 +147,37 @@ if not defined SKIP_PAUSE (
 set "EXIT_CODE=0"
 goto :cleanup
 
+:ensure_clean_build_dir
+if not exist "%BUILD_DIR%\CMakeCache.txt" exit /b 0
+
+set "CURRENT_GENERATOR="
+for /f "tokens=2 delims==" %%G in ('findstr /R /C:"^CMAKE_GENERATOR:INTERNAL=" "%BUILD_DIR%\CMakeCache.txt" 2^>nul') do (
+    if not defined CURRENT_GENERATOR (
+        for /f "tokens=*" %%H in ("%%G") do set "CURRENT_GENERATOR=%%H"
+    )
+)
+
+if "%TARGET_GENERATOR%"=="" (
+    set "CURRENT_GENERATOR="
+    exit /b 0
+)
+
+if /I "!CURRENT_GENERATOR!"=="%TARGET_GENERATOR%" (
+    set "CURRENT_GENERATOR="
+    exit /b 0
+)
+
+echo INFO: Clearing build directory (cached generator "!CURRENT_GENERATOR!" differs from target "%TARGET_GENERATOR%").
+call :clean_build_dir
+set "CURRENT_GENERATOR="
+exit /b 0
+
+:clean_build_dir
+if exist "%BUILD_DIR%" (
+    rmdir /s /q "%BUILD_DIR%" >nul 2>nul
+)
+exit /b 0
+
 :ensure_tool
 set "TOOL_NAME=%~1"
 set "WINGET_ID=%~2"
