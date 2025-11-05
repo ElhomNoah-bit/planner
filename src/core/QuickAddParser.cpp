@@ -1,4 +1,5 @@
 #include "QuickAddParser.h"
+#include "Priority.h"
 
 #include <QDateTime>
 #include <QMap>
@@ -151,15 +152,46 @@ QString QuickAddParser::extractLocation(QString& text) {
 }
 
 int QuickAddParser::extractPriority(QString& text) {
-    QRegularExpression expr(QStringLiteral("(\\!{1,3})\\s*$"));
-    QRegularExpressionMatch match = expr.match(text);
-    if (!match.hasMatch()) {
-        return 0;
+    const auto removeMatch = [&](const QRegularExpressionMatch& match) {
+        text.remove(match.capturedStart(0), match.capturedLength(0));
+        text = text.trimmed();
+    };
+
+    {
+        QRegularExpression keywordExpr(QStringLiteral("\\!\\s*(high|medium|low)\\s*$"), QRegularExpression::CaseInsensitiveOption);
+        QRegularExpressionMatch match = keywordExpr.match(text);
+        if (match.hasMatch()) {
+            const QString token = match.captured(1).toLower();
+            removeMatch(match);
+            if (token == QStringLiteral("high")) {
+                return static_cast<int>(Priority::High);
+            }
+            if (token == QStringLiteral("medium")) {
+                return static_cast<int>(Priority::Medium);
+            }
+            if (token == QStringLiteral("low")) {
+                return static_cast<int>(Priority::Low);
+            }
+        }
     }
-    const int priority = match.captured(1).length();
-    text.remove(match.capturedStart(1), match.capturedLength(1));
-    text = text.trimmed();
-    return priority;
+
+    {
+        QRegularExpression legacyExpr(QStringLiteral("(\\!{1,3})\\s*$"));
+        QRegularExpressionMatch match = legacyExpr.match(text);
+        if (match.hasMatch()) {
+            const int count = match.captured(1).length();
+            removeMatch(match);
+            if (count >= 3) {
+                return static_cast<int>(Priority::High);
+            }
+            if (count == 2) {
+                return static_cast<int>(Priority::Medium);
+            }
+            return static_cast<int>(Priority::Low);
+        }
+    }
+
+    return static_cast<int>(Priority::Low);
 }
 
 QPair<QDate, bool> QuickAddParser::extractDate(QString& text, const QDate& referenceDate) {

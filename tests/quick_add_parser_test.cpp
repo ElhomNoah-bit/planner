@@ -1,4 +1,5 @@
 #include "core/QuickAddParser.h"
+#include "core/Priority.h"
 #include "models/EventModel.h"
 
 #include <QDateTime>
@@ -6,6 +7,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 namespace {
 struct TestCase {
@@ -92,7 +94,7 @@ bool testParseWithPriorityHigh(const QuickAddParser& parser) {
         return false;
     }
     
-    return result.record.priority == Priority::High;
+    return static_cast<Priority>(result.record.priority) == Priority::High;
 }
 
 bool testParseWithPriorityMedium(const QuickAddParser& parser) {
@@ -103,7 +105,7 @@ bool testParseWithPriorityMedium(const QuickAddParser& parser) {
         return false;
     }
     
-    return result.record.priority == Priority::Medium;
+    return static_cast<Priority>(result.record.priority) == Priority::Medium;
 }
 
 bool testParseWithPriorityLow(const QuickAddParser& parser) {
@@ -114,7 +116,7 @@ bool testParseWithPriorityLow(const QuickAddParser& parser) {
         return false;
     }
     
-    return result.record.priority == Priority::Low;
+    return static_cast<Priority>(result.record.priority) == Priority::Low;
 }
 
 bool testParseAllDayEventWhenNoTime(const QuickAddParser& parser) {
@@ -164,7 +166,7 @@ bool testParseCombinedElements(const QuickAddParser& parser) {
     return result.record.start.time().hour() == 15 &&
            result.record.location == "office" &&
            result.record.tags.contains("meeting") &&
-           result.record.priority == Priority::High;
+           static_cast<Priority>(result.record.priority) == Priority::High;
 }
 
 bool testParsePreservesWhitespace(const QuickAddParser& parser) {
