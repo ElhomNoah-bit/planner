@@ -160,7 +160,7 @@ Item {
                         renderType: Text.NativeRendering
                     }
 
-                    Item { Layout.fillHeight: true }
+                    Item { height: 20 }
 
                     Column {
                         width: parent.width
@@ -196,7 +196,7 @@ Item {
                         }
                     }
 
-                    Item { Layout.fillHeight: true }
+                    Item { height: 20 }
                 }
 
                 // Step 1: Language
@@ -229,7 +229,7 @@ Item {
                         renderType: Text.NativeRendering
                     }
 
-                    Item { Layout.fillHeight: true }
+                    Item { height: 40 }
 
                     Column {
                         anchors.horizontalCenter: parent.horizontalCenter
@@ -256,7 +256,7 @@ Item {
                         }
                     }
 
-                    Item { Layout.fillHeight: true }
+                    Item { height: 40 }
                 }
 
                 // Step 2: Theme
@@ -289,7 +289,7 @@ Item {
                         renderType: Text.NativeRendering
                     }
 
-                    Item { Layout.fillHeight: true }
+                    Item { height: 40 }
 
                     Column {
                         anchors.horizontalCenter: parent.horizontalCenter
@@ -316,7 +316,7 @@ Item {
                         }
                     }
 
-                    Item { Layout.fillHeight: true }
+                    Item { height: 40 }
                 }
 
                 // Step 3: Calendar settings
@@ -413,7 +413,7 @@ Item {
                         }
                     }
 
-                    Item { Layout.fillHeight: true }
+                    Item { height: 20 }
                 }
             }
 
