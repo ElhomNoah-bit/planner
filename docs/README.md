@@ -104,8 +104,8 @@ Aenderungen an diesen Dateien werden beim naechsten Start uebernommen. Die Anwen
 - **Build schlaegt fehl**: Cache loeschen (`rm -rf build`) und erneut konfigurieren. Pruefe, ob `Qt6_DIR` korrekt gesetzt ist.
 
 ## 11. Qualitaetssicherung & Ausblick
-- Bislang existieren keine Unit- oder Integrationstests; Regressionen sollten manuell geprueft werden.
-- Potenzielle Erweiterungen: echte Persistenz fuer Quick-Add, Export/Import, multi-user Profile, UI-Tests mit Squish oder Qt Quick Ultralite.
+- Ein erster automatisierter Test (`priority_rules_test`) prueft die Prioritaetslogik und laesst sich ueber `ctest` ausfuehren.
+- Potenzielle Erweiterungen: echte Persistenz fuer Quick-Add, Export/Import, multi-user Profile, weitere Unit-Tests sowie UI-Tests mit Squish oder Qt Quick Ultralite.
 
 ## 12. Support & Kontakt
 - Allgemeine Fehlermeldungen bitte mit Konsolenausgabe (`QT_LOGGING_RULES="*.debug=true"`) melden.

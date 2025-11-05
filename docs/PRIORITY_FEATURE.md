@@ -96,15 +96,18 @@ readonly property color prioLow:      "#66BB6A"  // Green
 
 ## Testing
 
-Unit tests for the priority computation logic can be found in `docs/priority_test.cpp`. To run:
+Unit tests for the priority computation logic live in `tests/priority_rules_test.cpp`. After configuring the project with CMake you can execute the suite via CTest:
 
 ```bash
-cd docs
-g++ -std=c++17 priority_test.cpp -o priority_test
-./priority_test
+cmake -S . -B build
+cmake --build build
+cd build
+ctest --output-on-failure
 ```
 
-All tests validate the priority rules for various scenarios including:
+Alternatively, run the standalone binary `priority_rules_test` inside the build directory.
+
+The tests validate the priority rules for various scenarios including:
 - Overdue tasks
 - Tasks due today
 - Tasks due tomorrow

@@ -9,6 +9,9 @@
 #include <QStandardPaths>
 #include <QtMath>
 #include <algorithm>
+#include <optional>
+
+#include "PriorityRules.h"
 
 namespace {
 QJsonObject readJson(const QString& path) {
@@ -161,23 +164,27 @@ QVector<Task> PlannerService::generateDay(const QDate& date) const {
     const int seed = date.toJulianDay();
 
     for (const auto& subjectId : subjectIds) {
-        if (remaining < slotMin || placed >= maxSlots) break;
-        if (weights.value(subjectId) < 0.5) continue;
+        if (remaining < slotMin || placed >= maxSlots) {
+            break;
+        }
+        if (weights.value(subjectId) < 0.5) {
+            continue;
+        }
 
         const int ideal = std::min(slotMax, std::max(slotMin, ((remaining / (maxSlots - placed) + 5) / 10) * 10));
 
-    const Subject subject = subjectById(subjectId);
+        const Subject subject = subjectById(subjectId);
 
-    Task task;
-    task.id = makeTaskId(subjectId, date, placed);
-    task.subjectId = subjectId;
-    task.title = subject.name;
-    task.goal = defaultGoal(subjectId, seed + placed);
-    task.durationMinutes = ideal;
-    task.date = date;
-    task.done = isDone(date, placed);
-    task.isExam = false;
-    task.color = subject.color;
+        Task task;
+        task.id = makeTaskId(subjectId, date, placed);
+        task.subjectId = subjectId;
+        task.title = subject.name;
+        task.goal = defaultGoal(subjectId, seed + placed);
+        task.durationMinutes = ideal;
+        task.date = date;
+        task.done = isDone(date, placed);
+        task.isExam = false;
+        task.color = subject.color;
         task.planIndex = placed;
         task.priority = computePriority(task, QDate::currentDate());
 
@@ -340,29 +347,6 @@ QString PlannerService::makeTaskId(const QString& subjectId, const QDate& date, 
 }
 
 Priority PlannerService::computePriority(const Task& task, const QDate& currentDate) const {
-    // If task is done, always low priority
-    if (task.done) {
-        return Priority::Low;
-    }
-
-    // Calculate days until due
-    const int daysUntilDue = currentDate.daysTo(task.date);
-
-    // Overdue tasks are always high priority
-    if (daysUntilDue < 0) {
-        return Priority::High;
-    }
-
-    // Due today: High priority
-    if (daysUntilDue == 0) {
-        return Priority::High;
-    }
-
-    // Due tomorrow (within 48 hours): Medium priority
-    if (daysUntilDue == 1) {
-        return Priority::Medium;
-    }
-
-    // More than 2 days away: Low priority
-    return Priority::Low;
+    const std::optional<QDate> dueDate = task.date.isValid() ? std::optional<QDate>(task.date) : std::nullopt;
+    return priority::priorityForDeadline(dueDate, task.done, currentDate, Priority::Low);
 }

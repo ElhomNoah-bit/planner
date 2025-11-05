@@ -12,6 +12,9 @@
 #include <QUuid>
 
 #include <algorithm>
+#include <optional>
+
+#include "PriorityRules.h"
 
 namespace {
 QString isoString(const QDateTime& dt) {
@@ -593,39 +596,13 @@ EventRecord EventRepository::recordFromJson(const QJsonObject& object) {
 }
 
 int EventRepository::computePriority(const EventRecord& record, const QDate& currentDate) {
-    // If task is done, always low priority
-    if (record.isDone) {
-        return 0; // Low
-    }
-
-    // Use due date if available, otherwise use start date
-    QDate taskDate;
+    std::optional<QDate> dueDate;
     if (record.due.isValid()) {
-        taskDate = record.due.date();
+        dueDate = record.due.date();
     } else if (record.start.isValid()) {
-        taskDate = record.start.date();
-    } else {
-        return 1; // Medium (default for undated tasks)
+        dueDate = record.start.date();
     }
 
-    // Calculate days until due
-    const int daysUntilDue = currentDate.daysTo(taskDate);
-
-    // Overdue tasks are always high priority
-    if (daysUntilDue < 0) {
-        return 2; // High
-    }
-
-    // Due today: High priority
-    if (daysUntilDue == 0) {
-        return 2; // High
-    }
-
-    // Due tomorrow (within 48 hours): Medium priority
-    if (daysUntilDue == 1) {
-        return 1; // Medium
-    }
-
-    // More than 2 days away: Low priority
-    return 0; // Low
+    const Priority priorityLevel = priority::priorityForDeadline(dueDate, record.isDone, currentDate, Priority::Medium);
+    return priority::toInt(priorityLevel);
 }
