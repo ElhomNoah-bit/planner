@@ -160,6 +160,6 @@ add_executable(priority_rules_test
 )
 
 target_include_directories(priority_rules_test PRIVATE src)
-target_link_libraries(priority_rules_test PRIVATE Qt6::Core)
+target_link_libraries(priority_rules_test PRIVATE Qt6::Core Qt6::Gui)
 
 add_test(NAME priority_rules_test COMMAND priority_rules_test)
