@@ -26,9 +26,12 @@ qt_add_executable(noah_planner
     src/core/PomodoroTimer.h
     src/core/ScheduleExporter.cpp
     src/core/ScheduleExporter.h
+    src/core/SpacedRepetitionService.cpp
+    src/core/SpacedRepetitionService.h
     src/core/Task.h
     src/core/Subject.h
     src/core/Exam.h
+    src/core/Review.h
     src/core/Category.h
     src/models/EventModel.cpp
     src/models/EventModel.h
@@ -36,6 +39,8 @@ qt_add_executable(noah_planner
     src/models/TaskModel.h
     src/models/ExamModel.cpp
     src/models/ExamModel.h
+    src/models/ReviewModel.cpp
+    src/models/ReviewModel.h
     src/models/TaskFilterProxy.cpp
     src/models/TaskFilterProxy.h
     src/ui/AppState.cpp
@@ -79,6 +84,8 @@ qt_add_qml_module(noah_planner
         src/ui/qml/components/SettingsDialog.qml
         src/ui/qml/components/TodayTaskDelegate.qml
         src/ui/qml/components/ZenToggleButton.qml
+        src/ui/qml/components/ReviewIndicator.qml
+        src/ui/qml/components/ReviewDialog.qml
         src/ui/qml/views/AgendaView.qml
         src/ui/qml/views/MonthView.qml
         src/ui/qml/views/SidebarToday.qml

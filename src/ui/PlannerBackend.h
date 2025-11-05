@@ -7,6 +7,7 @@
 #include "core/PomodoroTimer.h"
 #include "core/QuickAddParser.h"
 #include "core/ScheduleExporter.h"
+#include "core/SpacedRepetitionService.h"
 #include "models/EventModel.h"
 
 #include <QAbstractListModel>
@@ -38,6 +39,8 @@ class PlannerBackend : public QObject {
     Q_PROPERTY(QVariantList focusHistory READ focusHistory NOTIFY focusHistoryChanged)
     Q_PROPERTY(int focusStreak READ focusStreak NOTIFY focusStreakChanged)
     Q_PROPERTY(QVariantMap pomodoro READ pomodoroState NOTIFY pomodoroChanged)
+    Q_PROPERTY(QVariantList dueReviews READ dueReviews NOTIFY dueReviewsChanged)
+    Q_PROPERTY(int dueReviewCount READ dueReviewCount NOTIFY dueReviewsChanged)
 
 public:
     explicit PlannerBackend(QObject* parent = nullptr);
@@ -78,6 +81,8 @@ public:
     QVariantList focusHistory() const { return m_focusHistory; }
     int focusStreak() const { return m_focusStreak; }
     QVariantMap pomodoroState() const { return m_pomodoroState; }
+    QVariantList dueReviews() const { return m_dueReviews; }
+    int dueReviewCount() const { return m_dueReviews.size(); }
 
     Q_INVOKABLE void selectDateIso(const QString& isoDate);
     Q_INVOKABLE void setViewMode(const QString& mode);
@@ -110,6 +115,16 @@ public:
     Q_INVOKABLE bool exportWeekPdf(const QString& filePath, const QString& weekStartIso = QString());
     Q_INVOKABLE bool exportMonthPdf(const QString& filePath, const QString& monthIso = QString());
 
+    // Spaced Repetition methods
+    Q_INVOKABLE QString addReview(const QString& subjectId, const QString& topic);
+    Q_INVOKABLE bool recordReview(const QString& reviewId, int quality);
+    Q_INVOKABLE bool removeReview(const QString& reviewId);
+    Q_INVOKABLE QVariantList getReviewsForSubject(const QString& subjectId) const;
+    Q_INVOKABLE QVariantList getAllReviews() const;
+    Q_INVOKABLE QVariantList getReviewsOnDate(const QString& isoDate) const;
+    Q_INVOKABLE void setReviewInitialInterval(int days);
+    Q_INVOKABLE void refreshReviews();
+
 signals:
     void darkThemeChanged();
     void selectedDateChanged();
@@ -131,6 +146,7 @@ signals:
     void focusHistoryChanged();
     void focusStreakChanged();
     void pomodoroChanged();
+    void dueReviewsChanged();
 
 private:
     EventRepository m_repository;
@@ -141,6 +157,7 @@ private:
     FocusSessionRepository m_focusRepository;
     PomodoroTimer m_pomodoro;
     ScheduleExporter m_exporter;
+    SpacedRepetitionService m_reviewService;
 
     QString m_storageDir;
     QDate m_selectedDate;
@@ -158,6 +175,7 @@ private:
     QVariantMap m_pomodoroState;
     int m_focusStreak = 0;
     int m_focusGoalMinutes = 25;
+    QVariantList m_dueReviews;
 
     void initializeStorage();
     void reloadEvents();
@@ -177,4 +195,5 @@ private:
     void rebuildUrgent(const QDate& today);
     void rebuildFocusState();
     void rebuildPomodoroState();
+    void rebuildDueReviews();
 };
