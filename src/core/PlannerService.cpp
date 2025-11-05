@@ -29,7 +29,12 @@ void writeJson(const QString& path, const QJsonObject& obj) {
 
 QString appDataDir() {
     auto dir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-    if (dir.isEmpty()) dir = QDir::homePath() + "/.local/share/NoahPlanner";
+    if (dir.isEmpty()) {
+        // Fallback: use AppDataLocation standard path in home directory
+        // On Linux: ~/.local/share/NoahPlanner
+        // On Windows: C:/Users/<username>/AppData/Local/NoahPlanner
+        dir = QDir(QDir::homePath()).filePath(QStringLiteral("NoahPlanner"));
+    }
     QDir().mkpath(dir);
     return dir;
 }

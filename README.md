@@ -11,11 +11,11 @@ Noah Planner ist eine native Qt-Quick-Anwendung für Fedora und andere Linux-Dis
 - Qt 6.5 Stack mit C++17 Backend (`PlannerService`, Modelle, `PlannerBackend`) und QML-Frontend
 
 ## Schnelleinstieg
-1. Systemabhängigkeiten installieren (Fedora):
-	```bash
-	sudo dnf install -y qt6-qtbase-devel qt6-qtdeclarative-devel cmake gcc-c++
-	```
-	Für Debian/Ubuntu: `sudo apt install qt6-base-dev qt6-declarative-dev cmake g++` (Qt ≥ 6.5 erforderlich).
+
+### Linux
+1. Systemabhängigkeiten installieren:
+	- **Fedora**: `sudo dnf install -y qt6-qtbase-devel qt6-qtdeclarative-devel cmake gcc-c++`
+	- **Debian/Ubuntu**: `sudo apt install qt6-base-dev qt6-declarative-dev cmake g++` (Qt ≥ 6.4 erforderlich)
 2. Projekt klonen bzw. in dieses Verzeichnis wechseln.
 3. Build & Start via Helferskript:
 	```bash
@@ -23,16 +23,44 @@ Noah Planner ist eine native Qt-Quick-Anwendung für Fedora und andere Linux-Dis
 	```
 	Das Skript erzeugt `build/`, kompiliert im Release-Modus und startet `noah_planner`.
 
+### Windows 10/11
+1. Voraussetzungen installieren:
+	- **Qt6** (≥ 6.4): [Download von qt.io](https://www.qt.io/download)
+	- **CMake** (≥ 3.16): [Download von cmake.org](https://cmake.org/download/)
+	- **Visual Studio Build Tools** oder **MinGW** mit C++17-Unterstützung
+2. Qt6-Pfad setzen (cmd oder PowerShell):
+	```cmd
+	set CMAKE_PREFIX_PATH=C:\Qt\6.5.0\msvc2019_64
+	```
+	(Pfad entsprechend deiner Qt-Installation anpassen)
+3. Build & Start via Batch-Skript:
+	```cmd
+	run.bat
+	```
+	Das Skript erzeugt `build/`, kompiliert im Release-Modus und startet `noah_planner.exe`.
+
 ## Manuelles Bauen (optional)
+
+### Linux
 ```bash
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --parallel
 ./build/noah_planner
 ```
-Setze `CMAKE_PREFIX_PATH`, falls Qt6 nicht in den Standardpfaden liegt. CMake ≥ 3.16 sowie eine funktionierende Qt-Installation werden vorausgesetzt.
+
+### Windows
+```cmd
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release --parallel
+.\build\Release\noah_planner.exe
+```
+
+**Hinweis**: Setze `CMAKE_PREFIX_PATH`, falls Qt6 nicht in den Standardpfaden liegt. CMake ≥ 3.16 sowie eine funktionierende Qt6-Installation werden vorausgesetzt.
 
 ## Daten & Persistenz
-- Arbeitsdaten landen automatisch unter `~/.local/share/NoahPlanner`.
+- Arbeitsdaten landen automatisch im plattformspezifischen Verzeichnis:
+	- **Linux**: `~/.local/share/NoahPlanner`
+	- **Windows**: `C:\Users\<Benutzername>\AppData\Local\NoahPlanner`
 - Beim ersten Start werden `subjects.json`, `diagnostics.json`, `config.json`, `exams.json` und `done.json` aus `data/` kopiert oder mit Default-Werten erzeugt.
 - Anpassungen der JSON-Dateien können direkt im Nutzerverzeichnis erfolgen; beim nächsten Start werden sie geladen.
 

@@ -227,7 +227,9 @@ For complete documentation, see [docs/DRAG_DROP_IMPLEMENTATION.md](../docs/DRAG_
 
 ### QSettings Storage
 
-Location: `~/.config/noah/planner.conf` (Linux)
+**Location** (platform-specific):
+- **Linux**: `~/.config/noah/planner.conf`
+- **Windows**: `HKEY_CURRENT_USER\Software\noah\planner` (Registry) or `%APPDATA%\noah\planner.ini`
 
 **UI Settings** (group: `ui`):
 ```ini
@@ -244,7 +246,9 @@ weekNumbers=false
 
 ### Data Storage
 
-Location: `~/.local/share/NoahPlanner/`
+**Location** (platform-specific):
+- **Linux**: `~/.local/share/NoahPlanner/`
+- **Windows**: `C:\Users\<username>\AppData\Local\NoahPlanner\`
 
 **Files**:
 - `events.json` - All events and tasks
