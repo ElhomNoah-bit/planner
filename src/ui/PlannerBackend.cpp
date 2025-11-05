@@ -467,6 +467,7 @@ void PlannerBackend::rebuildCommands() {
     add(QStringLiteral("open-pomodoro"), tr("Pomodoro öffnen"), tr("Zeigt den Fokus-Timer"));
     add(QStringLiteral("export-week"), tr("Woche exportieren"), tr("Erstellt eine PDF der Woche"));
     add(QStringLiteral("export-month"), tr("Monat exportieren"), tr("Erstellt eine PDF des Monats"));
+    add(QStringLiteral("open-reviews"), tr("Reviews öffnen"), tr("Spaced Repetition Reviews verwalten"));
 
     if (m_commands != list) {
         m_commands = list;

@@ -45,7 +45,7 @@ Item {
             }
             
             Text {
-                text: root.dueCount === 1 ? "Review" : "Reviews"
+                text: root.dueCount === 1 ? "Wiederholung" : "Wiederholungen"
                 font.pixelSize: 12
                 color: "white"
                 visible: root.width > 80
@@ -53,26 +53,20 @@ Item {
         }
         
         MouseArea {
+            id: mouseArea
             anchors.fill: parent
             cursorShape: Qt.PointingHandCursor
-            onClicked: root.clicked()
-            
             hoverEnabled: true
+            
+            onClicked: root.clicked()
             onEntered: badge.opacity = 0.9
             onExited: badge.opacity = 1.0
+            
+            ToolTip.visible: mouseArea.containsMouse
+            ToolTip.text: root.dueCount === 1 
+                          ? qsTr("1 Wiederholung fällig heute")
+                          : qsTr("%1 Wiederholungen fällig heute").arg(root.dueCount)
+            ToolTip.delay: 500
         }
-    }
-    
-    ToolTip {
-        visible: mouseArea.containsMouse
-        text: root.dueCount + (root.dueCount === 1 ? " Review" : " Reviews") + " fällig heute"
-        delay: 500
-    }
-    
-    MouseArea {
-        id: mouseArea
-        anchors.fill: parent
-        hoverEnabled: true
-        propagateComposedEvents: true
     }
 }
