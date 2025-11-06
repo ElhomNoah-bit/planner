@@ -317,7 +317,7 @@ if not defined WINDEPLOYQT_PATH (
 )
 
 echo Running windeployqt to bundle Qt dependencies...
-"%WINDEPLOYQT_PATH%" --force-openssl "%TARGET_EXE%" --qmldir "%SCRIPT_DIR%src\ui\qml"
+"%WINDEPLOYQT_PATH%" --force-openssl "%TARGET_EXE%" --qmldir "%SCRIPT_DIR%src\ui\qml" --qmldir "%BUILD_DIR%\NoahPlanner"
 if errorlevel 1 (
     echo WARNING: windeployqt reported an error.
     exit /b 1

@@ -75,7 +75,6 @@ qt_add_qml_module(noah_planner
     URI NoahPlanner
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
-    NO_PLUGIN
     QML_FILES
         src/ui/qml/App.qml
         src/ui/qml/Main.qml
@@ -135,7 +134,6 @@ qt_add_qml_module(styles_module
     URI Styles
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
-    NO_PLUGIN
     OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/NoahPlanner/Styles
     QML_FILES
         src/ui/qml/styles/ThemeStore.qml
@@ -155,6 +153,9 @@ target_link_libraries(noah_planner PRIVATE
     Qt6::PrintSupport)
 
 target_include_directories(noah_planner PRIVATE src)
+
+qt_import_qml_plugins(noah_planner)
+qt_finalize_target(noah_planner)
 
 # Platform-specific installation
 if(WIN32)

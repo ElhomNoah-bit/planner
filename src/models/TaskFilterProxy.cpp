@@ -10,19 +10,22 @@ TaskFilterProxy::TaskFilterProxy(QObject* parent)
 void TaskFilterProxy::setSubjectFilter(const QSet<QString>& subjects) {
     if (m_subjects == subjects) return;
     m_subjects = subjects;
-    invalidateFilter();
+    beginFilterChange();
+    endFilterChange();
 }
 
 void TaskFilterProxy::setSearchQuery(const QString& query) {
     if (m_query == query) return;
     m_query = query;
-    invalidateFilter();
+    beginFilterChange();
+    endFilterChange();
 }
 
 void TaskFilterProxy::setOnlyOpen(bool onlyOpen) {
     if (m_onlyOpen == onlyOpen) return;
     m_onlyOpen = onlyOpen;
-    invalidateFilter();
+    beginFilterChange();
+    endFilterChange();
 }
 
 bool TaskFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex& sourceParent) const {

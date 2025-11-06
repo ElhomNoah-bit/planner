@@ -8,7 +8,6 @@
 #include <QQmlContext>
 #include <QQuickStyle>
 #include <QStringList>
-
 #include "ui/PlannerBackend.h"
 
 static void registerFonts() {
@@ -57,6 +56,7 @@ int main(int argc, char* argv[]) {
 
     QQmlApplicationEngine engine;
     engine.addImportPath("qrc:/qt/qml");
+    engine.addImportPath(QCoreApplication::applicationDirPath() + "/qml");
     engine.rootContext()->setContextProperty("planner", &backend);
     engine.rootContext()->setContextProperty("PlannerBackend", &backend);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated, &app,
