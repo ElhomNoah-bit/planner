@@ -76,7 +76,8 @@ public:
     bool removeReview(const QString& reviewId);
 
     /**
-     * @brief Configure initial interval (default: 1 day)
+     * @brief Configure initial interval (default: 1 day).
+     * Values <= 1 keep new reviews due on the current day for quick onboarding.
      */
     void setInitialInterval(int days);
 

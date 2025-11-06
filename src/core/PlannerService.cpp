@@ -14,6 +14,69 @@
 #include "PriorityRules.h"
 
 namespace {
+QString locateSeedFile(const QString& fileName) {
+    const QString envRoot = qEnvironmentVariable("NOAH_PLANNER_DATA_ROOT");
+    if (!envRoot.isEmpty()) {
+        const QString fromEnv = QDir(envRoot).filePath(fileName);
+        if (QFileInfo::exists(fromEnv)) {
+            return fromEnv;
+        }
+    }
+
+    QDir probe(QCoreApplication::applicationDirPath());
+    for (int i = 0; i < 6; ++i) {
+        const QString candidate = probe.filePath(QStringLiteral("data/%1").arg(fileName));
+        if (QFileInfo::exists(candidate)) {
+            return candidate;
+        }
+        if (!probe.cdUp()) {
+            break;
+        }
+    }
+
+    const QString cwdCandidate = QDir(QDir::currentPath()).filePath(QStringLiteral("data/%1").arg(fileName));
+    if (QFileInfo::exists(cwdCandidate)) {
+        return cwdCandidate;
+    }
+
+    return {};
+}
+
+bool seedHasContent(const QString& path, const QString& name) {
+    QFile file(path);
+    if (!file.exists()) {
+        return false;
+    }
+    if (!file.open(QIODevice::ReadOnly)) {
+        return false;
+    }
+
+    const auto doc = QJsonDocument::fromJson(file.readAll());
+    if (!doc.isObject()) {
+        return false;
+    }
+    const QJsonObject obj = doc.object();
+
+    if (name == QLatin1String("subjects.json")) {
+        const auto subjects = obj.value(QStringLiteral("subjects")).toArray();
+        return !subjects.isEmpty();
+    }
+    if (name == QLatin1String("diagnostics.json")) {
+        const auto levels = obj.value(QStringLiteral("levels")).toObject();
+        return !levels.isEmpty();
+    }
+    if (name == QLatin1String("config.json")) {
+        return !obj.isEmpty();
+    }
+    if (name == QLatin1String("exams.json")) {
+        return obj.value(QStringLiteral("exams")).isArray();
+    }
+    if (name == QLatin1String("done.json")) {
+        return obj.value(QStringLiteral("done")).isObject();
+    }
+    return false;
+}
+
 QJsonObject readJson(const QString& path) {
     QFile f(path);
     if (!f.open(QIODevice::ReadOnly)) {
@@ -67,11 +130,20 @@ void PlannerService::ensureSeed() {
     const QStringList files = {"subjects.json", "diagnostics.json", "config.json", "exams.json", "done.json"};
     for (const auto& name : files) {
         const QString target = QDir(m_dataDir).filePath(name);
-        if (QFileInfo::exists(target)) continue;
-        const QString bundled = QDir(QCoreApplication::applicationDirPath()).filePath(QStringLiteral("data/%1").arg(name));
+        if (seedHasContent(target, name)) {
+            continue;
+        }
+        if (QFileInfo::exists(target)) {
+            QFile::remove(target);
+        }
+        const QString bundled = locateSeedFile(name);
         QDir().mkpath(m_dataDir);
-        if (QFileInfo::exists(bundled)) {
-            QFile::copy(bundled, target);
+        if (!bundled.isEmpty() && QFileInfo::exists(bundled)) {
+            QFile source(bundled);
+            if (source.copy(target)) {
+                continue;
+            }
+            qWarning() << "[PlannerService] Failed to seed" << name << "from" << bundled << ":" << source.errorString();
             continue;
         }
 

@@ -210,6 +210,10 @@ ApplicationWindow {
         reviewDialog.open()
     }
 
+    function applyActiveTheme() {
+        ThemeStore.setDarkMode(planner ? planner.darkTheme : true)
+    }
+
     ColumnLayout {
         anchors.fill: parent
         anchors.margins: ThemeStore.gapXl
@@ -358,7 +362,7 @@ ApplicationWindow {
     Connections {
         target: planner
         function onDarkThemeChanged() {
-            app.color = ThemeStore.surface
+            applyActiveTheme()
         }
         function onSearchQueryChanged() {
             if (globalSearch && globalSearch.text !== planner.searchQuery) {
@@ -368,6 +372,7 @@ ApplicationWindow {
     }
 
     Component.onCompleted: {
+        applyActiveTheme()
         if (globalSearch) {
             globalSearch.text = planner.searchQuery
         }
@@ -378,18 +383,4 @@ ApplicationWindow {
         }
     }
 
-    Connections {
-        target: commandPalette
-        function onVisibleChanged() {}
-    }
-
-    Connections {
-        target: quickAddDialog
-        function onVisibleChanged() {}
-    }
-
-    Connections {
-        target: settingsDialog
-        function onVisibleChanged() {}
-    }
 }

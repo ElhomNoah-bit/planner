@@ -4,23 +4,35 @@ import QtQuick
 QtObject {
     id: theme
 
+    property bool darkMode: true
+
+    function setDarkMode(preferDark) {
+        if (preferDark === undefined) {
+            if (Qt.styleHints && Qt.styleHints.colorScheme !== undefined && typeof Qt.ColorScheme !== "undefined") {
+                darkMode = Qt.styleHints.colorScheme === Qt.ColorScheme.Dark
+            }
+            return
+        }
+        darkMode = !!preferDark
+    }
+
     // Base palette
-    readonly property color surface: "#0E1116"
-    readonly property color surfaceAlt: "#171B22"
-    readonly property color surfaceRaised: "#1C222B"
-    readonly property color surfaceGlass: "#22304380"
-    readonly property color overlayBg: "#00000080"
-    readonly property color text: "#E6EAF2"
-    readonly property color textSecondary: "#AFB8C5"
-    readonly property color textMuted: "#7A8696"
-    readonly property color surfaceOnWeak: "#FFFFFF"
-    readonly property color divider: "#2A3340"
-    readonly property color focus: "#5BA5FF"
-    readonly property color accent: "#3B82F6"
-    readonly property color accentWeak: "#1A2B4D"
-    readonly property color ok: "#22C55E"
-    readonly property color warning: "#F59E0B"
-    readonly property color danger: "#F97066"
+    readonly property color surface: darkMode ? "#0E1116" : "#F7F9FC"
+    readonly property color surfaceAlt: darkMode ? "#171B22" : "#FFFFFF"
+    readonly property color surfaceRaised: darkMode ? "#1C222B" : "#E2E8F0"
+    readonly property color surfaceGlass: darkMode ? "#22304380" : "#BFD2EA7F"
+    readonly property color overlayBg: darkMode ? "#00000080" : "#0A1E3380"
+    readonly property color text: darkMode ? "#E6EAF2" : "#1B2433"
+    readonly property color textSecondary: darkMode ? "#AFB8C5" : "#3E4C63"
+    readonly property color textMuted: darkMode ? "#7A8696" : "#5B6B82"
+    readonly property color surfaceOnWeak: darkMode ? "#FFFFFF" : "#0E1116"
+    readonly property color divider: darkMode ? "#2A3340" : "#CBD5E1"
+    readonly property color focus: darkMode ? "#5BA5FF" : "#2563EB"
+    readonly property color accent: darkMode ? "#3B82F6" : "#2563EB"
+    readonly property color accentWeak: darkMode ? "#1A2B4D" : "#D6E4FF"
+    readonly property color ok: darkMode ? "#22C55E" : "#15803D"
+    readonly property color warning: darkMode ? "#F59E0B" : "#B45309"
+    readonly property color danger: darkMode ? "#F97066" : "#DC2626"
 
     // Legacy compatibility shorthands
     readonly property QtObject colors: QtObject {
@@ -32,13 +44,13 @@ QtObject {
         readonly property color text2: theme.textSecondary
         readonly property color textPrimary: theme.surfaceOnWeak
         readonly property color divider: theme.divider
-        readonly property color hover: theme.surfaceRaised
+        readonly property color hover: theme.darkMode ? theme.surfaceRaised : theme.surfaceAlt
         readonly property color focus: theme.focus
         readonly property color accent: theme.accent
         readonly property color accentBg: theme.accentWeak
         readonly property color surfaceOnWeak: theme.surfaceOnWeak
         readonly property color neutralBg: theme.surfaceRaised
-        readonly property color press: theme.surfaceRaised
+        readonly property color press: theme.darkMode ? theme.surfaceRaised : theme.surfaceAlt
         readonly property color prioHigh: theme.danger
         readonly property color prioMedium: theme.warning
         readonly property color prioLow: theme.ok

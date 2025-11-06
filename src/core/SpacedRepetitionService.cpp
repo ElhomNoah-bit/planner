@@ -2,6 +2,7 @@
 
 #include <QDir>
 #include <QFile>
+#include <QFileInfo>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QtMath>
@@ -84,10 +85,13 @@ QString SpacedRepetitionService::addReview(const QString& subjectId, const QStri
     review.subjectId = subjectId;
     review.topic = topic;
     review.lastReviewDate = QDate::currentDate();
-    review.nextReviewDate = QDate::currentDate().addDays(m_initialInterval);
+    const bool scheduleToday = m_initialInterval <= 1;
+    review.nextReviewDate = scheduleToday
+        ? QDate::currentDate()
+        : QDate::currentDate().addDays(m_initialInterval);
     review.repetitionNumber = 0;
     review.easeFactor = 2.5;
-    review.intervalDays = m_initialInterval;
+    review.intervalDays = qMax(1, m_initialInterval);
     review.quality = 0;
 
     m_reviews.append(review);
@@ -137,17 +141,24 @@ void SpacedRepetitionService::setEaseFactorModifier(double modifier) {
 }
 
 void SpacedRepetitionService::load() {
+    if (m_dataDir.isEmpty()) {
+        m_reviews.clear();
+        return;
+    }
+
     m_reviews.clear();
 
     const QString path = QDir(m_dataDir).filePath(QStringLiteral("reviews.json"));
-    QJsonObject root = readJson(path);
 
-    // Initialize with empty structure if file doesn't exist
-    if (root.isEmpty()) {
-        root["reviews"] = QJsonArray();
+    if (!QFileInfo::exists(path)) {
         QDir().mkpath(m_dataDir);
-        writeJson(path, root);
+        writeJson(path, QJsonObject{{QStringLiteral("reviews"), QJsonArray{}}});
         return;
+    }
+
+    QJsonObject root = readJson(path);
+    if (root.isEmpty()) {
+        root.insert(QStringLiteral("reviews"), QJsonArray());
     }
 
     QJsonArray reviewsArray = root["reviews"].toArray();
@@ -201,7 +212,7 @@ void SpacedRepetitionService::calculateNextReview(Review& review, int quality) {
     // If quality < 3, reset the review (start over)
     if (quality < 3) {
         review.repetitionNumber = 0;
-        review.intervalDays = m_initialInterval;
+        review.intervalDays = qMax(1, m_initialInterval);
         review.nextReviewDate = review.lastReviewDate.addDays(review.intervalDays);
         return;
     }
@@ -213,7 +224,7 @@ void SpacedRepetitionService::calculateNextReview(Review& review, int quality) {
 
     // Calculate next interval
     if (review.repetitionNumber == 0) {
-        review.intervalDays = m_initialInterval;
+        review.intervalDays = qMax(1, m_initialInterval);
     } else if (review.repetitionNumber == 1) {
         review.intervalDays = 6;
     } else {

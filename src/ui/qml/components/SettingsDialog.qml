@@ -28,7 +28,7 @@ Item {
         }
         syncing = true
         themeDark.checked = !!planner.darkTheme
-        themeSystem.checked = !planner.darkTheme
+        themeLight.checked = !planner.darkTheme
         languageDe.checked = planner.language !== "en"
         languageEn.checked = planner.language === "en"
         weekStartMonday.checked = planner.weekStart !== "sunday"
@@ -108,8 +108,8 @@ Item {
                         onToggled: if (checked && !dialog.syncing && planner) planner.darkTheme = true
                     }
                     RadioButton {
-                        id: themeSystem
-                        text: qsTr("System")
+                        id: themeLight
+                        text: qsTr("Hell")
                         ButtonGroup.group: themeGroup
                         onToggled: if (checked && !dialog.syncing && planner) planner.darkTheme = false
                     }

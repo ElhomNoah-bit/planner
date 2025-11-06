@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC_COMPILER_PREDEFINES OFF)
 
 # Windows-specific settings
 if(WIN32)
@@ -17,6 +18,7 @@ endif()
 
 find_package(Qt6 6.4 COMPONENTS Core Quick Qml QuickControls2 QuickLayouts Widgets Sql PrintSupport QuickTest REQUIRED)
 
+qt_policy(SET QTP0001 NEW)
 qt_policy(SET QTP0004 NEW)
 
 qt_standard_project_setup()
@@ -132,7 +134,6 @@ qt_add_qml_module(styles_module
     URI Styles
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
-    STATIC
     OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/NoahPlanner/Styles
     QML_FILES
         src/ui/qml/styles/ThemeStore.qml
@@ -164,6 +165,22 @@ else()
 endif()
 
 enable_testing()
+
+set(QML_TEST_IMPORT_DIR ${CMAKE_CURRENT_BINARY_DIR}/qml_test_imports/NoahPlanner)
+set(QML_TEST_IMPORT_STAMP ${QML_TEST_IMPORT_DIR}/.stamp)
+add_custom_command(
+    OUTPUT ${QML_TEST_IMPORT_STAMP}
+    DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/NoahPlanner/qmldir $<TARGET_FILE:styles_module>
+    COMMAND ${CMAKE_COMMAND} -E rm -rf ${QML_TEST_IMPORT_DIR}
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_BINARY_DIR}/NoahPlanner ${QML_TEST_IMPORT_DIR}
+    COMMAND ${CMAKE_COMMAND} -DINPUT=${QML_TEST_IMPORT_DIR}/qmldir -DOUTPUT=${QML_TEST_IMPORT_DIR}/qmldir -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/StripQmldirPrefer.cmake
+    COMMAND ${CMAKE_COMMAND} -DINPUT=${QML_TEST_IMPORT_DIR}/Styles/qmldir -DOUTPUT=${QML_TEST_IMPORT_DIR}/Styles/qmldir -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/StripQmldirPrefer.cmake
+    COMMAND ${CMAKE_COMMAND} -DINPUT=${QML_TEST_IMPORT_DIR}/src/ui/qml/components/qmldir -DOUTPUT=${QML_TEST_IMPORT_DIR}/src/ui/qml/components/qmldir -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/StripQmldirPrefer.cmake
+    COMMAND ${CMAKE_COMMAND} -DINPUT=${QML_TEST_IMPORT_DIR}/src/ui/qml/views/qmldir -DOUTPUT=${QML_TEST_IMPORT_DIR}/src/ui/qml/views/qmldir -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/StripQmldirPrefer.cmake
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_FILE:styles_module> ${QML_TEST_IMPORT_DIR}/Styles
+    COMMAND ${CMAKE_COMMAND} -E touch ${QML_TEST_IMPORT_STAMP}
+)
+add_custom_target(qml_test_imports ALL DEPENDS ${QML_TEST_IMPORT_STAMP})
 
 # Priority rules test
 add_executable(priority_rules_test
@@ -216,8 +233,7 @@ set(QML_TEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/tests/qml)
 if(EXISTS ${QML_TEST_DIR})
     add_test(NAME qml_component_smoke
         COMMAND Qt6::qmltestrunner
-                -I ${CMAKE_CURRENT_SOURCE_DIR}/src/ui/qml
-                -I ${CMAKE_CURRENT_SOURCE_DIR}/src/ui/qml/components
-                -I ${CMAKE_CURRENT_SOURCE_DIR}/src/ui/qml/styles
+        -import ${CMAKE_CURRENT_BINARY_DIR}/qml_test_imports
+        -import ${CMAKE_CURRENT_BINARY_DIR}/qml_test_imports/NoahPlanner
                 -input ${QML_TEST_DIR}/tst_component_smoke.qml)
 endif()

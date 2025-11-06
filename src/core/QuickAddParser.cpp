@@ -200,6 +200,23 @@ QPair<QDate, bool> QuickAddParser::extractDate(QString& text, const QDate& refer
         text = text.simplified();
     };
 
+    // ISO date yyyy-mm-dd with optional prefix (e.g. "on 2024-07-20")
+    {
+        QRegularExpression expr(QStringLiteral("\\b(?:on\\s+|am\\s+)?(\\d{4})-(\\d{1,2})-(\\d{1,2})\\b"),
+                                  QRegularExpression::CaseInsensitiveOption);
+        QRegularExpressionMatch match = expr.match(text);
+        if (match.hasMatch()) {
+            const int year = match.captured(1).toInt();
+            const int month = match.captured(2).toInt();
+            const int day = match.captured(3).toInt();
+            const QDate date(year, month, day);
+            if (date.isValid()) {
+                removeMatch(match);
+                return {date, true};
+            }
+        }
+    }
+
     // Explicit date dd.mm or dd.mm.yyyy
     {
         QRegularExpression expr(QStringLiteral("\\b(\\d{1,2})\\.(\\d{1,2})(?:\\.(\\d{2,4}))?\\b"));
@@ -281,9 +298,28 @@ QPair<QPair<QTime, QTime>, bool> QuickAddParser::extractTime(QString& text) {
         text = text.simplified();
     };
 
+    // Range with keywords (from 17:00 to 18:30 / von 17 bis 18)
+    {
+        QRegularExpression expr(QStringLiteral("\\b(?:from|von)\\s+(\\d{1,2})(?::(\\d{2}))?\\s*(?:to|bis)\\s*(\\d{1,2})(?::(\\d{2}))?\\b"),
+                                 QRegularExpression::CaseInsensitiveOption);
+        QRegularExpressionMatch match = expr.match(text);
+        if (match.hasMatch()) {
+            const int startHour = match.captured(1).toInt();
+            const int startMinute = match.captured(2).isEmpty() ? 0 : match.captured(2).toInt();
+            const int endHour = match.captured(3).toInt();
+            const int endMinute = match.captured(4).isEmpty() ? 0 : match.captured(4).toInt();
+            const QTime start(startHour, startMinute);
+            const QTime end(endHour, endMinute);
+            if (start.isValid() && end.isValid()) {
+                removeMatch(match);
+                return {{start, end}, true};
+            }
+        }
+    }
+
     // Range with colon 17:00-18:30
     {
-    QRegularExpression expr(QStringLiteral("\\b(\\d{1,2}):(\\d{2})\\s*[-–]\\s*(\\d{1,2}):(\\d{2})\\b"));
+        QRegularExpression expr(QStringLiteral("\\b(\\d{1,2}):(\\d{2})\\s*[-–]\\s*(\\d{1,2}):(\\d{2})\\b"));
         QRegularExpressionMatch match = expr.match(text);
         if (match.hasMatch()) {
             const QTime start(match.captured(1).toInt(), match.captured(2).toInt());
