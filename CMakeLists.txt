@@ -109,6 +109,7 @@ qt_add_qml_module(noah_planner
         src/ui/qml/components/WeeklyHeatmap.qml
     RESOURCES
         src/ui/qml/qmldir
+        src/ui/qml/utils/Safe.js
 )
 
 set_source_files_properties(
