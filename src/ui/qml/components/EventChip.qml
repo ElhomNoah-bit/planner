@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import Styles 1.0 as Styles
+import "../utils/Safe.js" as Safe
 
 Rectangle {
     id: chip
@@ -68,8 +69,8 @@ Rectangle {
     RowLayout {
         id: contentRow
         anchors.fill: parent
-    anchors.margins: gaps ? gaps.g12 : 12
-    spacing: gaps ? gaps.g8 : 8
+        anchors.margins: gaps ? gaps.g12 : 12
+        spacing: gaps ? gaps.g8 : 8
 
         Rectangle {
             width: timed ? 6 : 0
@@ -77,35 +78,42 @@ Rectangle {
             radius: 3
             color: muted ? (colors ? colors.divider : "#2A3340") : resolvedSubjectColor
             visible: timed
+            opacity: 0.95
             Layout.alignment: Qt.AlignVCenter
         }
 
-        ColumnLayout {
-            Layout.fillWidth: true
-            spacing: 2
+        Rectangle {
+            visible: timed
+            radius: 10
+            color: Qt.rgba(resolvedSubjectColor.r, resolvedSubjectColor.g, resolvedSubjectColor.b, 0.18)
+            implicitHeight: 20
+            implicitWidth: timeLabel.implicitWidth + 12
+            Layout.alignment: Qt.AlignVCenter
 
             Text {
-                visible: timed
-                text: chip.timeText
+                id: timeLabel
+                anchors.centerIn: parent
+                text: Safe.s(chip.timeText)
                 font.pixelSize: Styles.ThemeStore.type.xs
                 font.weight: Styles.ThemeStore.type.weightMedium
                 font.family: Styles.ThemeStore.fonts.uiFallback
                 color: chipFg
-                elide: Text.ElideRight
                 renderType: Text.NativeRendering
             }
+        }
 
-            Text {
-                id: labelText
-                text: chip.label
-                color: chipFg
-                font.pixelSize: Styles.ThemeStore.type.sm
-                font.weight: Styles.ThemeStore.type.weightMedium
-                font.family: Styles.ThemeStore.fonts.heading
-                elide: Text.ElideRight
-                verticalAlignment: Text.AlignVCenter
-                renderType: Text.NativeRendering
-            }
+        Text {
+            id: labelText
+            text: Safe.s(chip.label)
+            color: chipFg
+            font.pixelSize: Styles.ThemeStore.type.sm
+            font.weight: Styles.ThemeStore.type.weightMedium
+            font.family: Styles.ThemeStore.fonts.heading
+            elide: Text.ElideRight
+            verticalAlignment: Text.AlignVCenter
+            renderType: Text.NativeRendering
+            Layout.fillWidth: true
+            Layout.leftMargin: timed ? 8 : 0
         }
     }
 

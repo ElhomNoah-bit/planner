@@ -3,6 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import NoahPlanner 1.0
 import Styles 1.0
+import "../utils/Safe.js" as Safe
 
 Item {
     id: root
@@ -71,14 +72,15 @@ Item {
                         model: urgentEvents
                         delegate: EventChip {
                             Layout.fillWidth: true
-                            label: modelData.title || ""
-                            subjectColor: modelData.colorHint || colors.accent
-                            timeText: modelData.startTimeLabel || ""
-                            deadlineSeverity: modelData.deadlineSeverity || ""
-                            deadlineLevel: modelData.deadlineLevel || 0
-                            overdue: modelData.overdue || false
+                            Layout.minimumHeight: 36
+                            label: Safe.s(modelData ? modelData.title : undefined)
+                            subjectColor: Safe.s(modelData && modelData.colorHint ? modelData.colorHint : colors.accent, colors.accent)
+                            timeText: Safe.s(modelData ? modelData.startTimeLabel : undefined)
+                            deadlineSeverity: Safe.s(modelData ? modelData.deadlineSeverity : undefined)
+                            deadlineLevel: modelData && modelData.deadlineLevel !== undefined ? modelData.deadlineLevel : 0
+                            overdue: modelData && modelData.overdue ? true : false
                             muted: false
-                            categoryColor: modelData.categoryColor || ""
+                            categoryColor: Safe.s(modelData ? modelData.categoryColor : undefined)
                             draggable: false
                         }
                     }
@@ -279,6 +281,8 @@ Item {
                                 checked: modelData && modelData.isDone
                                 focusPolicy: Qt.NoFocus
                                 onToggled: planner.setEventDone(modelData.id, checked)
+                                Layout.minimumWidth: 36
+                                Layout.minimumHeight: 36
                             }
 
                             ColumnLayout {
@@ -286,7 +290,7 @@ Item {
                                 spacing: gaps.g4
 
                                 Text {
-                                    text: modelData && modelData.title ? modelData.title : ""
+                                    text: Safe.s(modelData && modelData.title ? modelData.title : undefined)
                                     font.pixelSize: typeScale.sm
                                     font.weight: typeScale.weightMedium
                                     font.family: fonts.heading
@@ -400,7 +404,7 @@ Item {
                                             spacing: gaps.g4
 
                                             Text {
-                                                text: modelData && modelData.title ? modelData.title : ""
+                                                text: Safe.s(modelData && modelData.title ? modelData.title : undefined)
                                                 font.pixelSize: typeScale.sm
                                                 font.weight: typeScale.weightMedium
                                                 font.family: fonts.heading
@@ -411,8 +415,8 @@ Item {
 
                                             Text {
                                                 text: {
-                                                    var time = modelData.startTimeLabel || ""
-                                                    var date = modelData.dateLabel || ""
+                                                    var time = Safe.s(modelData ? modelData.startTimeLabel : undefined)
+                                                    var date = Safe.s(modelData ? modelData.dateLabel : undefined)
                                                     if (time.length && date.length)
                                                         return time + " • " + date
                                                     if (date.length)
@@ -503,7 +507,7 @@ Item {
                                             spacing: gaps.g4
 
                                             Text {
-                                                text: modelData && modelData.title ? modelData.title : ""
+                                                text: Safe.s(modelData && modelData.title ? modelData.title : undefined)
                                                 font.pixelSize: typeScale.sm
                                                 font.weight: typeScale.weightMedium
                                                 font.family: fonts.heading
@@ -513,7 +517,7 @@ Item {
                                             }
 
                                             Text {
-                                                text: modelData && modelData.dateLabel ? modelData.dateLabel : ""
+                                                text: Safe.s(modelData && modelData.dateLabel ? modelData.dateLabel : undefined)
                                                 font.pixelSize: typeScale.xs
                                                 font.weight: typeScale.weightRegular
                                                 font.family: fonts.body

@@ -278,7 +278,7 @@ ApplicationWindow {
                 Layout.preferredWidth: 280
                 Layout.maximumWidth: 320
                 Layout.alignment: Qt.AlignVCenter
-                placeholderText: qsTr("Suchen (Ctrl/Cmd+K)…")
+                placeholderText: Qt.platform.os === "windows" ? qsTr("Suchen (Strg/Cmd+K)…") : qsTr("Suchen (Ctrl/Cmd+K)…")
                 onAccepted: {
                     app.openCommandPalette(text)
                     clear()

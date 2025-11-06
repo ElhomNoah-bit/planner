@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import NoahPlanner 1.0
 import Styles 1.0
+import "../utils/Safe.js" as Safe
 
 Flickable {
     id: root
@@ -56,7 +57,7 @@ Flickable {
                                         width: 10
                                         height: metrics.pillH
                                         radius: 6
-                                        color: modelData && modelData.colorHint ? modelData.colorHint : ThemeStore.accent
+                                        color: Safe.s(modelData && modelData.colorHint ? modelData.colorHint : ThemeStore.accent, ThemeStore.accent)
                                         Layout.alignment: Qt.AlignVCenter
                                     }
 
@@ -80,7 +81,7 @@ Flickable {
                                         spacing: gaps.g4
 
                                         Text {
-                                            text: modelData.title
+                                            text: Safe.s(modelData ? modelData.title : undefined)
                                             font.pixelSize: typeScale.md
                                             font.weight: typeScale.weightMedium
                                             font.family: ThemeStore.fonts.uiFallback
@@ -90,7 +91,7 @@ Flickable {
                                         }
 
                                         Text {
-                                            text: modelData.goal
+                                            text: Safe.s(modelData ? modelData.goal : undefined)
                                             font.pixelSize: typeScale.xs
                                             font.weight: typeScale.weightRegular
                                             font.family: ThemeStore.fonts.uiFallback
